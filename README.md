@@ -139,9 +139,9 @@ python scripts/export_records.py data/processed/saline_paddy_enriched.jsonl \
   --output-prefix data/exports/saline_paddy_enriched --include-abstracts
 ```
 
-WoS 原始书目字段和 query provenance 保持原值。当前 Semantic Scholar 暂停，真实执行始终标记 `skipped`，不创建客户端、不请求、不读其缓存。Crossref 保持现有缓存行为；OpenAlex 默认先收集规范化 DOI，再排除缓存命中，以最多 100 个 DOI 一批查询 `/works` 并按响应 DOI 映射回记录。没有 DOI 时不请求。摘要候选、校验、来源故障及选择理由写入 `abstract_enrichment`，原始来源响应另存 `data/cache/<provider>/<DOI SHA256>.json`；OpenAlex 批次完整响应另存同目录的 `batches/`。输出文件必须使用新名称。
+WoS 原始书目字段和 query provenance 保持原值。当前默认启用 Crossref、Semantic Scholar 和 OpenAlex；Semantic Scholar 使用 DOI 批量请求，默认每批 100 个 DOI，批次间至少间隔 1.10 秒，并支持 `--refresh-provider semantic_scholar`。Crossref 保持现有缓存行为；OpenAlex 默认先收集规范化 DOI，再排除缓存命中，以最多 100 个 DOI 一批查询 `/works` 并按响应 DOI 映射回记录。没有 DOI 时不请求。摘要候选、校验、来源故障及选择理由写入 `abstract_enrichment`，原始来源响应另存 `data/cache/<provider>/<DOI SHA256>.json`；OpenAlex 和 Semantic Scholar 批次完整响应另存同目录的 `batches/`。输出文件必须使用新名称。
 
-OpenAlex Key 仅在本地 `.env` 设置 `OPENALEX_API_KEY`，使用 Authorization Bearer header，凭据不进入请求 URL、缓存、报告或日志。已有 WoS Key 不会发给外部来源。新客户端默认同一来源两次请求之间至少间隔 1 秒，超时 30 秒，429/5xx/连接错误最多重试 2 次；等待超过 60 秒则记录故障并进入冷却。Semantic Scholar Key 当前不使用。
+OpenAlex Key 仅在本地 `.env` 设置 `OPENALEX_API_KEY`；Semantic Scholar Key 仅在本地 `.env` 设置 `SEMANTIC_SCHOLAR_API_KEY`。OpenAlex 使用 Authorization Bearer，Semantic Scholar 使用 `x-api-key` header；凭据不进入请求 URL、缓存、报告或日志。已有 WoS Key 不会发给外部来源。Semantic Scholar 默认批次间隔 1.10 秒（客户端强制不低于 1.05 秒），超时 30 秒，429/5xx/连接错误执行有界重试；429、5xx、timeout 和连接错误不生成负缓存。可使用 `--cache-only-provider semantic_scholar` 做离线回放。
 
 OpenAlex `200` 返回有记录但没有摘要时标记 `no_abstract`，与没有记录的 `not_found` 分开。仅 `404` 或完整精确 DOI 查询结果明确没有记录时负缓存；429、timeout、5xx 和异常/不完整响应不把缺失 DOI 写为负缓存，下次仍可重试。既有 v0.3 缓存保持兼容。
 

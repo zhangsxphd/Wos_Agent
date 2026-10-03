@@ -1,6 +1,6 @@
 # OpenAlex 批量 DOI 修复
 
-当前真实执行仅使用 Crossref 和 OpenAlex。Semantic Scholar 未创建客户端，逐条 `provider_results.semantic_scholar.status=skipped`；其请求、缓存和错误计数均为 0，不改变缺失状态和 OpenAlex 的独立覆盖统计。原有注入 Mock/client dictionary 的低层测试接口保留兼容；所有原 77 项测试仍完全离线运行，不发 Semantic Scholar 请求。
+当前真实执行支持 Crossref、Semantic Scholar 和 OpenAlex。Semantic Scholar 使用 v0.5.6 的 DOI 批量客户端；本页专门说明 OpenAlex 的批量行为。原有注入 Mock/client dictionary 的低层测试接口保留兼容，所有离线测试仍不访问外网。
 
 OpenAlex Key 只在项目 `.env`（600）中保存。客户端使用 Authorization Bearer，从不把 Key 放到查询参数、数据文件或错误正文。批量请求：
 
@@ -36,6 +36,6 @@ python scripts/enrich_abstracts.py data/processed/saline_paddy_v03_smoke_input_1
   --output data/processed/my_openalex_cache_replay.jsonl --cache-only
 ```
 
-覆盖报告 `found_by_crossref`/`found_by_openalex` 统计通过元数据和摘要校验的候选，abstract_found_total 统计最终非空摘要，unresolved=输入数-最终摘要数。`openalex_coverage` 单独列 DOI 分母、有效摘要、覆盖率及 lookup 状态；Semantic Scholar skipped 不进入这一判断。actual_http_request_count 包含重试，OpenAlex rate-limit headers 保存于 openalex_rate_limit_headers。
+覆盖报告 `found_by_crossref`/`found_by_openalex` 统计通过元数据和摘要校验的候选，abstract_found_total 统计最终非空摘要，unresolved=输入数-最终摘要数。`openalex_coverage` 单独列 DOI 分母、有效摘要、覆盖率及 lookup 状态；Semantic Scholar 的覆盖和限流数据单独记录在 `semantic_scholar_rate_limit_headers` 及 provider stats 中。actual_http_request_count 包含重试，OpenAlex rate-limit headers 保存于 openalex_rate_limit_headers。
 
 接口依据：[官方 DOI OR filter/100 上限](https://help.openalex.org/api/filtering/)、[select 字段](https://help.openalex.org/api/selecting-fields/)、[Bearer 鉴权](https://help.openalex.org/api/authentication/)。

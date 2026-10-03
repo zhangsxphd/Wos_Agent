@@ -1,6 +1,6 @@
 # WoS Starter 可追溯检索
 
-当前版本 v0.5，包含可追溯检索、合并去重、摘要补充、来源锚定的 Evidence Matrix，以及 OA 全文解析。项目已在 Python 3.14 和本地 Codex 运行环境中通过 182 项离线测试。
+当前版本 v0.5.5，包含可追溯检索、合并去重、摘要补充、来源锚定的 Evidence Matrix、OA 全文解析，以及 Elsevier 机构授权全文 API fallback。v0.5 基线曾通过 182 项离线测试；v0.5.5 新增测试需在合并前继续离线复核。
 
 首次安装：
 
@@ -180,3 +180,31 @@ python scripts/export_records.py data/processed/saline_paddy_v03_openalex_batch_
 新增 Full-text Resolver，优先获取 OpenAlex TEI XML，再尝试缓存 PDF 和明确的 OA location。全文 raw、parsed、manifest 和按章节审核的证据保存在独立 sidecar，原始 canonical 与 v0.4 Evidence 不覆盖。筛选结果同时包含 eligibility_status 和 evidence_role，保留综述/区域模型的科研用途。
 
 首轮仍用原来的 10 篇：10 个 Work matched，仅 1 篇全文实际取得并解析；总体 needs_fulltext 保持 8→8。182 项离线测试通过。完整使用步骤、限制与逐篇真实结果见 [v0.5 说明](docs/v05.md)。
+
+
+## v0.5.5 Elsevier 机构授权全文 fallback
+
+v0.5.5 在现有 OA resolver 之后增加 Elsevier Article Retrieval API。它不会替换 OpenAlex，也不会抓取 ScienceDirect 网页。
+
+本地 `.env`：
+
+~~~text
+ELSEVIER_API_KEY=
+ELSEVIER_INSTTOKEN=
+~~~
+
+`ELSEVIER_INSTTOKEN` 仅在机构明确提供时填写；通常 Elsevier 可根据请求所在的订阅机构网络/IP 判断 entitlement。API Key 只通过 `X-ELS-APIKey` header 发送，不进入 URL 或输出文件。
+
+运行：
+
+~~~bash
+python scripts/resolve_entitled_fulltexts.py   data/processed/<canonical>.jsonl   --output data/fulltext/runs/<new-sidecar>.jsonl
+~~~
+
+路由顺序：
+
+1. OpenAlex OA/缓存全文；
+2. Elsevier exact DOI + `view=FULL`；
+3. 失败则保留 unavailable/error 和逐路由 provenance。
+
+详细说明见 [v0.5.5 文档](docs/v055.md)。

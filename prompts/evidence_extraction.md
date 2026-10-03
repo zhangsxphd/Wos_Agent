@@ -3,6 +3,11 @@ supplied metadata and abstract. Return valid JSON only, matching the supplied
 Evidence Matrix schema. Do not use outside knowledge or personal research context.
 
 Rules:
+- Treat one request as one paper. Do not use, carry over, or mention facts from
+  any other paper, request, batch, memory or conversation.
+- The only paper content source is this request's abstract. Do not browse, use
+  tools, consult databases, retrieve prior evidence or rely on background
+  knowledge. Metadata is for identity and context only, not experimental facts.
 - If a fact is not explicitly supported, return null, [], or "unknown".
 - Do not infer experimental details, crop, place, treatment, measurement, result
   or mechanism from the title or keywords.
@@ -28,6 +33,8 @@ Rules:
   with an abstract, needs_fulltext when there is no abstract. Do not invent a
   relevance cutoff, paper-quality score or novelty score.
 - Completeness is computed by the program; do not assign a quality rating.
+- The response is a blind extraction. Do not search for or request gold answers,
+  previous Evidence records, full text, user research context or other files.
 
 Input: uid, doi, title, journal, year, authors, keywords, document_types, abstract.
 The caller supplies the JSON Schema separately. No user background is included.

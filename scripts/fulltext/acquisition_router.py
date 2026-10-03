@@ -4,8 +4,11 @@ import json
 from pathlib import Path
 
 from .elsevier_content import ElsevierArticleClient
+from .elsevier_xml import parse_elsevier_xml
 from .provenance import FulltextError, manifest
 from ..pipeline_utils import ROOT, assert_safe, known_secrets, new_run_id, write_json
+from ..providers.base_client import cache_key, canonical_doi
+from ..normalize_record import normalize_doi, normalize_title
 
 
 def _write_raw(path, raw, secrets):
@@ -29,8 +32,12 @@ class AcquisitionRouter:
         self.secrets = known_secrets(
             self.root, extra=(self.elsevier.api_key, self.elsevier.insttoken)
         )
+        self.stats = {"cache_hits": 0}
 
     def resolve(self, record, work=None, refresh=False):
+        cached = None if refresh else self._load_elsevier_cache(record)
+        if cached is not None:
+            return cached
         attempts = []
         oa_result = None
         if self.oa_resolver is not None:
@@ -45,6 +52,14 @@ class AcquisitionRouter:
             if oa_result.get("status") == "available":
                 result = dict(oa_result)
                 result["acquisition_route"] = "openalex_oa"
+                if result.get("parsed_file"):
+                    try:
+                        parsed_path = self.root / result["parsed_file"]
+                        result["body_paragraph_count"] = json.loads(
+                            parsed_path.read_text(encoding="utf-8")
+                        ).get("body_paragraph_count", 0)
+                    except (OSError, ValueError):
+                        result["body_paragraph_count"] = None
                 result["router_attempts"] = attempts
                 return result
 
@@ -59,6 +74,14 @@ class AcquisitionRouter:
         try:
             raw, meta = self.elsevier.retrieve_xml(doi)
             parsed = meta.pop("parsed")
+            returned_doi = normalize_doi(parsed.get("doi"))
+            expected_doi = normalize_doi(doi)
+            if returned_doi and returned_doi != expected_doi:
+                raise FulltextError("elsevier_record_mismatch", meta.get("http_status"))
+            expected_title = normalize_title(record.get("title"))
+            returned_title = normalize_title(parsed.get("title"))
+            if expected_title and expected_title != returned_title:
+                raise FulltextError("elsevier_record_mismatch", meta.get("http_status"))
             digest = hashlib.sha256(raw).hexdigest()
             raw_path = self.root / "data/fulltext/raw" / (digest + ".elsevier.xml")
             parsed_path = self.root / "data/fulltext/parsed" / (digest + ".elsevier-xml-v1.json")
@@ -82,11 +105,16 @@ class AcquisitionRouter:
                 raw_file=str(raw_path.relative_to(self.root)),
                 parsed_file=str(parsed_path.relative_to(self.root)),
                 parse_status="parsed",
+                body_paragraph_count=parsed["body_paragraph_count"],
+                http_status=meta["http_status"],
+                reason=None,
                 entitlement="FULL",
                 acquisition_route="elsevier_api",
                 router_attempts=attempts,
             )
-            return self._save(result, record)
+            result = self._save(result, record)
+            self._save_elsevier_cache(record, result)
+            return result
         except FulltextError as exc:
             attempts.append({
                 "route": "elsevier_api",
@@ -109,6 +137,15 @@ class AcquisitionRouter:
             )
             if oa_result is None:
                 result["status"] = "error" if hard_error else "unavailable"
+            result.update(
+                source="elsevier_api",
+                http_status=exc.http_status,
+                reason=exc.code,
+                error_code=exc.code,
+                raw_file=None,
+                parsed_file=None,
+                body_paragraph_count=0,
+            )
             return result
 
     def _fallback(self, record, oa_result, attempts, reason):
@@ -136,6 +173,64 @@ class AcquisitionRouter:
         assert_safe(result, self.secrets)
         write_json(target, result, self.secrets)
         return result
+
+    def _elsevier_cache_path(self, record):
+        try:
+            key = cache_key(record.get("doi"))
+        except (TypeError, ValueError):
+            return None
+        return self.root / "data/cache/elsevier_fulltext" / (key + ".json")
+
+    def _load_elsevier_cache(self, record):
+        path = self._elsevier_cache_path(record)
+        if path is None or not path.is_file():
+            return None
+        try:
+            entry = json.loads(path.read_text(encoding="utf-8"))
+            assert_safe(entry, self.secrets)
+            cached = entry["result"]
+            doi_key = entry["doi_key"]
+            if (
+                entry.get("cache_version") != 1
+                or canonical_doi(entry.get("doi")) != canonical_doi(record.get("doi"))
+                or cached.get("status") != "available"
+                or cached.get("acquisition_route") != "elsevier_api"
+                or doi_key != self._elsevier_cache_path({"doi": entry.get("doi")}).stem
+            ):
+                return None
+            raw_path = self.root / cached["raw_file"]
+            parsed_path = self.root / cached["parsed_file"]
+            raw = raw_path.read_bytes()
+            parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
+            if hashlib.sha256(raw).hexdigest() != cached.get("sha256"):
+                return None
+            if parsed != parse_elsevier_xml(raw) or parsed.get("body_paragraph_count", 0) <= 0:
+                return None
+            cached_doi = normalize_doi(parsed.get("doi"))
+            if cached_doi and cached_doi != canonical_doi(record.get("doi")):
+                return None
+            expected_title = normalize_title(record.get("title"))
+            if expected_title and normalize_title(parsed.get("title")) != expected_title:
+                return None
+            result = dict(cached)
+            result.update(uid=record.get("uid"), doi=record.get("doi"), cache_hit=True)
+            self.stats["cache_hits"] += 1
+            return result
+        except (OSError, ValueError, KeyError, TypeError):
+            return None
+
+    def _save_elsevier_cache(self, record, result):
+        path = self._elsevier_cache_path(record)
+        if path is None:
+            return
+        entry = {
+            "cache_version": 1,
+            "doi": canonical_doi(record.get("doi")),
+            "doi_key": path.stem,
+            "result": result,
+        }
+        assert_safe(entry, self.secrets)
+        write_json(path, entry, self.secrets, overwrite=True)
 
     def close(self):
         self.elsevier.close()

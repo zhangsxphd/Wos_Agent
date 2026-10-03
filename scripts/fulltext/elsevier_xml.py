@@ -43,18 +43,48 @@ def _direct_paragraphs(section):
     return values
 
 
+def _strip_external_doctype(raw):
+    """Remove an external DOCTYPE without fetching it; reject internal subsets."""
+    match = re.search(rb"<!DOCTYPE\b", raw, flags=re.IGNORECASE)
+    if not match:
+        return raw
+    quote = None
+    end = None
+    for index in range(match.end(), len(raw)):
+        char = raw[index]
+        if quote:
+            if char == quote:
+                quote = None
+            continue
+        if char in (ord('"'), ord("'")):
+            quote = char
+        elif char == ord('['):
+            raise FulltextError("unsafe_xml")
+        elif char == ord('>'):
+            end = index + 1
+            break
+    if end is None:
+        raise FulltextError("invalid_elsevier_xml")
+    without = raw[:match.start()] + raw[end:]
+    if re.search(rb"<!ENTITY\b", without, flags=re.IGNORECASE):
+        raise FulltextError("unsafe_xml")
+    return without
+
+
 def parse_elsevier_xml(raw):
     if not isinstance(raw, (bytes, bytearray)):
         raise FulltextError("invalid_elsevier_xml")
     raw = bytes(raw)
-    if len(raw) > 30_000_000 or b"<!DOCTYPE" in raw.upper() or b"<!ENTITY" in raw.upper():
+    if len(raw) > 30_000_000 or b"<!ENTITY" in raw.upper():
         raise FulltextError("unsafe_xml")
+    raw = _strip_external_doctype(raw)
     try:
         root = ET.fromstring(raw)
     except ET.ParseError:
         raise FulltextError("invalid_elsevier_xml") from None
 
     title = _first(root, {"title", "article-title", "dc:title"})
+    doi = _first(root, {"doi"})
     abstract = _first(root, {"abstract"})
     sections = []
     used = set()
@@ -87,9 +117,9 @@ def parse_elsevier_xml(raw):
 
     if not sections:
         body_nodes = [e for e in root.iter() if _local(e.tag) in {"body", "sections"}]
-        body = body_nodes[0] if body_nodes else root
+        body = body_nodes[0] if body_nodes else None
         paragraphs = []
-        for element in body.iter():
+        for element in body.iter() if body is not None else ():
             if _local(element.tag) in {"para", "simple-para"}:
                 value = _text(element)
                 if value:
@@ -117,6 +147,7 @@ def parse_elsevier_xml(raw):
     return {
         "parser": "elsevier-xml-v1",
         "title": title or None,
+        "doi": doi or None,
         "abstract": abstract or None,
         "sections": sections,
         "captions": [],

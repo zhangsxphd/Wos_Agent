@@ -14,7 +14,12 @@ from .elsevier_xml import parse_elsevier_xml
 from ..pipeline_utils import ROOT, assert_safe, known_secrets
 from ..providers.base_client import canonical_doi
 
-RATE_HEADERS = ("X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset")
+RATE_HEADERS = (
+    "X-RateLimit-Limit",
+    "X-RateLimit-Remaining",
+    "X-RateLimit-Credits-Used",
+    "X-RateLimit-Reset",
+)
 
 
 class ElsevierArticleClient:
@@ -115,6 +120,9 @@ class ElsevierArticleClient:
                 self.sleep(2 ** attempt)
                 continue
             except requests.RequestException:
+                if attempt < self.retries:
+                    self.sleep(2 ** attempt)
+                    continue
                 self.stats["errors"] += 1
                 raise FulltextError("elsevier_request_error") from None
             finally:

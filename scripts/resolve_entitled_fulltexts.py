@@ -56,6 +56,14 @@ def resolve_file(input_file, root=ROOT, output=None, refresh=False):
                     "acquisition_route": None,
                     "router_attempts": [],
                 }
+            result.setdefault("acquisition_route", None)
+            result.setdefault("source", None)
+            result.setdefault("format", None)
+            result.setdefault("http_status", None)
+            result.setdefault("reason", result.get("router_reason"))
+            result.setdefault("raw_file", None)
+            result.setdefault("parsed_file", None)
+            result.setdefault("body_paragraph_count", 0)
             rows.append(result)
             print(
                 f"Fulltext {index}/{len(records)}: {result.get('status')} "
@@ -79,11 +87,39 @@ def resolve_file(input_file, root=ROOT, output=None, refresh=False):
         "available": sum(r.get("status") == "available" for r in rows),
         "openalex_oa": sum(r.get("acquisition_route") == "openalex_oa" for r in rows),
         "elsevier_api": sum(r.get("acquisition_route") == "elsevier_api" for r in rows),
+        "elsevier_fulltext_success": sum(
+            r.get("status") == "available" and r.get("acquisition_route") == "elsevier_api"
+            for r in rows
+        ),
+        "elsevier_access_denied": sum(
+            any(a.get("error_code") == "elsevier_access_denied" for a in r.get("router_attempts", []))
+            for r in rows
+        ),
+        "elsevier_not_found": sum(
+            any(a.get("error_code") == "elsevier_not_found" for a in r.get("router_attempts", []))
+            for r in rows
+        ),
+        "elsevier_rate_limited": sum(
+            any(a.get("error_code") == "elsevier_rate_limited" for a in r.get("router_attempts", []))
+            for r in rows
+        ),
+        "transient_errors": sum(
+            any(a.get("error_code", "").startswith(("elsevier_network", "elsevier_request", "elsevier_server", "elsevier_retry")) for a in r.get("router_attempts", []))
+            for r in rows
+        ),
+        "parsed_success": sum(r.get("status") == "available" and r.get("parse_status") == "parsed" for r in rows),
         "unavailable": sum(r.get("status") == "unavailable" for r in rows),
         "errors": sum(r.get("status") == "error" for r in rows),
         "openalex_http_stats": oa_client.stats,
         "elsevier_http_stats": elsevier.stats,
+        "elsevier_rate_limit_headers": elsevier.rate_limit_history,
         "elsevier_configured": elsevier.configured,
+        "actual_http_requests": oa_client.stats.get("requests", 0) + elsevier.stats.get("requests", 0),
+        "cache_hits": {
+            "openalex_work": oa_client.stats.get("work_cache_hits", 0),
+            "openalex_fulltext": oa_resolver.cache_hits,
+            "elsevier_fulltext": router.stats.get("cache_hits", 0),
+        },
         "sidecar": str(target),
     }
     write_json(target.with_suffix(".manifest.json"), report, known_secrets(root))

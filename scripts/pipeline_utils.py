@@ -12,7 +12,7 @@ from dotenv import dotenv_values
 
 
 ROOT = Path(__file__).resolve().parent.parent
-SECRET_ENV_NAMES = ("WOS_STARTER_API_KEY", "SEMANTIC_SCHOLAR_API_KEY", "OPENALEX_API_KEY")
+SECRET_ENV_NAMES = ("WOS_STARTER_API_KEY", "SEMANTIC_SCHOLAR_API_KEY", "OPENALEX_API_KEY",\n                    "ELSEVIER_API_KEY", "ELSEVIER_INSTTOKEN")
 
 
 def utc_now():

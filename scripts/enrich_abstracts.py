@@ -147,8 +147,15 @@ def enrich_record(original, clients, root=ROOT, skip_providers=(), batch_results
         client = clients[name]
         try:
             doi = normalize_doi(record["doi"])
-            if name == "openalex" and batch_results is not None and doi in batch_results:
-                response = batch_results[doi]
+            provider_batch = None
+            if isinstance(batch_results, dict) and name in batch_results:
+                provider_batch = batch_results[name]
+            elif name == "openalex":
+                # Backwards-compatible direct calls may still pass the old
+                # OpenAlex DOI -> result mapping.
+                provider_batch = batch_results
+            if provider_batch is not None and doi in provider_batch:
+                response = provider_batch[doi]
                 cache = client.lookup_metadata.get(doi, {})
                 if isinstance(response, ProviderError):
                     raise response
@@ -169,7 +176,7 @@ def enrich_record(original, clients, root=ROOT, skip_providers=(), batch_results
         except ProviderError as exc:
             outcomes[name] = {"status": "error", "error_code": exc.code, "http_status": exc.http_status,
                               "cache_hit": client.lookup_metadata.get(doi, {}).get("cache_hit", False)
-                              if name == "openalex" and batch_results is not None else getattr(client, "last_lookup", {}).get("cache_hit", False)}
+                              if provider_batch is not None else getattr(client, "last_lookup", {}).get("cache_hit", False)}
     return select_abstract(record, candidates, outcomes)
 
 
@@ -196,6 +203,15 @@ def coverage_report(records, clients, skip_providers=()):
     for name in PROVIDER_NAMES:
         report["found_by_" + name] = sum(name in providers for providers in valid_sets)
     report["openalex_rate_limit_headers"] = getattr(clients.get("openalex"), "rate_limit_history", [])
+    report["semantic_scholar_rate_limit_headers"] = getattr(
+        clients.get("semantic_scholar"), "rate_limit_history", []
+    )
+    report["provider_overlaps"] = {
+        "crossref_and_semantic_scholar": sum({"crossref", "semantic_scholar"}.issubset(s) for s in valid_sets),
+        "crossref_and_openalex": sum({"crossref", "openalex"}.issubset(s) for s in valid_sets),
+        "semantic_scholar_and_openalex": sum({"semantic_scholar", "openalex"}.issubset(s) for s in valid_sets),
+        "all_three": sum(len({"crossref", "semantic_scholar", "openalex"} & s) == 3 for s in valid_sets),
+    }
     report["actual_http_request_count"] = sum(p["requests"] for p in report["provider_statistics"].values())
     report["unresolved"] = count - found
     report["openalex_coverage"] = {
@@ -218,11 +234,9 @@ def enrich_file(input_file, output_file, root=ROOT, clients=None, refresh=False,
     original = read_jsonl(source)
     assert_safe(original, secrets)
     owned = clients is None
-    # Real execution skips S2 by default. Explicit injected client dictionaries
-    # retain the old offline/embedding API contract for backwards compatibility.
-    skip_providers = tuple(("semantic_scholar",) if owned else ()) if skip_providers is None else tuple(skip_providers)
-    if owned:
-        skip_providers = tuple(dict.fromkeys((*skip_providers, "semantic_scholar")))
+    # Explicit injected client dictionaries retain the old offline API
+    # contract; owned clients now enable all three providers by default.
+    skip_providers = tuple() if skip_providers is None else tuple(skip_providers)
     refresh_providers = set(refresh_providers)
     if any(name not in PROVIDER_NAMES for name in (*skip_providers, *refresh_providers, *cache_only_providers)):
         raise ValueError("Unknown provider option")
@@ -230,14 +244,28 @@ def enrich_file(input_file, output_file, root=ROOT, clients=None, refresh=False,
         raise ValueError("A skipped provider cannot be refreshed")
     if (cache_only and (refresh or refresh_providers)) or refresh_providers.intersection(cache_only_providers):
         raise ValueError("A provider cannot be refreshed in cache-only mode")
+    if owned and refresh_providers and "semantic_scholar" not in refresh_providers:
+        # Preserve the v0.3 selective-refresh contract: an explicit refresh of
+        # another provider does not silently activate a new S2 network call.
+        skip_providers = tuple(dict.fromkeys((*skip_providers, "semantic_scholar")))
     if owned:
-        classes = {"crossref": CrossrefClient, "openalex": OpenAlexClient}
+        classes = {"crossref": CrossrefClient, "semantic_scholar": SemanticScholarClient,
+                   "openalex": OpenAlexClient}
         clients = {name: None if name in skip_providers else classes[name](
                     root=root, refresh=refresh or name in refresh_providers,
                     cache_only=cache_only or name in cache_only_providers) for name in PROVIDER_NAMES}
     started = utc_now()
     try:
         batch_results = None
+        batch_results = {}
+        if "semantic_scholar" not in skip_providers and hasattr(clients["semantic_scholar"], "get_many_by_doi"):
+            dois = []
+            for record in original:
+                try:
+                    dois.append(canonical_doi(record.get("doi")))
+                except ValueError:
+                    pass
+            batch_results["semantic_scholar"] = clients["semantic_scholar"].get_many_by_doi(dois)
         if "openalex" not in skip_providers and hasattr(clients["openalex"], "get_many_by_doi"):
             dois = []
             for record in original:
@@ -245,7 +273,9 @@ def enrich_file(input_file, output_file, root=ROOT, clients=None, refresh=False,
                     dois.append(canonical_doi(record.get("doi")))
                 except ValueError:
                     pass
-            batch_results = clients["openalex"].get_many_by_doi(dois)
+            batch_results["openalex"] = clients["openalex"].get_many_by_doi(dois)
+        if not batch_results:
+            batch_results = None
         enriched = []
         for index, record in enumerate(original, 1):
             enriched.append(enrich_record(record, clients, root, skip_providers, batch_results))
@@ -260,7 +290,9 @@ def enrich_file(input_file, output_file, root=ROOT, clients=None, refresh=False,
                       canonical_input=display_path(source, root), enriched_output=display_path(output, root),
                       input_sha256=hashlib.sha256(source.read_bytes()).hexdigest(), refresh=refresh, cache_only=cache_only,
                       refresh_providers=sorted(refresh_providers), skipped_providers=list(skip_providers),
-                      cache_only_providers=list(cache_only_providers), openalex_lookup_mode="batch" if batch_results is not None else "legacy")
+                      cache_only_providers=list(cache_only_providers),
+                      openalex_lookup_mode="batch" if isinstance(batch_results, dict) and "openalex" in batch_results else "legacy",
+                      semantic_scholar_lookup_mode="batch" if isinstance(batch_results, dict) and "semantic_scholar" in batch_results else "legacy")
         manifest = {"schema_version": 3, "run_id": run_id, "canonical_input": display_path(source, root),
                     "processed_file": display_path(output, root), "records": len(enriched),
                     "coverage_report": display_path(report_path, root), "retrieved_at": report["completed_at"],
@@ -277,7 +309,7 @@ def enrich_file(input_file, output_file, root=ROOT, clients=None, refresh=False,
     finally:
         if owned:
             for client in clients.values():
-                if client is not None:
+                if client is not None and hasattr(client, "close"):
                     client.close()
 
 
@@ -288,9 +320,9 @@ def main():
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--refresh", action="store_true", help="Refresh success and negative caches")
     group.add_argument("--cache-only", action="store_true", help="Offline cache replay; never make a network request")
-    parser.add_argument("--refresh-provider", action="append", choices=["openalex"], default=[],
-                        help="Refresh OpenAlex only; other providers keep their caches")
-    parser.add_argument("--cache-only-provider", action="append", choices=["crossref", "openalex"], default=[],
+    parser.add_argument("--refresh-provider", action="append", choices=["semantic_scholar", "openalex"], default=[],
+                        help="Refresh one provider only; other providers keep their caches")
+    parser.add_argument("--cache-only-provider", action="append", choices=["crossref", "semantic_scholar", "openalex"], default=[],
                         help="Never request this provider; read its existing cache only")
     args = parser.parse_args()
     try:

@@ -1,0 +1,279 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_scope",
+        "document_sha256",
+        "section_id",
+        "paragraph_id",
+        "char_start",
+        "char_end"
+      ],
+      "properties": {
+        "source_scope": {
+          "const": "fulltext"
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "section_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraph_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "char_end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "anchor",
+        "evidence_source"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor": {
+          "$ref": "#/$defs/anchor"
+        },
+        "evidence_source": {
+          "const": "fulltext"
+        },
+        "theme": {
+          "enum": [
+            "irrigation",
+            "water_salt",
+            "carbon_nitrogen",
+            "microbial",
+            "amendment",
+            "yield",
+            "water_use",
+            "greenhouse_gases",
+            "other"
+          ]
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "evidence_source": {
+      "const": "fulltext"
+    },
+    "study_system": {
+      "type": "object",
+      "properties": {
+        "crop": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "soil_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "salinity_context": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "experimental_scale": {
+          "enum": [
+            "field",
+            "pot",
+            "greenhouse",
+            "lab",
+            "model",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "crop",
+        "soil_type",
+        "salinity_context",
+        "location",
+        "experimental_scale"
+      ],
+      "additionalProperties": false
+    },
+    "system_support": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/anchor"
+      }
+    },
+    "experimental_design": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "treatments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "sampling": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "measurements": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "analytical_methods": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "statistical_methods": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "methods": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "numerical_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "limitations_explicit": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim",
+          "evidence_text",
+          "source",
+          "anchor",
+          "evidence_source"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "const": "fulltext"
+          },
+          "anchor": {
+            "$ref": "#/$defs/anchor"
+          },
+          "evidence_source": {
+            "const": "fulltext"
+          }
+        }
+      }
+    },
+    "author_interpretations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "claim_type",
+          "source",
+          "anchor"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_type": {
+            "enum": [
+              "causal",
+              "association",
+              "pathway",
+              "hypothesis",
+              "other"
+            ]
+          },
+          "source": {
+            "const": "fulltext"
+          },
+          "anchor": {
+            "$ref": "#/$defs/anchor"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "evidence_source",
+    "study_system",
+    "system_support",
+    "experimental_design",
+    "treatments",
+    "sampling",
+    "measurements",
+    "analytical_methods",
+    "statistical_methods",
+    "methods",
+    "numerical_results",
+    "limitations_explicit",
+    "findings",
+    "author_interpretations"
+  ]
+}

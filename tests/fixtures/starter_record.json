@@ -1,0 +1,81 @@
+{
+  "uid": "WOS:001878277600001",
+  "title": "Investigation on 3D rotating jet breakup: a numerical approach using a VOF-LPT coupled framework",
+  "types": [
+    "Article"
+  ],
+  "sourceTypes": [
+    "Article"
+  ],
+  "source": {
+    "sourceTitle": "ENGINEERING APPLICATIONS OF COMPUTATIONAL FLUID MECHANICS",
+    "publishYear": 2026,
+    "publishMonth": "DEC 31",
+    "volume": "20",
+    "issue": "1",
+    "articleNumber": "2732319",
+    "pages": {
+      "count": 39
+    }
+  },
+  "names": {
+    "authors": [
+      {
+        "displayName": "Li, Longyu",
+        "wosStandard": "Li, LY",
+        "researcherId": "QPK-3191-2026"
+      },
+      {
+        "displayName": "Sha, Yu",
+        "wosStandard": "Sha, Y",
+        "researcherId": "DRC-5107-2022"
+      },
+      {
+        "displayName": "Zhao, Ziyi",
+        "wosStandard": "Zhao, ZY",
+        "researcherId": "QFS-1013-2026"
+      },
+      {
+        "displayName": "Zi, Dan",
+        "wosStandard": "Zi, D",
+        "researcherId": "HSP-2511-2023"
+      },
+      {
+        "displayName": "Yan, Haijun",
+        "wosStandard": "Yan, HJ",
+        "researcherId": "PJM-7274-2026"
+      },
+      {
+        "displayName": "Wang, Fujun",
+        "wosStandard": "Wang, FJ",
+        "researcherId": "POJ-1293-2026"
+      }
+    ]
+  },
+  "links": {
+    "record": "https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=wos-research-agent&SrcAuth=WosAPI&KeyUT=WOS:001878277600001&DestLinkType=FullRecord&DestApp=WOS_CPL",
+    "references": "https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=wos-research-agent&SrcAuth=WosAPI&KeyUT=WOS:001878277600001&DestLinkType=CitedReferences&DestApp=WOS",
+    "related": "https://www.webofscience.com/api/gateway?GWVersion=2&SrcApp=wos-research-agent&SrcAuth=WosAPI&KeyUT=WOS:001878277600001&DestLinkType=RelatedRecords&DestApp=WOS_CPL"
+  },
+  "citations": [
+    {
+      "db": "WOS",
+      "count": 0
+    }
+  ],
+  "identifiers": {
+    "doi": "10.1080/19942060.2026.2732319",
+    "issn": "1994-2060",
+    "eissn": "1997-003X"
+  },
+  "keywords": {
+    "authorKeywords": [
+      "3D Rotating sprinkler",
+      "compound rotational motion",
+      "polyhedral mesh",
+      "mesh adaptation",
+      "SBES model",
+      "VOF-LPT coupling algorithm"
+    ]
+  }
+}

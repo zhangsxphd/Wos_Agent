@@ -1,0 +1,12 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader><fileDesc><titleStmt><title>Rice irrigation fixture</title></titleStmt></fileDesc><profileDesc><abstract>A pot experiment tested rice.</abstract></profileDesc></teiHeader>
+ <text><body>
+  <div><head n="2.">Materials and Methods</head></div>
+  <div><head n="2.1.">Design</head><p>A pot experiment tested rice in saline soil. Three pots received flooded irrigation.</p></div>
+  <div><head n="2.2.">Sampling</head><p>Soil nitrogen was measured after harvest using spectrophotometry.</p></div>
+  <div><head n="3.">Results</head></div>
+  <div><head n="3.1.">Yield</head><p>Grain yield increased by 12%. No significant nitrogen difference was found.</p></div>
+  <div><head n="4.">Discussion</head><p>Yield was associated with soil nitrogen. A single season limits generalization.</p></div>
+  <div><head n="5.">Conclusion</head><p>Further field validation is required.</p><figure xml:id="f1"><head>Figure 1</head><figDesc>Yield in the pots.</figDesc></figure><figure type="table" xml:id="t1"><head>Table 1</head><figDesc>Treatment definitions.</figDesc></figure></div>
+ </body><back><listBibl><biblStruct xml:id="b1"><analytic><title>Earlier study</title></analytic></biblStruct></listBibl></back></text>
+</TEI>

@@ -1,0 +1,43 @@
+version: 1
+name: saline_paddy_research
+queries:
+  - id: Q1_core_water
+    description: 盐碱稻田灌溉与水管理核心检索
+    query: >-
+      TS=("saline-alkali" OR "saline soil" OR "salt-affected soil")
+      AND TS=(rice OR paddy)
+      AND TS=(irrigation OR "water management")
+      AND PY=(2022-2026)
+    database: WOS
+    sort: PY+D
+    enabled: true
+  - id: Q2_water_regime
+    description: 盐碱稻田水分制度、干湿交替与排水检索
+    query: >-
+      TS=("saline-alkali" OR "saline soil" OR "salt-affected soil")
+      AND TS=(rice OR paddy)
+      AND TS=("alternate wetting and drying" OR AWD OR flooding OR drainage OR "water regime" OR "water-saving")
+      AND PY=(2022-2026)
+    database: WOS
+    sort: PY+D
+    enabled: true
+  - id: Q3_carbon_microbe
+    description: 盐碱稻田碳过程与微生物候选文献检索
+    query: >-
+      TS=("saline-alkali" OR "saline soil" OR "salt-affected soil")
+      AND TS=(rice OR paddy)
+      AND TS=(carbon OR microb* OR "microbial biomass" OR necromass)
+      AND PY=(2022-2026)
+    database: WOS
+    sort: PY+D
+    enabled: true
+  - id: Q4_amendment
+    description: 盐碱稻田生物炭、石膏与土壤改良措施检索
+    query: >-
+      TS=("saline-alkali" OR "saline soil" OR "salt-affected soil")
+      AND TS=(rice OR paddy)
+      AND TS=(biochar OR gypsum OR amendment* OR "organic fertilizer" OR "soil conditioner" OR "calcium source")
+      AND PY=(2022-2026)
+    database: WOS
+    sort: PY+D
+    enabled: true

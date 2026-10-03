@@ -1,0 +1,19 @@
+schema_version: '0.5'
+id: saline_paddy
+description: 盐碱稻田候选池；实验、观测、综述、区域模型分别保留科研用途。
+eligibility_statuses: [include, exclude, uncertain, needs_fulltext]
+evidence_roles: [core_experimental, mechanism_transfer, review_synthesis, regional_context, methods_reference, out_of_scope, unresolved]
+core_experimental:
+  salinity_terms: [saline, saline-alkali, saline–alkali, salt-affected, salinity]
+  system_terms: [rice, paddy]
+  scales: [field, pot, greenhouse, lab]
+  themes: [irrigation, water_salt, carbon_nitrogen, microbial, amendment, yield, water_use, greenhouse_gases]
+policy:
+  review_role: review_synthesis
+  model_role: regional_context
+  unknown_eligibility: uncertain
+  missing_content: needs_fulltext
+  automatic_exclusion: false
+  require_supported_study_system: true
+  preserve_review_and_model: true
+

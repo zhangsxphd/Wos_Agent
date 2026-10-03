@@ -138,7 +138,9 @@ class AcquisitionRouter:
             if oa_result is None:
                 result["status"] = "error" if hard_error else "unavailable"
             result.update(
+                acquisition_route="elsevier_api",
                 source="elsevier_api",
+                format="elsevier_xml",
                 http_status=exc.http_status,
                 reason=exc.code,
                 error_code=exc.code,

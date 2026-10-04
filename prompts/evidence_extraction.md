@@ -17,9 +17,25 @@ Rules:
 - Reviews report results from reviewed literature; do not describe those results
   as a single experiment performed by the authors. Keep scale unknown unless
   an actual study scale is stated. Preserve document-type context in the input.
-- Use short verbatim source spans as populated evidence values. Every populated
-  fact must have evidence_support at its JSON Pointer with the exact quotation
-  and zero-based character start/end offsets into the supplied abstract.
+- Use short verbatim source spans as populated evidence values. Every ordinary
+  factual leaf must have exactly one `evidence_support` entry at its JSON
+  Pointer, with the exact quotation and zero-based character start/end offsets
+  into the supplied abstract.
+- `evidence_support` supports ONLY ordinary factual leaves, such as
+  `/evidence/study_system/...`, `/evidence/treatments/...`,
+  `/evidence/measurements/...`, `/evidence/methods/...`,
+  `/evidence/mechanisms_explicit/...`, and
+  `/evidence/limitations_explicit/...`.
+- Findings are self-supporting objects. Each item in `evidence.findings[]`
+  already carries its own `source`, `evidence_text`, `start`, `end`, `claim`,
+  and `certainty`. Do NOT create any `evidence_support` entry whose JSON
+  Pointer begins with `/evidence/findings/`. For example,
+  `/evidence/findings/0` inside `evidence_support` is invalid.
+- Author interpretations are also self-supported by their own `anchor`.
+  Do NOT put `/evidence/author_interpretations/...` entries in
+  `evidence_support`.
+- `evidence_support` must contain exactly the entries required for ordinary
+  factual leaves handled by `EvidenceValidator`; no missing or orphan entries.
 - Each finding claim must be a verbatim span of its evidence_text, copied from
   the supplied abstract. Do not invent, round, convert or replace numerical values.
 - Preserve qualifiers, comparators, directions, uncertainty and null findings.
@@ -38,3 +54,15 @@ Rules:
 
 Input: uid, doi, title, journal, year, authors, keywords, document_types, abstract.
 The caller supplies the JSON Schema separately. No user background is included.
+
+Before returning JSON, verify:
+- No `evidence_support` key starts with `/evidence/findings/`.
+- No `evidence_support` key starts with `/evidence/author_interpretations/`.
+- Every ordinary populated factual leaf has exactly one `evidence_support`
+  entry, and no `evidence_support` entry is orphaned.
+- Every finding carries its own exact source, `evidence_text`, `start`, and
+  `end`; do not mirror it into `evidence_support`.
+- Every author interpretation carries its own `anchor`; do not mirror it into
+  `evidence_support`.
+- All inference arrays are empty and `screening.status` is `maybe` when an
+  abstract is present.

@@ -38,3 +38,9 @@ Write one JSON file at the exact `response_file` path in the batch manifest, nam
 Replace an invalid/stale response atomically when the prompt, schema, request, or canonical input hash changes. `model_label` must be `null` unless the worker can identify the model reliably. `response` must conform to the supplied schema; leave every `inference` array empty and use `screening.status=maybe` when an abstract exists. The deterministic screening profile assigns eligibility later.
 
 Python ingestion verifies request and content hashes, identity, JSON Schema, exact abstract substrings, offsets, and anchors. Invalid responses are rejected and never enter the accepted evidence sidecar. An audit pass adds contextual risk flags without relaxing validator rules.
+
+## Evidence support pointer contract
+
+`evidence_support` contains exactly one entry for each populated ordinary factual leaf checked by `EvidenceValidator`, including leaves under `study_system`, `treatments`, `measurements`, `methods`, `mechanisms_explicit`, and `limitations_explicit`. Each entry points to an exact source span and offsets.
+
+Findings and author interpretations are self-supported in their own objects. Each finding carries its own `source`, `evidence_text`, `start`, `end`, `claim`, and `certainty`; each author interpretation carries its own `anchor`. Do not mirror either type into `evidence_support`: keys beginning `/evidence/findings/` or `/evidence/author_interpretations/` are invalid orphan support entries. No missing or orphan support entries are allowed.

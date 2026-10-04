@@ -14,11 +14,12 @@ from scripts.evidence.batch_ingest import build_identity_sidecar, read_batch_res
 from scripts.evidence.benchmark import match_gold_records, _path_errors
 from scripts.evidence.metrics import calculate_benchmark, finding_metrics, item_metrics, quality_gate
 from scripts.extractors.base import build_payload, empty_record, payload_key
-from scripts.extractors.schema_validator import EvidenceValidator
+from scripts.extractors.schema_validator import EvidenceValidationError, EvidenceValidator
 from scripts.pipeline_utils import write_json, write_jsonl
 
 
 TEXT="A field study tested rice under saline soil using flooded irrigation. Grain yield increased by 12%."
+ITERATION_0_PROMPT_SHA="67a9abde8a7867a205f5cb10d440d9ad23d5b74e4f92a76d1616fb914bbcdef2"
 
 
 def record(i=1,abstract=TEXT,**changes):
@@ -118,6 +119,63 @@ class BatchProtocolTests(unittest.TestCase):
             changed=batch_prepare.prepare_batches(self.source,out,root=self.root,resume=True)
         self.assertNotEqual(changed['prompt_sha256'],manifest['prompt_sha256'])
         self.assertEqual(changed['validated_responses_reused'],0)
+
+    def test_finding_uses_own_support_without_evidence_support_pointer(self):
+        row=record(1); response=empty_record(row); span='Grain yield increased by 12%.'
+        start=row['abstract'].index(span)
+        response['evidence']['findings']=[{'source':'abstract','evidence_text':span,'start':start,
+                                            'end':start+len(span),'claim':span,'certainty':'explicit'}]
+        self.assertTrue(EvidenceValidator().validate(response,row))
+
+    def test_finding_pointer_in_evidence_support_is_rejected_as_orphan(self):
+        row=record(1); response=empty_record(row); span='Grain yield increased by 12%.'
+        start=row['abstract'].index(span)
+        response['evidence']['findings']=[{'source':'abstract','evidence_text':span,'start':start,
+                                            'end':start+len(span),'claim':span,'certainty':'explicit'}]
+        response['evidence_support']['/evidence/findings/0']={
+            'source':'abstract','evidence_text':span,'start':start,'end':start+len(span)}
+        with self.assertRaisesRegex(EvidenceValidationError,'missing or orphan anchors'):
+            EvidenceValidator().validate(response,row)
+
+    def test_author_interpretation_uses_own_anchor_without_evidence_support_pointer(self):
+        row=record(1); response=empty_record(row); span='A field study tested rice under saline soil using flooded irrigation.'
+        start=row['abstract'].index(span)
+        response['evidence']['author_interpretations']=[{
+            'text':span,
+            'claim_type':'other','source':'abstract',
+            'anchor':{'source':'abstract','evidence_text':span,'start':start,'end':start+len(span)}}]
+        self.assertTrue(EvidenceValidator().validate(response,row))
+
+    def test_author_interpretation_pointer_in_evidence_support_is_rejected_as_orphan(self):
+        row=record(1); response=empty_record(row); span='A field study tested rice under saline soil using flooded irrigation.'
+        start=row['abstract'].index(span)
+        response['evidence']['author_interpretations']=[{
+            'text':span,
+            'claim_type':'other','source':'abstract',
+            'anchor':{'source':'abstract','evidence_text':span,'start':start,'end':start+len(span)}}]
+        response['evidence_support']['/evidence/author_interpretations/0']={
+            'source':'abstract','evidence_text':span,'start':start,'end':start+len(span)}
+        with self.assertRaisesRegex(EvidenceValidationError,'missing or orphan anchors'):
+            EvidenceValidator().validate(response,row)
+
+    def test_prompt_explains_self_supported_finding_contract_and_new_hash(self):
+        prompt=batch_prepare.PROMPT_PATH.read_text(encoding='utf-8')
+        prompt_hash=hashlib.sha256(prompt.encode('utf-8')).hexdigest()
+        self.assertIn('Do NOT create any `evidence_support` entry',prompt)
+        self.assertIn('`/evidence/findings/`',prompt)
+        self.assertNotEqual(prompt_hash,ITERATION_0_PROMPT_SHA)
+
+    def test_iteration_zero_prompt_hash_response_is_stale(self):
+        manifest,out=self.prepare([record(1)])
+        item=manifest['batches'][0]['requests'][0]
+        request=json.loads((self.root/item['request_file']).read_text())
+        envelope={k:request[k] for k in ('payload_sha256','request_sha256','prompt_sha256','schema_sha256','canonical_input_sha256')}
+        envelope['prompt_sha256']=ITERATION_0_PROMPT_SHA
+        envelope.update(response=empty_record(record(1)),model_label=None)
+        write_json(self.root/item['response_file'],envelope)
+        resumed=batch_prepare.prepare_batches(self.source,out,root=self.root,resume=True)
+        self.assertNotEqual(resumed['prompt_sha256'],ITERATION_0_PROMPT_SHA)
+        self.assertEqual(resumed['validated_responses_reused'],0)
 
     def test_schema_change_invalidates_response(self):
         manifest,out=self.prepare([record(1)])

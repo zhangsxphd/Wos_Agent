@@ -180,3 +180,7 @@ python scripts/export_records.py data/processed/saline_paddy_v03_openalex_batch_
 新增 Full-text Resolver，优先获取 OpenAlex TEI XML，再尝试缓存 PDF 和明确的 OA location。全文 raw、parsed、manifest 和按章节审核的证据保存在独立 sidecar，原始 canonical 与 v0.4 Evidence 不覆盖。筛选结果同时包含 eligibility_status 和 evidence_role，保留综述/区域模型的科研用途。
 
 首轮仍用原来的 10 篇：10 个 Work matched，仅 1 篇全文实际取得并解析；总体 needs_fulltext 保持 8→8。182 项离线测试通过。完整使用步骤、限制与逐篇真实结果见 [v0.5 说明](docs/v05.md)。
+
+## v0.6 Codex Evidence Worker
+
+v0.6 增加隔离的批处理请求协议、严格响应校验、审计标记、Gold benchmark 和质量门。Gold 请求不包含标准答案；必须由独立 Codex worker 按 [worker protocol](docs/codex_evidence_worker.md) 返回结果，再运行 benchmark。缺少响应或质量门失败时不得启动全库 pilot。完整流程见 [v0.6 说明](docs/v06.md)。

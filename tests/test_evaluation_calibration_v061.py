@@ -171,10 +171,16 @@ class CalibrationSafetyTests(unittest.TestCase):
             result = build_candidate(root, Path(temp) / "candidate", Path(temp) / "human_review.md")
             candidate_path = Path(result["candidate_directory"]) / "candidate_gold.jsonl"
             manifest = json.loads((Path(result["candidate_directory"]) / "candidate_manifest.json").read_text())
-            self.assertEqual(len(candidate_path.read_text().splitlines()), 7)
+            candidate_records = {row["uid"]: row for row in map(json.loads, candidate_path.read_text().splitlines())}
+            self.assertEqual(len(candidate_records), 7)
             self.assertFalse(manifest["candidate_changes_are_human_approved"])
             self.assertGreater(result["human_review_items"], 0)
             self.assertLessEqual(result["human_review_items"], 25)
+            moved = candidate_records["WOS:001631731300001"]["evidence"]["treatments"]
+            self.assertIn("two levels (1% and 3% by weight)", moved["amendments"])
+            self.assertNotIn("two levels (1% and 3% by weight)", moved["other_treatments"])
+            change_rows = [json.loads(line) for line in (Path(result["candidate_directory"]) / "change_log.jsonl").read_text().splitlines()]
+            self.assertTrue(next(row for row in change_rows if row["case_id"] == "F029")["proposal_applied_to_candidate_file"])
         after = hashlib.sha256(gold_path.read_bytes()).hexdigest()
         self.assertEqual(before, after)
 

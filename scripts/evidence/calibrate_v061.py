@@ -76,6 +76,7 @@ def _append_field(record, pointer, value, support):
 
 def _remove_field(record, pointer, value):
     values = _gold_values(record, pointer)
+    found = value in values
     supports = record.get("evidence_support", {})
     retained = []
     retained_supports = []
@@ -94,7 +95,7 @@ def _remove_field(record, pointer, value):
     for index, support in enumerate(retained_supports):
         if support:
             supports[f"{pointer}/{index}"] = support
-    return value in values
+    return found
 
 
 def _copy_prediction_support(prediction, field_pointer):

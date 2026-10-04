@@ -558,10 +558,17 @@ def write_human_review(review, output: Path):
             lines.append(f"Annotator {side}:")
             for row in group:
                 lines.append(f"- {row['field']}: {json.dumps(row.get('annotator_' + side, []), ensure_ascii=False)}")
+            for row in group:
+                self_review = row.get("annotator_" + side + "_self_review")
+                if self_review:
+                    lines.append(f"- Scale self-review: {self_review.get('decision')} → {self_review.get('scale_value')}: {self_review.get('reason', '')}")
         lines.append("Adjudicator C:")
         for row in group:
             c = row.get("adjudicator_C", {})
-            lines.append(f"- {row['field']}: {c.get('decision', 'NOT_REVIEWED_BY_C')} — {c.get('reason', '')}")
+            if row.get("issue_type") == "agreed_item_rejected_by_frozen_validator":
+                lines.append(f"- {row['field']}: NOT_SENT_TO_C — this item was A/B agreement; both annotators independently abstained after self-review.")
+            else:
+                lines.append(f"- {row['field']}: {c.get('decision', 'NOT_REVIEWED_BY_C')} — {c.get('reason', '')}")
         lines.append("Contract rule:")
         for rule in dict.fromkeys(r.get("contract_rule", "") for r in group):
             lines.append(f"- {rule}")

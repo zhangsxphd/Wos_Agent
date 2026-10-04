@@ -1,0 +1,22 @@
+[
+  {"id":"soil_actual_descriptor","source":"historical_issue_plus_synthetic_linkage","text":"saline-alkali soil","relation":"sampled soil","expected":"study_system.soil_type"},
+  {"id":"soil_land_use_only","source":"human_adjudication_F013_boundary","text":"saline-affected paddy field","relation":"land-use label only","expected":"exclude:study_system.soil_type"},
+  {"id":"soil_pot_target_unlinked","source":"human_adjudication_F039_boundary","text":"saline-alkali paddy soil","relation":"application target; pot substrate not linked","expected":"exclude:study_system.soil_type"},
+  {"id":"leaf_antioxidant","source":"historical_shared_span_routing_class","text":"leaf SOD and CAT activity","relation":"measured plant tissue","expected":"measurements.plant_growth"},
+  {"id":"plant_na_k","source":"historical_shared_span_routing_class","text":"Na+ accumulation and K+ uptake","relation":"measured maize tissue","expected":"measurements.plant_growth"},
+  {"id":"plant_stress_genes","source":"historical_shared_span_routing_class","text":"ZmSOD4 and ZmNHX1 expression","relation":"plant stress-response genes","expected":"measurements.plant_growth"},
+  {"id":"soil_urease_unattributed","source":"synthetic_boundary","text":"soil urease activity","relation":"no microbial origin stated","expected":"measurements.other"},
+  {"id":"microbial_community_assembly","source":"synthetic_boundary","text":"microbial community assembly","relation":"explicit microbial ecology measure","expected":"measurements.microbial"},
+  {"id":"microbial_network","source":"synthetic_boundary","text":"microbial network connectivity","relation":"explicit microbial community measure","expected":"measurements.microbial"},
+  {"id":"soil_quality_index","source":"synthetic_boundary","text":"soil quality index","relation":"non-specific composite index","expected":"measurements.other"},
+  {"id":"carbon_fractions","source":"synthetic_boundary","text":"SOC, POC and MAOC contents","relation":"measured carbon pools/fractions","expected":"measurements.carbon"},
+  {"id":"plant_chlorophyll_fluorescence","source":"historical_shared_span_routing_class","text":"maximum quantum yield and chlorophyll fluorescence","relation":"plant leaf photosynthetic phenotype","expected":"measurements.plant_growth"},
+  {"id":"field_scale","source":"human_adjudication_scale_limitation","text":"field-scale experiment","relation":"physical field study design","expected":"study_system.experimental_scale=field"},
+  {"id":"named_model_only","source":"v1_boundary_plus_synthetic_case","text":"HYDRUS model","relation":"named analytical model only","expected":"methods;exclude:experimental_scale=model"},
+  {"id":"background_salinity","source":"human_adjudication_F050_boundary","text":"saline soils are an important regional challenge","relation":"generic background only","expected":"exclude:study_system.salinity_context"},
+  {"id":"actual_studied_salinity","source":"human_adjudication_F016_F017_boundary","text":"monitored field is saline-affected","relation":"explicit actual sampled-site link","expected":"study_system.salinity_context"},
+  {"id":"soil_chemistry","source":"synthetic_boundary","text":"soil pH, EC and CEC","relation":"measured soil chemical properties","expected":"measurements.soil_chemical"},
+  {"id":"fertilizer_and_amendment","source":"synthetic_boundary","text":"pyroligneous vinegar with separately specified matched NPK","relation":"conditioning material plus explicit nutrient input","expected":"treatments.amendments + treatments.fertilization"},
+  {"id":"greenhouse_gas","source":"v1_boundary_plus_synthetic_case","text":"CH4 emission flux","relation":"measured greenhouse-gas flux","expected":"measurements.greenhouse_gases;exclude:measurements.carbon"},
+  {"id":"findings_preserved","source":"v06_historical_metric","text":"explicit observed result","relation":"finding rule unchanged","expected":"findings:v1-identical"}
+]

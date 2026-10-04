@@ -39,6 +39,10 @@ Replace an invalid/stale response atomically when the prompt, schema, request, o
 
 Python ingestion verifies request and content hashes, identity, JSON Schema, exact abstract substrings, offsets, and anchors. Invalid responses are rejected and never enter the accepted evidence sidecar. An audit pass adds contextual risk flags without relaxing validator rules.
 
+## Portable local bundle
+
+Build a self-contained worker folder from a prepared batch with `python3 -m scripts.evidence.worker_bundle --batch-dir <prepared-batch> --output-dir <new-folder>`. The builder copies only that batch's requests, prompt, and schema and initializes an empty `responses/` directory. The generated task and checker resolve files from the worker's current directory, so the bundle can be moved without editing paths. Before handing it to a worker, run `cd <new-folder> && python3 ./validate_worker_outputs.py --preflight`; a clean bundle prints `BLIND_WORKER_PREFLIGHT_OK requests=7 responses=0`. The ordinary checker validates completed responses after processing.
+
 ## Evidence support pointer contract
 
 `evidence_support` contains exactly one entry for each populated ordinary factual leaf checked by `EvidenceValidator`, including leaves under `study_system`, `treatments`, `measurements`, `methods`, `mechanisms_explicit`, and `limitations_explicit`. Each entry points to an exact source span and offsets.

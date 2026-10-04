@@ -3,12 +3,15 @@
 import copy
 import hashlib
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
 from scripts.evidence import batch_prepare
+from scripts.evidence import worker_bundle
 from scripts.evidence.audit import audit_evidence
 from scripts.evidence.batch_ingest import build_identity_sidecar, read_batch_responses
 from scripts.evidence.benchmark import match_gold_records, _path_errors
@@ -288,6 +291,141 @@ class MetricAuditTests(unittest.TestCase):
         unsupported,unsupported_findings,offsets,orphans=_path_errors(predicted,row)
         self.assertEqual(unsupported,1); self.assertEqual(unsupported_findings,0)
         self.assertEqual(offsets,1); self.assertEqual(orphans,0)
+
+
+class PortableWorkerBundleTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.source = self.root / "prepared" / "batch_001"
+        (self.source / "requests").mkdir(parents=True)
+        (self.source.parent / "prompts").mkdir()
+        (self.source.parent / "schemas").mkdir()
+        prompt_source = batch_prepare.PROMPT_PATH
+        schema_source = batch_prepare.SCHEMA_PATH
+        (self.source.parent / "prompts" / "evidence_extraction.md").write_bytes(prompt_source.read_bytes())
+        (self.source.parent / "schemas" / "evidence_matrix.schema.json").write_bytes(schema_source.read_bytes())
+        self.prompt_sha = hashlib.sha256(prompt_source.read_bytes()).hexdigest()
+        self.schema_sha = hashlib.sha256(schema_source.read_bytes()).hexdigest()
+        self.items = []
+        for i in range(1, 8):
+            row = record(i)
+            payload = {"uid":row["uid"],"doi":row["doi"],"title":row["title"],"journal":row["source_title"],
+                       "year":row["publish_year"],"authors":row["authors"],"keywords":row["author_keywords"],
+                       "document_types":row["document_types"],"abstract":row["abstract"]}
+            payload_sha = hashlib.sha256(json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(",",":")).encode()).hexdigest()
+            req = {**payload,"payload_sha256":payload_sha,"schema_version":"0.4","prompt_sha256":self.prompt_sha,
+                   "schema_sha256":self.schema_sha,"canonical_input_sha256":"a"*64,"batch_id":"batch_001"}
+            canonical = lambda obj: json.dumps(obj,ensure_ascii=False,sort_keys=True,separators=(",",":")).encode()
+            req["request_sha256"] = hashlib.sha256(canonical(req)).hexdigest()
+            request_name = f"{payload_sha}.json"
+            write_json(self.source / "requests" / request_name, req)
+            self.items.append({"uid":row["uid"],"doi":row["doi"],"payload_sha256":payload_sha,
+                               "request_sha256":req["request_sha256"],"request_file":f"requests/{request_name}",
+                               "response_file":f"responses/{request_name}"})
+        batch = {"batch_id":"batch_001","schema_version":"0.4","pipeline_version":"0.6",
+                 "canonical_input_sha256":"a"*64,"prompt_sha256":self.prompt_sha,"schema_sha256":self.schema_sha,
+                 "request_count":7,"abstract_chars":sum(len(record(i)["abstract"]) for i in range(1,8)),"requests":self.items}
+        write_json(self.source / "batch_manifest.json", batch)
+        write_json(self.source.parent / "manifest.json", {"run_id":"test_iteration1","prompt_iteration":1})
+        self.bundle = self.root / "worker_bundle"
+        worker_bundle.build_bundle(self.source, self.bundle)
+
+    def run_checker(self, *args, cwd=None):
+        return subprocess.run([sys.executable,"./validate_worker_outputs.py",*args],cwd=cwd or self.bundle,
+                              text=True,capture_output=True,check=False)
+
+    def add_valid_responses(self):
+        for item in self.items:
+            req = json.loads((self.bundle / item["request_file"]).read_text())
+            row = {"uid":req["uid"],"doi":req["doi"],"title":req["title"],"source_title":req["journal"],
+                   "publish_year":req["year"],"authors":req["authors"],"author_keywords":req["keywords"],
+                   "document_types":req["document_types"],"abstract":req["abstract"]}
+            env = {key:req[key] for key in ("payload_sha256","request_sha256","prompt_sha256","schema_sha256","canonical_input_sha256")}
+            env.update(model_label=None,response=empty_record(row))
+            write_json(self.bundle / item["response_file"],env)
+
+    def test_generated_paths_are_portable(self):
+        task = (self.bundle / "TASK.md").read_text()
+        checker = (self.bundle / "validate_worker_outputs.py").read_text()
+        self.assertNotIn(chr(47)+"workspace",task)
+        self.assertNotIn(chr(47)+"Users"+chr(47),task)
+        self.assertNotIn(chr(47)+"workspace",checker)
+        self.assertNotIn(chr(47)+"Users"+chr(47),checker)
+        self.assertIn("WORKER_ROOT = Path.cwd().resolve()",checker)
+        self.assertEqual(len(list((self.bundle / "requests").glob("*.json"))),7)
+
+    def test_preflight_and_relocated_bundle_work_from_temporary_directory(self):
+        moved = self.root / "relocated" / "bundle"
+        moved.parent.mkdir()
+        import shutil
+        shutil.move(str(self.bundle),str(moved))
+        result = self.run_checker("--preflight",cwd=moved)
+        self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+        self.assertIn("BLIND_WORKER_PREFLIGHT_OK requests=7 responses=0",result.stdout)
+
+    def test_valid_synthetic_responses_pass_checker(self):
+        self.add_valid_responses()
+        result = self.run_checker()
+        self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+        self.assertIn("BLIND_WORKER_ITER1_SUCCESS requests=7 responses=7",result.stdout)
+
+    def test_finding_support_pointer_orphan_fails_checker(self):
+        self.add_valid_responses()
+        path = self.bundle / self.items[0]["response_file"]
+        env = json.loads(path.read_text()); abstract = json.loads((self.bundle / self.items[0]["request_file"]).read_text())["abstract"]
+        env["response"]["evidence_support"]["/evidence/findings/0"] = {
+            "source":"abstract","evidence_text":abstract[:10],"start":0,"end":10}
+        path.write_text(json.dumps(env),encoding="utf-8")
+        result = self.run_checker()
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("forbidden_self_supported_pointer",result.stdout)
+
+    def test_missing_response_fails_checker(self):
+        self.add_valid_responses()
+        (self.bundle / self.items[0]["response_file"]).unlink()
+        result = self.run_checker()
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("response_count",result.stdout)
+
+    def test_nonempty_inference_fails_checker(self):
+        self.add_valid_responses()
+        path = self.bundle / self.items[0]["response_file"]
+        env=json.loads(path.read_text()); env["response"]["inference"]["possible_gap"]=[{
+            "statement":"test","kind":"inference","evidence_anchors":["/evidence/study_system/crop/0"]}]
+        path.write_text(json.dumps(env),encoding="utf-8")
+        result=self.run_checker()
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("response_contract",result.stdout)
+
+    def test_prompt_schema_and_envelope_hash_mismatch_fail_checker(self):
+        prompt = self.bundle / "prompt/evidence_extraction.md"
+        prompt.write_text(prompt.read_text()+"\nchanged\n")
+        result=self.run_checker("--preflight")
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("prompt_or_schema_hash",result.stdout)
+        prompt.write_bytes(batch_prepare.PROMPT_PATH.read_bytes())
+        schema = self.bundle / "schema/evidence_matrix.schema.json"
+        schema.write_text(schema.read_text()+"\n")
+        result=self.run_checker("--preflight")
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("prompt_or_schema_hash",result.stdout)
+        schema.write_bytes(batch_prepare.SCHEMA_PATH.read_bytes())
+        self.add_valid_responses()
+        path=self.bundle / self.items[0]["response_file"]
+        env=json.loads(path.read_text()); env["prompt_sha256"]="f"*64
+        path.write_text(json.dumps(env),encoding="utf-8")
+        result=self.run_checker()
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("envelope_hashes",result.stdout)
+
+    def test_preflight_rejects_secret_and_forbidden_path_strings(self):
+        instructions=self.bundle / "WORKER_INSTRUCTIONS.md"
+        instructions.write_text(instructions.read_text()+" s2k-ABCDEFGHIJKLMNOPQRSTUV "+chr(47)+"Users/private\n")
+        result=self.run_checker("--preflight")
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("forbidden_path_or_secret",result.stdout)
 
 
 if __name__=='__main__': unittest.main()

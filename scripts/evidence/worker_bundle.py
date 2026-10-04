@@ -1,4 +1,4 @@
-"""Build a portable, blind iteration-1 worker bundle from one prepared batch."""
+"""Build a portable, blind worker bundle from one prepared batch."""
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ def _write_json(path: Path, value: dict) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def build_bundle(batch_dir: Path, output_dir: Path) -> Path:
+def build_bundle(batch_dir: Path, output_dir: Path, iteration: int | None = None) -> Path:
     """Copy one batch and its prompt/schema into a self-contained portable folder."""
     batch_dir = batch_dir.resolve()
     output_dir = output_dir.resolve()
@@ -25,6 +25,9 @@ def build_bundle(batch_dir: Path, output_dir: Path) -> Path:
     batch = _json(batch_dir / "batch_manifest.json")
     run_manifest_path = parent / "manifest.json"
     run_manifest = _json(run_manifest_path) if run_manifest_path.is_file() else {}
+    iteration = run_manifest.get("prompt_iteration", 1) if iteration is None else iteration
+    if iteration not in (1, 2, 3):
+        raise ValueError("Only prompt iterations 1 through 3 are supported by this worker bundle")
 
     if output_dir.exists() and any(output_dir.iterdir()):
         raise FileExistsError(f"Refusing to overwrite non-empty bundle: {output_dir}")
@@ -71,19 +74,19 @@ def build_bundle(batch_dir: Path, output_dir: Path) -> Path:
         "canonical_input_sha256": run_manifest.get("canonical_input_sha256", batch["canonical_input_sha256"]),
         "prompt_sha256": batch["prompt_sha256"],
         "schema_sha256": batch["schema_sha256"],
-        "prompt_iteration": run_manifest.get("prompt_iteration", 1),
+        "prompt_iteration": iteration,
     })
-    (output_dir / "WORKER_INSTRUCTIONS.md").write_text(_instructions(), encoding="utf-8")
-    (output_dir / "TASK.md").write_text(_task(), encoding="utf-8")
-    (output_dir / "validate_worker_outputs.py").write_text(_checker(), encoding="utf-8")
+    (output_dir / "WORKER_INSTRUCTIONS.md").write_text(_instructions(iteration), encoding="utf-8")
+    (output_dir / "TASK.md").write_text(_task(iteration), encoding="utf-8")
+    (output_dir / "validate_worker_outputs.py").write_text(_checker(iteration), encoding="utf-8")
     (output_dir / "validate_worker_outputs.py").chmod(0o755)
     return output_dir
 
 
-def _instructions() -> str:
-    return """# Blind Worker Instructions
+def _instructions(iteration: int = 1) -> str:
+    return f"""# Blind Worker Instructions
 
-You are a blind scientific evidence extraction worker. This is prompt iteration 1.
+You are a blind scientific evidence extraction worker. This is prompt iteration {iteration}.
 
 Use this bundle directory as the entire available workspace. Do not access parent directories, host paths, Git repositories, Gold benchmark files, previous Evidence, user profiles, the web, external databases, memory, or any other papers. Treat each request independently. Do not use outside knowledge.
 
@@ -93,17 +96,17 @@ Follow the prompt and schema exactly. Findings and author interpretations are se
 """
 
 
-def _task() -> str:
-    return """# Iteration 1 worker task
+def _task(iteration: int = 1) -> str:
+    return f"""# Iteration {iteration} worker task
 
 Process every request listed in `batch_manifest.json`. For each request, independently read only that request, follow `prompt/evidence_extraction.md`, and produce a schema-conforming response envelope. Copy `payload_sha256`, `request_sha256`, `prompt_sha256`, `schema_sha256`, and `canonical_input_sha256` exactly from the request; use `model_label: null` unless you can reliably identify your model. Write exactly one file to the corresponding `responses/<payload_sha256>.json` path.
 
-Before reporting success, run `python3 ./validate_worker_outputs.py`. Do not claim success unless it prints the full success marker. If it fails, report only the listed UID, DOI, and validation stage, then stop. Do not inspect Gold, benchmark, previous Evidence, or any file outside this bundle. After successful validation, report exactly `BLIND_WORKER_ITER1_SUCCESS requests=7 responses=7 protocol_valid=7 inference_empty=7` and exit.
+Before reporting success, run `python3 ./validate_worker_outputs.py`. Do not claim success unless it prints the full success marker. If it fails, report only the listed UID, DOI, and validation stage, then stop. Do not inspect Gold, benchmark, previous Evidence, or any file outside this bundle. After successful validation, report exactly `BLIND_WORKER_ITER{iteration}_SUCCESS requests=7 responses=7 protocol_valid=7 inference_empty=7` and exit.
 """
 
 
-def _checker() -> str:
-    return '''#!/usr/bin/env python3
+def _checker(iteration: int = 1) -> str:
+    return r'''#!/usr/bin/env python3
 """Portable integrity/preflight and response validator for this worker bundle."""
 import argparse
 import hashlib
@@ -221,15 +224,16 @@ def main():
     args = parser.parse_args()
     return preflight() if args.preflight else validate()
 if __name__ == "__main__": raise SystemExit(main())
-'''
+'''.replace("BLIND_WORKER_ITER1_SUCCESS", f"BLIND_WORKER_ITER{iteration}_SUCCESS")
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--batch-dir", type=Path, required=True, help="Prepared batch directory")
     parser.add_argument("--output-dir", type=Path, required=True, help="New or empty destination bundle directory")
+    parser.add_argument("--iteration", type=int, choices=(1, 2, 3), help="Prompt iteration recorded in the bundle")
     args = parser.parse_args()
-    result = build_bundle(args.batch_dir, args.output_dir)
+    result = build_bundle(args.batch_dir, args.output_dir, args.iteration)
     print(result)
     return 0
 

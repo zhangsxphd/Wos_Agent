@@ -356,6 +356,33 @@ class PortableWorkerBundleTests(unittest.TestCase):
         self.assertIn("WORKER_ROOT = Path.cwd().resolve()",checker)
         self.assertEqual(len(list((self.bundle / "requests").glob("*.json"))),7)
 
+    def test_bundle_marks_prompt_iteration_two(self):
+        target = self.root / "iteration2_bundle"
+        worker_bundle.build_bundle(self.source, target, iteration=2)
+        self.assertEqual(json.loads((target / "run_manifest.json").read_text())["prompt_iteration"], 2)
+        self.assertIn("prompt iteration 2", (target / "WORKER_INSTRUCTIONS.md").read_text())
+        self.assertIn("# Iteration 2 worker task", (target / "TASK.md").read_text())
+        self.assertIn("BLIND_WORKER_ITER2_SUCCESS", (target / "validate_worker_outputs.py").read_text())
+
+    def test_bundle_marks_prompt_iteration_three(self):
+        target = self.root / "iteration3_bundle"
+        worker_bundle.build_bundle(self.source, target, iteration=3)
+        self.assertEqual(json.loads((target / "run_manifest.json").read_text())["prompt_iteration"], 3)
+        self.assertIn("prompt iteration 3", (target / "WORKER_INSTRUCTIONS.md").read_text())
+        self.assertIn("BLIND_WORKER_ITER3_SUCCESS", (target / "validate_worker_outputs.py").read_text())
+
+    def test_bundle_marks_prompt_iteration_three(self):
+        target = self.root / "iteration3_bundle"
+        worker_bundle.build_bundle(self.source, target, iteration=3)
+        self.assertEqual(json.loads((target / "run_manifest.json").read_text())["prompt_iteration"], 3)
+        self.assertIn("prompt iteration 3", (target / "WORKER_INSTRUCTIONS.md").read_text())
+        self.assertIn("BLIND_WORKER_ITER3_SUCCESS", (target / "validate_worker_outputs.py").read_text())
+
+    def test_generated_scale_checker_preserves_regex_escapes(self):
+        checker = (self.bundle / "validate_worker_outputs.py").read_text()
+        self.assertIn('r"\\bfield ', checker)
+        self.assertNotIn("\x08field", checker)
+
     def test_preflight_and_relocated_bundle_work_from_temporary_directory(self):
         moved = self.root / "relocated" / "bundle"
         moved.parent.mkdir()

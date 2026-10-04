@@ -66,3 +66,60 @@ Before returning JSON, verify:
   `evidence_support`.
 - All inference arrays are empty and `screening.status` is `maybe` when an
   abstract is present.
+
+Prompt iteration 2 rules (apply together with Evidence Field Contract v1):
+
+- Study scale: identify the paper's explicitly stated design using direct
+  phrases such as `field study`, `field-based`, `pot experiment`,
+  `greenhouse`, `laboratory`, or `modeling study`. A named model such as
+  HYDRUS-3D or logistic regression is a method, not by itself a study scale.
+  When a physical scale and a model method both occur, retain the physical
+  scale and put the named model in `methods`.
+- Salinity context: for an Article, include salinity only when the abstract
+  directly links the salinity state/descriptor to the actual study site,
+  sampled system, or experimental substrate. Exclude generic background,
+  motivation, mechanisms, application targets, and unlinked regional mentions.
+  For a Review, include a salinity descriptor only when it is explicitly named
+  as the review scope; keep its review attribution and do not present it as an
+  empirical system.
+- Soil type: require an explicit soil or substrate classification for the
+  studied system. Paddy field/upland labels are land-use classes, not soil
+  classifications. A target application setting is not evidence that the
+  experimental substrate had that soil type. Do not duplicate a phrase across
+  `soil_type` and `salinity_context` unless it explicitly supports both facts.
+- Measurements: classify by the measured entity and prefer the most specific
+  category over `other`. Keep carbon pools, nitrogen pools/fluxes/NUE,
+  microbial properties, harvested yield, plant growth, soil chemistry, soil
+  physics, greenhouse-gas fluxes, and water-use metrics in their respective
+  categories. Fertilizer/amendment/biological inputs are treatments, not
+  measurements. Yield components or plant morphology alone are not harvested
+  yield; use `plant_growth` only for individually named, source-supported
+  growth or morphology variables. Use `other` only when no named category fits.
+- Findings: preserve distinct eligible results to maintain recall, but do not
+  emit duplicate or overlapping restatements of the same result. A finding must
+  report an observed or estimated outcome, comparison, direction, magnitude,
+  or relationship. Exclude objectives, background, methods, recommendations,
+  implications, and unsupported interpretations. Keep the claim within its
+  verbatim abstract evidence and preserve qualifiers and uncertainty.
+- Reviews: preserve attribution to reviewed literature wherever the abstract
+  supplies it. An intervention used in a cited study is not a treatment applied
+  by the Review authors. A review-context audit flag is not itself an extraction
+  error; retain only values supported by the explicit review scope and contract.
+
+Prompt iteration 3 refinements from development-only error analysis:
+
+- Modeling scale: a study explicitly coupling models and designing/evaluating
+  scenarios is a model-scale study even if it does not use the phrase `modeling
+  study`. A named model without an explicitly model-based overall design remains
+  a method only. If a physical study scale is also explicit, prefer that scale.
+- Salinity descriptors: retain distinct, explicit system descriptors at their
+  stated specificity (for example, saline-affected paddy fields and
+  saline-affected upland fields); do not replace them with a broader paraphrase
+  such as `saline-affected farmland`. For regional land-use/transition models,
+  a mention of saline-land dynamics or improvement is not itself a saline study
+  system. Require an explicit link to the modeled site/system, not just a
+  regional topic or modeled outcome.
+- Review scope: do not treat a generic application sentence such as a material
+  being used `in saline–alkali soils` as review scope. Record Review salinity
+  only when the abstract explicitly frames those soils as what the review
+  covers; application, mechanism, and prior-study examples remain excluded.

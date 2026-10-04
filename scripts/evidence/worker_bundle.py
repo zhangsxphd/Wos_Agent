@@ -77,8 +77,8 @@ def build_bundle(batch_dir: Path, output_dir: Path, iteration: int | None = None
         "prompt_iteration": iteration,
     })
     (output_dir / "WORKER_INSTRUCTIONS.md").write_text(_instructions(iteration), encoding="utf-8")
-    (output_dir / "TASK.md").write_text(_task(iteration), encoding="utf-8")
-    (output_dir / "validate_worker_outputs.py").write_text(_checker(iteration), encoding="utf-8")
+    (output_dir / "TASK.md").write_text(_task(iteration, len(requests)), encoding="utf-8")
+    (output_dir / "validate_worker_outputs.py").write_text(_checker(iteration, len(requests)), encoding="utf-8")
     (output_dir / "validate_worker_outputs.py").chmod(0o755)
     return output_dir
 
@@ -96,16 +96,16 @@ Follow the prompt and schema exactly. Findings and author interpretations are se
 """
 
 
-def _task(iteration: int = 1) -> str:
+def _task(iteration: int = 1, request_count: int = 7) -> str:
     return f"""# Iteration {iteration} worker task
 
 Process every request listed in `batch_manifest.json`. For each request, independently read only that request, follow `prompt/evidence_extraction.md`, and produce a schema-conforming response envelope. Copy `payload_sha256`, `request_sha256`, `prompt_sha256`, `schema_sha256`, and `canonical_input_sha256` exactly from the request; use `model_label: null` unless you can reliably identify your model. Write exactly one file to the corresponding `responses/<payload_sha256>.json` path.
 
-Before reporting success, run `python3 ./validate_worker_outputs.py`. Do not claim success unless it prints the full success marker. If it fails, report only the listed UID, DOI, and validation stage, then stop. Do not inspect Gold, benchmark, previous Evidence, or any file outside this bundle. After successful validation, report exactly `BLIND_WORKER_ITER{iteration}_SUCCESS requests=7 responses=7 protocol_valid=7 inference_empty=7` and exit.
+Before reporting success, run `python3 ./validate_worker_outputs.py`. Do not claim success unless it prints the full success marker. If it fails, report only the listed UID, DOI, and validation stage, then stop. Do not inspect Gold, benchmark, previous Evidence, or any file outside this bundle. After successful validation, report exactly `BLIND_WORKER_ITER{iteration}_SUCCESS requests={request_count} responses={request_count} protocol_valid={request_count} inference_empty={request_count}` and exit.
 """
 
 
-def _checker(iteration: int = 1) -> str:
+def _checker(iteration: int = 1, request_count: int = 7) -> str:
     return r'''#!/usr/bin/env python3
 """Portable integrity/preflight and response validator for this worker bundle."""
 import argparse
@@ -152,7 +152,7 @@ def integrity(manifest, preflight):
     if any(run_manifest.get(k) != manifest.get(k) for k in ("prompt_sha256", "schema_sha256", "canonical_input_sha256")): return "run_manifest_hashes"
     requests = manifest.get("requests", [])
     responses = list(response_dir.glob("*.json"))
-    if len(requests) != manifest.get("request_count") or len(requests) != 7: return "request_count"
+    if len(requests) != manifest.get("request_count") or len(requests) != EXPECTED_REQUEST_COUNT: return "request_count"
     if preflight and responses: return "preflight_responses_not_empty"
     if not preflight and len(responses) != len(requests): return "response_count"
     checked_files = [WORKER_ROOT / "batch_manifest.json", prompt, schema_path, run_manifest_path, WORKER_ROOT / "TASK.md", WORKER_ROOT / "WORKER_INSTRUCTIONS.md", *request_dir.glob("*.json")]
@@ -180,7 +180,7 @@ def preflight():
     manifest = read_json(WORKER_ROOT / "batch_manifest.json")
     problem = integrity(manifest, True)
     if problem: return fail(problem)
-    print("BLIND_WORKER_PREFLIGHT_OK requests=7 responses=0")
+    print("BLIND_WORKER_PREFLIGHT_OK requests=REQUEST_COUNT responses=0")
     return 0
 def validate():
     manifest = read_json(WORKER_ROOT / "batch_manifest.json")
@@ -216,7 +216,7 @@ def validate():
         for interpretation in response.get("evidence", {}).get("author_interpretations", []):
             anchor = interpretation.get("anchor", {})
             if interpretation.get("source") != "abstract" or not quote_ok(anchor, abstract) or interpretation.get("text") not in anchor.get("evidence_text", ""): return fail("author_interpretation_grounding")
-    print("BLIND_WORKER_ITER1_SUCCESS requests=7 responses=7 protocol_valid=7 inference_empty=7")
+    print("BLIND_WORKER_ITER1_SUCCESS requests=REQUEST_COUNT responses=REQUEST_COUNT protocol_valid=REQUEST_COUNT inference_empty=REQUEST_COUNT")
     return 0
 def main():
     parser = argparse.ArgumentParser()
@@ -224,7 +224,8 @@ def main():
     args = parser.parse_args()
     return preflight() if args.preflight else validate()
 if __name__ == "__main__": raise SystemExit(main())
-'''.replace("BLIND_WORKER_ITER1_SUCCESS", f"BLIND_WORKER_ITER{iteration}_SUCCESS")
+'''.replace("EXPECTED_REQUEST_COUNT", str(request_count)).replace("REQUEST_COUNT", str(request_count)).replace(
+        "BLIND_WORKER_ITER1_SUCCESS", f"BLIND_WORKER_ITER{iteration}_SUCCESS")
 
 
 def main() -> int:

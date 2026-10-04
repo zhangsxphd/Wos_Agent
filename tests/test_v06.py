@@ -371,6 +371,14 @@ class PortableWorkerBundleTests(unittest.TestCase):
         self.assertIn("prompt iteration 3", (target / "WORKER_INSTRUCTIONS.md").read_text())
         self.assertIn("BLIND_WORKER_ITER3_SUCCESS", (target / "validate_worker_outputs.py").read_text())
 
+    def test_bundle_checker_uses_manifest_request_count(self):
+        checker = worker_bundle._checker(iteration=3, request_count=20)
+        task = worker_bundle._task(iteration=3, request_count=20)
+        self.assertIn("len(requests) != 20", checker)
+        self.assertIn("BLIND_WORKER_PREFLIGHT_OK requests=20 responses=0", checker)
+        self.assertIn("requests=20 responses=20 protocol_valid=20 inference_empty=20", checker)
+        self.assertIn("requests=20 responses=20 protocol_valid=20 inference_empty=20", task)
+
     def test_bundle_marks_prompt_iteration_three(self):
         target = self.root / "iteration3_bundle"
         worker_bundle.build_bundle(self.source, target, iteration=3)

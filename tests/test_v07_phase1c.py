@@ -1,6 +1,6 @@
 import hashlib, json, re, unittest
 from pathlib import Path
-from scripts.extractors.schema_validator_v2 import EvidenceValidator, SCALE_PATTERNS
+from scripts.extractors.schema_validator_v2 import EvidenceValidator, SCALE_PATTERNS, scale_supported
 from scripts.evidence.validate_v07_gold_annotator import validate_file
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -36,7 +36,7 @@ class Phase1CTests(unittest.TestCase):
   examples={'field':['A field study was conducted.','This was a field-scale experiment.','This was a field scale study.','A field-based trial was run.'],'pot':['A pot experiment was performed.'],'greenhouse':['The greenhouse experiment ran for 8 weeks.'],'lab':['Laboratory incubation was used.'],'model':['A model-based study was conducted.']}
   for key,texts in examples.items():
    for text in texts: self.assertRegex(text,re.compile(SCALE_PATTERNS[key],re.I))
-  self.assertNotRegex('We used the APSIM model.',re.compile(SCALE_PATTERNS['model'],re.I))
+  self.assertFalse(scale_supported('model','We used the APSIM model.'))
  def test_r19_packet_contains_only_six_pending_dev_records_and_offsets(self):
   cards=json.loads((ROOT/'data/reports/v07_dev40_r19_scale_evidence_cards.json').read_text()); self.assertEqual(len(cards),6)
   sources={json.loads(x)['uid']:json.loads(x) for x in (WORK/'abstracts.jsonl').read_text().splitlines()}

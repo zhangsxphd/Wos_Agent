@@ -70,12 +70,53 @@ def _source_quote(support, record, allow_metadata=False):
     return text
 
 
+# Patterns are combined with contextual rules below. A lexical match alone is
+# insufficient for field/pot/model so generic domain mentions do not become scale.
 SCALE_PATTERNS = {
-    "field": r"\bfield[ -]scale(?:[ -](?:experiment|study))?\b|\bfield[ -](?:based|study|experiment|trial)\b|\bfield (?:soil column experiment)\b|\bin situ monitoring\b",
-    "pot": r"\bpot[ -](?:experiment|study|trial)s?\b", "greenhouse": r"\bgreenhouse\b",
-    "lab": r"\blaboratory\b|\blab (?:experiment|study|trial)\b|\bincubation\b",
-    "model": r"\bmodel(?:ling|ing)?[ -](?:based )?(?:study|experiment|simulation)\b|\bsimulation study\b",
+    "field": r"\bfield(?:s)?(?:[ -](?:scale|based|study|experiment|trial))?\b",
+    "pot": r"\bpots?\b", "greenhouse": r"\bgreenhouse\b",
+    "lab": r"\blaboratory\b|\blab\b|\bincubation\b",
+    "model": r"\bmodel(?:ling|ing)?\b|\bsimulation\b",
 }
+FIELD_PHYSICAL_CUES = re.compile(
+    r"\b(?:agricultur(?:al|e)|crop|rice|paddy|maize|cotton|soil|salin(?:e|ity)|"
+    r"reclaimed|coastal|farm|plot|integrated fields|field[- ](?:based|scale|study|experiment)|experimental field)\b", re.I)
+FIELD_RELATION_CUES = re.compile(
+    r"\b(?:conduct(?:ed)?|perform(?:ed)?|investigat(?:e|ed|ing)|monitor(?:ed|ing)?|"
+    r"sampl(?:e|ed|ing)|treat(?:ed|ment)|experiment(?:s|al)?|study|studied|grow(?:n|ing)?)\b", re.I)
+POT_RELATION_CUES = re.compile(
+    r"\b(?:maintain(?:ed)?|apply|applied|test(?:ed)?|grow(?:n|ing)?|cultivat(?:ed|ion)|"
+    r"conduct(?:ed)?|experiment(?:s|al)?|treat(?:ment|ed)|salinity|substrate|condition(?:s)?)\b", re.I)
+MODEL_STUDY_PATTERNS = re.compile(
+    r"\b(?:model[- ]based\s+(?:study|experiment|analysis)|"
+    r"(?:modeling|modelling)\s+(?:study|experiment|analysis)|"
+    r"(?:simulation|numerical simulation)\s+study)\b", re.I)
+
+
+def scale_supported(value, quote):
+    """Contextual scale recognition for explicit physical or analytical study settings."""
+    text = str(quote)
+    if value == "field":
+        if not re.search(SCALE_PATTERNS["field"], text, re.I):
+            return False
+        generic = re.search(r"\b(?:research field|field of study|field application potential|field conditions)\b", text, re.I)
+        explicit_phrase = re.search(r"\bfield(?:[- ]scale|[- ]based|[- ]study|[- ]experiments?|[- ]trial)\b", text, re.I)
+        if generic and not explicit_phrase:
+            return False
+        linked = re.search(
+            r"\bfield(?:[- ]scale|[- ]based|[- ]study|[- ]experiments?|[- ]trial)\b|"
+            r"\b(?:conduct(?:ed)?|perform(?:ed)?|investigat(?:e|ed|ing)|monitor(?:ed|ing)?|"
+            r"sampl(?:e|ed|ing))\b[\s\S]{0,320}\bfields?\b|"
+            r"\bfields?\b[\s\S]{0,100}\b(?:experiment|study|conducted|investigated|monitored|sampled)\b",
+            text, re.I)
+        return bool(linked and FIELD_RELATION_CUES.search(text) and FIELD_PHYSICAL_CUES.search(text))
+    if value == "pot":
+        return bool(re.search(SCALE_PATTERNS["pot"], text, re.I) and POT_RELATION_CUES.search(text))
+    if value == "model":
+        return bool(MODEL_STUDY_PATTERNS.search(text))
+    if value in {"greenhouse", "lab"}:
+        return bool(re.search(SCALE_PATTERNS[value], text, re.I) and FIELD_RELATION_CUES.search(text))
+    return False
 
 
 class EvidenceValidator:
@@ -106,7 +147,7 @@ class EvidenceValidator:
                 raise EvidenceValidationError("A populated evidence field has no source support")
             quote = _source_quote(support, record)
             if pointer.endswith("/experimental_scale"):
-                if not re.search(SCALE_PATTERNS[value], quote, re.IGNORECASE):
+                if not scale_supported(value, quote):
                     raise EvidenceValidationError("Experimental scale is not explicitly supported")
             elif str(value).casefold() not in quote.casefold():
                 # Deterministic compound-label restoration when one source sentence

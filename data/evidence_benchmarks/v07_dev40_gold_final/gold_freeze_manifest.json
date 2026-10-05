@@ -1,7 +1,7 @@
 {
-  "gold_status": "human_approved_development_gold",
+  "gold_status": "ai_assisted_development_reference",
   "identities": 40,
-  "human_review_complete": true,
+  "human_review_complete": false,
   "unresolved_count": 0,
   "contract_v2_1_gold_freeze_ready": true,
   "contract_version": "2.1",
@@ -28,5 +28,8 @@
   "unsupported_fields": 0,
   "unsupported_findings": 0,
   "r19_scale_validator_v2": "6/6",
-  "human_decision_log": "human_decision_log.jsonl"
+  "human_decision_log": "human_decision_log.jsonl",
+  "provenance_note": "Conservative provenance correction: available records document selected human adjudication decisions, but do not establish that the owner independently annotated every R01-R19 item. Gold JSONL and decision log are preserved byte-for-byte.",
+  "selected_human_decision_rows": 27,
+  "all_gold_independently_human_annotated": false
 }

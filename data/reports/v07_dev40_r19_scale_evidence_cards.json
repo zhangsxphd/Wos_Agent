@@ -1,0 +1,74 @@
+[
+  {
+    "uid": "WOS:000794189500001",
+    "doi": "10.1002/ldr.4256",
+    "A_value": "field",
+    "B_value": "field",
+    "exact_abstract_sentence": "In this context, we conducted field experiments in saline soil, comprising five treatments (1‐5 following) and a control (C).",
+    "selected_evidence_text": "In this context, we conducted field experiments in saline soil, comprising five treatments (1‐5 following) and a control (C).",
+    "start": 304,
+    "end": 429,
+    "old_validator_rejection_reason": "Experimental scale is not explicitly supported",
+    "expected_v2_v2_1_mapping": "field"
+  },
+  {
+    "uid": "WOS:000899201500001",
+    "doi": "10.1016/j.agwat.2022.108079",
+    "A_value": "field",
+    "B_value": "field",
+    "exact_abstract_sentence": "The three-year field experiments of biochar application combined with plastic film mulched drip irrigation were conducted for cotton in Xinjiang, China.",
+    "selected_evidence_text": "The three-year field experiments of biochar application combined with plastic film mulched drip irrigation were conducted for cotton in Xinjiang, China.",
+    "start": 239,
+    "end": 391,
+    "old_validator_rejection_reason": "Experimental scale is not explicitly supported",
+    "expected_v2_v2_1_mapping": "field"
+  },
+  {
+    "uid": "WOS:001332147700001",
+    "doi": "10.3390/plants13192804",
+    "A_value": "pot",
+    "B_value": "unknown",
+    "exact_abstract_sentence": "The required salinity levels were maintained in respective pots through the application of saline irrigation water.",
+    "selected_evidence_text": "The required salinity levels were maintained in respective pots through the application of saline irrigation water.",
+    "start": 711,
+    "end": 826,
+    "old_validator_rejection_reason": "Experimental scale is not explicitly supported",
+    "expected_v2_v2_1_mapping": "pot (pot system explicit; A says pot, B says unknown; pending human decision)"
+  },
+  {
+    "uid": "WOS:001453401200001",
+    "doi": "10.3390/agronomy15030649",
+    "A_value": "field",
+    "B_value": "field",
+    "exact_abstract_sentence": "To improve this situation, this study conducted experiments in 2022–2023 in the saline–alkaline rice–crab integrated fields of Tongbei Village, Tonggui Township, Yinchuan.",
+    "selected_evidence_text": "To improve this situation, this study conducted experiments in 2022–2023 in the saline–alkaline rice–crab integrated fields of Tongbei Village, Tonggui Township, Yinchuan.",
+    "start": 367,
+    "end": 538,
+    "old_validator_rejection_reason": "Experimental scale is not explicitly supported",
+    "expected_v2_v2_1_mapping": "field (field experiments conducted in integrated fields)"
+  },
+  {
+    "uid": "WOS:001461814100001",
+    "doi": "10.1016/j.eja.2025.127618",
+    "A_value": "field",
+    "B_value": "field",
+    "exact_abstract_sentence": "To explore the potential of synergistic soil improvement and optimal crop management for agricultural production, this study evaluated crop yield, resource utilization, and soil quality in a field experiment with monoculture spring maize cultivation in a coastal saline soil region from 2015 to 2019.",
+    "selected_evidence_text": "To explore the potential of synergistic soil improvement and optimal crop management for agricultural production, this study evaluated crop yield, resource utilization, and soil quality in a field experiment with monoculture spring maize cultivation in a coastal saline soil region from 2015 to 2019.",
+    "start": 154,
+    "end": 454,
+    "old_validator_rejection_reason": "Experimental scale is not explicitly supported",
+    "expected_v2_v2_1_mapping": "field"
+  },
+  {
+    "uid": "WOS:001745283700001",
+    "doi": "10.1016/j.geoderma.2026.117812",
+    "A_value": "field",
+    "B_value": "field",
+    "exact_abstract_sentence": "This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China.",
+    "selected_evidence_text": "This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China.",
+    "start": 285,
+    "end": 479,
+    "old_validator_rejection_reason": "Experimental scale is not explicitly supported",
+    "expected_v2_v2_1_mapping": "field"
+  }
+]

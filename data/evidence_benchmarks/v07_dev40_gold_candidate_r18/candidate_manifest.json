@@ -1,0 +1,16 @@
+{
+  "status": "development_gold_candidate",
+  "record_count": 40,
+  "source_candidate": "data/evidence_benchmarks/v07_dev40_gold_candidate",
+  "human_decisions_applied": "R01-R18",
+  "pending": [
+    "R19 experimental_scale evidence for 6 UIDs"
+  ],
+  "contract": "Evidence Field Contract v2 + v2.1 development amendment candidate",
+  "future_holdout_abstracts_accessed": false,
+  "future_holdout_gold_created": false,
+  "future_holdout_extraction_run": false,
+  "created_at": "2026-10-05",
+  "human_approved": false,
+  "validator": "schema_validator_v2.py"
+}

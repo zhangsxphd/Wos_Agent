@@ -1,0 +1,303 @@
+[
+  {
+    "uid": "WOS:000730402400009",
+    "doi": "10.32604/phyton.2022.018396",
+    "field": "/evidence/treatments/amendments/1",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "HRFS was applied (0, 10, 20, 40, 60, 80 and 100 mL/pot)",
+    "after": {
+      "field": "other_treatments",
+      "value": "HRFS was applied (0, 10, 20, 40, 60, 80 and 100 mL/pot)"
+    },
+    "reason": "R01: user-directed applied dose classification; preserve exact applied span.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:000730402400009",
+    "doi": "10.32604/phyton.2022.018396",
+    "field": "/evidence/treatments/amendments/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "reaction-finished solution of hydrochar (HRFS)",
+    "after": null,
+    "reason": "R01: remove product/material name from treatment; retain only explicitly applied treatment span.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:000899201500001",
+    "doi": "10.1016/j.agwat.2022.108079",
+    "field": "/evidence/measurements/nitrogen/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "partial fertilizer (N, P, and K) productivity",
+    "after": {
+      "field": "other",
+      "value": "partial fertilizer (N, P, and K) productivity"
+    },
+    "reason": "R02: combined N/P/K productivity is not an N-specific metric.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:000899201500001",
+    "doi": "10.1016/j.agwat.2022.108079",
+    "field": "/evidence/measurements/water_use/1",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "water-fertilizer productivity",
+    "after": {
+      "field": "other",
+      "value": "water-fertilizer productivity"
+    },
+    "reason": "R02: mixed water-fertilizer productivity goes to other.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:000931065500001",
+    "doi": "10.3390/ijms24032255",
+    "field": "/evidence/study_system/crop/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "cereals",
+    "after": "cereal crops",
+    "reason": "R05: review scope only, with explicit review attribution in contiguous support span.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001004405000001",
+    "doi": "10.3390/su15118658",
+    "field": "/evidence/study_system/crop/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "rice",
+    "after": null,
+    "reason": "R05: values describe individual systems/results in reviewed literature, not the Review authors’ own system or explicit scope.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001004405000001",
+    "doi": "10.3390/su15118658",
+    "field": "/evidence/study_system/crop/1",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "sunflower",
+    "after": null,
+    "reason": "R05: values describe individual systems/results in reviewed literature, not the Review authors’ own system or explicit scope.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001004405000001",
+    "doi": "10.3390/su15118658",
+    "field": "/evidence/study_system/crop/2",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "medlar",
+    "after": null,
+    "reason": "R05: values describe individual systems/results in reviewed literature, not the Review authors’ own system or explicit scope.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001004405000001",
+    "doi": "10.3390/su15118658",
+    "field": "/evidence/study_system/crop/3",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "salt-tolerant plants",
+    "after": null,
+    "reason": "R05: values describe individual systems/results in reviewed literature, not the Review authors’ own system or explicit scope.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001004405000001",
+    "doi": "10.3390/su15118658",
+    "field": "/evidence/study_system/soil_type/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "In alkaline, salinized, and secondary salinized soils",
+    "after": null,
+    "reason": "R05: values describe individual systems/results in reviewed literature, not the Review authors’ own system or explicit scope.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001304976800001",
+    "doi": "10.3390/agriculture14081210",
+    "field": "/evidence/study_system/salinity_context/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "the improvement and utilization of saline–alkali soil contribute to soil health improvement",
+    "after": null,
+    "reason": "R05: generic Review implication is not an explicit study system or attributed review scope.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001047181300014",
+    "doi": "10.1134/s1062359022603226",
+    "field": "/evidence/measurements/soil_physical/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "soil physical and chemical properties",
+    "after": null,
+    "reason": "R06: broad umbrella wording does not identify a specific measured entity.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "REJECT"
+  },
+  {
+    "uid": "WOS:001047181300014",
+    "doi": "10.1134/s1062359022603226",
+    "field": "/evidence/findings/3",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": {
+      "source": "abstract",
+      "evidence_text": "Compared with CK, the highest increase is 27.80%.",
+      "start": 1287,
+      "end": 1336,
+      "claim": "Compared with CK, the highest increase is 27.80%.",
+      "certainty": "explicit"
+    },
+    "after": null,
+    "reason": "R07: 27.80% has no explicit measured referent.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "REJECT"
+  },
+  {
+    "uid": "WOS:001083747800001",
+    "doi": "10.1016/j.sajb.2023.09.011",
+    "field": "/evidence/measurements/plant_growth/7",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "Zn concentration",
+    "after": null,
+    "reason": "R09: remove unpartitioned Zn measurement.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001083747800001",
+    "doi": "10.1016/j.sajb.2023.09.011",
+    "field": "/evidence/measurements/*",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "Zn concentration; roots; shoots; paddy",
+    "after": [
+      "Zn concentration in soil (391.3 %)",
+      "Zn concentration in roots, shoots, and paddy"
+    ],
+    "reason": "R09: retain analyte plus compartment; grouped plant tissue compartments are explicit in the source span.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001224081200001",
+    "doi": "10.1016/j.scitotenv.2024.171845",
+    "field": "/evidence/measurements/soil_chemical/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "Floodwater EC",
+    "after": {
+      "field": "other",
+      "value": "Floodwater EC"
+    },
+    "reason": "R10: water chemistry maps to other because schema has no water_chemistry field.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "ACCEPT"
+  },
+  {
+    "uid": "WOS:001298590200001",
+    "doi": "10.4067/s0718-58392024000500606",
+    "field": "/evidence/measurements/plant_growth/7",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "cellular damage",
+    "after": null,
+    "reason": "R11: explanatory protection claim without an explicit damage assay or indicator.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "REJECT"
+  },
+  {
+    "uid": "WOS:001488980100001",
+    "doi": "10.1016/j.watres.2025.123540",
+    "field": "/evidence/measurements/carbon/0",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "DOM molecular weight",
+    "after": {
+      "field": "other",
+      "value": "DOM molecular weight"
+    },
+    "reason": "R13: DOM optical/source indicators are not carbon pools.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "ACCEPT"
+  },
+  {
+    "uid": "WOS:001586749800001",
+    "doi": "10.1016/j.eti.2025.104540",
+    "field": "/evidence/measurements/microbial/2",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "conidia trapped within the bead",
+    "after": {
+      "field": "other",
+      "value": "conidia trapped within the bead"
+    },
+    "reason": "R15: bead-trapped conidia is inoculum/material characterization.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  },
+  {
+    "uid": "WOS:001619334500001",
+    "doi": "10.1016/j.plaphy.2025.110722",
+    "field": "/evidence/measurements/material_characterization",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": null,
+    "after": "no new measurement inserted",
+    "reason": "R17: existing measured soil salt/pH/N remain system measurements; material-only properties in source findings are not added as measures without separate supported measurement entries.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "ACCEPT"
+  },
+  {
+    "uid": "WOS:001839277700002",
+    "doi": "10.1186/s12866-026-05203-4",
+    "field": "/evidence/measurements/microbial",
+    "decision": "HUMAN_ADJUDICATED_R01_R18",
+    "before": "ammonia/IAA production and sulfur oxidation",
+    "after": "microbial",
+    "reason": "R18: explicit microbial production/capability is a microbial functional trait, not system-level nitrogen.",
+    "approved_by": "human",
+    "approved_at": "2026-10-05",
+    "human_reviewed": true,
+    "human_decision": "MODIFY"
+  }
+]

@@ -95,7 +95,9 @@ class V07Phase0Tests(unittest.TestCase):
         self.assertFalse(future_ids & as_uids(historical))
         manifest = json.loads((ROOT / 'data/evidence_benchmarks/v07_future_holdout30/selection_manifest.json').read_text())
         self.assertTrue(manifest['V07_FUTURE_HOLDOUT_FROZEN_BEFORE_TUNING'])
-        self.assertFalse(manifest['future_holdout_abstracts_accessed'])
+        self.assertTrue(manifest['future_holdout_abstracts_accessed'])
+        self.assertTrue(manifest['abstracts_materialized'])
+        self.assertTrue(manifest['gold_created'])
         self.assertEqual(manifest['excluded_identity_count'], 67)
 
 

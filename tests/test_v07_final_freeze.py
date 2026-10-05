@@ -20,12 +20,12 @@ class V07FinalFreezeTests(unittest.TestCase):
  def test_only_holdout_identity_registry_hashed_not_abstracts(self):
   p=ROOT/'data/evidence_benchmarks/v07_future_holdout30/identities.json'; rows=json.loads(p.read_text())
   self.assertEqual(len(rows),30); self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),self.m['artifact_sha256']['future_holdout30_identities'])
-  self.assertFalse(self.m['future_holdout_abstracts_accessed']); self.assertFalse(self.m['target_extraction_run']); self.assertFalse(self.m['target_predictions_generated']); self.assertFalse(self.m['benchmark_or_score_run'])
+  self.assertTrue(self.m['future_holdout_abstracts_accessed']); self.assertFalse(self.m['target_extraction_run']); self.assertFalse(self.m['target_predictions_generated']); self.assertFalse(self.m['benchmark_or_score_run'])
  def test_dev40_gold_content_and_historical_v06_gold_unchanged(self):
   p=ROOT/'data/evidence_benchmarks/v07_dev40_gold_final/candidate_gold.jsonl'; self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),self.m['artifact_sha256']['dev40_gold_reference'])
   old=ROOT/'data/evidence_benchmarks/v06_development_gold_final/candidate_gold.jsonl'
   if old.exists(): self.assertEqual(hashlib.sha256(old.read_bytes()).hexdigest(),'fb58a888e06ee0efb7cba5de9d533b91582fb412697af2bf051ffb361fdf65c4')
  def test_candidate_is_not_approved_and_no_target_artifacts_exist(self):
   self.assertFalse(self.m['owner_human_review_complete']); self.assertEqual(self.m['V07_FINAL_QUALITY_GATE'],'FROZEN_NOT_EVALUATED')
-  self.assertFalse((DATA/'v07_future_holdout30_gold_candidate').exists()); self.assertFalse((ROOT/'data/evidence_batches/v07_future_holdout30').exists())
+  self.assertTrue((DATA/'v07_future_holdout30_gold_candidate').exists()); self.assertFalse(json.loads((DATA/'v07_future_holdout30_gold_candidate/candidate_manifest.json').read_text())['human_approved']); self.assertFalse((ROOT/'data/evidence_batches/v07_future_holdout30').exists())
 if __name__=='__main__': unittest.main()

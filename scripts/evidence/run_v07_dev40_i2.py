@@ -138,6 +138,8 @@ def audit_gold_provenance() -> dict:
     if not (frozen.get("gold_status") == "ai_assisted_development_reference"
             and frozen.get("human_review_complete") is False
             and frozen.get("all_gold_independently_human_annotated") is False
+            and frozen.get("r01_r18_human_adjudicated") is True
+            and frozen.get("r19_scale_human_adjudicated") is True
             and len(r01_r18) == 21 and len(r19) == 6
             and all(row.get("human_reviewed") is True and row.get("approved_by") == "human"
                     for row in decisions)):

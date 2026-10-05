@@ -1,0 +1,772 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.4"
+    },
+    "uid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "doi": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "screening": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "include",
+            "maybe",
+            "exclude",
+            "needs_fulltext"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "reason",
+        "confidence"
+      ],
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "study_system": {
+          "type": "object",
+          "properties": {
+            "crop": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "soil_type": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "salinity_context": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "location": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "experimental_scale": {
+              "enum": [
+                "field",
+                "pot",
+                "greenhouse",
+                "lab",
+                "model",
+                "unknown"
+              ]
+            }
+          },
+          "required": [
+            "crop",
+            "soil_type",
+            "salinity_context",
+            "location",
+            "experimental_scale"
+          ],
+          "additionalProperties": false
+        },
+        "treatments": {
+          "type": "object",
+          "properties": {
+            "irrigation": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "water_regime": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "amendments": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "fertilization": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "biological_treatments": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "other_treatments": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "irrigation",
+            "water_regime",
+            "amendments",
+            "fertilization",
+            "biological_treatments",
+            "other_treatments"
+          ],
+          "additionalProperties": false
+        },
+        "measurements": {
+          "type": "object",
+          "properties": {
+            "soil_physical": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "soil_chemical": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "carbon": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "nitrogen": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "microbial": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "greenhouse_gases": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "plant_growth": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "yield": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "water_use": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "other": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "soil_physical",
+            "soil_chemical",
+            "carbon",
+            "nitrogen",
+            "microbial",
+            "greenhouse_gases",
+            "plant_growth",
+            "yield",
+            "water_use",
+            "other"
+          ],
+          "additionalProperties": false
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "enum": [
+                  "abstract",
+                  "metadata"
+                ]
+              },
+              "evidence_text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "metadata_path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim": {
+                "type": "string",
+                "minLength": 1
+              },
+              "certainty": {
+                "enum": [
+                  "explicit",
+                  "implicit"
+                ]
+              }
+            },
+            "required": [
+              "claim",
+              "evidence_text",
+              "source",
+              "certainty"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "source": {
+                      "const": "abstract"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "start",
+                    "end"
+                  ]
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "source": {
+                      "const": "metadata"
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "metadata_path"
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "mechanisms_explicit": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "limitations_explicit": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "author_interpretations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "claim_type",
+              "source",
+              "anchor"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim_type": {
+                "enum": [
+                  "causal",
+                  "association",
+                  "pathway",
+                  "hypothesis",
+                  "other"
+                ]
+              },
+              "source": {
+                "enum": [
+                  "abstract",
+                  "fulltext"
+                ]
+              },
+              "anchor": {
+                "$ref": "#/$defs/support"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "study_system",
+        "treatments",
+        "measurements",
+        "methods",
+        "findings",
+        "mechanisms_explicit",
+        "limitations_explicit"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_support": {
+      "type": "object",
+      "patternProperties": {
+        "^/evidence/": {
+          "type": "object",
+          "properties": {
+            "source": {
+              "enum": [
+                "abstract",
+                "metadata"
+              ]
+            },
+            "evidence_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "metadata_path": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "source",
+            "evidence_text"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "source": {
+                    "const": "abstract"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "start",
+                  "end"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "source": {
+                    "const": "metadata"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "metadata_path"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "inference": {
+      "type": "object",
+      "properties": {
+        "mechanistic_interpretation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "const": "inference"
+              },
+              "evidence_anchors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^/evidence/"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "statement",
+              "kind",
+              "evidence_anchors"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "connection_to_user_research": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "const": "inference"
+              },
+              "evidence_anchors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^/evidence/"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "statement",
+              "kind",
+              "evidence_anchors"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "possible_gap": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "const": "inference"
+              },
+              "evidence_anchors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^/evidence/"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "statement",
+              "kind",
+              "evidence_anchors"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "transferable_idea": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "const": "inference"
+              },
+              "evidence_anchors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^/evidence/"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "statement",
+              "kind",
+              "evidence_anchors"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "needs_fulltext_for": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "const": "inference"
+              },
+              "evidence_anchors": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^/evidence/"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "statement",
+              "kind",
+              "evidence_anchors"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "mechanistic_interpretation",
+        "connection_to_user_research",
+        "possible_gap",
+        "transferable_idea",
+        "needs_fulltext_for"
+      ],
+      "additionalProperties": false
+    },
+    "completeness": {
+      "type": "object",
+      "properties": {
+        "has_abstract": {
+          "type": "boolean"
+        },
+        "has_treatment": {
+          "type": "boolean"
+        },
+        "has_methods": {
+          "type": "boolean"
+        },
+        "has_findings": {
+          "type": "boolean"
+        },
+        "needs_fulltext": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "has_abstract",
+        "has_treatment",
+        "has_methods",
+        "has_findings",
+        "needs_fulltext"
+      ],
+      "additionalProperties": false
+    },
+    "evidence_completeness": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "extraction_provenance": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "uid",
+    "doi",
+    "title",
+    "screening",
+    "evidence",
+    "evidence_support",
+    "inference"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence Matrix v0.4",
+  "description": "Source-derived evidence with exact character-offset quotations; inference is separate and anchored. Completeness is not paper quality.",
+  "$defs": {
+    "support": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "enum": [
+            "abstract",
+            "metadata"
+          ]
+        },
+        "evidence_text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "metadata_path": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "source",
+        "evidence_text"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "abstract"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "start",
+              "end"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "source": {
+                "const": "metadata"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "metadata_path"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

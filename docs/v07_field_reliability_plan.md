@@ -42,3 +42,13 @@ Seed: `20261005`. The metadata-only selector excludes the old 7-paper developmen
 `gold_created = false`; `extraction_run = false`.
 
 See the identity registries and manifests under `data/evidence_benchmarks/v07_dev40/` and `data/evidence_benchmarks/v07_future_holdout30/`. Future-holdout identities contain bibliographic metadata only. Do not look up its abstracts or use those identities in tuning. The full selection and error packet are in `data/reports/v07_historical_holdout_postmortem.json`.
+
+## Phase 1B: Dev40 Gold construction
+
+The formal human-approved Field Contract v2 was frozen before the first Dev40 abstract was read. Contract SHA-256 is recorded in `data/evidence_benchmarks/v07_dev40/contract_freeze_manifest.json`. C10's human modification establishes the distinction between observed findings and a separate author interpretation or explicit mechanism, with mechanical duplication prohibited.
+
+The 40 Dev40 abstracts were placed in an allowlisted annotation bundle with only the schema, Contract v2, and Gold annotation instructions. Two fresh isolated annotators produced independent JSONL files; a third fresh isolated adjudicator saw only A/B disagreement items with their corresponding abstract context. The comparison reports exact and boundary-equivalent agreement separately. Annotator A passed schema for 40/40 and grounding for 34/40; annotator B passed schema for 40/40 and grounding for 28/40. Their remaining validation failures were unsupported experimental-scale anchors, so the candidate provisionally leaves those six scale values `unknown` for review.
+
+The unapproved candidate is `data/evidence_benchmarks/v07_dev40_gold_candidate/candidate_gold.jsonl`. It contains exactly the 40 Dev40 identities and passes schema and grounding validation 40/40, with zero invalid offsets, orphan anchors, missing supports, or identity errors. C resolved 127 disagreement items; 41 remain for human review in 19 grouped decisions at `data/reports/v07_dev40_gold_human_review.md`. This remains a development set, not an independent performance result, and it is not human-approved Gold.
+
+The consistency audit is `CONTRACT_V2_AMENDMENT_NEEDED`: repeated measurement-category boundaries need a later reviewed clarification. Contract v2, schema, extraction prompt, frozen validator, metrics, and all v0.6 frozen artifacts remain unchanged in this phase. No Dev40 extraction, future-holdout access, future Gold, or pilot was performed. Wait for human review before freezing the Dev40 Gold or beginning any subsequent stage.

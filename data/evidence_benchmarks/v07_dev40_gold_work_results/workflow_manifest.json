@@ -1,0 +1,51 @@
+{
+  "stage": "v0.7 Phase 1B Dev40 Gold construction",
+  "contract_v2_sha256": "9823606637e1c61a19546b720d052368cbe7a9c85825a1ce2ae41c3194208dab",
+  "schema_sha256": "33e289f1b2911024f00748ac2580ab7d2926369e7f4ac2ef48b28da8573dae36",
+  "bundle_files": {
+    "GOLD_ANNOTATION_INSTRUCTIONS.md": "ac76d69a9bf29cef6e581ec69e6e5b0b4158330d76e951e4c7a15ebad108112a",
+    "evidence_matrix.schema.json": "33e289f1b2911024f00748ac2580ab7d2926369e7f4ac2ef48b28da8573dae36",
+    "evidence_field_contract_v2.md": "9823606637e1c61a19546b720d052368cbe7a9c85825a1ce2ae41c3194208dab",
+    "abstracts.jsonl": "00aa0fe13743faa34f1bf8e0ea3a399f4b9cc91e52441d3f0a6c55cd551fe502",
+    "annotator_A_input/GOLD_ANNOTATION_INSTRUCTIONS.md": "ac76d69a9bf29cef6e581ec69e6e5b0b4158330d76e951e4c7a15ebad108112a",
+    "annotator_A_input/evidence_matrix.schema.json": "33e289f1b2911024f00748ac2580ab7d2926369e7f4ac2ef48b28da8573dae36",
+    "annotator_A_input/evidence_field_contract_v2.md": "9823606637e1c61a19546b720d052368cbe7a9c85825a1ce2ae41c3194208dab",
+    "annotator_A_input/abstracts.jsonl": "00aa0fe13743faa34f1bf8e0ea3a399f4b9cc91e52441d3f0a6c55cd551fe502",
+    "annotator_B_input/GOLD_ANNOTATION_INSTRUCTIONS.md": "ac76d69a9bf29cef6e581ec69e6e5b0b4158330d76e951e4c7a15ebad108112a",
+    "annotator_B_input/evidence_matrix.schema.json": "33e289f1b2911024f00748ac2580ab7d2926369e7f4ac2ef48b28da8573dae36",
+    "annotator_B_input/evidence_field_contract_v2.md": "9823606637e1c61a19546b720d052368cbe7a9c85825a1ce2ae41c3194208dab",
+    "annotator_B_input/abstracts.jsonl": "00aa0fe13743faa34f1bf8e0ea3a399f4b9cc91e52441d3f0a6c55cd551fe502"
+  },
+  "annotators": {
+    "A": {
+      "session_type": "fresh_ephemeral_isolated",
+      "input_dir": "/tmp/wos_v07_dev40_annotator_A_retry/input",
+      "output_sha256": "1b79f85037b52f2272bc032373d18144c0f38dbacdaec6f97d22f2b9d96d596b",
+      "validation_report": "annotator_A/validation.json",
+      "grounding_valid": 34
+    },
+    "B": {
+      "session_type": "fresh_ephemeral_isolated",
+      "input_dir": "/tmp/wos_v07_dev40_annotator_B_retry/input",
+      "output_sha256": "5f206a149d3465d5c4a843deda3709c1eb6b15e584ad35442599d3d8b0beb162",
+      "validation_report": "annotator_B/validation.json",
+      "grounding_valid": 28
+    }
+  },
+  "adjudicator_C": {
+    "session_type": "fresh_ephemeral_isolated",
+    "input_sha256": "42abcc0abe0238e6434f7decc29d72da57b44b9647bc6f4098a750072be77443",
+    "output_sha256": "8c3789cb2a020a0c32e98820d898fd8acce9220721ffa3a2a65f5ce59da67a53",
+    "item_count": 168
+  },
+  "comparison_sha256": "6cf8e1bf75254b10ec68243b37b6028b10f07b1f64048951297934db8e6f2699",
+  "dev40_abstracts_accessed": true,
+  "future_holdout_abstracts_accessed": false,
+  "future_holdout_gold_created": false,
+  "future_holdout_extraction_run": false,
+  "prompt_modified": false,
+  "extractor_run": false,
+  "contract_modified_after_freeze": false,
+  "validator_sha256": "58735927376d007f5bf004b9bf62cb5dc6acb56cc33a60ab0cb7f856740e95a1",
+  "contract_consistency_audit": "CONTRACT_V2_AMENDMENT_NEEDED"
+}

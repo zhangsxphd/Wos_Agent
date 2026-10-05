@@ -1,0 +1,281 @@
+{
+  "expected": 40,
+  "received": 40,
+  "missing_uids": [],
+  "duplicate_uids": 0,
+  "schema_valid": 40,
+  "grounding_valid": 34,
+  "grounding_errors": [
+    {
+      "uid": "WOS:000794189500001",
+      "error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001461814100001",
+      "error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "error": "Experimental scale is not explicitly supported"
+    }
+  ],
+  "unique_offset_repairs": [],
+  "invalid_offset_count": 0,
+  "orphan_anchor_count": 0,
+  "missing_support_count": 0,
+  "unsupported": 6,
+  "records": [
+    {
+      "uid": "WOS:000730402400009",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:000794189500001",
+      "schema_valid": true,
+      "grounding_valid": false,
+      "grounding_error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:000816900700001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:000828580400001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:000874616200001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "schema_valid": true,
+      "grounding_valid": false,
+      "grounding_error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:000916600100003",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:000931065500001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:000973038200001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001004405000001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001067878900006",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001203639300001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001205190200001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001224081200001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001286302900001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001298590200001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001300986400001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001304976800001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "schema_valid": true,
+      "grounding_valid": false,
+      "grounding_error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001365452900001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001366379700001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "schema_valid": true,
+      "grounding_valid": false,
+      "grounding_error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001461814100001",
+      "schema_valid": true,
+      "grounding_valid": false,
+      "grounding_error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001469093900001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001700916300001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "schema_valid": true,
+      "grounding_valid": false,
+      "grounding_error": "Experimental scale is not explicitly supported"
+    },
+    {
+      "uid": "WOS:001783919300001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001818849400001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    },
+    {
+      "uid": "WOS:001871100100001",
+      "schema_valid": true,
+      "grounding_valid": true,
+      "grounding_error": null
+    }
+  ]
+}

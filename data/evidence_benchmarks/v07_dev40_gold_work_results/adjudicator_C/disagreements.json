@@ -1,0 +1,2472 @@
+{
+  "instructions": "Adjudicate only these A/B disagreement items using the supplied Contract v2. Use only provided context snippets. Do not inspect abstracts outside snippets, model predictions, extraction prompt, historical performance, or any future holdout. Each response must have id, decision (A/B/MODIFY/NEEDS_HUMAN_REVIEW), candidate_value (only for MODIFY), candidate_support (exact supplied A/B support for A/B; for MODIFY exact evidence_text plus offsets only if recoverable within snippet), contract_rule, rationale. Prefer NEEDS_HUMAN_REVIEW where context is insufficient or contract does not decide. Never invent evidence or read outside.",
+  "disagreement_count": 168,
+  "items": [
+    {
+      "uid": "WOS:000730402400009",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "A_only",
+      "value": "HRFS was applied (0, 10, 20, 40, 60, 80 and 100 mL/pot)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "With this purpose, HRFS was applied (0, 10, 20, 40, 60, 80 and 100 mL/pot) and rice yield and nitrogen (N) use efficiency (NUE) were determined.",
+        "start": 163,
+        "end": 307
+      },
+      "context": "We conducted a pot experiment to examine the feasibility of applying a reaction-finished solution of hydrochar (HRFS) to enhance rice production in a saline soil. With this purpose, HRFS was applied (0, 10, 20, 40, 60, 80 and 100 mL/pot) and rice yield and nitrogen (N) use efficiency (NUE) were determined. HRFS application significantly (P",
+      "id": "D001"
+    },
+    {
+      "uid": "WOS:000794189500001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "A_only",
+      "value": "no amendments and chemical fertilizer",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "These are: C) no amendments and chemical fertilizer; T1) recommended dose nitrogen, phosphorus, and potassium (N‐P‐K) fertilizers @60:30:30 kg ha−1; T2) 100% recommended dose of chemical fertilizers (RDF).; T3) rice straw compost (RSC) @14 Mg ha−1; T4) gypsum enriched compost (GEC) @14 Mg ha−1; and T5) municipal solid waste compost @16 Mg ha−1(MSWC) applied for three consecutive years (2012 to 2015).",
+        "start": 430,
+        "end": 833
+      },
+      "context": "key to implementing suitable management options for re‐builing the fertility of saline soils. In this context, we conducted field experiments in saline soil, comprising five treatments (1‐5 following) and a control (C). These are: C) no amendments and chemical fertilizer; T1) recommended dose nitrogen, phosphorus, and potassium (N‐P‐K) fertilizers @60:30:30 kg ha−1; T2) 100% recommended dose of chemical fertilizers (RDF).; T3) rice straw compost (RSC) @14 Mg ha−1; T4) gypsum enriched compost (GEC) @14 Mg ha−1; and T5) municipal solid waste compost @16 Mg ha−1(MSWC) applied for three consecutive years (2012 to 2015). Our results revealed that compost and chemical fertilizer had significant effect on soil organic carbon, soil aggregate stability indices, soil water retention, transmission characteristics, and pore size distribution. ",
+      "id": "D002"
+    },
+    {
+      "uid": "WOS:000816900700001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "These isolates were able to promote rice growth under salinity stress conditions as halotolerant plant growth-promoting rhizobacteria.",
+      "context": "e higher shoot height, root length, and plant dry weight compared with control (without isolates). Based on molecular characteristics, isolates S3 and S5 were identified as Pseudomonas stutzeri and Klebsiella pneumonia. These isolates were able to promote rice growth under salinity stress conditions as halotolerant plant growth-promoting rhizobacteria. These three potent isolates were found to produce indole-3-acetic acid and nitrogenase.",
+      "id": "D003"
+    },
+    {
+      "uid": "WOS:000828580400001",
+      "kind": "field",
+      "field": "/evidence/methods",
+      "direction": "A_only",
+      "value": "prepared at low temperature (270 °C)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "ABSTRACT The study was established to examine the effect of three biochar types (orange peels biochar (OPB), sorghum panicles biochar (SPB), and wood chips biochar (WCB)) prepared at low temperature (270 °C) added at four doses (0, 1, 3, and 6% w/w) on ammonia (NH3) volatilization and chemical characteristics of a saline soil treated with urea.",
+        "start": 0,
+        "end": 346
+      },
+      "context": "ABSTRACT The study was established to examine the effect of three biochar types (orange peels biochar (OPB), sorghum panicles biochar (SPB), and wood chips biochar (WCB)) prepared at low temperature (270 °C) added at four doses (0, 1, 3, and 6% w/w) on ammonia (NH3) volatilization and chemical characteristics of a saline soil treated with urea. The results revealed that treating the saline soil with different biochar types at all doses caused a significant reduction of cumulative NH3 volatilization compared to the unamended soil. The effectiveness of biochar t",
+      "id": "D004"
+    },
+    {
+      "uid": "WOS:000828580400001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "Accordingly, biochar applications are currently one of the most promising technologies and practices for rehabilitation and sustainable management of saline soils as well as mitigating climate change.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Accordingly, biochar applications are currently one of the most promising technologies and practices for rehabilitation and sustainable management of saline soils as well as mitigating climate change.",
+        "start": 1075,
+        "end": 1275
+      },
+      "context": "n the soil extract compared to the unamended soil. The sodium adsorption ratio decreased significantly with applying SPB and WCB at 3 and 6%. The biochar produced at a low temperature was found to have an acidic effect. Accordingly, biochar applications are currently one of the most promising technologies and practices for rehabilitation and sustainable management of saline soils as well as mitigating climate change.",
+      "id": "D005"
+    },
+    {
+      "uid": "WOS:000874616200001",
+      "kind": "field",
+      "field": "/evidence/study_system/crop",
+      "direction": "B_only",
+      "value": "Chenopodium quinoa",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Chenopodium quinoa",
+        "start": 320,
+        "end": 338
+      },
+      "context": "urity and human health. The current study investigates the comparative efficacy of plain biochar (BC), and silicon-nanoparticles doped biochar (SBC) for ameliorating the As and salinity-induced phytotoxicity in quinoa ( Chenopodium quinoa Willd.) and associated human health risks. Quinoa was grown on normal and saline soils (EC e 12.4 dS m −1 ) contaminated with As (0, 20 mg kg −1 ) and supplemented with 1% of BC or SBC. The results demonstrated that pla",
+      "id": "D006"
+    },
+    {
+      "uid": "WOS:000874616200001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "The addition of SBC to saline soils contaminated with As for quinoa cultivation is an effective approach for decreasing the food chain contamination and improving food security.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The addition of SBC to saline soils contaminated with As for quinoa cultivation is an effective approach for decreasing the food chain contamination and improving food security.",
+        "start": 1681,
+        "end": 1858
+      },
+      "context": "ks to human health, however, these effects were minimized with the addition of SBC. As accumulation in grains was decreased by 65-fold and 25-fold, respectively for BC and SBC in addition to As-contaminated saline soil. The addition of SBC to saline soils contaminated with As for quinoa cultivation is an effective approach for decreasing the food chain contamination and improving food security. However, more research is warranted for the field evaluation of the effectiveness of SBC in abating As uptake in other food crops cultivated on As polluted normal and salt-affected soils.",
+      "id": "D007"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "B_only",
+      "value": "plastic film mulched",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "plastic film mulched",
+        "start": 309,
+        "end": 329
+      },
+      "context": "investigate how biochar application affected the nutrient content, growth, yield, quality, and productivity of cotton, and to find the rational BCAR. The three-year field experiments of biochar application combined with plastic film mulched drip irrigation were conducted for cotton in Xinjiang, China. The biochar was continuously applied to the farmland at 0 (in 2018) + 0 (in 2019) + 0 (in 2020), 10 + 10 + 10, NT (no test) + 25 + 25, 50 + 50 + 30, and 100 ",
+      "id": "D008"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/measurements/nitrogen",
+      "direction": "A_only",
+      "value": "partial fertilizer (N, P, and K) productivity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The growth and yield-related indicators (plant height, stem diameter, leaf area index and seed yield), irrigation water productivity, and partial fertilizer (N, P, and K) productivity consistently increased than control under biochar application conditions, and the BCAR of 10 t ha (cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, and financial income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 .",
+        "start": 1137,
+        "end": 1622
+      },
+      "context": " during different cotton growth stages. The daily relative content of chlorophyll increased with the increasing BCAR and were larger at biochar treatments of 50 and 100 t ha (cid:0) 1 than 0, 10, and 25 t ha (cid:0) 1 . The growth and yield-related indicators (plant height, stem diameter, leaf area index and seed yield), irrigation water productivity, and partial fertilizer (N, P, and K) productivity consistently increased than control under biochar application conditions, and the BCAR of 10 t ha (cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, and financial income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 . However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications. Based on the economic analysis, the rational BCAR was 10 t ha (cid:0)",
+      "id": "D009"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "A_only",
+      "value": "cotton yields",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The growth and yield-related indicators (plant height, stem diameter, leaf area index and seed yield), irrigation water productivity, and partial fertilizer (N, P, and K) productivity consistently increased than control under biochar application conditions, and the BCAR of 10 t ha (cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, and financial income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 .",
+        "start": 1137,
+        "end": 1622
+      },
+      "context": " during different cotton growth stages. The daily relative content of chlorophyll increased with the increasing BCAR and were larger at biochar treatments of 50 and 100 t ha (cid:0) 1 than 0, 10, and 25 t ha (cid:0) 1 . The growth and yield-related indicators (plant height, stem diameter, leaf area index and seed yield), irrigation water productivity, and partial fertilizer (N, P, and K) productivity consistently increased than control under biochar application conditions, and the BCAR of 10 t ha (cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, and financial income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 . However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications. Based on the economic analysis, the rational BCAR was 10 t ha (cid:0)",
+      "id": "D010"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "B_only",
+      "value": "cotton fiber quality indices (length, Micronaire, strength or uniformity index)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "cotton fiber quality indices (length, Micronaire, strength or uniformity index)",
+        "start": 1640,
+        "end": 1719
+      },
+      "context": "cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, and financial income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 . However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications. Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be",
+      "id": "D011"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/measurements/water_use",
+      "direction": "A_only",
+      "value": "water-fertilizer productivity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The cotton growth, yield, and quality indicators were observed and used for computing water-fertilizer productivity.",
+        "start": 619,
+        "end": 735
+      },
+      "context": "char was continuously applied to the farmland at 0 (in 2018) + 0 (in 2019) + 0 (in 2020), 10 + 10 + 10, NT (no test) + 25 + 25, 50 + 50 + 30, and 100 + 100 + NT t ha (cid:0) 1 during cotton growth period of 2018 – 2020. The cotton growth, yield, and quality indicators were observed and used for computing water-fertilizer productivity. The cost-benefit analysis was referred to recommend a rational BCAR. All four biochar application treatments increased the leaf/stem/root nutrient (N, P, and K) content than control during different cotton growth stages",
+      "id": "D012"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "cotton fiber quality indices (length, Micronaire, strength or uniformity index)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications.",
+        "start": 1623,
+        "end": 1772
+      },
+      "context": "BCAR of 10 t ha (cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, and financial income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 . However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications. Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be applied to arid zones and have not been reported bef",
+      "id": "D013"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "partial fertilizer (N, P, and K) productivity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "partial fertilizer (N, P, and K) productivity",
+        "start": 1275,
+        "end": 1320
+      },
+      "context": "ochar treatments of 50 and 100 t ha (cid:0) 1 than 0, 10, and 25 t ha (cid:0) 1 . The growth and yield-related indicators (plant height, stem diameter, leaf area index and seed yield), irrigation water productivity, and partial fertilizer (N, P, and K) productivity consistently increased than control under biochar application conditions, and the BCAR of 10 t ha (cid:0) 1 showed the greatest advantages in enhancing germination rates, cotton yields, water-fertilizer productivities, ",
+      "id": "D014"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be applied to arid zones and have not been reported before.",
+      "context": " income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 . However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications. Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be applied to arid zones and have not been reported before.",
+      "id": "D015"
+    },
+    {
+      "uid": "WOS:000899201500001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be applied to arid zones and have not been reported before.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be applied to arid zones and have not been reported before.",
+        "start": 1773,
+        "end": 1996
+      },
+      "context": " income than biochar treatments of 0, 25, 50 and 100 t ha (cid:0) 1 . However, neither cotton fiber quality indices (length, Micronaire, strength or uniformity index) were significantly affected by biochar applications. Based on the economic analysis, the rational BCAR was 10 t ha (cid:0) 1 each year (continued for three years) for cotton planting, which was a best dose that could be applied to arid zones and have not been reported before.",
+      "id": "D016"
+    },
+    {
+      "uid": "WOS:000916600100003",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "total saline-alkaline land area",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The total saline-alkaline land area continued to increase, indicating that desertification cannot be curbed.",
+        "start": 1840,
+        "end": 1948
+      },
+      "context": " diversity of wetlands increased with growing light and heavy saline-alkali areas. (3) Overall ecological security gradually increased from 0.56 to 0.65, and the unsafe areas first decreased, before increasing slightly. The total saline-alkaline land area continued to increase, indicating that desertification cannot be curbed. Ecological security had the highest sensitivity to landscape separation, and the value range and its safety levels of ecological security (ES) were accurately delimited based on uncertainty calculation and frequency sta",
+      "id": "D017"
+    },
+    {
+      "uid": "WOS:000916600100003",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "landscape separation",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Ecological security had the highest sensitivity to landscape separation, and the value range and its safety levels of ecological security (ES) were accurately delimited based on uncertainty calculation and frequency statistics.",
+        "start": 1949,
+        "end": 2176
+      },
+      "context": "urity gradually increased from 0.56 to 0.65, and the unsafe areas first decreased, before increasing slightly. The total saline-alkaline land area continued to increase, indicating that desertification cannot be curbed. Ecological security had the highest sensitivity to landscape separation, and the value range and its safety levels of ecological security (ES) were accurately delimited based on uncertainty calculation and frequency statistics. The results can provide reasonable and practical suggestions for the government and local communities on how to strengthen the ecological environment construction of Ebinur Lake Wetland Reserve. The government should se",
+      "id": "D018"
+    },
+    {
+      "uid": "WOS:000916600100003",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "ecological landscape indices",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "ecological landscape indices",
+        "start": 614,
+        "end": 642
+      },
+      "context": "sitive ecosystem. Quantitative monitoring of the ecological security and landscape patterns of the Ebinur Lake wetland ecosystem is of great significance for environmental protection. To clarify the relationship between ecological landscape indices and land use/cover, this study used Landsat TM/OLI data from 1990, 1998, 2011 and 2021, aimed to analyze the correlated spatio-temporal changes of Ebinur Lake Wetland Reserve, China over past 32 years, in addition to qu",
+      "id": "D019"
+    },
+    {
+      "uid": "WOS:000916600100003",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "The total saline-alkaline land area continued to increase",
+      "context": " diversity of wetlands increased with growing light and heavy saline-alkali areas. (3) Overall ecological security gradually increased from 0.56 to 0.65, and the unsafe areas first decreased, before increasing slightly. The total saline-alkaline land area continued to increase, indicating that desertification cannot be curbed. Ecological security had the highest sensitivity to landscape separation, and the value range and its safety levels of ecological security (ES) were accurately delimited based on uncertainty calculation and frequency sta",
+      "id": "D020"
+    },
+    {
+      "uid": "WOS:000931065500001",
+      "kind": "field",
+      "field": "/evidence/study_system/crop",
+      "direction": "B_only",
+      "value": "cereal crops",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "cereal crops",
+        "start": 1458,
+        "end": 1470
+      },
+      "context": "r grain filling. In this review, the current environmental stimuli, their dose–response effect on grain filling, and the physiological and molecular mechanisms involved are discussed. Furthermore, what we can do to help cereal crops adapt to environmental stimuli is elaborated. Overall, we call for future research to delve deeper into the gene function-related research and the commercialization of gene-edited crops. Meanwhile, smart agriculture is ",
+      "id": "D021"
+    },
+    {
+      "uid": "WOS:000973038200001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "available phosphorus",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Key results The soil total organic carbon, total nitrogen, available phosphorus, and biomass in RR, RG, and RS treatments were all higher than RF and control.",
+        "start": 811,
+        "end": 969
+      },
+      "context": "otation (RS). Physicochemical properties, including pH, electrical conductivity, and exchangeable sodium percentage were determined, and 16S rRNA sequences were used to evaluate soil microbial composition and stability. Key results The soil total organic carbon, total nitrogen, available phosphorus, and biomass in RR, RG, and RS treatments were all higher than RF and control. Notably, RR, RG, and RS increased the soil microbial biomass carbon and nitrogen, and significantly reshaped the soil communities of bacteria, fungi, and archaea relative to RF and WL. Conclusions Despite the lower effi",
+      "id": "D022"
+    },
+    {
+      "uid": "WOS:000973038200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "available phosphorus",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "available phosphorus",
+        "start": 870,
+        "end": 890
+      },
+      "context": "ctrical conductivity, and exchangeable sodium percentage were determined, and 16S rRNA sequences were used to evaluate soil microbial composition and stability. Key results The soil total organic carbon, total nitrogen, available phosphorus, and biomass in RR, RG, and RS treatments were all higher than RF and control. Notably, RR, RG, and RS increased the soil microbial biomass carbon and nitrogen, and significantly reshaped the soil communities of bacteri",
+      "id": "D023"
+    },
+    {
+      "uid": "WOS:000973038200001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "A_only",
+      "value": "Providing a balance between salt desalination performance with irrigation water input and yield, the paddy–upland rotation system is a robust, replicable, and environmentally friendly practice in saline-sodic soil remediation.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Providing a balance between salt desalination performance with irrigation water input and yield, the paddy–upland rotation system is a robust, replicable, and environmentally friendly practice in saline-sodic soil remediation.",
+        "start": 1484,
+        "end": 1710
+      },
+      "context": "savings in irrigation water, and the improvements in microbial diversity and functionalities indicated that the paddy–upland crop rotation system had substantial influence on sustainability of soil quality. Implications Providing a balance between salt desalination performance with irrigation water input and yield, the paddy–upland rotation system is a robust, replicable, and environmentally friendly practice in saline-sodic soil remediation.",
+      "id": "D024"
+    },
+    {
+      "uid": "WOS:000973038200001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "Implications Providing a balance between salt desalination performance with irrigation water input and yield, the paddy–upland rotation system is a robust, replicable, and environmentally friendly practice in saline-sodic soil remediation.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Implications Providing a balance between salt desalination performance with irrigation water input and yield, the paddy–upland rotation system is a robust, replicable, and environmentally friendly practice in saline-sodic soil remediation.",
+        "start": 1471,
+        "end": 1710
+      },
+      "context": "ere dramatic savings in irrigation water, and the improvements in microbial diversity and functionalities indicated that the paddy–upland crop rotation system had substantial influence on sustainability of soil quality. Implications Providing a balance between salt desalination performance with irrigation water input and yield, the paddy–upland rotation system is a robust, replicable, and environmentally friendly practice in saline-sodic soil remediation.",
+      "id": "D025"
+    },
+    {
+      "uid": "WOS:001004405000001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "In alkaline, salinized, and secondary salinized soils",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "FGD gypsum plus K–Zn–Mn fertilizer increased the yield of rice by 135%. In alkaline, salinized, and secondary salinized soils, FGD gypsum combined with organic fertilizer or organic plus chemical fertilizer increased the yield of rice by 21.2% and 60.4%, the yield of sunflower by 2.4% and 23.6%, and the yield of medlar by 18.81% and 20.78%, respectively.",
+        "start": 816,
+        "end": 1172
+      },
+      "context": " theory, key technologies, and industrialized applications. This paper also shows that soil conditions can be improved and crop yields can be increased by using FGD alone or in combination with humic acid or fertilizer. FGD gypsum plus K–Zn–Mn fertilizer increased the yield of rice by 135%. In alkaline, salinized, and secondary salinized soils, FGD gypsum combined with organic fertilizer or organic plus chemical fertilizer increased the yield of rice by 21.2% and 60.4%, the yield of sunflower by 2.4% and 23.6%, and the yield of medlar by 18.81% and 20.78%, respectively. The application of FGD gypsum also increased the salt tolerance of salt-tolerant plants. Combined with drainage, laser field levelling and tillage decreased soil salinity by more than 63.76% and increased the yield of o",
+      "id": "D026"
+    },
+    {
+      "uid": "WOS:001004405000001",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "B_only",
+      "value": "crop yield",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "crop yield",
+        "start": 243,
+        "end": 253
+      },
+      "context": "use of FGD gypsum in agricultural land is still debated in some countries even though its effectiveness in soil management has been reported in many studies. Thus, the changes in the levels of soil salinity, alkalinity, crop yield, and other physicochemical properties in different soil types and crops after reclamation and planting with FGD gypsum over four years are evaluated in this paper. The main aim of this paper is to review the effects of ",
+      "id": "D027"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "saline alkali land",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "As as a consequence, the research conducted an experimental analysis on the effects of straw returning and biological carbon on saline alkali land development in northeast Jiangsu University, with the goal of addressing the issue of weak soil internal structure in some places of northeast China.",
+        "start": 290,
+        "end": 586
+      },
+      "context": "trients in the soil are constantly losing. It induces the creation of saltwater alkali land and quickens soil degradation, both of which further lower productivity. It will eventually lead to a serious food catastrophe. As as a consequence, the research conducted an experimental analysis on the effects of straw returning and biological carbon on saline alkali land development in northeast Jiangsu University, with the goal of addressing the issue of weak soil internal structure in some places of northeast China. The experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively",
+      "id": "D028"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "A_only",
+      "value": "biochar",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The experimental results showed that biochar and straw returning could effectively improve rice’s growth rate and effective tillering.",
+        "start": 808,
+        "end": 942
+      },
+      "context": "he experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively. The experimental results showed that biochar and straw returning could effectively improve rice’s growth rate and effective tillering. Among the biochar returning treatments, 4 treatments had the highest traumatic discharge, with an increased rate of 3.13–37.65%, and 6 treatments had the highest traumatic discharge, 29.96% higher than CK. At the same t",
+      "id": "D029"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_physical",
+      "direction": "A_only",
+      "value": "soil physical and chemical properties",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively.",
+        "start": 587,
+        "end": 807
+      },
+      "context": "ffects of straw returning and biological carbon on saline alkali land development in northeast Jiangsu University, with the goal of addressing the issue of weak soil internal structure in some places of northeast China. The experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively. The experimental results showed that biochar and straw returning could effectively improve rice’s growth rate and effective tillering. Among the biochar returning treatments, 4 treatments had the highest traumatic disch",
+      "id": "D030"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_physical",
+      "direction": "B_only",
+      "value": "soil structure",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "soil structure",
+        "start": 1424,
+        "end": 1438
+      },
+      "context": "il can effectively improve the organic matter in the soil and reduce its pH value. Compared with CK, the highest increase is 27.80%. In general, the use of biological carbon and straw return can effectively optimize the soil structure, increase the yield, reduce the waste of straw resources, and have a strong practical effect on the actual saline alkali land improvement in Northeast China.",
+      "id": "D031"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "spike characteristics",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "spike characteristics",
+        "start": 755,
+        "end": 776
+      },
+      "context": "ternal structure in some places of northeast China. The experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively. The experimental results showed that biochar and straw returning could effectively improve rice’s growth rate and effective tillering. Among the biochar returning treatments, 4 treatments ",
+      "id": "D032"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "effective tillering",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "effective tillering",
+        "start": 922,
+        "end": 941
+      },
+      "context": "vity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively. The experimental results showed that biochar and straw returning could effectively improve rice’s growth rate and effective tillering. Among the biochar returning treatments, 4 treatments had the highest traumatic discharge, with an increased rate of 3.13–37.65%, and 6 treatments had the highest traumatic discharge, 29.96% higher than CK. At the same ",
+      "id": "D033"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "A_only",
+      "value": "spike characteristics",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively.",
+        "start": 587,
+        "end": 807
+      },
+      "context": "ffects of straw returning and biological carbon on saline alkali land development in northeast Jiangsu University, with the goal of addressing the issue of weak soil internal structure in some places of northeast China. The experiment analyzed the growth and photosynthesis dynamics, material accumulation and transformation, root activity, soil physical and chemical properties, and the spike characteristics of Kenjiandao 5, respectively. The experimental results showed that biochar and straw returning could effectively improve rice’s growth rate and effective tillering. Among the biochar returning treatments, 4 treatments had the highest traumatic disch",
+      "id": "D034"
+    },
+    {
+      "uid": "WOS:001047181300014",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "Compared with CK, the highest increase is 27.80%.",
+      "context": "65%, and 6 treatments had the highest traumatic discharge, 29.96% higher than CK. At the same time, biochar and straw returning to the soil can effectively improve the organic matter in the soil and reduce its pH value. Compared with CK, the highest increase is 27.80%. In general, the use of biological carbon and straw return can effectively optimize the soil structure, increase the yield, reduce the waste of straw resources, and have a strong practical effect on the actual saline alk",
+      "id": "D035"
+    },
+    {
+      "uid": "WOS:001067878900006",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "A_only",
+      "value": "mineral gypsum",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Sodic soil reclamation using inorganic ameliorants like mineral gypsum or phosphogypsum is beyond the reach of small and marginal farmers having alkali soils because of their higher market prices and shortage of availability.",
+        "start": 241,
+        "end": 466
+      },
+      "context": "of alkali soils to harness their productivity potential is more complex due to the presence of excess sodium ions, poor hydraulic conductivity and infiltration rate, resulting in poor plant growth and crop productivity. Sodic soil reclamation using inorganic ameliorants like mineral gypsum or phosphogypsum is beyond the reach of small and marginal farmers having alkali soils because of their higher market prices and shortage of availability. Conjoint use of inorganic and organic amendments can be a pragmatic solution for improving soil physico-chemical and biological properties and sustaining crop productivity. Municipal solid waste compost (MSWC) available",
+      "id": "D036"
+    },
+    {
+      "uid": "WOS:001067878900006",
+      "kind": "field",
+      "field": "/evidence/treatments/biological_treatments",
+      "direction": "B_only",
+      "value": "efficient halophilic microbial consortium",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "efficient halophilic microbial consortium",
+        "start": 729,
+        "end": 770
+      },
+      "context": "dments can be a pragmatic solution for improving soil physico-chemical and biological properties and sustaining crop productivity. Municipal solid waste compost (MSWC) available in abundant quantity if enriched with the efficient halophilic microbial consortium and used in conjunction with a reduced dose of gypsum can be a cost-effective approach for sustainable reclamation of alkali soils and harnessing their productivity potential. Hence, a field experiment was conducted on ",
+      "id": "D037"
+    },
+    {
+      "uid": "WOS:001067878900006",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "B_only",
+      "value": "pH 2 9.2 ± 0.10",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "pH 2 9.2 ± 0.10",
+        "start": 1010,
+        "end": 1025
+      },
+      "context": "tion with a reduced dose of gypsum can be a cost-effective approach for sustainable reclamation of alkali soils and harnessing their productivity potential. Hence, a field experiment was conducted on a high alkali soil (pH 2 9.2 ± 0.10), electrical conductivity (EC) 1.14 ± 0.12﻿ dS m −1 , exchangeable sodium percentage 48 ± 2.50 and organic carbon (0.30%) was conducted during 2018–19 to 2020–21 to study the combined effect inorganic and organic (enric",
+      "id": "D038"
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "A_only",
+      "value": "growth, nutrient uptake, and Zn fortification in rice plants",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The current study aimed to evaluate the effects of Zn enriched amino acids (ZnAAC) on the growth, nutrient uptake, and Zn fortification in rice plants under salt stress.",
+        "start": 219,
+        "end": 388
+      },
+      "context": "Soil salinization and its associated problems are becoming a potential threat to the sustainability of agriculture. Deficiency of micronutrients like zinc (Zn) is a common growth limiting factor in salt-affected soils. The current study aimed to evaluate the effects of Zn enriched amino acids (ZnAAC) on the growth, nutrient uptake, and Zn fortification in rice plants under salt stress. Different ZnAAC including Zn glycine (ZnGly), Zn methionine (ZnMet), Zn tryptophan (ZnTrp) and conventional ZnSO4 were applied at the rates of 8, 10, and 12 mg/kg with three replicates. The results of the current experi",
+      "id": "D039"
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "A_only",
+      "value": "Zn concentration",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Maximum increase in Zn concentration in soil (391.3 %), roots (251.8 %), shoots (232.9 %), and paddy (287.8 %) were increased with the application of ZnTrp at 12 mg/kg compared to that with control.",
+        "start": 971,
+        "end": 1169
+      },
+      "context": "nd 33.9, respectively. Maximum chlorophyll contents, photosynthetic rate, transpiration rate, stomatal conductance, and sub-stomatal carbon dioxide were with the application of ZnTrp to rice grown on salt affected soil. Maximum increase in Zn concentration in soil (391.3 %), roots (251.8 %), shoots (232.9 %), and paddy (287.8 %) were increased with the application of ZnTrp at 12 mg/kg compared to that with control. Maximum decrease in phytic acid in rice paddy was observed with the application of ZnTrp at higher application rate. It is concluded that the application of ZnTrp is an effective remedy to enhance the growth response an",
+      "id": "D040"
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "roots",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "roots",
+        "start": 1027,
+        "end": 1032
+      },
+      "context": "tosynthetic rate, transpiration rate, stomatal conductance, and sub-stomatal carbon dioxide were with the application of ZnTrp to rice grown on salt affected soil. Maximum increase in Zn concentration in soil (391.3 %), roots (251.8 %), shoots (232.9 %), and paddy (287.8 %) were increased with the application of ZnTrp at 12 mg/kg compared to that with control. Maximum decrease in phytic acid in rice paddy was observed with the application of",
+      "id": "D041"
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "shoots",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "shoots",
+        "start": 1044,
+        "end": 1050
+      },
+      "context": " transpiration rate, stomatal conductance, and sub-stomatal carbon dioxide were with the application of ZnTrp to rice grown on salt affected soil. Maximum increase in Zn concentration in soil (391.3 %), roots (251.8 %), shoots (232.9 %), and paddy (287.8 %) were increased with the application of ZnTrp at 12 mg/kg compared to that with control. Maximum decrease in phytic acid in rice paddy was observed with the application of ZnTrp at higher a",
+      "id": "D042"
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "paddy",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "paddy",
+        "start": 701,
+        "end": 706
+      },
+      "context": "nd conventional ZnSO4 were applied at the rates of 8, 10, and 12 mg/kg with three replicates. The results of the current experiment revealed that ZnTrp applied at 12 mg/kg showed the maximum increase in root, shoot, and paddy weight (g/pot), which remained 12.9, 49.0, and 33.9, respectively. Maximum chlorophyll contents, photosynthetic rate, transpiration rate, stomatal conductance, and sub-stomatal carbon dioxide were with the application o",
+      "id": "D043"
+    },
+    {
+      "uid": "WOS:001083747800001",
+      "kind": "field",
+      "field": "/evidence/methods",
+      "direction": "A_only",
+      "value": "three replicates",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Different ZnAAC including Zn glycine (ZnGly), Zn methionine (ZnMet), Zn tryptophan (ZnTrp) and conventional ZnSO4 were applied at the rates of 8, 10, and 12 mg/kg with three replicates.",
+        "start": 389,
+        "end": 574
+      },
+      "context": "on growth limiting factor in salt-affected soils. The current study aimed to evaluate the effects of Zn enriched amino acids (ZnAAC) on the growth, nutrient uptake, and Zn fortification in rice plants under salt stress. Different ZnAAC including Zn glycine (ZnGly), Zn methionine (ZnMet), Zn tryptophan (ZnTrp) and conventional ZnSO4 were applied at the rates of 8, 10, and 12 mg/kg with three replicates. The results of the current experiment revealed that ZnTrp applied at 12 mg/kg showed the maximum increase in root, shoot, and paddy weight (g/pot), which remained 12.9, 49.0, and 33.9, respectively. Maximum chlorophyll ",
+      "id": "D044"
+    },
+    {
+      "uid": "WOS:001203639300001",
+      "kind": "field",
+      "field": "/evidence/measurements/carbon",
+      "direction": "B_only",
+      "value": "OM",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "OM",
+        "start": 562,
+        "end": 564
+      },
+      "context": "GP traits up to 200 mM NaCl, however, higher salt stress conditions affected these activities. The study was designed to determine the effect of developed talc‐based bioformulation using KSS‐6 along with organic manure (OM) on growth and yield of paddy under saline conditions. Bioformulation broadcasting was also done to examine the effect on soil properties. It was found that the combinatorial treatment showed positive impact on growth a",
+      "id": "D045"
+    },
+    {
+      "uid": "WOS:001203639300001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "dry weight",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "dry weight",
+        "start": 939,
+        "end": 949
+      },
+      "context": "at the combinatorial treatment showed positive impact on growth and yield of rice under saline conditions. Co‐application of KSS‐6 with OM showed maximum increment in growth, chlorophyll content, plant fresh weight, and dry weight as compared to untreated control plants. Furthermore, the combinatorial treatment improved the nutrient content (P, K, Zn, Fe, Mg, and Mn) by more than 35% and enhanced the biochemical parameters such as proline, flavon",
+      "id": "D046"
+    },
+    {
+      "uid": "WOS:001205190200001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "saline-alkali paddy field",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Here, a 6-year paddy field study was conducted in a saline-alkali paddy field using two nitrogen application levels (0 and 225 kg ha −1 ) and four biochar application rates [0 (T0), 1.5% (T1.5), 3.0% (T3.0), and 4.5% (T4.5) biochar, w/w].",
+        "start": 332,
+        "end": 570
+      },
+      "context": "ng-term effects of one-off biochar application on soil physicochemical properties, salt concentration, nutrient availability, soil enzyme activities, and rice yield under highly saline-alkali paddy soils remain unclear. Here, a 6-year paddy field study was conducted in a saline-alkali paddy field using two nitrogen application levels (0 and 225 kg ha −1 ) and four biochar application rates [0 (T0), 1.5% (T1.5), 3.0% (T3.0), and 4.5% (T4.5) biochar, w/w]. The results showed that compared with T0, the bulk density (BD) under T1.5, T3.0, and T4.5 treatments significantly decreased by 11.21%, 16.33%, and 25.57%, while total porosity (Tp) and saturated hydraulic conductivity",
+      "id": "D047"
+    },
+    {
+      "uid": "WOS:001205190200001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "B_only",
+      "value": "saline-alkali",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "saline-alkali",
+        "start": 66,
+        "end": 79
+      },
+      "context": "Abstract Biochar application can alleviate the adverse effects of saline-alkali stress on crops. However, the long-term effects of one-off biochar application on soil physicochemical properties, salt concentration, nutrient availability, soil enzyme activities, and rice yield under highly saline-al",
+      "id": "D048"
+    },
+    {
+      "uid": "WOS:001224081200001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "Floodwater EC",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Conversely, PBC and the lower application rate of HBC led to decreases in NH3 volatilization ranging from 2.4 % to 12.1 %. Floodwater EC is a dominant factor in NH3 emission.",
+        "start": 672,
+        "end": 846
+      },
+      "context": "olatilization and DOM using a soil column experiment. The results revealed that soil NH3 volatilization significantly increased by 56.1 % in the treatment with 1.5 % (w/w) HBC compared to the control without PBC or HBC. Conversely, PBC and the lower application rate of HBC led to decreases in NH3 volatilization ranging from 2.4 % to 12.1 %. Floodwater EC is a dominant factor in NH3 emission. Furthermore, the fluorescence intensities of the four fractions (all humic substances) were found to be significantly higher in the 1.5 % (w/w) HBC treatment applied compared to the other treatments, as indicated by par",
+      "id": "D049"
+    },
+    {
+      "uid": "WOS:001224081200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "Floodwater EC",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Floodwater EC",
+        "start": 795,
+        "end": 808
+      },
+      "context": "ased by 56.1 % in the treatment with 1.5 % (w/w) HBC compared to the control without PBC or HBC. Conversely, PBC and the lower application rate of HBC led to decreases in NH3 volatilization ranging from 2.4 % to 12.1 %. Floodwater EC is a dominant factor in NH3 emission. Furthermore, the fluorescence intensities of the four fractions (all humic substances) were found to be significantly higher in the 1.5 % (w/w) HBC treatment applied compared to the",
+      "id": "D050"
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "saline–alkali land",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "These advancements may effectively improve the soil aggregate structure of saline–alkali soil at the source. In this study, biological pyrolysis liquid was modified to produce soil modifier for saline–alkali land, and this soil modifier was used in a rice planting experiment.",
+        "start": 250,
+        "end": 526
+      },
+      "context": "on of saline–alkali soil is a hot topic worldwide. Analysis of soil aggregate structure and water and of the salt transport law, a new technology that uses humic acid as a saline–alkali soil amendment has been proposed. These advancements may effectively improve the soil aggregate structure of saline–alkali soil at the source. In this study, biological pyrolysis liquid was modified to produce soil modifier for saline–alkali land, and this soil modifier was used in a rice planting experiment. The results show that the application of a bio-humic acid soil amendment in the amount of 3000 kg/ha and its combination with humic acid fertilizer produced rice yields as high as 9750 kg/ha. At the same time, the pH of",
+      "id": "D051"
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "kind": "field",
+      "field": "/evidence/study_system/salinity_context",
+      "direction": "A_only",
+      "value": "In this study, biological pyrolysis liquid was modified to produce soil modifier for saline–alkali land, and this soil modifier was used in a rice planting experiment.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "These advancements may effectively improve the soil aggregate structure of saline–alkali soil at the source. In this study, biological pyrolysis liquid was modified to produce soil modifier for saline–alkali land, and this soil modifier was used in a rice planting experiment.",
+        "start": 250,
+        "end": 526
+      },
+      "context": "on of saline–alkali soil is a hot topic worldwide. Analysis of soil aggregate structure and water and of the salt transport law, a new technology that uses humic acid as a saline–alkali soil amendment has been proposed. These advancements may effectively improve the soil aggregate structure of saline–alkali soil at the source. In this study, biological pyrolysis liquid was modified to produce soil modifier for saline–alkali land, and this soil modifier was used in a rice planting experiment. The results show that the application of a bio-humic acid soil amendment in the amount of 3000 kg/ha and its combination with humic acid fertilizer produced rice yields as high as 9750 kg/ha. At the same time, the pH of",
+      "id": "D052"
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "B_only",
+      "value": "3000 kg/ha",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "3000 kg/ha",
+        "start": 617,
+        "end": 627
+      },
+      "context": "quid was modified to produce soil modifier for saline–alkali land, and this soil modifier was used in a rice planting experiment. The results show that the application of a bio-humic acid soil amendment in the amount of 3000 kg/ha and its combination with humic acid fertilizer produced rice yields as high as 9750 kg/ha. At the same time, the pH of the soil was reduced from 10.81 to 8.95 (with bio-humic acid soil amendment content of 3000 kg/ha), ",
+      "id": "D053"
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "B_only",
+      "value": null,
+      "support": null,
+      "claim": "With this amendment, saline–alkali land could be transformed and planted in the same year, increasing the potential yearly income for the land.",
+      "context": "g with an increased amount of bio-humic acid soil amendment. The content of calcium, magnesium, and trace elements in the soil were clearly increased with the use of the amended soil in comparison with the normal group. With this amendment, saline–alkali land could be transformed and planted in the same year, increasing the potential yearly income for the land. This may be efficient and environmentally friendly, encouraging the agricultural circular economy.",
+      "id": "D054"
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "A_only",
+      "value": "With this amendment, saline–alkali land could be transformed and planted in the same year, increasing the potential yearly income for the land.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "With this amendment, saline–alkali land could be transformed and planted in the same year, increasing the potential yearly income for the land.",
+        "start": 1128,
+        "end": 1271
+      },
+      "context": "g with an increased amount of bio-humic acid soil amendment. The content of calcium, magnesium, and trace elements in the soil were clearly increased with the use of the amended soil in comparison with the normal group. With this amendment, saline–alkali land could be transformed and planted in the same year, increasing the potential yearly income for the land. This may be efficient and environmentally friendly, encouraging the agricultural circular economy.",
+      "id": "D055"
+    },
+    {
+      "uid": "WOS:001256090500001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "This may be efficient and environmentally friendly, encouraging the agricultural circular economy.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "This may be efficient and environmentally friendly, encouraging the agricultural circular economy.",
+        "start": 1272,
+        "end": 1370
+      },
+      "context": "eased with the use of the amended soil in comparison with the normal group. With this amendment, saline–alkali land could be transformed and planted in the same year, increasing the potential yearly income for the land. This may be efficient and environmentally friendly, encouraging the agricultural circular economy.",
+      "id": "D056"
+    },
+    {
+      "uid": "WOS:001286302900001",
+      "kind": "field",
+      "field": "/evidence/study_system/crop",
+      "direction": "B_only",
+      "value": "rice",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "rice",
+        "start": 410,
+        "end": 414
+      },
+      "context": "type of soil. Their combined use may create synergistic effects, necessitating further investigation. This study aims to assess the combined impacts of biochar with traditional amendments on soil quality, properties and rice yield. A field experiment was established with six treatments: no‐amendment (control), lime, cow manure, biochar, combined lime and biochar, and combined cow manure and biochar with rice ( Oryza sativa ) planted in four",
+      "id": "D057"
+    },
+    {
+      "uid": "WOS:001286302900001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "Mehlich‐1 phosphorous",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Meanwhile, combining biochar with cow manure notably enhanced Mehlich‐1 phosphorous (3.4 mg kg −1 ), organic carbon (4.99%), ammonium (27.0 mg kg −1 ) and cation exchange capacity (17.2 cmol(+) kg −1 ).",
+        "start": 1051,
+        "end": 1253
+      },
+      "context": "har with lime significantly increased soil pH (6.2), and exchangeable calcium (648.6 cmol(+) kg −1 ), while reducing exchangeable aluminium (11.83 cmol(+) kg −1 ) and iron (37.5 cmol(+) kg −1 ), compared to the control. Meanwhile, combining biochar with cow manure notably enhanced Mehlich‐1 phosphorous (3.4 mg kg −1 ), organic carbon (4.99%), ammonium (27.0 mg kg −1 ) and cation exchange capacity (17.2 cmol(+) kg −1 ). Biochar combined with cow manure exhibited greater synergetic effects on soil quality than when combined with lime. Consequently, these combinations improved the soil quality index, which exhibited a strong correlation ",
+      "id": "D058"
+    },
+    {
+      "uid": "WOS:001286302900001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "Mehlich‐1 phosphorous",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Mehlich‐1 phosphorous",
+        "start": 1113,
+        "end": 1134
+      },
+      "context": "ngeable calcium (648.6 cmol(+) kg −1 ), while reducing exchangeable aluminium (11.83 cmol(+) kg −1 ) and iron (37.5 cmol(+) kg −1 ), compared to the control. Meanwhile, combining biochar with cow manure notably enhanced Mehlich‐1 phosphorous (3.4 mg kg −1 ), organic carbon (4.99%), ammonium (27.0 mg kg −1 ) and cation exchange capacity (17.2 cmol(+) kg −1 ). Biochar combined with cow manure exhibited greater synergetic effects on soil quality than when comb",
+      "id": "D059"
+    },
+    {
+      "uid": "WOS:001298590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "A_only",
+      "value": "cellular damage",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Soil salinization, a rising issue globally, is a negative effect of the ever-changing climate, which has drawn attention to, and exacerbated problems related to soil degradation and the decline in wetland rice (Oryza sativa L.) production, leading to an unstable national economy.The use of rhizosphere inhabiting microorganisms (plant growth-promoting rhizobacteria, PGPR) is a viable method for boosting agricultural production on saline soils and reduce salt stress in rice crops.The objective of this study was to support the development of rice under salt stress by using a consortium of bacterial strains.'Pokkali' rice plants inoculated with single Bacillus tequilensis and B. aryabhattai isolates were compared with consortium and non-inoculated plants while salinity was increased and by irrigation with tap water (control), 30 mM (5 dS m -1 ) and 60 mM (10 dS m -1 ) NaCl.The present study exhibited that inoculation of a mixed inoculum at 5 dS m -1 resulted in significantly higher dry weight of the shoots and roots of seedlings (9.29 and 1.24 g, respectively) which was due to the increased SPAD value, proline content (7.55 µmol g -1 FW), and antioxidant enzyme activity in the inoculated plants.The higher accumulation of osmoprotectants such as proline supported Na + ion reduction and antioxidant enzymes such as ascorbate peroxidase and reduced polyphenol oxidase content protect against higher cellular damage, eventually leading to increase plant growth performance in saline soil.This study demonstrates some positive effects of the locally isolated salt tolerant consortium PGPR strains on the growth of rice plants under salt stress conditions.",
+        "start": 0,
+        "end": 1667
+      },
+      "context": "Soil salinization, a rising issue globally, is a negative effect of the ever-changing climate, which has drawn attention to, and exacerbated problems related to soil degradation and the decline in wetland rice (Oryza sativa L.) production, leading to an unstable national economy.The use of rhizosphere inhabiting microorganisms (plant growth-promoting rhizobacteria, PGPR) is a viable method for boosting agricultural production on saline soils and reduce salt stress in rice crops.The objective of this study was to support the development of rice under salt stress by using a consortium of bacterial strains.'Pokkali' rice plants inoculated with single Bacillus tequilensis and B. aryabhattai isolates were compared with consortium and non-inoculated plants while salinity was increased and by irrigation with tap water (control), 30 mM (5 dS m -1 ) and 60 mM (10 dS m -1 ) NaCl.The present study exhibited that inoculation of a mixed inoculum at 5 dS m -1 resulted in significantly higher dry weight of the shoots and roots of seedlings (9.29 and 1.24 g, respectively) which was due to the increased SPAD value, proline content (7.55 µmol g -1 FW), and antioxidant enzyme activity in the inoculated plants.The higher accumulation of osmoprotectants such as proline supported Na + ion reduction and antioxidant enzymes such as ascorbate peroxidase and reduced polyphenol oxidase content protect against higher cellular damage, eventually leading to increase plant growth performance in saline soil.This study demonstrates some positive effects of the locally isolated salt tolerant consortium PGPR strains on the growth of rice plants under salt stress conditions.",
+      "id": "D060"
+    },
+    {
+      "uid": "WOS:001300986400001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "B_only",
+      "value": null,
+      "support": null,
+      "claim": "The combined effect of organic mulch materials and foliar spray application of 62.5 mg L−1 nano chitosan appeared to enhance biochemical saline soil properties and common bean productivity.",
+      "context": "ht, fresh weight of shoots and roots, seed yield, and nutrient content compared to other chitosan foliar spray applications. All treatments studied led to a significant reduction in fungal communities and Na% in plants. The combined effect of organic mulch materials and foliar spray application of 62.5 mg L−1 nano chitosan appeared to enhance biochemical saline soil properties and common bean productivity.",
+      "id": "D061"
+    },
+    {
+      "uid": "WOS:001300986400001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "A_only",
+      "value": "The combined effect of organic mulch materials and foliar spray application of 62.5 mg L−1 nano chitosan appeared to enhance biochemical saline soil properties and common bean productivity.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The combined effect of organic mulch materials and foliar spray application of 62.5 mg L−1 nano chitosan appeared to enhance biochemical saline soil properties and common bean productivity.",
+        "start": 1440,
+        "end": 1629
+      },
+      "context": "ht, fresh weight of shoots and roots, seed yield, and nutrient content compared to other chitosan foliar spray applications. All treatments studied led to a significant reduction in fungal communities and Na% in plants. The combined effect of organic mulch materials and foliar spray application of 62.5 mg L−1 nano chitosan appeared to enhance biochemical saline soil properties and common bean productivity.",
+      "id": "D062"
+    },
+    {
+      "uid": "WOS:001304976800001",
+      "kind": "field",
+      "field": "/evidence/study_system/salinity_context",
+      "direction": "A_only",
+      "value": "the improvement and utilization of saline–alkali soil contribute to soil health improvement",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "In general, the improvement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agricultural upgrading.",
+        "start": 828,
+        "end": 1067
+      },
+      "context": "tacles. These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress. In general, the improvement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agricultural upgrading. However, the risks of various technologies in the practical production process should be highlighted; green and healthy measures are still expected to be applied to saline–alkali land.",
+      "id": "D063"
+    },
+    {
+      "uid": "WOS:001304976800001",
+      "kind": "field",
+      "field": "/evidence/study_system/salinity_context",
+      "direction": "B_only",
+      "value": "These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress.",
+        "start": 616,
+        "end": 827
+      },
+      "context": "e contributed to soil water and salt regulation and the screening of salt-tolerant varieties to improve nutrient utilization efficiency and microbial control and reduce ecological problems due to saline-based obstacles. These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress. In general, the improvement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agr",
+      "id": "D064"
+    },
+    {
+      "uid": "WOS:001304976800001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "B_only",
+      "value": null,
+      "support": null,
+      "claim": "These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress.",
+      "context": "e contributed to soil water and salt regulation and the screening of salt-tolerant varieties to improve nutrient utilization efficiency and microbial control and reduce ecological problems due to saline-based obstacles. These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress. In general, the improvement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agr",
+      "id": "D065"
+    },
+    {
+      "uid": "WOS:001304976800001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "B_only",
+      "value": null,
+      "support": null,
+      "claim": "In general, the improvement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agricultural upgrading.",
+      "context": "tacles. These techniques can be classified into physical treatments, chemical treatments, biological treatments, and combined treatments; these different measures are all aimed at primarily solving saline–alkali stress. In general, the improvement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agricultural upgrading. However, the risks of various technologies in the practical production process should be highlighted; green and healthy measures are still expected to be applied to saline–alkali land.",
+      "id": "D066"
+    },
+    {
+      "uid": "WOS:001304976800001",
+      "kind": "field",
+      "field": "/evidence/limitations_explicit",
+      "direction": "B_only",
+      "value": "However, the risks of various technologies in the practical production process should be highlighted; green and healthy measures are still expected to be applied to saline–alkali land.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "However, the risks of various technologies in the practical production process should be highlighted; green and healthy measures are still expected to be applied to saline–alkali land.",
+        "start": 1068,
+        "end": 1252
+      },
+      "context": "ovement and utilization of saline–alkali soil contribute to soil health improvement, concentrating on high-quality development, food security, ecological security, cultivated land protection, and agricultural upgrading. However, the risks of various technologies in the practical production process should be highlighted; green and healthy measures are still expected to be applied to saline–alkali land.",
+      "id": "D067"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/study_system/crop",
+      "direction": "B_only",
+      "value": "rice",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "rice",
+        "start": 88,
+        "end": 92
+      },
+      "context": "Increasing soil and water salinity threatens global agriculture, particularly affecting rice. This study investigated the residual effects of microbial biochar and nitrogen fertilizer in mitigating salt stress in paddy soil and regulating the biochemical characteristics of rice plants. Two rice varieties, Shuan",
+      "id": "D068"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/study_system/experimental_scale",
+      "direction": "A_only",
+      "value": "pot",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The required salinity levels were maintained in respective pots through the application of saline irrigation water.",
+        "start": 711,
+        "end": 826
+      },
+      "context": "lled conditions. Three types of biochar—rice straw biochar (BC), fungal biochar (BF), and bacterial biochar (BB)—were applied alongside two nitrogen (N) fertilizer rates (60 kg ha−1 and 120 kg ha−1) in a previous study. The required salinity levels were maintained in respective pots through the application of saline irrigation water. Results showed that residual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC. The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and",
+      "id": "D069"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "A_only",
+      "value": "0.4 ds/m EC (S0) and 6.84 ds/m EC (S1)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Two rice varieties, Shuang Liang You 138 (SLY138), a salt-tolerant, and Jing Liang You 534 (JLY534), a salt-sensitive, were grown under 0.4 ds/m EC (S0) and 6.84 ds/m EC (S1) in a glass house under controlled conditions.",
+        "start": 287,
+        "end": 507
+      },
+      "context": "rticularly affecting rice. This study investigated the residual effects of microbial biochar and nitrogen fertilizer in mitigating salt stress in paddy soil and regulating the biochemical characteristics of rice plants. Two rice varieties, Shuang Liang You 138 (SLY138), a salt-tolerant, and Jing Liang You 534 (JLY534), a salt-sensitive, were grown under 0.4 ds/m EC (S0) and 6.84 ds/m EC (S1) in a glass house under controlled conditions. Three types of biochar—rice straw biochar (BC), fungal biochar (BF), and bacterial biochar (BB)—were applied alongside two nitrogen (N) fertilizer rates (60 kg ha−1 and 120 kg ha−1) in a previous study. The required sal",
+      "id": "D070"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "A_only",
+      "value": "biochemical characteristics of rice plants",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "This study investigated the residual effects of microbial biochar and nitrogen fertilizer in mitigating salt stress in paddy soil and regulating the biochemical characteristics of rice plants.",
+        "start": 94,
+        "end": 286
+      },
+      "context": "Increasing soil and water salinity threatens global agriculture, particularly affecting rice. This study investigated the residual effects of microbial biochar and nitrogen fertilizer in mitigating salt stress in paddy soil and regulating the biochemical characteristics of rice plants. Two rice varieties, Shuang Liang You 138 (SLY138), a salt-tolerant, and Jing Liang You 534 (JLY534), a salt-sensitive, were grown under 0.4 ds/m EC (S0) and 6.84 ds/m EC (S1) in a glass house under controlled conditions",
+      "id": "D071"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "A_only",
+      "value": "salt mitigation efficiency",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Results showed that residual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC.",
+        "start": 827,
+        "end": 949
+      },
+      "context": "e applied alongside two nitrogen (N) fertilizer rates (60 kg ha−1 and 120 kg ha−1) in a previous study. The required salinity levels were maintained in respective pots through the application of saline irrigation water. Results showed that residual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC. The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance an",
+      "id": "D072"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "B_only",
+      "value": null,
+      "support": null,
+      "claim": "The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%",
+      "context": "ty levels were maintained in respective pots through the application of saline irrigation water. Results showed that residual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC. The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil. Microbial biochars (BF and BB) positively improved soil properties (phys",
+      "id": "D073"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "A_only",
+      "value": "The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil.",
+        "start": 950,
+        "end": 1214
+      },
+      "context": "ty levels were maintained in respective pots through the application of saline irrigation water. Results showed that residual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC. The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil. Microbial biochars (BF and BB) positively improved soil properties (physicochemical) and biochemical and physiological properties of plants, ultimately rice growth. SLY138 significantly had a less severe response to sal",
+      "id": "D074"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "B_only",
+      "value": "creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil",
+        "start": 1069,
+        "end": 1213
+      },
+      "context": "sidual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC. The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil. Microbial biochars (BF and BB) positively improved soil properties (physicochemical) and biochemical and physiological properties of plants, ultimately rice growth. SLY138 significantly had a less severe response to sa",
+      "id": "D075"
+    },
+    {
+      "uid": "WOS:001332147700001",
+      "kind": "experimental_scale",
+      "field": "/evidence/study_system/experimental_scale",
+      "direction": "AB_disagree",
+      "a_value": "pot",
+      "b_value": "unknown",
+      "a_support": {
+        "source": "abstract",
+        "evidence_text": "The required salinity levels were maintained in respective pots through the application of saline irrigation water.",
+        "start": 711,
+        "end": 826
+      },
+      "b_support": null,
+      "context": "Increasing soil and water salinity threatens global agriculture, particularly affecting rice. This study investigated the residual effects of microbial biochar and nitrogen fertilizer in mitigating salt stress in paddy soil and regulating the biochemical characteristics of rice plants. Two rice varieties, Shuang Liang You 138 (SLY138), a salt-tolerant, and Jing Liang You 534 (JLY534), a salt-sensitive, were grown under 0.4 ds/m EC (S0) and 6.84 ds/m EC (S1) in a glass house under controlled conditions. Three types of biochar—rice straw biochar (BC), fungal biochar (BF), and bacterial biochar (BB)—were applied alongside two nitrogen (N) fertilizer rates (60 kg ha−1 and 120 kg ha−1) in a previous study. The required salinity levels were maintained in respective pots through the application of saline irrigation water. Results showed that residual effects of microbial biochars (BF and BB) had higher salt mitigation efficiency than sole BC. The combination of BB and N fertilizer (BB + N120) significantly decreased soil pH by 23.45% and Na+ levels by 46.85%, creating a more conducive environment for rice growth by enhancing beneficial microbial abundance and decreasing pathogenic fungi in saline soil. Microbial biochars (BF and BB) positively improved soil properties (physicochemical) and biochemical and physiological properties of plants, ultimately rice growth. SLY138 significantly had a less severe response to salt stress compared to JLY534. The mitigation effects of BB + N120 kg ha−1 were particularly favorable for SLY138. In summary, the combined residual effect of BF and BB with N120 kg ha−1, especially bacterial biochar (BB), played a positive role in alleviating salt stress on rice growth, suggesting its potential utility for enhancing rice yield in paddy fields.",
+      "id": "D076"
+    },
+    {
+      "uid": "WOS:001366379700001",
+      "kind": "field",
+      "field": "/evidence/study_system/crop",
+      "direction": "B_only",
+      "value": "‘Entsar 3’",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "‘Entsar 3’",
+        "start": 395,
+        "end": 405
+      },
+      "context": "arm, South Sinai, Egypt. Split-split-plot design experiments were carried out to study the effect of treatments on saline soil hydrophysical properties, sorghum, and cv. ‘Dorado’ plants during the summer season. Pea cv. ‘Entsar 3’ plants were cultivated during the winter season for the residual effect of treatments. Organo–mineral amendment (rice straw compost + mineral sulfur at different rates) was assigned as the main factor, natural rock or a",
+      "id": "D077"
+    },
+    {
+      "uid": "WOS:001366379700001",
+      "kind": "field",
+      "field": "/evidence/treatments/irrigation",
+      "direction": "B_only",
+      "value": "partially treated saline irrigation water",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "partially treated saline irrigation water",
+        "start": 1293,
+        "end": 1334
+      },
+      "context": "nic–mineral amendments of 4 tons/fed of compost plus 400 kg/fed of mineral sulfur and 5 kg/fed of humic acid plus natural rock fertilizer is the best safe management for reclamation and improvement of saline soils using partially treated saline irrigation water and natural resources.",
+      "id": "D078"
+    },
+    {
+      "uid": "WOS:001366379700001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "Therefore, it is recommended that economically using the combination of applying organic–mineral amendments of 4 tons/fed of compost plus 400 kg/fed of mineral sulfur and 5 kg/fed of humic acid plus natural rock fertilizer is the best safe management for reclamation and improvement of saline soils using partially treated saline irrigation water and natural resources.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Therefore, it is recommended that economically using the combination of applying organic–mineral amendments of 4 tons/fed of compost plus 400 kg/fed of mineral sulfur and 5 kg/fed of humic acid plus natural rock fertilizer is the best safe management for reclamation and improvement of saline soils using partially treated saline irrigation water and natural resources.",
+        "start": 988,
+        "end": 1357
+      },
+      "context": "amendments improved the hydrophysical properties of the soil, plant nutrient uptake, crop yield, and crop water productivity; however, it diminished by 10 tons/fed (4200 m2) of compost plus 700 kg/fed of mineral sulfur. Therefore, it is recommended that economically using the combination of applying organic–mineral amendments of 4 tons/fed of compost plus 400 kg/fed of mineral sulfur and 5 kg/fed of humic acid plus natural rock fertilizer is the best safe management for reclamation and improvement of saline soils using partially treated saline irrigation water and natural resources.",
+      "id": "D079"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "saline–alkaline rice–crab integrated fields",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "To improve this situation, this study conducted experiments in 2022–2023 in the saline–alkaline rice–crab integrated fields of Tongbei Village, Tonggui Township, Yinchuan.",
+        "start": 367,
+        "end": 538
+      },
+      "context": "aline–alkaline fields in the northern irrigation area of Yinchuan, Ningxia, China, face challenges such as low rice yield, poor quality, low fertilizer utilization efficiency, and soil salinity and alkalinity obstacles. To improve this situation, this study conducted experiments in 2022–2023 in the saline–alkaline rice–crab integrated fields of Tongbei Village, Tonggui Township, Yinchuan. This study employed a single-factor comparative design, applying 150 mL·hm−2 of brassinolide (A1), 15 kg·hm−2 of diatomaceous (A2), 30 kg·hm−2 of Bacillus subtilis agent (A3), and an untreated control (CK) to analyze th",
+      "id": "D080"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "B_only",
+      "value": "saline–alkaline",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "saline–alkaline",
+        "start": 88,
+        "end": 103
+      },
+      "context": "The yield and quality of rice are influenced by soil conditions, and the soil issues in saline–alkaline land limit agricultural productivity. The saline–alkaline fields in the northern irrigation area of Yinchuan, Ningxia, China, face challenges such as low rice yield, poor quality, low fertilizer utilization efficiency, ",
+      "id": "D081"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "B_only",
+      "value": "fungal OTUs",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "fungal OTUs",
+        "start": 1221,
+        "end": 1232
+      },
+      "context": "9%, respectively. Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%. The bacterial OTUs (Operational Taxonomic Units) and fungal OTUs increased by 2.18% and 22.39%, respectively. Under the condition of applying 30 kg·hm−2 of Bacillus subtilis agent (A3), rice showed superior growth, the highest yield (8804.4 kg·hm−2), and the highest microbial OTUs. T",
+      "id": "D082"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "B_only",
+      "value": "palatability score",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "palatability score",
+        "start": 1097,
+        "end": 1115
+      },
+      "context": " The results indicated that, compared with CK, the A3 increased the SPAD value and net photosynthetic rate by 2.26% and 28.59%, respectively. Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%. The bacterial OTUs (Operational Taxonomic Units) and fungal OTUs increased by 2.18% and 22.39%, respectively. Under the condition of applying 30 kg·hm−2 of Bacillus su",
+      "id": "D083"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "B_only",
+      "value": "amylose content",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "amylose content",
+        "start": 1132,
+        "end": 1147
+      },
+      "context": "ed with CK, the A3 increased the SPAD value and net photosynthetic rate by 2.26% and 28.59%, respectively. Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%. The bacterial OTUs (Operational Taxonomic Units) and fungal OTUs increased by 2.18% and 22.39%, respectively. Under the condition of applying 30 kg·hm−2 of Bacillus subtilis agent (A3), rice showed s",
+      "id": "D084"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "palatability score",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%.",
+        "start": 1019,
+        "end": 1167
+      },
+      "context": "nts on rice growth, photosynthesis, yield, quality, and microbial communities. The results indicated that, compared with CK, the A3 increased the SPAD value and net photosynthetic rate by 2.26% and 28.59%, respectively. Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%. The bacterial OTUs (Operational Taxonomic Units) and fungal OTUs increased by 2.18% and 22.39%, respectively. Under the condition of applying 30 kg·hm−2 of Bacillus subtilis agent (A3), rice showed superior growth, the ",
+      "id": "D085"
+    },
+    {
+      "uid": "WOS:001453401200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "amylose content",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%.",
+        "start": 1019,
+        "end": 1167
+      },
+      "context": "nts on rice growth, photosynthesis, yield, quality, and microbial communities. The results indicated that, compared with CK, the A3 increased the SPAD value and net photosynthetic rate by 2.26% and 28.59%, respectively. Rice yield increased by 12.34%, water use efficiency (WUE) by 10.67%, and the palatability score by 2.82%, while amylose content decreased by 8.00%. The bacterial OTUs (Operational Taxonomic Units) and fungal OTUs increased by 2.18% and 22.39%, respectively. Under the condition of applying 30 kg·hm−2 of Bacillus subtilis agent (A3), rice showed superior growth, the ",
+      "id": "D086"
+    },
+    {
+      "uid": "WOS:001461814100001",
+      "kind": "field",
+      "field": "/evidence/treatments/fertilization",
+      "direction": "B_only",
+      "value": "N fertilizer",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "N fertilizer",
+        "start": 992,
+        "end": 1004
+      },
+      "context": " nitrogen by 31.9 and 22.2 %, respectively. Overall, ISCM was the most prominent in processing. As a result, ISCM increased yield and partial factor productivity of nitrogen by 37.2 and 94.5 %, respectively, and reduced N fertilizer use by 28.6 %. Therefore, soil–crop management, particularly the ISCM strategy, can successfully improve the saline soil environment, increase agricultural productivity, and achieve sustainability under intensive farmin",
+      "id": "D087"
+    },
+    {
+      "uid": "WOS:001461814100001",
+      "kind": "field",
+      "field": "/evidence/measurements/nitrogen",
+      "direction": "A_only",
+      "value": "N fertilizer use",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "As a result, ISCM increased yield and partial factor productivity of nitrogen by 37.2 and 94.5 %, respectively, and reduced N fertilizer use by 28.6 %.",
+        "start": 868,
+        "end": 1019
+      },
+      "context": ", sodium removal rate, and pH by 51.5–60.2, 9.5–35.2, and 9.9 %, respectively, which increased soil organic carbon and total nitrogen by 31.9 and 22.2 %, respectively. Overall, ISCM was the most prominent in processing. As a result, ISCM increased yield and partial factor productivity of nitrogen by 37.2 and 94.5 %, respectively, and reduced N fertilizer use by 28.6 %. Therefore, soil–crop management, particularly the ISCM strategy, can successfully improve the saline soil environment, increase agricultural productivity, and achieve sustainability under intensive farming practices on ",
+      "id": "D088"
+    },
+    {
+      "uid": "WOS:001461814100001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "soil quality",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "soil quality",
+        "start": 327,
+        "end": 339
+      },
+      "context": "tural sustainability in saline–alkaline soils. To explore the potential of synergistic soil improvement and optimal crop management for agricultural production, this study evaluated crop yield, resource utilization, and soil quality in a field experiment with monoculture spring maize cultivation in a coastal saline soil region from 2015 to 2019. Compared with farmers’ practices, improved soil management (gypsum/cattle manure), crop management (vari",
+      "id": "D089"
+    },
+    {
+      "uid": "WOS:001469093900001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "saline-alkali soil in the Baiyin region",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Our experiment showed that applying the different levels of RB and BB changed the soil pH, EC, CEC, and soil salt ions. The RB-medium level application was evidently the best choice for improving the health of saline-alkali soil in the Baiyin region.",
+        "start": 445,
+        "end": 695
+      },
+      "context": "r (RB) and bamboo biochar (BB), each applied separately at three addition levels (2.5%, 5%, and 10%) on the pH, electrical conductivity (EC), cation exchange capacity (CEC), salt ions, and microbial communities of soil. Our experiment showed that applying the different levels of RB and BB changed the soil pH, EC, CEC, and soil salt ions. The RB-medium level application was evidently the best choice for improving the health of saline-alkali soil in the Baiyin region. While adding biochar negligibly altered the richness of soil microorganisms it did significantly increase their diversity. Accordingly, adding the appropriate amount and type of biochar to soil is crucial for saline-alk",
+      "id": "D090"
+    },
+    {
+      "uid": "WOS:001469093900001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "B_only",
+      "value": "saline-alkali soil",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "saline-alkali soil",
+        "start": 130,
+        "end": 148
+      },
+      "context": "Summary Currently, there are few reports on biochar applications when using different raw materials as well as addition levels to saline-alkali soil in northwest China. In this study, we tested the effects of rice-husk biochar (RB) and bamboo biochar (BB), each applied separately at three addition levels (2.5%, 5%, and 10%) on the pH, electrical conductivity (EC), c",
+      "id": "D091"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "A_only",
+      "value": "corn straw",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The scheme of utilizing soda saline–alkali soil for rice-seedling raising, following a short-term improvement treatment with corn straw, gypsum, and sulfuric acid (JCWH), provides technical support and an effective solution to the soil scarcity issue faced by seedling farmers in saline–alkali regions.",
+        "start": 1550,
+        "end": 1852
+      },
+      "context": "oved to be the most effective. After two years of improvement, the rice seedlings in the JCWH-treated soil exhibited the highest dry weight and plant height, surpassing those grown in the farmer’s seedling-raising soil. The scheme of utilizing soda saline–alkali soil for rice-seedling raising, following a short-term improvement treatment with corn straw, gypsum, and sulfuric acid (JCWH), provides technical support and an effective solution to the soil scarcity issue faced by seedling farmers in saline–alkali regions.",
+      "id": "D092"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "A_only",
+      "value": "gypsum",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "gypsum, straw, and chemical fertilizer (JCWF).",
+        "start": 658,
+        "end": 704
+      },
+      "context": "g-raising test in the improved soil to identify an effective soil-improvement strategy. Four distinct treatments were established: no amendment (JCK); gypsum and straw (JCW); gypsum, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF). The effects of these amendment treatments on the soil physicochemical properties (pH, electrical conductivity, exchangeable sodium, total alkalinity) were evaluated, as well as the effects on soil organic carbon (SOC) a",
+      "id": "D093"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/treatments/amendments",
+      "direction": "A_only",
+      "value": "straw",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "gypsum, straw, and chemical fertilizer (JCWF).",
+        "start": 658,
+        "end": 704
+      },
+      "context": "g-raising test in the improved soil to identify an effective soil-improvement strategy. Four distinct treatments were established: no amendment (JCK); gypsum and straw (JCW); gypsum, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF). The effects of these amendment treatments on the soil physicochemical properties (pH, electrical conductivity, exchangeable sodium, total alkalinity) were evaluated, as well as the effects on soil organic carbon (SOC) a",
+      "id": "D094"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "A_only",
+      "value": "no amendment (JCK)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Four distinct treatments were established: no amendment (JCK); gypsum and straw (JCW); gypsum, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF).",
+        "start": 526,
+        "end": 704
+      },
+      "context": "conducted using the original saline–alkali soil sourced from the rice-growing region of Jilin Province, followed by the rice-seedling-raising test in the improved soil to identify an effective soil-improvement strategy. Four distinct treatments were established: no amendment (JCK); gypsum and straw (JCW); gypsum, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF). The effects of these amendment treatments on the soil physicochemical properties (pH, electrical conductivity, exchangeable sodium, total alkalinity) were evaluated, as well as the effects on soil organic carbon (SOC) a",
+      "id": "D095"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "B_only",
+      "value": "electrical conductivity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "electrical conductivity",
+        "start": 791,
+        "end": 814
+      },
+      "context": " amendment (JCK); gypsum and straw (JCW); gypsum, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF). The effects of these amendment treatments on the soil physicochemical properties (pH, electrical conductivity, exchangeable sodium, total alkalinity) were evaluated, as well as the effects on soil organic carbon (SOC) and its components including humic acid carbon (HAC), and fulvic acid carbon (FAC). The results indicated that,",
+      "id": "D096"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "B_only",
+      "value": "exchangeable sodium",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "exchangeable sodium",
+        "start": 816,
+        "end": 835
+      },
+      "context": "and straw (JCW); gypsum, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF). The effects of these amendment treatments on the soil physicochemical properties (pH, electrical conductivity, exchangeable sodium, total alkalinity) were evaluated, as well as the effects on soil organic carbon (SOC) and its components including humic acid carbon (HAC), and fulvic acid carbon (FAC). The results indicated that, compared to the cont",
+      "id": "D097"
+    },
+    {
+      "uid": "WOS:001486297300001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "B_only",
+      "value": "total alkalinity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "total alkalinity",
+        "start": 837,
+        "end": 853
+      },
+      "context": "um, straw, and sulfuric acid (JCWH); and gypsum, straw, and chemical fertilizer (JCWF). The effects of these amendment treatments on the soil physicochemical properties (pH, electrical conductivity, exchangeable sodium, total alkalinity) were evaluated, as well as the effects on soil organic carbon (SOC) and its components including humic acid carbon (HAC), and fulvic acid carbon (FAC). The results indicated that, compared to the control group, all ame",
+      "id": "D098"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/study_system/crop",
+      "direction": "B_only",
+      "value": "rice",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "rice",
+        "start": 204,
+        "end": 208
+      },
+      "context": "Reactive intermediates (RIs) are critical in nutrient cycling and pollution mitigation, yet their behavior in salinized agricultural waters remains underexplored. This study investigates RIs formation in rice cultivation water from a typical saline-alkali region in China. Singlet oxygen was more pH-sensitive than hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity. St",
+      "id": "D099"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/carbon",
+      "direction": "A_only",
+      "value": "triplet excited-state dissolved organic matter",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Singlet oxygen was more pH-sensitive than hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity.",
+        "start": 273,
+        "end": 425
+      },
+      "context": " cycling and pollution mitigation, yet their behavior in salinized agricultural waters remains underexplored. This study investigates RIs formation in rice cultivation water from a typical saline-alkali region in China. Singlet oxygen was more pH-sensitive than hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity. Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH f",
+      "id": "D100"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/carbon",
+      "direction": "B_only",
+      "value": "fluorescence index",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "fluorescence index",
+        "start": 704,
+        "end": 722
+      },
+      "context": "ly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source. Additionally, [•OH]ss was linked to aromatic content and DOM molecular weight, highlighting the importance of DOM structure in •OH",
+      "id": "D101"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/carbon",
+      "direction": "B_only",
+      "value": "autochthonous index",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "autochthonous index",
+        "start": 743,
+        "end": 762
+      },
+      "context": "--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source. Additionally, [•OH]ss was linked to aromatic content and DOM molecular weight, highlighting the importance of DOM structure in •OH production. These findings clarify the ",
+      "id": "D102"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/nitrogen",
+      "direction": "B_only",
+      "value": "nitrate ([NO3--N])",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "nitrate ([NO3--N])",
+        "start": 533,
+        "end": 551
+      },
+      "context": "n hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity. Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicat",
+      "id": "D103"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "fluorescence index",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source.",
+        "start": 426,
+        "end": 811
+      },
+      "context": "ce cultivation water from a typical saline-alkali region in China. Singlet oxygen was more pH-sensitive than hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity. Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source. Additionally, [•OH]ss was linked to aromatic content and DOM molecular weight, highlighting the importance of DOM structure in •OH production. These findings clarify the formation pathways of RIs in saline-alkali waters",
+      "id": "D104"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "autochthonous index",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source.",
+        "start": 426,
+        "end": 811
+      },
+      "context": "ce cultivation water from a typical saline-alkali region in China. Singlet oxygen was more pH-sensitive than hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity. Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.50 %, 6.93 %, and 73.57 % to •OH formation, respectively. [RIs]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source. Additionally, [•OH]ss was linked to aromatic content and DOM molecular weight, highlighting the importance of DOM structure in •OH production. These findings clarify the formation pathways of RIs in saline-alkali waters",
+      "id": "D105"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "triplet excited-state dissolved organic matter",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "triplet excited-state dissolved organic matter",
+        "start": 345,
+        "end": 391
+      },
+      "context": "ultural waters remains underexplored. This study investigates RIs formation in rice cultivation water from a typical saline-alkali region in China. Singlet oxygen was more pH-sensitive than hydroxyl radical (•OH), while triplet excited-state dissolved organic matter were more influenced by salinity. Steady-state •OH concentration ([•OH]ss) correlated strongly with concentrations of nitrite ([NO2--N]) and nitrate ([NO3--N]), with photolysis of NO2- and NO3-, and DOM contributing 19.",
+      "id": "D106"
+    },
+    {
+      "uid": "WOS:001488980100001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "highlighting the importance of DOM structure in •OH production.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "highlighting the importance of DOM structure in •OH production.",
+        "start": 891,
+        "end": 954
+      },
+      "context": "Is]ss positively correlated with fluorescence index and negatively with autochthonous index, indicating exogenous DOM as a major RIs source. Additionally, [•OH]ss was linked to aromatic content and DOM molecular weight, highlighting the importance of DOM structure in •OH production. These findings clarify the formation pathways of RIs in saline-alkali waters, informing ecological restoration and environmental management.",
+      "id": "D107"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "A_only",
+      "value": "354 genotypes",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "In this study, a total of 354 genotypes, including Miscanthus sinensis, Miscanthus floridulus, Miscanthus sacchariflorus, Miscanthus lutarioriparius and interspecific species hybrids derived from M. sinensis and M. lutarioriparius, were evaluated under different planting times (May and August), salinity levels (low and moderate) and pest damage assessment by Helicoverpa armigera in the Yellow River Delta (YRD), in China.",
+        "start": 369,
+        "end": 793
+      },
+      "context": "promote carbon neutrality, cultivating Miscanthus on marginal land, especially in saline soils in China, is a recommended strategy. However, the adaptability of Miscanthus species in saline soil remains largely unknown. In this study, a total of 354 genotypes, including Miscanthus sinensis, Miscanthus floridulus, Miscanthus sacchariflorus, Miscanthus lutarioriparius and interspecific species hybrids derived from M. sinensis and M. lutarioriparius, were evaluated under different planting times (May and August), salinity levels (low and moderate) and pest damage assessment by Helicoverpa armigera in the Yellow River Delta (YRD), in China. The significant effects of planting time on the adaptability of Miscanthus were observed. Planting in May in the YRD, Miscanthus had a lower establishment survival rate (28.76%) and overwintering rate (72.31%), but a dr",
+      "id": "D108"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "A_only",
+      "value": "biomass production and adaptability",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Furthermore, interspecific hybrids in Miscanthus exhibited outstanding biomass production and adaptability in this region, indicating that creating hybrids would be the best breeding strategy for marginal lands.",
+        "start": 1707,
+        "end": 1918
+      },
+      "context": "t damage assessments to evaluate all genotypes in this study indicated that the adaptability of M. lutarioriparius was superior to other species. However, M. lutarioriparius is more sensitive to pest damage than others. Furthermore, interspecific hybrids in Miscanthus exhibited outstanding biomass production and adaptability in this region, indicating that creating hybrids would be the best breeding strategy for marginal lands. These results provide an important theoretical basis for the development of Miscanthus in saline soil in the YRD, China.",
+      "id": "D109"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "pest damage assessments",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "pest damage assessments",
+        "start": 1484,
+        "end": 1507
+      },
+      "context": "he YRD, while May could be suitable for screening salinity tolerance in Miscanthus. In addition, using the overall adaptability score calculated by establishment survival, overwintering ability, key agronomic traits and pest damage assessments to evaluate all genotypes in this study indicated that the adaptability of M. lutarioriparius was superior to other species. However, M. lutarioriparius is more sensitive to pest damage than others. Furthermore, intersp",
+      "id": "D110"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "field",
+      "field": "/evidence/measurements/yield",
+      "direction": "B_only",
+      "value": "biomass production",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "biomass production",
+        "start": 70,
+        "end": 88
+      },
+      "context": "ABSTRACT Miscanthus is a promising perennial lignocellulosic crop for biomass production. To avoid competing with arable land used for food crops to promote carbon neutrality, cultivating Miscanthus on marginal land, especially in saline soils in China, is a recommended strategy. However, the adaptability o",
+      "id": "D111"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "pest damage assessments",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "In addition, using the overall adaptability score calculated by establishment survival, overwintering ability, key agronomic traits and pest damage assessments to evaluate all genotypes in this study indicated that the adaptability of M. lutarioriparius was superior to other species.",
+        "start": 1348,
+        "end": 1632
+      },
+      "context": "shment survival rate (91.14%) and overwintering rate (80.65%), which indicated August was the optimal month for planting Miscanthus in the YRD, while May could be suitable for screening salinity tolerance in Miscanthus. In addition, using the overall adaptability score calculated by establishment survival, overwintering ability, key agronomic traits and pest damage assessments to evaluate all genotypes in this study indicated that the adaptability of M. lutarioriparius was superior to other species. However, M. lutarioriparius is more sensitive to pest damage than others. Furthermore, interspecific hybrids in Miscanthus exhibited outstanding biomass production and adaptability in this region, indicating that creati",
+      "id": "D112"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "overall adaptability score",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "In addition, using the overall adaptability score calculated by establishment survival, overwintering ability, key agronomic traits and pest damage assessments to evaluate all genotypes in this study indicated that the adaptability of M. lutarioriparius was superior to other species.",
+        "start": 1348,
+        "end": 1632
+      },
+      "context": "shment survival rate (91.14%) and overwintering rate (80.65%), which indicated August was the optimal month for planting Miscanthus in the YRD, while May could be suitable for screening salinity tolerance in Miscanthus. In addition, using the overall adaptability score calculated by establishment survival, overwintering ability, key agronomic traits and pest damage assessments to evaluate all genotypes in this study indicated that the adaptability of M. lutarioriparius was superior to other species. However, M. lutarioriparius is more sensitive to pest damage than others. Furthermore, interspecific hybrids in Miscanthus exhibited outstanding biomass production and adaptability in this region, indicating that creati",
+      "id": "D113"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "B_only",
+      "value": null,
+      "support": null,
+      "claim": "The significant effects of planting time on the adaptability of Miscanthus were observed.",
+      "context": "is and M. lutarioriparius, were evaluated under different planting times (May and August), salinity levels (low and moderate) and pest damage assessment by Helicoverpa armigera in the Yellow River Delta (YRD), in China. The significant effects of planting time on the adaptability of Miscanthus were observed. Planting in May in the YRD, Miscanthus had a lower establishment survival rate (28.76%) and overwintering rate (72.31%), but a dry weight higher than that of planting in August. In contrast, planting in August in the YR",
+      "id": "D114"
+    },
+    {
+      "uid": "WOS:001503693000001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "which indicated August was the optimal month for planting Miscanthus in the YRD, while May could be suitable for screening salinity tolerance in Miscanthus.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "which indicated August was the optimal month for planting Miscanthus in the YRD, while May could be suitable for screening salinity tolerance in Miscanthus.",
+        "start": 1191,
+        "end": 1347
+      },
+      "context": " and overwintering rate (72.31%), but a dry weight higher than that of planting in August. In contrast, planting in August in the YRD had a very high establishment survival rate (91.14%) and overwintering rate (80.65%), which indicated August was the optimal month for planting Miscanthus in the YRD, while May could be suitable for screening salinity tolerance in Miscanthus. In addition, using the overall adaptability score calculated by establishment survival, overwintering ability, key agronomic traits and pest damage assessments to evaluate all genotypes in this study indicated that the ",
+      "id": "D115"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_physical",
+      "direction": "A_only",
+      "value": "water holding capacity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05).",
+        "start": 504,
+        "end": 700
+      },
+      "context": "ontrol: T1 (Sediment + Inland Saline Water + Paddy Straw Biochar at 9 tons/ha), T2 (Sediment + Inland Saline Water + Sugarcane Bagasse Biochar (SBB) at 9 tons/ha), and C (Sediment + Inland Saline Water without Biochar). Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05). Water quality was also improved, with increased in potassium level and reduced ammonia concentration in the treatments. Growth performance metrics demonstrated significantly higher values in biochar treated groups, with",
+      "id": "D116"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "cation exchange capacity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05).",
+        "start": 504,
+        "end": 700
+      },
+      "context": "ontrol: T1 (Sediment + Inland Saline Water + Paddy Straw Biochar at 9 tons/ha), T2 (Sediment + Inland Saline Water + Sugarcane Bagasse Biochar (SBB) at 9 tons/ha), and C (Sediment + Inland Saline Water without Biochar). Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05). Water quality was also improved, with increased in potassium level and reduced ammonia concentration in the treatments. Growth performance metrics demonstrated significantly higher values in biochar treated groups, with",
+      "id": "D117"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "potassium content",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05).",
+        "start": 504,
+        "end": 700
+      },
+      "context": "ontrol: T1 (Sediment + Inland Saline Water + Paddy Straw Biochar at 9 tons/ha), T2 (Sediment + Inland Saline Water + Sugarcane Bagasse Biochar (SBB) at 9 tons/ha), and C (Sediment + Inland Saline Water without Biochar). Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05). Water quality was also improved, with increased in potassium level and reduced ammonia concentration in the treatments. Growth performance metrics demonstrated significantly higher values in biochar treated groups, with",
+      "id": "D118"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "cation exchange capacity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "cation exchange capacity",
+        "start": 576,
+        "end": 600
+      },
+      "context": "ns/ha), T2 (Sediment + Inland Saline Water + Sugarcane Bagasse Biochar (SBB) at 9 tons/ha), and C (Sediment + Inland Saline Water without Biochar). Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05). Water quality was also improved, with increased in potassium level and reduced ammonia concentration in the treatments.",
+      "id": "D119"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "potassium content",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "potassium content",
+        "start": 618,
+        "end": 635
+      },
+      "context": " + Sugarcane Bagasse Biochar (SBB) at 9 tons/ha), and C (Sediment + Inland Saline Water without Biochar). Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05). Water quality was also improved, with increased in potassium level and reduced ammonia concentration in the treatments. Growth performance metrics demonst",
+      "id": "D120"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "water holding capacity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "water holding capacity",
+        "start": 641,
+        "end": 663
+      },
+      "context": "ochar (SBB) at 9 tons/ha), and C (Sediment + Inland Saline Water without Biochar). Biochar application significantly enhanced sediment quality parameters (cation exchange capacity, organic carbon, potassium content, and water holding capacity) compared to the control (p < 0.05). Water quality was also improved, with increased in potassium level and reduced ammonia concentration in the treatments. Growth performance metrics demonstrated significantly higher v",
+      "id": "D121"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "White Blood Cell (WBC) counts",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "White Blood Cell (WBC) counts",
+        "start": 1211,
+        "end": 1240
+      },
+      "context": "he control. Feed Conversion Ratio (FCR), Specific Growth Rate (SGR%), and enzymatic parameters was also improved significantly in the biochar treated groups. Haematological parameters, including Red Blood Cell (RBC) and White Blood Cell (WBC) counts, as well as higher haemoglobin level, indicated better overall health in tilapia with biochar treatments. Stress-related enzyme activities, including Superoxide Dismutase (SOD) and Catalase (CAT), were notably reduced i",
+      "id": "D122"
+    },
+    {
+      "uid": "WOS:001538590200001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "Catalase (CAT)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Catalase (CAT)",
+        "start": 1422,
+        "end": 1436
+      },
+      "context": "RBC) and White Blood Cell (WBC) counts, as well as higher haemoglobin level, indicated better overall health in tilapia with biochar treatments. Stress-related enzyme activities, including Superoxide Dismutase (SOD) and Catalase (CAT), were notably reduced in T1 and T2 compared to the control. Hence, it may be concluded that inland saline soil, unsuitable for agriculture, can be converted into a productive aquaculture system through biochar amendment",
+      "id": "D123"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/treatments/biological_treatments",
+      "direction": "A_only",
+      "value": "alginate-biochar immobilized conidia",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improving soil fertility and contributing to agricultural sustainability.",
+        "start": 1574,
+        "end": 1858
+      },
+      "context": "e, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity. Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improving soil fertility and contributing to agricultural sustainability. • Cellulolytic fungus was incorporated by sodium alginate and biochar from rice straw or bamboo as effective inoculum. • Alginate-biochar-immobilized spored increased rice straw decomposition by enhancing cellulase acti",
+      "id": "D124"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/carbon",
+      "direction": "B_only",
+      "value": "organic carbon",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "organic carbon",
+        "start": 1017,
+        "end": 1031
+      },
+      "context": "(EC 20 dS/m), the soil amendments inoculated with the bead significantly increased (p<0.05). β-glucosidase, protease, and fluorescein diacetate hydrolase more, compared with non-saline soil. Furthermore, organic matter, organic carbon, total nitrogen, and available phosphorus showed significant increase (p<0.05). The principal component analysis revealed 70.5% of the total variation in soil chemical characteristics and soil enzymes, showing the respo",
+      "id": "D125"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "A_only",
+      "value": "conidia trapped within the bead",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Scanning electron microscopy and energy dispersive X-ray spectroscopy encountered conidia trapped within the bead with the components: C, O, and Si.",
+        "start": 613,
+        "end": 761
+      },
+      "context": "perties of soils. At 1%, both biochar enhanced carboxymethylcellulase and filter paperase activity. Alternative alginate rice straw biochar also increased both cellulolytic enzymes at the highest salinity (EC: 40 dS/m). Scanning electron microscopy and energy dispersive X-ray spectroscopy encountered conidia trapped within the bead with the components: C, O, and Si. When applied to salt affected soil (EC 20 dS/m), the soil amendments inoculated with the bead significantly increased (p<0.05). β-glucosidase, protease, and fluorescein diacetate hydrolase more, compared with non-saline",
+      "id": "D126"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "A_only",
+      "value": "microbial viability and function",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Especially, the correlation revealed that dehydrogenase, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity.",
+        "start": 1300,
+        "end": 1573
+      },
+      "context": " significant increase (p<0.05). The principal component analysis revealed 70.5% of the total variation in soil chemical characteristics and soil enzymes, showing the response to amended organic amendments and the beads. Especially, the correlation revealed that dehydrogenase, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity. Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improvin",
+      "id": "D127"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "A_only",
+      "value": "rice straw decomposition",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "• Alginate-biochar-immobilized spored increased rice straw decomposition by enhancing cellulase activity, even in high salinity condition.",
+        "start": 1978,
+        "end": 2116
+      },
+      "context": " salt-affected soil, hence improving soil fertility and contributing to agricultural sustainability. • Cellulolytic fungus was incorporated by sodium alginate and biochar from rice straw or bamboo as effective inoculum. • Alginate-biochar-immobilized spored increased rice straw decomposition by enhancing cellulase activity, even in high salinity condition. • Combining alginate-biochar immobilized fungus and soil amendment significantly enhanced several soil enzyme activities and affected to increase organic carbon, organic matter, total nitrogen and available phosphorus i",
+      "id": "D128"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "protease",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "protease",
+        "start": 905,
+        "end": 913
+      },
+      "context": "countered conidia trapped within the bead with the components: C, O, and Si. When applied to salt affected soil (EC 20 dS/m), the soil amendments inoculated with the bead significantly increased (p<0.05). β-glucosidase, protease, and fluorescein diacetate hydrolase more, compared with non-saline soil. Furthermore, organic matter, organic carbon, total nitrogen, and available phosphorus showed significant increase (p<0.05). The principal compone",
+      "id": "D129"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "fluorescein diacetate hydrolase",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "fluorescein diacetate hydrolase",
+        "start": 919,
+        "end": 950
+      },
+      "context": "dia trapped within the bead with the components: C, O, and Si. When applied to salt affected soil (EC 20 dS/m), the soil amendments inoculated with the bead significantly increased (p<0.05). β-glucosidase, protease, and fluorescein diacetate hydrolase more, compared with non-saline soil. Furthermore, organic matter, organic carbon, total nitrogen, and available phosphorus showed significant increase (p<0.05). The principal component analysis revealed 70.5% of the tot",
+      "id": "D130"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "invertase",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "invertase",
+        "start": 1405,
+        "end": 1414
+      },
+      "context": " soil chemical characteristics and soil enzymes, showing the response to amended organic amendments and the beads. Especially, the correlation revealed that dehydrogenase, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity. Our findings suggested that incorporating soil amendments an",
+      "id": "D131"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "field",
+      "field": "/evidence/methods",
+      "direction": "A_only",
+      "value": "correlation",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Especially, the correlation revealed that dehydrogenase, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity.",
+        "start": 1300,
+        "end": 1573
+      },
+      "context": " significant increase (p<0.05). The principal component analysis revealed 70.5% of the total variation in soil chemical characteristics and soil enzymes, showing the response to amended organic amendments and the beads. Especially, the correlation revealed that dehydrogenase, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity. Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improvin",
+      "id": "D132"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "A_only",
+      "value": "Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improving soil fertility and contributing to agricultural sustainability.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improving soil fertility and contributing to agricultural sustainability.",
+        "start": 1574,
+        "end": 1858
+      },
+      "context": "e, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity. Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improving soil fertility and contributing to agricultural sustainability. • Cellulolytic fungus was incorporated by sodium alginate and biochar from rice straw or bamboo as effective inoculum. • Alginate-biochar-immobilized spored increased rice straw decomposition by enhancing cellulase acti",
+      "id": "D133"
+    },
+    {
+      "uid": "WOS:001586749800001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "indicating that increasing organic matter promoted microbial viability and function in high salinity.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "indicating that increasing organic matter promoted microbial viability and function in high salinity.",
+        "start": 1472,
+        "end": 1573
+      },
+      "context": "se to amended organic amendments and the beads. Especially, the correlation revealed that dehydrogenase, fluorescein diacetate hydrolase, β-glucosidase, invertase and protease were strongly correlated to organic carbon, indicating that increasing organic matter promoted microbial viability and function in high salinity. Our findings suggested that incorporating soil amendments and alginate-biochar immobilized conidia as a biofertilizer considerably improves soil chemical characteristics and enzymes in salt-affected soil, hence improvin",
+      "id": "D134"
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "A_only",
+      "value": "CK (non-biochar) treatment",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Relative to the CK (non-biochar) treatment, HRB and HMB significantly reduced soil total salt by 11.10 % and 23.62 %, respectively, and reduced pH by 0.80 units and 0.60 units, respectively.",
+        "start": 916,
+        "end": 1106
+      },
+      "context": "tional groups such as N-O, quaternary-N, and pyridinic-N. The acid-modified biochar demonstrated significantly greater improvement effects on saline-alkali soil remediation and cotton plant growth than pristine biochar. Relative to the CK (non-biochar) treatment, HRB and HMB significantly reduced soil total salt by 11.10 % and 23.62 %, respectively, and reduced pH by 0.80 units and 0.60 units, respectively. Additionally, the acid-modified biochar significantly increased soil available nitrogen content and enhanced activities of C-, N-, and P-acquiring enzymes. Notably, HRB and HMB significantly increased the biomass of cot",
+      "id": "D135"
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "total salinity content",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Compared to pristine biochar, acid-modified biochar exhibited significant reductions in total salinity content and pH, while introducing new functional groups such as N-O, quaternary-N, and pyridinic-N.",
+        "start": 551,
+        "end": 753
+      },
+      "context": "ich nitric acid-modified biochars improve saline-alkali soil and promote cotton seedling growth, using pristine rice straw (PRB) and maize straw biochars (PMB), and their nitric acid-modified counterparts (HRB and HMB). Compared to pristine biochar, acid-modified biochar exhibited significant reductions in total salinity content and pH, while introducing new functional groups such as N-O, quaternary-N, and pyridinic-N. The acid-modified biochar demonstrated significantly greater improvement effects on saline-alkali soil remediation and cotton plant growth than pristine biochar. Relative to the CK (non-biochar) treatment, HRB and HMB s",
+      "id": "D136"
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "A_only",
+      "value": "N-O, quaternary-N, and pyridinic-N",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Compared to pristine biochar, acid-modified biochar exhibited significant reductions in total salinity content and pH, while introducing new functional groups such as N-O, quaternary-N, and pyridinic-N.",
+        "start": 551,
+        "end": 753
+      },
+      "context": "ich nitric acid-modified biochars improve saline-alkali soil and promote cotton seedling growth, using pristine rice straw (PRB) and maize straw biochars (PMB), and their nitric acid-modified counterparts (HRB and HMB). Compared to pristine biochar, acid-modified biochar exhibited significant reductions in total salinity content and pH, while introducing new functional groups such as N-O, quaternary-N, and pyridinic-N. The acid-modified biochar demonstrated significantly greater improvement effects on saline-alkali soil remediation and cotton plant growth than pristine biochar. Relative to the CK (non-biochar) treatment, HRB and HMB s",
+      "id": "D137"
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "kind": "field",
+      "field": "/evidence/measurements/plant_growth",
+      "direction": "B_only",
+      "value": "Na+/K+ ratio",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Na+/K+ ratio",
+        "start": 1593,
+        "end": 1605
+      },
+      "context": "ely, compared with the CK treatment. Furthermore, the application of acid-modified biochar also elevated photosynthetic pigment levels in plant leaves, regulated plant ion homeostasis (e.g., reduced Na+ accumulation and Na+/K+ ratio), and activated antioxidant systems. Thus, acid-modified biochar overcomes the limitations of pristine biochar in saline-alkali soil remediation and shows its potential as an eco-friendly restoration material.",
+      "id": "D138"
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "total salinity content",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "total salinity content",
+        "start": 639,
+        "end": 661
+      },
+      "context": " growth, using pristine rice straw (PRB) and maize straw biochars (PMB), and their nitric acid-modified counterparts (HRB and HMB). Compared to pristine biochar, acid-modified biochar exhibited significant reductions in total salinity content and pH, while introducing new functional groups such as N-O, quaternary-N, and pyridinic-N. The acid-modified biochar demonstrated significantly greater improvement effects on saline-alkali soil remediation and cotton p",
+      "id": "D139"
+    },
+    {
+      "uid": "WOS:001619334500001",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "N-O, quaternary-N, and pyridinic-N",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "N-O, quaternary-N, and pyridinic-N",
+        "start": 718,
+        "end": 752
+      },
+      "context": "eir nitric acid-modified counterparts (HRB and HMB). Compared to pristine biochar, acid-modified biochar exhibited significant reductions in total salinity content and pH, while introducing new functional groups such as N-O, quaternary-N, and pyridinic-N. The acid-modified biochar demonstrated significantly greater improvement effects on saline-alkali soil remediation and cotton plant growth than pristine biochar. Relative to the CK (non-biochar) treatment, HRB and HMB ",
+      "id": "D140"
+    },
+    {
+      "uid": "WOS:001700916300001",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "A_only",
+      "value": "root-associated microbiomes",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Overall, our results demonstrate that, within a seawater-rice and soil ecosystem, the selective influence of the host plant on root-associated microbiomes exceeds that of either biochar amendment or PGPR inoculation.",
+        "start": 1730,
+        "end": 1946
+      },
+      "context": "ns. Multivariate analyses further demonstrated that soil pH was the primary driver of bacterial community structure in bulk and rhizosphere soils, whereas plant-root selection dominated in the rhizoplane and endosphere. Overall, our results demonstrate that, within a seawater-rice and soil ecosystem, the selective influence of the host plant on root-associated microbiomes exceeds that of either biochar amendment or PGPR inoculation. This work improves our understanding of biochar–PGPR–plant interactions in saline–alkali soils and provides insight into sustainable strategies for enhancing rice production under salinity stress.",
+      "id": "D141"
+    },
+    {
+      "uid": "WOS:001700916300001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "indicating a significant compartment-dependent selection.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "indicating a significant compartment-dependent selection.",
+        "start": 1108,
+        "end": 1165
+      },
+      "context": ". The effects generated by biochar were partially mitigated when PGPR was co-applied. The relative abundances of Bacillota and Bacteroidota grew progressively from bulk soil to the root endosphere across all treatments, indicating a significant compartment-dependent selection. Co-occurrence network analysis and FAPROTAX-based functional predictions revealed several taxa and functions that were progressively enriched toward the root, including the halotolerant genera Exiguobacterium and Chryse",
+      "id": "D142"
+    },
+    {
+      "uid": "WOS:001700916300001",
+      "kind": "author_interpretation",
+      "field": "/evidence/author_interpretations",
+      "direction": "B_only",
+      "value": "highlighting a significant host-mediated filtration process that functioned independently of the inoculated strains.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "highlighting a significant host-mediated filtration process that functioned independently of the inoculated strains.",
+        "start": 1397,
+        "end": 1513
+      },
+      "context": "ce network analysis and FAPROTAX-based functional predictions revealed several taxa and functions that were progressively enriched toward the root, including the halotolerant genera Exiguobacterium and Chryseobacterium, highlighting a significant host-mediated filtration process that functioned independently of the inoculated strains. Multivariate analyses further demonstrated that soil pH was the primary driver of bacterial community structure in bulk and rhizosphere soils, whereas plant-root selection dominated in the rhizoplane and endosphere. Ove",
+      "id": "D143"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/study_system/salinity_context",
+      "direction": "A_only",
+      "value": "This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Although rice cultivation is a widely adopted reclamation strategy, its efficacy in enhancing soil nutrient multifunctionality (SNMF) and the underlying mechanisms remain poorly understood. This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China.",
+        "start": 95,
+        "end": 479
+      },
+      "context": "Coastal saline-alkali soils threaten global food security due to severe nutrient deficiencies. Although rice cultivation is a widely adopted reclamation strategy, its efficacy in enhancing soil nutrient multifunctionality (SNMF) and the underlying mechanisms remain poorly understood. This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China. The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels. Our results demonstrated that PU significantly enhanced SNMF u",
+      "id": "D144"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/study_system/salinity_context",
+      "direction": "B_only",
+      "value": "The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels.",
+        "start": 480,
+        "end": 636
+      },
+      "context": "emain poorly understood. This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China. The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels. Our results demonstrated that PU significantly enhanced SNMF under mild salinity (total salt content ∼ 1 g kg −1 ) compared to UU, with values of 0.83 and 0.46 for P1 and U1, respectively. In contrast, under moderate sa",
+      "id": "D145"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/treatments/other_treatments",
+      "direction": "A_only",
+      "value": "U1 and U2 for UU under corresponding salinity levels",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels.",
+        "start": 480,
+        "end": 636
+      },
+      "context": "emain poorly understood. This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China. The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels. Our results demonstrated that PU significantly enhanced SNMF under mild salinity (total salt content ∼ 1 g kg −1 ) compared to UU, with values of 0.83 and 0.46 for P1 and U1, respectively. In contrast, under moderate sa",
+      "id": "D146"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_physical",
+      "direction": "A_only",
+      "value": "aggregate stability indices",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "However, elevated salinity disrupted aggregate structure, where no significant differences in aggregate stability indices were found between P2 and U2, suppressed macroaggregate-associated functional gene abundance, thereby offsetting the benefits of PU.",
+        "start": 1471,
+        "end": 1725
+      },
+      "context": "y—and microbial functional potential, particularly through their synergistic interaction. Specifically, the formation of stable macroaggregates served as functional hotspots, accounting for 48.22% of the SNMF variation. However, elevated salinity disrupted aggregate structure, where no significant differences in aggregate stability indices were found between P2 and U2, suppressed macroaggregate-associated functional gene abundance, thereby offsetting the benefits of PU. Consequently, the effectiveness of PU systems in enhancing SNMF is critically dependent on maintaining low salinity, highlighting the necessity of integrated management strategies that couple salt stress alleviation wit",
+      "id": "D147"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_physical",
+      "direction": "B_only",
+      "value": "MWD",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "MWD",
+        "start": 1180,
+        "end": 1183
+      },
+      "context": " P2 and U2 showing similarly low values (0.12). The superiority of PU under mild salinity was primarily driven by improved soil aggregate stability—as evidenced by the significantly higher proportion of macroaggregates, MWD, and GMD in P1 than in U1 by 11.11%, 7.06%, and 79.80%, respectively—and microbial functional potential, particularly through their synergistic interaction. Specifically, the formation of stable macroaggregates served a",
+      "id": "D148"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_physical",
+      "direction": "B_only",
+      "value": "GMD",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "GMD",
+        "start": 1189,
+        "end": 1192
+      },
+      "context": "2 showing similarly low values (0.12). The superiority of PU under mild salinity was primarily driven by improved soil aggregate stability—as evidenced by the significantly higher proportion of macroaggregates, MWD, and GMD in P1 than in U1 by 11.11%, 7.06%, and 79.80%, respectively—and microbial functional potential, particularly through their synergistic interaction. Specifically, the formation of stable macroaggregates served as functio",
+      "id": "D149"
+    },
+    {
+      "uid": "WOS:001745283700001",
+      "kind": "field",
+      "field": "/evidence/methods",
+      "direction": "B_only",
+      "value": "10-year reclaimed coastal field",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "10-year reclaimed coastal field",
+        "start": 433,
+        "end": 464
+      },
+      "context": "ionality (SNMF) and the underlying mechanisms remain poorly understood. This study investigated the effects of paddy-upland rotation (PU) versus upland-upland rotation (UU) on SNMF across varying salinity gradients in a 10-year reclaimed coastal field of East China. The treatments were designated as P1 and P2 for PU under mild and moderate salinity, respectively, and U1 and U2 for UU under corresponding salinity levels. Our results demonstrated that PU significantly ",
+      "id": "D150"
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "B_only",
+      "value": "exchangeable Ca²⁺ ions",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "exchangeable Ca²⁺ ions",
+        "start": 719,
+        "end": 741
+      },
+      "context": "ic carbon, and mineralization in saline-alkali soil. The results indicated that biochar application significantly decreased soil pH and the concentrations of Na⁺ and Mg²⁺ ions, while increasing the levels of K⁺ ions and exchangeable Ca²⁺ ions. These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings. Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbo",
+      "id": "D151"
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "kind": "field",
+      "field": "/evidence/measurements/carbon",
+      "direction": "B_only",
+      "value": "mineralization",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "mineralization",
+        "start": 514,
+        "end": 528
+      },
+      "context": "anisms involved at the aggregate scale remain unclear. This study investigated the effects of application levels (0%, 1%, 2% and 5%) of rice straw biochar on the physicochemical properties, aggregate organic carbon, and mineralization in saline-alkali soil. The results indicated that biochar application significantly decreased soil pH and the concentrations of Na⁺ and Mg²⁺ ions, while increasing the levels of K⁺ ions and exchangeable Ca²⁺ ions. These",
+      "id": "D152"
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings.",
+      "context": "ation in saline-alkali soil. The results indicated that biochar application significantly decreased soil pH and the concentrations of Na⁺ and Mg²⁺ ions, while increasing the levels of K⁺ ions and exchangeable Ca²⁺ ions. These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings. Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization. Furthermore, an appropriate amount of biochar significantly increased the proportion of 0.075 to",
+      "id": "D153"
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization.",
+      "context": "of Na⁺ and Mg²⁺ ions, while increasing the levels of K⁺ ions and exchangeable Ca²⁺ ions. These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings. Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization. Furthermore, an appropriate amount of biochar significantly increased the proportion of 0.075 to 0.2 mm and 3 to 2 mm aggregates, thereby promoting the aggregation of microaggregates into macroaggregates. These findings",
+      "id": "D154"
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "B_only",
+      "value": "These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings.",
+        "start": 743,
+        "end": 873
+      },
+      "context": "ation in saline-alkali soil. The results indicated that biochar application significantly decreased soil pH and the concentrations of Na⁺ and Mg²⁺ ions, while increasing the levels of K⁺ ions and exchangeable Ca²⁺ ions. These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings. Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization. Furthermore, an appropriate amount of biochar significantly increased the proportion of 0.075 to",
+      "id": "D155"
+    },
+    {
+      "uid": "WOS:001815093500014",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "B_only",
+      "value": "Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization.",
+        "start": 874,
+        "end": 996
+      },
+      "context": "of Na⁺ and Mg²⁺ ions, while increasing the levels of K⁺ ions and exchangeable Ca²⁺ ions. These changes effectively improved the soil’s ionic environment and fertility, thereby promoting the growth of rapeseed seedlings. Biochar also enhanced microbial biomass carbon and activity, facilitating organic carbon transformation and stabilization. Furthermore, an appropriate amount of biochar significantly increased the proportion of 0.075 to 0.2 mm and 3 to 2 mm aggregates, thereby promoting the aggregation of microaggregates into macroaggregates. These findings",
+      "id": "D156"
+    },
+    {
+      "uid": "WOS:001818849400001",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "This reduction in Pb bioavailability led to decreased Pb uptake by crops.",
+      "context": "the RE-Pb by 16% under neutral conditions, whereas the corresponding changes in saline soil were 9% and 10%, respectively. This differential effectiveness was attributed to a shift in the dominant environmental drivers. This reduction in Pb bioavailability led to decreased Pb uptake by crops. Furthermore, the application of clay minerals increased the Pb concentration within oat roots by -32-79% in neutral soil and by 15-82% in saline soil, while restricting the translocation of Pb to the shoots, ultimately ",
+      "id": "D157"
+    },
+    {
+      "uid": "WOS:001818849400001",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "B_only",
+      "value": "This reduction in Pb bioavailability led to decreased Pb uptake by crops.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "This reduction in Pb bioavailability led to decreased Pb uptake by crops.",
+        "start": 985,
+        "end": 1058
+      },
+      "context": "the RE-Pb by 16% under neutral conditions, whereas the corresponding changes in saline soil were 9% and 10%, respectively. This differential effectiveness was attributed to a shift in the dominant environmental drivers. This reduction in Pb bioavailability led to decreased Pb uptake by crops. Furthermore, the application of clay minerals increased the Pb concentration within oat roots by -32-79% in neutral soil and by 15-82% in saline soil, while restricting the translocation of Pb to the shoots, ultimately ",
+      "id": "D158"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "A_only",
+      "value": "soil of varied sodicity",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Inoculation of S° with A. lwoffii 5M1 caused a 15.3–39.1% increase in S°-oxidation in soil of varied sodicity with pHs ranging from 9.1 to 10.5.",
+        "start": 698,
+        "end": 842
+      },
+      "context": "dole–3–acetic acid (IAA). A. lwoffii 5M1 formed biofilms around S°–particles in growth media. It harbours the soxA (720 bp), soxB (590 bp), and soxY (329 bp) genes, which form the core component of the Sox gene cluster. Inoculation of S° with A. lwoffii 5M1 caused a 15.3–39.1% increase in S°-oxidation in soil of varied sodicity with pHs ranging from 9.1 to 10.5. The improved oxidation was associated with a decline in bicarbonate and alkalinity and a simultaneous increase in Ca²⁺, Mg²⁺, and inorganic P content in the soil solution. Integrating strain 5M1 with S°enhanced rice and",
+      "id": "D159"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "field",
+      "field": "/evidence/measurements/soil_chemical",
+      "direction": "B_only",
+      "value": "Mg²⁺",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Mg²⁺",
+        "start": 963,
+        "end": 967
+      },
+      "context": "a 15.3–39.1% increase in S°-oxidation in soil of varied sodicity with pHs ranging from 9.1 to 10.5. The improved oxidation was associated with a decline in bicarbonate and alkalinity and a simultaneous increase in Ca²⁺, Mg²⁺, and inorganic P content in the soil solution. Integrating strain 5M1 with S°enhanced rice and wheat yields by 6.45–28.8% than S° alone. This study concludes that A. lwoffii strain 5M1, with its dual function of S° oxid",
+      "id": "D160"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "A_only",
+      "value": "ammonia and indole–3–acetic acid (IAA)",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The strain released appreciable amounts of plant growth-promoting compounds, including ammonia and indole–3–acetic acid (IAA).",
+        "start": 377,
+        "end": 503
+      },
+      "context": "y reports, for the first time, the sulphur oxidation (S°–oxidation) capability of Acinetobacter lwoffii strain 5M1, isolated from highly saline soil (electrical conductivity of 36 dS m⁻¹) surrounding a hot-water spring. The strain released appreciable amounts of plant growth-promoting compounds, including ammonia and indole–3–acetic acid (IAA). A. lwoffii 5M1 formed biofilms around S°–particles in growth media. It harbours the soxA (720 bp), soxB (590 bp), and soxY (329 bp) genes, which form the core component of the Sox gene cluster. Inoculation of S° with A.",
+      "id": "D161"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "A_only",
+      "value": "S°-oxidation",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "Inoculation of S° with A. lwoffii 5M1 caused a 15.3–39.1% increase in S°-oxidation in soil of varied sodicity with pHs ranging from 9.1 to 10.5.",
+        "start": 698,
+        "end": 842
+      },
+      "context": "dole–3–acetic acid (IAA). A. lwoffii 5M1 formed biofilms around S°–particles in growth media. It harbours the soxA (720 bp), soxB (590 bp), and soxY (329 bp) genes, which form the core component of the Sox gene cluster. Inoculation of S° with A. lwoffii 5M1 caused a 15.3–39.1% increase in S°-oxidation in soil of varied sodicity with pHs ranging from 9.1 to 10.5. The improved oxidation was associated with a decline in bicarbonate and alkalinity and a simultaneous increase in Ca²⁺, Mg²⁺, and inorganic P content in the soil solution. Integrating strain 5M1 with S°enhanced rice and",
+      "id": "D162"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "field",
+      "field": "/evidence/measurements/microbial",
+      "direction": "B_only",
+      "value": "plant growth-promoting compounds",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "plant growth-promoting compounds",
+        "start": 420,
+        "end": 452
+      },
+      "context": "oxidation (S°–oxidation) capability of Acinetobacter lwoffii strain 5M1, isolated from highly saline soil (electrical conductivity of 36 dS m⁻¹) surrounding a hot-water spring. The strain released appreciable amounts of plant growth-promoting compounds, including ammonia and indole–3–acetic acid (IAA). A. lwoffii 5M1 formed biofilms around S°–particles in growth media. It harbours the soxA (720 bp), soxB (590 bp), and soxY (329 bp) genes, which form the core component",
+      "id": "D163"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "field",
+      "field": "/evidence/measurements/other",
+      "direction": "B_only",
+      "value": "inorganic P content in the soil solution",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "inorganic P content in the soil solution",
+        "start": 973,
+        "end": 1013
+      },
+      "context": "1% increase in S°-oxidation in soil of varied sodicity with pHs ranging from 9.1 to 10.5. The improved oxidation was associated with a decline in bicarbonate and alkalinity and a simultaneous increase in Ca²⁺, Mg²⁺, and inorganic P content in the soil solution. Integrating strain 5M1 with S°enhanced rice and wheat yields by 6.45–28.8% than S° alone. This study concludes that A. lwoffii strain 5M1, with its dual function of S° oxidation and plant growth promotion, represents a",
+      "id": "D164"
+    },
+    {
+      "uid": "WOS:001839277700002",
+      "kind": "finding",
+      "field": "/evidence/findings",
+      "direction": "A_only",
+      "value": null,
+      "support": null,
+      "claim": "This study reports, for the first time, the sulphur oxidation (S°–oxidation) capability of Acinetobacter lwoffii strain 5M1, isolated from highly saline soil (electrical conductivity of 36 dS m⁻¹) surrounding a hot-water spring.",
+      "context": "Native sulphur–oxidising microbial communities play a crucial role in the effectiveness of elemental sulphur (S°)–based reclamation of sodic soils. This study reports, for the first time, the sulphur oxidation (S°–oxidation) capability of Acinetobacter lwoffii strain 5M1, isolated from highly saline soil (electrical conductivity of 36 dS m⁻¹) surrounding a hot-water spring. The strain released appreciable amounts of plant growth-promoting compounds, including ammonia and indole–3–acetic acid (IAA). A. lwoffii 5M1 formed biofilms around S°–particles in growth media. It harbours the soxA (72",
+      "id": "D165"
+    },
+    {
+      "uid": "WOS:001871100100001",
+      "kind": "field",
+      "field": "/evidence/study_system/soil_type",
+      "direction": "B_only",
+      "value": "soda saline-alkali",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "soda saline-alkali",
+        "start": 26,
+        "end": 44
+      },
+      "context": "Ecological restoration of soda saline-alkali soils is critical for synergizing food security with climate change mitigation; however, the coupling mechanisms between soil carbon cycling and carbonaceous greenhouse gas dynamics during amelioration remain obscure. T",
+      "id": "D166"
+    },
+    {
+      "uid": "WOS:001871100100001",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "A_only",
+      "value": "The results throughout the entire 2023 growing season indicated that the amendment significantly reduced soil pH by 3.66% (down to 8.68) and electrical conductivity by 77.28% (down to 0.333 mS cm-1) relative to CK via a \"Ca-Na displacement\" mechanism, alleviating osmotic stress and boosting soil organic carbon (SOC) accumulation (an increase of 49%-135%, peaking at 10.132 g kg-1) and carbon cycling enzyme activities.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "The results throughout the entire 2023 growing season indicated that the amendment significantly reduced soil pH by 3.66% (down to 8.68) and electrical conductivity by 77.28% (down to 0.333 mS cm-1) relative to CK via a \"Ca-Na displacement\" mechanism, alleviating osmotic stress and boosting soil organic carbon (SOC) accumulation (an increase of 49%-135%, peaking at 10.132 g kg-1) and carbon cycling enzyme activities.",
+        "start": 570,
+        "end": 990
+      },
+      "context": "hina to investigate the responses of the soil-plant-microbe system and carbonaceous greenhouse gas driving mechanisms under uncultivated wasteland (WL), conventional paddy (CK), and organically amended paddy field (PF). The results throughout the entire 2023 growing season indicated that the amendment significantly reduced soil pH by 3.66% (down to 8.68) and electrical conductivity by 77.28% (down to 0.333 mS cm-1) relative to CK via a \"Ca-Na displacement\" mechanism, alleviating osmotic stress and boosting soil organic carbon (SOC) accumulation (an increase of 49%-135%, peaking at 10.132 g kg-1) and carbon cycling enzyme activities. The PF treatment reduced CO2 emissions (averaging 27.55% lower than WL, with the peak limited to 1097.26 mg m-3), but conversely resulted in elevated CH4 concentrations (an average increase of 30.98% relative to WL, pea",
+      "id": "D167"
+    },
+    {
+      "uid": "WOS:001871100100001",
+      "kind": "field",
+      "field": "/evidence/mechanisms_explicit",
+      "direction": "B_only",
+      "value": "the amendment significantly reduced soil pH by 3.66% (down to 8.68) and electrical conductivity by 77.28% (down to 0.333 mS cm-1) relative to CK via a \"Ca-Na displacement\" mechanism, alleviating osmotic stress and boosting soil organic carbon (SOC) accumulation (an increase of 49%-135%, peaking at 10.132 g kg-1) and carbon cycling enzyme activities.",
+      "support": {
+        "source": "abstract",
+        "evidence_text": "the amendment significantly reduced soil pH by 3.66% (down to 8.68) and electrical conductivity by 77.28% (down to 0.333 mS cm-1) relative to CK via a \"Ca-Na displacement\" mechanism, alleviating osmotic stress and boosting soil organic carbon (SOC) accumulation (an increase of 49%-135%, peaking at 10.132 g kg-1) and carbon cycling enzyme activities.",
+        "start": 639,
+        "end": 990
+      },
+      "context": "d carbonaceous greenhouse gas driving mechanisms under uncultivated wasteland (WL), conventional paddy (CK), and organically amended paddy field (PF). The results throughout the entire 2023 growing season indicated that the amendment significantly reduced soil pH by 3.66% (down to 8.68) and electrical conductivity by 77.28% (down to 0.333 mS cm-1) relative to CK via a \"Ca-Na displacement\" mechanism, alleviating osmotic stress and boosting soil organic carbon (SOC) accumulation (an increase of 49%-135%, peaking at 10.132 g kg-1) and carbon cycling enzyme activities. The PF treatment reduced CO2 emissions (averaging 27.55% lower than WL, with the peak limited to 1097.26 mg m-3), but conversely resulted in elevated CH4 concentrations (an average increase of 30.98% relative to WL, pea",
+      "id": "D168"
+    }
+  ]
+}

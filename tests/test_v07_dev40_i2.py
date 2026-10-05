@@ -49,9 +49,9 @@ class Dev40PromptIteration2Tests(unittest.TestCase):
                     "metric_v1_unchanged", "metric_v2_unchanged", "dev40_gold_unchanged"):
             self.assertTrue(audit[key], key)
         provenance = iteration2.audit_gold_provenance()
-        self.assertEqual(provenance["gold_status"], "human_approved_development_gold")
+        self.assertEqual(provenance["gold_status"], "ai_assisted_development_reference")
         self.assertEqual(provenance["decision_rows"], 27)
-        self.assertTrue(provenance["all_rows_human_approved"])
+        self.assertFalse(provenance["all_gold_independently_human_annotated"])
 
     def test_worker_bundle_is_dev40_only_and_excludes_analysis_inputs(self):
         manifest = json.loads((BATCH / "batch_manifest.json").read_text(encoding="utf-8"))

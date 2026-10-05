@@ -126,18 +126,17 @@ def audit_gold_provenance() -> dict:
     r01_r18 = [row for row in decisions if row.get("decision") == "HUMAN_ADJUDICATED_R01_R18"]
     r19 = [row for row in decisions if row.get("field") == "study_system.experimental_scale"
            and row.get("decision") == "ACCEPT"]
-    if not (frozen.get("gold_status") == "human_approved_development_gold"
-            and frozen.get("human_review_complete") is True
-            and frozen.get("r01_r18_human_adjudicated") is True
-            and frozen.get("r19_scale_human_adjudicated") is True
-            and frozen.get("unresolved_count") == 0
+    if not (frozen.get("gold_status") == "ai_assisted_development_reference"
+            and frozen.get("human_review_complete") is False
+            and frozen.get("all_gold_independently_human_annotated") is False
             and len(r01_r18) == 21 and len(r19) == 6
             and all(row.get("human_reviewed") is True and row.get("approved_by") == "human"
                     for row in decisions)):
-        raise ValueError("dev40_human_review_provenance_not_confirmed")
+        raise ValueError("dev40_conservative_provenance_not_confirmed")
     return {"gold_status": frozen["gold_status"], "decision_rows": len(decisions),
-            "r01_r18_adjudications": len(r01_r18), "r19_scale_adjudications": len(r19),
-            "all_rows_human_approved": True, "unresolved_count": 0,
+            "selected_human_decision_rows": frozen.get("selected_human_decision_rows"),
+            "r01_r18_decision_rows": len(r01_r18), "r19_scale_decision_rows": len(r19),
+            "all_gold_independently_human_annotated": False,
             "gold_content_modified": False}
 
 

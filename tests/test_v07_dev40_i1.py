@@ -49,10 +49,10 @@ class Dev40PromptIteration1Tests(unittest.TestCase):
 
     def test_gold_provenance_has_human_adjudication_for_r01_to_r19(self):
         audit = iteration1.audit_gold_provenance()
-        self.assertEqual(audit["gold_status"], "human_approved_development_gold")
-        self.assertEqual(audit["r01_r18_adjudications"], 21)
-        self.assertEqual(audit["r19_scale_adjudications"], 6)
-        self.assertTrue(audit["all_rows_human_approved"])
+        self.assertEqual(audit["gold_status"], "ai_assisted_development_reference")
+        self.assertEqual(audit["r01_r18_decision_rows"], 21)
+        self.assertEqual(audit["r19_scale_decision_rows"], 6)
+        self.assertFalse(audit["all_gold_independently_human_annotated"])
         self.assertFalse(audit["gold_content_modified"])
 
     def test_worker_bundle_contains_only_dev40_requests_and_protocol_inputs(self):

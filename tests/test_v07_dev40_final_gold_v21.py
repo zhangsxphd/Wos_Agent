@@ -25,7 +25,7 @@ class V07FinalGoldV21Tests(unittest.TestCase):
    self.assertEqual(r['evidence_support']['/evidence/study_system/experimental_scale'],{'source':'abstract','evidence_text':quote,'start':card['start'],'end':card['end']})
   self.assertEqual(report['schema_valid'],40); self.assertEqual(report['grounding_valid'],40); self.assertEqual(report['invalid_offset_count'],0); self.assertEqual(report['orphan_anchor_count'],0); self.assertEqual(report['missing_support_count'],0)
  def test_final_gold_freeze_status_and_dev_identity(self):
-  m=json.loads((FINAL/'gold_freeze_manifest.json').read_text()); self.assertEqual(m['gold_status'],'human_approved_development_gold'); self.assertEqual(m['identities'],40); self.assertTrue(m['human_review_complete']); self.assertEqual(m['unresolved_count'],0); self.assertTrue(m['contract_v2_1_gold_freeze_ready'])
+  m=json.loads((FINAL/'gold_freeze_manifest.json').read_text()); self.assertEqual(m['gold_status'],'ai_assisted_development_reference'); self.assertEqual(m['identities'],40); self.assertFalse(m['human_review_complete']); self.assertFalse(m['all_gold_independently_human_annotated']); self.assertEqual(m['unresolved_count'],0); self.assertTrue(m['contract_v2_1_gold_freeze_ready'])
   expected={r['uid'] for r in json.loads((ROOT/'data/evidence_benchmarks/v07_dev40/identities.json').read_text())}; actual={r['uid'] for r in read_jsonl(FINAL/'candidate_gold.jsonl')}; self.assertEqual(actual,expected); self.assertEqual(m['identity_errors'],0)
  def test_contract_v21_frozen_and_findings_rule_preserved(self):
   p=ROOT/'docs/evidence_field_contract_v2_1.md'; text=p.read_text(); self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(),'75fc4b301b598250d159de99c916959999297ecaf512a23a914f74991ae1ffad')

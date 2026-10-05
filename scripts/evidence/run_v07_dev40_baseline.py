@@ -361,7 +361,11 @@ def validate_and_measure(batch_dir: Path = OUTPUT / "batch_001", output: Path = 
                                                              if response and response.get("evidence", {}).get("study_system", {}).get("experimental_scale") not in (None, "", "unknown")),
                               "scale_support_rejected": sum(1 for row in validation.values()
                                                              if row["grounding_error"] and "experimental scale" in row["grounding_error"].casefold()),
-                              "accepted_records": sum(1 for row in validation.values() if row["accepted"]),
+                              "scale_values_grounded": sum(1 for response in predictions.values()
+                                                            if response and response.get("evidence", {}).get("study_system", {}).get("experimental_scale") not in (None, "", "unknown")) -
+                                                        sum(1 for row in validation.values()
+                                                            if row["grounding_error"] and "experimental scale" in row["grounding_error"].casefold()),
+                              "responses_accepted_by_validator_v2": sum(1 for row in validation.values() if row["accepted"]),
                               "rejected_uids": [uid for uid, row in validation.items()
                                                 if row["grounding_error"] and "experimental scale" in row["grounding_error"].casefold()]}}
     report = {"DEV40_BASELINE_COMPLETE": True,
@@ -545,6 +549,15 @@ def _context(abstract, support, width=180):
 
 def _error_class(pointer, kind, value, support, abstract, gold, routed_from):
     if routed_from:
+        if kind == "FN":
+            if pointer.endswith("/measurements/plant_growth") and routed_from.endswith("/measurements/other"):
+                return "PLANT_TO_OTHER"
+            if pointer.endswith("/measurements/microbial") and routed_from.endswith("/measurements/other"):
+                return "MICROBIAL_ROUTING"
+            if pointer.endswith("/measurements/carbon") and routed_from.endswith("/measurements/other"):
+                return "CARBON_ROUTING"
+            if pointer.endswith("/measurements/soil_chemical") and routed_from.endswith("/measurements/other"):
+                return "SOIL_CHEM_ROUTING"
         if pointer.endswith("/measurements/other"):
             if routed_from.endswith("/plant_growth"):
                 return "PLANT_TO_OTHER"
@@ -656,7 +669,9 @@ def write_error_markdown(path, report, primary, cross, soil, plant):
              "## Per-field v2 metrics", "", "| Field | Exact TP | Boundary TP | FP | FN | P | R | F1 |", "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for pointer, m in report["v2"]["field_metrics"].items():
         lines.append(f"| `{pointer}` | {m['exact_tp']} | {m['boundary_tp']} | {m['fp']} | {m['fn']} | {m['precision']:.4f} | {m['recall']:.4f} | {m['f1']:.4f} |")
-    lines += ["", "## Error diagnostics", "", "### Top error classes", "", "| Class | Count |", "|---|---:|"]
+    lines += ["", "## Error diagnostics", "", "### Top error classes", "",
+              "Counts are unmatched-side records; the cross-category matrix below counts each routed Gold span once.", "",
+              "| Class | Count |", "|---|---:|"]
     lines += [f"| {k} | {v} |" for k, v in primary["top_10"]]
     lines += ["", "### Top error fields by FP + FN", "", "| Field | FP + FN |", "|---|---:|"]
     lines += [f"| `{k}` | {v} |" for k, v in primary["top_fields_by_fp_plus_fn"][:10]]

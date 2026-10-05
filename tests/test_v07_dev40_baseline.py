@@ -100,6 +100,11 @@ class Dev40BaselineTests(unittest.TestCase):
         self.assertEqual(report["validation"]["schema_valid"], 40)
         self.assertEqual(report["validation"]["identifier_valid"], 40)
         self.assertEqual(report["validation"]["response_contract_valid"], 40)
+        self.assertGreaterEqual(report["diagnostics"]["primary_error_classes"]["counts"]["PLANT_TO_OTHER"],
+                                report["diagnostics"]["cross_category_confusion"]["required_routes"]["/evidence/measurements/plant_growth -> /evidence/measurements/other"])
+        mismatch = report["diagnostics"]["primary_error_classes"]["unmatched_items"][0]
+        self.assertTrue({"uid", "doi", "field", "Gold", "Prediction", "Gold_support", "Prediction_support",
+                         "abstract_context", "primary_error", "secondary_error"}.issubset(mismatch))
         self.assertEqual(report["validation"]["experimental_scale_validator_v2"]["rejected_uids"], [
             "WOS:000794189500001", "WOS:000899201500001", "WOS:000973038200001", "WOS:001332147700001", "WOS:001745283700001"
         ])

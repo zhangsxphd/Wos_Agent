@@ -63,11 +63,36 @@ class V07ContractV2CandidateTests(unittest.TestCase):
         self.assertIn('Status:** candidate for human review; not approved', text)
         self.assertIn('Evidence Matrix v0.4, unchanged', text)
 
+    def test_formal_contract_approval_and_frozen_sha_precede_dev40_reading(self):
+        formal = ROOT / 'docs/evidence_field_contract_v2.md'
+        manifest_path = ROOT / 'data/evidence_benchmarks/v07_dev40/contract_freeze_manifest.json'
+        manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+        self.assertTrue(formal.is_file())
+        self.assertEqual(manifest['approval_status'], 'HUMAN_APPROVED')
+        self.assertTrue(manifest['approval_before_dev40_reading'])
+        self.assertEqual(manifest['contract_v2_sha256'], sha(formal))
+        self.assertEqual(manifest['human_review_items'], 10)
+        self.assertEqual(manifest['accepted'], 9)
+        self.assertEqual(manifest['modified_then_accepted'], 1)
+        self.assertFalse(manifest['future_holdout_abstracts_accessed'])
+
+    def test_c10_human_modification_has_priority_and_deduplication_rules(self):
+        text = (ROOT / 'docs/evidence_field_contract_v2.md').read_text(encoding='utf-8')
+        for rule in ('what the study found', 'explicit interpretive layer',
+                     'Cue phrases are evidence to assess, never sufficient by themselves',
+                     'NO_MECHANICAL_DUPLICATION = true', 'measurement list',
+                     'semantic layers'):
+            with self.subTest(rule=rule):
+                self.assertIn(rule, text)
+        manifest = json.loads((ROOT / 'data/evidence_benchmarks/v07_dev40/contract_freeze_manifest.json').read_text())
+        self.assertEqual(manifest['human_decisions']['C10'], 'MODIFY_THEN_ACCEPT')
+
     def test_findings_rule_is_verbatim_v1_copy(self):
         old = next(line for line in CONTRACT_V1.read_text().splitlines() if line.startswith('| `findings` |'))
-        new = next(line for line in CANDIDATE.read_text().splitlines() if line.startswith('| `findings` |'))
-        self.assertEqual(old, new)
-        self.assertIn('PRESERVE_BY_DEFAULT = true', CANDIDATE.read_text())
+        for path in (CANDIDATE, ROOT / 'docs/evidence_field_contract_v2.md'):
+            new = next(line for line in path.read_text().splitlines() if line.startswith('| `findings` |'))
+            self.assertEqual(old, new)
+            self.assertIn('PRESERVE_BY_DEFAULT = true', path.read_text())
 
     def test_ontology_replay_cases_are_deterministic_and_complete(self):
         rows = json.loads(CASES.read_text(encoding='utf-8'))

@@ -1,0 +1,27 @@
+{
+  "status": "HUMAN_APPROVED",
+  "contract_version": 2,
+  "schema": "Evidence Matrix v0.4 unchanged",
+  "contract_v1_sha256": "b667329e16edcf2e6ed0cc300518b45c39f9b8178f4257900762b084686e9e7b",
+  "contract_v2_sha256": "9823606637e1c61a19546b720d052368cbe7a9c85825a1ce2ae41c3194208dab",
+  "schema_sha256": "33e289f1b2911024f00748ac2580ab7d2926369e7f4ac2ef48b28da8573dae36",
+  "approval_status": "HUMAN_APPROVED",
+  "approval_before_dev40_reading": true,
+  "human_review_items": 10,
+  "accepted": 9,
+  "modified_then_accepted": 1,
+  "human_decisions": {
+    "C01": "ACCEPT",
+    "C02": "ACCEPT",
+    "C03": "ACCEPT",
+    "C04": "ACCEPT",
+    "C05": "ACCEPT",
+    "C06": "ACCEPT",
+    "C07": "ACCEPT",
+    "C08": "ACCEPT",
+    "C09": "ACCEPT",
+    "C10": "MODIFY_THEN_ACCEPT"
+  },
+  "future_holdout_abstracts_accessed": false,
+  "approved_at": "2026-10-05T05:35:26.899699+00:00"
+}

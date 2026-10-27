@@ -11,11 +11,12 @@ from .oa_landing import pdf_links
 from ..pipeline_utils import ROOT, assert_safe, write_json
 
 
-def candidates(work, secrets=()):
+def candidates(work, secrets=(), include_archive=True):
     content=work.get('content_urls') or {}
     has=work.get('has_content') or {}
     choices=[]
     for key,fmt in [('grobid_xml','tei_xml'),('pdf','pdf')]:
+        if not include_archive: continue
         url=content.get(key) or (content.get('tei_xml') if key=='grobid_xml' else None)
         if url and has.get(key) is not False:
             try: safe=safe_url(url,secrets)
@@ -51,11 +52,14 @@ def candidates(work, secrets=()):
 
 
 class FulltextResolver:
-    def __init__(self, root=ROOT, client=None):
+    def __init__(self, root=ROOT, client=None, include_archive=True, max_candidates=None):
         self.root=Path(root)
         self.client=client or OpenAlexContentClient(root=root)
         self.secrets=self.client.secrets
         self.cache_hits=0
+        self.include_archive=include_archive
+        if max_candidates is not None and max_candidates < 1: raise ValueError('Positive candidate budget required')
+        self.max_candidates=max_candidates
 
     def resolve(self, record, work=None, refresh=False):
         identity=record.get('doi') or record.get('openalex_id')
@@ -80,8 +84,10 @@ class FulltextResolver:
                         return result
         work=work or self.client.lookup(identity)
         if not work: return self._save(manifest(record,'unavailable',reason='work_not_found'),key)
-        choices=candidates(work,self.secrets)
-        base={'openalex_id':work['id'],'work_metadata':{k:work.get(k) for k in ('open_access','best_oa_location','locations','has_content','content_urls')},'availability':location_metadata(work),'attempts':[],'cache_hit':False}
+        choices=candidates(work,self.secrets,include_archive=self.include_archive)
+        total_choices=len(choices)
+        if self.max_candidates is not None: choices=choices[:self.max_candidates]
+        base={'openalex_id':work['id'],'work_metadata':{k:work.get(k) for k in ('open_access','best_oa_location','locations','has_content','content_urls')},'availability':location_metadata(work),'attempts':[],'cache_hit':False,'archive_enabled':self.include_archive,'candidate_count':total_choices,'candidate_budget':self.max_candidates}
         for choice in choices:
             try:
                 raw,final_url=self.client.get(choice['url'],content=True)
@@ -112,7 +118,8 @@ class FulltextResolver:
             except (FulltextError,ValueError,OSError) as exc:
                 base['attempts'].append({'source':choice['source'],'format':choice['format'],'source_url':choice['url'],'status':'error','error_code':exc.code if isinstance(exc,FulltextError) else 'invalid_or_unsafe_content','http_status':getattr(exc,'http_status',None)})
         status='error' if choices else 'unavailable'
-        return self._save(manifest(record,status,**base,reason='all_candidates_failed' if choices else 'no_public_content_location'),key)
+        reason='candidate_budget_reached' if len(choices)<total_choices else 'all_candidates_failed' if choices else 'no_public_content_location'
+        return self._save(manifest(record,status,**base,reason=reason),key)
 
     def _save(self,result,key):
         from ..pipeline_utils import new_run_id

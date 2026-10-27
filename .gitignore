@@ -7,6 +7,7 @@ __pycache__/
 .DS_Store
 wos_response.json
 data/
+outputs/
 tmp/
 .pytest_cache/
 .coverage

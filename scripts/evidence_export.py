@@ -13,8 +13,14 @@ def identity(record):
     return record.get("uid"), record.get("doi"), record.get("title")
 
 
-def evidence_tables(canonical, matrix):
-    validator = EvidenceValidator()
+def evidence_tables(canonical, matrix, validator_version=1):
+    if validator_version not in (1, 2):
+        raise ValueError("Evidence validator version must be 1 or 2")
+    if validator_version == 2:
+        from .extractors.schema_validator_v2 import EvidenceValidator as ValidatorV2
+        validator = ValidatorV2()
+    else:
+        validator = EvidenceValidator()
     mapped = {}
     for row in matrix:
         key = identity(row)

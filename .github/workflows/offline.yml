@@ -1,0 +1,27 @@
+name: Portable offline regressions
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.lock.txt
+      - run: python -m pip install -r requirements.lock.txt
+      - name: Run offline tests without the optional Codex XLSX runtime
+        run: python tests/run_offline.py --without-xlsx --report /tmp/wos-test-results.json
+      - name: Print test selection and result
+        if: always()
+        run: cat /tmp/wos-test-results.json

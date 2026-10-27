@@ -128,7 +128,7 @@ def build_xlsx(payload, output, secrets=(), preview_dir=None):
         raise RuntimeError("XLSX evidence/inference counts differ from canonical input")
 
 
-def export_records(input_file, output_prefix, formats=("csv", "xlsx"), searches=None, root=ROOT, preview_dir=None, include_abstracts=False, evidence_file=None):
+def export_records(input_file, output_prefix, formats=("csv", "xlsx"), searches=None, root=ROOT, preview_dir=None, include_abstracts=False, evidence_file=None, evidence_validator_version=1):
     root = Path(root).resolve()
     input_file, prefix = project_path(input_file, root), project_path(output_prefix, root)
     secrets = known_secrets(root)
@@ -164,7 +164,7 @@ def export_records(input_file, output_prefix, formats=("csv", "xlsx"), searches=
         assert_safe(str(evidence_file), secrets)
         matrix = read_jsonl(evidence_file)
         assert_safe(matrix, secrets)
-        evidence_rows, inference_rows = evidence_tables(canonical_records, matrix)
+        evidence_rows, inference_rows = evidence_tables(canonical_records, matrix, validator_version=evidence_validator_version)
         payload.update(include_evidence=True, evidence_columns=EVIDENCE_COLUMNS,
                        evidence=[[literal_text(value) for value in row] for row in evidence_rows],
                        inference_columns=INFERENCE_COLUMNS,
@@ -216,11 +216,12 @@ def main():
     parser.add_argument("--preview-dir", help=argparse.SUPPRESS)
     parser.add_argument("--include-abstracts", action="store_true", help="Add a separate full-text Abstracts sheet to XLSX")
     parser.add_argument("--evidence", help="Validated Evidence Matrix JSONL; adds Evidence and Research_Inference sheets")
+    parser.add_argument("--evidence-validator", type=int, choices=(1, 2), default=1, help="Use Validator v2 for v0.7 evidence; default preserves v0.4 behavior")
     args = parser.parse_args()
     try:
         searches = [search_row(json.loads(project_path(path).read_text(encoding="utf-8")), source_manifest=path) for path in args.search_manifests] if args.search_manifests else None
         formats = ("csv", "xlsx") if args.format == "both" else (args.format,)
-        export_records(args.input, args.output_prefix, formats, searches, preview_dir=args.preview_dir, include_abstracts=args.include_abstracts, evidence_file=args.evidence)
+        export_records(args.input, args.output_prefix, formats, searches, preview_dir=args.preview_dir, include_abstracts=args.include_abstracts, evidence_file=args.evidence, evidence_validator_version=args.evidence_validator)
     except (ValueError, OSError, RuntimeError, subprocess.SubprocessError) as exc:
         print(f"Export failed: {redact(exc, known_secrets())}", file=sys.stderr)
         return 1

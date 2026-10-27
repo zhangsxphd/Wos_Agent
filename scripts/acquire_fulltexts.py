@@ -27,8 +27,13 @@ def sha(path):
 
 
 def import_browser_pdf(record, item, root=ROOT):
-    root=Path(root); secrets=known_secrets(root)
-    source=root/Path(item['file'])
+    root=Path(root).resolve(); secrets=known_secrets(root)
+    name=Path(item['file'])
+    if name.is_absolute() or '..' in name.parts:
+        raise FulltextError('unsafe_local_pdf_path')
+    source=(root/name).resolve()
+    try: source.relative_to(root)
+    except ValueError: raise FulltextError('unsafe_local_pdf_path') from None
     raw=source.read_bytes(); parsed=parse_pdf(raw)
     first='\n'.join(p['text'] for p in parsed['sections'][0]['paragraphs']).casefold()
     doi=normalize_doi(record.get('doi'))

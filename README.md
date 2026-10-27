@@ -30,6 +30,17 @@
 
 没有 Codex Excel 运行时的环境使用 `tests/run_offline.py --without-xlsx`；这会明确排除 3 项实际 XLSX 集成测试。原有历史实验审计使用 `--suite historical`，材料缺失时列出清单并返回退出码 2，不会将历史实验计为通过。精确依赖版本见 `requirements.lock.txt`。
 
+v0.7 的代码、数据质量、冻结评估及尚未解决的问题见 [2026-10-27 深度审查](docs/v07_deep_audit_20261027.md)。对已有文献池执行只读检查时，输出目录必须为新目录，例如：
+
+```bash
+.venv/bin/python -m scripts.quality.audit data/processed/fulltext_verified_20261027_v5.jsonl \
+  --fulltexts data/fulltext/runs/consolidated_20261027_final/fulltexts.jsonl \
+  --search-manifest data/processed/fulltext_verified_20261027_v5.manifest.json \
+  --output data/reports/my_quality_audit
+```
+
+该命令检查记录、来源、PDF 身份及待审事项，输出 JSON、JSONL 和 CSV；技术检查不能替代逐篇科学审阅。真实文献和授权全文在本地，不随仓库分发。
+
 首次安装：
 
 ```bash
@@ -135,7 +146,7 @@ python scripts/merge_searches.py data/processed/first.jsonl data/processed/secon
 
 对于没有命名 query 的旧版 JSONL，可用 `--query-ids Q0_initial Q1_core_water` 按输入顺序提供标签；未提供时，根据旧记录的数据库和原检索式生成稳定的 `legacy_*` ID。既有检索式和检索时间保留，不改写旧文件。使用计划清单合并时，会包含已保存的失败部分结果，并在导出 Searches 中保留其失败状态。
 
-去重优先级和原有逻辑一致：规范化 DOI、UID，以及仅对缺少强标识的记录使用题名加年份。合并增加 `matched_queries`、`query_match_count`、`provenance_history`。同一 query 的多次采集保留不同时间/来源记录，但不会重复增加 query 数量。重复来源的非空字段保留首次出现值，实际副本可补齐空字段。原始页始终保留。没有摘要的旧版记录升级后，三个摘要字段仍为 `null`。
+去重使用规范化 DOI、UID，以及仅对缺少强标识的记录使用题名加年份。同一 UID 对应多个 DOI 时，禁止通过该 UID 合并，并在 `dedup_conflicts` 中记录候选 DOI；相同 DOI 仍可合并。题名加年份并不能证明论文身份，使用该后备规则的结果仍需人工核对。合并增加 `matched_queries`、`query_match_count`、`provenance_history`。同一 query 的多次采集保留不同时间/来源记录，但不会重复增加 query 数量。重复来源的非空字段保留首次出现值，实际副本可补齐空字段。原始页始终保留。没有摘要的旧版记录升级后，三个摘要字段仍为 `null`。
 
 合并输出附带同名 `.manifest.json`，保存输入文件、去重数量、查询清单和可独立核查的统计。JSONL 是标准的机器可读数据源，合并和导出均不覆盖输入。
 

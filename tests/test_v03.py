@@ -196,11 +196,12 @@ class ProviderTests(OfflineCase):
         self.assertEqual(cache["status"], "not_found")
         self.assertEqual(cache["raw"], {"message": "not found"})
 
-    def test_200_empty_record_negative_cache(self):
+    def test_200_empty_record_is_error_without_negative_cache(self):
         client = self.client(SemanticScholarClient, [response({})])
-        self.assertIsNone(client.get_by_doi(DOI))
-        self.assertIsNone(client.get_by_doi(DOI))
+        with self.assertRaisesRegex(ProviderError, "invalid_response"):
+            client.get_by_doi(DOI)
         self.assertEqual(client.session.get.call_count, 1)
+        self.assertFalse(list(client.cache_dir.glob("*.json")))
 
     def test_refresh_bypasses_positive_and_negative_cache(self):
         for first_response in (response(crossref_raw()), response({}, 404)):

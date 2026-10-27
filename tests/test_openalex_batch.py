@@ -172,10 +172,12 @@ class OpenAlexBatchTests(OfflineCase):
         self.assertIsInstance(values[doi(1)], ProviderError)
         self.assertFalse(client._cache_path(doi(1)).exists())
 
-    def test_batch_http_404_negative_cache(self):
+    def test_batch_http_404_is_not_a_doi_negative_cache(self):
         client = self.oa([response({"error": "not found"}, 404)])
-        self.assertIsNone(client.get_many_by_doi([doi(1)])[doi(1)])
-        self.assertEqual(json.loads(client._cache_path(doi(1)).read_text())["http_status"], 404)
+        result = client.get_many_by_doi([doi(1)])[doi(1)]
+        self.assertIsInstance(result, ProviderError)
+        self.assertEqual(result.code, "batch_endpoint_not_found")
+        self.assertFalse(client._cache_path(doi(1)).exists())
 
     def test_rate_limit_header_whitelist_and_cache_capture(self):
         headers = dict(zip(RATE_LIMIT_HEADERS, ["1000", "999", "1", "86400"]))

@@ -1,5 +1,11 @@
 """Authenticated Semantic Scholar DOI lookup with a serial one-RPS batch path."""
 
+import hashlib
+import json
+import os
+import tempfile
+from pathlib import Path
+
 import requests
 from urllib.parse import quote
 
@@ -28,6 +34,7 @@ class SemanticScholarClient(BaseClient):
                            "rate_limited": 0, "transient_errors": 0})
         self.lookup_metadata = {}
         self.rate_limit_history = []
+        self.invalid_caches = {}
 
     def configure_auth(self):
         if self.api_key:
@@ -52,6 +59,8 @@ class SemanticScholarClient(BaseClient):
 
     def _validate_result(self, value):
         assert_safe(value, self.secrets)
+        if not isinstance(value.get("provider_id"), str) or not value["provider_id"].strip():
+            raise ProviderError(self.provider, "invalid_schema")
         if any(value.get(field) is not None and not isinstance(value[field], str)
                for field in ("provider_id", "doi", "title", "abstract", "url")):
             raise ProviderError(self.provider, "invalid_schema")
@@ -61,14 +70,94 @@ class SemanticScholarClient(BaseClient):
             raise ProviderError(self.provider, "doi_mismatch") from None
         return canonical
 
-    def _write_cache(self, doi, status, raw, retrieved_at, http_status=200):
+    def _write_cache(self, doi, status, raw, retrieved_at, http_status=200, evidence=None):
         path = self._cache_path(doi)
         entry = {"cache_version": 2, "provider": self.provider, "lookup_doi": doi,
                  "retrieved_at": retrieved_at, "http_status": http_status,
                  "status": status, "raw": raw}
+        if evidence is not None:
+            entry["not_found_evidence"] = evidence
         assert_safe(entry, self.secrets)
-        write_json(path, entry, self.secrets, overwrite=self.refresh and path.exists())
+        path.parent.mkdir(parents=True, exist_ok=True)
+        replacing = path.exists()
+        if replacing:
+            damaged = self.invalid_caches.get(doi)
+            if not damaged and not self.refresh:
+                raise ProviderError(self.provider, "cache_already_exists")
+            old = path.read_bytes()
+            try:
+                assert_safe(old.decode("utf-8", errors="replace"), self.secrets)
+            except ValueError:
+                raise ProviderError(self.provider, "unsafe_cache") from None
+            old_hash = hashlib.sha256(old).hexdigest()
+            if damaged and old_hash != damaged["sha256"]:
+                raise ProviderError(self.provider, "cache_changed_during_repair")
+            folder = self.cache_dir / ("quarantine" if damaged else "history")
+            folder.mkdir(parents=True, exist_ok=True)
+            backup = folder / (old_hash + ".bin")
+            try:
+                with backup.open("xb") as stream:
+                    stream.write(old)
+            except FileExistsError:
+                if backup.read_bytes() != old:
+                    raise ProviderError(self.provider, "cache_backup_mismatch") from None
+            write_json(folder / (new_run_id("cache_backup") + ".json"),
+                       {"lookup_doi": doi, "sha256": old_hash, "backup_file": backup.name,
+                        "reason": damaged["reason"] if damaged else "explicit_refresh",
+                        "preserved_at": utc_now()}, self.secrets)
+        text = json.dumps(entry, ensure_ascii=False, indent=2) + "\n"
+        fd, temporary = tempfile.mkstemp(prefix=".s2-cache-", dir=path.parent)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as stream:
+                stream.write(text)
+                stream.flush()
+                os.fsync(stream.fileno())
+            if replacing:
+                if hashlib.sha256(path.read_bytes()).hexdigest() != old_hash:
+                    raise ProviderError(self.provider, "cache_changed_during_repair")
+                os.replace(temporary, path)
+            else:
+                # Link publishes an already-complete file without replacing a
+                # concurrently created cache entry.
+                os.link(temporary, path)
+        finally:
+            if os.path.exists(temporary):
+                os.unlink(temporary)
+        self.invalid_caches.pop(doi, None)
         return path
+
+    def _invalid_cache(self, doi, data, reason):
+        self.invalid_caches[doi] = {"sha256": hashlib.sha256(data).hexdigest(), "reason": reason}
+        return ProviderError(self.provider, "invalid_cache")
+
+    def _negative_evidence_valid(self, doi, entry):
+        if entry.get("http_status") == 404:
+            return True
+        evidence = entry.get("not_found_evidence")
+        if entry.get("http_status") != 200 or entry.get("raw") is not None or not isinstance(evidence, dict):
+            return False
+        filename, index = evidence.get("batch_file"), evidence.get("index")
+        if (evidence.get("kind") != "explicit_batch_null" or not isinstance(filename, str)
+                or Path(filename).name != filename or type(index) is not int or index < 0):
+            return False
+        try:
+            data = (self.cache_dir / "batches" / filename).read_bytes()
+            if hashlib.sha256(data).hexdigest() != evidence.get("batch_sha256"):
+                return False
+            archive = json.loads(data)
+            if archive.get("provider") != self.provider or archive.get("http_status") != 200:
+                return False
+            ids, raw = archive["lookup_dois"], archive["raw"]
+            if (not isinstance(ids, list) or not isinstance(raw, list) or len(ids) != len(raw)
+                    or index >= len(ids) or ids[index] != doi or raw[index] is not None):
+                return False
+            for requested, item in zip(ids, raw):
+                if item is not None and (not isinstance(item, dict)
+                    or canonical_doi((item.get("externalIds") or {}).get("DOI")) != requested):
+                    return False
+            return True
+        except (OSError, ValueError, TypeError, KeyError, AttributeError):
+            return False
 
     def _record_error(self, error):
         self.stats["errors"] += 1
@@ -76,26 +165,44 @@ class SemanticScholarClient(BaseClient):
 
     def _load_cache(self, doi):
         path = self._cache_path(doi)
-        import json
-        entry = json.loads(path.read_text(encoding="utf-8"))
-        assert_safe(entry, self.secrets)
-        if (entry.get("cache_version") != 2 or entry.get("provider") != self.provider
+        try:
+            raw = path.read_bytes()
+        except OSError:
+            raise ProviderError(self.provider, "cache_read_error") from None
+        try:
+            assert_safe(raw.decode("utf-8", errors="replace"), self.secrets)
+        except ValueError:
+            raise ProviderError(self.provider, "unsafe_cache") from None
+        try:
+            entry = json.loads(raw)
+        except (ValueError, UnicodeDecodeError):
+            raise self._invalid_cache(doi, raw, "invalid_json") from None
+        if (not isinstance(entry, dict) or entry.get("cache_version") != 2 or entry.get("provider") != self.provider
                 or entry.get("lookup_doi") != doi
                 or entry.get("status") not in {"success", "ok", "no_abstract", "not_found"}):
-            raise ProviderError(self.provider, "invalid_cache")
+            raise self._invalid_cache(doi, raw, "invalid_envelope")
         status = entry["status"]
         if status == "not_found":
+            if not self._negative_evidence_valid(doi, entry):
+                raise self._invalid_cache(doi, raw, "unverified_negative")
             value = None
             self.stats["not_found"] += 1
         else:
-            value = self.parse(entry.get("raw"), entry.get("retrieved_at"))
-            if value is None or self._validate_result(value) != doi:
-                raise ProviderError(self.provider, "doi_mismatch")
+            try:
+                value = self.parse(entry.get("raw"), entry.get("retrieved_at"))
+                if value is None or self._validate_result(value) != doi:
+                    raise ValueError("cache identity mismatch")
+                if ((status == "success" and not value.get("abstract")) or
+                        (status == "no_abstract" and value.get("abstract"))):
+                    raise ValueError("cache abstract status mismatch")
+            except (ProviderError, ValueError, TypeError, KeyError, AttributeError):
+                raise self._invalid_cache(doi, raw, "invalid_record") from None
             self.stats["found"] += 1
             if not value.get("abstract"):
                 self.stats["no_abstract"] += 1
         self.stats["cache_hits"] += 1
-        metadata = {"cache_hit": True, "cache_file": str(path), "status": status}
+        lookup_status = "not_found" if value is None else "found" if value.get("abstract") else "no_abstract"
+        metadata = {"cache_hit": True, "cache_file": str(path), "status": lookup_status}
         self.lookup_metadata[doi] = metadata
         self.last_lookup = metadata
         return value
@@ -106,7 +213,7 @@ class SemanticScholarClient(BaseClient):
             try:
                 return self._load_cache(doi)
             except ProviderError as exc:
-                if exc.code != "invalid_cache":
+                if exc.code != "invalid_cache" or self.cache_only:
                     raise
         if self.cache_only:
             raise ProviderError(self.provider, "cache_miss")
@@ -119,10 +226,7 @@ class SemanticScholarClient(BaseClient):
             return None
         value = self.parse(raw, retrieved_at)
         if value is None:
-            self._write_cache(doi, "not_found", raw, retrieved_at, status)
-            self.stats["not_found"] += 1
-            self.last_lookup = {"cache_hit": False, "cache_file": str(path), "status": "not_found"}
-            return None
+            raise ProviderError(self.provider, "invalid_response", status)
         try:
             if self._validate_result(value) != doi:
                 raise ProviderError(self.provider, "doi_mismatch", status)
@@ -135,7 +239,8 @@ class SemanticScholarClient(BaseClient):
         self.stats["found"] += 1
         if cache_status == "no_abstract":
             self.stats["no_abstract"] += 1
-        self.last_lookup = {"cache_hit": False, "cache_file": str(path), "status": cache_status}
+        self.last_lookup = {"cache_hit": False, "cache_file": str(path),
+                            "status": "found" if value.get("abstract") else "no_abstract"}
         return value
 
     def get_many_by_doi(self, dois):
@@ -174,6 +279,8 @@ class SemanticScholarClient(BaseClient):
     def _batch_request(self, dois):
         if not 1 <= len(dois) <= 500:
             raise ValueError("Semantic Scholar batch must contain 1..500 DOI values")
+        if self.clock() < self.blocked_until:
+            raise ProviderError(self.provider, "provider_cooldown", 429)
         params = {"fields": BATCH_FIELDS}
         body = {"ids": ["DOI:" + doi for doi in dois]}
         for attempt in range(self.retries + 1):
@@ -223,45 +330,62 @@ class SemanticScholarClient(BaseClient):
         self.stats["batches"] += 1
         raw, status = self._batch_request(dois)
         retrieved_at = utc_now()
-        write_json(self.cache_dir / "batches" / (new_run_id("doi_batch") + ".json"),
+        archive = self.cache_dir / "batches" / (new_run_id("doi_batch") + ".json")
+        write_json(archive,
                    {"provider": self.provider, "lookup_dois": dois, "http_status": status,
                     "retrieved_at": retrieved_at, "raw": raw}, self.secrets)
         if not isinstance(raw, list):
             raise ProviderError(self.provider, "invalid_batch_response", status)
-        values = {}
-        for index, doi in enumerate(dois):
-            item = raw[index] if index < len(raw) else None
+        if len(raw) != len(dois):
+            raise ProviderError(self.provider, "invalid_batch_length", status)
+        # The API promises positional alignment. Validate every non-null item
+        # before interpreting *any* null as an explicit not-found result.
+        parsed_items = {}
+        for doi, item in zip(dois, raw):
             if item is None:
-                self._write_cache(doi, "not_found", None, retrieved_at, status)
+                continue
+            if not isinstance(item, dict):
+                raise ProviderError(self.provider, "invalid_batch_record", status)
+            try:
+                returned = canonical_doi((item.get("externalIds") or {}).get("DOI"))
+            except (ValueError, TypeError, AttributeError):
+                returned = None
+            if returned != doi:
+                raise ProviderError(self.provider, "doi_mismatch", status)
+            value = self.parse(item, retrieved_at)
+            if value is None or self._validate_result(value) != doi:
+                raise ProviderError(self.provider, "invalid_batch_record", status)
+            parsed_items[doi] = value
+        archive_sha256 = hashlib.sha256(archive.read_bytes()).hexdigest() if None in raw else None
+        values = {}
+        for index, (doi, item) in enumerate(zip(dois, raw)):
+            if item is None:
+                evidence = {"kind": "explicit_batch_null", "batch_file": archive.name,
+                            "batch_sha256": archive_sha256, "index": index}
+                try:
+                    self._write_cache(doi, "not_found", None, retrieved_at, status, evidence=evidence)
+                except (ProviderError, OSError, ValueError) as exc:
+                    error = exc if isinstance(exc, ProviderError) else ProviderError(self.provider, "cache_write_error")
+                    self._record_error(error); values[doi] = error
+                    self.lookup_metadata[doi] = {"cache_hit": False, "status": "error"}
+                    continue
                 self.stats["not_found"] += 1
                 self.lookup_metadata[doi] = {"cache_hit": False, "cache_file": str(self._cache_path(doi)), "status": "not_found"}
                 values[doi] = None
                 continue
-            if not isinstance(item, dict):
-                error = ProviderError(self.provider, "invalid_batch_record", status)
-                self._record_error(error)
-                values[doi] = error
-                continue
-            try:
-                returned = canonical_doi((item.get("externalIds") or {}).get("DOI"))
-            except (ValueError, TypeError):
-                returned = None
-            if returned != doi:
-                error = ProviderError(self.provider, "doi_mismatch", status)
-                self._record_error(error)
-                values[doi] = error
-                continue
-            value = self.parse(item, retrieved_at)
-            if value is None or self._validate_result(value) != doi:
-                error = ProviderError(self.provider, "doi_mismatch", status)
-                self._record_error(error)
-                values[doi] = error
-                continue
+            value = parsed_items[doi]
             cache_status = "success" if value.get("abstract") else "no_abstract"
-            path = self._write_cache(doi, cache_status, item, retrieved_at, status)
+            try:
+                path = self._write_cache(doi, cache_status, item, retrieved_at, status)
+            except (ProviderError, OSError, ValueError) as exc:
+                error = exc if isinstance(exc, ProviderError) else ProviderError(self.provider, "cache_write_error")
+                self._record_error(error); values[doi] = error
+                self.lookup_metadata[doi] = {"cache_hit": False, "status": "error"}
+                continue
             self.stats["found"] += 1
             if cache_status == "no_abstract":
                 self.stats["no_abstract"] += 1
-            self.lookup_metadata[doi] = {"cache_hit": False, "cache_file": str(path), "status": cache_status}
+            self.lookup_metadata[doi] = {"cache_hit": False, "cache_file": str(path),
+                                         "status": "found" if value.get("abstract") else "no_abstract"}
             values[doi] = value
         return values

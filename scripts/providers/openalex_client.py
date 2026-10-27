@@ -1,6 +1,7 @@
 """OpenAlex DOI batch lookup, with legacy singleton/cache compatibility."""
 
 import json
+import hashlib
 from pathlib import Path
 from urllib.parse import quote
 
@@ -76,10 +77,30 @@ class OpenAlexClient(BaseClient):
         entry = json.loads(path.read_text(encoding="utf-8"))
         assert_safe(entry, self.secrets)
         if (entry.get("cache_version") != 1 or entry.get("provider") != self.provider
-                or entry.get("lookup_doi") != doi or entry.get("status") not in {"ok", "no_abstract", "not_found"}):
+                or entry.get("lookup_doi") != doi or entry.get("status") not in {"ok", "no_abstract", "parse_error", "not_found"}):
             raise ProviderError(self.provider, "invalid_cache")
-        self.stats["cache_hits"] += 1
         if entry["status"] == "not_found":
+            if entry.get("lookup_mode") == "batch" and entry.get("http_status") != 200:
+                raise ProviderError(self.provider, "invalid_cache")
+            if entry.get("lookup_mode") == "batch":
+                try:
+                    archive = (self.root / entry['batch_response_file']).resolve()
+                    archive.relative_to((self.cache_dir / 'batches').resolve())
+                    data = archive.read_bytes()
+                    if hashlib.sha256(data).hexdigest() != entry['batch_response_sha256']:
+                        raise ValueError('archive changed')
+                    saved = json.loads(data)
+                    requested = saved['lookup_dois']
+                    if saved.get('provider') != self.provider or saved.get('http_status') != 200 or doi not in requested:
+                        raise ValueError('invalid archive envelope')
+                    raw = saved['raw']
+                    count = (raw.get('meta') or {}).get('count')
+                    if type(count) is not int or count != len(raw['results']) or doi in self._map_response(raw, requested):
+                        raise ValueError('absence not established')
+                except (OSError, KeyError, TypeError, ValueError, ProviderError):
+                    raise ProviderError(self.provider, "invalid_cache") from None
+            if entry.get("lookup_mode") != "batch" and entry.get("http_status") != 404:
+                raise ProviderError(self.provider, "invalid_cache")
             self.stats["not_found"] += 1
             value, status = None, "not_found"
         else:
@@ -87,9 +108,15 @@ class OpenAlexClient(BaseClient):
             if value is None or not value.get("provider_id"):
                 raise ProviderError(self.provider, "invalid_cache_record")
             self._validate_result(value)
-            status = "found" if value.get("abstract") else "no_abstract"
+            try:
+                if canonical_doi(value.get("doi")) != doi:
+                    raise ValueError("cache DOI mismatch")
+            except (ValueError, TypeError):
+                raise ProviderError(self.provider, "doi_mismatch") from None
+            status = "parse_error" if value.get("parse_warning") else "found" if value.get("abstract") else "no_abstract"
             if status == "no_abstract":
                 self.stats["no_abstract"] += 1
+        self.stats["cache_hits"] += 1
         self.lookup_metadata[doi] = {"cache_hit": True, "cache_file": str(path), "status": status,
                                      "rate_limit_headers": entry.get("rate_limit_headers", {})}
         return value
@@ -101,13 +128,15 @@ class OpenAlexClient(BaseClient):
             self.last_lookup = self.lookup_metadata[doi]
             return value
         value = super()._get_by_doi(doi)
-        status = "not_found" if value is None else "found" if value.get("abstract") else "no_abstract"
+        status = ("not_found" if value is None else "parse_error" if value.get("parse_warning")
+                  else "found" if value.get("abstract") else "no_abstract")
         self.last_lookup["status"] = status
-        if status == "no_abstract":
-            self.stats["no_abstract"] += 1
+        if status in {"no_abstract", "parse_error"}:
+            if status == "no_abstract":
+                self.stats["no_abstract"] += 1
             path = self._cache_path(doi)
             entry = json.loads(path.read_text(encoding="utf-8"))
-            entry["status"] = "no_abstract"
+            entry["status"] = status
             write_json(path, entry, self.secrets, overwrite=True)
         return value
 
@@ -163,10 +192,13 @@ class OpenAlexClient(BaseClient):
     def _fetch_batch(self, dois):
         status, raw, headers = self._request_batch(dois)
         retrieved_at = utc_now()
-        results = {} if status == 404 else self._map_response(raw, dois)
         archive = self.cache_dir / "batches" / (new_run_id("doi_batch") + ".json")
         write_json(archive, {"provider": self.provider, "lookup_dois": dois, "http_status": status,
                              "retrieved_at": retrieved_at, "rate_limit_headers": headers, "raw": raw}, self.secrets)
+        archive_sha256 = hashlib.sha256(archive.read_bytes()).hexdigest()
+        if status == 404:
+            raise ProviderError(self.provider, "batch_endpoint_not_found", status)
+        results = self._map_response(raw, dois)
         values = {}
         for doi in dois:
             path = self._cache_path(doi)
@@ -179,19 +211,21 @@ class OpenAlexClient(BaseClient):
             value = self.parse(item, retrieved_at) if item is not None else None
             if value is not None:
                 self._validate_result(value)
-            cache_status = "not_found" if value is None else "ok" if value.get("abstract") else "no_abstract"
+            cache_status = ("not_found" if value is None else "parse_error" if value.get("parse_warning")
+                            else "ok" if value.get("abstract") else "no_abstract")
             entry = {"cache_version": 1, "provider": self.provider, "lookup_doi": doi,
                      "status": cache_status, "http_status": status, "retrieved_at": retrieved_at,
                      "raw": item if status == 200 else raw, "lookup_mode": "batch",
                      "batch_response_file": display_path(archive, self.root), "rate_limit_headers": headers,
+                     "batch_response_sha256": archive_sha256,
                      "not_found_evidence": "HTTP 404" if status == 404 else "Absent from complete exact DOI-filter results" if value is None else None}
             write_json(path, entry, self.secrets, overwrite=path.exists())
             if value is None:
                 self.stats["not_found"] += 1
-            elif not value.get("abstract"):
+            elif cache_status == "no_abstract":
                 self.stats["no_abstract"] += 1
             self.lookup_metadata[doi] = {"cache_hit": False, "cache_file": str(path),
-                                         "status": "not_found" if value is None else "found" if value.get("abstract") else "no_abstract",
+                                         "status": "not_found" if value is None else "parse_error" if value.get("parse_warning") else "found" if value.get("abstract") else "no_abstract",
                                          "rate_limit_headers": headers}
             values[doi] = value
         return values
@@ -200,7 +234,9 @@ class OpenAlexClient(BaseClient):
         if not isinstance(raw, dict) or not isinstance(raw.get("results"), list):
             raise ProviderError(self.provider, "invalid_batch_response")
         count = (raw.get("meta") or {}).get("count")
-        complete = (type(count) is int and 0 <= count <= len(raw["results"])) if count is not None else len(raw["results"]) < 100
+        # A missing or inconsistent total cannot prove that absent DOI entries
+        # were actually absent from the full filter result.
+        complete = type(count) is int and 0 <= count == len(raw["results"])
         requested, mapped = set(dois), {}
         for item in raw["results"]:
             if not isinstance(item, dict) or not item.get("id"):

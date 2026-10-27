@@ -1,6 +1,8 @@
 """Resolve TEI, OpenAlex cached PDF, best OA PDF, other OA PDF, then unavailable."""
 import hashlib
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 from .openalex_content import OpenAlexContentClient, location_metadata
@@ -9,6 +11,21 @@ from .tei_parser import parse_tei
 from .pdf_metadata import parse_pdf
 from .oa_landing import pdf_links
 from ..pipeline_utils import ROOT, assert_safe, write_json
+from ..normalize_record import normalize_doi
+
+
+def verify_pdf_identity(parsed, record):
+    """Require the expected DOI as a complete identifier on PDF page one."""
+    expected = normalize_doi(record.get('doi'))
+    try:
+        first = ' '.join(p['text'] for p in parsed['sections'][0]['paragraphs'])
+    except (KeyError, TypeError, IndexError):
+        raise FulltextError('pdf_identity_requires_review') from None
+    first = unicodedata.normalize('NFKC', first).casefold()
+    found = {normalize_doi(match.rstrip('.,;:)]}')) for match in
+             re.findall(r'\b10\.\d{4,9}/[^\s<>"\'\[\]{}]+', first)}
+    if not expected or expected not in found:
+        raise FulltextError('pdf_identity_requires_review')
 
 
 def candidates(work, secrets=(), include_archive=True):
@@ -72,10 +89,17 @@ class FulltextResolver:
                 entry=json.loads(path.read_text())
                 assert_safe(entry,self.secrets)
                 if entry.get('status')=='available':
-                    raw_path=self.root/entry['raw_file']
+                    raw_path=(self.root/entry['raw_file']).resolve()
+                    try: raw_path.relative_to(self.root.resolve())
+                    except ValueError: continue
                     if raw_path.exists() and hashlib.sha256(raw_path.read_bytes()).hexdigest()==entry['sha256']:
+                        if entry.get('format') == 'pdf':
+                            try: verify_pdf_identity(parse_pdf(raw_path.read_bytes()), record)
+                            except FulltextError: continue
                         self.cache_hits+=1
                         result=dict(entry,cache_hit=True,uid=record.get('uid'),doi=record.get('doi'))
+                        result['identity_check'] = ('doi_on_first_page' if entry.get('format')=='pdf'
+                                                    else 'tei_identity_not_independently_verified')
                         if entry.get('format')=='tei_xml':
                             current=parse_tei(raw_path.read_bytes())
                             parsed_path=directory/'parsed'/(entry['sha256']+'.tei-v2.json')
@@ -84,6 +108,8 @@ class FulltextResolver:
                         return result
         work=work or self.client.lookup(identity)
         if not work: return self._save(manifest(record,'unavailable',reason='work_not_found'),key)
+        if record.get('doi') and work.get('doi') and normalize_doi(record['doi']) != normalize_doi(work['doi']):
+            return self._save(manifest(record,'error',reason='work_doi_mismatch'),key)
         choices=candidates(work,self.secrets,include_archive=self.include_archive)
         total_choices=len(choices)
         if self.max_candidates is not None: choices=choices[:self.max_candidates]
@@ -99,7 +125,7 @@ class FulltextResolver:
                     for pdf_url in links:
                         try:
                             candidate,redirected=self.client.get(pdf_url,content=True)
-                            parse_pdf(candidate)
+                            verify_pdf_identity(parse_pdf(candidate),record)
                             raw,final_url=candidate,redirected
                             choice=dict(choice,format='pdf',url=pdf_url)
                             break
@@ -109,11 +135,12 @@ class FulltextResolver:
                 parser=parse_tei if choice['format']=='tei_xml' else parse_pdf
                 # Validate format before storing a challenge/login page as content.
                 parsed=parser(raw)
+                if choice['format']=='pdf': verify_pdf_identity(parsed,record)
                 raw_path,digest=save_raw(raw,directory/'raw',choice['format'],self.secrets)
                 parsed_path=directory/'parsed'/(digest+'.'+parsed['parser']+'.json')
                 if not parsed_path.exists(): write_json(parsed_path,parsed,self.secrets)
                 base['attempts'].append({'source':choice['source'],'format':choice['format'],'source_url':choice['url'],'status':'available'})
-                result=manifest(record,'available',**base,source=choice['source'],format=choice['format'],version=choice.get('version'),license=choice.get('license'),source_url=choice['url'],final_url=final_url,sha256=digest,raw_file=str(raw_path.relative_to(self.root)),parsed_file=str(parsed_path.relative_to(self.root)),parse_status='parsed' if parsed['body_paragraph_count'] else 'no_body_text')
+                result=manifest(record,'available',**base,source=choice['source'],format=choice['format'],version=choice.get('version'),license=choice.get('license'),source_url=choice['url'],final_url=final_url,sha256=digest,raw_file=str(raw_path.relative_to(self.root)),parsed_file=str(parsed_path.relative_to(self.root)),parse_status='parsed' if parsed['body_paragraph_count'] else 'no_body_text',identity_check='doi_on_first_page' if choice['format']=='pdf' else 'tei_identity_not_independently_verified')
                 return self._save(result,key)
             except (FulltextError,ValueError,OSError) as exc:
                 base['attempts'].append({'source':choice['source'],'format':choice['format'],'source_url':choice['url'],'status':'error','error_code':exc.code if isinstance(exc,FulltextError) else 'invalid_or_unsafe_content','http_status':getattr(exc,'http_status',None)})

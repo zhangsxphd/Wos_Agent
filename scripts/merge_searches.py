@@ -9,10 +9,10 @@ from collections import Counter
 from pathlib import Path
 
 if __package__:
-    from .normalize_record import normalize_doi, normalize_title
+    from .normalize_record import normalize_doi, normalize_title, uid_doi_conflicts, add_uid_conflict
     from .pipeline_utils import ROOT, assert_safe, display_path, known_secrets, project_path, read_jsonl, redact, utc_now, write_json, write_jsonl
 else:
-    from normalize_record import normalize_doi, normalize_title
+    from normalize_record import normalize_doi, normalize_title, uid_doi_conflicts, add_uid_conflict
     from pipeline_utils import ROOT, assert_safe, display_path, known_secrets, project_path, read_jsonl, redact, utc_now, write_json, write_jsonl
 
 
@@ -84,6 +84,8 @@ def identity_keys(record):
 
 def merge_records(records):
     records = [prepare_record(record) for record in records]
+    conflicts = uid_doi_conflicts(records)
+    records = [add_uid_conflict(record, conflicts) for record in records]
     parents = list(range(len(records)))
 
     def find(index):
@@ -95,6 +97,8 @@ def merge_records(records):
     owners = {}
     for index, record in enumerate(records):
         for key in identity_keys(record):
+            if key.startswith('uid:') and key[4:] in conflicts:
+                continue
             if key in owners:
                 left, right = find(index), find(owners[key])
                 parents[max(left, right)] = min(left, right)

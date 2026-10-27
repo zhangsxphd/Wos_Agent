@@ -147,14 +147,13 @@ class BaseClient:
     def _get_by_doi(self, doi):
         path = self.cache_dir / (cache_key(doi) + ".json")
         self.last_lookup = {"cache_hit": False, "cache_file": str(path)}
-        if path.is_file() and not self.refresh:
+        cached = path.is_file() and not self.refresh
+        if cached:
             entry = json.loads(path.read_text(encoding="utf-8"))
             assert_safe(entry, self.secrets)
             if (entry.get("provider") != self.provider or entry.get("lookup_doi") != doi
                     or entry.get("status") not in {"ok", "not_found"} or entry.get("cache_version") != 1):
                 raise ProviderError(self.provider, "invalid_cache")
-            self.stats["cache_hits"] += 1
-            self.last_lookup["cache_hit"] = True
         else:
             if self.cache_only:
                 raise ProviderError(self.provider, "cache_miss")
@@ -164,21 +163,36 @@ class BaseClient:
             entry = {"cache_version": 1, "provider": self.provider, "lookup_doi": doi,
                      "retrieved_at": utc_now(), "http_status": status,
                      "status": "not_found" if status == 404 else "ok", "raw": raw}
-            write_json(path, entry, self.secrets, overwrite=self.refresh and path.exists())
         if entry["status"] == "not_found":
+            if entry.get("http_status") != 404:
+                raise ProviderError(self.provider, "invalid_cache" if cached else "invalid_response")
+            if not cached:
+                write_json(path, entry, self.secrets, overwrite=self.refresh and path.exists())
+            else:
+                self.stats["cache_hits"] += 1
+                self.last_lookup["cache_hit"] = True
             self.stats["not_found"] += 1
+            self.last_lookup["status"] = "not_found"
             return None
         result = self.parse(entry["raw"], entry["retrieved_at"])
         if result is None:
-            # A successful empty response is also a negative cache entry.
-            entry["status"] = "not_found"
-            write_json(path, entry, self.secrets, overwrite=True)
-            self.stats["not_found"] += 1
+            raise ProviderError(self.provider, "invalid_cache_record" if cached else "invalid_response")
+        assert_safe(result, self.secrets)
+        if any(result.get(field) is not None and not isinstance(result[field], str)
+               for field in ("provider_id", "doi", "title", "abstract", "url")):
+            raise ProviderError(self.provider, "invalid_schema")
+        try:
+            if canonical_doi(result.get("doi")) != doi:
+                raise ValueError("mismatched DOI")
+        except (ValueError, TypeError):
+            raise ProviderError(self.provider, "doi_mismatch") from None
+        if not cached:
+            write_json(path, entry, self.secrets, overwrite=self.refresh and path.exists())
         else:
-            assert_safe(result, self.secrets)
-            if any(result.get(field) is not None and not isinstance(result[field], str)
-                   for field in ("provider_id", "doi", "title", "abstract", "url")):
-                raise ProviderError(self.provider, "invalid_schema")
+            self.stats["cache_hits"] += 1
+            self.last_lookup["cache_hit"] = True
+        self.last_lookup["status"] = ("parse_error" if result.get("parse_warning") else
+                                      "found" if result.get("abstract") else "no_abstract")
         return result
 
     def unified(self, raw, retrieved_at, **values):

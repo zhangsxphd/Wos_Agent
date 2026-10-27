@@ -101,6 +101,29 @@ def dedup_key(record):
     return keys[0] if keys else None
 
 
+def uid_doi_conflicts(records):
+    """UID aliases cannot establish identity when their DOI values conflict."""
+    candidates = {}
+    for record in records:
+        uid = (record.get('uid') or '').strip().upper()
+        doi = normalize_doi(record.get('doi'))
+        if uid and doi:
+            candidates.setdefault(uid, set()).add(doi)
+    return {uid: sorted(dois) for uid, dois in candidates.items() if len(dois) > 1}
+
+
+def add_uid_conflict(record, conflicts):
+    uid = (record.get('uid') or '').strip().upper()
+    if uid in conflicts:
+        item = {'kind': 'uid_multiple_dois', 'uid': uid,
+                'doi_candidates': conflicts[uid], 'decision': 'do_not_merge_by_uid'}
+        existing = list(record.get('dedup_conflicts') or [])
+        if item not in existing:
+            existing.append(item)
+        record['dedup_conflicts'] = existing
+    return record
+
+
 def deduplicate_records(records):
     """Match DOI/UID aliases even if one copy lacks a DOI; keep first-seen order.
 
@@ -108,6 +131,8 @@ def deduplicate_records(records):
     nonempty field on conflict; fill missing fields from actual duplicate records.
     All original versions remain in the archived API pages.
     """
+    conflicts = uid_doi_conflicts(records)
+    records = [add_uid_conflict(dict(record), conflicts) for record in records]
     parents = list(range(len(records)))
 
     def find(index):
@@ -119,6 +144,8 @@ def deduplicate_records(records):
     owners = {}
     for index, record in enumerate(records):
         for key in _identity_keys(record):
+            if key.startswith('uid:') and key[4:] in conflicts:
+                continue
             if key in owners:
                 left, right = find(index), find(owners[key])
                 parents[max(left, right)] = min(left, right)

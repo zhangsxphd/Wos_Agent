@@ -29,7 +29,14 @@ def safe_url(url, secrets=()):
         pass
     if any(x in host for x in ("sci-hub", "scihub", "libgen", "annas-archive")):
         raise FulltextError("disallowed_source")
-    params = [(k,v) for k,v in parse_qsl(parsed.query, keep_blank_values=True)
+    parameters = parse_qsl(parsed.query, keep_blank_values=True)
+    signed = {"x-amz-security-token", "x-amz-signature", "x-amz-credential",
+              "x-goog-signature", "x-goog-credential", "awsaccesskeyid", "signature", "sig"}
+    if any(key.casefold() in signed for key, _ in parameters):
+        # Signed URLs are temporary bearer credentials. Refuse the request
+        # rather than persist them or strip fields needed for authentication.
+        raise FulltextError("signed_url_not_persisted")
+    params = [(k,v) for k,v in parameters
               if k.lower() not in {"api_key", "apikey", "access_token", "token", "authorization"}]
     result = urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(params), ""))
     assert_safe(result, secrets)

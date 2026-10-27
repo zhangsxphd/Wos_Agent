@@ -52,9 +52,14 @@ def classify(record, evidence, profile):
     themes=list(dict.fromkeys(themes))
     has_content=bool(record.get('abstract')) or bool(f.get('findings') or f.get('methods') or f.get('measurements'))
     review=any('review' in str(t).casefold() for t in record.get('document_types',[]))
+    directly_relevant=saline and rice and any(t in rules['themes'] for t in themes)
     if not has_content: status,role,reason='needs_fulltext','unresolved','No abstract or validated fulltext evidence.'
-    elif review: status,role,reason='include','review_synthesis','Review retained as synthesis; cited results are not an author-conducted experiment.'
-    elif scope=='model': status,role,reason='include','regional_context','Model/scenario evidence retained for regional context, not a core experiment.'
+    elif review:
+        status,role=('include' if directly_relevant else 'uncertain'),'review_synthesis'
+        reason='Review is synthesis; direct relevance requires supported saline rice context and theme.'
+    elif scope=='model':
+        status,role=('include' if directly_relevant else 'uncertain'),'regional_context'
+        reason='Model/scenario is context; direct relevance requires supported saline rice context and theme.'
     elif saline and rice and scope in rules['scales'] and any(t in rules['themes'] for t in themes):
         status,role,reason='include','core_experimental','Supported saline rice/paddy system, experimental/field observational design, and a directly relevant theme.'
     elif themes: status,role,reason='uncertain','mechanism_transfer','Relevant measured themes; core system eligibility still needs confirmation.'
@@ -66,7 +71,8 @@ def classify(record, evidence, profile):
     for field in ('methods','treatments','measurements','findings'):
         anchors.extend('/fulltext_evidence/'+field+'/'+str(i) for i,_ in enumerate(f.get(field,[])))
     return {'profile_id':profile['id'],'eligibility_status':status,'evidence_role':role,'reason':reason,
-            'criteria':{'salinity_context':saline,'rice_paddy_system':rice,'scale':scope,'themes':themes},'evidence_anchors':anchors,
+            'criteria':{'salinity_context':saline,'rice_paddy_system':rice,'scale':scope,'themes':themes,
+                        'direct_relevance_supported':bool(directly_relevant)},'evidence_anchors':anchors,
             'automatic_exclusion':False}
 
 

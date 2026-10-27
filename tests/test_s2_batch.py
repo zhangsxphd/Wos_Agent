@@ -104,14 +104,13 @@ class SemanticScholarBatchTests(S2BatchCase):
         client = self.s2([response([paper(doi(2)), paper(doi(1)), paper(doi(0))])])
         self.assertEqual(list(client.get_many_by_doi(ids)), [doi(2), doi(1), doi(0)])
 
-    def test_partial_response_maps_null_and_missing_records(self):
+    def test_partial_response_is_not_negative_cached(self):
         ids = [doi(0), doi(1), doi(2)]
         client = self.s2([response([paper(ids[0]), None])])
         values = client.get_many_by_doi(ids)
-        self.assertEqual(values[ids[0]]["doi"], ids[0])
-        self.assertIsNone(values[ids[1]])
-        self.assertIsNone(values[ids[2]])
-        self.assertEqual(client.stats["not_found"], 2)
+        self.assertTrue(all(isinstance(values[x], ProviderError) for x in ids))
+        self.assertEqual(client.stats["not_found"], 0)
+        self.assertFalse(list(client.cache_dir.glob("*.json")))
 
     def test_null_result_is_stable_not_found_cache(self):
         client = self.s2([response([None])])

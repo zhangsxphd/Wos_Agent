@@ -23,6 +23,19 @@ def work():
 
 
 class AcquisitionTests(unittest.TestCase):
+    def test_browser_import_rejects_paths_outside_project(self):
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as outside:
+            root=Path(tmp); secret=Path(outside)/'paper.pdf'; secret.write_bytes(b'%PDF-mocked')
+            (root/'linked.pdf').symlink_to(secret)
+            parsed={'parser':'mock-parser','pages':1,'body_paragraph_count':1,
+                    'sections':[{'paragraphs':[{'text':'10.1234/test'}]}]}
+            with patch('scripts.acquire_fulltexts.parse_pdf',return_value=parsed):
+                for filename in (str(secret), '../'+Path(outside).name+'/paper.pdf', 'linked.pdf'):
+                    with self.subTest(filename=filename):
+                        with self.assertRaises(FulltextError):
+                            import_browser_pdf({'uid':'U1','doi':'10.1234/test'},
+                                {'file':filename,'source_url':'https://publisher.example/paper'},root)
+
     def test_archive_skip_retains_all_explicit_oa_locations(self):
         choices=candidates(work(),include_archive=False)
         self.assertEqual(len(choices),5)

@@ -250,7 +250,7 @@ class TransportResolver(unittest.TestCase):
     def test_tei_failure_falls_back_to_oa_pdf(self):
         c=Mock(secrets=());c.get.side_effect=[FulltextError('not_found',404),(b'%PDF-fixture','https://content.openalex.org/works/W123.pdf')]
         resolver=FulltextResolver(self.root,c)
-        parsed={'parser':'pdf-fixture','sections':[],'body_paragraph_count':1}
+        parsed={'parser':'pdf-fixture','sections':[{'paragraphs':[{'text':'10.1000/evidence'}]}],'body_paragraph_count':1}
         with patch('scripts.fulltext.resolver.parse_pdf',return_value=parsed): result=resolver.resolve(source(),work())
         self.assertEqual(result['format'],'pdf');self.assertEqual(len(result['attempts']),2)
         self.assertTrue((self.root/result['raw_file']).exists())
@@ -291,7 +291,7 @@ class Profiles(unittest.TestCase):
     def test_review_not_excluded(self):
         row=EvidenceValidator().normalize(valid(),source());r=source(document_types=['Review'])
         result=classify(r,row,self.profile)
-        self.assertEqual(result['evidence_role'],'review_synthesis');self.assertEqual(result['eligibility_status'],'include')
+        self.assertEqual(result['evidence_role'],'review_synthesis');self.assertEqual(result['eligibility_status'],'uncertain')
     def test_regional_model_not_excluded(self):
         row=valid();row['evidence']['study_system']['experimental_scale']='model'
         result=classify(source(),row,self.profile)

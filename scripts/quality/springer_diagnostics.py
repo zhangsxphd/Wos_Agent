@@ -50,7 +50,11 @@ def diagnose(record,quality,manifest,probe,publisher=None,snapshot_sha=None,root
     visual='\n'.join(p.get('text','') for p in layout_pages)
     page1_layout=layout_pages[0].get('text','') if layout_pages else ''
     normalized=lambda x:re.sub(r'\s+',' ',x).strip().casefold()
-    parser_similarity=round(difflib.SequenceMatcher(None,normalized(first),normalized(page1_layout)).ratio(),3) if first and page1_layout else None
+    # Character-level SequenceMatcher's default autojunk can turn nearly
+    # identical long pages into a near-zero score. Match bounded word/punctuation
+    # tokens with autojunk disabled; this is a diagnostic, not accuracy.
+    tokenize=lambda x:re.findall(r'\w+|[^\w\s]',normalized(x))[:12000]
+    parser_similarity=round(difflib.SequenceMatcher(None,tokenize(first),tokenize(page1_layout),autojunk=False).ratio(),3) if first and page1_layout else None
     heading=bool(re.search(r'(?im)^\s*abstract\b',first))
     p2keywords=len(pages)>1 and bool(re.search(r'(?im)^\s*keywords?\b',pages[1]))
     boundary=abstract_boundary_diagnostics(first,pages[1] if len(pages)>1 else '')
@@ -74,6 +78,7 @@ def diagnose(record,quality,manifest,probe,publisher=None,snapshot_sha=None,root
             'existing_matches_pdf_span':bool(span and existing==span['text']),
             'pdfplumber_first_two_pages_token_coverage':overlap,
             'first_page_parser_text_similarity':parser_similarity,
+            'similarity_method':'word_punctuation_sequence_autojunk_false_v2',
             'first_page_layout_hint':layout_hint(layout_pages[0]) if layout_pages else 'not_established',
             'pypdf_abstract_heading_found':heading,'pypdf_page2_keyword_found':p2keywords,
             'abstract_heading_style':boundary['heading_style'],
@@ -101,7 +106,7 @@ def build(canonical,quality_file,inventory,probe_file,output,publisher_snapshot=
     fields=['uid','doi','title','raw_file','raw_sha256','parsed_file','parsed_sha256','parser','pdf_page',
             'raw_text_excerpt','existing_abstract','candidate_abstract','candidate_source','candidate_source_url',
             'pdf_exact_span','existing_matches_pdf_span','pdfplumber_first_two_pages_token_coverage',
-            'first_page_parser_text_similarity','first_page_layout_hint',
+            'first_page_parser_text_similarity','similarity_method','first_page_layout_hint',
             'pypdf_abstract_heading_found','pypdf_page2_keyword_found','pypdf_extraction_status',
             'abstract_heading_style','metadata_or_highlights_present',
             'pdfplumber_probe_status','review_reason','candidate_limitations','human_review_status','review_decision','review_notes']

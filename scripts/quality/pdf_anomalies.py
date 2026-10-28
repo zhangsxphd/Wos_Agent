@@ -5,6 +5,7 @@ import json
 import re
 import subprocess
 import unicodedata
+from datetime import datetime
 from pathlib import Path
 
 from pypdf import PdfReader
@@ -14,15 +15,24 @@ from scripts.fulltext.admission import inspect_fulltext,project_file
 from scripts.pipeline_utils import ROOT,known_secrets,read_jsonl,write_json,write_jsonl,utc_now
 from scripts.quality.literature_triage import write_csv
 
-VISUALLY_INSPECTED={
-    ('WOS:000768870800001','10.1186/s12284-022-00564-6'),
-    ('WOS:001030352200001','10.3389/fmicb.2023.1210938'),
-    ('WOS:001010809700001','10.3389/fmicb.2023.1165631'),
-    ('WOS:000874616200001','10.3389/fpls.2022.989504'),
-    ('WOS:000730402400009','10.32604/phyton.2022.018396')}
+def validate_observation(observation,record,raw_sha256,root=ROOT):
+    if not observation:return {'status':'not_performed'}
+    try:
+        if (observation.get('uid')!=record['uid'] or observation.get('doi')!=record['doi']
+                or observation.get('raw_sha256')!=raw_sha256):raise ValueError('source_mismatch')
+        if observation.get('review_type')!='assistant_visual_first_page':raise ValueError('wrong_review_type')
+        if not observation.get('reviewer') or not observation.get('conclusion'):raise ValueError('missing_review_fields')
+        if datetime.fromisoformat(observation.get('reviewed_at','')).tzinfo is None:raise ValueError('missing_timezone')
+        preview=project_file(root,observation.get('preview_file'))
+        if hashlib.sha256(preview.read_bytes()).hexdigest()!=observation.get('preview_sha256'):raise ValueError('preview_changed')
+    except (ValueError,TypeError,KeyError,OSError,EvidenceValidationError):return {'status':'stale_or_invalid'}
+    return {'status':'assistant_observation_valid','review_type':observation['review_type'],
+            'reviewer':observation['reviewer'],'reviewed_at':observation['reviewed_at'],
+            'conclusion':observation['conclusion'],'preview_file':observation['preview_file'],
+            'preview_sha256':observation['preview_sha256']}
 
 
-def diagnose(record,manifest,probe,root=ROOT):
+def diagnose(record,manifest,probe,root=ROOT,observation=None):
     root=Path(root).resolve();path=project_file(root,manifest['raw_file'])
     raw=path.read_bytes();sha=hashlib.sha256(raw).hexdigest()
     if sha!=manifest['sha256']: raise ValueError('raw_hash_mismatch')
@@ -47,24 +57,27 @@ def diagnose(record,manifest,probe,root=ROOT):
         _,admission=inspect_fulltext(record,manifest,root);status='technical_ready';reason=None
     except (EvidenceValidationError,OSError) as exc:
         status='needs_review';reason=str(exc) if isinstance(exc,EvidenceValidationError) else 'file_read_failed'
-    pair=(record['uid'],record['doi']);visual=pair in VISUALLY_INSPECTED
+    visual=validate_observation(observation,record,sha,root)
     return {'uid':record['uid'],'doi':record['doi'],'title':record.get('title'),'source_url':manifest.get('source_url'),
             'raw_file':manifest['raw_file'],'raw_sha256':sha,'pdf_header':raw.lstrip().startswith(b'%PDF-'),
             'pdf_eof':b'%%EOF' in raw[-4096:],'page_count_pypdf':pages,'page_count_pdfinfo':pdfinfo.get('Pages'),
             'metadata_title':metadata.get('/Title') or pdfinfo.get('Title'),'pdfinfo_encrypted':pdfinfo.get('Encrypted'),
             'first_two_page_detected_dois':matches,'parser_results':parsers,'admission':status,'admission_reason':reason,
-            'first_page_preview':('data/reports/literature_quality_20261028/previews/'+record['uid'].replace(':','_')+'.png') if visual else None,
-            'assistant_visual_check':'first_page_title_and_doi_match_record' if visual else 'not_performed',
+            'first_page_preview':visual.get('preview_file'),
+            'assistant_visual_check':visual,
             'visual_check_limitation':'Assistant screenshot inspection is not user approval or proof of whole-file completeness.',
             'recommended_action':('review_parse_layout_and_content' if status=='technical_ready' else 'review_parser_reproducibility_or_reacquire_lawfully'),
             'human_review_required':True,'review_decision':'','review_notes':''}
 
 
-def build(canonical,inventory,old_quality,probe_file,output,root=ROOT):
+def build(canonical,inventory,old_quality,probe_file,output,root=ROOT,observations_file=None):
     records={r['uid']:r for r in read_jsonl(canonical)};inventory_rows={r['uid']:r for r in read_jsonl(inventory)}
     quality=read_jsonl(old_quality);probes={r['uid']:r for r in read_jsonl(probe_file)}
+    observations=read_jsonl(observations_file) if observations_file else []
+    by_observation={r['uid']:r for r in observations}
+    if len(by_observation)!=len(observations):raise ValueError('duplicate_visual_observation')
     chosen=[q for q in quality if q['evidence_admission']=='needs_review']
-    results=[diagnose(records[q['uid']],inventory_rows[q['uid']],probes[q['uid']],root) for q in chosen]
+    results=[diagnose(records[q['uid']],inventory_rows[q['uid']],probes[q['uid']],root,by_observation.get(q['uid'])) for q in chosen]
     target=Path(output);target.mkdir(parents=True,exist_ok=False);secrets=known_secrets(root)
     write_jsonl(target/'pdf_anomalies.jsonl',results,secrets)
     fields=['uid','doi','title','source_url','raw_file','raw_sha256','pdf_header','pdf_eof','page_count_pypdf',
@@ -74,12 +87,12 @@ def build(canonical,inventory,old_quality,probe_file,output,root=ROOT):
     write_csv(target/'pdf_anomalies.csv',results,fields)
     summary={'created_at':utc_now(),'records':len(results),'technical_ready':sum(r['admission']=='technical_ready' for r in results),
              'still_needs_review':sum(r['admission']=='needs_review' for r in results),
-             'visual_first_page_match':sum(r['assistant_visual_check']=='first_page_title_and_doi_match_record' for r in results),
+             'valid_assistant_visual_observations':sum(r['assistant_visual_check']['status']=='assistant_observation_valid' for r in results),
              'inputs':{str(path):hashlib.sha256(Path(path).read_bytes()).hexdigest() for path in (canonical,inventory,old_quality,probe_file)},
              'confirmed_wrong_or_corrupt':None,'note':'No wrong-document or corruption conclusion without stronger evidence.'}
     write_json(target/'pdf_anomalies_summary.json',summary,secrets);return summary
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('canonical');p.add_argument('--inventory',required=True);p.add_argument('--old-quality',required=True);p.add_argument('--probe',required=True);p.add_argument('--output',required=True)
-    a=p.parse_args();print(json.dumps(build(a.canonical,a.inventory,a.old_quality,a.probe,a.output),ensure_ascii=False,indent=2))
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('canonical');p.add_argument('--inventory',required=True);p.add_argument('--old-quality',required=True);p.add_argument('--probe',required=True);p.add_argument('--observations');p.add_argument('--output',required=True)
+    a=p.parse_args();print(json.dumps(build(a.canonical,a.inventory,a.old_quality,a.probe,a.output,observations_file=a.observations),ensure_ascii=False,indent=2))

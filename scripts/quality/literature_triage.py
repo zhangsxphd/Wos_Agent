@@ -13,6 +13,7 @@ from pathlib import Path
 
 from scripts.pipeline_utils import ROOT, assert_safe, known_secrets, read_jsonl, utc_now, write_json, write_jsonl
 from scripts.providers.base_client import canonical_doi
+from scripts.quality.snapshot import verify_snapshot
 
 
 VERSION='literature-triage-v1'
@@ -89,9 +90,8 @@ def write_csv(path,rows,fields=FIELDS):
 def build(canonical, quality_dir, output, *, inventory=None, provider_report=None, root=ROOT):
     canonical=Path(canonical);quality_dir=Path(quality_dir);target=Path(output)
     snapshot=json.loads((quality_dir/'quality_summary.json').read_text());inputs=snapshot['inputs']
-    if sha(canonical)!=inputs['canonical_sha256']: raise ValueError('canonical_hash_mismatch')
-    if inventory and sha(inventory)!=inputs['inventory_sha256']: raise ValueError('inventory_hash_mismatch')
     records=read_jsonl(canonical);quality=read_jsonl(quality_dir/'quality_rows.jsonl')
+    verify_snapshot(snapshot,quality_dir/'quality_rows.jsonl',canonical,inventory,quality,root)
     by_uid={r['uid']:r for r in quality}
     if len(by_uid)!=len(quality) or len(records)!=len(quality) or len({r['uid'] for r in records})!=len(records):
         raise ValueError('quality_identity_coverage_mismatch')

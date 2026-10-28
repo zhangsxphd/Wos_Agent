@@ -22,6 +22,7 @@ from scripts.pipeline_utils import ROOT, assert_safe, known_secrets, read_jsonl,
 from scripts.providers.base_client import canonical_doi
 from scripts.fulltext.admission import inspect_fulltext, validate_record_evidence
 from scripts.extractors.schema_validator import EvidenceValidationError
+from scripts.quality.snapshot import context, digest as snapshot_digest, fingerprints
 
 
 def digest(data):
@@ -232,6 +233,7 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT, 
                      'abstract_source': record.get('abstract_source'), 'fulltext_state': fulltext_state,
                      'fulltext_format': item.get('format'), 'fulltext_source': item.get('source'),
                      'raw_file': item.get('raw_file'), 'parsed_file': item.get('parsed_file'),
+                     'observed_file_sha256': fingerprints(root,item),
                      'fulltext_identity_status': identity_status, 'parse_status': parse_status,
                      'evidence_admission': admission, 'evidence_anchor_status': anchor_status,
                      'review_status': 'not_assessed', 'provider_failures': failures, 'issues': issues})
@@ -294,8 +296,11 @@ def main():
     target.mkdir(parents=True, exist_ok=False)
     secrets = known_secrets()
     assert_safe([result, rows], secrets)
-    write_json(target / 'quality_summary.json', result, secrets)
     write_jsonl(target / 'quality_rows.jsonl', rows, secrets)
+    result['snapshot_integrity']={'version':'quality-snapshot-v2',
+                                  'quality_rows_sha256':snapshot_digest(target/'quality_rows.jsonl'),
+                                  'validation_context':context()}
+    write_json(target / 'quality_summary.json', result, secrets)
     with (target / 'review_queue.csv').open('x', encoding='utf-8-sig', newline='') as stream:
         fields = ['uid', 'doi', 'title', 'publish_year', 'doi_url', 'abstract_source', 'abstract_state', 'fulltext_format',
                   'fulltext_source', 'raw_file', 'parsed_file', 'fulltext_identity_status', 'parse_status',

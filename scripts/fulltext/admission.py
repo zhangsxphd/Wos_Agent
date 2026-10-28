@@ -10,7 +10,7 @@ import json
 from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
-from .pdf_metadata import parse_pdf
+from .pdf_metadata import parse_pdf,parse_pdfplumber
 from .tei_parser import parse_tei, tei_identity
 from .provenance import FulltextError
 from ..extractors.schema_validator import EvidenceValidationError
@@ -77,6 +77,8 @@ def inspect_fulltext(record, manifest, root):
                 if saved.get('parser_environment') != environment:
                     raise EvidenceValidationError('parser_environment_changed')
                 fresh['parser'] = saved['parser']; fresh['parser_environment'] = environment
+            elif saved['parser'] == 'pdfplumber-page-v2':
+                fresh = parse_pdfplumber(raw)
         else:
             raise EvidenceValidationError('unsupported_fulltext_format')
         if saved != fresh:

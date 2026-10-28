@@ -7,6 +7,7 @@ from pathlib import Path
 
 from scripts.quality.literature_triage import build, classify, signals
 from scripts.pipeline_utils import write_jsonl
+from scripts.quality.snapshot import context
 
 
 class LiteratureTriageTests(unittest.TestCase):
@@ -50,11 +51,14 @@ class LiteratureTriageTests(unittest.TestCase):
     def test_report_distinguishes_request_count_from_paper_incidents(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);source=root/'canonical.jsonl';write_jsonl(source,[self.record])
-            quality=root/'quality';quality.mkdir();write_jsonl(quality/'quality_rows.jsonl',[self.quality])
-            (quality/'quality_summary.json').write_text(json.dumps({'inputs':{'canonical_sha256':hashlib.sha256(source.read_bytes()).hexdigest()}}))
+            inventory=root/'inventory.jsonl';write_jsonl(inventory,[{'uid':'U1','doi':'10.1234/a'}])
+            quality=root/'quality';quality.mkdir();write_jsonl(quality/'quality_rows.jsonl',[{**self.quality,'observed_file_sha256':{'raw_file':None,'parsed_file':None}}])
+            (quality/'quality_summary.json').write_text(json.dumps({'inputs':{'canonical_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
+                'inventory_sha256':hashlib.sha256(inventory.read_bytes()).hexdigest()},
+                'snapshot_integrity':{'version':'quality-snapshot-v2','quality_rows_sha256':hashlib.sha256((quality/'quality_rows.jsonl').read_bytes()).hexdigest(),'validation_context':context()}}))
             provider=root/'provider.json';provider.write_text(json.dumps({'provider_statistics':{'semantic_scholar':{'requests':3}}}))
-            first=build(source,quality,root/'out1',provider_report=provider,root=root)
-            second=build(source,quality,root/'out2',provider_report=provider,root=root)
+            first=build(source,quality,root/'out1',inventory=inventory,provider_report=provider,root=root)
+            second=build(source,quality,root/'out2',inventory=inventory,provider_report=provider,root=root)
             self.assertEqual(first['paper_counts']['provider_incident'],1)
             self.assertEqual(first['provider_http_requests_from_linked_report']['semantic_scholar'],3)
             self.assertEqual(first['paper_counts']['technical_identity_or_content_review'],0)

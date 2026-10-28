@@ -9,6 +9,7 @@ from scripts.fulltext.evidence import prepare_sections
 from scripts.normalize_record import normalize_doi
 from scripts.pipeline_utils import ROOT, known_secrets, read_jsonl, utc_now, write_json, write_jsonl
 from scripts.quality.literature_triage import signals,write_csv
+from scripts.quality.snapshot import verify_snapshot
 
 FIELDS=['crop','soil_type','location','study_conditions','design','factors','levels','control','replicates',
         'duration','soil_properties','plant_growth','yield','water_use','carbon_nitrogen','microbial',
@@ -40,9 +41,9 @@ def select_pilot(records,quality,known,count=12):
 def build(canonical,quality_dir,inventory,dev40,output,root=ROOT,count=12):
     root=Path(root).resolve();canonical=Path(canonical);quality_dir=Path(quality_dir);inventory=Path(inventory);dev40=Path(dev40)
     snapshot=json.loads((quality_dir/'quality_summary.json').read_text())
-    if sha(canonical)!=snapshot['inputs']['canonical_sha256'] or sha(inventory)!=snapshot['inputs']['inventory_sha256']:
-        raise ValueError('input_hash_mismatch')
-    records=read_jsonl(canonical);q={r['uid']:r for r in read_jsonl(quality_dir/'quality_rows.jsonl')}
+    records=read_jsonl(canonical);quality_rows=read_jsonl(quality_dir/'quality_rows.jsonl')
+    verify_snapshot(snapshot,quality_dir/'quality_rows.jsonl',canonical,inventory,quality_rows,root)
+    q={r['uid']:r for r in quality_rows}
     manifests={r['uid']:r for r in read_jsonl(inventory)};known=read_jsonl(dev40)
     selected=select_pilot(records,q,known,count)
     if len(selected)<min(10,count): raise ValueError('insufficient_admissible_non_dev_candidates')

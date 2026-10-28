@@ -6,7 +6,9 @@ that an abstract is correct. Licensed PDF bytes stay in the local project.
 """
 import argparse
 import hashlib
+import importlib.metadata
 import json
+import platform
 from pathlib import Path
 
 import pdfplumber
@@ -18,7 +20,9 @@ def run(jobs, root, output):
     results=[]
     for item in jobs:
         row={'uid':item['uid'],'sha256':item['sha256'],'parser':'pdfplumber',
-             'parser_version':pdfplumber.__version__,'pages':[],'status':'error'}
+             'parser_version':pdfplumber.__version__,'pdfminer_version':importlib.metadata.version('pdfminer.six'),
+             'python_version':platform.python_version(),'output_version':'layout-probe-v2',
+             'pages':[],'status':'error'}
         try:
             name=Path(item['raw_file'])
             if name.is_absolute() or '..' in name.parts: raise ValueError('unsafe_path')

@@ -10,6 +10,9 @@ from pypdf import PdfWriter
 
 from scripts.pipeline_utils import read_jsonl, write_jsonl
 from scripts.quality.audit import audit, local_path
+from scripts.fulltext.tei_parser import parse_tei
+from scripts.fulltext.evidence import empty_fulltext
+from tests.test_tei_identity import tei
 
 
 class QualityAuditTests(unittest.TestCase):
@@ -70,6 +73,24 @@ class QualityAuditTests(unittest.TestCase):
         summary, rows = audit(source, root=self.root)
         self.assertEqual(rows[0]['abstract_state'], 'sourced_not_individually_verified')
         self.assertEqual(summary['candidate_abstract_input_count'], 1)
+
+    def test_tei_admission_and_optional_anchor_are_not_inferred_from_available(self):
+        record={'uid':'U1','doi':'10.1234/example','title':'Study','abstract':'Source','abstract_source':'crossref'}
+        source=self.write_records([record]);raw=tei([record['doi']]);sha=hashlib.sha256(raw).hexdigest()
+        (self.root/'paper.xml').write_bytes(raw);parsed=parse_tei(raw)
+        (self.root/'parsed.json').write_text(json.dumps(parsed))
+        manifest={'uid':'U1','doi':record['doi'],'status':'available','format':'tei_xml',
+                  'raw_file':'paper.xml','parsed_file':'parsed.json','sha256':sha}
+        inv=self.root/'inventory.jsonl';write_jsonl(inv,[manifest])
+        ev=empty_fulltext();ev['methods']=[{'text':'Rice','evidence_source':'fulltext','anchor':{
+            'source_scope':'fulltext','document_sha256':sha,'section_id':parsed['sections'][0]['section_id'],
+            'paragraph_id':'wrong','char_start':0,'char_end':4}}]
+        evidence=self.root/'evidence.jsonl';write_jsonl(evidence,[{'uid':'U1','doi':record['doi'],
+            'fulltext_manifest':manifest,'fulltext_evidence':ev}])
+        summary,rows=audit(source,inv,root=self.root,evidence_file=evidence)
+        self.assertEqual(summary['evidence_admission_counts'],{'technical_ready':1})
+        self.assertEqual(rows[0]['evidence_anchor_status'],'invalid_or_unverified')
+        self.assertEqual(rows[0]['review_status'],'not_assessed')
 
 
 if __name__ == '__main__':

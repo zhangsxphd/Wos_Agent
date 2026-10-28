@@ -25,7 +25,8 @@ class FulltextResolverIdentityTests(unittest.TestCase):
             with patch('scripts.fulltext.resolver.parse_pdf', return_value=parsed):
                 result = FulltextResolver(Path(tmp), client).resolve({'doi': '10.1234/right'}, work)
             self.assertNotEqual(result['status'], 'available')
-            self.assertFalse(list((Path(tmp) / 'data/fulltext/raw').glob('*')))
+            self.assertEqual(result['status'], 'needs_review')
+            self.assertTrue((Path(tmp) / result['raw_file']).is_file())
 
 
 if __name__ == '__main__':

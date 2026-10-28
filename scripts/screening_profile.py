@@ -21,7 +21,10 @@ def load_profile(path):
     return profile
 
 
-def classify(record, evidence, profile):
+def classify(record, evidence, profile, root=ROOT):
+    # Direct callers and file-based screening share the same fail-closed gate.
+    from scripts.fulltext.admission import validate_record_evidence
+    validate_record_evidence(record, evidence, root)
     # v0.5 source layers remain independent. No concatenated title/keywords.
     a=evidence.get('abstract_evidence',evidence).get('evidence',{})
     f=evidence.get('fulltext_evidence',{})
@@ -87,13 +90,7 @@ def screen_file(input_file,evidence_file,profile_file,output):
         from scripts.extractors.schema_validator import EvidenceValidator
         abstract=mapped[r['uid']].get('abstract_evidence',mapped[r['uid']])
         EvidenceValidator().validate(abstract,r)
-        if 'fulltext_evidence' in mapped[r['uid']]:
-            from scripts.fulltext.evidence import validate_fulltext
-            manifest=mapped[r['uid']].get('fulltext_manifest',{})
-            if manifest.get('parsed_file'):
-                parsed=json.loads((ROOT/manifest['parsed_file']).read_text())
-                validate_fulltext(mapped[r['uid']]['fulltext_evidence'],parsed,manifest['sha256'])
-        row=copy.deepcopy(mapped[r['uid']]);row['screening_profile']=classify(r,row,profile);result.append(row)
+        row=copy.deepcopy(mapped[r['uid']]);row['screening_profile']=classify(r,row,profile,root=ROOT);result.append(row)
     write_jsonl(output,result,secrets)
     return result
 

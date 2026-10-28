@@ -11,6 +11,8 @@ from importlib.metadata import version
 from pathlib import Path
 
 from scripts.fulltext.pdf_metadata import parse_pdf
+from scripts.fulltext.resolver import verify_pdf_identity
+from scripts.fulltext.provenance import FulltextError
 from scripts.normalize_record import normalize_doi
 from scripts.pipeline_utils import ROOT, assert_safe, known_secrets, read_jsonl, utc_now, write_json, write_jsonl
 
@@ -70,8 +72,9 @@ def consolidate(canonical, runs, output, root=ROOT):
                 parsed['parser'] = parser_name
                 parsed['parser_environment'] = environment
                 write_json(parsed_path, parsed, secrets)
-            first = '\n'.join(p['text'] for p in parsed['sections'][0]['paragraphs'])
-            if identity_text(record['doi']) not in identity_text(first):
+            try: verify_pdf_identity(parsed,record); identity_matches=True
+            except FulltextError: identity_matches=False
+            if not identity_matches:
                 row.update(status='needs_review', reason='expected_doi_not_on_first_page')
             elif not parsed['body_paragraph_count']:
                 row.update(status='needs_review', reason='pdf_requires_ocr')

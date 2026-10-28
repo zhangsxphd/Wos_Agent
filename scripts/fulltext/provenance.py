@@ -50,12 +50,26 @@ def save_raw(raw, directory, fmt, secrets=()):
     digest = hashlib.sha256(raw).hexdigest()
     path = Path(directory) / (digest + (".tei.xml" if fmt == "tei_xml" else ".pdf"))
     path.parent.mkdir(parents=True, exist_ok=True)
-    if path.exists():
-        if path.read_bytes() != raw:
-            raise FulltextError("raw_hash_mismatch")
-    else:
-        path.write_bytes(raw)
+    try:
+        with path.open('xb') as stream: stream.write(raw)
+    except FileExistsError:
+        if path.read_bytes() != raw: raise FulltextError("raw_hash_mismatch")
     return path, digest
+
+
+def save_parsed(parsed, directory, raw_sha256, secrets=()):
+    """Store a new immutable parser result; never overwrite older parse files."""
+    import json
+    assert_safe(parsed, secrets)
+    content=(json.dumps(parsed,indent=2,ensure_ascii=False)+'\n').encode('utf-8')
+    digest=hashlib.sha256(content).hexdigest()
+    path=Path(directory)/(raw_sha256+'.'+parsed['parser']+'.'+digest+'.json')
+    path.parent.mkdir(parents=True,exist_ok=True)
+    try:
+        with path.open('xb') as stream: stream.write(content)
+    except FileExistsError:
+        if path.read_bytes()!=content: raise FulltextError('parsed_hash_mismatch')
+    return path,digest
 
 
 def manifest(record, status, **values):

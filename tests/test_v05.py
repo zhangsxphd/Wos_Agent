@@ -25,7 +25,8 @@ from scripts.screening_profile import load_profile,classify
 from scripts.build_fulltext_evidence import validate_chunk,merge_chunks,chunk_key,ManualSectionExtractor,build_fulltext
 from tests.test_v04 import source,valid
 
-XML=(ROOT/'tests/fixtures/fulltext_tei.xml').read_bytes()
+XML=(ROOT/'tests/fixtures/fulltext_tei.xml').read_bytes().replace(
+    b'</fileDesc>', b'<sourceDesc><biblStruct><idno type="DOI">10.1000/evidence</idno></biblStruct></sourceDesc></fileDesc>')
 SHA=hashlib.sha256(XML).hexdigest()
 
 
@@ -90,6 +91,13 @@ class V04Compatibility(unittest.TestCase):
 
 
 class ParserAndEvidence(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.root=Path(self.temp.name)
+        (self.root/'paper.xml').write_bytes(XML)
+        write_json(self.root/'parsed.json',parse_tei(XML))
+        self.manifest={'uid':'WOS:test','doi':'10.1000/evidence','status':'available','format':'tei_xml',
+                       'sha256':SHA,'raw_file':'paper.xml','parsed_file':'parsed.json'}
+
     def test_tei_title_abstract_sections_captions_references(self):
         p=parse_tei(XML)
         self.assertEqual(p['title'],'Rice irrigation fixture')
@@ -121,6 +129,11 @@ class ParserAndEvidence(unittest.TestCase):
     def test_fulltext_valid_evidence(self):
         row,parsed=fulltext_evidence();validate_fulltext(row,parsed,SHA)
 
+    def test_combining_cannot_bypass_document_admission(self):
+        row,parsed=fulltext_evidence();record=source();abstract=EvidenceValidator().normalize(valid(),record)
+        with self.assertRaises(EvidenceValidationError):
+            combine(record,abstract,row,parsed,{'sha256':SHA},root=self.root)
+
     def test_hallucinated_fulltext_number_rejected(self):
         row,parsed=fulltext_evidence();row['findings'][0]['claim']='Yield increased by 99%.'
         with self.assertRaises(EvidenceValidationError): validate_fulltext(row,parsed,SHA)
@@ -137,23 +150,23 @@ class ParserAndEvidence(unittest.TestCase):
     def test_source_layers_preserved_and_conflicts_anchored(self):
         row,parsed=fulltext_evidence();record=source();a=EvidenceValidator().normalize(valid(),record);before=copy.deepcopy(a)
         conflict={'description':'Demonstration of a reviewed conflict','abstract_anchor':'/evidence/findings/0','fulltext_anchor':row['findings'][0]['anchor']}
-        combined=combine(record,a,row,parsed,{'sha256':SHA},conflicts=[conflict])
+        combined=combine(record,a,row,parsed,self.manifest,conflicts=[conflict],root=self.root)
         self.assertTrue(combined['evidence_conflict'])
         self.assertEqual(combined['abstract_evidence']['evidence']['findings'],a['evidence']['findings'])
         self.assertEqual(a,before)
 
     def test_unanchored_conflict_rejected(self):
         row,parsed=fulltext_evidence();r=source();a=EvidenceValidator().normalize(valid(),r)
-        with self.assertRaises(EvidenceValidationError): combine(r,a,row,parsed,{'sha256':SHA},conflicts=[{'description':'unanchored'}])
+        with self.assertRaises(EvidenceValidationError): combine(r,a,row,parsed,self.manifest,conflicts=[{'description':'unanchored'}],root=self.root)
 
     def test_metadata_title_is_not_a_conflict_evidence_anchor(self):
         row,parsed=fulltext_evidence();r=source();a=EvidenceValidator().normalize(valid(),r)
         conflict={'description':'unsupported title inference','abstract_anchor':'/title','fulltext_anchor':row['findings'][0]['anchor']}
-        with self.assertRaises(EvidenceValidationError): combine(r,a,row,parsed,{'sha256':SHA},conflicts=[conflict])
+        with self.assertRaises(EvidenceValidationError): combine(r,a,row,parsed,self.manifest,conflicts=[conflict],root=self.root)
 
     def test_completeness_recovers_missing_methods_and_results(self):
         row,parsed=fulltext_evidence();r=source();a=EvidenceValidator().normalize(empty_record(r),r)
-        combined=combine(r,a,row,parsed,{'sha256':SHA})
+        combined=combine(r,a,row,parsed,self.manifest,root=self.root)
         self.assertTrue(combined['completeness_before']['needs_fulltext'])
         self.assertFalse(combined['completeness_after']['needs_fulltext'])
         self.assertTrue(combined['completeness_after']['has_limitations'])
@@ -366,8 +379,23 @@ class FulltextPipeline(unittest.TestCase):
         before=(self.root/'canonical.jsonl').read_bytes()
         with self.assertRaises(FileExistsError): self.build(output='canonical.jsonl')
         (self.root/self.manifest['raw_file']).write_bytes(b'tampered')
-        with self.assertRaises(ValueError): self.build(output='tampered.jsonl')
+        result=self.build(output='tampered.jsonl')
+        self.assertEqual(result['results'][0]['errors'][0]['status'],'fulltext_not_admitted')
+        self.assertEqual(result['results'][0]['chunks'],0)
         self.assertEqual(before,(self.root/'canonical.jsonl').read_bytes())
+
+    def test_one_bad_source_is_isolated_from_valid_paper(self):
+        other=source(uid='WOS:other')
+        write_jsonl(self.root/'canonical2.jsonl',[self.record,other])
+        write_jsonl(self.root/'abstract2.jsonl',[self.original,EvidenceValidator().normalize(valid(other),other)])
+        bad=dict(self.manifest,uid=other['uid'],sha256='0'*64)
+        write_jsonl(self.root/'fulltext2.jsonl',[self.manifest,bad])
+        with redirect_stdout(io.StringIO()):
+            report=build_fulltext('canonical2.jsonl','abstract2.jsonl','fulltext2.jsonl',output='isolated.jsonl',
+                                  root=self.root,profile_file=ROOT/'profiles/saline_paddy.yaml',prepare_only=True)
+        self.assertGreater(report['results'][0]['chunks'],0)
+        self.assertEqual(report['results'][1]['chunks'],0)
+        self.assertEqual(report['results'][1]['errors'][0]['status'],'fulltext_not_admitted')
 
     def test_merge_conflicting_fulltext_system_is_not_silent(self):
         a=empty_fulltext();b=empty_fulltext()

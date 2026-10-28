@@ -14,6 +14,8 @@ from collections import Counter
 from pathlib import Path
 
 from scripts.pipeline_utils import ROOT, known_secrets, read_jsonl, utc_now, write_json, write_jsonl
+from scripts.fulltext.admission import inspect_fulltext
+from scripts.extractors.schema_validator import EvidenceValidationError
 
 
 def abstract_span(text):
@@ -52,7 +54,13 @@ def recover(canonical, inventory, output, root=ROOT):
             continue
         if record['doi'] != fulltext['doi']:
             raise ValueError('Fulltext DOI differs from canonical input')
-        parsed = json.loads((root / fulltext['parsed_file']).read_text())
+        try:
+            parsed, admission = inspect_fulltext(record, fulltext, root)
+        except (EvidenceValidationError, OSError) as exc:
+            review.append({'uid':record['uid'], 'doi':record['doi'],
+                           'reason':str(exc) if isinstance(exc,EvidenceValidationError) else 'file_read_failed',
+                           'raw_file':fulltext.get('raw_file'), 'parsed_file':fulltext.get('parsed_file')})
+            continue
         page = '\n'.join(p['text'] for p in parsed['sections'][0]['paragraphs'])
         span, reason = abstract_span(page)
         if span is None:

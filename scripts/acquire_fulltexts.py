@@ -15,9 +15,9 @@ if not __package__:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.fulltext.openalex_content import OpenAlexContentClient
-from scripts.fulltext.resolver import FulltextResolver
+from scripts.fulltext.resolver import FulltextResolver, verify_pdf_identity
 from scripts.fulltext.pdf_metadata import parse_pdf
-from scripts.fulltext.provenance import FulltextError, manifest, safe_url, save_raw
+from scripts.fulltext.provenance import FulltextError, manifest, safe_url, save_raw, save_parsed
 from scripts.pipeline_utils import ROOT, assert_safe, known_secrets, read_jsonl, utc_now, write_json, write_jsonl
 from scripts.normalize_record import normalize_doi
 
@@ -35,18 +35,15 @@ def import_browser_pdf(record, item, root=ROOT):
     try: source.relative_to(root)
     except ValueError: raise FulltextError('unsafe_local_pdf_path') from None
     raw=source.read_bytes(); parsed=parse_pdf(raw)
-    first='\n'.join(p['text'] for p in parsed['sections'][0]['paragraphs']).casefold()
-    doi=normalize_doi(record.get('doi'))
-    if not doi or doi not in first: raise FulltextError('local_pdf_identity_requires_review')
+    verify_pdf_identity(parsed,record)
     if not parsed['body_paragraph_count']: raise FulltextError('pdf_requires_ocr')
     source_url=safe_url(item['source_url'],secrets)
     raw_file,digest=save_raw(raw,root/'data/fulltext/raw','pdf',secrets)
-    parsed_file=root/'data/fulltext/parsed'/(digest+'.'+parsed['parser']+'.json')
-    if not parsed_file.exists(): write_json(parsed_file,parsed,secrets)
+    parsed_file,parsed_sha=save_parsed(parsed,root/'data/fulltext/parsed',digest,secrets)
     public=item.get('access_basis')=='public_publisher_download'
     result=manifest(record,'available',source='publisher_browser' if public else 'campus_browser',format='pdf',license=None,version=None,
                     source_url=source_url,sha256=digest,raw_file=str(raw_file.relative_to(root)),
-                    parsed_file=str(parsed_file.relative_to(root)),parse_status='parsed',pages=parsed['pages'],
+                    parsed_file=str(parsed_file.relative_to(root)),parsed_sha256=parsed_sha,parser=parsed['parser'],parse_status='parsed',pages=parsed['pages'],
                     access_basis='public_publisher_download' if public else 'user_authorized_institutional_session',identity_check='doi_on_first_page',
                     acquisition_method=item.get('acquisition_method','browser_download'),
                     browser_saved_at=item.get('retrieved_at'),local_original=str(source.relative_to(root)))

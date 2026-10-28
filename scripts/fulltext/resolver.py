@@ -6,8 +6,8 @@ import unicodedata
 from pathlib import Path
 
 from .openalex_content import OpenAlexContentClient, location_metadata
-from .provenance import FulltextError, safe_url, save_raw, manifest
-from .tei_parser import parse_tei
+from .provenance import FulltextError, safe_url, save_raw, save_parsed, manifest
+from .tei_parser import parse_tei, tei_identity
 from .pdf_metadata import parse_pdf
 from .oa_landing import pdf_links
 from ..pipeline_utils import ROOT, assert_safe, write_json
@@ -102,9 +102,13 @@ class FulltextResolver:
                                                     else 'tei_identity_not_independently_verified')
                         if entry.get('format')=='tei_xml':
                             current=parse_tei(raw_path.read_bytes())
-                            parsed_path=directory/'parsed'/(entry['sha256']+'.tei-v2.json')
-                            if not parsed_path.exists(): write_json(parsed_path,current,self.secrets)
-                            result.update(parsed_file=str(parsed_path.relative_to(self.root)),parse_status='parsed' if current['body_paragraph_count'] else 'no_body_text')
+                            identity_status=tei_identity(raw_path.read_bytes(),record.get('doi'))['status']
+                            result['identity_check']='tei_header_'+identity_status
+                            result['identity_status']=identity_status
+                            if identity_status != 'doi_match': result['status']='needs_review'
+                            parsed_path,parsed_sha=save_parsed(current,directory/'parsed',entry['sha256'],self.secrets)
+                            result.update(parsed_file=str(parsed_path.relative_to(self.root)),parsed_sha256=parsed_sha,
+                                          parser=current['parser'],parse_status='parsed' if current['body_paragraph_count'] else 'no_body_text')
                         return result
         work=work or self.client.lookup(identity)
         if not work: return self._save(manifest(record,'unavailable',reason='work_not_found'),key)
@@ -114,6 +118,7 @@ class FulltextResolver:
         total_choices=len(choices)
         if self.max_candidates is not None: choices=choices[:self.max_candidates]
         base={'openalex_id':work['id'],'work_metadata':{k:work.get(k) for k in ('open_access','best_oa_location','locations','has_content','content_urls')},'availability':location_metadata(work),'attempts':[],'cache_hit':False,'archive_enabled':self.include_archive,'candidate_count':total_choices,'candidate_budget':self.max_candidates}
+        review_candidate=None
         for choice in choices:
             try:
                 raw,final_url=self.client.get(choice['url'],content=True)
@@ -125,7 +130,7 @@ class FulltextResolver:
                     for pdf_url in links:
                         try:
                             candidate,redirected=self.client.get(pdf_url,content=True)
-                            verify_pdf_identity(parse_pdf(candidate),record)
+                            parse_pdf(candidate)
                             raw,final_url=candidate,redirected
                             choice=dict(choice,format='pdf',url=pdf_url)
                             break
@@ -135,15 +140,25 @@ class FulltextResolver:
                 parser=parse_tei if choice['format']=='tei_xml' else parse_pdf
                 # Validate format before storing a challenge/login page as content.
                 parsed=parser(raw)
-                if choice['format']=='pdf': verify_pdf_identity(parsed,record)
+                if choice['format']=='pdf':
+                    try: verify_pdf_identity(parsed,record); identity_status='doi_match'
+                    except FulltextError: identity_status='needs_review'
+                else: identity_status=tei_identity(raw,record.get('doi'))['status']
                 raw_path,digest=save_raw(raw,directory/'raw',choice['format'],self.secrets)
-                parsed_path=directory/'parsed'/(digest+'.'+parsed['parser']+'.json')
-                if not parsed_path.exists(): write_json(parsed_path,parsed,self.secrets)
-                base['attempts'].append({'source':choice['source'],'format':choice['format'],'source_url':choice['url'],'status':'available'})
-                result=manifest(record,'available',**base,source=choice['source'],format=choice['format'],version=choice.get('version'),license=choice.get('license'),source_url=choice['url'],final_url=final_url,sha256=digest,raw_file=str(raw_path.relative_to(self.root)),parsed_file=str(parsed_path.relative_to(self.root)),parse_status='parsed' if parsed['body_paragraph_count'] else 'no_body_text',identity_check='doi_on_first_page' if choice['format']=='pdf' else 'tei_identity_not_independently_verified')
+                parsed_path,parsed_sha=save_parsed(parsed,directory/'parsed',digest,self.secrets)
+                accepted=identity_status=='doi_match' and bool(parsed['body_paragraph_count'])
+                base['attempts'].append({'source':choice['source'],'format':choice['format'],'source_url':choice['url'],'status':'available' if accepted else 'needs_review','identity_status':identity_status})
+                result=manifest(record,'available' if accepted else 'needs_review',**base,source=choice['source'],format=choice['format'],version=choice.get('version'),license=choice.get('license'),source_url=choice['url'],final_url=final_url,sha256=digest,raw_file=str(raw_path.relative_to(self.root)),parsed_file=str(parsed_path.relative_to(self.root)),parsed_sha256=parsed_sha,parser=parsed['parser'],parse_status='parsed' if parsed['body_paragraph_count'] else 'no_body_text',identity_status=identity_status,identity_check='doi_on_first_page' if choice['format']=='pdf' else 'tei_header_'+identity_status)
+                if not accepted:
+                    if review_candidate is None: review_candidate=result
+                    continue
                 return self._save(result,key)
             except (FulltextError,ValueError,OSError) as exc:
                 base['attempts'].append({'source':choice['source'],'format':choice['format'],'source_url':choice['url'],'status':'error','error_code':exc.code if isinstance(exc,FulltextError) else 'invalid_or_unsafe_content','http_status':getattr(exc,'http_status',None)})
+        if review_candidate:
+            review_candidate['attempts']=base['attempts']
+            review_candidate['reason']='identity_or_parse_requires_review'
+            return self._save(review_candidate,key)
         status='error' if choices else 'unavailable'
         reason='candidate_budget_reached' if len(choices)<total_choices else 'all_candidates_failed' if choices else 'no_public_content_location'
         return self._save(manifest(record,status,**base,reason=reason),key)

@@ -20,6 +20,8 @@ from scripts.consolidate_fulltexts import identity_text
 from scripts.normalize_record import normalize_title
 from scripts.pipeline_utils import ROOT, assert_safe, known_secrets, read_jsonl, utc_now, write_json, write_jsonl
 from scripts.providers.base_client import canonical_doi
+from scripts.fulltext.admission import inspect_fulltext, validate_record_evidence
+from scripts.extractors.schema_validator import EvidenceValidationError
 
 
 def digest(data):
@@ -97,13 +99,17 @@ def pdf_check(root, record, row):
     return ('needs_review' if issues else 'identity_hash_checked'), issues
 
 
-def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
+def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT, evidence_file=None):
     root = Path(root).resolve()
     source = Path(canonical_file).resolve()
     source_hash = digest(source.read_bytes())
     records = read_jsonl(source)
     inventory = read_jsonl(inventory_file) if inventory_file else []
     inventory_hash = digest(Path(inventory_file).read_bytes()) if inventory_file else None
+    evidence = read_jsonl(evidence_file) if evidence_file else []
+    evidence_hash = digest(Path(evidence_file).read_bytes()) if evidence_file else None
+    evidence_by_uid = defaultdict(list)
+    for item in evidence: evidence_by_uid[item.get('uid')].append(item)
     searches, search_hash = [], None
     if search_manifest:
         path = Path(search_manifest)
@@ -163,6 +169,8 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
             except (ValueError, TypeError, KeyError, IndexError, OSError):
                 issues.append('abstract_anchor_unreadable')
         fulltext_state = 'not_provided'
+        identity_status = 'not_checked'; parse_status = 'not_checked'; admission = 'not_available'
+        admission_reason = None; anchor_status = 'not_checked'; item = {}
         pdf_issues = []
         items = inv_uid.get(uid, [])
         if inventory_file:
@@ -174,7 +182,25 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
                 if doi_value(item.get('doi')) != doi:
                     fulltext_state = 'conflict'; issues.append('fulltext_doi_mismatch')
                 elif item.get('status') == 'available':
-                    fulltext_state, pdf_issues = pdf_check(root, record, item)
+                    if item.get('format') == 'pdf' or (not item.get('format') and str(item.get('raw_file') or '').lower().endswith('.pdf')):
+                        fulltext_state, pdf_issues = pdf_check(root, record, item)
+                    else:
+                        fulltext_state = 'needs_review'
+                    try:
+                        _, technical = inspect_fulltext(record, item, root)
+                        identity_status = technical['identity']['status']
+                        parse_status = 'reproduced_from_raw'
+                        admission = 'technical_ready'
+                    except (EvidenceValidationError, OSError) as exc:
+                        admission_reason = str(exc) if isinstance(exc, EvidenceValidationError) else 'file_read_failed'
+                        admission = 'needs_review'
+                        if admission_reason.startswith('tei_identity_'):
+                            identity_status = admission_reason.removeprefix('tei_identity_')
+                        elif admission_reason in {'parsed_content_not_reproduced', 'parser_environment_changed', 'fulltext_no_body_text'}:
+                            identity_status = 'doi_match'
+                        elif admission_reason == 'pdf_identity_requires_review':
+                            identity_status = 'needs_review'
+                        parse_status = admission_reason if admission_reason.startswith(('parsed_', 'parser_', 'fulltext_no_body')) else 'not_verified'
                 elif item.get('status') == 'error':
                     fulltext_state = 'failed'
                 elif item.get('status') in {'unavailable', 'pending'}:
@@ -182,6 +208,20 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
                 else:
                     fulltext_state = 'needs_review'
         issues.extend(pdf_issues)
+        if admission_reason: issues.append('admission:' + admission_reason)
+        if evidence_file:
+            evidence_items = evidence_by_uid.get(uid, [])
+            if len(evidence_items) != 1:
+                anchor_status = 'missing_or_duplicate_evidence'
+            elif 'fulltext_evidence' not in evidence_items[0]:
+                anchor_status = 'no_fulltext_evidence'
+            else:
+                try:
+                    checked = validate_record_evidence(record, evidence_items[0], root)
+                    anchor_status = 'valid' if checked else 'empty_fulltext_evidence'
+                except (EvidenceValidationError, OSError):
+                    anchor_status = 'invalid_or_unverified'
+                    issues.append('evidence_anchor_or_source_invalid')
         failures = [name for name, data in (enrichment.get('provider_results') or {}).items()
                     if isinstance(data, dict) and data.get('status') in {'error', 'parse_error'}]
         if failures: issues.append('provider_error_or_parse_error')
@@ -190,7 +230,11 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
         rows.append({'uid': uid, 'doi': record.get('doi'), 'title': record.get('title'),
                      'publish_year': record.get('publish_year'), 'abstract_state': abstract_state,
                      'abstract_source': record.get('abstract_source'), 'fulltext_state': fulltext_state,
-                     'provider_failures': failures, 'issues': issues})
+                     'fulltext_format': item.get('format'), 'fulltext_source': item.get('source'),
+                     'raw_file': item.get('raw_file'), 'parsed_file': item.get('parsed_file'),
+                     'fulltext_identity_status': identity_status, 'parse_status': parse_status,
+                     'evidence_admission': admission, 'evidence_anchor_status': anchor_status,
+                     'review_status': 'not_assessed', 'provider_failures': failures, 'issues': issues})
     overlap = Counter()
     for record in records:
         ids = sorted(set(record.get('matched_queries') or []))
@@ -209,6 +253,7 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
     result = {'created_at': utc_now(), 'grain': 'one canonical literature record per UID; one inventory row per UID',
               'inputs': {'canonical': str(source), 'canonical_sha256': source_hash,
                          'inventory': str(inventory_file) if inventory_file else None, 'inventory_sha256': inventory_hash,
+                         'evidence': str(evidence_file) if evidence_file else None, 'evidence_sha256': evidence_hash,
                          'search_manifest': str(search_manifest) if search_manifest else None, 'search_sha256': search_hash},
               'records': len(records), 'valid_doi_records': sum(bool(doi_value(r.get('doi'))) for r in records),
               'unique_dois': len(by_doi), 'duplicate_uid_groups': sum(len(v) > 1 for v in by_uid.values()),
@@ -217,6 +262,10 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
               'abstract_state_counts': dict(Counter(r['abstract_state'] for r in rows)),
               'abstract_sources': dict(Counter(r.get('abstract_source') or 'missing' for r in records)),
               'fulltext_state_counts': dict(Counter(r['fulltext_state'] for r in rows)),
+              'fulltext_identity_counts': dict(Counter(r['fulltext_identity_status'] for r in rows)),
+              'parse_status_counts': dict(Counter(r['parse_status'] for r in rows)),
+              'evidence_admission_counts': dict(Counter(r['evidence_admission'] for r in rows)),
+              'evidence_anchor_counts': dict(Counter(r['evidence_anchor_status'] for r in rows)),
               'issue_counts': dict(Counter(issue for row in rows for issue in row['issues'])),
               'provider_status_counts': dict(provider_statuses), 'provider_error_counts': dict(provider_errors),
               'candidate_abstract_input_count': sum(r['abstract_state'] == 'sourced_not_individually_verified' for r in rows),
@@ -229,17 +278,18 @@ def audit(canonical_file, inventory_file=None, search_manifest=None, root=ROOT):
                               'PDF identity uses hash, fresh first-page extraction and stored parse; layout, full content and scientific interpretation need review.',
                               'Parser JSON is not independently cryptographically bound to original PDF in older runs.',
                               'Year outside the query range requires early-access versus issue-date review.']}
-    if digest(source.read_bytes()) != source_hash or (inventory_file and digest(Path(inventory_file).read_bytes()) != inventory_hash):
+    if (digest(source.read_bytes()) != source_hash or (inventory_file and digest(Path(inventory_file).read_bytes()) != inventory_hash)
+            or (evidence_file and digest(Path(evidence_file).read_bytes()) != evidence_hash)):
         raise RuntimeError('Input changed during read-only audit')
     return result, rows
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('canonical'); parser.add_argument('--fulltexts'); parser.add_argument('--search-manifest')
+    parser.add_argument('canonical'); parser.add_argument('--fulltexts'); parser.add_argument('--search-manifest'); parser.add_argument('--evidence')
     parser.add_argument('--output', required=True, help='New output directory; existing directories are never overwritten')
     args = parser.parse_args()
-    result, rows = audit(args.canonical, args.fulltexts, args.search_manifest)
+    result, rows = audit(args.canonical, args.fulltexts, args.search_manifest, evidence_file=args.evidence)
     target = Path(args.output)
     target.mkdir(parents=True, exist_ok=False)
     secrets = known_secrets()
@@ -247,10 +297,40 @@ def main():
     write_json(target / 'quality_summary.json', result, secrets)
     write_jsonl(target / 'quality_rows.jsonl', rows, secrets)
     with (target / 'review_queue.csv').open('x', encoding='utf-8-sig', newline='') as stream:
-        fields = ['uid', 'doi', 'title', 'publish_year', 'abstract_state', 'fulltext_state', 'provider_failures', 'issues']
+        fields = ['uid', 'doi', 'title', 'publish_year', 'doi_url', 'abstract_source', 'abstract_state', 'fulltext_format',
+                  'fulltext_source', 'raw_file', 'parsed_file', 'fulltext_identity_status', 'parse_status',
+                  'evidence_admission', 'evidence_anchor_status', 'review_status', 'review_action',
+                  'review_decision', 'review_notes', 'provider_failures', 'issues']
         writer = csv.DictWriter(stream, fields, extrasaction='ignore'); writer.writeheader()
-        writer.writerows({**r, 'provider_failures': '; '.join(r['provider_failures']), 'issues': '; '.join(r['issues'])}
-                         for r in rows if r['issues'] or r['fulltext_state'] != 'identity_hash_checked')
+        priority=[]; fulltext_review=[]
+        for r in rows:
+            if not r['issues'] and r['evidence_admission'] == 'technical_ready': continue
+            actions=[]
+            if r['abstract_state']=='needs_layout_review': actions.append('核对摘要版面与边界')
+            if r['abstract_state']=='missing' and r['raw_file']: actions.append('从原文核对摘要')
+            if 'publication_year_outside_query_range' in r['issues']: actions.append('核对在线日期与刊期及纳入规则')
+            if r['evidence_admission']=='needs_review': actions.append('核对全文身份、原文与解析一致性')
+            if r['evidence_admission']=='not_available': actions.append('核对可获取的全文')
+            entry={**r,'doi_url':'https://doi.org/'+r['doi'] if r.get('doi') else '',
+                   'review_action':'；'.join(actions),'provider_failures':'; '.join(r['provider_failures']),'issues':'; '.join(r['issues'])}
+            # Prevent spreadsheet formula execution from untrusted source text.
+            safe_entry={k:("'"+v if isinstance(v,str) and v.lstrip().startswith(('=','+','-','@')) else v) for k,v in entry.items()}
+            writer.writerow(safe_entry)
+            if (r['abstract_state']=='needs_layout_review' or
+                    (r['abstract_state']=='missing' and r['raw_file']) or
+                    'publication_year_outside_query_range' in r['issues']):
+                priority.append(entry)
+            if r['evidence_admission']=='needs_review': fulltext_review.append(entry)
+    with (target / 'abstract_year_review.csv').open('x',encoding='utf-8-sig',newline='') as stream:
+        writer=csv.DictWriter(stream,fields,extrasaction='ignore');writer.writeheader()
+        writer.writerows({k:("'"+v if isinstance(v,str) and v.lstrip().startswith(('=','+','-','@')) else v)
+                          for k,v in entry.items()} for entry in priority)
+    write_jsonl(target / 'abstract_year_review.jsonl',priority,secrets)
+    with (target / 'fulltext_review.csv').open('x',encoding='utf-8-sig',newline='') as stream:
+        writer=csv.DictWriter(stream,fields,extrasaction='ignore');writer.writeheader()
+        writer.writerows({k:("'"+v if isinstance(v,str) and v.lstrip().startswith(('=','+','-','@')) else v)
+                          for k,v in entry.items()} for entry in fulltext_review)
+    write_jsonl(target / 'fulltext_review.jsonl',fulltext_review,secrets)
     print(json.dumps({k: result[k] for k in ('records', 'abstract_present', 'abstract_state_counts', 'fulltext_state_counts', 'issue_counts')}, ensure_ascii=False, indent=2))
 
 

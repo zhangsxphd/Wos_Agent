@@ -1,5 +1,6 @@
 """Deterministic TEI anchors; captions and references never become body facts."""
 import gzip
+import io
 import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -28,13 +29,55 @@ def section_scope(heading):
     return "other"
 
 
-def parse_tei(raw):
-    if raw.startswith(b"\x1f\x8b"): raw = gzip.decompress(raw)
-    if len(raw) > 30_000_000 or b"<!DOCTYPE" in raw.upper() or b"<!ENTITY" in raw.upper():
+MAX_XML_BYTES = 30_000_000
+
+
+def load_tei(raw):
+    if len(raw) > MAX_XML_BYTES:
+        raise FulltextError("unsafe_xml")
+    if raw.startswith(b"\x1f\x8b"):
+        try:
+            with gzip.GzipFile(fileobj=io.BytesIO(raw)) as stream:
+                raw = stream.read(MAX_XML_BYTES + 1)
+        except (OSError, EOFError):
+            raise FulltextError("invalid_tei_gzip") from None
+    if len(raw) > MAX_XML_BYTES or b'\x00' in raw or b"<!DOCTYPE" in raw.upper() or b"<!ENTITY" in raw.upper():
         raise FulltextError("unsafe_xml")
     try: root = ET.fromstring(raw)
     except ET.ParseError: raise FulltextError("invalid_tei_xml") from None
     if root.tag != "{"+NS['t']+"}TEI": raise FulltextError("not_tei_xml")
+    return root
+
+
+def tei_identity(raw, expected_doi):
+    """Inspect article identifiers in the header, never body or references."""
+    from ..providers.base_client import canonical_doi
+    root = load_tei(raw)
+    header = root.find('t:teiHeader', NS)
+    if header is None:
+        return {'status': 'header_missing', 'article_dois': []}
+    paths = ('t:fileDesc/t:sourceDesc/t:biblStruct/t:idno',
+             't:fileDesc/t:sourceDesc/t:biblStruct/t:analytic/t:idno',
+             't:fileDesc/t:publicationStmt/t:idno')
+    values = []
+    for path in paths:
+        for node in header.findall(path, NS):
+            if (node.get('type') or '').casefold() != 'doi':
+                continue
+            try: value = canonical_doi(text(node))
+            except ValueError: return {'status': 'invalid_header_doi', 'article_dois': values}
+            if value not in values: values.append(value)
+    if len(values) > 1: status = 'conflicting_header_dois'
+    elif not values: status = 'header_doi_missing'
+    else:
+        try: expected = canonical_doi(expected_doi)
+        except ValueError: return {'status': 'expected_doi_missing', 'article_dois': values}
+        status = 'doi_match' if values[0] == expected else 'doi_mismatch'
+    return {'status': status, 'article_dois': values}
+
+
+def parse_tei(raw):
+    root = load_tei(raw)
     title = text(root.find(".//t:teiHeader/t:fileDesc/t:titleStmt/t:title",NS)) or text(root.find(".//t:sourceDesc//t:analytic/t:title",NS))
     abstract = text(root.find(".//t:profileDesc/t:abstract",NS))
     sections, used, count = [], set(), 0

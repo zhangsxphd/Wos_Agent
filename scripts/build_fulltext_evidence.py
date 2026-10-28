@@ -10,6 +10,7 @@ if not __package__: sys.path.insert(0,str(Path(__file__).resolve().parent.parent
 from scripts.pipeline_utils import ROOT,read_jsonl,write_jsonl,write_json,known_secrets,assert_safe,new_run_id
 from scripts.extractors.base import BaseExtractor,ExtractorError
 from scripts.fulltext.evidence import empty_fulltext,validate_fulltext,combine,prepare_sections,FACT_FIELDS
+from scripts.fulltext.admission import inspect_fulltext
 from scripts.extractors.schema_validator import EvidenceValidationError
 from scripts.screening_profile import load_profile,classify
 
@@ -82,11 +83,15 @@ def build_fulltext(input_file,abstract_file,fulltext_file,output=None,manual_dir
         uid=record['uid'];manifest=ft[uid];original=mapped[uid]
         if any(original.get(k)!=record.get(k) or manifest.get(k)!=record.get(k) for k in ('uid','doi')): raise ValueError('Source identity mismatch')
         parsed=None;responses=[];requests=[];errors=[]
-        if manifest.get('status')=='available' and manifest.get('parsed_file'):
-            parsed_path=root/manifest['parsed_file'];parsed=json.loads(parsed_path.read_text());assert_safe(parsed,secrets)
-            raw_path=root/manifest['raw_file']
-            if hashlib.sha256(raw_path.read_bytes()).hexdigest()!=manifest['sha256']: raise ValueError('Fulltext raw hash changed')
-            requests=prepare_sections(record,parsed,manifest,raw_dir/manifest['sha256'],secrets)
+        admission=None
+        if manifest.get('status')=='available':
+            try:
+                parsed,admission=inspect_fulltext(record,manifest,root);assert_safe(parsed,secrets)
+                requests=prepare_sections(record,parsed,{**manifest, 'parsed_sha256':admission['parsed_sha256']},raw_dir/manifest['sha256'],secrets,root=root)
+            except (EvidenceValidationError,OSError) as exc:
+                parsed=None;requests=[]
+                admission={'admission':'needs_review','reason':str(exc) if isinstance(exc,EvidenceValidationError) else 'file_read_failed'}
+                errors.append({'status':'fulltext_not_admitted','reason':admission['reason']})
             if extractor and not prepare_only:
                 for index,path in enumerate(requests,1):
                     payload=json.loads(Path(path).read_text())
@@ -107,11 +112,12 @@ def build_fulltext(input_file,abstract_file,fulltext_file,output=None,manual_dir
                 if comparison.get('abstract_record_sha256')!=source_hash or comparison.get('document_sha256')!=manifest['sha256']:
                     raise EvidenceValidationError('Comparison provenance does not match sources')
         reviewed=comparison.get('reviewed') is True and bool(responses) and not errors
-        row=combine(record,original,merged,parsed,manifest,conflicts=comparison.get('conflicts',[]),comparison_reviewed=reviewed)
+        row=combine(record,original,merged,parsed,manifest,conflicts=comparison.get('conflicts',[]),comparison_reviewed=reviewed,root=root)
         # No new extraction means original completeness must not be upgraded
         # solely because a parseable file happens to be present.
         if not responses: row['completeness_after']['needs_fulltext']=original['completeness']['needs_fulltext']
-        row['screening_profile']=classify(record,row,profile)
+        row['screening_profile']=classify(record,row,profile,root=root)
+        row['fulltext_admission']=admission
         row['extraction_provenance']={'extractor':'manual_fulltext_section' if responses else 'none','raw_dir':str(raw_dir.relative_to(root)),'requests':requests,'validated_chunks':len(responses),'errors':errors,'parsed_sha256':hashlib.sha256((root/manifest['parsed_file']).read_bytes()).hexdigest() if parsed else None}
         rows.append(row);results.append({'uid':uid,'validated_chunks':len(responses),'chunks':len(requests),'errors':errors})
     for path,digest in baseline.items():

@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "text_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "section_id",
+        "paragraph_id",
+        "char_start",
+        "char_end",
+        "quote"
+      ],
+      "properties": {
+        "kind": {
+          "const": "text"
+        },
+        "section_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraph_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "char_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "char_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "table_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "table",
+        "row",
+        "column",
+        "text"
+      ],
+      "properties": {
+        "kind": {
+          "const": "table"
+        },
+        "table": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "row": {
+          "type": "string",
+          "minLength": 1
+        },
+        "column": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "anchor": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/text_anchor"
+        },
+        {
+          "$ref": "#/$defs/table_anchor"
+        }
+      ]
+    },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field",
+        "category",
+        "value",
+        "anchors"
+      ],
+      "properties": {
+        "field": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "enum": [
+            "observation",
+            "author_interpretation",
+            "uncertain"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "treatment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "comparator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "significance": {
+          "enum": [
+            "significant",
+            "not_significant",
+            "not_reported",
+            "uncertain",
+            null
+          ]
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/anchor"
+          }
+        }
+      }
+    },
+    "side": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim",
+        "anchor"
+      ],
+      "properties": {
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor": {
+          "$ref": "#/$defs/anchor"
+        }
+      }
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic",
+        "status",
+        "sides"
+      ],
+      "properties": {
+        "topic": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "const": "unresolved"
+        },
+        "sides": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/side"
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_version",
+    "request_sha256",
+    "uid",
+    "doi",
+    "document_sha256",
+    "parsed_sha256",
+    "prompt_sha256",
+    "schema_sha256",
+    "model",
+    "facts",
+    "conflicts"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "pilot-fulltext-candidate-v1"
+    },
+    "request_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "uid": {
+      "type": "string",
+      "minLength": 1
+    },
+    "doi": {
+      "type": "string",
+      "minLength": 1
+    },
+    "document_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "parsed_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "prompt_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "schema_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "simulated",
+        "call_count",
+        "input_tokens",
+        "output_tokens",
+        "actual_cost",
+        "currency"
+      ],
+      "properties": {
+        "identifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "simulated": {
+          "type": "boolean"
+        },
+        "call_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "input_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "actual_cost": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fact"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflict"
+      }
+    }
+  }
+}

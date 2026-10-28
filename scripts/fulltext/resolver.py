@@ -22,6 +22,13 @@ def verify_pdf_identity(parsed, record):
     except (KeyError, TypeError, IndexError):
         raise FulltextError('pdf_identity_requires_review') from None
     first = unicodedata.normalize('NFKC', first).casefold()
+    # Common PDF font encodings render numerals as glyph names and replace
+    # ASCII DOI hyphens with typographic dashes. Normalize only these observed
+    # representations; compare the complete DOI, never a substring.
+    digits = dict(zip(('zero','one','two','three','four','five','six','seven','eight','nine'), '0123456789'))
+    first = re.sub(r'/(zero|one|two|three|four|five|six|seven|eight|nine)\.tnum',
+                   lambda match: digits[match.group(1)], first)
+    first = first.translate(str.maketrans({c:'-' for c in '‐‑‒–−'}))
     found = {normalize_doi(match.rstrip('.,;:)]}')) for match in
              re.findall(r'\b10\.\d{4,9}/[^\s<>"\'\[\]{}]+', first)}
     if not expected or expected not in found:

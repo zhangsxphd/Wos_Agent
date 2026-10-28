@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 from scripts.consolidate_fulltexts import consolidate, identity_text
 from scripts.pipeline_utils import read_jsonl, write_jsonl
-from scripts.recover_pdf_abstracts import abstract_span
+from scripts.recover_pdf_abstracts import abstract_span, abstract_boundary_diagnostics
 
 
 class InventoryTests(unittest.TestCase):
@@ -56,6 +56,19 @@ class InventoryTests(unittest.TestCase):
         span,reason=abstract_span('Abstract\n'+('Unfinished source text. '*30))
         self.assertIsNone(span)
         self.assertEqual(reason,'no_keyword_boundary_on_first_page')
+
+    def test_inline_and_cross_page_abstract_are_diagnosed_not_auto_approved(self):
+        first='Abstract A study began.\nResponsible Editor: Editor\ncontinued'
+        result=abstract_boundary_diagnostics(first,'Keywords Rice\nIntroduction')
+        self.assertEqual(result['heading_style'],'inline')
+        self.assertTrue(result['second_page_keywords'])
+        self.assertTrue(result['metadata_or_highlights_present'])
+        self.assertEqual(result['decision'],'needs_layout_review')
+        self.assertIsNone(abstract_span(first)[0])
+
+    def test_missing_heading_does_not_turn_body_into_abstract(self):
+        self.assertEqual(abstract_boundary_diagnostics('Introduction\nSome body text.')['heading_style'],'missing')
+        self.assertIsNone(abstract_span('Introduction\nSome body text.')[0])
 
 
 if __name__=='__main__': unittest.main()

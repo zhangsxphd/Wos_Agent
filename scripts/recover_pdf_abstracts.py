@@ -40,6 +40,20 @@ def abstract_span(text):
     return {'start': left, 'end': right, 'text': value}, None
 
 
+def abstract_boundary_diagnostics(first_page, second_page=''):
+    """Describe ambiguous boundaries without constructing or approving text."""
+    heading = re.search(r'(?mi)^\s*Abstract\b([^\n]*)', first_page)
+    style = ('missing' if not heading else 'inline' if heading.group(1).strip() else 'standalone')
+    start = heading.end() if heading else 0
+    keywords = bool(re.search(r'(?mi)^\s*Key\s?words?\b', first_page[start:])) if heading else False
+    next_keywords = bool(re.search(r'(?mi)^\s*Key\s?words?\b', second_page))
+    contamination = bool(re.search(r'(?mi)^\s*(?:Responsible Editor|Supplementary Information|Highlights)\b',
+                                   first_page[start:])) if heading else False
+    return {'heading_style':style,'first_page_keywords':keywords,'second_page_keywords':next_keywords,
+            'metadata_or_highlights_present':contamination,
+            'decision':'needs_layout_review'}
+
+
 def recover(canonical, inventory, output, root=ROOT):
     root = Path(root).resolve()
     source = root / canonical

@@ -8,6 +8,14 @@ from scripts.fulltext.provenance import FulltextError
 
 
 class FulltextResolverIdentityTests(unittest.TestCase):
+    def test_typographic_hyphens_and_digit_font_names_are_decoded(self):
+        examples=[('10.1186/s12284‑022‑00564‑6','10.1186/s12284-022-00564-6'),
+                  ('/one.tnum/zero.tnum./three.tnum/three.tnum/eight.tnum/nine.tnum/fmicb./two.tnum/zero.tnum/two.tnum/three.tnum./one.tnum/two.tnum/one.tnum/zero.tnum/nine.tnum/three.tnum/eight.tnum',
+                   '10.3389/fmicb.2023.1210938')]
+        for text,doi in examples:
+            with self.subTest(doi=doi):
+                verify_pdf_identity({'sections':[{'paragraphs':[{'text':'DOI '+text}]}]}, {'doi':doi})
+
     def test_doi_must_match_completely(self):
         parsed = {'sections': [{'paragraphs': [{'text': 'DOI 10.1234/right-extra'}]}]}
         with self.assertRaises(FulltextError):

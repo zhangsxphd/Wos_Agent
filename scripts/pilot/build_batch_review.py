@@ -13,10 +13,21 @@ def build(output, root=ROOT):
  if len(output.relative_to(root).parts)!=3 or output.relative_to(root).parts[:2]!=('data','reviews'):raise ValueError('output_must_be_data_reviews_round')
  if output.exists():raise FileExistsError('new_output_directory_required')
  queue=json.loads((BASE/'queue.json').read_text()); bydoi={r['doi']:r for r in queue}
- grouped=defaultdict(list)
+ grouped=defaultdict(list); extra={}
  issue_file=BASE/'issues.jsonl'
  for line in issue_file.read_text().splitlines():
   i=json.loads(line);grouped[(i['doi'],i['path'])].append(i)
+ validation=ROOT/'data/pilot/v08_candidate_validation_20261030_v1'
+ for f in validation.glob('*.json'):
+  if f.name=='summary.json':continue
+  data=json.loads(f.read_text());doi=data['doi'];folder=BASE/'papers'/hashlib.sha256(doi.encode()).hexdigest()[:16]
+  sp=folder/'status.json'
+  if not sp.exists():continue
+  status=json.loads(sp.read_text());response=Path(status['attempt'])/'response.json'
+  if not response.exists() or digest(response)!=data['candidate_sha256']:continue
+  for c in data['checks']:
+   path='results/'+str(c['index']);extra[(doi,path)]=(c,f)
+   for issue in c['issues']:grouped[(doi,path)].append({'doi':doi,'path':path,'status':'pending_review',**issue})
  tasks=[];source_files={}
  ordered=sorted(grouped.items(),key=lambda x:(0 if any(i['severity']=='high' for i in x[1]) else 1,x[0]))
  for (doi,path),issues in ordered:
@@ -31,11 +42,13 @@ def build(output, root=ROOT):
   if not excerpts:excerpts=[{'page':1,'section_id':'unknown','paragraph_id':'unknown','evidence_text':'模型未提供原文证据。请在原始 PDF 中核对；不能仅凭此记录确认。'}]
   sev='高' if any(i['severity']=='high' for i in issues) else '中'
   hint='Candidate；高、中级只是自动核验优先级，不代表已证实错误。请对照原始 PDF；作者原文冲突、模型错误和无法确认应分别记录。'
-  candidate=json.dumps({'candidate':val,'automatic_flags':issues},ensure_ascii=False,indent=2)
+  candidate=json.dumps({'candidate':val,'automatic_flags':issues,'additional_checks':extra.get((doi,path),(None,None))[0]},ensure_ascii=False,indent=2)
   data={'field':path,'evidence':excerpts,'status_hint':hint,'pages':sorted({e['page'] for e in excerpts}),'candidate':candidate}
   files=[]
   for f,role in [(root/r['raw_file'],'raw'),(root/r['parsed_file'],'parsed'),(attempt/'response.json','model_candidate'),(attempt/'scientific_audit.json','automatic_audit')]:
    rel=str(f.resolve().relative_to(root));item=source(root,rel,role);files.append(item);source_files[(rel,role)]=item
+  if (doi,path) in extra:
+   f=extra[(doi,path)][1];rel=str(f.resolve().relative_to(root));item=source(root,rel,'additional_validation');files.append(item);source_files[(rel,'additional_validation')]=item
   key='batch:'+hashlib.sha256((doi+'|'+path+'|'+digest(attempt/'response.json')).encode()).hexdigest()[:24]
   tasks.append(task('pilot',key,sev+'优先级 · '+path,doi,data,files))
  manifest={'version':'pilot-review-web-v1','root':str(root),'created_at':utc_now(),'sources':list(source_files.values()),'tasks':tasks,'model_invoked':False,'note':'Frozen snapshot of automated flags, never Gold. Human review is source-assisted and not automatically independent.'}

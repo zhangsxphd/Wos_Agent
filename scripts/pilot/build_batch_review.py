@@ -78,6 +78,7 @@ def build(output, root=ROOT):
  view={'manifest_sha256':digest(mp),'tasks':[dict(t,files=[dict(f,url='../../../'+f['path']) for f in t['files']]) for t in tasks],'root_depth':'../../../'}
  encoded=json.dumps(view,ensure_ascii=False).replace('<','\\u003c').replace('\u2028','\\u2028').replace('\u2029','\\u2029')
  template=(root/'scripts/review/pilot_web.html').read_text()
+ template=template.replace('<title>首篇论文与摘要审核</title>','<title>全文批量问题审核</title>')
  template=template.replace('首篇论文与 7 篇重点摘要 · 直接在本机操作，无需联网','批量论文问题快照 · 高优先级在前 · 本机审核')
  template=template.replace('① 首篇论文','批量问题').replace('② 重点摘要','重点摘要（本批无）')
  template=template.replace('<button id="tab-abstract">','<button id="tab-abstract" hidden>')

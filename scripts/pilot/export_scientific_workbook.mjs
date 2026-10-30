@@ -15,7 +15,8 @@ if (summary.new75_unfinished && !options.includes('--allow-incomplete')) throw n
 const parse = async n => (await fs.readFile(path.join(input, n + '.jsonl'), 'utf8')).split('\n').filter(Boolean).map(JSON.parse);
 const specs = [
   ['papers', '论文', 'Papers'], ['fields', '核心字段', 'Fields'], ['results', '定量结果', 'Results'],
-  ['issues', '审核问题', 'Issues'], ['supplements', '补充观察', 'SupplementObservations'], ['supplement_files', '附件来源', 'SupplementFiles']
+  ['issues', '审核问题', 'Issues'], ['historic_claims', '历史详细记录', 'HistoricClaims'], ['supplement_requests', '待下载附件', 'MissingSupplements'],
+  ['supplements', '补充观察', 'SupplementObservations'], ['supplement_files', '附件来源', 'SupplementFiles']
 ];
 const names = {
   doi:'DOI', uid:'UID', title:'论文题目', extraction_status:'提取状态', model_source:'模型来源', source_file:'来源记录',
@@ -25,7 +26,9 @@ const names = {
   time:'时间', unit:'单位', significance:'显著性', significance_letters:'显著性字母', reporting_origin:'报告来源', limitations:'限制',
   source:'来源', severity:'优先级', type:'标记类型', path:'结果位置', detail:'标记详情', topic:'主题', record_kind:'记录类型',
   observation:'观察记录', created_utc:'记录时间 UTC', pmcid:'PMC ID', license:'许可', filename:'文件名', local_file:'本地文件',
-  sha256:'SHA256', md5_matches_pmc:'PMC MD5 核验', bytes:'字节数', source_url:'来源地址', identity:'身份说明'
+  sha256:'SHA256', md5_matches_pmc:'PMC MD5 核验', bytes:'字节数', source_url:'来源地址', identity:'身份说明',
+  historic_response_file:'历史完整回答', source_file_sha256:'历史记录文件 SHA256', raw_pdf_sha256:'原始 PDF SHA256', original_record:'原始详细记录',
+  publisher_link:'出版商地址', source_pdf:'原文 PDF', source_page:'原文页码', source_excerpt:'原文材料说明', model_note:'模型备注', note:'范围限制'
 };
 const workbook = Workbook.create();
 const intro = workbook.worksheets.add('说明');
@@ -85,7 +88,7 @@ for (const [stem, sheetName, tableName] of specs) {
   const header = sheet.getRangeByIndexes(0,0,1,keys.length);
   header.format = {fill:'#174C64',font:{name:'Arial',bold:true,color:'#FFFFFF',size:10}};
   for (let i=0;i<keys.length;i++) {
-    const width = ['title','value','evidence','detail','observation','limitations'].includes(keys[i]) ? 48 : ['doi','model_source','source_file','local_file','source_url','raw_file'].includes(keys[i]) ? 32 : 20;
+    const width = ['title','value','evidence','detail','observation','limitations','original_record','source_excerpt','model_note','note'].includes(keys[i]) ? 48 : ['doi','model_source','source_file','local_file','source_url','raw_file','historic_response_file','publisher_link','source_pdf'].includes(keys[i]) ? 32 : 20;
     sheet.getRangeByIndexes(0,i,matrix.length,1).format.columnWidth = width;
   }
   range.format.autofitRows();

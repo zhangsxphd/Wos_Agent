@@ -29,7 +29,10 @@ def build(output,allow_incomplete=False,review=None):
  if set(q_ids)&(set(old_by)|five_ids) or set(old_by)&five_ids or set(all_ids)!=(set(q_ids)|set(old_by)|five_ids):raise ValueError('population_partition_mismatch')
  by={x['doi']:x for x in admitted};status={};results=[];fields=[];issues=[];supplements=[];supplement_files=[];historic_claims=[];pmc_latest={}
  requests_file=ROOT/'data/pilot/v08_supplement_requests_20261030_v1/missing_supplements.jsonl'
- supplement_requests=lines(requests_file) if requests_file.exists() else []
+ user_manifest=ROOT/'data/pilot/v08_user_supplements_20261030_v1/manifest_v2.jsonl'
+ user_files=lines(user_manifest) if user_manifest.exists() else []
+ received={x['doi'] for x in user_files if not x.get('error')}
+ supplement_requests=[x for x in lines(requests_file) if x['doi'] not in received] if requests_file.exists() else []
  for rec in supplement_requests:
   if rec['doi'] not in by or sha(ROOT/rec['source_pdf'])!=rec['source_sha256']:raise ValueError('supplement_request_source_mismatch:'+rec['doi'])
   issues.append({'doi':rec['doi'],'source':'supplement_availability','severity':'medium','type':'supplement_not_obtained','path':'supplement','detail':rec['model_note'],'status':'pending_review'})
@@ -44,6 +47,9 @@ def build(output,allow_incomplete=False,review=None):
    if f.get('status') in ('downloaded','reused_previously_downloaded'):
     if sha(ROOT/f['local_file'])!=f['sha256']:raise ValueError('pmc_supplement_changed:'+doi)
     supplement_files.append({'doi':doi,'pmcid':rec.get('pmcid'),'license':rec.get('license'),'source':rec.get('source'),**f})
+ for f in user_files:
+  if f['doi'] not in by or sha(ROOT/f['file'])!=f['sha256']:raise ValueError('user_supplement_source_changed:'+f['doi'])
+  if not f.get('error'):supplement_files.append({'doi':f['doi'],'filename':f['user_supplied_filename'],'local_file':f['file'],'sha256':f['sha256'],'bytes':f['bytes'],'status':'user_supplied_identity_pending','source':'user supplied','identity':f['internal_identity_check']})
  def add_historical_supp(doi,path,expected,source,identity):
   file=ROOT/path
   if not file.is_file():
@@ -115,7 +121,7 @@ def build(output,allow_incomplete=False,review=None):
   if doi in old_by:state='historic_candidate_retained';model=str(old_by[doi].get('model','unknown'));source=old_by[doi].get('source_file','')
   elif doi in five_ids:state='previous_five_candidate_retained';model='Codex conversation; exact runtime model not independently recorded';source='data/pilot/v08_100_fulltext_20261030_v1/five_fields.jsonl'
   else:state=status[doi]['state'];model='Codex CLI requested gpt-6.1-sol; resolved model unknown';source=status[doi].get('attempt','')
-  papers.append({'supplement_status':(old_by[doi].get('supplement_status','not_fully_assessed') if doi in old_by else five_info[doi].get('supplement_status','not_fully_assessed') if doi in five_info else 'available_partially_checked' if any(x['doi']==doi for x in supplements) else 'available_not_yet_scientifically_reviewed' if any(x['doi']==doi and x['status']!='historical_file_missing' for x in supplement_files) else 'referenced_not_obtained' if any(x['doi']==doi for x in supplement_requests) else 'not_fully_assessed'),'uid':r['uid'],'doi':doi,'title':r['title'],'extraction_status':state,'model_source':model,'source_file':source,'historic_response_file':old_by[doi].get('response_file','') if doi in old_by else '', 'raw_sha256':r['technical_admission']['raw_sha256'],'raw_file':r['raw_file'],'human_relevance':r['human_relevance'],'holdout_overlap':r['historical_holdout_overlap']})
+  papers.append({'supplement_status':(old_by[doi].get('supplement_status','not_fully_assessed') if doi in old_by else five_info[doi].get('supplement_status','not_fully_assessed') if doi in five_info else 'user_supplied_partially_checked_identity_pending' if doi in received and any(x['doi']==doi for x in supplements) else 'user_supplied_identity_pending' if doi in received else 'available_partially_checked' if any(x['doi']==doi for x in supplements) else 'available_not_yet_scientifically_reviewed' if any(x['doi']==doi and x['status']!='historical_file_missing' for x in supplement_files) else 'referenced_not_obtained' if any(x['doi']==doi for x in supplement_requests) else 'not_fully_assessed'),'uid':r['uid'],'doi':doi,'title':r['title'],'extraction_status':state,'model_source':model,'source_file':source,'historic_response_file':old_by[doi].get('response_file','') if doi in old_by else '', 'raw_sha256':r['technical_admission']['raw_sha256'],'raw_file':r['raw_file'],'human_relevance':r['human_relevance'],'holdout_overlap':r['historical_holdout_overlap']})
  output.mkdir(parents=True)
  for name,rows in [('papers',papers),('fields',fields),('results',results),('issues',issues),('supplements',supplements),('supplement_files',supplement_files),('historic_claims',historic_claims),('supplement_requests',supplement_requests)]:
   jsonl(output/(name+'.jsonl'),rows)
@@ -125,7 +131,7 @@ def build(output,allow_incomplete=False,review=None):
  (output/'summary.json').write_text(json.dumps(stats,ensure_ascii=False,indent=2))
  def url(path):return Path(path).relative_to(ROOT) if Path(path).is_absolute() else Path(path)
  nav=[('历史20篇与既有审核',OLD.parent/'index.html'),('已有5篇字段与结果',FIVE/'index.html'),('本批模型候选与自动核验',BASE/'index.html'),('补充材料候选与原文冲突',ROOT/'data/pilot/v08_supplements_20261030_v1/supplement_observations.html')]
- nav.insert(0,('待下载补充材料清单',requests_file.parent/'index.html'))
+ if supplement_requests:nav.insert(0,('待下载补充材料清单',requests_file.parent/'index.html'))
  if review:
   review=Path(review).resolve();review.relative_to(ROOT)
   if not review.is_file():raise FileNotFoundError('review_page_missing')

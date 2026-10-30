@@ -54,7 +54,7 @@ intro.getRange('A1:B12').format.rowHeight = 25;
 intro.getRange('B1:B12').format.wrapText = true;
 intro.freezePanes.freezeRows(1);
 await fs.mkdir(preview, {recursive:true});
-const counts = {};
+const counts = {}, createdSheets = new Set(['说明']);
 let escapedCharacters = 0;
 const safeForXml = text => text.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\uFFFE\uFFFF]/g, c => {
   escapedCharacters += 1;
@@ -73,6 +73,7 @@ for (const [stem, sheetName, tableName] of specs) {
   const matrix = [keys.map(k => names[k] || k), ...rows.map(row => keys.map(k => display(row[k])))];
   for (const row of matrix) for (const cell of row) if (typeof cell === 'string' && cell.length > 32767) throw new Error(`excel_cell_exceeds_limit:${stem}`);
   const sheet = workbook.worksheets.add(sheetName);
+  createdSheets.add(sheetName);
   const range = sheet.getRangeByIndexes(0, 0, matrix.length, keys.length);
   // Preserve ISO timestamps and other source strings rather than letting the
   // spreadsheet engine reinterpret them as dates or numbers.
@@ -100,6 +101,7 @@ for (const [stem, sheetName, tableName] of specs) {
 }
 workbook.recalculate();
 for (const [sheetName,file] of [['说明','readme'],...specs.map(x=>[x[1],x[0]])]) {
+  if (!createdSheets.has(sheetName)) continue;
   try {
     const img = await workbook.render({sheetName,range:sheetName==='说明'?'A1:B12':'A1:F7',scale:1,format:'png'});
     await fs.writeFile(path.join(preview,file+'.png'),new Uint8Array(await img.arrayBuffer()));

@@ -43,7 +43,7 @@ def build(output, root=ROOT):
   sev='高' if any(i['severity']=='high' for i in issues) else '中'
   hint='Candidate；高、中级只是自动核验优先级，不代表已证实错误。请对照原始 PDF；作者原文冲突、模型错误和无法确认应分别记录。'
   candidate=json.dumps({'candidate':val,'automatic_flags':issues,'additional_checks':extra.get((doi,path),(None,None))[0]},ensure_ascii=False,indent=2)
-  data={'field':path,'evidence':excerpts,'status_hint':hint,'pages':sorted({e['page'] for e in excerpts}),'candidate':candidate,'severity':sev}
+  data={'field':path,'evidence':excerpts,'status_hint':hint,'pages':list(dict.fromkeys(e['page'] for e in excerpts)),'candidate':candidate,'severity':sev}
   files=[]
   for f,role in [(root/r['raw_file'],'raw'),(root/r['parsed_file'],'parsed'),(attempt/'response.json','model_candidate'),(attempt/'scientific_audit.json','automatic_audit')]:
    rel=str(f.resolve().relative_to(root));item=source(root,rel,role);files.append(item);source_files[(rel,role)]=item
@@ -51,6 +51,24 @@ def build(output, root=ROOT):
    f=extra[(doi,path)][1];rel=str(f.resolve().relative_to(root));item=source(root,rel,'additional_validation');files.append(item);source_files[(rel,'additional_validation')]=item
   key='batch:'+hashlib.sha256((doi+'|'+path+'|'+digest(attempt/'response.json')).encode()).hexdigest()[:24]
   tasks.append(task('pilot',key,sev+'优先级 · '+path,doi,data,files))
+ # Fold the separately sourced supplement observations into the same workbench;
+ # the original model response and earlier user decisions remain untouched.
+ supp=root/'data/pilot/v08_supplements_20261030_v1/supplement_observations_20261030_v1.jsonl'
+ if supp.exists():
+  for line in supp.read_text().splitlines():
+   rec=json.loads(line);doi=rec['doi'];sev='高' if rec['record_kind']=='source_conflict_candidate' else '中'
+   excerpts=[];files=[];seen=set()
+   for ev in rec['evidence']:
+    f=(root/ev['file']).resolve();rel=str(f.relative_to(root))
+    if digest(f)!=ev['sha256']:raise ValueError('supplement_review_source_changed:'+doi)
+    excerpts.append({'page':ev['pdf_page'],'section_id':ev['table_or_figure'],'paragraph_id':ev.get('row_column','see PDF'),'source_path':rel,'evidence_text':'原文位置：'+ev['table_or_figure']+'；'+ev.get('row_column','正文/图示')+'。这是位置说明，请打开原 PDF 核对。'})
+    if rel not in seen:
+     role='raw' if not seen else 'additional_raw';item=source(root,rel,role);files.append(item);source_files[(rel,role)]=item;seen.add(rel)
+   rel=str(supp.relative_to(root));item=source(root,rel,'supplement_candidates');files.append(item);source_files[(rel,'supplement_candidates')]=item
+   content={'field':'supplement/'+rec['topic'],'evidence':excerpts,'status_hint':'补充材料候选，尚未经人工确认；原文冲突双方必须保留。','pages':list(dict.fromkeys(x['page'] for x in excerpts)),'candidate':json.dumps({'observation':rec['observation'],'limitations':rec['limitations'],'source_role':rec['record_kind']},ensure_ascii=False,indent=2),'severity':sev}
+   key='batch:supp:'+hashlib.sha256((doi+'|'+rec['topic']+'|'+digest(supp)).encode()).hexdigest()[:20]
+   tasks.append(task('pilot',key,sev+'优先级 · 补充材料 · '+rec['topic'],doi,content,files))
+ tasks.sort(key=lambda t:(t['content'].get('severity')!='高',t['doi'],t['id']))
  manifest={'version':'pilot-review-web-v1','root':str(root),'created_at':utc_now(),'sources':list(source_files.values()),'tasks':tasks,'model_invoked':False,'note':'Frozen snapshot of automated flags, never Gold. Human review is source-assisted and not automatically independent.'}
  output.mkdir(parents=True);mp=output/'review_manifest.json';mp.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
  view={'manifest_sha256':digest(mp),'tasks':[dict(t,files=[dict(f,url='../../../'+f['path']) for f in t['files']]) for t in tasks],'root_depth':'../../../'}
@@ -59,6 +77,7 @@ def build(output, root=ROOT):
  template=template.replace('首篇论文与 7 篇重点摘要 · 直接在本机操作，无需联网','批量论文问题快照 · 高优先级在前 · 本机审核')
  template=template.replace('① 首篇论文','批量问题').replace('② 重点摘要','重点摘要（本批无）')
  template=template.replace('<button id="tab-abstract">','<button id="tab-abstract" hidden>')
+ template=template.replace("if(t.kind==='pilot'){\n let message=", "if(t.kind==='pilot'){\n for(let other of t.files.filter(x=>x.role==='additional_raw')){let a=element('a','打开另一份原文 PDF ↗');let src=t.content.evidence.find(e=>e.source_path===other.path);a.href=other.url+(src?'#page='+src.page:'');a.target='_blank';a.rel='noopener';left.append(element('p'),a)}let message=")
  template=template.replace("let message=element('p',t.content.status_hint);", "let box=element('div');box.className='paper';box.append(element('strong','模型候选和自动核验标记（未确认）'),element('pre',t.content.candidate));left.append(box);let message=element('p',t.content.status_hint);")
  template=template.replace('<div class="toolbar"><label for="reviewer"', '<div class="toolbar"><label for="priority" style="margin:0">筛选</label><select id="priority" style="width:120px"><option value="all">全部问题</option><option value="高">高优先级</option></select><label for="reviewer"')
  template=template.replace("const list=packet.tasks.filter(t=>t.kind===kind);", "const list=packet.tasks.filter(t=>t.kind===kind&&($('priority').value==='all'||t.content.severity===$('priority').value));")

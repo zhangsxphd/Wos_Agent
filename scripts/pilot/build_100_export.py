@@ -59,12 +59,12 @@ def build(output,allow_incomplete=False):
  for rec in five_info.values():
   if rec.get('supplement') and rec.get('supplement_sha256'):
    file=FIVE_INPUT.parent/rec['supplement'];add_historical_supp(rec['doi'],str(file.relative_to(ROOT)),rec['supplement_sha256'],'user supplied',rec.get('supplement_status',''))
- supp_file=ROOT/'data/pilot/v08_supplements_20261030_v1/supplement_observations_20261030_v1.jsonl'
- if supp_file.exists():
+ for supp_file in sorted((ROOT/'data/pilot/v08_supplements_20261030_v1').glob('supplement_observations_*.jsonl')):
   for rec in lines(supp_file):
    if rec['doi'] not in by:raise ValueError('supplement_doi_not_in_population')
    for ev in rec['evidence']:
     if sha(ROOT/ev['file'])!=ev['sha256']:raise ValueError('supplement_source_changed:'+rec['doi'])
+    if ev.get('derived_from') and sha(ROOT/ev['derived_from']['file'])!=ev['derived_from']['sha256']:raise ValueError('supplement_original_changed:'+rec['doi'])
    supplements.append(rec)
    if rec['record_kind']=='source_conflict_candidate':
     issues.append({'doi':rec['doi'],'source':'supplement_visual_candidate','severity':'high','type':'possible_source_conflict','path':'supplement/'+rec['topic'],'detail':rec['observation'],'status':'pending_review'})

@@ -53,17 +53,21 @@ def build(output, root=ROOT):
   tasks.append(task('pilot',key,sev+'优先级 · '+path,doi,data,files))
  # Fold the separately sourced supplement observations into the same workbench;
  # the original model response and earlier user decisions remain untouched.
- supp=root/'data/pilot/v08_supplements_20261030_v1/supplement_observations_20261030_v1.jsonl'
- if supp.exists():
+ for supp in sorted((root/'data/pilot/v08_supplements_20261030_v1').glob('supplement_observations_*.jsonl')):
   for line in supp.read_text().splitlines():
    rec=json.loads(line);doi=rec['doi'];sev='高' if rec['record_kind']=='source_conflict_candidate' else '中'
    excerpts=[];files=[];seen=set()
    for ev in rec['evidence']:
     f=(root/ev['file']).resolve();rel=str(f.relative_to(root))
     if digest(f)!=ev['sha256']:raise ValueError('supplement_review_source_changed:'+doi)
-    excerpts.append({'page':ev['pdf_page'],'section_id':ev['table_or_figure'],'paragraph_id':ev.get('row_column','see PDF'),'source_path':rel,'evidence_text':'原文位置：'+ev['table_or_figure']+'；'+ev.get('row_column','正文/图示')+'。这是位置说明，请打开原 PDF 核对。'})
+    excerpts.append({'page':ev['pdf_page'],'section_id':ev['table_or_figure'],'paragraph_id':ev.get('row_column','see PDF'),'source_path':rel,'evidence_text':'位置：'+ev['table_or_figure']+'；'+ev.get('row_column','正文/图示')+'。'+ev.get('location_note','请打开原文件核对。')})
     if rel not in seen:
      role='raw' if not seen else 'additional_raw';item=source(root,rel,role);files.append(item);source_files[(rel,role)]=item;seen.add(rel)
+    if ev.get('derived_from'):
+     original=ev['derived_from'];f=(root/original['file']).resolve();rel=str(f.relative_to(root))
+     if digest(f)!=original['sha256']:raise ValueError('supplement_review_original_changed:'+doi)
+     if rel not in seen:
+      item=source(root,rel,'additional_raw');files.append(item);source_files[(rel,'additional_raw')]=item;seen.add(rel)
    rel=str(supp.relative_to(root));item=source(root,rel,'supplement_candidates');files.append(item);source_files[(rel,'supplement_candidates')]=item
    content={'field':'supplement/'+rec['topic'],'evidence':excerpts,'status_hint':'补充材料候选，尚未经人工确认；原文冲突双方必须保留。','pages':list(dict.fromkeys(x['page'] for x in excerpts)),'candidate':json.dumps({'observation':rec['observation'],'limitations':rec['limitations'],'source_role':rec['record_kind']},ensure_ascii=False,indent=2),'severity':sev}
    key='batch:supp:'+hashlib.sha256((doi+'|'+rec['topic']+'|'+digest(supp)).encode()).hexdigest()[:20]
@@ -77,7 +81,7 @@ def build(output, root=ROOT):
  template=template.replace('首篇论文与 7 篇重点摘要 · 直接在本机操作，无需联网','批量论文问题快照 · 高优先级在前 · 本机审核')
  template=template.replace('① 首篇论文','批量问题').replace('② 重点摘要','重点摘要（本批无）')
  template=template.replace('<button id="tab-abstract">','<button id="tab-abstract" hidden>')
- template=template.replace("if(t.kind==='pilot'){\n let message=", "if(t.kind==='pilot'){\n for(let other of t.files.filter(x=>x.role==='additional_raw')){let a=element('a','打开另一份原文 PDF ↗');let src=t.content.evidence.find(e=>e.source_path===other.path);a.href=other.url+(src?'#page='+src.page:'');a.target='_blank';a.rel='noopener';left.append(element('p'),a)}let message=")
+ template=template.replace("if(t.kind==='pilot'){\n let message=", "if(t.kind==='pilot'){\n for(let other of t.files.filter(x=>x.role==='additional_raw')){let a=element('a','打开另一份来源文件 ↗');let src=t.content.evidence.find(e=>e.source_path===other.path);a.href=other.url+(src?'#page='+src.page:'');a.target='_blank';a.rel='noopener';left.append(element('p'),a)}let message=")
  template=template.replace("let message=element('p',t.content.status_hint);", "let box=element('div');box.className='paper';box.append(element('strong','模型候选和自动核验标记（未确认）'),element('pre',t.content.candidate));left.append(box);let message=element('p',t.content.status_hint);")
  template=template.replace('<div class="toolbar"><label for="reviewer"', '<div class="toolbar"><label for="priority" style="margin:0">筛选</label><select id="priority" style="width:120px"><option value="all">全部问题</option><option value="高">高优先级</option></select><label for="reviewer"')
  template=template.replace("const list=packet.tasks.filter(t=>t.kind===kind);", "const list=packet.tasks.filter(t=>t.kind===kind&&($('priority').value==='all'||t.content.severity===$('priority').value));")

@@ -1,0 +1,42 @@
+{
+  "purpose": "Wos_Agent v0.8 两项应用公开基准；第二项含NH3指标归属修订和可追溯原版",
+  "created_utc": "2026-10-31T07:51:29.994968+00:00",
+  "entries": [
+    {
+      "path": "01_biochar/evidence.xlsx",
+      "sha256": "880af549c260b775734d30d87b05a9fb623c964c0c9a0f4b13b3148d4f1c57bf"
+    },
+    {
+      "path": "01_biochar/evidence_gaps.md",
+      "sha256": "02a0187d7fe86b3dfb6931038ecb911be9748324a6d7169ecc43e56fe15f2472"
+    },
+    {
+      "path": "01_biochar/report.md",
+      "sha256": "5eb092e8320effcdc8d74d620fe5247cac355ab67828a05c587053ce91de9e7d"
+    },
+    {
+      "path": "02_nitrogen/evidence.xlsx",
+      "sha256": "3c79b58a09f34abe5f319b7dc5889de9c20721a58a3a4f4db89539247dbe55c6"
+    },
+    {
+      "path": "02_nitrogen/evidence_gaps.md",
+      "sha256": "d6fb160735a4d3d925459987bb475866a4e8a5bc41cee5d1c45496e6022af37a"
+    },
+    {
+      "path": "02_nitrogen/original_evidence.xlsx",
+      "sha256": "42082bcd2cb292ade1eb6f9ab7fcc4279969f4d1a66e27272695b4167943d404"
+    },
+    {
+      "path": "02_nitrogen/original_evidence_gaps.md",
+      "sha256": "1e0405a03c7e3ecd4af1bd8a9c9b1acab19b93506688df9200bf32abd468e668"
+    },
+    {
+      "path": "02_nitrogen/original_report.md",
+      "sha256": "27a4d5a8c0bf131ae993624727932bf9a04a6171928ebedd9c84c778b5406b0e"
+    },
+    {
+      "path": "02_nitrogen/report.md",
+      "sha256": "69e347af6501fcefd624cc10908360da1aed5cde343593e55b26f7da637cff6b"
+    }
+  ]
+}

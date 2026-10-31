@@ -1,25 +1,17 @@
 # WoS Starter 可追溯检索
 
-当前开发分支为 v0.7，包含可追溯检索、合并去重、摘要补充、来源锚定的 Evidence Matrix、OA 全文解析及字段可靠性评测。2026-10-27 增加可复现重建入口、便携离线回归与历史实验审计分层；原版文档中的 182 tests 属于 v0.5 历史记录。运行当前测试命令获取当前结果。
+主线包含 WoS 可追溯检索、文献去重、全文身份与证据准入、人工审核及全文科研信息候选提取。研究结果需要按原始论文和表图核对，技术准入和模型候选不等于独立人工 Gold 或准确率。
 
-## 当前研究进度（2026-10-27）
+## 科研应用与当前状态
 
-目前处于**文献池重建完成、全文与摘要补充后待复核和纳入筛选**阶段。
+已在现有 100 篇文献池中完成两项限定范围的科研应用：
 
-| 项目 | 本地已核实结果 |
-|---|---:|
-| 去重候选文献 | 280 篇 |
-| 有来源的摘要 | 192 篇；另缺 88 篇 |
-| 校验过 DOI 的全文 PDF | 157 篇；另缺 123 篇 |
-| 已有 PDF、摘要需处理跨页或双栏 | 14 篇 |
-| 新提取摘要待排版复核 | 32 篇 |
-| 出版年边界待核对 | 2 篇 |
+- [盐碱稻田生物炭：产量和土壤盐分](docs/research_applications/01_biochar/report.md)，[证据表](docs/research_applications/01_biochar/evidence.xlsx)，[缺失清单](docs/research_applications/01_biochar/evidence_gaps.md)。
+- [盐碱稻田氮肥管理：产量、NH₃ 和 N₂O](docs/research_applications/02_nitrogen/report.md)，[证据表](docs/research_applications/02_nitrogen/evidence.xlsx)，[缺失清单](docs/research_applications/02_nitrogen/evidence_gaps.md)。
 
-157 份 PDF 中有 1 份通过浏览器“打印为 PDF”保存的完整 15 页副本，来源清单已单独注明。本轮尚未启动证据候选标注、Gold 人工审批或独立留出集评分。
+两项分析均依赖对关键来源的针对性核对；原始全文、补充文件、完整模型回答及本机审核记录不随本次应用成果发布。证据表的个人本机路径已替换为提示文字，保留 DOI、页码、表图位置和来源哈希。文献池范围有限，两个案例均不足以证明系统具有无人工复核的稳定准确率。参见[应用说明](docs/research_applications/README.md)。
 
-下一步先处理 14 篇本地 PDF 的摘要、复核 32 篇摘要及 2 篇年份记录，再按研究范围筛选候选并优先补取纳入文献的全文。[最新阶段报告与本地文件索引](docs/fulltext_acquisition_20261027.md)记录具体来源、缺失项和验证方法。
-
-当前完整 portable 离线套件为 368 项；GitHub Actions 执行其中 365 项，另外 3 项需要本地 Codex XLSX 运行时。36 项依赖丢失历史数据的实验审计单独列出。检索数据、校园网全文、导出文件、备份和 `.env` 保存在本地忽略目录；GitHub 保存代码、配置和阶段记录。
+历史研究进展与候选数据统计见[全文候选批次汇总](docs/v08_fulltext_batch_summary_20261030.md)及[文献质量整理报告](docs/v07_literature_quality_20261028.md)；不应将历史阶段文字视为实时进度。离线测试使用 `tests/run_offline.py --without-xlsx`；具体通过、跳过、排除和失败数以实际运行报告为准，XLSX 和可选 PDF 环境需分别验证。
 
 **旧数据丢失时从这里开始：** 阅读 [重建说明](docs/workspace_rebuild.md)。仓库保留了 40 篇真实开发摘要及 AI 辅助证据参考，可离线重建数据包、人工审阅包、冻结提示词请求和导出文件。原始 Holdout30 和未提交的历史实验无法从这些文件恢复；重建运行使用独立目录与明确的新状态。
 

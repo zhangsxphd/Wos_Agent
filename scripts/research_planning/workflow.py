@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import subprocess
 import tempfile
@@ -55,7 +56,8 @@ class CodexWorker:
     def __init__(self, executable='codex', timeout=600, audit_dir=None):
         self.executable, self.timeout = executable, timeout
         self.audit_dir = Path(audit_dir) if audit_dir else None
-        self.call_number = 0
+        self.call_number = max((int(p.name.split('_', 1)[0]) for p in self.audit_dir.iterdir()
+                                if p.is_dir() and p.name.split('_', 1)[0].isdigit()), default=0) if self.audit_dir and self.audit_dir.is_dir() else 0
 
     def ask(self, stage, payload, schema):
         instructions = {
@@ -182,7 +184,7 @@ def _normalize(value):
     return ' '.join(str(value or '').casefold().split())
 
 
-def _validate_screen(decisions, sources):
+def _validate_screen(decisions, sources, topic=''):
     by_id = {row['source_id']: row for row in sources}
     ids = [row['source_id'] for row in decisions]
     if len(ids) != len(set(ids)) or set(ids) != set(by_id):
@@ -193,11 +195,58 @@ def _validate_screen(decisions, sources):
         text = _normalize((source.get('title') or '') + ' ' + (source.get('abstract') or ''))
         if quote and quote not in text:
             raise ValueError('Screening quote is not present in the source')
-        if not source.get('abstract'):
-            decision['status'] = 'uncertain'
-            decision['reason'] += ' [摘要缺失，待全文或人工审核]'
-        elif decision['status'] != 'uncertain' and not quote:
+        if decision['status'] != 'uncertain' and not quote:
             raise ValueError('Provisional screening decisions require a source quote')
+        raw = {'source_id': decision['source_id'], 'status': decision['status'], 'reason': decision['reason'], 'quote': decision['quote']}
+        reason = decision['reason'].casefold()
+        title = _normalize(source.get('title'))
+        adjustment = []
+        # Evidence roles are provisional; a title alone does not establish a trial design.
+        if re.search(r'\b(meta.analysis|systematic review|review)\b|综述|meta分析', title):
+            role = 'review_synthesis'
+        elif re.search(r'方法|method|protocol|采样|测量', reason) and re.search(r'间接|参考|迁移|method', reason):
+            role = 'methods_reference'
+        elif re.search(r'机制|mechanis', reason) and re.search(r'间接|参考|迁移|indirect', reason):
+            role = 'mechanism_transfer'
+        elif re.search(r'秸秆|氮肥|磷肥|施肥|肥料|生物炭|fertili[sz]|straw', reason) and re.search(r'未比较|没有比较|未体现|未报告|共同背景|not compare', reason):
+            role = 'agronomic_context'
+        elif (re.search(r'盐土|盐碱|盐渍|saline', reason)
+              and re.search(r'水稻|稻田|rice|paddy', reason)
+              and re.search(r'灌溉比较|灌溉.*比较|compar.*irrigation', reason)
+              and re.search(r'产量|yield|水分生产', reason)):
+            role = 'agronomic_context'
+        elif re.search(r'水质|water quality', reason):
+            role = 'agronomic_context'
+        elif decision['status'] == 'candidate_include' and re.search(r'直接|比较|compares?|direct', reason):
+            role = 'core_trial_candidate_pending_fulltext'
+        else:
+            role = 'unclassified_pending_review'
+        # A title's silence about salinity or water management is not evidence of absence.
+        # When it explicitly concerns rice-soil carbon, nitrogen or microbes, keep it
+        # as a provisional mechanism source rather than discard it as a core trial.
+        if (re.search(r'rice|paddy|稻', topic, re.I)
+                and decision['status'] == 'candidate_exclude' and not source.get('abstract')
+                and re.search(r'rice|paddy|稻', title)
+                and re.search(r'carbon|nitrogen|methane|nitrous|ch.?4|n.?2.?o|bacter|microb|碳|氮|微生物|细菌', title)
+                and re.search(r'未体现|未提及|未明确|未显示|没有体现|未说明', reason)
+                and role == 'unclassified_pending_review'):
+            role = 'mechanism_transfer'
+        if role in ('agronomic_context', 'mechanism_transfer', 'methods_reference', 'review_synthesis') and decision['status'] == 'candidate_exclude':
+            decision['status'] = 'uncertain'
+            adjustment.append('暂不排除可能具有间接证据用途的研究；用途及相关性须核查。')
+        fulltext = source.get('fulltext') or {}
+        if fulltext.get('admission') == 'technical_pass':
+            information = 'fulltext_available_not_scientifically_reviewed'
+        elif source.get('abstract'):
+            information = 'title_and_abstract'
+        else:
+            information = 'title_only'
+        next_action = ('prioritize_existing_fulltext' if fulltext.get('admission') == 'technical_pass' and decision['status'] != 'candidate_exclude'
+                       else 'prioritize_fulltext_or_manual_review' if decision['status'] == 'candidate_include'
+                       else 'review_provisional_decision')
+        decision.update(model_decision=raw, evidence_use=role, information_sufficiency=information,
+                        adjustment_reasons=adjustment,
+                        next_action=next_action)
 
 
 def _validate_evidence(observations, sources):
@@ -318,7 +367,7 @@ def run_workflow(project, topic, worker, client, max_records=10, max_pages=1, en
             for start in range(0, len(sources), batch_size):
                 batch = sources[start:start + batch_size]
                 part = _ask(worker, 'screen', {'topic': topic, 'sources': batch}, SCREEN_SCHEMA)
-                _validate_screen(part['decisions'], batch)
+                _validate_screen(part['decisions'], batch, topic)
                 screen['decisions'].extend(part['decisions'])
                 write_json(project / 'screening_partial.json', screen, secrets, overwrite=True)
         else:

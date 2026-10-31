@@ -1,0 +1,13 @@
+{
+  "evidence_sha256": "71726a796041bf75ed5cbe9e1767fcbdfc7d872f3008008bd74cadc4b2e59a73",
+  "report_sha256": "b077d53cc48f5c6d22355a1279cee2e3271aa9091543c31f3b8b5738dcdd7723",
+  "studies": 8,
+  "source_checked_comparisons": 10,
+  "cross_study_comparisons": 2,
+  "pending_model_ids": [
+    "S0481"
+  ],
+  "novelty": "unknown",
+  "verification": "source_check_declared_by_curator_not_independent",
+  "status": "limited_analysis_not_final"
+}

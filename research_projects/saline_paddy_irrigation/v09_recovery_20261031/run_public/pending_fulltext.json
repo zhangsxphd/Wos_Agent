@@ -1,0 +1,2235 @@
+{
+  "items": [
+    {
+      "source_id": "S0001",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0002",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0003",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0006",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0008",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0010",
+      "decision": "candidate_include",
+      "evidence_use": "core_trial_candidate_pending_fulltext",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0012",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0014",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0020",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0021",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0022",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0024",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0025",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0028",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0029",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0033",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0035",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0036",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0037",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0038",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0041",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0042",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0044",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0046",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0048",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0049",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0056",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0057",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0060",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0062",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0065",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0066",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0068",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0070",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0072",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0073",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0075",
+      "decision": "candidate_include",
+      "evidence_use": "core_trial_candidate_pending_fulltext",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0078",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0079",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0081",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0082",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0083",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0084",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0085",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0087",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0090",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0091",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0092",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0094",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0095",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0099",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0101",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0105",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0108",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0113",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0114",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0120",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0123",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0125",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0127",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0128",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0131",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0132",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0137",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0141",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0142",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0144",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0145",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0147",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0151",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0152",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0154",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0158",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0163",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0165",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0166",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0167",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0171",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0172",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0173",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0178",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "error",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0181",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0185",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0189",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0190",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0191",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0199",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0201",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0203",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0204",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0205",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0206",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0207",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0209",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0213",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0215",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0217",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0223",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0225",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0226",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0227",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0230",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0233",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0235",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0242",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0243",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0244",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0247",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0248",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0250",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0251",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0252",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0253",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0254",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0257",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0258",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0260",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0264",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0266",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0268",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0270",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0278",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0279",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0280",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0282",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "unavailable",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0284",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0285",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0288",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0290",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0292",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0294",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0301",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0302",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0304",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0305",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0306",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0307",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0308",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0310",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0312",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0314",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0316",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0317",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0320",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0322",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0324",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0325",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0326",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0327",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0328",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0331",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0332",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0333",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0336",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0338",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0345",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0346",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0347",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0349",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0350",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0351",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0353",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0354",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0358",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0359",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0361",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0364",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0372",
+      "decision": "candidate_include",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0375",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0377",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0380",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0382",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0384",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0385",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0387",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0388",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0389",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0391",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0394",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0395",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0396",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0397",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0398",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0400",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0402",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0407",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0409",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0411",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0413",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0414",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0415",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0416",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0420",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0425",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0426",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0428",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0431",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0433",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0435",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0438",
+      "decision": "candidate_include",
+      "evidence_use": "core_trial_candidate_pending_fulltext",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0441",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0442",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0443",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0444",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0445",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0446",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0447",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0449",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0451",
+      "decision": "uncertain",
+      "evidence_use": "review_synthesis",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0455",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0456",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0458",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0459",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0462",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0465",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0466",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0468",
+      "decision": "uncertain",
+      "evidence_use": "mechanism_transfer",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0471",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0472",
+      "decision": "uncertain",
+      "evidence_use": "agronomic_context",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0474",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0475",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0478",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    },
+    {
+      "source_id": "S0481",
+      "decision": "uncertain",
+      "evidence_use": "unclassified_pending_review",
+      "availability": {
+        "admission": "not_available",
+        "manifest_status": "not_in_manifest",
+        "reason": "已有清单未提供可准入全文；未发起获取请求。"
+      }
+    }
+  ],
+  "limitation": "按已有清单生成；未执行新的全文获取。"
+}

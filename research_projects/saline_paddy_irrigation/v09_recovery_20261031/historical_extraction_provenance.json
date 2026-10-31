@@ -1,0 +1,46 @@
+{
+  "description": "只读取既有v0.8字段及附件清单；历史模型结果是Candidate，不代表本轮全部原文逐项复核。",
+  "files": {
+    "papers.jsonl": {
+      "sha256": "68eb3e0ce588de22b209cd4e3c2995d09657cd16ad05330ef34e318c61ee18d2",
+      "matched_records": 5
+    },
+    "fields.jsonl": {
+      "sha256": "69ed437362ff04582fcb1fb0c9e9ff224cbecc847aebc138f452190b9222cff3",
+      "matched_records": 59
+    },
+    "results.jsonl": {
+      "sha256": "932fc48a2055692bcaed3d7c473f209254c8151b763edc4621e404070a93db57",
+      "matched_records": 8
+    },
+    "supplement_files.jsonl": {
+      "sha256": "440cc80490106d243acd5d2ea0b2dcafebad5fbe9231854408dfdc089f6044f3",
+      "matched_records": 1
+    }
+  },
+  "papers": {
+    "10.3390/w16182598": {
+      "papers.jsonl": 1,
+      "fields.jsonl": 14
+    },
+    "10.1186/s12284-022-00564-6": {
+      "papers.jsonl": 1,
+      "fields.jsonl": 9
+    },
+    "10.3390/agronomy14071441": {
+      "papers.jsonl": 1,
+      "fields.jsonl": 12
+    },
+    "10.3390/su18052185": {
+      "papers.jsonl": 1,
+      "fields.jsonl": 12,
+      "results.jsonl": 2,
+      "supplement_files.jsonl": 1
+    },
+    "10.3390/agriculture16161786": {
+      "papers.jsonl": 1,
+      "fields.jsonl": 12,
+      "results.jsonl": 6
+    }
+  }
+}

@@ -110,7 +110,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(json.loads((project / 'workflow_status.json').read_text())['stage'], 'decision')
         self.assertFalse((project / 'research_report.md').exists())
 
-    def test_missing_abstract_cannot_be_excluded_or_included(self):
+    def test_missing_abstract_preserves_title_grounded_decision(self):
         project = self.root / 'missing_abstract'
         class MissingWorker(FakeWorker):
             def ask(self, stage, payload, schema):
@@ -119,8 +119,9 @@ class WorkflowTests(unittest.TestCase):
                 return result
         run_workflow(project, 'Test', MissingWorker(), FakeWos(), enrich=False)
         decision = json.loads((project / 'screening.json').read_text())['decisions'][0]
-        self.assertEqual(decision['status'], 'uncertain')
-        self.assertIn('摘要缺失', decision['reason'])
+        self.assertEqual(decision['status'], 'candidate_include')
+        self.assertEqual(decision['model_decision']['status'], 'candidate_include')
+        self.assertEqual(decision['information_sufficiency'], 'title_only')
 
     def test_failed_search_is_recorded_without_creating_a_report(self):
         class FailedWos(FakeWos):
@@ -202,7 +203,7 @@ class WorkflowTests(unittest.TestCase):
         run_workflow(project, 'Test', NoAbstractWorker(), None, existing_records=source,
                      existing_manifest=manifest, existing_pool=pool, skip_novelty=True)
         self.assertIsNone(json.loads((project / 'sources.json').read_text())[0]['abstract'])
-        self.assertEqual(json.loads((project / 'screening.json').read_text())['decisions'][0]['status'], 'uncertain')
+        self.assertEqual(json.loads((project / 'screening.json').read_text())['decisions'][0]['status'], 'candidate_include')
 
 
 if __name__ == '__main__':

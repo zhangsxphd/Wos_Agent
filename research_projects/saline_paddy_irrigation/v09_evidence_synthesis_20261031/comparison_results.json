@@ -1,0 +1,899 @@
+{
+  "version": "1.0",
+  "input_files": {
+    "papers": {
+      "status": "loaded",
+      "sha256": "68eb3e0ce588de22b209cd4e3c2995d09657cd16ad05330ef34e318c61ee18d2"
+    },
+    "fields": {
+      "status": "loaded",
+      "sha256": "69ed437362ff04582fcb1fb0c9e9ff224cbecc847aebc138f452190b9222cff3"
+    },
+    "results": {
+      "status": "loaded",
+      "sha256": "932fc48a2055692bcaed3d7c473f209254c8151b763edc4621e404070a93db57"
+    },
+    "issues": {
+      "status": "loaded",
+      "sha256": "85312d4c7ad0ef7e2fdcea3db3917d89f20877cc1226476d5023f7fe206725ab"
+    },
+    "historic_claims": {
+      "status": "loaded",
+      "sha256": "479c377dcd733a01e459c2439e92f5b8ffa825f5e97d7182b72bf22f1f0063f9"
+    },
+    "supplement_files": {
+      "status": "loaded",
+      "sha256": "440cc80490106d243acd5d2ea0b2dcafebad5fbe9231854408dfdc089f6044f3"
+    }
+  },
+  "papers": [
+    {
+      "study_id": "P2018",
+      "doi": "10.3390/su10020475",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "study_type": "field_experiment",
+      "evidence_role": "direct_water_gas",
+      "source_access": "此前在线可读全文PDF；本次未纳入本地全文库",
+      "source_location": "PDF第4–6页2.2、2.3和Table 2",
+      "pdf_sha256": null,
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2018:E1",
+          "status": "partially_structured",
+          "object": "吉林盐碱稻田，复垦1年与57年",
+          "conditions": "表1：新、老田pH 9.72、8.31；EC 1.27、0.31 mS/cm（水土比5:1）",
+          "question_and_hypothesis": "持续淹水与间歇灌溉对稻季气体的影响",
+          "design": "2012年每田分为两块20×20 m区；水管理试验与2013年氮肥试验分开",
+          "experimental_unit_and_independent_replicates": "水管理分配在每田各一块，独立灌溉重复不清；表2 n=3不可直接当作3块独立灌溉区",
+          "sampling_replicates": "箱或采样重复的空间层级需原始资料确认",
+          "outcomes": "CH4、N2O、CO2",
+          "methods_and_statistics": "稻季静态箱、气相色谱，每周两次；未测全年",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "间歇灌溉，绿期3–4 cm后排水复湿，后续1–2 cm"
+            },
+            {
+              "role": "comparator",
+              "description": "持续淹水3–5 cm，成熟收获前排水"
+            }
+          ],
+          "limitations_unclassified": "N2O正文以mg/m²、表2以g/m²记录同一数字；不得擅自选择正确单位；摘要平均通量与累计量不是同一指标",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "水管理分配在每田各一块，独立灌溉重复不清；表2 n=3不可直接当作3块独立灌溉区",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2023",
+      "doi": "10.4067/S0718-58392023000500510",
+      "source_url": "https://doi.org/10.4067/S0718-58392023000500510",
+      "study_type": "field_experiment",
+      "evidence_role": "direct_water_yield",
+      "source_access": "此前及本次在线查阅期刊原文HTML，未下载扩充本地库",
+      "source_location": "Methods及Results Grain yield、Table 3",
+      "pdf_sha256": null,
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2023:E1",
+          "status": "partially_structured",
+          "object": "印尼海水入侵稻田2017、2018旱季",
+          "conditions": "两地点表层ECe 3.13、7.09 dS/m；地点与盐度混杂",
+          "question_and_hypothesis": "AWD与CF、微生物和品种对产量影响",
+          "design": "两个地点分开；水管理主区，菌剂副区，品种副副区，三重复",
+          "experimental_unit_and_independent_replicates": "每地点3个区组；同地点跨年不是独立地点",
+          "sampling_replicates": "每小区9 m²产量采样；不可把采样面积计作独立灌溉重复",
+          "outcomes": "籽粒产量、用水；本次未见CH4/N2O报告",
+          "methods_and_statistics": "田间分裂区；按14%含水率计算t/ha",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "AWD，主区水位至约地表下10 cm复灌"
+            },
+            {
+              "role": "comparator",
+              "description": "持续淹水约4 cm；开花期AWD也维持淹水"
+            }
+          ],
+          "limitations_unclassified": "轻盐地点作者报告未检出显著产量差异；不等于证明无效；地点与盐度不可分离",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每地点3个区组；同地点跨年不是独立地点",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2026",
+      "doi": "10.3390/su18052185",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "study_type": "pot_experiment",
+      "evidence_role": "direct_water_yield",
+      "source_access": "已有本机PDF，技术准入通过；Table 3第14页本次视觉核对",
+      "source_location": "PDF第3–5页Methods，14页Table 3；用户提供附件第8–9页，出版商字节未核验",
+      "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2026:E1",
+          "status": "partially_structured",
+          "object": "江苏滨海复垦稻田盐碱土，南京盆栽",
+          "conditions": "初始盐度3.10‰、pH 9.31、砂壤土；统一模拟养殖尾水",
+          "question_and_hypothesis": "灌溉与小球藻对水氮磷和产量",
+          "design": "灌溉2×小球藻2随机区组",
+          "experimental_unit_and_independent_replicates": "每组合3个独立盆",
+          "sampling_replicates": "每盆一穴三株；植株不是独立盆",
+          "outcomes": "籽粒干重、土壤SOC/TN及水中氮磷；本次未见温室气体测量",
+          "methods_and_statistics": "每盆一穴；Table 3均值±SD",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "浅湿灌溉加小球藻ISCW"
+            },
+            {
+              "role": "comparator",
+              "description": "淹水加相同小球藻IFCW"
+            }
+          ],
+          "limitations_unclassified": "盆栽、模拟尾水和灌溉阈值与田间AWD不同；产量表注沿用same depth措辞，统计比较应独立复核",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每组合3个独立盆",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2022",
+      "doi": "10.1186/s12284-022-00564-6",
+      "source_url": "https://doi.org/10.1186/s12284-022-00564-6",
+      "study_type": "field_experiment",
+      "evidence_role": "direct_water_yield",
+      "source_access": "已有本机PDF，Table 10第10页本次视觉核对",
+      "source_location": "PDF第2–3页Methods，PDF第10页Table 10及相邻正文",
+      "pdf_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2022:E1",
+          "status": "partially_structured",
+          "object": "埃及盐土水稻，2017和2018两季田间",
+          "conditions": "方法给ECe 6.4 dS/m、pH 7.85；摘要6.87、讨论6.3 dS/m，是否同一值不明",
+          "question_and_hypothesis": "全量与亏缺滴灌×PGPR对产量",
+          "design": "随机区组裂区，灌溉为主区、菌剂为副区",
+          "experimental_unit_and_independent_replicates": "每处理3个重复，共12小区；水主区为水处理重复单位",
+          "sampling_replicates": "测量点或植株不能当作新的独立水处理重复",
+          "outcomes": "籽粒产量和水分生产力；本次未见CH4/N2O报告",
+          "methods_and_statistics": "田间收获产量，Table 10 LSD显著字母",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "80% ETc滴灌、加PGPR"
+            },
+            {
+              "role": "comparator",
+              "description": "100% ETc滴灌、相同PGPR"
+            }
+          ],
+          "limitations_unclassified": "摘要称全量灌溉加PGPR籽粒产量3.35 t/ha，而表10同标处理为5.24 t/ha；正文无菌剂80%处理3.65与表10的3.56不一致，比较范围/原因待核。不可把不同菌剂条件混为同一灌溉对照。",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每处理3个重复，共12小区；水主区为水处理重复单位",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2024W",
+      "doi": "10.3390/agronomy14071441",
+      "source_url": "https://doi.org/10.3390/agronomy14071441",
+      "study_type": "field_experiment",
+      "evidence_role": "direct_water_management_confounded",
+      "source_access": "已有本机PDF，Table 1第5页本次视觉核对",
+      "source_location": "PDF第3页2.2–2.3、PDF第5页Table 1及摘要",
+      "pdf_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2024W:E1",
+          "status": "partially_structured",
+          "object": "滨海盐土稻田与旱地比较",
+          "conditions": "初始0–20 cm pH 8.8，EC 634 µS/cm",
+          "question_and_hypothesis": "水管理与生物有机肥对土壤和真菌",
+          "design": "CK旱地、W稻田、BW稻田加肥；三个随机小区每处理",
+          "experimental_unit_and_independent_replicates": "每处理3个小区；每小区5点混样不计为5个独立重复",
+          "sampling_replicates": "0–20 cm小区内5点混合",
+          "outcomes": "土壤pH、EC、SOC及真菌；本次未见温室气体报告",
+          "methods_and_statistics": "Duncan多重比较，Table 1均值±SD",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "W稻田、BW稻田加生物有机肥"
+            },
+            {
+              "role": "comparator",
+              "description": "CK旱地无生物有机肥"
+            }
+          ],
+          "limitations_unclassified": "摘要笼统称EC和pH显著降低；若均以CK逐项比较，与表中字母不全一致。BW同时改变水与肥，不可单独归因水。",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每处理3个小区；每小区5点混样不计为5个独立重复",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2024Q",
+      "doi": "10.3390/w16182598",
+      "source_url": "https://doi.org/10.3390/w16182598",
+      "study_type": "field_experiment",
+      "evidence_role": "agronomic_context_water_quality",
+      "source_access": "已有本机PDF，Table 3第8页本次视觉核对",
+      "source_location": "PDF第3–4页Methods；PDF第8页Table 3与Discussion",
+      "pdf_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2024Q:E1",
+          "status": "partially_structured",
+          "object": "宁夏硫酸盐盐土直播水稻",
+          "conditions": "背景土0–100 cm总盐0.91–4.2 g/kg，局部更高，pH 8.17–9.50",
+          "question_and_hypothesis": "沟水、黄河水交替/混合灌溉对盐分和产量",
+          "design": "随机区组，4处理每处理5个小区",
+          "experimental_unit_and_independent_replicates": "每处理5个田间小区；样品三重复不是额外田块",
+          "sampling_replicates": "收获时小区内样品三次，具体重复层级需核原始记录",
+          "outcomes": "籽粒产量和盐分；本次未见CH4/N2O",
+          "methods_and_statistics": "产量kg/ha，表3字母表示p<0.05",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "T3沟水与黄河水交替；T2混合"
+            },
+            {
+              "role": "comparator",
+              "description": "CK只用黄河水"
+            }
+          ],
+          "limitations_unclassified": "交替是切换水源而非干湿交替；结果正文有“直接沟水未减产”及讨论“混合或交替未显著影响产量”的说法，与表3若以CK为基准的字母比较不一致，需核比较基准。",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每处理5个田间小区；样品三重复不是额外田块",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2022N",
+      "doi": "10.5194/soil-8-645-2022",
+      "source_url": "https://doi.org/10.5194/soil-8-645-2022",
+      "study_type": "pot_experiment",
+      "evidence_role": "indirect_mechanism_non_saline_unknown",
+      "source_access": "期刊开放全文HTML/PDF，本次在线读取，未新增本地全文",
+      "source_location": "PDF第645–650页摘要、2.1–2.3、3.4及Table 1",
+      "pdf_sha256": null,
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2022N:E1",
+          "status": "partially_structured",
+          "object": "水稻盆栽，未见盐碱土报告",
+          "conditions": "盐碱条件未报告，不能按盐碱直接证据处理",
+          "question_and_hypothesis": "温和AWD、氮肥和秸秆对N2O",
+          "design": "灌溉×氮×秸秆及15N标记组合",
+          "experimental_unit_and_independent_replicates": "每处理3个盆",
+          "sampling_replicates": "各盆0–10 cm多点混样；不能算独立盆",
+          "outcomes": "稻季累计N2O、无机氮、微生物量氮",
+          "methods_and_statistics": "静态箱，施肥或灌溉后第一周每2天、其余每7天；15N示踪",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "温和AWD，不同施氮与秸秆组合"
+            },
+            {
+              "role": "comparator",
+              "description": "相同肥料/秸秆条件的CF"
+            }
+          ],
+          "limitations_unclassified": "跨肥料组合作者平均值不是单组合效应；与2018年试验土壤、尺度及采样不同，不构成同条件相反结果",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每处理3个盆",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    },
+    {
+      "study_id": "P2026F",
+      "doi": "10.3390/agriculture16161786",
+      "source_url": "https://doi.org/10.3390/agriculture16161786",
+      "study_type": "pot_experiment",
+      "evidence_role": "agronomic_context_not_water_contrast",
+      "source_access": "已有本机PDF；此前12类候选及本次第7页Table 2视觉核对",
+      "source_location": "PDF第3–4页Methods、第7页Table 2",
+      "pdf_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "experiment_metadata": {},
+      "source_state": "source_checked_by_prior_assistant_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": "P2026F:E1",
+          "status": "partially_structured",
+          "object": "江苏盐渍土水稻土柱试验",
+          "conditions": "滨海盐土，统一使用含盐灌溉水2.47±0.15 g/L",
+          "question_and_hypothesis": "秸秆还田方式和基肥氮源对水稻产量",
+          "design": "3种秸秆方式×3种基肥氮源；27个土柱",
+          "experimental_unit_and_independent_replicates": "每处理组合3个土柱，不是3个独立田块",
+          "sampling_replicates": "盆内株或取样点不能当作独立重复",
+          "outcomes": "每穴籽粒产量、盐分及养分；未比较灌溉制度，未报告本题气体",
+          "methods_and_statistics": "Table 2不同字母p<0.05，均值±SE",
+          "treatments": [
+            {
+              "role": "intervention",
+              "description": "S2秸秆翻埋、N3包膜尿素基肥"
+            },
+            {
+              "role": "comparator",
+              "description": "相同S2条件N1常规尿素基肥"
+            }
+          ],
+          "limitations_unclassified": "氮源改变仅发生在40%基肥部分；不能把肥料差异归因于灌溉",
+          "author_hypothesis": "not_separately_verified",
+          "author_mechanism": "not_separately_verified",
+          "independent_methodological_review": "每处理组合3个土柱，不是3个独立田块",
+          "original_author_conclusions": "not_separately_verified"
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison_id": "Y23",
+      "study_id": "P2023",
+      "experiment_id": "P2023:E1",
+      "outcome": "rice_grain_yield",
+      "intervention": "中盐地点AWD",
+      "comparator": "同地点CF",
+      "factor": "water_regime",
+      "contrast": "intermittent_vs_flooded",
+      "observation_period": "2017及2018两个旱季",
+      "numeric_values": {
+        "2017": {
+          "intervention": 5.225,
+          "comparator": 5.693
+        },
+        "2018": {
+          "intervention": 5.125,
+          "comparator": 5.586
+        },
+        "unit": "t/ha"
+      },
+      "reported_unit": "t/ha（每年值）",
+      "significance_original": "作者报告在中盐地点显著降低；轻盐地点未检出显著差异",
+      "significance": "significant_reported",
+      "limitations": "水管理与菌剂/品种分裂区，地点与盐度混杂；与其他研究不汇总",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.4067/S0718-58392023000500510",
+          "source_location": "Results Grain yield、Table 3",
+          "pdf_sha256": null,
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "2017",
+          "intervention": 5.225,
+          "comparator": 5.693,
+          "direction": "lower",
+          "unit": "t/ha",
+          "independent_study": false,
+          "within_comparison_percent_change": -8.22
+        },
+        {
+          "stratum": "2018",
+          "intervention": 5.125,
+          "comparator": 5.586,
+          "direction": "lower",
+          "unit": "t/ha",
+          "independent_study": false,
+          "within_comparison_percent_change": -8.25
+        }
+      ],
+      "conflicts": [],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "Y26",
+      "study_id": "P2026",
+      "experiment_id": "P2026:E1",
+      "outcome": "rice_grain_yield",
+      "intervention": "浅湿加小球藻ISCW",
+      "comparator": "淹水加相同小球藻IFCW",
+      "factor": "water_regime",
+      "contrast": "shallow_wet_vs_flooded",
+      "observation_period": "2022稻季",
+      "numeric_values": {
+        "intervention": 7.18,
+        "intervention_error": 1.73,
+        "comparator": 18.27,
+        "comparator_error": 1.59,
+        "error_type": "SD",
+        "unit": "g/hill"
+      },
+      "reported_unit": "g/hill（均值±SD）",
+      "significance_original": "Table 3分别标c和a，作者表注p<0.05",
+      "significance": "significant_reported",
+      "limitations": "独立盆每处理3个，模拟尾水；产量表注沿用same depth措辞，统计检验仍待复核",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/su18052185",
+          "source_location": "PDF第14页Table 3",
+          "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "exact_quote": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic",
+          "quote_state": "historic_candidate_excerpt_needs_independent_review",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "overall",
+          "intervention": 7.18,
+          "comparator": 18.27,
+          "direction": "lower",
+          "unit": "g/hill",
+          "independent_study": null,
+          "within_comparison_percent_change": -60.7
+        }
+      ],
+      "conflicts": [],
+      "candidate_links": [
+        {
+          "index": 0,
+          "status": "candidate_pending_review",
+          "evidence": {
+            "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+            "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "physical_page": 14,
+            "anchor": "18.27 ± 1.59",
+            "excerpt": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+          },
+          "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b"
+        }
+      ],
+      "source_checked_values": {
+        "intervention": 7.18,
+        "intervention_error": 1.73,
+        "comparator": 18.27,
+        "comparator_error": 1.59,
+        "error_type": "SD",
+        "unit": "g/hill"
+      },
+      "value_origin": "historic_numeric_candidate"
+    },
+    {
+      "comparison_id": "Y22",
+      "study_id": "P2022",
+      "experiment_id": "P2022:E1",
+      "outcome": "rice_grain_yield",
+      "intervention": "80% ETc滴灌+PGPR",
+      "comparator": "100% ETc滴灌+相同PGPR",
+      "factor": "water_regime",
+      "contrast": "deficit_vs_full_drip",
+      "observation_period": "2017、2018两季；表内合并季节",
+      "numeric_values": {
+        "intervention": 4.3,
+        "intervention_error": 0.32,
+        "comparator": 5.24,
+        "comparator_error": 0.31,
+        "error_type": "unknown",
+        "unit": "t/ha"
+      },
+      "reported_unit": "t/ha",
+      "significance_original": "Table 10分别标b和a，LSD p<0.05",
+      "significance": "significant_reported",
+      "limitations": "同季或跨季独立性与误差类型需进一步核查；摘要与正文有其他数值不一致",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.1186/s12284-022-00564-6",
+          "source_location": "PDF第10页Table 10",
+          "pdf_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "overall",
+          "intervention": 4.3,
+          "comparator": 5.24,
+          "direction": "lower",
+          "unit": "t/ha",
+          "independent_study": null
+        }
+      ],
+      "conflicts": [
+        "possible_abstract_table_conflict_scope_unresolved"
+      ],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "N18",
+      "study_id": "P2018",
+      "experiment_id": "P2018:E1",
+      "outcome": "seasonal_n2o",
+      "intervention": "间歇灌溉",
+      "comparator": "持续淹水",
+      "factor": "water_regime",
+      "contrast": "intermittent_vs_flooded",
+      "observation_period": "2012稻季",
+      "numeric_values": {
+        "new_field": {
+          "intervention": 0.29,
+          "comparator": 0.23
+        },
+        "old_field": {
+          "intervention": 0.24,
+          "comparator": 0.2
+        },
+        "unit": "unresolved: text mg/m2; Table 2 g/m2"
+      },
+      "reported_unit": "正文mg/m²；表2 g/m²，冲突未解决",
+      "significance_original": "表2总量灌溉主效应NS；不等于证明无差异",
+      "significance": "not_significant_reported",
+      "limitations": "单位存在1000倍内部冲突；灌溉区独立重复不清",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/su10020475",
+          "source_location": "PDF第6页3.1节和Table 2",
+          "pdf_sha256": null,
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "new_field",
+          "intervention": 0.29,
+          "comparator": 0.23,
+          "direction": "higher",
+          "unit": "unresolved: text mg/m2; Table 2 g/m2",
+          "independent_study": false
+        },
+        {
+          "stratum": "old_field",
+          "intervention": 0.24,
+          "comparator": 0.2,
+          "direction": "higher",
+          "unit": "unresolved: text mg/m2; Table 2 g/m2",
+          "independent_study": false
+        }
+      ],
+      "conflicts": [
+        "unit_conflict_unresolved"
+      ],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "N22",
+      "study_id": "P2022N",
+      "experiment_id": "P2022N:E1",
+      "outcome": "seasonal_n2o",
+      "intervention": "温和AWD",
+      "comparator": "相同肥料和秸秆条件CF",
+      "factor": "water_regime",
+      "contrast": "intermittent_vs_flooded",
+      "observation_period": "单稻季盆栽",
+      "numeric_values": {
+        "author_reported_mean_relative_change_percent": 28.8,
+        "unit": "percent"
+      },
+      "reported_unit": "%（作者报告的跨处理平均）",
+      "significance_original": "作者报告显著；不应当作某一个处理组合的组间显著性",
+      "significance": "significant_reported",
+      "limitations": "盐碱条件未报告；与2018年田间的尺度、肥料、灌溉及采样不同",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.5194/soil-8-645-2022",
+          "source_location": "PDF第648–650页3.4及Table 1",
+          "pdf_sha256": null,
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [],
+      "conflicts": [],
+      "candidate_links": [],
+      "summary_only": true,
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "C18",
+      "study_id": "P2018",
+      "experiment_id": "P2018:E1",
+      "outcome": "seasonal_ch4",
+      "intervention": "间歇灌溉",
+      "comparator": "持续淹水",
+      "factor": "water_regime",
+      "contrast": "intermittent_vs_flooded",
+      "observation_period": "2012稻季",
+      "numeric_values": {
+        "new_field": {
+          "intervention": 3.01,
+          "comparator": 3.51
+        },
+        "old_field": {
+          "intervention": 25.18,
+          "comparator": 32.34
+        },
+        "unit": "g/m²"
+      },
+      "reported_unit": "g/m²（稻季累计）",
+      "significance_original": "Table 2灌溉效应及年限×灌溉交互标**；独立灌溉区重复不清",
+      "significance": "significant_reported",
+      "limitations": "摘要22.81%与23.62%是平均通量，不直接替代稻季累计降幅；不把n=3箱测当独立水处理",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/su10020475",
+          "source_location": "PDF第6页Table 2总量",
+          "pdf_sha256": null,
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "new_field",
+          "intervention": 3.01,
+          "comparator": 3.51,
+          "direction": "lower",
+          "unit": "g/m²",
+          "independent_study": false,
+          "within_comparison_percent_change": -14.25
+        },
+        {
+          "stratum": "old_field",
+          "intervention": 25.18,
+          "comparator": 32.34,
+          "direction": "lower",
+          "unit": "g/m²",
+          "independent_study": false,
+          "within_comparison_percent_change": -22.14
+        }
+      ],
+      "conflicts": [],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "SOC26",
+      "study_id": "P2026",
+      "experiment_id": "P2026:E1",
+      "outcome": "soil_organic_carbon",
+      "intervention": "浅湿加小球藻ISCW",
+      "comparator": "淹水加小球藻IFCW",
+      "factor": "water_regime",
+      "contrast": "shallow_wet_vs_flooded",
+      "observation_period": "试验结束",
+      "numeric_values": {
+        "intervention": 6.33,
+        "intervention_error": 0.37,
+        "comparator": 7.59,
+        "comparator_error": 0.3,
+        "unit": "g/kg",
+        "error_type": "SD"
+      },
+      "reported_unit": "g/kg（均值±SD）",
+      "significance_original": "Table 2不同字母；作者表注p<0.05",
+      "significance": "significant_reported",
+      "limitations": "每处理3个盆；SOC库浓度不等于转化速率或净碳收支",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/su18052185",
+          "source_location": "PDF第14页Table 2，10 cm层",
+          "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "overall",
+          "intervention": 6.33,
+          "comparator": 7.59,
+          "direction": "lower",
+          "unit": "g/kg",
+          "independent_study": null,
+          "within_comparison_percent_change": -16.6
+        }
+      ],
+      "conflicts": [],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "PH24",
+      "study_id": "P2024W",
+      "experiment_id": "P2024W:E1",
+      "outcome": "soil_ph",
+      "intervention": "W稻田",
+      "comparator": "CK旱地",
+      "factor": "water_and_land_use_confounded",
+      "contrast": "unknown",
+      "observation_period": "试验结束",
+      "numeric_values": {
+        "intervention": 8.4,
+        "intervention_error": 0.06,
+        "comparator": 8.51,
+        "comparator_error": 0.06,
+        "unit": "pH",
+        "error_type": "SD"
+      },
+      "reported_unit": "pH（均值±SD）",
+      "significance_original": "Table 1同标a，未显示显著差异",
+      "significance": "not_significant_reported",
+      "limitations": "W与CK土地利用及水管理不同；摘要笼统显著性与逐项比较存在歧义",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/agronomy14071441",
+          "source_location": "PDF第5页Table 1",
+          "pdf_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "overall",
+          "intervention": 8.4,
+          "comparator": 8.51,
+          "direction": "lower",
+          "unit": "pH",
+          "independent_study": null
+        }
+      ],
+      "conflicts": [
+        "possible_abstract_table_conflict_scope_unresolved"
+      ],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "Y24Q",
+      "study_id": "P2024Q",
+      "experiment_id": "P2024Q:E1",
+      "outcome": "rice_grain_yield",
+      "intervention": "T3沟水与黄河水交替",
+      "comparator": "CK黄河水",
+      "factor": "water_source",
+      "contrast": "unknown",
+      "observation_period": "2023稻季",
+      "numeric_values": {
+        "intervention": 9016.2,
+        "intervention_error": 157.3,
+        "comparator": 10437.5,
+        "comparator_error": 187.5,
+        "error_type": "unknown",
+        "unit": "kg/ha"
+      },
+      "reported_unit": "kg/ha",
+      "significance_original": "Table 3不同字母；讨论称未显著影响产量但比较基准未说明",
+      "significance": "source_conflict_unresolved",
+      "limitations": "交替水源而非干湿交替；误差类型未核；文字与表格若均以CK为比较存在歧义",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/w16182598",
+          "source_location": "PDF第8页Table 3与Discussion",
+          "pdf_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "overall",
+          "intervention": 9016.2,
+          "comparator": 10437.5,
+          "direction": "lower",
+          "unit": "kg/ha",
+          "independent_study": null
+        }
+      ],
+      "conflicts": [
+        "possible_text_table_conflict_scope_unresolved"
+      ],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    },
+    {
+      "comparison_id": "Y26F",
+      "study_id": "P2026F",
+      "experiment_id": "P2026F:E1",
+      "outcome": "rice_grain_yield",
+      "intervention": "S2秸秆翻埋+N3包膜尿素基肥",
+      "comparator": "S2秸秆翻埋+N1常规尿素基肥",
+      "factor": "fertilizer",
+      "contrast": "unknown",
+      "observation_period": "单稻季",
+      "numeric_values": {
+        "intervention": 20.5,
+        "intervention_error": 2.1,
+        "comparator": 14.0,
+        "comparator_error": 1.6,
+        "error_type": "SE",
+        "unit": "g/hill"
+      },
+      "reported_unit": "g/hill（均值±SE）",
+      "significance_original": "Table 2字母无交集，作者表注p<0.05",
+      "significance": "significant_reported",
+      "limitations": "肥料差异，不属于水制度对照；盐水灌溉相同",
+      "raw_evidence": [
+        {
+          "source_url": "https://doi.org/10.3390/agriculture16161786",
+          "source_location": "PDF第7页Table 2",
+          "pdf_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+          "exact_quote": null,
+          "quote_state": "not_transcribed_in_prior_source_check",
+          "source_state": "source_checked"
+        }
+      ],
+      "record_state": "source_checked_by_prior_assistant_not_human_gold",
+      "comparison_context": {},
+      "direction_records": [
+        {
+          "stratum": "overall",
+          "intervention": 20.5,
+          "comparator": 14.0,
+          "direction": "higher",
+          "unit": "g/hill",
+          "independent_study": null,
+          "within_comparison_percent_change": 46.43
+        }
+      ],
+      "conflicts": [],
+      "candidate_links": [],
+      "value_origin": "prior_source_checked_single_paper_observation"
+    }
+  ],
+  "historical_records": "完整逐篇候选见本地 normalized_evidence.json；历史全文库不随本次提交复制。"
+}

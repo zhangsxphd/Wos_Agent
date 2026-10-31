@@ -1,0 +1,219 @@
+{
+  "scope": "Consistency with pre-existing checked reference; not independent scientific validation.",
+  "per_comparison": [
+    {
+      "id": "Y23",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower",
+        "lower"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_regime",
+      "significance": "significant_reported",
+      "conflicts": []
+    },
+    {
+      "id": "Y26",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower"
+      ],
+      "value_origin": "historic_numeric_candidate",
+      "factor": "water_regime",
+      "significance": "significant_reported",
+      "conflicts": []
+    },
+    {
+      "id": "Y22",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_regime",
+      "significance": "significant_reported",
+      "conflicts": [
+        "possible_abstract_table_conflict_scope_unresolved"
+      ]
+    },
+    {
+      "id": "N18",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "higher",
+        "higher"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_regime",
+      "significance": "not_significant_reported",
+      "conflicts": [
+        "unit_conflict_unresolved"
+      ]
+    },
+    {
+      "id": "N22",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_regime",
+      "significance": "significant_reported",
+      "conflicts": []
+    },
+    {
+      "id": "C18",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower",
+        "lower"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_regime",
+      "significance": "significant_reported",
+      "conflicts": []
+    },
+    {
+      "id": "SOC26",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_regime",
+      "significance": "significant_reported",
+      "conflicts": []
+    },
+    {
+      "id": "PH24",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_and_land_use_confounded",
+      "significance": "not_significant_reported",
+      "conflicts": [
+        "possible_abstract_table_conflict_scope_unresolved"
+      ]
+    },
+    {
+      "id": "Y24Q",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "lower"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "water_source",
+      "significance": "source_conflict_unresolved",
+      "conflicts": [
+        "possible_text_table_conflict_scope_unresolved"
+      ]
+    },
+    {
+      "id": "Y26F",
+      "passed": true,
+      "checks": {
+        "source_values_match": true,
+        "factor": true,
+        "significance_scope": true,
+        "directions": true,
+        "source_location": true
+      },
+      "direction": [
+        "higher"
+      ],
+      "value_origin": "prior_source_checked_single_paper_observation",
+      "factor": "fertilizer",
+      "significance": "significant_reported",
+      "conflicts": []
+    }
+  ],
+  "cross_study": [
+    {
+      "title": "同一结局：各研究内部的水分处理与籽粒产量",
+      "ids": [
+        "Y22",
+        "Y23",
+        "Y26"
+      ],
+      "matching_qualitative_finding": false,
+      "matching_pair_refused": false,
+      "possible_opposite": false
+    },
+    {
+      "title": "N₂O：并非可比条件下已证实的相反结果",
+      "ids": [
+        "N18",
+        "N22"
+      ],
+      "matching_qualitative_finding": false,
+      "matching_pair_refused": true,
+      "possible_opposite": false
+    }
+  ],
+  "passed_per_comparison": 10,
+  "total": 10
+}

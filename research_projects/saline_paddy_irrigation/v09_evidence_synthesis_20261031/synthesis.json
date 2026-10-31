@@ -1,0 +1,519 @@
+{
+  "findings": [
+    {
+      "kind": "qualitative_same_direction",
+      "outcome": "rice_grain_yield",
+      "direction": "lower",
+      "supports": [
+        "Y23",
+        "Y26"
+      ],
+      "sources": [
+        "https://doi.org/10.4067/S0718-58392023000500510",
+        "https://doi.org/10.3390/su18052185"
+      ],
+      "counterevidence_or_unresolved": [
+        {
+          "comparison_id": "Y22",
+          "significance": "Table 10分别标b和a，LSD p<0.05",
+          "conflicts": [
+            "possible_abstract_table_conflict_scope_unresolved"
+          ],
+          "limitations": "同季或跨季独立性与误差类型需进一步核查；摘要与正文有其他数值不一致",
+          "source": "https://doi.org/10.1186/s12284-022-00564-6"
+        }
+      ],
+      "within_study_other_conditions": [
+        {
+          "comparison_id": "Y23",
+          "text": "轻盐地点未检出显著差异"
+        }
+      ],
+      "conditions": [
+        {
+          "comparison_id": "Y23",
+          "contrast": "intermittent_vs_flooded",
+          "study_type": "field_experiment",
+          "significance": "作者报告在中盐地点显著降低；轻盐地点未检出显著差异",
+          "error_information": {},
+          "statistical_power": "not_established",
+          "environment": "两地点表层ECe 3.13、7.09 dS/m；地点与盐度混杂",
+          "independent_units": "每地点3个区组；同地点跨年不是独立地点"
+        },
+        {
+          "comparison_id": "Y26",
+          "contrast": "shallow_wet_vs_flooded",
+          "study_type": "pot_experiment",
+          "significance": "Table 3分别标c和a，作者表注p<0.05",
+          "error_information": {
+            "intervention_error": 1.73,
+            "comparator_error": 1.59,
+            "error_type": "SD"
+          },
+          "statistical_power": "not_established",
+          "environment": "初始盐度3.10‰、pH 9.31、砂壤土；统一模拟养殖尾水",
+          "independent_units": "每组合3个独立盆"
+        }
+      ],
+      "uncertainty": "仅各论文内部观测方向相同；处理、条件、单位与独立性可能不同，不能合并效应或推断因果交互；未完成反例检索，统计功效未知。",
+      "numeric_pooling": "refused"
+    }
+  ],
+  "pairwise_comparability": [
+    {
+      "comparison_ids": [
+        "Y23",
+        "Y26"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "multiple_strata_need_explicit_alignment"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y23",
+        "Y22"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "water_regime_definition_differs_or_unknown",
+        "source_conflict_unresolved",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "multiple_strata_need_explicit_alignment"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y23",
+        "Y24Q"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "multiple_strata_need_explicit_alignment"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y23",
+        "Y26F"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "multiple_strata_need_explicit_alignment"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y26",
+        "Y22"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y26",
+        "Y24Q"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y26",
+        "Y26F"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y22",
+        "Y24Q"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y22",
+        "Y26F"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "N18",
+        "N22"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "study_design_differs_or_unknown",
+        "one_result_is_across_treatments_summary",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "paired_numeric_observations_missing",
+        "multiple_strata_need_explicit_alignment"
+      ]
+    },
+    {
+      "comparison_ids": [
+        "Y24Q",
+        "Y26F"
+      ],
+      "numeric_comparison": "refused",
+      "numeric_pooling": "refused",
+      "reasons": [
+        "intervention_factor_differs",
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "outcome": "seasonal_ch4",
+      "kind": "only_one_study_in_available_evidence",
+      "support": [
+        "C18"
+      ],
+      "uncertainty": "仅指本次可用记录，不代表整个文献不存在其他研究。"
+    },
+    {
+      "outcome": "soil_organic_carbon",
+      "kind": "only_one_study_in_available_evidence",
+      "support": [
+        "SOC26"
+      ],
+      "uncertainty": "仅指本次可用记录，不代表整个文献不存在其他研究。"
+    },
+    {
+      "outcome": "soil_ph",
+      "kind": "only_one_study_in_available_evidence",
+      "support": [
+        "PH24"
+      ],
+      "uncertainty": "仅指本次可用记录，不代表整个文献不存在其他研究。"
+    }
+  ],
+  "disagreements": [
+    {
+      "comparison_ids": [
+        "Y23",
+        "Y26"
+      ],
+      "outcome": "rice_grain_yield",
+      "kind": "different_conditions_or_insufficient_information_not_established_opposition",
+      "sources": [
+        "https://doi.org/10.4067/S0718-58392023000500510",
+        "https://doi.org/10.3390/su18052185"
+      ],
+      "counterevidence": "同条件反例尚未确认",
+      "reasons": [
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "multiple_strata_need_explicit_alignment"
+      ],
+      "conditions": [
+        "两地点表层ECe 3.13、7.09 dS/m；地点与盐度混杂",
+        "初始盐度3.10‰、pH 9.31、砂壤土；统一模拟养殖尾水"
+      ],
+      "significance": [
+        "作者报告在中盐地点显著降低；轻盐地点未检出显著差异",
+        "Table 3分别标c和a，作者表注p<0.05"
+      ],
+      "uncertainty": "可能影响差异的条件不等于已证实原因；不显著不能判作相反结果。"
+    },
+    {
+      "comparison_ids": [
+        "Y23",
+        "Y22"
+      ],
+      "outcome": "rice_grain_yield",
+      "kind": "different_conditions_or_insufficient_information_not_established_opposition",
+      "sources": [
+        "https://doi.org/10.4067/S0718-58392023000500510",
+        "https://doi.org/10.1186/s12284-022-00564-6"
+      ],
+      "counterevidence": "同条件反例尚未确认",
+      "reasons": [
+        "water_regime_definition_differs_or_unknown",
+        "source_conflict_unresolved",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "multiple_strata_need_explicit_alignment"
+      ],
+      "conditions": [
+        "两地点表层ECe 3.13、7.09 dS/m；地点与盐度混杂",
+        "方法给ECe 6.4 dS/m、pH 7.85；摘要6.87、讨论6.3 dS/m，是否同一值不明"
+      ],
+      "significance": [
+        "作者报告在中盐地点显著降低；轻盐地点未检出显著差异",
+        "Table 10分别标b和a，LSD p<0.05"
+      ],
+      "uncertainty": "可能影响差异的条件不等于已证实原因；不显著不能判作相反结果。"
+    },
+    {
+      "comparison_ids": [
+        "Y26",
+        "Y22"
+      ],
+      "outcome": "rice_grain_yield",
+      "kind": "different_conditions_or_insufficient_information_not_established_opposition",
+      "sources": [
+        "https://doi.org/10.3390/su18052185",
+        "https://doi.org/10.1186/s12284-022-00564-6"
+      ],
+      "counterevidence": "同条件反例尚未确认",
+      "reasons": [
+        "water_regime_definition_differs_or_unknown",
+        "study_design_differs_or_unknown",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked"
+      ],
+      "conditions": [
+        "初始盐度3.10‰、pH 9.31、砂壤土；统一模拟养殖尾水",
+        "方法给ECe 6.4 dS/m、pH 7.85；摘要6.87、讨论6.3 dS/m，是否同一值不明"
+      ],
+      "significance": [
+        "Table 3分别标c和a，作者表注p<0.05",
+        "Table 10分别标b和a，LSD p<0.05"
+      ],
+      "uncertainty": "可能影响差异的条件不等于已证实原因；不显著不能判作相反结果。"
+    },
+    {
+      "comparison_ids": [
+        "N18",
+        "N22"
+      ],
+      "outcome": "seasonal_n2o",
+      "kind": "different_conditions_or_insufficient_information_not_established_opposition",
+      "sources": [
+        "https://doi.org/10.3390/su10020475",
+        "https://doi.org/10.5194/soil-8-645-2022"
+      ],
+      "counterevidence": "同条件反例尚未确认",
+      "reasons": [
+        "study_design_differs_or_unknown",
+        "one_result_is_across_treatments_summary",
+        "source_conflict_unresolved",
+        "measurement_units_differ_or_unknown",
+        "population_differs_or_unknown",
+        "environment_differs_or_unknown",
+        "intervention_level_differs_or_unknown",
+        "comparator_level_differs_or_unknown",
+        "time_window_differs_or_unknown",
+        "measurement_method_differs_or_unknown",
+        "experimental_unit_differs_or_unknown",
+        "independent_replicates_differs_or_unknown",
+        "statistical_method_differs_or_unknown",
+        "comparison_context_not_source_checked",
+        "paired_numeric_observations_missing",
+        "multiple_strata_need_explicit_alignment"
+      ],
+      "conditions": [
+        "表1：新、老田pH 9.72、8.31；EC 1.27、0.31 mS/cm（水土比5:1）",
+        "盐碱条件未报告，不能按盐碱直接证据处理"
+      ],
+      "significance": [
+        "表2总量灌溉主效应NS；不等于证明无差异",
+        "作者报告显著；不应当作某一个处理组合的组间显著性"
+      ],
+      "uncertainty": "可能影响差异的条件不等于已证实原因；不显著不能判作相反结果。"
+    }
+  ],
+  "possible_shared_experiments": [],
+  "possible_contradictions": [],
+  "contradiction_status": "未发现满足同条件、同指标、相反方向及可核查比较的充分证据；不显著不是相反方向。",
+  "mechanisms": "缺少经来源核实的机制链，暂不能确认。",
+  "shared_experiment_status": "论文间是否共享原始实验未能从结构化数据确认；年份或样本不得自动视为独立论文。",
+  "novelty": "unknown_not_assessed"
+}

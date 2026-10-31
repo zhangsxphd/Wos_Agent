@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scientific evidence bridge v1",
+  "type": "object",
+  "required": ["version", "input_files", "papers", "comparisons"],
+  "properties": {
+    "version": {"const": "1.0"},
+    "input_files": {"type": "object"},
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["study_id", "doi", "study_type", "source_state", "experiments"],
+        "properties": {
+          "study_id": {"type": "string", "minLength": 1},
+          "doi": {"type": ["string", "null"]},
+          "pdf_sha256": {"type": ["string", "null"]},
+          "study_type": {"enum": ["field_experiment", "pot_experiment", "observational", "simulation", "review_or_meta", "unknown"]},
+          "source_state": {"type": "string"},
+          "historic_records": {"type": "object"},
+          "experiments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["experiment_id", "status", "treatments"],
+              "properties": {
+                "experiment_id": {"type": "string"},
+                "status": {"type": "string"},
+                "treatments": {"type": "array", "items": {"type": "object", "required": ["role", "description"]}}
+              }
+            }
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["comparison_id", "study_id", "experiment_id", "outcome", "intervention", "comparator", "numeric_values", "significance", "raw_evidence", "record_state", "direction_records", "conflicts"],
+        "properties": {
+          "comparison_id": {"type": "string"},
+          "study_id": {"type": "string"},
+          "experiment_id": {"type": "string"},
+          "outcome": {"type": ["string", "null"]},
+          "intervention": {"type": "string"},
+          "comparator": {"type": "string"},
+          "numeric_values": {"type": "object"},
+          "significance": {"type": "string"},
+          "raw_evidence": {"type": "array", "items": {"type": "object"}},
+          "direction_records": {"type": "array", "items": {"type": "object"}},
+          "conflicts": {"type": "array", "items": {"type": "string"}},
+          "record_state": {"type": "string"}
+        }
+      }
+    }
+  }
+}

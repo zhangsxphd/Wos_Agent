@@ -1,0 +1,171 @@
+{
+  "scope": "调用摘要及原始输入/输出/日志SHA-256；完整原始内容在本机outputs/目录",
+  "calls": [
+    {
+      "call": "001_plan",
+      "stage": "plan",
+      "returncode": 0,
+      "elapsed_seconds": 38.7,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "06009b226f071072f2a3eb05f87022c313c83f6dc916c7cf6744702e44e5cc5d",
+      "schema_sha256": "efeea66783c058f35dceca0bd26c03b237e1156d68f48e10b3ee2bc128287d35",
+      "call_log_sha256": "e512aea1883ff5800903e2f7976e79247d569c1b8c3a7782f3772f2fe63953a7",
+      "response_sha256": "a80ce38e65d2ba52afdef1e8a9d419e9a05b36528d67e17fcecfff2d3591d65b"
+    },
+    {
+      "call": "002_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 54.22,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "f848ac678db24302ba0da834d4b569c99a15c42b1307c9dcb1e801ba05431868",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "c38c56ee23e0b1bb716e7ada9d0fbd79df16f6b18cc6438449a37e054fc608a5",
+      "response_sha256": "b5c60705616a9ba952e4e91d15a24122a2d1b09b10322452c1e055b90b13c2d5",
+      "decisions": 40
+    },
+    {
+      "call": "003_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 46.11,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "46281bff3a610c8525e7805a2b2900827849cdfb051f963ca962a202910f3a21",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "4d7e0e9182b0a847513166fab89e93430b3e4970edf32fbb87efe5f2bba91295",
+      "response_sha256": "14982e6c709a0bac8793c2b3d0f1f5c50d8c25ad9a365d5d5f9459164dcfa031",
+      "decisions": 40
+    },
+    {
+      "call": "004_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 58.66,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "037559abcbf203131d7c1c8a1df3655708f92be85f19e7f51325c1980e1f9048",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "1609ff00018b30d4111c3eb61446a9a60a86cacb5c6fecd31b6ebd0dfe507952",
+      "response_sha256": "ecbd2ff1b7a151d8c7dc487e1584f35293e22b9d6bf398c5a7da9944a650d77b",
+      "decisions": 40
+    },
+    {
+      "call": "005_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 39.98,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "b6654b00e0a6725681fbe507d88b7cdda7c9a7065fa43708d4426e344c47b568",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "ab15319ec84a71072da40488a93495b71258c922ce2fe626e9d8d26b771f133f",
+      "response_sha256": "bbad1a029a88c16a7fefb0736482e6e14d7d5e17416e70daa8d482b649fdaa3b",
+      "decisions": 40
+    },
+    {
+      "call": "006_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 56.8,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "d3ad067e941e4a7392427ed6297adbb0c590abe401975d5be3a646d442e75016",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "014a43a8abfef827443fc59014a0eeba58bce3a1db3e821683f39f1fc3d3bff5",
+      "response_sha256": "56365dab32a7ff26f7f25100fadb31587a3ae1835237bd378a98fae94a9c2db7",
+      "decisions": 40
+    },
+    {
+      "call": "007_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 61.04,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "74efaa8c5020cb5da413d6aa2679c3e7e254fedd3ac11bb955f09e00e1f9ab16",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "f70f09571735a109c0c79b1b35344e19dfe9584ed004f89d1e9c64439deecec0",
+      "response_sha256": "32ac1ac378eada26e2365c1a00a3f971a56ac9c22a71f664e045a3a87ccab917",
+      "decisions": 40
+    },
+    {
+      "call": "008_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 57.45,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "22e6033cace2549217d20a7950087653287377b4cf6b32e01956236bf484211f",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "141e6bae5e37ef71e5e5110b803faa3588285a9445678071510c7a9f320d05db",
+      "response_sha256": "0c31c9fb7f9878e0e5fe15e62684a1602416d19f56ca6e47b9192c267d812089",
+      "decisions": 40
+    },
+    {
+      "call": "009_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 48.3,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "63533b37e83052f927fe99a3d6a997e64a7f933813c7bcade60691057d402669",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "fffb712cac74454d845b94617b599db4135ed59db3ac2ebf22be808526665195",
+      "response_sha256": "71dd3446f55c737d132876aaef9860b46492a76c14865af70196519e7956befd",
+      "decisions": 40
+    },
+    {
+      "call": "010_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 39.2,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "b95549d87232e826edf22fa325270362d67b0ba851542c8481b67a83737ee8c1",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "1f2652b50fa69993e341fbd2f354eb82ce8c6e4b7c0ccc057c53220ca4e81fd9",
+      "response_sha256": "9cc8a7cf1c47e234acbeb8a68b68908b35734b6293208b587827d3fdd9451957",
+      "decisions": 40
+    },
+    {
+      "call": "011_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 57.56,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "5928fa68a1866961daa0bd1bb8d33529d3c84df07c63746e6ef64217ac531a4a",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "ee2039d159278b548ec27840293acab8cac6b3614603e3134768b5e8ba885d68",
+      "response_sha256": "c1df14bf3dbd55f77f04b3779de501252c7e6f5ff4699de729e53ed9db8d1c8e",
+      "decisions": 40
+    },
+    {
+      "call": "012_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 48.66,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "a92477561691dbda8b2fa6b950cb6500e1097f9526a1e222a4fae4330f4ce0be",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "14e3d91bb651aa0f6c1af545efb962db9d4c01fc8addef8328ac9eabbb6a44a0",
+      "response_sha256": "48f8e077ed7321b38337d09510e0c0dac012e822662dccb9634428ed07f69fe0",
+      "decisions": 40
+    },
+    {
+      "call": "013_screen",
+      "stage": "screen",
+      "returncode": 0,
+      "elapsed_seconds": 52.27,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "4b458b9e871f703e3af63e6d7a7305b17992b2c628b65c1465fcba89a01c3c89",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "2a4e3ac4cb089bad2a0e48cbbecd9fbf40fbd9893e7ed41db718f307cc2e95ca",
+      "response_sha256": "baf3057f7a63cecb60d9cf27db447cfb5484f44909d8e15c2d1f2bfd0d3c5b84",
+      "decisions": 40
+    },
+    {
+      "call": "014_screen",
+      "stage": "screen",
+      "returncode": 1,
+      "elapsed_seconds": 8.56,
+      "model": "gpt-6.1-sol",
+      "input_sha256": "f110e15e03d57c0b25e103fa071fb454f6d08a3a644355f6727bab4741b81bc6",
+      "schema_sha256": "c302c9721a703738edf2513f4ddac24d3c4c59249b2af2a92abc0255ca984d91",
+      "call_log_sha256": "a439367dbfa3c037d73ed043086ac33e22bc038f0b757e68cfd82d40355bdf31",
+      "error": "Codex ChatGPT usage limit"
+    }
+  ]
+}

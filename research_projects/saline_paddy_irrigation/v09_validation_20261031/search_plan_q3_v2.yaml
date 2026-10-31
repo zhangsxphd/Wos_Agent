@@ -1,0 +1,9 @@
+version: 1
+name: non_saline_transfer_q3_v2
+queries:
+  - id: Q3_transfer_mechanisms_v2
+    description: 稻田水管理和碳氮温室气体机制，不要求盐碱关键词；仅供跨体系迁移，不归为直接盐碱证据
+    query: 'TS=(rice OR paddy) AND TS=("alternate wetting and drying" OR "intermittent irrigation" OR "water management" OR drainage) AND TS=(methane OR "nitrous oxide" OR CH4 OR N2O OR "nitrogen mineralization" OR denitrification OR "dissolved organic carbon")'
+    database: WOS
+    sort: PY+D
+    enabled: true

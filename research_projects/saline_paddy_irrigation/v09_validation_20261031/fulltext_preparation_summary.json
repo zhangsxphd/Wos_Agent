@@ -1,0 +1,65 @@
+[
+  {
+    "source_id": "S0143",
+    "uid": "WOS:001859510400001",
+    "doi": "10.3390/agriculture16161786",
+    "title": "Straw Return and Controlled-Release Fertilizers Improve Rice Yield by Alleviating Soil Salinity and Optimizing Nitrogen Uptake in Brackish Water-Irrigated Coastal Saline Soils",
+    "admission": {
+      "admission": "technical_pass",
+      "identity": {
+        "status": "doi_match",
+        "method": "doi_on_first_page"
+      },
+      "raw_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "parsed_sha256": "324a181de4d20e945ae355e6f85e40b36cdb3a4158f97c5ebc9e42a99eb0e89e",
+      "parser": "pypdf-page-v2-fonttools",
+      "human_review_status": "not_assessed"
+    },
+    "prepared_chunks": 19,
+    "scientific_review": "not_assessed",
+    "supplements": "not_checked",
+    "extraction": "not_executed"
+  },
+  {
+    "source_id": "S0164",
+    "uid": "WOS:001713822800001",
+    "doi": "10.3390/su18052185",
+    "title": "Sustainable Reuse of Aquaculture Wastewater in Saline-Alkali Paddy Fields: Interactive Effects of Irrigation and Microalgae on Water Nutrient Removal and Rice Yield",
+    "admission": {
+      "admission": "technical_pass",
+      "identity": {
+        "status": "doi_match",
+        "method": "doi_on_first_page"
+      },
+      "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "parsed_sha256": "cc9c15d7753a97134d526dac05e45747f6a8a289deaf9716a594b9dab74e4686",
+      "parser": "pypdf-page-v2-fonttools",
+      "human_review_status": "not_assessed"
+    },
+    "prepared_chunks": 21,
+    "scientific_review": "not_assessed",
+    "supplements": "not_checked",
+    "extraction": "not_executed"
+  },
+  {
+    "source_id": "S0219",
+    "uid": "WOS:001276727600001",
+    "doi": "10.3390/agronomy14071441",
+    "title": "Response of Soil Fungal Community in Coastal Saline Soil to Short-Term Water Management Combined with Bio-Organic Fertilizer",
+    "admission": {
+      "admission": "technical_pass",
+      "identity": {
+        "status": "doi_match",
+        "method": "doi_on_first_page"
+      },
+      "raw_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "parsed_sha256": "d4819076f4eed2e7b28eb536dcd9c893391e318fa59d759370affe0d8745700e",
+      "parser": "pypdf-page-v2-fonttools",
+      "human_review_status": "not_assessed"
+    },
+    "prepared_chunks": 11,
+    "scientific_review": "not_assessed",
+    "supplements": "not_checked",
+    "extraction": "not_executed"
+  }
+]

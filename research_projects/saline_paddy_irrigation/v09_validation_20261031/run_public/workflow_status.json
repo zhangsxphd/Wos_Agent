@@ -1,0 +1,14 @@
+{
+  "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响",
+  "created_at": "2026-10-31T08:37:20.947125+00:00",
+  "status": "failed",
+  "stage": "screen",
+  "limitations": [
+    "候选结果须科学审核",
+    "专利及产品查新未完成",
+    "不能据摘要证明原创性或可实施性"
+  ],
+  "error": "Model session failed; verify Codex login and availability",
+  "completed_at": "2026-10-31T08:48:28.669245+00:00",
+  "diagnosis": "Codex ChatGPT usage limit; model call 014 failed before producing output"
+}

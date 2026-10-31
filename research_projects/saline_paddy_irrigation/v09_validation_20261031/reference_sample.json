@@ -1,0 +1,370 @@
+{
+  "protocol": "按标题同时命中水管理+碳氮气体+盐分的23条中固定种子抽15，余下随机抽25；结果只适用定向样本而非随机代表总体。模型运行前建立；不是独立人类Gold。",
+  "seed": {
+    "targeted": 16,
+    "remaining": 106
+  },
+  "source_sha256": "8e9739e3d4440643d460cf36061a2da45276ba5bd68462b06f94a889e5691efc",
+  "rows": [
+    {
+      "source_id": "S0372",
+      "uid": "WOS:000374170100005",
+      "doi": "10.1017/s002185961500057x",
+      "title": "Impact of cultivation year, nitrogen fertilization rate and irrigation water quality on soil salinity and soil nitrogen in saline-sodic paddy fields in Northeast China",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0247",
+      "uid": "WOS:001022282500001",
+      "doi": "10.1016/j.scitotenv.2023.163959",
+      "title": "Restoring soil quality and carbon sequestration potential of waterlogged saline land using subsurface drainage technology to achieve land degradation neutrality in India",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0264",
+      "uid": "WOS:000845314100001",
+      "doi": "10.3390/su141610086",
+      "title": "Acidified Carbon with Variable Irrigation Sources Impact on Rice Growth and Yield under Cd Toxic Alkaline Soil Conditions",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0075",
+      "uid": "WOS:000425943100198",
+      "doi": "10.3390/su10020475",
+      "title": "Effects of Irrigation Regime and Nitrogen Fertilizer Management on CH<sub>4</sub>, N<sub>2</sub>O and CO<sub>2</sub> Emissions from Saline-Alkaline Paddy Fields in Northeast China",
+      "reference": "direct_relevant",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0143",
+      "uid": "WOS:001859510400001",
+      "doi": "10.3390/agriculture16161786",
+      "title": "Straw Return and Controlled-Release Fertilizers Improve Rice Yield by Alleviating Soil Salinity and Optimizing Nitrogen Uptake in Brackish Water-Irrigated Coastal Saline Soils",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0354",
+      "uid": "WOS:000432535600002",
+      "doi": "10.1080/00103624.2018.1455852",
+      "title": "Microbial Activity Is Constrained by the Quality of Carbon and Nitrogen under Long-term Saline Water Irrigation",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0077",
+      "uid": "WOS:000429104600018",
+      "doi": "10.1590/1983-21252018v31n118rc",
+      "title": "SALINE WATER IRRIGATION AND NITROGEN FERTILIZATION ON THE CULTIVATION OF COLORED FIBER COTTON",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0426",
+      "uid": "WOS:000257527500007",
+      "doi": "10.1016/j.agwat.2008.02.004",
+      "title": "Outflow reduction and salt and nitrogen dynamics at controlled drainage in the YinNan Irrigation District, China",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0408",
+      "uid": "WOS:000304725100022",
+      "doi": "10.2136/sssaj2011.0274",
+      "title": "Urban Soils of Texas: Relating Irrigation Sodicity to Water-Extractable Carbon and Nutrients",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0096",
+      "uid": "WOS:000323745300003",
+      "doi": "10.1111/jac.12027",
+      "title": "Growth, Development and Yield of <i>Crambe Abyssinica</i> Under Saline Irrigation in the Greenhouse",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0123",
+      "uid": "WOS:000187364300004",
+      "doi": "10.1080/713851167",
+      "title": "Anion-mediated salinity affecting methane production in a flooded alluvial soil",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0438",
+      "uid": "WOS:000251885800011",
+      "doi": "10.1080/00103620701662968",
+      "title": "Influence of long-term sodic-water irrigation, gypsum, and organic amendments on soil properties and nitrogen mineralization kinetics under rice-wheat system",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0257",
+      "uid": "WOS:000895245600003",
+      "doi": "10.1016/j.envres.2022.114733",
+      "title": "Successive addition of rice straw biochar enhances carbon accumulation in soil irrigated with saline or non-saline water",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0397",
+      "uid": "WOS:000315076700010",
+      "doi": "10.1016/s1002-0160(12)60083-6",
+      "title": "Water-Extractable Carbon Pools and Microbial Biomass Carbon in Sodic Water-Irrigated Soils Amended with Gypsum and Organic Manures",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0186",
+      "uid": "WOS:001515736200001",
+      "doi": "10.3390/agronomy15061305",
+      "title": "Optimizing Cotton Irrigation Strategies in Arid Regions Under Water-Salt-Nitrogen Interactions and Projected Climate Impacts",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0024",
+      "uid": "WOS:001292227100001",
+      "doi": "10.1016/j.scitotenv.2024.175224",
+      "title": "Assessing methane emissions and soil carbon stocks in the Camargue coastal wetlands: Management implications for climate change regulation",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0471",
+      "uid": "WOS:000074320200010",
+      "doi": "10.1023/a:1009736729518",
+      "title": "Nitrogen transformations in a flooded soil in the presence and absence of rice plants: 1. Nitrification",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0396",
+      "uid": "WOS:000315679400007",
+      "doi": "10.1080/01490451.2012.688928",
+      "title": "Microbial Communities Involved in Fe Reduction and Mobility During Soil Organic Matter (SOM) Mineralization in Two Contrasted Paddy Soils",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0350",
+      "uid": "WOS:000462359700089",
+      "doi": "10.1088/1755-1315/208/1/012089",
+      "title": "Dynamic variation characterization of soil organic and inorganic carbon of saline-alkali paddy fields and the influence factors",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0302",
+      "uid": "WOS:000622993000001",
+      "doi": "10.3390/plants10020381",
+      "title": "Elevated Nitrogen Priming Induced Oxinitro-Responses and Water Deficit Tolerance in Rice",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0443",
+      "uid": "WOS:000233527700024",
+      "doi": "10.1007/s11104-005-7459-7",
+      "title": "Crop yields, internal nutrient efficiency, and changes in soil properties in rice-wheat rotations under non-flooded mulching cultivation",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0359",
+      "uid": "WOS:000418915200019",
+      "doi": "10.1016/j.rhisph.2017.03.002",
+      "title": "Bacterial diversity of the rhizosphere and nearby surface soil of rice (<i>Oryza sativa</i>) growing in the Camargue (France)",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0213",
+      "uid": "WOS:001331455600001",
+      "doi": "10.1016/j.jhazmat.2024.135684",
+      "title": "Identification of key factors and mechanism determining arsenic mobilization in paddy soil-porewater-rice system",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0271",
+      "uid": "WOS:000765689900004",
+      "doi": "10.1007/s11356-022-19567-3",
+      "title": "Activation of cadmium under simulated solar illumination and its impact on the mobility of Cd in flooded soils",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0227",
+      "uid": "WOS:001205848800001",
+      "doi": "10.1016/j.still.2024.106066",
+      "title": "Determinants of organic soil fertilization methods use over time and in the face of climate vulnerability",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0060",
+      "uid": "WOS:000514929300018",
+      "doi": "10.1016/j.agee.2019.106783",
+      "title": "The role of agroecosystems in chemical pathways of N<sub>2</sub>O production",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0129",
+      "uid": "WOS:000177982400010",
+      "doi": "10.1023/a:1020262932277",
+      "title": "Evaluation of salt tolerance in rice genotypes by multiple agronomic parameters",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0277",
+      "uid": "WOS:000758464000004",
+      "doi": "10.1016/j.envpol.2022.118900",
+      "title": "Foliar-applied cerium oxide nanomaterials improve maize yield under salinity stress: Reactive oxygen species homeostasis and rhizobacteria regulation",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0105",
+      "uid": "WOS:000299735100002",
+      "doi": "10.1080/00103624.2011.591467",
+      "title": "Chemistry of Lowland Rice Soils and Nutrient Availability",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0384",
+      "uid": "WOS:000339484300007",
+      "doi": "10.1002/jpln.201300356",
+      "title": "Flooding effects on soil phenol oxidase activity and phenol release during rice straw decomposition",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0209",
+      "uid": "WOS:001365737500001",
+      "doi": "10.3390/agronomy14112463",
+      "title": "Effects of Different Straw Returning Periods and Nitrogen Fertilizer Combinations on Rice Roots and Yield in Saline-Sodic Soil",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0019",
+      "uid": "WOS:001352451200003",
+      "doi": "10.1007/s41742-024-00676-5",
+      "title": "Study of Hydrogeochemical Properties of Surface Water (Case Study: Comparison of Two Adjacent Catchments, Cheshmeh Kileh and Shiroud, Northern Iran)",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0111",
+      "uid": "WOS:000272054700023",
+      "doi": null,
+      "title": "Effects of mulching on evapotranspiration, yield and water use efficiency of Swiss chard (<i>Beta vulgaris</i> L. var. <i>flavescens</i>) irrigated with diluted seawater",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0070",
+      "uid": "WOS:000436570100087",
+      "doi": "10.3390/su10061775",
+      "title": "Integrating Irrigation and Drainage Management to Sustain Agriculture in Northern Iran",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0310",
+      "uid": "WOS:000596311300017",
+      "doi": null,
+      "title": "Feasibility of mini-sprinkler irrigation system in direct seeded rice (<i>Oryza sativa</i>) in Indo-Gangetic plains of India",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0084",
+      "uid": "WOS:000375157200032",
+      "doi": "10.3390/w8040141",
+      "title": "Managing Water and Soils to Achieve Adaptation and Reduce Methane Emissions and Arsenic Contamination in Asian Rice Production",
+      "reference": "retain_uncertain_or_indirect",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0062",
+      "uid": "WOS:000505060300001",
+      "doi": "10.1111/gcb.14933",
+      "title": "Conversion of coastal wetlands, riparian wetlands, and peatlands increases greenhouse gas emissions: A global meta-analysis",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0017",
+      "uid": "WOS:001428503000001",
+      "doi": "10.1016/j.jhazmat.2025.137608",
+      "title": "Methanogenic response of paddy soils exposed to zinc oxide nanoparticles and sulfurized products",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0104",
+      "uid": "WOS:000289294800011",
+      "doi": "10.1007/s10705-010-9418-9",
+      "title": "Assessing internal crop nitrogen use efficiency in high-yielding irrigated cotton",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    },
+    {
+      "source_id": "S0047",
+      "uid": "WOS:000679888800004",
+      "doi": "10.5194/essd-13-3607-2021",
+      "title": "FLUXNET-CH<sub>4</sub>: a global, multi-ecosystem dataset and analysis of methane seasonality from freshwater wetlands",
+      "reference": "title_indicates_out_of_scope",
+      "basis": "题名，必要时待摘要和全文核对",
+      "reviewer": "本次助手人工式逐条判断；非独立人类审核"
+    }
+  ]
+}

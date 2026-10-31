@@ -1,0 +1,3851 @@
+{
+  "scope": "省略来源引句的衍生筛选结果；不得视为原始模型响应",
+  "rows": [
+    {
+      "source_id": "S0001",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及水稻生态系统生物炭与微生物活动，但无摘要，无法判断盐碱条件、灌溉制度及碳氮和排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及水稻生态系统生物炭与微生物活动，但无摘要，无法判断盐碱条件、灌溉制度及碳氮和排放指标。"
+    },
+    {
+      "source_id": "S0002",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌溉盐度、水稻及土壤化学性质；无摘要，无法确认灌溉制度比较及碳氮转化或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌溉盐度、水稻及土壤化学性质；无摘要，无法确认灌溉制度比较及碳氮转化或排放指标。"
+    },
+    {
+      "source_id": "S0003",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦稻农秸秆处理行为及机械可用性，未体现目标土壤过程或灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦稻农秸秆处理行为及机械可用性，未体现目标土壤过程或灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0004",
+      "final_status": "uncertain",
+      "final_reason": "题名研究海平面上升下滨海湿地铁结合碳形成，未体现稻田灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究海平面上升下滨海湿地铁结合碳形成，未体现稻田灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0005",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦岩溶湿地土地利用变化与甲烷，未体现盐碱稻田灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦岩溶湿地土地利用变化与甲烷，未体现盐碱稻田灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0006",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田碳通量及微生物，但题名处理为湿地转稻田；无摘要，盐碱条件和灌溉比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田碳通量及微生物，但题名处理为湿地转稻田；无摘要，盐碱条件和灌溉比较不明。"
+    },
+    {
+      "source_id": "S0007",
+      "final_status": "uncertain",
+      "final_reason": "虽涉及湿润处理、排放与氮淋失，但题名指向蔬菜生产，暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "虽涉及湿润处理、排放与氮淋失，但题名指向蔬菜生产，暂予排除。"
+    },
+    {
+      "source_id": "S0008",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦增氧灌溉对产量和果实品质的影响，未体现目标土壤过程、排放或盐碱稻田；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦增氧灌溉对产量和果实品质的影响，未体现目标土壤过程、排放或盐碱稻田；暂予排除。"
+    },
+    {
+      "source_id": "S0009",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦盐胁迫下水稻基因型与植株性状，未体现灌溉制度及土壤碳氮或排放；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦盐胁迫下水稻基因型与植株性状，未体现灌溉制度及土壤碳氮或排放；暂予排除。"
+    },
+    {
+      "source_id": "S0010",
+      "final_status": "uncertain",
+      "final_reason": "题名直接涉及半咸水滩涂水稻潮汐灌溉、碳及温室气体排放，符合候选纳入方向；制度比较细节待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_include",
+      "raw_reason": "题名直接涉及半咸水滩涂水稻潮汐灌溉、碳及温室气体排放，符合候选纳入方向；制度比较细节待核实。"
+    },
+    {
+      "source_id": "S0011",
+      "final_status": "uncertain",
+      "final_reason": "题名研究玉米、甜菜和藜麦的盐度与覆盖响应，非稻田；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究玉米、甜菜和藜麦的盐度与覆盖响应，非稻田；暂予排除。"
+    },
+    {
+      "source_id": "S0012",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及水稻灌溉、氧化还原及有机质分解，但无摘要，盐碱条件及排放指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及水稻灌溉、氧化还原及有机质分解，但无摘要，盐碱条件及排放指标不明。"
+    },
+    {
+      "source_id": "S0013",
+      "final_status": "uncertain",
+      "final_reason": "题名明确为盐渍高粱田生物炭处理，非稻田灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名明确为盐渍高粱田生物炭处理，非稻田灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0014",
+      "final_status": "uncertain",
+      "final_reason": "涉及水稻干湿交替与氮代谢，但未明确盐碱土及土壤碳氮过程，且无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水稻干湿交替与氮代谢，但未明确盐碱土及土壤碳氮过程，且无摘要。"
+    },
+    {
+      "source_id": "S0015",
+      "final_status": "uncertain",
+      "final_reason": "题名为全球内陆水体数据库制图，未体现目标试验与过程；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名为全球内陆水体数据库制图，未体现目标试验与过程；暂予排除。"
+    },
+    {
+      "source_id": "S0016",
+      "final_status": "uncertain",
+      "final_reason": "题名研究湖泊及陆海水域连续体碳源，非稻田灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究湖泊及陆海水域连续体碳源，非稻田灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0017",
+      "final_status": "uncertain",
+      "final_reason": "题名研究纳米氧化锌及硫化产物暴露下的稻田产甲烷响应，未体现盐碱条件或灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究纳米氧化锌及硫化产物暴露下的稻田产甲烷响应，未体现盐碱条件或灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0018",
+      "final_status": "uncertain",
+      "final_reason": "题名研究养殖池塘沉积物生物炭与甲烷，非稻田；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究养殖池塘沉积物生物炭与甲烷，非稻田；暂予排除。"
+    },
+    {
+      "source_id": "S0019",
+      "final_status": "uncertain",
+      "final_reason": "题名研究流域地表水水文地球化学，未体现稻田灌溉与目标过程；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究流域地表水水文地球化学，未体现稻田灌溉与目标过程；暂予排除。"
+    },
+    {
+      "source_id": "S0020",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田土壤甲烷氧化，但无摘要，无法判断盐碱条件及灌溉制度作用。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田土壤甲烷氧化，但无摘要，无法判断盐碱条件及灌溉制度作用。"
+    },
+    {
+      "source_id": "S0021",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及盐渍稻田及养殖废水灌溉，但题名聚焦生物炭、产量和微生物多样性，碳氮及排放指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及盐渍稻田及养殖废水灌溉，但题名聚焦生物炭、产量和微生物多样性，碳氮及排放指标不明。"
+    },
+    {
+      "source_id": "S0022",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田温室气体排放综合分析，但无摘要，无法判断是否分析盐碱条件及灌溉制度。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田温室气体排放综合分析，但无摘要，无法判断是否分析盐碱条件及灌溉制度。"
+    },
+    {
+      "source_id": "S0023",
+      "final_status": "uncertain",
+      "final_reason": "题名研究处理盐碱含氟排水的人工湿地，非稻田灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究处理盐碱含氟排水的人工湿地，非稻田灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0024",
+      "final_status": "uncertain",
+      "final_reason": "涉及滨海湿地甲烷与土壤碳储量，但无摘要，无法判断是否包含盐碱稻田及灌溉管理。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及滨海湿地甲烷与土壤碳储量，但无摘要，无法判断是否包含盐碱稻田及灌溉管理。"
+    },
+    {
+      "source_id": "S0025",
+      "final_status": "uncertain",
+      "final_reason": "题名为农业生态系统膜下滴灌一般综述，未体现盐碱稻田及目标碳氮或排放指标；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名为农业生态系统膜下滴灌一般综述，未体现盐碱稻田及目标碳氮或排放指标；暂予排除。"
+    },
+    {
+      "source_id": "S0026",
+      "final_status": "uncertain",
+      "final_reason": "题名研究香蒲和满江红湿地农业的表土移除及复湿，非水稻系统；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究香蒲和满江红湿地农业的表土移除及复湿，非水稻系统；暂予排除。"
+    },
+    {
+      "source_id": "S0027",
+      "final_status": "candidate_exclude",
+      "final_reason": "摘要明确比较灌溉盐度与细菌施用，报告养分及产量，未比较灌溉水分制度或报告温室气体排放；暂予排除。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "摘要明确比较灌溉盐度与细菌施用，报告养分及产量，未比较灌溉水分制度或报告温室气体排放；暂予排除。"
+    },
+    {
+      "source_id": "S0028",
+      "final_status": "uncertain",
+      "final_reason": "涉及淹水稻田有机质矿化与微生物，但无摘要，盐碱条件及灌溉制度比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及淹水稻田有机质矿化与微生物，但无摘要，盐碱条件及灌溉制度比较不明。"
+    },
+    {
+      "source_id": "S0029",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌溉水质和盐分管理，但无摘要，无法判断作物是否为水稻及是否测定碳氮转化或排放。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌溉水质和盐分管理，但无摘要，无法判断作物是否为水稻及是否测定碳氮转化或排放。"
+    },
+    {
+      "source_id": "S0030",
+      "final_status": "uncertain",
+      "final_reason": "题名虽比较水稻灌溉方式，但结局为产量和精米品质，未体现盐碱土及目标土壤过程或排放；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名虽比较水稻灌溉方式，但结局为产量和精米品质，未体现盐碱土及目标土壤过程或排放；暂予排除。"
+    },
+    {
+      "source_id": "S0031",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦变化盐度下水稻基因型表现，未体现灌溉制度及土壤碳氮或排放；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦变化盐度下水稻基因型表现，未体现灌溉制度及土壤碳氮或排放；暂予排除。"
+    },
+    {
+      "source_id": "S0032",
+      "final_status": "uncertain",
+      "final_reason": "题名为甜菜育苗移栽与水分利用研究，非稻田；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名为甜菜育苗移栽与水分利用研究，非稻田；暂予排除。"
+    },
+    {
+      "source_id": "S0033",
+      "final_status": "uncertain",
+      "final_reason": "题名为非生物胁迫下生物炭与植物互作综述，未体现盐碱稻田灌溉制度及目标过程；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名为非生物胁迫下生物炭与植物互作综述，未体现盐碱稻田灌溉制度及目标过程；暂予排除。"
+    },
+    {
+      "source_id": "S0034",
+      "final_status": "candidate_exclude",
+      "final_reason": "摘要明确为棉花膜下滴灌与生物炭试验，非稻田；暂予排除。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "摘要明确为棉花膜下滴灌与生物炭试验，非稻田；暂予排除。"
+    },
+    {
+      "source_id": "S0035",
+      "final_status": "uncertain",
+      "final_reason": "涉及干湿交替稻田气态氮损失和增温潜势，但无摘要，盐碱条件及灌溉制度比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及干湿交替稻田气态氮损失和增温潜势，但无摘要，盐碱条件及灌溉制度比较不明。"
+    },
+    {
+      "source_id": "S0036",
+      "final_status": "uncertain",
+      "final_reason": "涉及淹水条件下土壤氮氧化物和二氧化碳排放，但无摘要，是否为盐碱稻田及是否比较水分制度不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及淹水条件下土壤氮氧化物和二氧化碳排放，但无摘要，是否为盐碱稻田及是否比较水分制度不明。"
+    },
+    {
+      "source_id": "S0037",
+      "final_status": "uncertain",
+      "final_reason": "题名研究升高二氧化碳下稻田土壤改良剂效应，未体现盐碱条件及灌溉制度；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究升高二氧化碳下稻田土壤改良剂效应，未体现盐碱条件及灌溉制度；暂予排除。"
+    },
+    {
+      "source_id": "S0038",
+      "final_status": "uncertain",
+      "final_reason": "水稻水分管理综述可能涉及相关制度，但无摘要，盐碱条件及碳氮和排放内容无法确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "水稻水分管理综述可能涉及相关制度，但无摘要，盐碱条件及碳氮和排放内容无法确认。"
+    },
+    {
+      "source_id": "S0039",
+      "final_status": "uncertain",
+      "final_reason": "题名研究小麦耐旱耐盐品种，非稻田；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究小麦耐旱耐盐品种，非稻田；暂予排除。"
+    },
+    {
+      "source_id": "S0040",
+      "final_status": "uncertain",
+      "final_reason": "题名研究西葫芦水培盐胁迫与植株气体交换，非稻田土壤温室气体排放；暂予排除。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名研究西葫芦水培盐胁迫与植株气体交换，非稻田土壤温室气体排放；暂予排除。"
+    },
+    {
+      "source_id": "S0041",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及淹水稻田有机碳及微生物，但处理为改良剂；缺摘要，无法确认盐碱背景和灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及淹水稻田有机碳及微生物，但处理为改良剂；缺摘要，无法确认盐碱背景和灌溉制度比较。"
+    },
+    {
+      "source_id": "S0042",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦覆盖措施与农业温室气体，未显示盐碱稻田灌溉制度；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦覆盖措施与农业温室气体，未显示盐碱稻田灌溉制度；缺摘要。"
+    },
+    {
+      "source_id": "S0043",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究盐水灌溉甜菜生长与产量，作物及结局不符。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究盐水灌溉甜菜生长与产量，作物及结局不符。"
+    },
+    {
+      "source_id": "S0044",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦淹水和秸秆还田对磷组分及细菌的影响，未显示目标碳氮转化或排放结局；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦淹水和秸秆还田对磷组分及细菌的影响，未显示目标碳氮转化或排放结局；缺摘要。"
+    },
+    {
+      "source_id": "S0045",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究香蕉盐胁迫下叶片气体交换，非稻田温室气体排放。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究香蕉盐胁迫下叶片气体交换，非稻田温室气体排放。"
+    },
+    {
+      "source_id": "S0046",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名为红树林农业生态系统气候适应综述，未显示目标灌溉比较及碳氮结局；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名为红树林农业生态系统气候适应综述，未显示目标灌溉比较及碳氮结局；缺摘要。"
+    },
+    {
+      "source_id": "S0047",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究淡水湿地跨生态系统甲烷季节性数据，未显示盐碱稻田灌溉制度比较；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究淡水湿地跨生态系统甲烷季节性数据，未显示盐碱稻田灌溉制度比较；缺摘要。"
+    },
+    {
+      "source_id": "S0048",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及农田管理与温室气体，但范围宽泛；缺摘要，无法判断是否包含盐碱稻田灌溉比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及农田管理与温室气体，但范围宽泛；缺摘要，无法判断是否包含盐碱稻田灌溉比较。"
+    },
+    {
+      "source_id": "S0049",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名明确研究增温及升高二氧化碳对稻田硝化的影响，未显示灌溉制度比较；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名明确研究增温及升高二氧化碳对稻田硝化的影响，未显示灌溉制度比较；缺摘要。"
+    },
+    {
+      "source_id": "S0050",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦菌剂及再生水与淡水组合灌溉下水稻生理响应，未显示目标土壤过程或排放结局；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦菌剂及再生水与淡水组合灌溉下水稻生理响应，未显示目标土壤过程或排放结局；缺摘要。"
+    },
+    {
+      "source_id": "S0051",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究番茄施用生物炭及农家肥，非盐碱稻田灌溉比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究番茄施用生物炭及农家肥，非盐碱稻田灌溉比较。"
+    },
+    {
+      "source_id": "S0052",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究盐碱湿地芦苇和扁秆藨草的淹水适应，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究盐碱湿地芦苇和扁秆藨草的淹水适应，非稻田。"
+    },
+    {
+      "source_id": "S0053",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究水培生菜盐胁迫与硅提取物，非稻田土壤。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究水培生菜盐胁迫与硅提取物，非稻田土壤。"
+    },
+    {
+      "source_id": "S0054",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名研究亚马孙湿地反硝化及排放，未显示盐碱稻田灌溉制度；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名研究亚马孙湿地反硝化及排放，未显示盐碱稻田灌溉制度；缺摘要。"
+    },
+    {
+      "source_id": "S0055",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究黄瓜微滴灌，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究黄瓜微滴灌，非稻田。"
+    },
+    {
+      "source_id": "S0056",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及砂质稻田有机碳；缺摘要，无法确认盐碱背景及灌溉制度相关内容。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及砂质稻田有机碳；缺摘要，无法确认盐碱背景及灌溉制度相关内容。"
+    },
+    {
+      "source_id": "S0057",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及滨海盐土氨挥发，但处理为改良剂与盐度；缺摘要，稻田背景及灌溉比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及滨海盐土氨挥发，但处理为改良剂与盐度；缺摘要，稻田背景及灌溉比较不明。"
+    },
+    {
+      "source_id": "S0058",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究菌根接种对水稻耐盐性的影响，未显示灌溉制度及目标土壤过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究菌根接种对水稻耐盐性的影响，未显示灌溉制度及目标土壤过程；缺摘要。"
+    },
+    {
+      "source_id": "S0059",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究木瓜植物激素缓解盐胁迫，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究木瓜植物激素缓解盐胁迫，非稻田。"
+    },
+    {
+      "source_id": "S0060",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及农业生态系统氧化亚氮产生机制；缺摘要，无法判断是否涵盖盐碱稻田灌溉影响。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及农业生态系统氧化亚氮产生机制；缺摘要，无法判断是否涵盖盐碱稻田灌溉影响。"
+    },
+    {
+      "source_id": "S0061",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名处理为木醋液及生物炭，结局为稻田氨挥发，未显示盐碱背景及灌溉比较；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名处理为木醋液及生物炭，结局为稻田氨挥发，未显示盐碱背景及灌溉比较；缺摘要。"
+    },
+    {
+      "source_id": "S0062",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦湿地土地利用转换与排放，未显示盐碱稻田不同灌溉制度；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦湿地土地利用转换与排放，未显示盐碱稻田不同灌溉制度；缺摘要。"
+    },
+    {
+      "source_id": "S0063",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究温室栽培黏土水分蒸发，未显示稻田及目标碳氮或排放结局；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究温室栽培黏土水分蒸发，未显示稻田及目标碳氮或排放结局；缺摘要。"
+    },
+    {
+      "source_id": "S0064",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究黄瓜水盐胁迫下硅纳米颗粒的作用，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究黄瓜水盐胁迫下硅纳米颗粒的作用，非稻田。"
+    },
+    {
+      "source_id": "S0065",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及东北稻田甲烷排放；缺摘要，不能确认盐碱条件及灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及东北稻田甲烷排放；缺摘要，不能确认盐碱条件及灌溉制度比较。"
+    },
+    {
+      "source_id": "S0066",
+      "final_status": "uncertain",
+      "final_reason": "题名比较滨海与内陆稻田甲烷排放；缺摘要，不能将滨海直接视为盐碱，也无法确认灌溉比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名比较滨海与内陆稻田甲烷排放；缺摘要，不能将滨海直接视为盐碱，也无法确认灌溉比较。"
+    },
+    {
+      "source_id": "S0067",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究芝麻盐胁迫及氮肥形态，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究芝麻盐胁迫及氮肥形态，非稻田。"
+    },
+    {
+      "source_id": "S0068",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及灌溉稻田氧化亚氮排放；缺摘要，盐碱背景及不同灌溉制度不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及灌溉稻田氧化亚氮排放；缺摘要，盐碱背景及不同灌溉制度不明。"
+    },
+    {
+      "source_id": "S0069",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究棉花生产及农户生计，非稻田目标过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究棉花生产及农户生计，非稻田目标过程。"
+    },
+    {
+      "source_id": "S0070",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及灌排管理；缺摘要，作物、盐碱条件及碳氮与排放结局均不明确。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及灌排管理；缺摘要，作物、盐碱条件及碳氮与排放结局均不明确。"
+    },
+    {
+      "source_id": "S0071",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究小麦耐盐性及硅作用，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究小麦耐盐性及硅作用，非稻田。"
+    },
+    {
+      "source_id": "S0072",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及滨海盐碱稻田温室气体，但题名处理为氮肥与改良剂；缺摘要，灌溉制度比较待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及滨海盐碱稻田温室气体，但题名处理为氮肥与改良剂；缺摘要，灌溉制度比较待确认。"
+    },
+    {
+      "source_id": "S0073",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及盐碱农业碳足迹及驱动因素；缺摘要，是否含稻田灌溉比较与土壤直接排放不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及盐碱农业碳足迹及驱动因素；缺摘要，是否含稻田灌溉比较与土壤直接排放不明。"
+    },
+    {
+      "source_id": "S0074",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究水产养殖池排水与温室气体通量，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究水产养殖池排水与温室气体通量，非稻田。"
+    },
+    {
+      "source_id": "S0075",
+      "final_status": "uncertain",
+      "final_reason": "题名明确研究盐碱稻田灌溉制度与氮肥管理对三种温室气体排放的影响，直接匹配主题。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_include",
+      "raw_reason": "题名明确研究盐碱稻田灌溉制度与氮肥管理对三种温室气体排放的影响，直接匹配主题。"
+    },
+    {
+      "source_id": "S0076",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究红叶生菜施肥及循环营养液，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究红叶生菜施肥及循环营养液，非稻田。"
+    },
+    {
+      "source_id": "S0077",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究盐水灌溉与氮肥对棉花栽培的影响，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究盐水灌溉与氮肥对棉花栽培的影响，非稻田。"
+    },
+    {
+      "source_id": "S0078",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及水稻甲烷与基线水管理；缺摘要，盐碱条件及不同灌溉制度比较不明确。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及水稻甲烷与基线水管理；缺摘要，盐碱条件及不同灌溉制度比较不明确。"
+    },
+    {
+      "source_id": "S0079",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及稻田硝化与氮利用效率；缺摘要，盐碱背景及灌溉制度影响待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及稻田硝化与氮利用效率；缺摘要，盐碱背景及灌溉制度影响待确认。"
+    },
+    {
+      "source_id": "S0080",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究芝麻盐胁迫及硝态氮与铵态氮配比，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究芝麻盐胁迫及硝态氮与铵态氮配比，非稻田。"
+    },
+    {
+      "source_id": "S0081",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田灌溉及土壤化学性质，但缺少摘要，无法确认盐碱背景、灌溉制度及碳氮或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田灌溉及土壤化学性质，但缺少摘要，无法确认盐碱背景、灌溉制度及碳氮或排放指标。"
+    },
+    {
+      "source_id": "S0082",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦生物炭对甲烷排放的影响，未体现盐碱稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦生物炭对甲烷排放的影响，未体现盐碱稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0083",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦增效肥料与氧化亚氮排放，未体现盐碱稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦增效肥料与氧化亚氮排放，未体现盐碱稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0084",
+      "final_status": "uncertain",
+      "final_reason": "涉及水稻水土管理与甲烷减排，但无摘要，盐碱背景及具体灌溉制度待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水稻水土管理与甲烷减排，但无摘要，盐碱背景及具体灌溉制度待确认。"
+    },
+    {
+      "source_id": "S0085",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究生物肥料提高水稻产量及甲烷减排，未体现灌溉制度或盐碱背景；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究生物肥料提高水稻产量及甲烷减排，未体现灌溉制度或盐碱背景；无摘要。"
+    },
+    {
+      "source_id": "S0086",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦土壤四醚脂质分布及水旱管理差异，未体现盐碱稻田灌溉制度与目标指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦土壤四醚脂质分布及水旱管理差异，未体现盐碱稻田灌溉制度与目标指标；无摘要。"
+    },
+    {
+      "source_id": "S0087",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦淹水水稻氮有效性的测定方法，未体现盐碱背景或灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦淹水水稻氮有效性的测定方法，未体现盐碱背景或灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0088",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究排水沟瞬态渗流解析预测，未体现土壤碳氮转化或温室气体排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究排水沟瞬态渗流解析预测，未体现土壤碳氮转化或温室气体排放；无摘要。"
+    },
+    {
+      "source_id": "S0089",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为罗德草生长，非稻田碳氮转化与排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为罗德草生长，非稻田碳氮转化与排放；无摘要。"
+    },
+    {
+      "source_id": "S0090",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦淹水稻土微生物铁还原机制，未体现盐碱背景、灌溉制度比较或目标指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦淹水稻土微生物铁还原机制，未体现盐碱背景、灌溉制度比较或目标指标；无摘要。"
+    },
+    {
+      "source_id": "S0091",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌溉水稻土壤溶液的养分动态，但缺少摘要，无法确认盐碱背景、碳氮指标及灌溉制度。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌溉水稻土壤溶液的养分动态，但缺少摘要，无法确认盐碱背景、碳氮指标及灌溉制度。"
+    },
+    {
+      "source_id": "S0092",
+      "final_status": "uncertain",
+      "final_reason": "涉及滨海湿地二氧化碳及甲烷排放，但无摘要，无法确认是否包含盐碱稻田及灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及滨海湿地二氧化碳及甲烷排放，但无摘要，无法确认是否包含盐碱稻田及灌溉制度比较。"
+    },
+    {
+      "source_id": "S0093",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究转基因花生的抗旱产量，非目标稻田系统；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究转基因花生的抗旱产量，非目标稻田系统；无摘要。"
+    },
+    {
+      "source_id": "S0094",
+      "final_status": "uncertain",
+      "final_reason": "涉及水稻节水灌溉及地下水位，但无摘要，盐碱背景及碳氮转化或排放指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水稻节水灌溉及地下水位，但无摘要，盐碱背景及碳氮转化或排放指标不明。"
+    },
+    {
+      "source_id": "S0095",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦增效氮肥对水稻产量与氮吸收的影响，未体现盐碱背景或灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦增效氮肥对水稻产量与氮吸收的影响，未体现盐碱背景或灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0096",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为海甘蓝属作物的盐水灌溉生长与产量，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为海甘蓝属作物的盐水灌溉生长与产量，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0097",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究水稻与人类的基因剪接，非稻田水土管理及碳氮排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究水稻与人类的基因剪接，非稻田水土管理及碳氮排放；无摘要。"
+    },
+    {
+      "source_id": "S0098",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐生作物的盐水农业应用，未体现稻田碳氮转化及排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐生作物的盐水农业应用，未体现稻田碳氮转化及排放；无摘要。"
+    },
+    {
+      "source_id": "S0099",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及滨海盐渍稻田甲烷通量，但题名处理为有机肥，缺少摘要，灌溉制度比较待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及滨海盐渍稻田甲烷通量，但题名处理为有机肥，缺少摘要，灌溉制度比较待确认。"
+    },
+    {
+      "source_id": "S0100",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究藻类生物燃料及减排潜力，非目标稻田系统；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究藻类生物燃料及减排潜力，非目标稻田系统；无摘要。"
+    },
+    {
+      "source_id": "S0101",
+      "final_status": "uncertain",
+      "final_reason": "涉及节水灌溉及气候适应，但无摘要，无法确认盐碱稻田及碳氮或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及节水灌溉及气候适应，但无摘要，无法确认盐碱稻田及碳氮或排放指标。"
+    },
+    {
+      "source_id": "S0102",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐胁迫下钾肥施用与水稻生长，未体现灌溉制度及目标指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐胁迫下钾肥施用与水稻生长，未体现灌溉制度及目标指标；无摘要。"
+    },
+    {
+      "source_id": "S0103",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为基于空间观测的气候变化研究，未体现目标稻田系统与过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为基于空间观测的气候变化研究，未体现目标稻田系统与过程；无摘要。"
+    },
+    {
+      "source_id": "S0104",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究灌溉棉花的作物氮利用效率，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究灌溉棉花的作物氮利用效率，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0105",
+      "final_status": "uncertain",
+      "final_reason": "涉及低地稻土化学与养分有效性，但题名宽泛且无摘要，盐碱背景、灌溉制度与碳氮过程待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及低地稻土化学与养分有效性，但题名宽泛且无摘要，盐碱背景、灌溉制度与碳氮过程待确认。"
+    },
+    {
+      "source_id": "S0106",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究转基因棉花抗旱耐盐及纤维产量，非稻田碳氮转化与排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究转基因棉花抗旱耐盐及纤维产量，非稻田碳氮转化与排放；无摘要。"
+    },
+    {
+      "source_id": "S0107",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究盐胁迫下腰果嫁接组合的生理变化，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐胁迫下腰果嫁接组合的生理变化，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0108",
+      "final_status": "uncertain",
+      "final_reason": "涉及水层盐度对灌溉水稻及土壤溶液的影响，但无摘要，碳氮指标及灌溉制度比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水层盐度对灌溉水稻及土壤溶液的影响，但无摘要，碳氮指标及灌溉制度比较不明。"
+    },
+    {
+      "source_id": "S0109",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦不同生育阶段水盐度对水稻产量的影响，未体现碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦不同生育阶段水盐度对水稻产量的影响，未体现碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0110",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦水稻品种盐胁迫形态生理响应，未体现灌溉制度或目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦水稻品种盐胁迫形态生理响应，未体现灌溉制度或目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0111",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究稀释海水灌溉下莙荙菜的覆盖效应，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究稀释海水灌溉下莙荙菜的覆盖效应，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0112",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究植物材料与塑料制成的刨花板性能，非稻田土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究植物材料与塑料制成的刨花板性能，非稻田土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0113",
+      "final_status": "uncertain",
+      "final_reason": "涉及水稻亏缺灌溉与水盐度交互作用，但题名指标为产量，无摘要，无法确认碳氮转化或排放测定。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水稻亏缺灌溉与水盐度交互作用，但题名指标为产量，无摘要，无法确认碳氮转化或排放测定。"
+    },
+    {
+      "source_id": "S0114",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及盐渍稻田甲烷排放，但为雨养条件及有机改良处理，无摘要，是否比较灌溉制度待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及盐渍稻田甲烷排放，但为雨养条件及有机改良处理，无摘要，是否比较灌溉制度待确认。"
+    },
+    {
+      "source_id": "S0115",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦亚洲水稻生产对气候变化的区域脆弱性与适应，未体现目标土壤过程及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦亚洲水稻生产对气候变化的区域脆弱性与适应，未体现目标土壤过程及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0116",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦温室内水稻品种对盐胁迫的响应，未体现灌溉制度、土壤碳氮转化或气体排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦温室内水稻品种对盐胁迫的响应，未体现灌溉制度、土壤碳氮转化或气体排放；无摘要。"
+    },
+    {
+      "source_id": "S0117",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究盐水灌溉下莙荙菜覆盖、水分利用及盐积累，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐水灌溉下莙荙菜覆盖、水分利用及盐积累，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0118",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究盐胁迫下菜豆的硅处理及生理养分响应，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐胁迫下菜豆的硅处理及生理养分响应，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0119",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究盐沼草本根呼吸及氧通量，非稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐沼草本根呼吸及氧通量，非稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0120",
+      "final_status": "uncertain",
+      "final_reason": "题名仅表明水稻与水的关系，缺少摘要，无法判断盐碱背景、灌溉制度及碳氮转化或排放内容。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名仅表明水稻与水的关系，缺少摘要，无法判断盐碱背景、灌溉制度及碳氮转化或排放内容。"
+    },
+    {
+      "source_id": "S0121",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐胁迫下水稻幼苗生理与生长，未体现灌溉制度及土壤碳氮或温室气体过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐胁迫下水稻幼苗生理与生长，未体现灌溉制度及土壤碳氮或温室气体过程；无摘要。"
+    },
+    {
+      "source_id": "S0122",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦耐盐水稻基因型的遗传多样性，与目标过程关联不足；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦耐盐水稻基因型的遗传多样性，与目标过程关联不足；无摘要。"
+    },
+    {
+      "source_id": "S0123",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及盐分、淹水土壤及甲烷产生，但未明确稻田与灌溉制度比较；无摘要，需进一步核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及盐分、淹水土壤及甲烷产生，但未明确稻田与灌溉制度比较；无摘要，需进一步核实。"
+    },
+    {
+      "source_id": "S0124",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究酸性旱作矿质土施石灰对氧化亚氮排放的影响，未体现盐碱稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究酸性旱作矿质土施石灰对氧化亚氮排放的影响，未体现盐碱稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0125",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及水稻、水深与盐胁迫，可能关联灌溉制度，但未明确土壤碳氮转化或温室气体指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及水稻、水深与盐胁迫，可能关联灌溉制度，但未明确土壤碳氮转化或温室气体指标；无摘要。"
+    },
+    {
+      "source_id": "S0126",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦水稻基因型耐盐性的生理评价，未体现目标管理与土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦水稻基因型耐盐性的生理评价，未体现目标管理与土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0127",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为澳大利亚农业氧化亚氮排放与减排综述，未明确盐碱稻田及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为澳大利亚农业氧化亚氮排放与减排综述，未明确盐碱稻田及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0128",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及厌氧水稻栽培下反硝化与氧化亚氮排放，但盐碱条件和灌溉制度比较不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及厌氧水稻栽培下反硝化与氧化亚氮排放，但盐碱条件和灌溉制度比较不明；无摘要。"
+    },
+    {
+      "source_id": "S0129",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为水稻基因型耐盐性的农艺评价，未体现灌溉制度及目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为水稻基因型耐盐性的农艺评价，未体现灌溉制度及目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0130",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐胁迫时期对水稻生长和产量的影响，未体现土壤碳氮或温室气体过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐胁迫时期对水稻生长和产量的影响，未体现土壤碳氮或温室气体过程；无摘要。"
+    },
+    {
+      "source_id": "S0131",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究秸秆管理下水稻产量与氮利用效率，未明确盐碱条件及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究秸秆管理下水稻产量与氮利用效率，未明确盐碱条件及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0132",
+      "final_status": "uncertain",
+      "final_reason": "题名直接涉及盐分对稻田产甲烷及微生物的影响，但未明确灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名直接涉及盐分对稻田产甲烷及微生物的影响，但未明确灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0133",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦育秧富集缓解水稻缺锌，与目标碳氮转化和温室气体过程关联不足；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦育秧富集缓解水稻缺锌，与目标碳氮转化和温室气体过程关联不足；无摘要。"
+    },
+    {
+      "source_id": "S0134",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐分对幼苗生长和产量构成的影响，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐分对幼苗生长和产量构成的影响，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0135",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究盐分与播种密度对产量的影响，未体现灌溉制度和目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究盐分与播种密度对产量的影响，未体现灌溉制度和目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0136",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为热带土壤物理管理的宽泛讨论，未明确盐碱稻田及目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为热带土壤物理管理的宽泛讨论，未明确盐碱稻田及目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0137",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及淹水土壤、水稻与反硝化，但盐碱条件及不同灌溉制度不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及淹水土壤、水稻与反硝化，但盐碱条件及不同灌溉制度不明；无摘要。"
+    },
+    {
+      "source_id": "S0138",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦水稻品种耐盐性评价，未体现灌溉制度与土壤碳氮或排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦水稻品种耐盐性评价，未体现灌溉制度与土壤碳氮或排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0139",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究全国尺度涝害与作物生产力，未体现盐碱稻田碳氮转化及温室气体排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究全国尺度涝害与作物生产力，未体现盐碱稻田碳氮转化及温室气体排放；无摘要。"
+    },
+    {
+      "source_id": "S0140",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐旱复合胁迫下产量、茎秆与抗倒伏性，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐旱复合胁迫下产量、茎秆与抗倒伏性，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0141",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦稻田蓝藻盐适应与胞外聚合物特征，未体现灌溉制度和目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦稻田蓝藻盐适应与胞外聚合物特征，未体现灌溉制度和目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0142",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为水稻根系构型与非生物胁迫耐受综述，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为水稻根系构型与非生物胁迫耐受综述，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0143",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：摘要明确比较秸秆还田与氮肥管理，咸水灌溉为共同背景，未比较灌溉制度或报告土壤碳氮转化及温室气体排放。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：摘要明确比较秸秆还田与氮肥管理，咸水灌溉为共同背景，未比较灌溉制度或报告土壤碳氮转化及温室气体排放。"
+    },
+    {
+      "source_id": "S0144",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及改良碱土的碳氮耦合及生化恢复，但是否为稻田及是否比较灌溉制度不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及改良碱土的碳氮耦合及生化恢复，但是否为稻田及是否比较灌溉制度不明；无摘要。"
+    },
+    {
+      "source_id": "S0145",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦烟稻轮作的养分遗留和细菌生态潜力，未体现盐碱条件及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦烟稻轮作的养分遗留和细菌生态潜力，未体现盐碱条件及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0146",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为干旱灌区水盐管理的水文农业经济分析，未体现稻田碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为干旱灌区水盐管理的水文农业经济分析，未体现稻田碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0147",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦覆膜滴灌水稻对施氮量的利用、产量和品质响应，未明确盐碱条件及目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦覆膜滴灌水稻对施氮量的利用、产量和品质响应，未明确盐碱条件及目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0148",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：摘要为盐渍农田有机改良剂对生产力与土壤性质的元分析，未直接研究盐碱稻田不同灌溉制度下碳氮转化及排放。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：摘要为盐渍农田有机改良剂对生产力与土壤性质的元分析，未直接研究盐碱稻田不同灌溉制度下碳氮转化及排放。"
+    },
+    {
+      "source_id": "S0149",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦渠灌区作物配置与水资源优化，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦渠灌区作物配置与水资源优化，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0150",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究尾矿土淋洗中的砷转化，研究对象与目标不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究尾矿土淋洗中的砷转化，研究对象与目标不符；无摘要。"
+    },
+    {
+      "source_id": "S0151",
+      "final_status": "uncertain",
+      "final_reason": "题名明确盐碱稻田及土壤肥力，但农艺措施是否包含灌溉制度、是否测定碳氮转化不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名明确盐碱稻田及土壤肥力，但农艺措施是否包含灌溉制度、是否测定碳氮转化不明；无摘要。"
+    },
+    {
+      "source_id": "S0152",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及碱性地下水与稻麦系统，但灌溉制度比较及碳氮或排放指标不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及碱性地下水与稻麦系统，但灌溉制度比较及碳氮或排放指标不明；无摘要。"
+    },
+    {
+      "source_id": "S0153",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：虽涉及淹水排水交替，题名核心为镉动态，未体现盐碱稻田碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：虽涉及淹水排水交替，题名核心为镉动态，未体现盐碱稻田碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0154",
+      "final_status": "uncertain",
+      "final_reason": "题名直接涉及盐碱稻田有机碳、有机氮组分和供氮能力，但是否比较灌溉制度不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名直接涉及盐碱稻田有机碳、有机氮组分和供氮能力，但是否比较灌溉制度不明；无摘要。"
+    },
+    {
+      "source_id": "S0155",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究干旱时期对水稻镉吸收的调控，未体现盐碱条件和目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究干旱时期对水稻镉吸收的调控，未体现盐碱条件和目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0156",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究野生十字花科植物的耐淹适应，与盐碱稻田目标不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究野生十字花科植物的耐淹适应，与盐碱稻田目标不符；无摘要。"
+    },
+    {
+      "source_id": "S0157",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦种子引发对水稻早期盐胁迫生理响应的影响，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦种子引发对水稻早期盐胁迫生理响应的影响，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0158",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究微生物接种生物炭与施氮缓解盐胁迫，未体现灌溉制度比较及碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究微生物接种生物炭与施氮缓解盐胁迫，未体现灌溉制度比较及碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0159",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦香稻香气物质生物合成及品质管理，与目标土壤过程不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦香稻香气物质生物合成及品质管理，与目标土壤过程不符；无摘要。"
+    },
+    {
+      "source_id": "S0160",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究林地转换与不同土地利用下土壤有机碳和酶活性，未体现盐碱稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究林地转换与不同土地利用下土壤有机碳和酶活性，未体现盐碱稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0161",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为小麦，非盐碱稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为小麦，非盐碱稻田。"
+    },
+    {
+      "source_id": "S0162",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究叶面纳米材料对水稻生理及产量的影响，未体现灌溉制度与土壤碳氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究叶面纳米材料对水稻生理及产量的影响，未体现灌溉制度与土壤碳氮过程。"
+    },
+    {
+      "source_id": "S0163",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐分、交替灌溉与微生物，但缺摘要，无法确认是否为稻田及是否测定碳氮转化或温室气体。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐分、交替灌溉与微生物，但缺摘要，无法确认是否为稻田及是否测定碳氮转化或温室气体。"
+    },
+    {
+      "source_id": "S0164",
+      "final_status": "candidate_include",
+      "final_reason": "盐碱稻田中比较淹灌与浅湿灌溉，涉及氮迁移及硝态氮淋失，可作为氮过程相关候选；摘要未报告碳转化或温室气体。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_include",
+      "raw_reason": "盐碱稻田中比较淹灌与浅湿灌溉，涉及氮迁移及硝态氮淋失，可作为氮过程相关候选；摘要未报告碳转化或温室气体。"
+    },
+    {
+      "source_id": "S0165",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱性灌溉下稻麦系统与土壤性质，但缺摘要，灌溉制度比较及碳氮指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱性灌溉下稻麦系统与土壤性质，但缺摘要，灌溉制度比较及碳氮指标不明。"
+    },
+    {
+      "source_id": "S0166",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土种稻与腐殖质分布，具有土壤碳相关性；缺摘要，无法确认灌溉处理。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土种稻与腐殖质分布，具有土壤碳相关性；缺摘要，无法确认灌溉处理。"
+    },
+    {
+      "source_id": "S0167",
+      "final_status": "uncertain",
+      "final_reason": "水稻综合管理可能涉及水分与土壤过程，但缺摘要，盐碱背景、灌溉制度及目标指标均不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "水稻综合管理可能涉及水分与土壤过程，但缺摘要，盐碱背景、灌溉制度及目标指标均不明。"
+    },
+    {
+      "source_id": "S0168",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究吸附材料及工业废水处理，与盐碱稻田灌溉主题不符。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究吸附材料及工业废水处理，与盐碱稻田灌溉主题不符。"
+    },
+    {
+      "source_id": "S0169",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：研究盐碱地玉米施氮水平及氮利用，非稻田灌溉制度。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐碱地玉米施氮水平及氮利用，非稻田灌溉制度。"
+    },
+    {
+      "source_id": "S0170",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦稻田酸化，未体现盐碱条件、灌溉制度或目标过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦稻田酸化，未体现盐碱条件、灌溉制度或目标过程；缺摘要。"
+    },
+    {
+      "source_id": "S0171",
+      "final_status": "uncertain",
+      "final_reason": "盐碱土稻麦轮作管理综述可能包含相关内容，但缺摘要，无法确认灌溉与碳氮或排放内容。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "盐碱土稻麦轮作管理综述可能包含相关内容，但缺摘要，无法确认灌溉与碳氮或排放内容。"
+    },
+    {
+      "source_id": "S0172",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及稻田土壤碳与溶解性有机质转化，但缺摘要，盐碱背景及灌溉制度比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及稻田土壤碳与溶解性有机质转化，但缺摘要，盐碱背景及灌溉制度比较不明。"
+    },
+    {
+      "source_id": "S0173",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田碳铁耦合及养分微生物过程，但缺摘要，无法确认盐碱条件和灌溉处理。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田碳铁耦合及养分微生物过程，但缺摘要，无法确认盐碱条件和灌溉处理。"
+    },
+    {
+      "source_id": "S0174",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：比较秸秆类型与还田方式，未比较稻田灌溉制度。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：比较秸秆类型与还田方式，未比较稻田灌溉制度。"
+    },
+    {
+      "source_id": "S0175",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究新石器时代景观利用，与目标农业过程不符。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究新石器时代景观利用，与目标农业过程不符。"
+    },
+    {
+      "source_id": "S0176",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：研究干旱地区生物炭对盐分的影响，非盐碱稻田灌溉下碳氮转化或排放。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究干旱地区生物炭对盐分的影响，非盐碱稻田灌溉下碳氮转化或排放。"
+    },
+    {
+      "source_id": "S0177",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦稻草衍生材料用于灌溉水再利用，未体现盐碱稻田与目标土壤过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦稻草衍生材料用于灌溉水再利用，未体现盐碱稻田与目标土壤过程。"
+    },
+    {
+      "source_id": "S0178",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土固碳，但缺摘要，作物是否包含水稻及是否比较灌溉制度不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土固碳，但缺摘要，作物是否包含水稻及是否比较灌溉制度不明。"
+    },
+    {
+      "source_id": "S0179",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦沿海盐区旱季作物技术集成，未体现稻田灌溉及碳氮或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦沿海盐区旱季作物技术集成，未体现稻田灌溉及碳氮或排放指标。"
+    },
+    {
+      "source_id": "S0180",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究大豆田坡面建设与排水，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究大豆田坡面建设与排水，非稻田。"
+    },
+    {
+      "source_id": "S0181",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐土水稻、微咸水与氮利用，但缺摘要，无法确定是否比较灌溉处理及测定土壤氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐土水稻、微咸水与氮利用，但缺摘要，无法确定是否比较灌溉处理及测定土壤氮过程。"
+    },
+    {
+      "source_id": "S0182",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究沟渠系统氮去除，非稻田土壤灌溉制度。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究沟渠系统氮去除，非稻田土壤灌溉制度。"
+    },
+    {
+      "source_id": "S0183",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究棉花微咸水灌溉与生理响应，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究棉花微咸水灌溉与生理响应，非稻田。"
+    },
+    {
+      "source_id": "S0184",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：聚焦盐胁迫下水稻籽粒淀粉与蛋白积累，未体现土壤过程和灌溉制度。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：聚焦盐胁迫下水稻籽粒淀粉与蛋白积累，未体现土壤过程和灌溉制度。"
+    },
+    {
+      "source_id": "S0185",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究生物炭影响下的磷动态，未体现盐碱稻田灌溉制度及目标碳氮或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究生物炭影响下的磷动态，未体现盐碱稻田灌溉制度及目标碳氮或排放指标。"
+    },
+    {
+      "source_id": "S0186",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究棉花灌溉，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究棉花灌溉，非稻田。"
+    },
+    {
+      "source_id": "S0187",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究DELLA设计与碱热胁迫耐受，未体现稻田灌溉和土壤过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究DELLA设计与碱热胁迫耐受，未体现稻田灌溉和土壤过程。"
+    },
+    {
+      "source_id": "S0188",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：明确为非盐区水稻种植密度与施氮研究。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：明确为非盐区水稻种植密度与施氮研究。"
+    },
+    {
+      "source_id": "S0189",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土微生物与石膏改良，但缺摘要，无法确认稻田、水分处理及碳氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土微生物与石膏改良，但缺摘要，无法确认稻田、水分处理及碳氮过程。"
+    },
+    {
+      "source_id": "S0190",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：聚焦改性生物炭降低水稻镉含量，未体现目标条件与过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：聚焦改性生物炭降低水稻镉含量，未体现目标条件与过程。"
+    },
+    {
+      "source_id": "S0191",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦耐盐品种产量与氮利用机制，未体现灌溉制度或土壤氮转化；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦耐盐品种产量与氮利用机制，未体现灌溉制度或土壤氮转化；缺摘要。"
+    },
+    {
+      "source_id": "S0192",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究水稻基因改造、GABA积累及耐逆性，非灌溉与土壤碳氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究水稻基因改造、GABA积累及耐逆性，非灌溉与土壤碳氮过程。"
+    },
+    {
+      "source_id": "S0193",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究水库浮球控蒸发及盐度，非稻田土壤。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究水库浮球控蒸发及盐度，非稻田土壤。"
+    },
+    {
+      "source_id": "S0194",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：试验作物为芝麻菜，非水稻。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：试验作物为芝麻菜，非水稻。"
+    },
+    {
+      "source_id": "S0195",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究稻草灰混凝土材料与脱碱工艺，非农业土壤过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究稻草灰混凝土材料与脱碱工艺，非农业土壤过程。"
+    },
+    {
+      "source_id": "S0196",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究盐土小麦种植与秸秆覆盖，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐土小麦种植与秸秆覆盖，非稻田。"
+    },
+    {
+      "source_id": "S0197",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究盐碱土向日葵生产，非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究盐碱土向日葵生产，非稻田。"
+    },
+    {
+      "source_id": "S0198",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究小麦产量差距与农艺措施，非盐碱稻田灌溉主题。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究小麦产量差距与农艺措施，非盐碱稻田灌溉主题。"
+    },
+    {
+      "source_id": "S0199",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：比较氮肥类型和种植密度，题名未体现灌溉制度与土壤氮转化；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：比较氮肥类型和种植密度，题名未体现灌溉制度与土壤氮转化；缺摘要。"
+    },
+    {
+      "source_id": "S0200",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：比较土壤改良剂和氮肥，结局为水稻生理与产量，未比较灌溉制度或报告土壤碳氮转化及排放。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：比较土壤改良剂和氮肥，结局为水稻生理与产量，未比较灌溉制度或报告土壤碳氮转化及排放。"
+    },
+    {
+      "source_id": "S0201",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦秸秆还田下施氮量与产量、土壤质量；无摘要，未体现盐碱条件或灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦秸秆还田下施氮量与产量、土壤质量；无摘要，未体现盐碱条件或灌溉制度比较。"
+    },
+    {
+      "source_id": "S0202",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究盐渍土水稻品种和养分管理对产量及收益的影响，未体现灌溉制度与碳氮转化或温室气体排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究盐渍土水稻品种和养分管理对产量及收益的影响，未体现灌溉制度与碳氮转化或温室气体排放；无摘要。"
+    },
+    {
+      "source_id": "S0203",
+      "final_status": "uncertain",
+      "final_reason": "盐碱土水稻种植与微生物碳循环直接相关，但题名仅涉及种植年限序列；无摘要，无法确认是否比较灌溉制度。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "盐碱土水稻种植与微生物碳循环直接相关，但题名仅涉及种植年限序列；无摘要，无法确认是否比较灌溉制度。"
+    },
+    {
+      "source_id": "S0204",
+      "final_status": "uncertain",
+      "final_reason": "涉及沿海农田土壤无机碳源二氧化碳排放；无摘要，无法确认盐碱稻田背景及灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及沿海农田土壤无机碳源二氧化碳排放；无摘要，无法确认盐碱稻田背景及灌溉制度比较。"
+    },
+    {
+      "source_id": "S0205",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名虽涉及盐碱稻田，但处理为秸秆管理和施氮量，未体现灌溉制度及目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名虽涉及盐碱稻田，但处理为秸秆管理和施氮量，未体现灌溉制度及目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0206",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦酸性硫酸盐土理化性质与水稻根际细菌群落，未体现盐碱稻田灌溉制度和目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦酸性硫酸盐土理化性质与水稻根际细菌群落，未体现盐碱稻田灌溉制度和目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0207",
+      "final_status": "uncertain",
+      "final_reason": "涉及长期碱水灌溉、土壤健康和微生物动态；无摘要，无法确认水稻体系及碳氮转化或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及长期碱水灌溉、土壤健康和微生物动态；无摘要，无法确认水稻体系及碳氮转化或排放指标。"
+    },
+    {
+      "source_id": "S0208",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：涉及稻田节水灌溉，但题名聚焦磷有效性及相关微生物，未体现盐碱土背景或目标碳氮、排放指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：涉及稻田节水灌溉，但题名聚焦磷有效性及相关微生物，未体现盐碱土背景或目标碳氮、排放指标；无摘要。"
+    },
+    {
+      "source_id": "S0209",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐碱土秸秆还田时期与氮肥组合对水稻根系和产量的影响，未体现灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐碱土秸秆还田时期与氮肥组合对水稻根系和产量的影响，未体现灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0210",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究水稻硒利用、分布和生物强化，与目标灌溉制度及土壤碳氮、温室气体过程不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究水稻硒利用、分布和生物强化，与目标灌溉制度及土壤碳氮、温室气体过程不符；无摘要。"
+    },
+    {
+      "source_id": "S0211",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名明确研究棉花灌溉水温与施氮量，不属于稻田体系；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名明确研究棉花灌溉水温与施氮量，不属于稻田体系；无摘要。"
+    },
+    {
+      "source_id": "S0212",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：摘要研究微生物生物炭与氮肥残效及水稻盐胁迫缓解，盐水灌溉用于维持盐度，未比较灌溉制度或报告目标碳氮转化、排放。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：摘要研究微生物生物炭与氮肥残效及水稻盐胁迫缓解，盐水灌溉用于维持盐度，未比较灌溉制度或报告目标碳氮转化、排放。"
+    },
+    {
+      "source_id": "S0213",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦稻田体系砷迁移机制，未体现盐碱背景、灌溉制度比较或目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦稻田体系砷迁移机制，未体现盐碱背景、灌溉制度比较或目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0214",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：摘要明确研究生物炭和磷肥组合对盐碱土水稻离子积累、生理、磷利用和产量的影响，未比较灌溉制度或目标过程。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：摘要明确研究生物炭和磷肥组合对盐碱土水稻离子积累、生理、磷利用和产量的影响，未比较灌溉制度或目标过程。"
+    },
+    {
+      "source_id": "S0215",
+      "final_status": "uncertain",
+      "final_reason": "涉及耐盐作物与海水养殖废水灌溉；无摘要，无法确认是否为稻田、是否比较灌溉制度及测定目标过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及耐盐作物与海水养殖废水灌溉；无摘要，无法确认是否为稻田、是否比较灌溉制度及测定目标过程。"
+    },
+    {
+      "source_id": "S0216",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：虽比较盐渍土灌溉量及改良剂，但研究作物明确为玉米，不属于稻田体系。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：虽比较盐渍土灌溉量及改良剂，但研究作物明确为玉米，不属于稻田体系。"
+    },
+    {
+      "source_id": "S0217",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦施粪对低磷稻田微生物及磷有效性的影响，未体现盐碱背景或灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦施粪对低磷稻田微生物及磷有效性的影响，未体现盐碱背景或灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0218",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究对虾育苗系统放养密度，与稻田土壤灌溉及目标过程不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究对虾育苗系统放养密度，与稻田土壤灌溉及目标过程不符；无摘要。"
+    },
+    {
+      "source_id": "S0219",
+      "final_status": "candidate_include",
+      "final_reason": "候选纳入：摘要比较沿海盐土旱地、水田及水肥组合处理，并报告有机碳和脲酶活性，涉及水分管理与碳氮相关指标；水稻种植情况及温室气体指标仍需核实。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_include",
+      "raw_reason": "候选纳入：摘要比较沿海盐土旱地、水田及水肥组合处理，并报告有机碳和脲酶活性，涉及水分管理与碳氮相关指标；水稻种植情况及温室气体指标仍需核实。"
+    },
+    {
+      "source_id": "S0220",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名涉及碱性土非淹水稻—扁豆轮作，但研究重点为磷管理、磷利用和收支，未体现灌溉制度比较及目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名涉及碱性土非淹水稻—扁豆轮作，但研究重点为磷管理、磷利用和收支，未体现灌溉制度比较及目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0221",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究磁化离子水、有机肥与棉花产量，不属于稻田体系；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究磁化离子水、有机肥与棉花产量，不属于稻田体系；无摘要。"
+    },
+    {
+      "source_id": "S0222",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究盐沼水文变化与光合碳分配，不属于稻田体系；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究盐沼水文变化与光合碳分配，不属于稻田体系；无摘要。"
+    },
+    {
+      "source_id": "S0223",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名为小麦内生细菌缓解干旱和盐胁迫的生理机制综述，不属于目标稻田研究；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名为小麦内生细菌缓解干旱和盐胁迫的生理机制综述，不属于目标稻田研究；无摘要。"
+    },
+    {
+      "source_id": "S0224",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究绿豆灌溉与养分管理，不属于稻田体系；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究绿豆灌溉与养分管理，不属于稻田体系；无摘要。"
+    },
+    {
+      "source_id": "S0225",
+      "final_status": "uncertain",
+      "final_reason": "涉及钠质土修复及保护性农业；无摘要，题名未明确作物、灌溉制度和碳氮或排放指标，无法判定。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及钠质土修复及保护性农业；无摘要，题名未明确作物、灌溉制度和碳氮或排放指标，无法判定。"
+    },
+    {
+      "source_id": "S0226",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐渍土氨挥发与溶解性有机质，具碳氮过程关联；无摘要，无法确认稻田背景和灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐渍土氨挥发与溶解性有机质，具碳氮过程关联；无摘要，无法确认稻田背景和灌溉制度比较。"
+    },
+    {
+      "source_id": "S0227",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦有机施肥方法采用的决定因素及气候脆弱性，未体现目标田间灌溉与生物地球化学过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦有机施肥方法采用的决定因素及气候脆弱性，未体现目标田间灌溉与生物地球化学过程；无摘要。"
+    },
+    {
+      "source_id": "S0228",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名虽涉及盐胁迫和灌溉策略，但作物为芫荽，不属于稻田体系；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名虽涉及盐胁迫和灌溉策略，但作物为芫荽，不属于稻田体系；无摘要。"
+    },
+    {
+      "source_id": "S0229",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究改良盐土冻融循环对氮转化的影响，灌区仅为地点背景，未体现灌溉制度比较或稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究改良盐土冻融循环对氮转化的影响，灌区仅为地点背景，未体现灌溉制度比较或稻田；无摘要。"
+    },
+    {
+      "source_id": "S0230",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦沉积物利用对盐胁迫水稻产量与氮利用效率的影响，未体现灌溉制度或土壤目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦沉积物利用对盐胁迫水稻产量与氮利用效率的影响，未体现灌溉制度或土壤目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0231",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究灌区排水沟系统反硝化与厌氧氨氧化脱氮，研究单元为沟渠，未体现盐碱稻田灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究灌区排水沟系统反硝化与厌氧氨氧化脱氮，研究单元为沟渠，未体现盐碱稻田灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0232",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名虽有字符异常，但可辨主题为病害生防、农药相容性和根际微生物，未体现目标灌溉及碳氮、排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名虽有字符异常，但可辨主题为病害生防、农药相容性和根际微生物，未体现目标灌溉及碳氮、排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0233",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究种植密度和氮肥对饲用稻生长的影响，未体现灌溉制度和目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究种植密度和氮肥对饲用稻生长的影响，未体现灌溉制度和目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0234",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦水稻耐盐碱分子机制，未体现田间灌溉制度或土壤碳氮、排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦水稻耐盐碱分子机制，未体现田间灌溉制度或土壤碳氮、排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0235",
+      "final_status": "uncertain",
+      "final_reason": "干湿循环与微生物功能可能涉及灌溉及碳氮过程，但无摘要，题名未明确盐碱稻田或具体功能指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "干湿循环与微生物功能可能涉及灌溉及碳氮过程，但无摘要，题名未明确盐碱稻田或具体功能指标。"
+    },
+    {
+      "source_id": "S0236",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦盐旱胁迫对水稻农艺生理和产量的影响，未体现土壤碳氮转化或温室气体指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦盐旱胁迫对水稻农艺生理和产量的影响，未体现土壤碳氮转化或温室气体指标；无摘要。"
+    },
+    {
+      "source_id": "S0237",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究碱性污染土小麦重金属吸收与根际细菌，不属于目标稻田体系；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究碱性污染土小麦重金属吸收与根际细菌，不属于目标稻田体系；无摘要。"
+    },
+    {
+      "source_id": "S0238",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：摘要研究盐碱稻田不同氮肥的氮磷径流损失，虽区分降雨径流和人工排水，但未比较灌溉制度或报告土壤碳氮转化、温室气体排放。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：摘要研究盐碱稻田不同氮肥的氮磷径流损失，虽区分降雨径流和人工排水，但未比较灌溉制度或报告土壤碳氮转化、温室气体排放。"
+    },
+    {
+      "source_id": "S0239",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究掺入处理后外科口罩的碱激发砖性能，属于建筑材料研究，与主题不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究掺入处理后外科口罩的碱激发砖性能，属于建筑材料研究，与主题不符；无摘要。"
+    },
+    {
+      "source_id": "S0240",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂排除：摘要研究盐碱土水稻修复年限序列及磷介导的微生物碳氮硫功能，未比较不同灌溉制度。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：摘要研究盐碱土水稻修复年限序列及磷介导的微生物碳氮硫功能，未比较不同灌溉制度。"
+    },
+    {
+      "source_id": "S0241",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名涉及跨生态系统溶解性有机质，未体现盐碱稻田或灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名涉及跨生态系统溶解性有机质，未体现盐碱稻田或灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0242",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究重点为秸秆对碱性污染土壤砷镉及微生物的影响，未体现灌溉制度与碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究重点为秸秆对碱性污染土壤砷镉及微生物的影响，未体现灌溉制度与碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0243",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱土非淹水稻作，但重点为磷管理；无摘要，无法确认是否比较灌溉制度并测定碳氮或排放。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱土非淹水稻作，但重点为磷管理；无摘要，无法确认是否比较灌溉制度并测定碳氮或排放。"
+    },
+    {
+      "source_id": "S0244",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐渍海岸稻作及农艺措施，但无摘要，灌溉处理和土壤碳氮或排放指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐渍海岸稻作及农艺措施，但无摘要，灌溉处理和土壤碳氮或排放指标不明。"
+    },
+    {
+      "source_id": "S0245",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名聚焦盐碱稻田产量预测和农艺性状，未体现灌溉制度及目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名聚焦盐碱稻田产量预测和农艺性状，未体现灌溉制度及目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0246",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究有机改良剂与盐碱农田固碳，题名未体现稻田及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究有机改良剂与盐碱农田固碳，题名未体现稻田及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0247",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐渍地排水与固碳，具有水分管理相关性；无摘要，无法确认稻田背景及处理比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐渍地排水与固碳，具有水分管理相关性；无摘要，无法确认稻田背景及处理比较。"
+    },
+    {
+      "source_id": "S0248",
+      "final_status": "uncertain",
+      "final_reason": "盐碱土稻旱轮作研究测定土壤碳氮和微生物量，并涉及节水，但处理为种植制度，是否属于不同灌溉制度尚不明确。",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "盐碱土稻旱轮作研究测定土壤碳氮和微生物量，并涉及节水，但处理为种植制度，是否属于不同灌溉制度尚不明确。"
+    },
+    {
+      "source_id": "S0249",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为咸水覆膜滴灌策略模拟，未体现稻田、碳氮转化或温室气体；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为咸水覆膜滴灌策略模拟，未体现稻田、碳氮转化或温室气体；无摘要。"
+    },
+    {
+      "source_id": "S0250",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐水灌溉土壤氮有效性，但主要处理为有机材料；无摘要，稻田背景及灌溉比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐水灌溉土壤氮有效性，但主要处理为有机材料；无摘要，稻田背景及灌溉比较不明。"
+    },
+    {
+      "source_id": "S0251",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名聚焦盐胁迫下水稻氮吸收和产量品质，未体现灌溉制度及土壤碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名聚焦盐胁迫下水稻氮吸收和产量品质，未体现灌溉制度及土壤碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0252",
+      "final_status": "uncertain",
+      "final_reason": "直接涉及盐碱稻田土壤碳，但题名处理为有机肥和磷肥；无摘要，不能确认是否包含灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "直接涉及盐碱稻田土壤碳，但题名处理为有机肥和磷肥；无摘要，不能确认是否包含灌溉制度比较。"
+    },
+    {
+      "source_id": "S0253",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为生物炭影响滨海土壤盐度、团聚体和物理机械性质，未体现稻田灌溉与目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为生物炭影响滨海土壤盐度、团聚体和物理机械性质，未体现稻田灌溉与目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0254",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田水氮运移模拟，但盐碱背景、灌溉制度比较及氮转化指标不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田水氮运移模拟，但盐碱背景、灌溉制度比较及氮转化指标不明；无摘要。"
+    },
+    {
+      "source_id": "S0255",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：虽涉及干湿交替灌溉，题名聚焦根系生理、产量与水分利用，未体现盐碱背景及土壤碳氮或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：虽涉及干湿交替灌溉，题名聚焦根系生理、产量与水分利用，未体现盐碱背景及土壤碳氮或排放；无摘要。"
+    },
+    {
+      "source_id": "S0256",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂予排除：摘要虽包含盐土水稻全量与亏缺灌溉比较，但报告指标为植株生长、生理、氮含量、产量和水分生产率，未报告土壤碳氮转化或温室气体。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：摘要虽包含盐土水稻全量与亏缺灌溉比较，但报告指标为植株生长、生理、氮含量、产量和水分生产率，未报告土壤碳氮转化或温室气体。"
+    },
+    {
+      "source_id": "S0257",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐水与非盐水灌溉及土壤碳积累，但稻草生物炭不等同于稻田背景；无摘要，需确认作物和灌溉处理。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐水与非盐水灌溉及土壤碳积累，但稻草生物炭不等同于稻田背景；无摘要，需确认作物和灌溉处理。"
+    },
+    {
+      "source_id": "S0258",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究土壤总碳氮作为水稻追氮响应指标，未体现盐碱背景及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究土壤总碳氮作为水稻追氮响应指标，未体现盐碱背景及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0259",
+      "final_status": "candidate_exclude",
+      "final_reason": "暂予排除：摘要明确为秸秆还田与施氮量试验，关注光合性状及产量，未体现灌溉制度比较、土壤碳氮转化或温室气体。",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：摘要明确为秸秆还田与施氮量试验，关注光合性状及产量，未体现灌溉制度比较、土壤碳氮转化或温室气体。"
+    },
+    {
+      "source_id": "S0260",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐胁迫水稻灌溉与施氮，但题名侧重钠毒害和生长；无摘要，土壤氮过程或排放指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐胁迫水稻灌溉与施氮，但题名侧重钠毒害和生长；无摘要，土壤氮过程或排放指标不明。"
+    },
+    {
+      "source_id": "S0261",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究对象为大豆，未体现盐碱稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究对象为大豆，未体现盐碱稻田；无摘要。"
+    },
+    {
+      "source_id": "S0262",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名关注磁化水缓解水稻幼苗盐碱胁迫，未体现土壤碳氮转化或温室气体；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名关注磁化水缓解水稻幼苗盐碱胁迫，未体现土壤碳氮转化或温室气体；无摘要。"
+    },
+    {
+      "source_id": "S0263",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名关注稻田地下水水化学及灌溉适宜性，未体现灌溉制度对土壤碳氮和排放的影响；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名关注稻田地下水水化学及灌溉适宜性，未体现灌溉制度对土壤碳氮和排放的影响；无摘要。"
+    },
+    {
+      "source_id": "S0264",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱土水稻及不同灌溉水源，但题名关注镉胁迫下生长产量；无摘要，土壤碳氮或排放指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱土水稻及不同灌溉水源，但题名关注镉胁迫下生长产量；无摘要，土壤碳氮或排放指标不明。"
+    },
+    {
+      "source_id": "S0265",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为农田有机碳空间制图，未体现盐碱稻田灌溉试验；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为农田有机碳空间制图，未体现盐碱稻田灌溉试验；无摘要。"
+    },
+    {
+      "source_id": "S0266",
+      "final_status": "uncertain",
+      "final_reason": "涉及滴灌水稻土壤微生物、酶和养分动态，但盐碱背景及灌溉制度比较不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及滴灌水稻土壤微生物、酶和养分动态，但盐碱背景及灌溉制度比较不明；无摘要。"
+    },
+    {
+      "source_id": "S0267",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名关注农业利用与气候相关的土壤酸化，未体现目标稻田、灌溉制度及碳氮排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名关注农业利用与气候相关的土壤酸化，未体现目标稻田、灌溉制度及碳氮排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0268",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为初始pH变化下稻田铁还原及细菌响应，未体现灌溉制度与目标碳氮或排放指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为初始pH变化下稻田铁还原及细菌响应，未体现灌溉制度与目标碳氮或排放指标；无摘要。"
+    },
+    {
+      "source_id": "S0269",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名聚焦地下排水控制渍害盐分的经济可行性，未体现土壤碳氮转化或温室气体；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名聚焦地下排水控制渍害盐分的经济可行性，未体现土壤碳氮转化或温室气体；无摘要。"
+    },
+    {
+      "source_id": "S0270",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为生物炭对水稻产量及氮利用效率的荟萃分析，未体现盐碱稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为生物炭对水稻产量及氮利用效率的荟萃分析，未体现盐碱稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0271",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究模拟光照下淹水土壤镉活化及迁移，未体现目标碳氮或排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究模拟光照下淹水土壤镉活化及迁移，未体现目标碳氮或排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0272",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究对象为鼠尾草，非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究对象为鼠尾草，非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0273",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名关注保护性耕作稻麦系统团聚体、球囊霉素和酶活性，未体现盐碱背景及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名关注保护性耕作稻麦系统团聚体、球囊霉素和酶活性，未体现盐碱背景及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0274",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为灌溉旱区盐渍土农业生产管理，未体现稻田及目标碳氮或温室气体指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为灌溉旱区盐渍土农业生产管理，未体现稻田及目标碳氮或温室气体指标；无摘要。"
+    },
+    {
+      "source_id": "S0275",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究满江红属植物盐胁迫生长与细胞离子，未体现稻田灌溉及土壤碳氮排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究满江红属植物盐胁迫生长与细胞离子，未体现稻田灌溉及土壤碳氮排放；无摘要。"
+    },
+    {
+      "source_id": "S0276",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名为农业开发土壤和地下水调查，未体现目标稻田灌溉制度与碳氮排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名为农业开发土壤和地下水调查，未体现目标稻田灌溉制度与碳氮排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0277",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究盐胁迫玉米叶施纳米材料，非稻田灌溉研究；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究盐胁迫玉米叶施纳米材料，非稻田灌溉研究；无摘要。"
+    },
+    {
+      "source_id": "S0278",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌溉水盐度、水深和水稻，但题名仅列生长产量；无摘要，无法确认土壤碳氮或排放指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌溉水盐度、水深和水稻，但题名仅列生长产量；无摘要，无法确认土壤碳氮或排放指标。"
+    },
+    {
+      "source_id": "S0279",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土长期稻作、土壤性质和古菌群落，但灌溉制度比较及碳氮过程不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土长期稻作、土壤性质和古菌群落，但灌溉制度比较及碳氮过程不明；无摘要。"
+    },
+    {
+      "source_id": "S0280",
+      "final_status": "uncertain",
+      "final_reason": "直接涉及稻田水分制度、施氮和微生物群落，但无摘要，盐碱背景及碳氮转化或排放指标待确认。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "直接涉及稻田水分制度、施氮和微生物群落，但无摘要，盐碱背景及碳氮转化或排放指标待确认。"
+    },
+    {
+      "source_id": "S0281",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究盐土高粱—小麦体系的生产效益，与稻田灌溉及碳氮转化主题不符。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究盐土高粱—小麦体系的生产效益，与稻田灌溉及碳氮转化主题不符。"
+    },
+    {
+      "source_id": "S0282",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌溉水电导率和土壤碳积累，但无摘要，无法确认稻田背景及灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌溉水电导率和土壤碳积累，但无摘要，无法确认稻田背景及灌溉制度比较。"
+    },
+    {
+      "source_id": "S0283",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究蓝蟹摄食及移动行为，与目标土壤过程无直接关联。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究蓝蟹摄食及移动行为，与目标土壤过程无直接关联。"
+    },
+    {
+      "source_id": "S0284",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐渍稻田土壤碳，但标题比较种植年限；无摘要，灌溉制度及碳氮过程不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐渍稻田土壤碳，但标题比较种植年限；无摘要，灌溉制度及碳氮过程不明。"
+    },
+    {
+      "source_id": "S0285",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱化农田碳储存与稳定性，但无摘要，无法确认稻田及灌溉制度因素。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱化农田碳储存与稳定性，但无摘要，无法确认稻田及灌溉制度因素。"
+    },
+    {
+      "source_id": "S0286",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究深耕对油菜生长的影响，未体现盐碱稻田灌溉及目标过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究深耕对油菜生长的影响，未体现盐碱稻田灌溉及目标过程。"
+    },
+    {
+      "source_id": "S0287",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究棉花—小麦体系；稻草仅为生物炭原料。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究棉花—小麦体系；稻草仅为生物炭原料。"
+    },
+    {
+      "source_id": "S0288",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱土水稻体系、栽培措施及养分动态；无摘要，需确认是否包含灌溉比较和氮转化。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱土水稻体系、栽培措施及养分动态；无摘要，需确认是否包含灌溉比较和氮转化。"
+    },
+    {
+      "source_id": "S0289",
+      "final_status": "uncertain",
+      "final_reason": "暂排：虽涉及碱土非淹水水稻体系，但标题研究重点为残体还田与磷管理。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：虽涉及碱土非淹水水稻体系，但标题研究重点为残体还田与磷管理。"
+    },
+    {
+      "source_id": "S0290",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱稻田有机质组分与稳定性，但无摘要，无法确认是否比较灌溉制度。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱稻田有机质组分与稳定性，但无摘要，无法确认是否比较灌溉制度。"
+    },
+    {
+      "source_id": "S0291",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究河漫滩土壤有机碳预测，未体现盐碱稻田灌溉比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究河漫滩土壤有机碳预测，未体现盐碱稻田灌溉比较。"
+    },
+    {
+      "source_id": "S0292",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土水稻、淋洗和细菌群落；无摘要，碳氮转化及灌溉制度比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土水稻、淋洗和细菌群落；无摘要，碳氮转化及灌溉制度比较不明。"
+    },
+    {
+      "source_id": "S0293",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究碳材料固定土壤镉，未体现目标体系和过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究碳材料固定土壤镉，未体现目标体系和过程。"
+    },
+    {
+      "source_id": "S0294",
+      "final_status": "uncertain",
+      "final_reason": "暂排：标题研究施肥替代与稻田氨挥发，未体现盐碱背景及灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：标题研究施肥替代与稻田氨挥发，未体现盐碱背景及灌溉制度比较。"
+    },
+    {
+      "source_id": "S0295",
+      "final_status": "uncertain",
+      "final_reason": "暂排：虽涉及稻田干湿循环，但研究终点为磷形态，且未体现盐碱背景。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：虽涉及稻田干湿循环，但研究终点为磷形态，且未体现盐碱背景。"
+    },
+    {
+      "source_id": "S0296",
+      "final_status": "uncertain",
+      "final_reason": "暂排：主题为植物微生物共生与生产力，未体现目标稻田体系及灌溉过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：主题为植物微生物共生与生产力，未体现目标稻田体系及灌溉过程。"
+    },
+    {
+      "source_id": "S0297",
+      "final_status": "uncertain",
+      "final_reason": "暂排：虽涉及灌溉与微生物碳，但对象为小麦。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：虽涉及灌溉与微生物碳，但对象为小麦。"
+    },
+    {
+      "source_id": "S0298",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究碱性砂土马铃薯灌溉及氨挥发，对象非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究碱性砂土马铃薯灌溉及氨挥发，对象非稻田。"
+    },
+    {
+      "source_id": "S0299",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究盐碱条件下人工湿地的农药去除，与目标稻田碳氮过程不符。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究盐碱条件下人工湿地的农药去除，与目标稻田碳氮过程不符。"
+    },
+    {
+      "source_id": "S0300",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究玉米生长与气体交换，并非稻田土壤温室气体排放。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究玉米生长与气体交换，并非稻田土壤温室气体排放。"
+    },
+    {
+      "source_id": "S0301",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究淹水稻田有机施肥与磷转化，未体现盐碱背景和灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究淹水稻田有机施肥与磷转化，未体现盐碱背景和灌溉制度比较。"
+    },
+    {
+      "source_id": "S0302",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究氮预处理诱导的水稻耐旱生理响应，未体现土壤碳氮转化。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究氮预处理诱导的水稻耐旱生理响应，未体现土壤碳氮转化。"
+    },
+    {
+      "source_id": "S0303",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究长期碱性水灌溉下土壤结构与水力性质，标题未体现目标碳氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究长期碱性水灌溉下土壤结构与水力性质，标题未体现目标碳氮过程。"
+    },
+    {
+      "source_id": "S0304",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐渍土水稻和土壤性质，但无摘要，无法确认灌溉比较及碳氮指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐渍土水稻和土壤性质，但无摘要，无法确认灌溉比较及碳氮指标。"
+    },
+    {
+      "source_id": "S0305",
+      "final_status": "uncertain",
+      "final_reason": "暂排：综述重点为溶解性有机质、铁还原及重金属生物有效性，未体现目标灌溉比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：综述重点为溶解性有机质、铁还原及重金属生物有效性，未体现目标灌溉比较。"
+    },
+    {
+      "source_id": "S0306",
+      "final_status": "uncertain",
+      "final_reason": "涉及滨海围垦麦稻轮作土壤质量与菌群，但无摘要，盐碱背景及灌溉、碳氮指标不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及滨海围垦麦稻轮作土壤质量与菌群，但无摘要，盐碱背景及灌溉、碳氮指标不明。"
+    },
+    {
+      "source_id": "S0307",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱性水灌溉下稻麦体系，但标题侧重改良剂、品种与产量；无摘要，目标过程不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱性水灌溉下稻麦体系，但标题侧重改良剂、品种与产量；无摘要，目标过程不明。"
+    },
+    {
+      "source_id": "S0308",
+      "final_status": "uncertain",
+      "final_reason": "暂排：综述研究生物炭固定重金属的长期修复效果，与目标过程不符。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：综述研究生物炭固定重金属的长期修复效果，与目标过程不符。"
+    },
+    {
+      "source_id": "S0309",
+      "final_status": "uncertain",
+      "final_reason": "暂排：对象为盐土马铃薯种植，稻草作为覆盖材料。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：对象为盐土马铃薯种植，稻草作为覆盖材料。"
+    },
+    {
+      "source_id": "S0310",
+      "final_status": "uncertain",
+      "final_reason": "涉及直播水稻微喷灌，但无摘要，无法确认盐碱土及碳氮转化或温室气体指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及直播水稻微喷灌，但无摘要，无法确认盐碱土及碳氮转化或温室气体指标。"
+    },
+    {
+      "source_id": "S0311",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究盐碱湿地芦苇光合能力，对象非稻田土壤过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究盐碱湿地芦苇光合能力，对象非稻田土壤过程。"
+    },
+    {
+      "source_id": "S0312",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究水热炭预处理对稻田氨挥发的影响，未体现盐碱背景及灌溉制度比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究水热炭预处理对稻田氨挥发的影响，未体现盐碱背景及灌溉制度比较。"
+    },
+    {
+      "source_id": "S0313",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究稻田鸟类生境适宜性，非碳氮转化或温室气体排放。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究稻田鸟类生境适宜性，非碳氮转化或温室气体排放。"
+    },
+    {
+      "source_id": "S0314",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究非木材制浆与生物炼制，与目标农田主题无直接关联。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究非木材制浆与生物炼制，与目标农田主题无直接关联。"
+    },
+    {
+      "source_id": "S0315",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究冬季作物土壤适宜性空间分析，未体现目标稻田灌溉及碳氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究冬季作物土壤适宜性空间分析，未体现目标稻田灌溉及碳氮过程。"
+    },
+    {
+      "source_id": "S0316",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱性水灌溉与土壤有机氮组分，但无摘要，稻田背景及灌溉制度比较不明。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱性水灌溉与土壤有机氮组分，但无摘要，稻田背景及灌溉制度比较不明。"
+    },
+    {
+      "source_id": "S0317",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究稻田剖面碱解氮分布；碱解氮不能据此视为盐碱土证据，亦未体现灌溉比较。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究稻田剖面碱解氮分布；碱解氮不能据此视为盐碱土证据，亦未体现灌溉比较。"
+    },
+    {
+      "source_id": "S0318",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究工业盐水钡锶吸附，稻草仅为生物炭原料。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究工业盐水钡锶吸附，稻草仅为生物炭原料。"
+    },
+    {
+      "source_id": "S0319",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究农业土壤金属空间分布，非目标碳氮过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究农业土壤金属空间分布，非目标碳氮过程。"
+    },
+    {
+      "source_id": "S0320",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究马铃薯体系灌溉水质和覆盖，对象非稻田。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究马铃薯体系灌溉水质和覆盖，对象非稻田。"
+    },
+    {
+      "source_id": "S0321",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究团聚体稳定性与胶体磷流失，未体现盐碱稻田灌溉及碳氮转化或温室气体；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究团聚体稳定性与胶体磷流失，未体现盐碱稻田灌溉及碳氮转化或温室气体；无摘要。"
+    },
+    {
+      "source_id": "S0322",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱灌区水量平衡及硝酸盐输出，但未明确稻田、灌溉制度比较及土壤氮转化；无摘要，需核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱灌区水量平衡及硝酸盐输出，但未明确稻田、灌溉制度比较及土壤氮转化；无摘要，需核实。"
+    },
+    {
+      "source_id": "S0323",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究对象为玉米，关注秸秆长度与水盐动态，不符合稻田主题；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究对象为玉米，关注秸秆长度与水盐动态，不符合稻田主题；无摘要。"
+    },
+    {
+      "source_id": "S0324",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究生物炭处理污染土壤中铅的形态与迁移，未体现目标系统与过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究生物炭处理污染土壤中铅的形态与迁移，未体现目标系统与过程；无摘要。"
+    },
+    {
+      "source_id": "S0325",
+      "final_status": "uncertain",
+      "final_reason": "涉及滨海围垦土壤水稻生产与固碳，可能提供相关证据，但未明确盐碱条件及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及滨海围垦土壤水稻生产与固碳，可能提供相关证据，但未明确盐碱条件及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0326",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及盐碱稻田腐殖质组分，关联土壤碳过程，但未说明灌溉处理；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及盐碱稻田腐殖质组分，关联土壤碳过程，但未说明灌溉处理；无摘要。"
+    },
+    {
+      "source_id": "S0327",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名聚焦盐土水稻品种、施肥与产量，未体现灌溉制度及目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名聚焦盐土水稻品种、施肥与产量，未体现灌溉制度及目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0328",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究水稻品种产量与秸秆品质的遗传变异，未体现土壤碳氮转化或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究水稻品种产量与秸秆品质的遗传变异，未体现土壤碳氮转化或排放；无摘要。"
+    },
+    {
+      "source_id": "S0329",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究玉米脯氨酸施用与氮肥用量，不符合稻田灌溉主题；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究玉米脯氨酸施用与氮肥用量，不符合稻田灌溉主题；无摘要。"
+    },
+    {
+      "source_id": "S0330",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究寄主盐胁迫对褐飞虱发育及种群的影响，非目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究寄主盐胁迫对褐飞虱发育及种群的影响，非目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0331",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐渍灌区土壤碳与土地利用，但未明确稻田及灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐渍灌区土壤碳与土地利用，但未明确稻田及灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0332",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐土控制排水，可能关联水分管理，但稻田对象与碳氮或排放指标不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐土控制排水，可能关联水分管理，但稻田对象与碳氮或排放指标不明；无摘要。"
+    },
+    {
+      "source_id": "S0333",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土、水稻及排水处理，但土壤性质是否包含碳氮转化尚不明确；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土、水稻及排水处理，但土壤性质是否包含碳氮转化尚不明确；无摘要。"
+    },
+    {
+      "source_id": "S0334",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究草甘膦生物传感器，与盐碱稻田灌溉和土壤过程不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究草甘膦生物传感器，与盐碱稻田灌溉和土壤过程不符；无摘要。"
+    },
+    {
+      "source_id": "S0335",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究盐碱人工湿地中农药及其代谢物去除，非稻田碳氮与排放主题；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究盐碱人工湿地中农药及其代谢物去除，非稻田碳氮与排放主题；无摘要。"
+    },
+    {
+      "source_id": "S0336",
+      "final_status": "uncertain",
+      "final_reason": "明确比较稻田灌溉处理并关注脱盐，但未说明土壤碳氮转化或温室气体指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确比较稻田灌溉处理并关注脱盐，但未说明土壤碳氮转化或温室气体指标；无摘要。"
+    },
+    {
+      "source_id": "S0337",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名研究稻作残余物生物炭改良盐土，未明确稻田或灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名研究稻作残余物生物炭改良盐土，未明确稻田或灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0338",
+      "final_status": "uncertain",
+      "final_reason": "涉及水稻非淹水栽培与氮回收效率，但盐碱条件及灌溉制度比较不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水稻非淹水栽培与氮回收效率，但盐碱条件及灌溉制度比较不明；无摘要。"
+    },
+    {
+      "source_id": "S0339",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名关注长期种稻土壤质量指标，未体现盐碱条件、灌溉比较或目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名关注长期种稻土壤质量指标，未体现盐碱条件、灌溉比较或目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0340",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究盐渍地区水稻品种改良与产量模拟，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究盐渍地区水稻品种改良与产量模拟，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0341",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：题名关注乳业废水对水稻性状的影响，未体现盐碱稻田灌溉制度与目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：题名关注乳业废水对水稻性状的影响，未体现盐碱稻田灌溉制度与目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0342",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究土壤中砷、铬、钼、硒的迁移，未体现稻田灌溉及碳氮或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究土壤中砷、铬、钼、硒的迁移，未体现稻田灌溉及碳氮或排放；无摘要。"
+    },
+    {
+      "source_id": "S0343",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究外源钙缓解蓝细菌盐毒害，非稻田土壤水分管理；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究外源钙缓解蓝细菌盐毒害，非稻田土壤水分管理；无摘要。"
+    },
+    {
+      "source_id": "S0344",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究杏壳吸附重金属及废水处理，与目标主题不符；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究杏壳吸附重金属及废水处理，与目标主题不符；无摘要。"
+    },
+    {
+      "source_id": "S0345",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田土壤酶动态与种植模式，但盐碱条件、灌溉处理及碳氮关联不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田土壤酶动态与种植模式，但盐碱条件、灌溉处理及碳氮关联不明；无摘要。"
+    },
+    {
+      "source_id": "S0346",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：综述主题为水稻硼营养，未体现盐碱稻田灌溉对碳氮及排放的影响；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：综述主题为水稻硼营养，未体现盐碱稻田灌溉对碳氮及排放的影响；无摘要。"
+    },
+    {
+      "source_id": "S0347",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱农田土壤理化性质及酶活性，但稻田、灌溉制度与碳氮过程不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱农田土壤理化性质及酶活性，但稻田、灌溉制度与碳氮过程不明；无摘要。"
+    },
+    {
+      "source_id": "S0348",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究稻田福寿螺生态生理与管理，未体现目标土壤过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究稻田福寿螺生态生理与管理，未体现目标土壤过程；无摘要。"
+    },
+    {
+      "source_id": "S0349",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌区农田面源污染变化，但污染物种类、盐碱稻田对象与灌溉处理均不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌区农田面源污染变化，但污染物种类、盐碱稻田对象与灌溉处理均不明；无摘要。"
+    },
+    {
+      "source_id": "S0350",
+      "final_status": "uncertain",
+      "final_reason": "明确研究盐碱稻田有机碳与无机碳动态，但影响因素是否包含灌溉制度不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确研究盐碱稻田有机碳与无机碳动态，但影响因素是否包含灌溉制度不明；无摘要。"
+    },
+    {
+      "source_id": "S0351",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱土暗管深度与盐分变化，但未明确稻田及碳氮或温室气体指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱土暗管深度与盐分变化，但未明确稻田及碳氮或温室气体指标；无摘要。"
+    },
+    {
+      "source_id": "S0352",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究昼夜温度对紫油菜生长及生化性状的影响，非稻田主题；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究昼夜温度对紫油菜生长及生化性状的影响，非稻田主题；无摘要。"
+    },
+    {
+      "source_id": "S0353",
+      "final_status": "uncertain",
+      "final_reason": "涉及灌溉水盐度对土壤有机碳矿化的影响，但稻田来源及灌溉制度比较不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及灌溉水盐度对土壤有机碳矿化的影响，但稻田来源及灌溉制度比较不明；无摘要。"
+    },
+    {
+      "source_id": "S0354",
+      "final_status": "uncertain",
+      "final_reason": "涉及长期咸水灌溉、碳氮质量与微生物活性，但未明确稻田对象及灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及长期咸水灌溉、碳氮质量与微生物活性，但未明确稻田对象及灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0355",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究转基因水稻耐盐性，未体现灌溉制度与土壤碳氮或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究转基因水稻耐盐性，未体现灌溉制度与土壤碳氮或排放；无摘要。"
+    },
+    {
+      "source_id": "S0356",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：聚焦豆类种植系统及土壤质量，未体现目标稻田系统与处理；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：聚焦豆类种植系统及土壤质量，未体现目标稻田系统与处理；无摘要。"
+    },
+    {
+      "source_id": "S0357",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究地表水盐化及砷污染，未体现稻田灌溉对碳氮及排放的影响；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究地表水盐化及砷污染，未体现稻田灌溉对碳氮及排放的影响；无摘要。"
+    },
+    {
+      "source_id": "S0358",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：比较淹水稻田牛粪与猪粪堆肥效应，题名未体现盐碱条件及灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：比较淹水稻田牛粪与猪粪堆肥效应，题名未体现盐碱条件及灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0359",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：研究水稻根际与表土细菌多样性，未体现盐碱条件、灌溉比较及目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：研究水稻根际与表土细菌多样性，未体现盐碱条件、灌溉比较及目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0360",
+      "final_status": "uncertain",
+      "final_reason": "暂予排除：聚焦中度盐渍土水稻直播技术与产量，未体现灌溉制度及碳氮或排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂予排除：聚焦中度盐渍土水稻直播技术与产量，未体现灌溉制度及碳氮或排放；无摘要。"
+    },
+    {
+      "source_id": "S0361",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究水稻根际细菌分离与鉴定，未体现盐碱条件、灌溉制度或目标碳氮与排放指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究水稻根际细菌分离与鉴定，未体现盐碱条件、灌溉制度或目标碳氮与排放指标；无摘要。"
+    },
+    {
+      "source_id": "S0362",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究三角洲地下水动态与化学，未体现稻田灌溉及碳氮转化或温室气体排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究三角洲地下水动态与化学，未体现稻田灌溉及碳氮转化或温室气体排放；无摘要。"
+    },
+    {
+      "source_id": "S0363",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究稻壳降低钠吸附比及排水包络模型，并非明确的稻田灌溉与碳氮过程研究；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究稻壳降低钠吸附比及排水包络模型，并非明确的稻田灌溉与碳氮过程研究；无摘要。"
+    },
+    {
+      "source_id": "S0364",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及盐碱土及不同灌溉水质，但未明确稻田、灌溉制度和碳氮或排放指标；无摘要，需补充信息。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及盐碱土及不同灌溉水质，但未明确稻田、灌溉制度和碳氮或排放指标；无摘要，需补充信息。"
+    },
+    {
+      "source_id": "S0365",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦有机改良物分解性与盐土微生物活性，未体现稻田及灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦有机改良物分解性与盐土微生物活性，未体现稻田及灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0366",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为芝麻，并非水稻或稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为芝麻，并非水稻或稻田；无摘要。"
+    },
+    {
+      "source_id": "S0367",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为向日葵，并非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为向日葵，并非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0368",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦淹水稻田杀虫剂的立体选择性归趋，未体现目标碳氮转化或温室气体排放；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦淹水稻田杀虫剂的立体选择性归趋，未体现目标碳氮转化或温室气体排放；无摘要。"
+    },
+    {
+      "source_id": "S0369",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究盐渍积水土壤中的桉树农林系统配置，未体现稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究盐渍积水土壤中的桉树农林系统配置，未体现稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0370",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究玉米轮作保护性农业与土壤性质，未体现盐碱稻田灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究玉米轮作保护性农业与土壤性质，未体现盐碱稻田灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0371",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦土地利用及种植制度变化，未体现盐碱稻田灌溉与目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦土地利用及种植制度变化，未体现盐碱稻田灌溉与目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0372",
+      "final_status": "uncertain",
+      "final_reason": "候选纳入：题名明确研究盐碱稻田灌溉水质及土壤氮，直接关联主题；无摘要，灌溉制度比较和氮转化指标仍需核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_include",
+      "raw_reason": "候选纳入：题名明确研究盐碱稻田灌溉水质及土壤氮，直接关联主题；无摘要，灌溉制度比较和氮转化指标仍需核实。"
+    },
+    {
+      "source_id": "S0373",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究稻壳灰水泥复合材料，属于材料研究；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究稻壳灰水泥复合材料，属于材料研究；无摘要。"
+    },
+    {
+      "source_id": "S0374",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究碾米废水盆栽灌溉后的土壤理化性质，未明确盐碱稻田或目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究碾米废水盆栽灌溉后的土壤理化性质，未明确盐碱稻田或目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0375",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及盐碱土、种植序列和不同水质，可能相关，但未明确稻田及碳氮或排放指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及盐碱土、种植序列和不同水质，可能相关，但未明确稻田及碳氮或排放指标；无摘要。"
+    },
+    {
+      "source_id": "S0376",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究泉水盐度对轮藻的影响，并非稻田系统；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究泉水盐度对轮藻的影响，并非稻田系统；无摘要。"
+    },
+    {
+      "source_id": "S0377",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及淹水稻田盐度动态，但未明确灌溉制度比较及碳氮或排放指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及淹水稻田盐度动态，但未明确灌溉制度比较及碳氮或排放指标；无摘要。"
+    },
+    {
+      "source_id": "S0378",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦稻作种植系统多样化、生产效率和经济性，未体现盐碱条件及目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦稻作种植系统多样化、生产效率和经济性，未体现盐碱条件及目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0379",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究河流土壤金属元素淋溶，未体现盐碱稻田及碳氮过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究河流土壤金属元素淋溶，未体现盐碱稻田及碳氮过程；无摘要。"
+    },
+    {
+      "source_id": "S0380",
+      "final_status": "uncertain",
+      "final_reason": "题名明确涉及碱性稻土氮转化，但碱性是否属于盐碱土、是否比较灌溉制度均不清楚；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名明确涉及碱性稻土氮转化，但碱性是否属于盐碱土、是否比较灌溉制度均不清楚；无摘要。"
+    },
+    {
+      "source_id": "S0381",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究小麦产量对播期、氮肥与基因型的响应，并非目标稻田过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究小麦产量对播期、氮肥与基因型的响应，并非目标稻田过程；无摘要。"
+    },
+    {
+      "source_id": "S0382",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及稻麦轮作、水盐动态及灌溉环境，但未明确碳氮转化或温室气体指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及稻麦轮作、水盐动态及灌溉环境，但未明确碳氮转化或温室气体指标；无摘要。"
+    },
+    {
+      "source_id": "S0383",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为冬小麦产量与干物质，并非盐碱稻田过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为冬小麦产量与干物质，并非盐碱稻田过程；无摘要。"
+    },
+    {
+      "source_id": "S0384",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及淹水对稻草分解及酶活性的影响，与碳转化相关，但未明确盐碱稻田背景；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及淹水对稻草分解及酶活性的影响，与碳转化相关，但未明确盐碱稻田背景；无摘要。"
+    },
+    {
+      "source_id": "S0385",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦氮锌互作对淹水水稻产量与品质的影响，未体现盐碱条件或灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦氮锌互作对淹水水稻产量与品质的影响，未体现盐碱条件或灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0386",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究休闲—小麦体系及高粱豆科间作，并非稻田系统；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究休闲—小麦体系及高粱豆科间作，并非稻田系统；无摘要。"
+    },
+    {
+      "source_id": "S0387",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究升高二氧化碳浓度和温度对水稻磷吸收的影响，未体现目标灌溉处理与排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究升高二氧化碳浓度和温度对水稻磷吸收的影响，未体现目标灌溉处理与排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0388",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦氮投入与秸秆还田在覆膜栽培下的效应，未体现盐碱条件及灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦氮投入与秸秆还田在覆膜栽培下的效应，未体现盐碱条件及灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0389",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及延迟淹水水稻与标记氮肥同化，但未明确盐碱背景、土壤氮转化及灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及延迟淹水水稻与标记氮肥同化，但未明确盐碱背景、土壤氮转化及灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0390",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦水稻产量空间变异及精准管理，未体现盐碱灌溉与目标过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦水稻产量空间变异及精准管理，未体现盐碱灌溉与目标过程；无摘要。"
+    },
+    {
+      "source_id": "S0391",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及盐碱土稻麦利用下的二氧化碳固存，关联碳过程，但未明确灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及盐碱土稻麦利用下的二氧化碳固存，关联碳过程，但未明确灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0392",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：研究对象为油菜生长与生理响应，并非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：研究对象为油菜生长与生理响应，并非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0393",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究改良剂对盐碱稻田土壤物理性质的影响，未体现灌溉制度与碳氮或排放指标；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究改良剂对盐碱稻田土壤物理性质的影响，未体现灌溉制度与碳氮或排放指标；无摘要。"
+    },
+    {
+      "source_id": "S0394",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及稻田土壤入渗过程中的硝酸盐衰减，但未明确盐碱条件及灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及稻田土壤入渗过程中的硝酸盐衰减，但未明确盐碱条件及灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0395",
+      "final_status": "uncertain",
+      "final_reason": "题名比较旱作与灌溉水稻根际微生物结构和功能，可能关联水分与转化过程，但盐碱背景和具体指标不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名比较旱作与灌溉水稻根际微生物结构和功能，可能关联水分与转化过程，但盐碱背景和具体指标不明；无摘要。"
+    },
+    {
+      "source_id": "S0396",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及稻田土壤有机质矿化及铁还原，关联碳转化，但盐碱背景与灌溉制度不明；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及稻田土壤有机质矿化及铁还原，关联碳转化，但盐碱背景与灌溉制度不明；无摘要。"
+    },
+    {
+      "source_id": "S0397",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及钠质水灌溉土壤的可提取碳与微生物量碳，但未明确稻田和灌溉制度比较；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及钠质水灌溉土壤的可提取碳与微生物量碳，但未明确稻田和灌溉制度比较；无摘要。"
+    },
+    {
+      "source_id": "S0398",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名聚焦非淹水水稻中接种蓝藻的定殖与土壤肥力，未体现盐碱条件及目标碳氮或排放过程；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名聚焦非淹水水稻中接种蓝藻的定殖与土壤肥力，未体现盐碱条件及目标碳氮或排放过程；无摘要。"
+    },
+    {
+      "source_id": "S0399",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究绿豆—小麦系统，并非稻田；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究绿豆—小麦系统，并非稻田；无摘要。"
+    },
+    {
+      "source_id": "S0400",
+      "final_status": "uncertain",
+      "final_reason": "暂排除：题名研究水稻最优施氮量与土壤供氮，未体现盐碱条件或灌溉制度；无摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排除：题名研究水稻最优施氮量与土壤供氮，未体现盐碱条件或灌溉制度；无摘要。"
+    },
+    {
+      "source_id": "S0401",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦水稻适应气候变化的遗传改良，未涉及目标灌溉与土壤过程；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦水稻适应气候变化的遗传改良，未涉及目标灌溉与土壤过程；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0402",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻土系统氮肥回收与损失，但盐碱背景及灌溉制度比较不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻土系统氮肥回收与损失，但盐碱背景及灌溉制度比较不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0403",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦干旱区石膏应用，未体现稻田灌溉与碳氮转化；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦干旱区石膏应用，未体现稻田灌溉与碳氮转化；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0404",
+      "final_status": "uncertain",
+      "final_reason": "研究火山岛化学风化与地下水，与目标稻田研究不符；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究火山岛化学风化与地下水，与目标稻田研究不符；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0405",
+      "final_status": "uncertain",
+      "final_reason": "研究小麦磷锌施用及农艺性状，与目标作物及过程不符；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究小麦磷锌施用及农艺性状，与目标作物及过程不符；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0406",
+      "final_status": "uncertain",
+      "final_reason": "题名为区域土壤有机碳空间变异，未体现盐碱稻田灌溉比较；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名为区域土壤有机碳空间变异，未体现盐碱稻田灌溉比较；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0407",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦碳同位素判别与水稻生产力，未体现土壤碳氮转化或排放；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦碳同位素判别与水稻生产力，未体现土壤碳氮转化或排放；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0408",
+      "final_status": "uncertain",
+      "final_reason": "研究城市土壤，虽涉及灌溉钠化及碳养分，但非稻田；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究城市土壤，虽涉及灌溉钠化及碳养分，但非稻田；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0409",
+      "final_status": "uncertain",
+      "final_reason": "直接涉及不同盐度灌溉稻土铵态氮动态，但是否比较灌溉制度不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "直接涉及不同盐度灌溉稻土铵态氮动态，但是否比较灌溉制度不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0410",
+      "final_status": "uncertain",
+      "final_reason": "研究土壤砷生物有效性，未体现目标碳氮过程与灌溉制度；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究土壤砷生物有效性，未体现目标碳氮过程与灌溉制度；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0411",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦施氮水稻品种理化参数，未体现土壤转化或灌溉比较；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦施氮水稻品种理化参数，未体现土壤转化或灌溉比较；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0412",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦植物气候适应育种，未体现目标土壤与水分管理过程；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦植物气候适应育种，未体现目标土壤与水分管理过程；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0413",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土水稻氮利用，但题名处理为氮肥与纳米碳，灌溉制度及土壤过程不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土水稻氮利用，但题名处理为氮肥与纳米碳，灌溉制度及土壤过程不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0414",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦土层碳氮指标指导施肥，未体现盐碱背景或灌溉制度；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦土层碳氮指标指导施肥，未体现盐碱背景或灌溉制度；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0415",
+      "final_status": "uncertain",
+      "final_reason": "研究碱解氮预测施肥需求；碱解指标不能作为盐碱土证据，未体现灌溉比较；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究碱解氮预测施肥需求；碱解指标不能作为盐碱土证据，未体现灌溉比较；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0416",
+      "final_status": "uncertain",
+      "final_reason": "涉及废水灌溉稻田微生物功能与活性，但盐碱背景和碳氮转化指标不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及废水灌溉稻田微生物功能与活性，但盐碱背景和碳氮转化指标不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0417",
+      "final_status": "uncertain",
+      "final_reason": "研究矿山排水生物反应器处理，非稻田系统；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究矿山排水生物反应器处理，非稻田系统；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0418",
+      "final_status": "uncertain",
+      "final_reason": "研究造林降低盐分及增加碳储量，非稻田灌溉制度；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究造林降低盐分及增加碳储量，非稻田灌溉制度；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0419",
+      "final_status": "uncertain",
+      "final_reason": "研究免耕水稻种植方式与品质养分利用，未体现目标灌溉与土壤过程；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究免耕水稻种植方式与品质养分利用，未体现目标灌溉与土壤过程；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0420",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻田湿地废水灌溉与脱氮，但盐碱背景及灌溉制度比较不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻田湿地废水灌溉与脱氮，但盐碱背景及灌溉制度比较不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0421",
+      "final_status": "uncertain",
+      "final_reason": "题名为流域盐致土地水资源退化，未体现稻田碳氮及排放研究；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名为流域盐致土地水资源退化，未体现稻田碳氮及排放研究；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0422",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦气候变化下水稻生产适应策略，未体现目标盐碱稻田过程；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦气候变化下水稻生产适应策略，未体现目标盐碱稻田过程；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0423",
+      "final_status": "uncertain",
+      "final_reason": "研究玉米盐水与氮处理，非水稻系统；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究玉米盐水与氮处理，非水稻系统；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0424",
+      "final_status": "uncertain",
+      "final_reason": "研究淹水稻土壬基酚污染物归趋，未体现目标盐碱及灌溉比较；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究淹水稻土壬基酚污染物归趋，未体现目标盐碱及灌溉比较；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0425",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻土好氧条件下氮矿化，但盐碱背景及灌溉处理不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻土好氧条件下氮矿化，但盐碱背景及灌溉处理不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0426",
+      "final_status": "uncertain",
+      "final_reason": "涉及控制排水及盐氮动态，与主题接近，但是否为盐碱稻田及包含转化过程不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及控制排水及盐氮动态，与主题接近，但是否为盐碱稻田及包含转化过程不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0427",
+      "final_status": "uncertain",
+      "final_reason": "研究河流泛滥平原硫酸盐还原微生物地理分布，非目标稻田管理研究；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究河流泛滥平原硫酸盐还原微生物地理分布，非目标稻田管理研究；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0428",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及盐渍稻田氮损失，但灌溉制度比较及土壤转化指标不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及盐渍稻田氮损失，但灌溉制度比较及土壤转化指标不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0429",
+      "final_status": "uncertain",
+      "final_reason": "研究盐渍土草本群落演替及牧草生产力，非稻田系统；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究盐渍土草本群落演替及牧草生产力，非稻田系统；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0430",
+      "final_status": "uncertain",
+      "final_reason": "研究非生物胁迫育种，未体现稻田水分管理及土壤过程；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究非生物胁迫育种，未体现稻田水分管理及土壤过程；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0431",
+      "final_status": "uncertain",
+      "final_reason": "涉及长期钠质水灌溉与微生物量碳，但水稻系统及灌溉制度比较不明；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及长期钠质水灌溉与微生物量碳，但水稻系统及灌溉制度比较不明；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0432",
+      "final_status": "uncertain",
+      "final_reason": "题名明确为小麦及耕作改良处理，未体现稻田灌溉制度比较；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名明确为小麦及耕作改良处理，未体现稻田灌溉制度比较；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0433",
+      "final_status": "uncertain",
+      "final_reason": "涉及排水不足条件下亚硝酸盐累积，但稻田与盐碱背景未明确；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及排水不足条件下亚硝酸盐累积，但稻田与盐碱背景未明确；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0434",
+      "final_status": "uncertain",
+      "final_reason": "研究稻草制浆木质素对土壤性质影响，未体现盐碱稻田灌溉；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究稻草制浆木质素对土壤性质影响，未体现盐碱稻田灌溉；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0435",
+      "final_status": "uncertain",
+      "final_reason": "稻麦系统资源节约技术综述可能涉及水分管理，但题名不足以确认盐碱及碳氮排放内容；无摘要，待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "稻麦系统资源节约技术综述可能涉及水分管理，但题名不足以确认盐碱及碳氮排放内容；无摘要，待核实。"
+    },
+    {
+      "source_id": "S0436",
+      "final_status": "uncertain",
+      "final_reason": "研究大麦盐胁迫下氮营养与酶活性，非目标稻田系统；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究大麦盐胁迫下氮营养与酶活性，非目标稻田系统；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0437",
+      "final_status": "uncertain",
+      "final_reason": "研究盐渍土淹水条件下满江红营养限制及生长，未体现灌溉制度与土壤碳氮转化；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "研究盐渍土淹水条件下满江红营养限制及生长，未体现灌溉制度与土壤碳氮转化；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0438",
+      "final_status": "uncertain",
+      "final_reason": "题名同时涉及稻麦系统、长期钠质水灌溉和土壤氮矿化，列为候选；无摘要，具体灌溉比较与排放指标待核实。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_include",
+      "raw_reason": "题名同时涉及稻麦系统、长期钠质水灌溉和土壤氮矿化，列为候选；无摘要，具体灌溉比较与排放指标待核实。"
+    },
+    {
+      "source_id": "S0439",
+      "final_status": "uncertain",
+      "final_reason": "题名聚焦地下排水性能建模，未体现稻田碳氮转化或排放；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "题名聚焦地下排水性能建模，未体现稻田碳氮转化或排放；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0440",
+      "final_status": "uncertain",
+      "final_reason": "虽比较稻土持续与间歇淹水，但题名结局为有机磷组分，未体现盐碱及目标碳氮排放；无摘要，暂排。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "虽比较稻土持续与间歇淹水，但题名结局为有机磷组分，未体现盐碱及目标碳氮排放；无摘要，暂排。"
+    },
+    {
+      "source_id": "S0441",
+      "final_status": "uncertain",
+      "final_reason": "题名涉及稻作系统水分利用，但缺摘要，无法确认盐碱背景及碳氮转化或温室气体指标。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名涉及稻作系统水分利用，但缺摘要，无法确认盐碱背景及碳氮转化或温室气体指标。"
+    },
+    {
+      "source_id": "S0442",
+      "final_status": "uncertain",
+      "final_reason": "题名仅指稻麦轮作土壤管理；缺摘要，无法判断是否比较盐碱稻田灌溉制度及相关过程。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "题名仅指稻麦轮作土壤管理；缺摘要，无法判断是否比较盐碱稻田灌溉制度及相关过程。"
+    },
+    {
+      "source_id": "S0443",
+      "final_status": "uncertain",
+      "final_reason": "涉及非淹水栽培和土壤性质变化，但盐碱背景、碳氮过程及排放指标不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及非淹水栽培和土壤性质变化，但盐碱背景、碳氮过程及排放指标不明；缺摘要。"
+    },
+    {
+      "source_id": "S0444",
+      "final_status": "uncertain",
+      "final_reason": "涉及钠质灌溉水、稻麦和土壤性质，但无法确认灌溉制度比较及碳氮或排放指标；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及钠质灌溉水、稻麦和土壤性质，但无法确认灌溉制度比较及碳氮或排放指标；缺摘要。"
+    },
+    {
+      "source_id": "S0445",
+      "final_status": "uncertain",
+      "final_reason": "涉及钠质土壤长短期灌溉，但题名未明确稻田及碳氮或排放指标；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及钠质土壤长短期灌溉，但题名未明确稻田及碳氮或排放指标；缺摘要。"
+    },
+    {
+      "source_id": "S0446",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名为临时湿地生境与植被综述，与目标稻田灌溉及碳氮、排放过程偏离；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名为临时湿地生境与植被综述，与目标稻田灌溉及碳氮、排放过程偏离；缺摘要。"
+    },
+    {
+      "source_id": "S0447",
+      "final_status": "uncertain",
+      "final_reason": "涉及碱性土壤水稻和养分有效性，但处理为秸秆施用，是否涉及灌溉制度及碳氮过程不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及碱性土壤水稻和养分有效性，但处理为秸秆施用，是否涉及灌溉制度及碳氮过程不明；缺摘要。"
+    },
+    {
+      "source_id": "S0448",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦盐渍土水稻基因型的营养和产量，未体现灌溉制度或土壤碳氮转化、排放；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦盐渍土水稻基因型的营养和产量，未体现灌溉制度或土壤碳氮转化、排放；缺摘要。"
+    },
+    {
+      "source_id": "S0449",
+      "final_status": "uncertain",
+      "final_reason": "涉及盐碱土改良后性质变化，但稻田、灌溉处理及碳氮指标均不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及盐碱土改良后性质变化，但稻田、灌溉处理及碳氮指标均不明；缺摘要。"
+    },
+    {
+      "source_id": "S0450",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦农户适应策略，未体现目标土壤过程或排放研究；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦农户适应策略，未体现目标土壤过程或排放研究；缺摘要。"
+    },
+    {
+      "source_id": "S0451",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名为微量元素限制作物生产的综述，未体现目标稻田灌溉与碳氮、排放研究；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名为微量元素限制作物生产的综述，未体现目标稻田灌溉与碳氮、排放研究；缺摘要。"
+    },
+    {
+      "source_id": "S0452",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦作物残体产量和质量，未体现盐碱稻田灌溉及目标过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦作物残体产量和质量，未体现盐碱稻田灌溉及目标过程；缺摘要。"
+    },
+    {
+      "source_id": "S0453",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦灌区水稻产量差异，未体现灌溉制度比较及碳氮转化或排放；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦灌区水稻产量差异，未体现灌溉制度比较及碳氮转化或排放；缺摘要。"
+    },
+    {
+      "source_id": "S0454",
+      "final_status": "uncertain",
+      "final_reason": "暂排：虽比较淹水与非淹水条件，但题名研究硫转化，未体现目标碳氮过程及盐碱稻田；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：虽比较淹水与非淹水条件，但题名研究硫转化，未体现目标碳氮过程及盐碱稻田；缺摘要。"
+    },
+    {
+      "source_id": "S0455",
+      "final_status": "uncertain",
+      "final_reason": "涉及稻作腐殖质组分氮动态，但题名处理为秸秆管理，盐碱背景和灌溉制度不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及稻作腐殖质组分氮动态，但题名处理为秸秆管理，盐碱背景和灌溉制度不明；缺摘要。"
+    },
+    {
+      "source_id": "S0456",
+      "final_status": "uncertain",
+      "final_reason": "涉及沿海稻田地下排水氮损失，但沿海不能直接等同盐碱，且灌溉制度比较不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及沿海稻田地下排水氮损失，但沿海不能直接等同盐碱，且灌溉制度比较不明；缺摘要。"
+    },
+    {
+      "source_id": "S0457",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名为小麦种子引发技术的农户参与评价，与目标研究偏离；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名为小麦种子引发技术的农户参与评价，与目标研究偏离；缺摘要。"
+    },
+    {
+      "source_id": "S0458",
+      "final_status": "uncertain",
+      "final_reason": "明确涉及盐碱稻田地下排水铵损失，具有相关性；但是否比较灌溉制度及研究氮转化仍不明，缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "明确涉及盐碱稻田地下排水铵损失，具有相关性；但是否比较灌溉制度及研究氮转化仍不明，缺摘要。"
+    },
+    {
+      "source_id": "S0459",
+      "final_status": "uncertain",
+      "final_reason": "比较好气与淹水条件下肥料氮进入腐殖质的稳定化，但盐碱稻田背景不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "比较好气与淹水条件下肥料氮进入腐殖质的稳定化，但盐碱稻田背景不明；缺摘要。"
+    },
+    {
+      "source_id": "S0460",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名研究耕作对稻田盐分迁移的影响，未体现灌溉制度及碳氮、排放指标；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名研究耕作对稻田盐分迁移的影响，未体现灌溉制度及碳氮、排放指标；缺摘要。"
+    },
+    {
+      "source_id": "S0461",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦水稻光合作用生态生理，与土壤碳氮转化及温室气体排放偏离；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦水稻光合作用生态生理，与土壤碳氮转化及温室气体排放偏离；缺摘要。"
+    },
+    {
+      "source_id": "S0462",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名研究稻田蓝藻对农药的响应，未体现目标灌溉和盐碱土壤过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名研究稻田蓝藻对农药的响应，未体现目标灌溉和盐碱土壤过程；缺摘要。"
+    },
+    {
+      "source_id": "S0463",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦直播淹水稻产量差与土壤性质，未体现灌溉制度比较及目标过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦直播淹水稻产量差与土壤性质，未体现灌溉制度比较及目标过程；缺摘要。"
+    },
+    {
+      "source_id": "S0464",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名为洪泛平原土壤肥力概况，未体现盐碱稻田灌溉比较及目标过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名为洪泛平原土壤肥力概况，未体现盐碱稻田灌溉比较及目标过程；缺摘要。"
+    },
+    {
+      "source_id": "S0465",
+      "final_status": "uncertain",
+      "final_reason": "涉及劣质水、水稻灌溉调度和氮水平，但水质是否盐碱及是否测定土壤氮转化不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及劣质水、水稻灌溉调度和氮水平，但水质是否盐碱及是否测定土壤氮转化不明；缺摘要。"
+    },
+    {
+      "source_id": "S0466",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦季节、施氮量与株型对稻米品质的影响，未体现目标灌溉与土壤过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦季节、施氮量与株型对稻米品质的影响，未体现目标灌溉与土壤过程；缺摘要。"
+    },
+    {
+      "source_id": "S0467",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名研究盐度与气候变化对作物的交互影响，未体现稻田灌溉及土壤排放过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名研究盐度与气候变化对作物的交互影响，未体现稻田灌溉及土壤排放过程；缺摘要。"
+    },
+    {
+      "source_id": "S0468",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦农户采用氮管理技术的约束，未体现目标灌溉及土壤碳氮、排放试验；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦农户采用氮管理技术的约束，未体现目标灌溉及土壤碳氮、排放试验；缺摘要。"
+    },
+    {
+      "source_id": "S0469",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦纸浆厂废水的农田处理利用，未体现目标盐碱稻田及相关过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦纸浆厂废水的农田处理利用，未体现目标盐碱稻田及相关过程；缺摘要。"
+    },
+    {
+      "source_id": "S0470",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦满江红杂交种改良钠质土壤及水稻生长，未体现灌溉制度及目标过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦满江红杂交种改良钠质土壤及水稻生长，未体现灌溉制度及目标过程；缺摘要。"
+    },
+    {
+      "source_id": "S0471",
+      "final_status": "uncertain",
+      "final_reason": "直接涉及淹水稻土硝化，但比较因素为有无稻株，盐碱背景和不同灌溉制度不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "直接涉及淹水稻土硝化，但比较因素为有无稻株，盐碱背景和不同灌溉制度不明；缺摘要。"
+    },
+    {
+      "source_id": "S0472",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦生物肥料对固氮和氮利用效率的贡献，未体现盐碱背景及灌溉制度比较；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦生物肥料对固氮和氮利用效率的贡献，未体现盐碱背景及灌溉制度比较；缺摘要。"
+    },
+    {
+      "source_id": "S0473",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名研究有机残体对淹水稻土硫矿化的影响，未体现目标碳氮过程及灌溉比较；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名研究有机残体对淹水稻土硫矿化的影响，未体现目标碳氮过程及灌溉比较；缺摘要。"
+    },
+    {
+      "source_id": "S0474",
+      "final_status": "uncertain",
+      "final_reason": "涉及劣质水、水稻灌溉调度和氮水平，但盐碱背景及土壤碳氮或排放指标不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及劣质水、水稻灌溉调度和氮水平，但盐碱背景及土壤碳氮或排放指标不明；缺摘要。"
+    },
+    {
+      "source_id": "S0475",
+      "final_status": "uncertain",
+      "final_reason": "涉及水稻灌溉用水效率，但盐碱背景及碳氮转化或排放指标不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及水稻灌溉用水效率，但盐碱背景及碳氮转化或排放指标不明；缺摘要。"
+    },
+    {
+      "source_id": "S0476",
+      "final_status": "uncertain",
+      "final_reason": "暂排：研究对象为互花米草的光合作用与根生长，与目标稻田研究偏离；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：研究对象为互花米草的光合作用与根生长，与目标稻田研究偏离；缺摘要。"
+    },
+    {
+      "source_id": "S0477",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名聚焦稻作低地绿肥豆科植物的逆境适应，未体现灌溉制度及目标土壤过程；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名聚焦稻作低地绿肥豆科植物的逆境适应，未体现灌溉制度及目标土壤过程；缺摘要。"
+    },
+    {
+      "source_id": "S0478",
+      "final_status": "uncertain",
+      "final_reason": "涉及低地稻土供氮能力，但盐碱背景及灌溉制度比较不明；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "uncertain",
+      "raw_reason": "涉及低地稻土供氮能力，但盐碱背景及灌溉制度比较不明；缺摘要。"
+    },
+    {
+      "source_id": "S0479",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名研究米草对根际缺氧的响应，与目标盐碱稻田灌溉研究偏离；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名研究米草对根际缺氧的响应，与目标盐碱稻田灌溉研究偏离；缺摘要。"
+    },
+    {
+      "source_id": "S0480",
+      "final_status": "uncertain",
+      "final_reason": "暂排：题名为小麦不育问题研究概述，与目标稻田灌溉及土壤过程偏离；缺摘要。 [摘要缺失，待全文或人工审核]",
+      "origin": "model_with_guard",
+      "raw_status": "candidate_exclude",
+      "raw_reason": "暂排：题名为小麦不育问题研究概述，与目标稻田灌溉及土壤过程偏离；缺摘要。"
+    },
+    {
+      "source_id": "S0481",
+      "final_status": "uncertain",
+      "final_reason": "模型调用因额度上限失败；只有题名、无摘要；人工式兜底保留待核，非模型输出。",
+      "origin": "assistant_fallback_after_usage_limit"
+    }
+  ]
+}

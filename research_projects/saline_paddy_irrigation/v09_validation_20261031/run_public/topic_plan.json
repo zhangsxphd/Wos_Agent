@@ -1,0 +1,33 @@
+{
+  "research_question": "在盐碱稻田中，与持续淹水相比，干湿交替和间歇灌溉如何影响土壤碳氮转化及CH4、N2O和CO2排放，其效应是否随土壤盐度、碱度和氧化还原条件而变化？",
+  "assumptions": [
+    "将盐碱稻田理解为受盐分和／或碱化影响的水稻种植土壤，检索同时覆盖盐渍化、碱化和钠质化表述。",
+    "将不同灌溉制度初步限定为持续淹水、干湿交替和间歇灌溉；具体水位、阈值和周期由检索所得研究确定。",
+    "碳氮转化包括有机碳矿化、甲烷生成与氧化、硝化和反硝化；温室气体包括CH4、N2O和CO2。",
+    "以下表达式为未经实际检索验证的WoS主题检索建议；新颖性查询用于寻找相关证据，不能直接证明研究空白，不预设年份、地区或效应方向。"
+  ],
+  "queries": [
+    {
+      "description": "起始检索1：盐碱稻田灌溉制度与温室气体排放。",
+      "query": "TS=((paddy OR paddies OR \"rice field*\" OR \"rice soil*\" OR 稻田) AND (salin* OR alkalin* OR sodic* OR 盐碱 OR 盐渍化) AND (\"water management\" OR \"irrigation regime*\" OR \"alternate wetting and drying\" OR \"intermittent irrigation\" OR \"continuous flooding\" OR 灌溉制度 OR 干湿交替 OR 间歇灌溉) AND (\"greenhouse gas*\" OR methane OR \"nitrous oxide\" OR \"carbon dioxide\" OR CH4 OR N2O OR CO2 OR 温室气体))"
+    },
+    {
+      "description": "起始检索2：盐碱稻田水分管理与土壤碳氮转化过程。",
+      "query": "TS=((paddy OR paddies OR \"rice field*\" OR 稻田) AND (salin* OR alkalin* OR sodic* OR 盐碱 OR 盐渍化) AND (irrigat* OR flooding OR drainage OR \"water management\" OR 灌溉 OR 排水) AND (\"carbon cycling\" OR \"nitrogen cycling\" OR \"carbon mineralization\" OR \"nitrogen mineralization\" OR nitrification OR denitrification OR methanogenesis OR \"methane oxidation\" OR 碳氮转化 OR 矿化 OR 硝化 OR 反硝化))"
+    }
+  ],
+  "novelty_queries": [
+    {
+      "description": "新颖性查询1：盐度、碱度与干湿交替的交互效应及CH4—N2O排放权衡。",
+      "query": "TS=((paddy OR paddies OR \"rice field*\" OR 稻田) AND (salinity OR alkalinity OR sodicity OR 盐度 OR 碱度 OR 钠质化) AND (\"alternate wetting and drying\" OR \"intermittent irrigation\" OR 干湿交替 OR 间歇灌溉) AND (methane OR CH4 OR 甲烷) AND (\"nitrous oxide\" OR N2O OR 氧化亚氮) AND (interaction* OR gradient* OR \"trade-off*\" OR tradeoff* OR 交互作用 OR 梯度 OR 权衡))"
+    },
+    {
+      "description": "新颖性查询2：灌溉驱动的氧化还原变化如何连接微生物功能与碳氮转化。",
+      "query": "TS=((paddy OR paddies OR \"rice field*\" OR 稻田) AND (salin* OR alkalin* OR sodic* OR 盐碱) AND (\"alternate wetting and drying\" OR \"intermittent irrigation\" OR drainage OR 干湿交替 OR 间歇灌溉) AND (redox OR \"oxidation-reduction potential\" OR 氧化还原电位) AND (\"functional gene*\" OR microbi* OR mcrA OR pmoA OR amoA OR nirK OR nirS OR nosZ OR 功能基因) AND (methanogenesis OR \"methane oxidation\" OR nitrification OR denitrification OR 甲烷生成 OR 甲烷氧化 OR 硝化 OR 反硝化))"
+    },
+    {
+      "description": "新颖性查询3：排水复水事件中的碳氮底物变化与温室气体脉冲排放。",
+      "query": "TS=((paddy OR paddies OR \"rice field*\" OR 稻田) AND (salin* OR alkalin* OR sodic* OR 盐碱) AND (rewetting OR reflooding OR \"drying-rewetting\" OR 复水 OR 复淹 OR 干湿交替) AND (\"dissolved organic carbon\" OR \"mineral nitrogen\" OR ammonium OR nitrate OR 溶解性有机碳 OR 无机氮) AND (\"gas flux*\" OR \"emission pulse*\" OR \"pulse emission*\" OR \"hot moment*\" OR 脉冲排放 OR 排放通量) AND (CH4 OR N2O OR CO2 OR \"greenhouse gas*\" OR 温室气体))"
+    }
+  ]
+}

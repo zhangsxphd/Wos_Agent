@@ -1,0 +1,13 @@
+{
+  "input": "data/processed/fulltext_verified_20261027_v5.jsonl",
+  "terms_any": [
+    "irrigat",
+    "wetting and drying",
+    "water-management",
+    "drainage"
+  ],
+  "input_count": 280,
+  "candidate_count": 38,
+  "searched_at": "2026-10-31T08:01:19.056150+00:00",
+  "limitations": "关键词召回不等于纳入筛选；该文件不是完整文献范围。"
+}

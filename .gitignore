@@ -13,3 +13,8 @@ tmp/
 .coverage
 htmlcov/
 node_modules/
+
+# Generated project search results; evidence JSON remains portable.
+research_projects/**/local_candidates.jsonl
+research_projects/**/wos_records.jsonl
+research_projects/**/wos_records.manifest.json

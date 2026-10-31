@@ -1,0 +1,134 @@
+{
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Effects of Irrigation Regime and Nitrogen Fertilizer Management on CH4, N2O and CO2 Emissions from Saline–Alkaline Paddy Fields in Northeast China",
+      "url": "https://doi.org/10.3390/su10020475",
+      "source_type": "paper",
+      "access": "全文公开，PDF已在线核对",
+      "notes": "2018；原文第3–5页、摘要及表1；两个灌溉大区的独立重复不清楚。"
+    },
+    {
+      "id": "S2",
+      "title": "Effects of mild alternate wetting and drying irrigation on N2O emissions",
+      "url": "https://doi.org/10.5194/soil-8-645-2022",
+      "source_type": "paper",
+      "access": "公开全文已在线核对",
+      "notes": "2022盆栽；未见盐碱土证据，属于间接机制证据。"
+    },
+    {
+      "id": "S3",
+      "title": "Impact of different water management and microbe application on yield of rice cultivars under seawater intrusion areas of Indonesia",
+      "url": "https://doi.org/10.4067/S0718-58392023000500510",
+      "source_type": "paper",
+      "access": "公开全文已在线核对",
+      "notes": "2017–2018田间试验；盐度为地点水平，不能将地点差异当作随机分配盐度效应。"
+    },
+    {
+      "id": "S4",
+      "title": "Water-saving cultivation method for paddy rice in saline-alkali soil",
+      "url": "https://patents.google.com/patent/CN119586508B/en",
+      "source_type": "patent",
+      "access": "公开专利文本",
+      "notes": "已有盐碱稻田多阶段水管理方案；法律状态与适用地域需独立核验。"
+    },
+    {
+      "id": "S5",
+      "title": "Alternate wetting and drying system and method",
+      "url": "https://patents.google.com/patent/US20220279740A1/en",
+      "source_type": "patent",
+      "access": "公开专利文本",
+      "notes": "水位传感及控制已有公开方案；不是完整专利检索。"
+    },
+    {
+      "id": "S6",
+      "title": "Picarro G2508 Gas Concentration Analyzer",
+      "url": "https://www.picarro.com/analytical/products/g2508_gas_concentration_analyzer",
+      "source_type": "commercial_product",
+      "access": "制造商产品资料",
+      "notes": "宣称同时测量多种气体浓度；设备可借用或送测与报价均未知。"
+    }
+  ],
+  "observations": [
+    {
+      "id": "E1",
+      "source_id": "S1",
+      "claim": "作者报告间歇灌溉较持续淹水在新、老稻田平均CH4通量分别降低22.81%和23.62%，N2O通量总体未检出显著差异。",
+      "location": "摘要；2.2节；3.1节",
+      "evidence_type": "reported_fact",
+      "treatment": "间歇灌溉",
+      "control_group": "持续淹水",
+      "experimental_unit": "每块稻田分为两个20×20 m区；独立处理重复不清",
+      "replicates": "土壤测定报告三次；无法据此认定独立灌溉区重复",
+      "soil": "复垦1年和57年；原文表1 pH分别9.72和8.31，EC分别1.27和0.31 mS/cm；水土比5:1",
+      "measurement": "稻季静态箱采气，气相色谱；作者比较平均通量",
+      "result": "CH4降低22.81%、23.62%",
+      "significance": "作者报告N2O整体不显著；对应结论需谨慎",
+      "limitations": "稻季而非全年；处理重复及田块独立性不明；新老田复垦年限与多项土壤条件混杂。"
+    },
+    {
+      "id": "E2",
+      "source_id": "S2",
+      "claim": "作者报告除CK外温和AWD较持续淹水稻季累计N2O平均增加28.8%。",
+      "location": "3.4节、表1；PDF第648–650页",
+      "evidence_type": "reported_fact",
+      "treatment": "温和AWD，多个氮肥及秸秆组合",
+      "control_group": "相同肥料组合持续淹水",
+      "experimental_unit": "盆",
+      "replicates": "每处理3盆，详见2.1节",
+      "soil": "文中未见盐碱条件；不可视为直接盐碱稻田证据",
+      "measurement": "静态箱N2O；施肥或灌溉后第一周每2天，其余每7天",
+      "result": "作者报告平均增加28.8%，CK除外",
+      "significance": "作者报告显著，平均跨处理不可视为单个组合的效应",
+      "limitations": "盆栽及氮/秸秆方案与S1不同；不构成同条件相反结论。"
+    },
+    {
+      "id": "E3",
+      "source_id": "S3",
+      "claim": "作者报告轻盐地点两种灌溉产量差异不显著，中盐地点AWD产量降低8.2%。",
+      "location": "摘要及方法2.2节",
+      "evidence_type": "reported_fact",
+      "treatment": "AWD",
+      "control_group": "持续淹水",
+      "experimental_unit": "灌溉主区；微生物及品种为子区",
+      "replicates": "三个区组；同一地点跨年重复，不是独立地点重复",
+      "soil": "两个自然地点分别轻盐和中盐；详细ECe见原文表1",
+      "measurement": "田间分裂区；籽粒产量",
+      "result": "中盐地点作者报告产量降低8.2%",
+      "significance": "轻盐地点作者报告不显著；中盐地点报告下降",
+      "limitations": "地点与盐度混杂，不能归因于盐度本身；不提供气体排放。"
+    },
+    {
+      "id": "E4",
+      "source_id": "S4",
+      "claim": "已有专利公开盐碱稻田分阶段水管理与干湿交替方案。",
+      "location": "权利要求1及说明书灌溉阶段",
+      "evidence_type": "reported_fact",
+      "treatment": "分阶段地上及地下灌溉",
+      "control_group": "专利中的比较例，未作独立效果评价",
+      "experimental_unit": "未评价",
+      "replicates": "未评价",
+      "soil": "盐碱土，专利所述",
+      "measurement": "方法公开核查",
+      "result": "存在相关公开方案",
+      "significance": "不适用",
+      "limitations": "公开不等于有效或当前可自由实施；法律状态、权利要求与地域待核验。"
+    },
+    {
+      "id": "E5",
+      "source_id": "S1",
+      "claim": "同一组稻季N₂O累计数值在正文标为mg/m²，在表2和公式说明中标为g/m²，存在千倍单位不一致。",
+      "location": "3.1节第6页、Table 2第6页及2.5节公式3",
+      "evidence_type": "reported_fact",
+      "treatment": "间歇及持续淹水",
+      "control_group": "正文与表2的同组结果",
+      "experimental_unit": "不适用",
+      "replicates": "不适用",
+      "soil": "不适用",
+      "measurement": "原文内部单位核对",
+      "result": "正文0.23、0.29、0.20、0.24 mg/m²；表2同数值单位为g/m²",
+      "significance": "不适用",
+      "limitations": "表2与公式3单位一致但不能仅凭这一点确定正文或表格的真实量值；应查原始数据或更正。"
+    }
+  ]
+}

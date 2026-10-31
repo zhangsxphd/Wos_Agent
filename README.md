@@ -1,4 +1,21 @@
-# WoS Starter 可追溯检索
+# Wos_Agent：科研选题与实验设计决策系统
+
+目标是把主题解析、动态检索、证据综合、研究空白与现有技术核查、资源匹配、实验设计和独立评审连接起来，形成来源可追溯的科研决策支持。已有100篇Pilot和两轮专题分析均为有限应用材料，而非完整文献范围。当前仍处于建设阶段，尚不能仅凭一个任意主题自动完成可靠报告或替代科学审阅。
+
+新增的 [盐碱稻田灌溉案例](research_projects/saline_paddy_irrigation/README.md) 演示了不限年份的WoS检索、结构化来源记录、候选问题和条件性方案；完整筛选、自动主题解析、跨文献综合、查新及自动独立评审仍未完成。证据不足或资源未知时，案例明确保留未通过验收和不建议直接开题的结论。
+
+新项目工具复用已有WoS执行器及去重，不改动基础提取流程：
+
+```bash
+python -m scripts.research_planning.project init outputs/research_projects/my_project --topic '研究主题'
+python -m scripts.research_planning.project local outputs/research_projects/my_project --input data/processed/fulltext_verified_20261027_v5.jsonl --terms irrigation drainage
+python -m scripts.research_planning.project search outputs/research_projects/my_project --plan queries/saline_paddy_research.yaml
+python -m scripts.research_planning.project import-evidence outputs/research_projects/my_project evidence.json
+```
+
+检索计划仍须按实际主题编写；现有示例只适用于其说明的盐碱稻田范围。`local` 是词项召回而非自动筛选，`search` 保存完整清单和去重结果，必要时用 `--max-records`、`--max-pages` 显式限制，截断情况看清单。`import-evidence` 导入含来源、具体位置、实验单位、结果和局限的结构化JSON；空值须显式填“未知”。它检查结构和引用关系，**不会验证原文、生成科学综合或证明创新性**。现有全文准入和12类字段提取仍按下文流程执行，不自动触发。详见案例中的 [数据格式](research_projects/saline_paddy_irrigation/evidence.json)。
+
+## WoS Starter 可追溯检索
 
 主线包含 WoS 可追溯检索、文献去重、全文身份与证据准入、人工审核及全文科研信息候选提取。研究结果需要按原始论文和表图核对，技术准入和模型候选不等于独立人工 Gold 或准确率。
 

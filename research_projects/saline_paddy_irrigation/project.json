@@ -1,0 +1,18 @@
+{
+  "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响。",
+  "created_at": "2026-10-31T08:01:18.940900+00:00",
+  "status": "partial_not_accepted",
+  "resources": {
+    "equipment": "unknown",
+    "budget": "unknown",
+    "site": "unknown",
+    "skills": "unknown",
+    "timeline": "unknown",
+    "borrow_or_outsource": "unknown"
+  },
+  "limitations": [
+    "WoS完整采集后481条候选尚未逐篇筛选。",
+    "仅核查少量原文与现有技术；创新性、资源与预算未确认。",
+    "综合和评审由本次人工辅助完成，自动生成仍未实现。"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 2,
+  "run_id": "20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815",
+  "status": "completed",
+  "retrieved_at": "2026-10-31T08:00:48.994350+00:00",
+  "plan_file": "outputs/research_projects/saline_paddy_irrigation/search_plan.yaml",
+  "plan_sha256": "6f04c9bb0648d04da6b5bf7cdd739496a2b8ed9ccd493e6851ceb35ce768b923",
+  "plan_snapshot": {
+    "version": 1,
+    "name": "saline_paddy_water_carbon_nitrogen",
+    "queries": [
+      {
+        "id": "Q1_saline_water_gas",
+        "description": "盐碱稻田灌溉和温室气体，不限年份",
+        "query": "TS=(salin* OR alkal* OR sodic OR \"salt affected\") AND TS=(rice OR paddy) AND TS=(irrigat* OR flood* OR drain* OR \"water management\" OR \"wetting and drying\") AND TS=(methane OR nitrous OR greenhouse OR CH4 OR N2O)",
+        "database": "WOS",
+        "sort": "PY+D",
+        "enabled": true
+      },
+      {
+        "id": "Q2_saline_water_carbon_nitrogen",
+        "description": "盐碱稻田灌溉与碳氮过程，不限年份",
+        "query": "TS=(salin* OR alkal* OR sodic OR \"salt affected\") AND TS=(rice OR paddy) AND TS=(irrigat* OR flood* OR drain* OR \"water management\" OR \"wetting and drying\") AND TS=(carbon OR nitrogen OR nitrification OR denitrification OR mineralization)",
+        "database": "WOS",
+        "sort": "PY+D",
+        "enabled": true
+      },
+      {
+        "id": "Q3_transfer_water_gas",
+        "description": "非限定盐度的稻田水管理和碳氮温室气体机制，用作间接证据",
+        "query": "TS=(rice OR paddy) AND TS=(\"alternate wetting and drying\" OR \"intermittent irrigation\") AND TS=(methane OR \"nitrous oxide\") AND TS=(salin* OR alkal* OR sodic)",
+        "database": "WOS",
+        "sort": "PY+D",
+        "enabled": true
+      }
+    ]
+  },
+  "page_size": 50,
+  "max_records": null,
+  "max_pages": null,
+  "queries": [
+    {
+      "query_id": "Q1_saline_water_gas",
+      "description": "盐碱稻田灌溉和温室气体，不限年份",
+      "exact_query": "TS=(salin* OR alkal* OR sodic OR \"salt affected\") AND TS=(rice OR paddy) AND TS=(irrigat* OR flood* OR drain* OR \"water management\" OR \"wetting and drying\") AND TS=(methane OR nitrous OR greenhouse OR CH4 OR N2O)",
+      "retrieved_at": "2026-10-31T08:00:48.995391+00:00",
+      "total_hits": 138,
+      "collected": 138,
+      "pages_fetched": 3,
+      "truncated": false,
+      "status": "completed",
+      "processed_file": "data/processed/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/Q1_saline_water_gas.jsonl",
+      "manifest_file": "data/raw/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/01_Q1_saline_water_gas/manifest.json"
+    },
+    {
+      "query_id": "Q2_saline_water_carbon_nitrogen",
+      "description": "盐碱稻田灌溉与碳氮过程，不限年份",
+      "exact_query": "TS=(salin* OR alkal* OR sodic OR \"salt affected\") AND TS=(rice OR paddy) AND TS=(irrigat* OR flood* OR drain* OR \"water management\" OR \"wetting and drying\") AND TS=(carbon OR nitrogen OR nitrification OR denitrification OR mineralization)",
+      "retrieved_at": "2026-10-31T08:00:52.516382+00:00",
+      "total_hits": 424,
+      "collected": 424,
+      "pages_fetched": 9,
+      "truncated": false,
+      "status": "completed",
+      "processed_file": "data/processed/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/Q2_saline_water_carbon_nitrogen.jsonl",
+      "manifest_file": "data/raw/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/02_Q2_saline_water_carbon_nitrogen/manifest.json"
+    },
+    {
+      "query_id": "Q3_transfer_water_gas",
+      "description": "非限定盐度的稻田水管理和碳氮温室气体机制，用作间接证据",
+      "exact_query": "TS=(rice OR paddy) AND TS=(\"alternate wetting and drying\" OR \"intermittent irrigation\") AND TS=(methane OR \"nitrous oxide\") AND TS=(salin* OR alkal* OR sodic)",
+      "retrieved_at": "2026-10-31T08:01:01.280471+00:00",
+      "total_hits": 8,
+      "collected": 8,
+      "pages_fetched": 1,
+      "truncated": false,
+      "status": "completed",
+      "processed_file": "data/processed/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/Q3_transfer_water_gas.jsonl",
+      "manifest_file": "data/raw/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/03_Q3_transfer_water_gas/manifest.json"
+    }
+  ],
+  "skipped_queries": [],
+  "manifest_file": "data/raw/plans/20261031_160048_994152_saline_paddy_water_carbon_nitrogen_a0404815/plan_manifest.json",
+  "completed_at": "2026-10-31T08:01:01.970783+00:00",
+  "truncated": false
+}

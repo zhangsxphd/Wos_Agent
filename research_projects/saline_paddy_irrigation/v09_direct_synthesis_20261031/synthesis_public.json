@@ -1,0 +1,641 @@
+{
+  "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响",
+  "primary_question": "在盐碱稻田或其土壤上，不同灌溉水分制度相对于明确对照，如何影响定义一致的CH4、N2O或土壤碳氮过程？",
+  "primary_evidence_ids": [],
+  "primary_conclusion": "insufficient_evidence_no_common_finding",
+  "indirect_evidence_ids": [
+    "10.3390/plants12132446#field:主要结果:N200-N160",
+    "10.3390/plants12132446#field:主要结果:N200-N240"
+  ],
+  "pairwise_comparability": [
+    {
+      "study_ids": [
+        "10.1002/ldr.4815",
+        "10.3390/plants12132446"
+      ],
+      "outcome_family": "n2o",
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "independence": "unknown",
+      "details": "部分源数据受历史 not_push_github 限制，完整条件、来源与比较保留在本机。"
+    },
+    {
+      "study_ids": [
+        "10.3390/agriculture16161786",
+        "10.3390/plants12132446"
+      ],
+      "outcome_family": "rice_yield",
+      "comparison_ids": [
+        [
+          "10.3390/agriculture16161786#result5:0",
+          "10.3390/agriculture16161786#result5:1"
+        ],
+        [
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N160-对照",
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N200-对照",
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N240-对照"
+        ]
+      ],
+      "experiment_ids": [
+        null,
+        null
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "straw_and_nitrogen"
+        ],
+        [
+          "nitrogen_input"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "处理因素或比较基准不同",
+        "结果数值或报告效应的单位和口径不同或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "多个因素同时变化，不可归因于单一因素",
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "氮水平比较，不是水分制度比较",
+        "共同对照不得计为独立实验",
+        "来源位置尚待核查"
+      ],
+      "recorded_source_issues": [
+        {
+          "field": "internal_conflicts",
+          "value": "Baseline salinity differs between abstract and Table 1; duration differs from dated experiment. Panicle response narrative conflicts with table means. Discussion reports 78.8% N2 yield gain versus Results 22.1%. Root diameter discussion contradicts Results. Figure 3 caption panel assignments conflict with plotted axes, and five root parameters receive only four percentage values.",
+          "status": "reported",
+          "evidence": [
+            {
+              "page": 15,
+              "paragraph_id": "page15-p1",
+              "quote": "yet it achieved a 78.8%\nyield increment relative to conventional urea.",
+              "table_figure": "",
+              "row": "",
+              "column": "",
+              "footnote": ""
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://doi.org/10.3390/agriculture16161786",
+        "https://doi.org/10.3390/plants12132446"
+      ]
+    },
+    {
+      "study_ids": [
+        "10.3390/agriculture16161786",
+        "10.3390/su18052185"
+      ],
+      "outcome_family": "rice_yield",
+      "comparison_ids": [
+        [
+          "10.3390/agriculture16161786#result5:0",
+          "10.3390/agriculture16161786#result5:1"
+        ],
+        [
+          "10.3390/su18052185#result0:0",
+          "10.3390/su18052185#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        null,
+        null
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "straw_and_nitrogen"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "处理因素或比较基准不同",
+        "结果数值或报告效应的单位和口径不同或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "多个因素同时变化，不可归因于单一因素",
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "候选表注对比较范围措辞需核对",
+        "该相对效应与同论文组均值可能为同一结果，不可当成独立研究"
+      ],
+      "recorded_source_issues": [
+        {
+          "field": "internal_conflicts",
+          "value": "Baseline salinity differs between abstract and Table 1; duration differs from dated experiment. Panicle response narrative conflicts with table means. Discussion reports 78.8% N2 yield gain versus Results 22.1%. Root diameter discussion contradicts Results. Figure 3 caption panel assignments conflict with plotted axes, and five root parameters receive only four percentage values.",
+          "status": "reported",
+          "evidence": [
+            {
+              "page": 15,
+              "paragraph_id": "page15-p1",
+              "quote": "yet it achieved a 78.8%\nyield increment relative to conventional urea.",
+              "table_figure": "",
+              "row": "",
+              "column": "",
+              "footnote": ""
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "https://doi.org/10.3390/agriculture16161786",
+        "https://doi.org/10.3390/su18052185"
+      ]
+    },
+    {
+      "study_ids": [
+        "10.3390/agriculture16161786",
+        "10.3390/w16182598"
+      ],
+      "outcome_family": "rice_yield",
+      "comparison_ids": [
+        [
+          "10.3390/agriculture16161786#result5:0",
+          "10.3390/agriculture16161786#result5:1"
+        ],
+        [
+          "10.3390/w16182598#historic_response:yield:T1-CK",
+          "10.3390/w16182598#historic_response:yield:T2-CK",
+          "10.3390/w16182598#historic_response:yield:T3-CK"
+        ]
+      ],
+      "experiment_ids": [
+        null,
+        null
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "straw_and_nitrogen"
+        ],
+        [
+          "water_source"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "处理因素或比较基准不同",
+        "结果数值或报告效应的单位和口径不同或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "多个因素同时变化，不可归因于单一因素",
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "误差类型在表注中未明确",
+        "水源组合处理不是干湿交替",
+        "讨论中未显著影响产量的比较基准不清，表格字母与文字的适用范围待核"
+      ],
+      "recorded_source_issues": [
+        {
+          "field": "internal_conflicts",
+          "value": "Baseline salinity differs between abstract and Table 1; duration differs from dated experiment. Panicle response narrative conflicts with table means. Discussion reports 78.8% N2 yield gain versus Results 22.1%. Root diameter discussion contradicts Results. Figure 3 caption panel assignments conflict with plotted axes, and five root parameters receive only four percentage values.",
+          "status": "reported",
+          "evidence": [
+            {
+              "page": 15,
+              "paragraph_id": "page15-p1",
+              "quote": "yet it achieved a 78.8%\nyield increment relative to conventional urea.",
+              "table_figure": "",
+              "row": "",
+              "column": "",
+              "footnote": ""
+            }
+          ]
+        },
+        {
+          "field": "contradiction_yield",
+          "value": "T1不减产与结果/表3矛盾，第7—8页",
+          "status": "已覆盖",
+          "evidence": {
+            "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+            "record_metadata": {
+              "field": "contradiction_yield",
+              "value": "T1不减产与结果/表3矛盾，第7—8页",
+              "review_status": "已覆盖",
+              "source": "prior_review"
+            }
+          }
+        },
+        {
+          "field": "contradiction_as",
+          "value": "正文As不显著与表3字母不一致，第7—8页",
+          "status": "已覆盖",
+          "evidence": {
+            "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+            "record_metadata": {
+              "field": "contradiction_as",
+              "value": "正文As不显著与表3字母不一致，第7—8页",
+              "review_status": "已覆盖",
+              "source": "prior_review"
+            }
+          }
+        }
+      ],
+      "sources": [
+        "https://doi.org/10.3390/agriculture16161786",
+        "https://doi.org/10.3390/w16182598"
+      ]
+    },
+    {
+      "study_ids": [
+        "10.3390/plants12132446",
+        "10.3390/su18052185"
+      ],
+      "outcome_family": "rice_yield",
+      "comparison_ids": [
+        [
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N160-对照",
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N200-对照",
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N240-对照"
+        ],
+        [
+          "10.3390/su18052185#result0:0",
+          "10.3390/su18052185#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        null,
+        null
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "nitrogen_input"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "处理因素或比较基准不同",
+        "结果数值或报告效应的单位和口径不同或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "氮水平比较，不是水分制度比较",
+        "共同对照不得计为独立实验",
+        "来源位置尚待核查",
+        "候选表注对比较范围措辞需核对",
+        "该相对效应与同论文组均值可能为同一结果，不可当成独立研究"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3390/plants12132446",
+        "https://doi.org/10.3390/su18052185"
+      ]
+    },
+    {
+      "study_ids": [
+        "10.3390/plants12132446",
+        "10.3390/w16182598"
+      ],
+      "outcome_family": "rice_yield",
+      "comparison_ids": [
+        [
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N160-对照",
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N200-对照",
+          "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N240-对照"
+        ],
+        [
+          "10.3390/w16182598#historic_response:yield:T1-CK",
+          "10.3390/w16182598#historic_response:yield:T2-CK",
+          "10.3390/w16182598#historic_response:yield:T3-CK"
+        ]
+      ],
+      "experiment_ids": [
+        null,
+        null
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "nitrogen_input"
+        ],
+        [
+          "water_source"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "处理因素或比较基准不同",
+        "结果数值或报告效应的单位和口径不同或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "氮水平比较，不是水分制度比较",
+        "共同对照不得计为独立实验",
+        "来源位置尚待核查",
+        "误差类型在表注中未明确",
+        "水源组合处理不是干湿交替",
+        "讨论中未显著影响产量的比较基准不清，表格字母与文字的适用范围待核"
+      ],
+      "recorded_source_issues": [
+        {
+          "field": "contradiction_yield",
+          "value": "T1不减产与结果/表3矛盾，第7—8页",
+          "status": "已覆盖",
+          "evidence": {
+            "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+            "record_metadata": {
+              "field": "contradiction_yield",
+              "value": "T1不减产与结果/表3矛盾，第7—8页",
+              "review_status": "已覆盖",
+              "source": "prior_review"
+            }
+          }
+        },
+        {
+          "field": "contradiction_as",
+          "value": "正文As不显著与表3字母不一致，第7—8页",
+          "status": "已覆盖",
+          "evidence": {
+            "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+            "record_metadata": {
+              "field": "contradiction_as",
+              "value": "正文As不显著与表3字母不一致，第7—8页",
+              "review_status": "已覆盖",
+              "source": "prior_review"
+            }
+          }
+        }
+      ],
+      "sources": [
+        "https://doi.org/10.3390/plants12132446",
+        "https://doi.org/10.3390/w16182598"
+      ]
+    },
+    {
+      "study_ids": [
+        "10.3390/su18052185",
+        "10.3390/w16182598"
+      ],
+      "outcome_family": "rice_yield",
+      "comparison_ids": [
+        [
+          "10.3390/su18052185#result0:0",
+          "10.3390/su18052185#result1:0"
+        ],
+        [
+          "10.3390/w16182598#historic_response:yield:T1-CK",
+          "10.3390/w16182598#historic_response:yield:T2-CK",
+          "10.3390/w16182598#historic_response:yield:T3-CK"
+        ]
+      ],
+      "experiment_ids": [
+        null,
+        null
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_source"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "处理因素或比较基准不同",
+        "结果数值或报告效应的单位和口径不同或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "该相对效应与同论文组均值可能为同一结果，不可当成独立研究",
+        "误差类型在表注中未明确",
+        "水源组合处理不是干湿交替",
+        "讨论中未显著影响产量的比较基准不清，表格字母与文字的适用范围待核"
+      ],
+      "recorded_source_issues": [
+        {
+          "field": "contradiction_yield",
+          "value": "T1不减产与结果/表3矛盾，第7—8页",
+          "status": "已覆盖",
+          "evidence": {
+            "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+            "record_metadata": {
+              "field": "contradiction_yield",
+              "value": "T1不减产与结果/表3矛盾，第7—8页",
+              "review_status": "已覆盖",
+              "source": "prior_review"
+            }
+          }
+        },
+        {
+          "field": "contradiction_as",
+          "value": "正文As不显著与表3字母不一致，第7—8页",
+          "status": "已覆盖",
+          "evidence": {
+            "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+            "record_metadata": {
+              "field": "contradiction_as",
+              "value": "正文As不显著与表3字母不一致，第7—8页",
+              "review_status": "已覆盖",
+              "source": "prior_review"
+            }
+          }
+        }
+      ],
+      "sources": [
+        "https://doi.org/10.3390/su18052185",
+        "https://doi.org/10.3390/w16182598"
+      ]
+    }
+  ],
+  "dependent_comparisons": [
+    {
+      "study_id": "10.3390/agriculture16161786",
+      "outcome": "other",
+      "group_label": "S2",
+      "comparison_ids": [
+        "10.3390/agriculture16161786#result0:0",
+        "10.3390/agriculture16161786#result1:0",
+        "10.3390/agriculture16161786#result2:0",
+        "10.3390/agriculture16161786#result2:1"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agriculture16161786",
+      "outcome": "other",
+      "group_label": "S1",
+      "comparison_ids": [
+        "10.3390/agriculture16161786#result0:0",
+        "10.3390/agriculture16161786#result1:0",
+        "10.3390/agriculture16161786#result2:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agriculture16161786",
+      "outcome": "other",
+      "group_label": "N3",
+      "comparison_ids": [
+        "10.3390/agriculture16161786#result3:0",
+        "10.3390/agriculture16161786#result3:1"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agriculture16161786",
+      "outcome": "rice_yield",
+      "group_label": "S1N1",
+      "comparison_ids": [
+        "10.3390/agriculture16161786#result5:0",
+        "10.3390/agriculture16161786#result5:1"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su18052185",
+      "outcome": "rice_yield",
+      "group_label": "ISCW",
+      "comparison_ids": [
+        "10.3390/su18052185#result0:0",
+        "10.3390/su18052185#result1:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su18052185",
+      "outcome": "rice_yield",
+      "group_label": "IFCW",
+      "comparison_ids": [
+        "10.3390/su18052185#result0:0",
+        "10.3390/su18052185#result1:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agronomy14071441",
+      "outcome": "soil_ph",
+      "group_label": "CK",
+      "comparison_ids": [
+        "10.3390/agronomy14071441#field:新核查 · 土壤 EC 与 pH 显著性:pH:BW-CK",
+        "10.3390/agronomy14071441#field:新核查 · 土壤 EC 与 pH 显著性:pH:W-CK"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agronomy14071441",
+      "outcome": "other",
+      "group_label": "W",
+      "comparison_ids": [
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:ACE:W-CK",
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:Shannon:W-CK"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agronomy14071441",
+      "outcome": "other",
+      "group_label": "CK",
+      "comparison_ids": [
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:ACE:BW-CK",
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:ACE:W-CK",
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:Shannon:BW-CK",
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:Shannon:W-CK"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/agronomy14071441",
+      "outcome": "other",
+      "group_label": "BW",
+      "comparison_ids": [
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:ACE:BW-CK",
+        "10.3390/agronomy14071441#field:新核查 · 真菌多样性:Shannon:BW-CK"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/plants12132446",
+      "outcome": "n2o",
+      "group_label": "N200",
+      "comparison_ids": [
+        "10.3390/plants12132446#field:主要结果:N200-N160",
+        "10.3390/plants12132446#field:主要结果:N200-N240"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/plants12132446",
+      "outcome": "rice_yield",
+      "group_label": "对照",
+      "comparison_ids": [
+        "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N160-对照",
+        "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N200-对照",
+        "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N240-对照"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/w16182598",
+      "outcome": "rice_yield",
+      "group_label": "CK",
+      "comparison_ids": [
+        "10.3390/w16182598#historic_response:yield:T1-CK",
+        "10.3390/w16182598#historic_response:yield:T2-CK",
+        "10.3390/w16182598#historic_response:yield:T3-CK"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    }
+  ],
+  "findings": [],
+  "independent_experiment_count": "unknown",
+  "meta_analysis": "not_implemented",
+  "limitations": [
+    "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
+    "来源状态为候选；模型定位和PDF实际核验分开。",
+    "不因同向、显著或不显著生成共同结论或真正矛盾。"
+  ],
+  "input_conversion_sha256": "23811f343e7b48c5f7d072dc9bc46d977f89f86238d799bf80c803089046fb02",
+  "source_audit_sha256": "63f49a5953b5fc1855b5fb23731cea195ed230ffb9aca969ec24235d0e20b162",
+  "public_snapshot_note": "受历史语料 not_push_github 标记约束，以下快照省略相关论文的逐篇内容及比较；完整结果保留在本机 outputs。"
+}

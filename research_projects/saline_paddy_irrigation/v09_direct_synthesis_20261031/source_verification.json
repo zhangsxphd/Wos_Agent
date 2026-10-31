@@ -1,0 +1,8 @@
+{
+  "method": "本轮助手定点目视核对原PDF；不是人工Gold，不等于检验原始数据或全部统计方法。",
+  "checks": [
+    {"doi":"10.3390/plants12132446", "pdf_sha256":"7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f", "outcomes":["n2o_unspecified_period"], "pages":[1,11], "scope":"摘要中的N200相对N160和N240的N2O百分比及方法中的处理水平、土柱与重复；未核对组均值和统计显著性。", "status":"assistant_pdf_visual_review_not_human_gold"},
+    {"doi":"10.3390/plants12132446", "pdf_sha256":"7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f", "outcomes":["rice_grain_yield"], "pages":[3,11], "scope":"表1籽粒产量列、各处理行、字母和SD表注，以及土柱处理和重复。", "status":"assistant_pdf_visual_review_not_human_gold"},
+    {"doi":"10.1002/ldr.4815", "pdf_sha256":"1e9c3586507259a6fdabf571200a1f45094a6d989dcd6d7bd2fd7eb841e33914", "outcomes":["cumulative_n2o","cumulative_co2","cumulative_ch4"], "pages":[3,5,6], "scope":"方法中的容器重复及统一水层；结果正文中的组别累计值和图2字母；不证明田块独立或排除其他原文冲突。", "status":"assistant_pdf_visual_review_not_human_gold"}
+  ]
+}

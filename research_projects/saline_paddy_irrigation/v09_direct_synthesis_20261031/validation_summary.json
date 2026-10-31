@@ -1,0 +1,44 @@
+{
+  "run": "formal_converter_to_synthesis",
+  "input_conversion_sha256": "23811f343e7b48c5f7d072dc9bc46d977f89f86238d799bf80c803089046fb02",
+  "source_audit_sha256": "63f49a5953b5fc1855b5fb23731cea195ed230ffb9aca969ec24235d0e20b162",
+  "regression": {
+    "prior_comparisons": 20,
+    "retained": 20,
+    "core_value_differences": 0
+  },
+  "counts": {
+    "papers": 7,
+    "fields": 79,
+    "numeric_candidates": 8,
+    "field_conversion_counts": {
+      "metadata_candidate": 46,
+      "qualitative_only": 14,
+      "pointer_only": 6,
+      "recovered_from_historic_response": 8,
+      "partial_numeric": 5
+    },
+    "comparisons": 31,
+    "gold_upgrades": 0
+  },
+  "new_paper_comparisons": {
+    "10.1002/ldr.4815": 6,
+    "10.3390/plants12132446": 5
+  },
+  "primary_evidence": 0,
+  "descriptive_pairs": 7,
+  "conditional_quantitative_pairs": 0,
+  "common_findings": 0,
+  "meta_analysis": "not_implemented",
+  "tests": {
+    "suite": "portable",
+    "selected": 521,
+    "status": "PASS",
+    "run": 521,
+    "failures": [],
+    "errors": [],
+    "skipped": []
+  },
+  "historical_tests_excluded": 36,
+  "privacy": "Complete local artifacts contain a source marked not_push_github; public snapshots omit its original contents."
+}

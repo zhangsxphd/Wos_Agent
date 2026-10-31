@@ -79,9 +79,8 @@ class EvidenceBridgeTests(unittest.TestCase):
         n = self.build()
         c = next(c for c in n['comparisons'] if c['comparison_id'] == 'Y22')
         self.assertIn('possible_abstract_table_conflict_scope_unresolved', c['conflicts'])
-        finding = mod.synthesize(n)['findings'][0]
-        self.assertEqual(finding['supports'], ['Y23', 'Y26'])
-        self.assertTrue(any(x['comparison_id'] == 'Y22' for x in finding['counterevidence_or_unresolved']))
+        self.assertEqual(mod.synthesize(n)['findings'], [])  # Direction alone is insufficient.
+        self.assertIn('possible_abstract_table_conflict_scope_unresolved', c['conflicts'])
 
     def test_matched_context_possible_opposition_and_shared_experiment_guard(self):
         n = self.build(); a = next(c for c in n['comparisons'] if c['comparison_id'] == 'Y26')
@@ -96,7 +95,7 @@ class EvidenceBridgeTests(unittest.TestCase):
         p['study_id'] = 'SYNTHETIC'; p['source_url'] = 'synthetic'; p['doi'] = '10.1234/synthetic'
         n['papers'].append(p); n['comparisons'].append(b)
         s = mod.synthesize(n)
-        self.assertTrue(any('SYNTHETIC' in x['comparison_ids'] for x in s['possible_contradictions']))
+        self.assertFalse(any('SYNTHETIC' in x['comparison_ids'] for x in s['possible_contradictions']))  # Independence unknown.
         p['experiment_metadata'] = {'site': 'A', 'years': [2022]}
         next(p for p in n['papers'] if p['study_id'] == 'P2026')['experiment_metadata'] = {'site': 'A', 'years': [2022]}
         s = mod.synthesize(n)

@@ -78,6 +78,21 @@ class CandidateConversionTests(unittest.TestCase):
             (root/'answer.txt').write_text(text+'modified')
             out,err,_=m.parse_historic_response(p,origin,root);self.assertFalse(out);self.assertTrue(err)
 
+    def test_source_location_is_parsed_not_invented(self):
+        text=('| T1 | Ditch water | 沟水 | p3 |\n| CK | River water | 河水 | p3 |\n'
+              '### 6.5 水稻产量\nPDF第27页，Table 19，Yield (kg/hm²)\n'
+              '| CK | 100 ± 5 | a | 对照 |\n| T1 | 90 ± 4 | b | 10% |\n')
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);(root/'answer.txt').write_text(text)
+            h=hashlib.sha256((root/'answer.txt').read_bytes()).hexdigest()
+            (root/'review.json').write_text(json.dumps({'user_pasted_response_sha256':h}))
+            p=paper();p['pdf_sha256']='hash';p['raw_fields']=[]
+            result,err,_=m.parse_historic_response(p,{'historic_response_file':'answer.txt','source_file':'review.json'},root)
+            self.assertFalse(err)
+            self.assertEqual(result[0]['evidence']['location']['program_parsed']['physical_page'],27)
+            self.assertEqual(result[0]['evidence']['location']['program_parsed']['table'],'Table 19')
+            self.assertIsNone(result[0]['evidence']['location']['pdf_verified'])
+
     def test_two_studies_convert_without_any_reference_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
@@ -106,6 +121,29 @@ class CandidateConversionTests(unittest.TestCase):
                  'evidence':{'record_metadata':{'review_status':'已覆盖'}}}
         ex=m.experiment('10.1234/x',{'study_object':pointer})
         self.assertIsNone(ex['research_object_candidate'])
+
+    def test_nitrogen_reported_effect_keeps_period_and_significance_unknown(self):
+        p=paper(); f=field('主要结果','作者报告N200与N160、N240相比，N2O排放低34.7%和78.9%；具体数值及测量误差须查表。')
+        rows=m.parse_nitrogen_fields(p,f)
+        self.assertEqual(len(rows),2)
+        self.assertEqual(rows[0]['outcome'],'n2o_unspecified_period')
+        self.assertEqual(rows[1]['comparator']['label'],'N240')
+        self.assertEqual(rows[1]['reported_effect']['value'],-78.9)
+        self.assertEqual(rows[0]['significance_reported'],'unknown')
+        self.assertIsNone(rows[0]['experiment_id'])
+
+    def test_salinity_response_uses_reference_not_formal_control(self):
+        text=('| L | light | 1 | 2 | 3 |\n| M | moderate | 2 | 3 | 4 |\n| H | heavy | 3 | 4 | 5 |\n'
+              '多项结果以L处理为比较对象\n| 试验容器重复 | 4个/处理 |\n'
+              '### 6.1 温室气体累积排放量\n来源：PDF第22页 Figure 7。\n'
+              '| 累积N₂O排放量（mg m⁻²） | 1ᵃ | 2ᵃᵇ | 3ᵇ |\n')
+        p=paper();p['pdf_sha256']='hash'
+        out,err,_=m.parse_salinity_response(p,text,'old.txt','sha',{'not_push_github':True})
+        self.assertFalse(err);self.assertEqual(len(out),2)
+        self.assertEqual(out[0]['comparator_role'],'descriptive_reference_not_author_control')
+        self.assertEqual(out[0]['independent_replicates']['value'],4)
+        self.assertEqual(out[0]['evidence']['sharing_restriction'],'not_push_github')
+        self.assertIsNone(out[0]['evidence']['location']['pdf_verified'])
 
     def test_three_comparability_levels(self):
         a={'outcome':'grain_yield','comparison_id':'A','treatment':{'unit':'g/hill'}};b={'outcome':'Yield per hill','comparison_id':'B','treatment':{'unit':'g/hill'}}

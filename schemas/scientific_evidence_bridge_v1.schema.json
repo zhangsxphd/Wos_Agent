@@ -24,7 +24,7 @@
               "type": "object",
               "required": ["experiment_id", "status", "treatments"],
               "properties": {
-                "experiment_id": {"type": "string"},
+                "experiment_id": {"type": ["string", "null"]},
                 "status": {"type": "string"},
                 "treatments": {"type": "array", "items": {"type": "object", "required": ["role", "description"]}}
               }
@@ -41,7 +41,7 @@
         "properties": {
           "comparison_id": {"type": "string"},
           "study_id": {"type": "string"},
-          "experiment_id": {"type": "string"},
+          "experiment_id": {"type": ["string", "null"]},
           "outcome": {"type": ["string", "null"]},
           "intervention": {"type": "string"},
           "comparator": {"type": "string"},

@@ -1,0 +1,120 @@
+{
+  "method": "Reference read only after independent historical-candidate conversion.",
+  "checks": [
+    {
+      "reference_id": "Y23",
+      "doi": "10.4067/s0718-58392023000500510",
+      "treatment_label": null,
+      "comparator_label": null,
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "该论文不在本次五篇历史导出关联范围。"
+    },
+    {
+      "reference_id": "Y26",
+      "doi": "10.3390/su18052185",
+      "treatment_label": "ISCW",
+      "comparator_label": "IFCW",
+      "status": "match",
+      "tests": {
+        "intervention_value": true,
+        "comparator_value": true,
+        "unit": true,
+        "intervention_error": true,
+        "comparator_error": true,
+        "error_type": true
+      },
+      "comparison_id": "10.3390/su18052185#result0:0",
+      "reference_significance": "Table 3分别标c和a，作者表注p<0.05",
+      "candidate_significance": "Table 3: c vs a, p<0.05",
+      "note": "仅比较共同记录的数值；单位、显著性和来源冲突另行核查，不构成人工Gold。"
+    },
+    {
+      "reference_id": "Y22",
+      "doi": "10.1186/s12284-022-00564-6",
+      "treatment_label": null,
+      "comparator_label": null,
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "历史候选未提供相同指标、处理和对照的成对均值；不反向填充值。"
+    },
+    {
+      "reference_id": "N18",
+      "doi": "10.3390/su10020475",
+      "treatment_label": null,
+      "comparator_label": null,
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "该论文不在本次五篇历史导出关联范围。"
+    },
+    {
+      "reference_id": "N22",
+      "doi": "10.5194/soil-8-645-2022",
+      "treatment_label": null,
+      "comparator_label": null,
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "该论文不在本次五篇历史导出关联范围。"
+    },
+    {
+      "reference_id": "C18",
+      "doi": "10.3390/su10020475",
+      "treatment_label": null,
+      "comparator_label": null,
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "该论文不在本次五篇历史导出关联范围。"
+    },
+    {
+      "reference_id": "SOC26",
+      "doi": "10.3390/su18052185",
+      "treatment_label": "ISCW",
+      "comparator_label": "IFCW",
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "历史候选未提供相同指标、处理和对照的成对均值；不反向填充值。"
+    },
+    {
+      "reference_id": "PH24",
+      "doi": "10.3390/agronomy14071441",
+      "treatment_label": "W",
+      "comparator_label": "CK",
+      "status": "match",
+      "tests": {
+        "intervention_value": true,
+        "comparator_value": true,
+        "unit": true,
+        "intervention_error": true,
+        "comparator_error": true,
+        "error_type": true
+      },
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 土壤 EC 与 pH 显著性:pH:W-CK",
+      "reference_significance": "Table 1同标a，未显示显著差异",
+      "candidate_significance": "letters_overlap_no_significant_difference_reported",
+      "note": "仅比较共同记录的数值；单位、显著性和来源冲突另行核查，不构成人工Gold。"
+    },
+    {
+      "reference_id": "Y24Q",
+      "doi": "10.3390/w16182598",
+      "treatment_label": "T3",
+      "comparator_label": "CK",
+      "status": "match",
+      "tests": {
+        "intervention_value": true,
+        "comparator_value": true,
+        "unit": true,
+        "intervention_error": true,
+        "comparator_error": true
+      },
+      "comparison_id": "10.3390/w16182598#historic_response:yield:T3-CK",
+      "reference_significance": "Table 3不同字母；讨论称未显著影响产量但比较基准未说明",
+      "candidate_significance": "letters_disjoint",
+      "note": "仅比较共同记录的数值；单位、显著性和来源冲突另行核查，不构成人工Gold。"
+    },
+    {
+      "reference_id": "Y26F",
+      "doi": "10.3390/agriculture16161786",
+      "treatment_label": "S2N3",
+      "comparator_label": "S2N1",
+      "status": "not_comparable_no_matching_candidate",
+      "reason": "相同处理的历史候选使用不同对照；不能用它替代参照的对照。"
+    }
+  ],
+  "matched": 3,
+  "not_comparable": 7,
+  "mismatches": 0
+}

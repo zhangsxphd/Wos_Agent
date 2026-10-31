@@ -1,0 +1,4070 @@
+{
+  "version": "1.0",
+  "input_sources": {
+    "papers": {
+      "sha256": "68eb3e0ce588de22b209cd4e3c2995d09657cd16ad05330ef34e318c61ee18d2"
+    },
+    "fields": {
+      "sha256": "69ed437362ff04582fcb1fb0c9e9ff224cbecc847aebc138f452190b9222cff3"
+    },
+    "results": {
+      "sha256": "932fc48a2055692bcaed3d7c473f209254c8151b763edc4621e404070a93db57"
+    },
+    "issues": {
+      "sha256": "85312d4c7ad0ef7e2fdcea3db3917d89f20877cc1226476d5023f7fe206725ab"
+    },
+    "historic_claims": {
+      "sha256": "479c377dcd733a01e459c2439e92f5b8ffa825f5e97d7182b72bf22f1f0063f9"
+    },
+    "supplement_files": {
+      "sha256": "440cc80490106d243acd5d2ea0b2dcafebad5fbe9231854408dfdc089f6044f3"
+    }
+  },
+  "papers": [
+    {
+      "doi": "10.3390/w16182598",
+      "title": "Effects of Ditch Water and Yellow River Irrigation on Saline-Alkali Characteristics of Soil and Paddy",
+      "source_url": "https://doi.org/10.3390/w16182598",
+      "pdf_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "pdf_path": "data/fulltext/raw/da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "随机区组设计（random block design）",
+        "research_object_candidate": null,
+        "conditions_candidate": null,
+        "treatments_candidate": "灌溉水源及其组合方式；原历史回复的处理表",
+        "factor_levels": {
+          "T1": "Direct ditch water irrigation / 全部使用排水沟水",
+          "T2": "Mixed ditch water and Yellow River water irrigation / 沟渠水与黄河水按1:1混合灌溉",
+          "T3": "Alternate ditch water and Yellow River water irrigation / 沟渠水与黄河水交替灌溉",
+          "CK": "Irrigation solely with Yellow River water / 全部使用黄河水，作为对照"
+        },
+        "control_candidate": "CK: Irrigation solely with Yellow River water / 全部使用黄河水，作为对照",
+        "experimental_unit": {
+          "value": "field_plot",
+          "source_field": "historic_response/design",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 5,
+          "original": "Each treatment was repeated five times.",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "Samples were collected in triplicate; 具体层级不明",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": null,
+        "measurement_methods_candidate": null,
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 1,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470"
+      }
+    },
+    {
+      "doi": "10.1186/s12284-022-00564-6",
+      "title": "Plant Growth-Promoting Rhizobacteria Improve Growth, Morph-Physiological Responses, Water Productivity, and Yield of Rice Plants Under Full and Deficit Drip Irrigation",
+      "source_url": "https://doi.org/10.1186/s12284-022-00564-6",
+      "pdf_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "pdf_path": "data/fulltext/raw/77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "随机完全区组裂区：灌溉为主区，菌剂为副区。",
+        "research_object_candidate": "埃及法尤姆农场，2017及2018年两个生长季。",
+        "conditions_candidate": null,
+        "treatments_candidate": "100%和80% ETc各配接种/未接种PGPR，共4处理。",
+        "factor_levels": {},
+        "control_candidate": "分别对照同灌溉水平下未接种处理，并保留水分水平。",
+        "experimental_unit": {
+          "value": "main_plot_for_irrigation; subplot_for_inoculation",
+          "source_field": "replicates",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "作者报告4处理各3次重复，共12地块；区组/主区需分层分析。",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "每地块取5株测生长，另5株测化学指标；植株采样不是独立地块重复。",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": null,
+        "measurement_methods_candidate": "测生长、叶绿素荧光、气孔导度、水分状态与抗氧化等；具体测量方法见第4页。",
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 6,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26"
+      }
+    },
+    {
+      "doi": "10.3390/agronomy14071441",
+      "title": "Response of Soil Fungal Community in Coastal Saline Soil to Short-Term Water Management Combined with Bio-Organic Fertilizer",
+      "source_url": "https://doi.org/10.3390/agronomy14071441",
+      "pdf_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "pdf_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "CK旱地不施生物有机肥；W水田；BW水田配生物有机肥，施用量6000 kg/ha。",
+        "research_object_candidate": "沿海盐渍土，水稻品种金源89；2021年9月至2022年10月。",
+        "conditions_candidate": null,
+        "treatments_candidate": "CK旱地不施生物有机肥；W水田；BW水田配生物有机肥，施用量6000 kg/ha。",
+        "factor_levels": {
+          "CK": "旱地不施生物有机肥",
+          "W": "水田",
+          "BW": "水田配生物有机肥，施用量6000 kg/ha"
+        },
+        "control_candidate": "CK为旱地无生物有机肥，W可作为水田条件下对比BW的参照；具体其他投入需同表核实。",
+        "experimental_unit": {
+          "value": "field_plot",
+          "source_field": "试验重复",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": null,
+        "measurement_methods_candidate": "土壤pH、EC、养分和酶活，DNA高通量测序及真菌群落分析。",
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 14,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2"
+      }
+    },
+    {
+      "doi": "10.3390/plants12132446",
+      "title": "Responses of Rice Yield, N Uptake, NH<sub>3</sub> and N<sub>2</sub>O Losses from Reclaimed Saline Soils to Varied N Inputs",
+      "source_url": "https://doi.org/10.3390/plants12132446",
+      "pdf_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "pdf_path": "data/fulltext/raw/7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "复垦盐土水稻土柱试验，研究氮投入、产量及氨/氧化亚氮排放。",
+        "research_object_candidate": "复垦盐土水稻土柱试验，研究氮投入、产量及氨/氧化亚氮排放。",
+        "conditions_candidate": null,
+        "treatments_candidate": "0、160、200、240 kg N/ha，0氮为对照。",
+        "factor_levels": {
+          "N0": "0 kg N/ha",
+          "N160": "160 kg N/ha",
+          "N200": "200 kg N/ha",
+          "N240": "240 kg N/ha",
+          "对照": "0 kg N/ha"
+        },
+        "control_candidate": null,
+        "experimental_unit": {
+          "value": "soil_column",
+          "source_field": "试验重复",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": null,
+        "measurement_methods_candidate": "测产量、吸氮、NH3挥发、N2O排放和硝化/反硝化基因；不同单位及测量时点应分开记录。",
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 15,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f"
+      }
+    },
+    {
+      "doi": "10.3390/su18052185",
+      "title": "Sustainable Reuse of Aquaculture Wastewater in Saline-Alkali Paddy Fields: Interactive Effects of Irrigation and Microalgae on Water Nutrient Removal and Rice Yield",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "pdf_path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "两因素随机完全区组盆栽试验；灌溉方式×是否添加小球藻。",
+        "research_object_candidate": "模拟养殖废水灌溉盐碱稻田土壤的水稻盆栽",
+        "conditions_candidate": null,
+        "treatments_candidate": "ISCN、ISCW、IFCN、IFCW；IS为浅湿灌、IF为淹灌，CN无藻、CW加藻。",
+        "factor_levels": {
+          "IS": "浅湿灌",
+          "IF": "淹灌",
+          "CN": "无藻",
+          "CW": "加藻"
+        },
+        "control_candidate": "同一灌溉方式下CN为不加藻比较；同一藻水平下比较灌溉方式。",
+        "experimental_unit": {
+          "value": "pot",
+          "source_field": "独立试验重复",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "作者报告每处理3个独立盆；非3个独立田块。",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": "测地表水TN、NH4-N、NO3-N、TP、pH、EC、ORP、土壤养分和水稻产量；TOPSIS综合评价",
+        "measurement_methods_candidate": "测地表水TN、NH4-N、NO3-N、TP、pH、EC、ORP、土壤养分和水稻产量；TOPSIS综合评价",
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 30,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b"
+      }
+    },
+    {
+      "doi": "10.3390/agriculture16161786",
+      "title": "Straw Return and Controlled-Release Fertilizers Improve Rice Yield by Alleviating Soil Salinity and Optimizing Nitrogen Uptake in Brackish Water-Irrigated Coastal Saline Soils",
+      "source_url": "https://doi.org/10.3390/agriculture16161786",
+      "pdf_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "pdf_path": "data/fulltext/raw/7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "Single-season 3 × 3 factorial field soil-column pot experiment; 27 columns. Two-way ANOVA for plant outcomes, GLMM for temporal EC; correlation, clustering and variation partitioning also reported. Randomization and blocking not reported.",
+        "research_object_candidate": "Rice cultivar Nanjing 9108 grown in coastal saline Solonchaks soil; effects of wheat straw placement and basal nitrogen fertilizer source under brackish irrigation.",
+        "conditions_candidate": "JAAS experimental field, 32°2′15″ N, 118°51′58″ E; 11 July–17 November 2025. Soil collected from Huafeng Farm, Dafeng, Yancheng, China. Outdoor columns on 30 cm tables; irrigation salinity 2.47 ± 0.15 g/L. Initial daytime flooding/night drainage for 10 days, subsequently minimum 5 cm standing water.",
+        "treatments_candidate": "S1 straw removal; S2 incorporation in 0–20 cm; S3 burial at 20 cm. Straw 9000 kg/ha, chopped 5–10 cm. N1 basal conventional urea; N2 basal 1:1 urea:PCU; N3 basal PCU. Total N 330 kg/ha: 40% basal, 30% tillering, 30% panicle; all topdressings conventional urea. Thus PCU substitution concerns basal N only. Uniform 100 kg P2O5/ha and 100 kg K2O/ha.",
+        "factor_levels": {
+          "S1": "straw removal",
+          "S2": "incorporation in 0–20 cm",
+          "S3": "burial at 20 cm",
+          "N1": "basal conventional urea",
+          "N2": "basal 1:1 urea:PCU",
+          "N3": "basal PCU"
+        },
+        "control_candidate": "Factorial reference levels S1 (straw removal) and N1 (conventional urea), including S1N1 combined reference. No unfertilized or freshwater irrigation control reported.",
+        "experimental_unit": {
+          "value": "soil_column",
+          "source_field": "independent_replicates",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": "Height, leaf area, SPAD; root length, surface area, diameter, volume, tips, branches, crossings and dry mass; panicle number, grains per panicle, thousand-grain weight, yield per hill; organ N, total N uptake, NUE; soil EC dynamics and baseline soil chemistry. N leaching flux, fertilizer-release kinetics and economic costs were not directly measured.",
+        "measurement_methods_candidate": "Root scanning with Epson Expression 10000XL and WinRHIZO Pro 2009c; oven dry mass. Leaf area W×L×0.75. Semi-micro Kjeldahl tissue/soil N; uptake sum of organ N concentration × dry mass; NUE uptake/applied fertilizer N ×100, without unfertilized subtraction. SS-401 sensors at 10 cm monitor EC. Gravimetric salinity; pH meter, dichromate SOM, Olsen P and flame photometry K.",
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 72,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31"
+      }
+    }
+  ],
+  "field_audit": [
+    {
+      "line": 553,
+      "doi": "10.3390/agriculture16161786",
+      "field": "research_object",
+      "value": "Rice cultivar Nanjing 9108 grown in coastal saline Solonchaks soil; effects of wheat straw placement and basal nitrogen fertilizer source under brackish irrigation.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 4,
+          "paragraph_id": "page4-p1",
+          "quote": "The rice cultivar “Nanjing 9108”, which is adapted to local conditions and widely cultivated in the region, was used for the experiment.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 554,
+      "doi": "10.3390/agriculture16161786",
+      "field": "location_conditions",
+      "value": "JAAS experimental field, 32°2′15″ N, 118°51′58″ E; 11 July–17 November 2025. Soil collected from Huafeng Farm, Dafeng, Yancheng, China. Outdoor columns on 30 cm tables; irrigation salinity 2.47 ± 0.15 g/L. Initial daytime flooding/night drainage for 10 days, subsequently minimum 5 cm standing water.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 3,
+          "paragraph_id": "page3-p1",
+          "quote": "The field soil column experiment was conducted at the Experimental Field of the Jiangsu\nAcademy of Agricultural Sciences (JAAS, 32◦2′15′′ N, 118◦51′58′′ E) from 11 July to 17 Novem-\nber 2025.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 555,
+      "doi": "10.3390/agriculture16161786",
+      "field": "study_design",
+      "value": "Single-season 3 × 3 factorial field soil-column pot experiment; 27 columns. Two-way ANOVA for plant outcomes, GLMM for temporal EC; correlation, clustering and variation partitioning also reported. Randomization and blocking not reported.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 4,
+          "paragraph_id": "page4-p1",
+          "quote": "The experiment adopted a two-factor design with three replicates per treatment,\ninvolving straw return methods and N fertilizer management.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 556,
+      "doi": "10.3390/agriculture16161786",
+      "field": "treatments_levels",
+      "value": "S1 straw removal; S2 incorporation in 0–20 cm; S3 burial at 20 cm. Straw 9000 kg/ha, chopped 5–10 cm. N1 basal conventional urea; N2 basal 1:1 urea:PCU; N3 basal PCU. Total N 330 kg/ha: 40% basal, 30% tillering, 30% panicle; all topdressings conventional urea. Thus PCU substitution concerns basal N only. Uniform 100 kg P2O5/ha and 100 kg K2O/ha.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 4,
+          "paragraph_id": "page4-p1",
+          "quote": "Treatment differences only\nexisted in the N sources of the 40% basal N input, which varied in the proportion of PCU.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 557,
+      "doi": "10.3390/agriculture16161786",
+      "field": "controls",
+      "value": "Factorial reference levels S1 (straw removal) and N1 (conventional urea), including S1N1 combined reference. No unfertilized or freshwater irrigation control reported.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 4,
+          "paragraph_id": "page4-p1",
+          "quote": "three treatments were implemented: S1 (straw removal); S2 (straw incorporation into the\n0–20 cm soil layer); and S3 (straw burial at 20 cm depth).",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 558,
+      "doi": "10.3390/agriculture16161786",
+      "field": "independent_replicates",
+      "value": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 4,
+          "paragraph_id": "page4-p1",
+          "quote": "Each\ntreatment contained three biological replicates, corresponding to a total of 27 soil columns.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 559,
+      "doi": "10.3390/agriculture16161786",
+      "field": "sampling_replicates",
+      "value": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 4,
+          "paragraph_id": "page4-p1",
+          "quote": "Chlorophyll\ncontent (SPAD value) was monitored at each stage using a chlorophyll meter (Zhejiang\nTop Instrument Co., Ltd., Hangzhou, China), with three replicate readings per plant.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 560,
+      "doi": "10.3390/agriculture16161786",
+      "field": "measurement_indicators",
+      "value": "Height, leaf area, SPAD; root length, surface area, diameter, volume, tips, branches, crossings and dry mass; panicle number, grains per panicle, thousand-grain weight, yield per hill; organ N, total N uptake, NUE; soil EC dynamics and baseline soil chemistry. N leaching flux, fertilizer-release kinetics and economic costs were not directly measured.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 5,
+          "paragraph_id": "page5-p1",
+          "quote": "The following yield components were assessed following standardized protocols:\nspike number, kernel number per spike, thousand kernel weight, and yield per hill.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 561,
+      "doi": "10.3390/agriculture16161786",
+      "field": "measurement_methods",
+      "value": "Root scanning with Epson Expression 10000XL and WinRHIZO Pro 2009c; oven dry mass. Leaf area W×L×0.75. Semi-micro Kjeldahl tissue/soil N; uptake sum of organ N concentration × dry mass; NUE uptake/applied fertilizer N ×100, without unfertilized subtraction. SS-401 sensors at 10 cm monitor EC. Gravimetric salinity; pH meter, dichromate SOM, Olsen P and flame photometry K.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 5,
+          "paragraph_id": "page5-p1",
+          "quote": "In situ soil electrical conductivity (EC) at a depth of 10 cm was monitored\nusing multi-parameter composite sensors (SS-401, Smart Science Co., Ltd., Nanjing, China).",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 562,
+      "doi": "10.3390/agriculture16161786",
+      "field": "main_results",
+      "value": "S2 lowered EC and improved growth, root dry mass, N uptake and yield. PCU-containing basal fertilizers improved yields, with N2/N3 yields statistically comparable. N3 gave higher total N uptake; S2N3 had highest reported NUE. Factor interactions generally nonsignificant. Several numerical and figure-label inconsistencies limit interpretation.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 9,
+          "paragraph_id": "page9-p2",
+          "quote": "In contrast, straw return\nmethod significantly affected soil EC throughout the growth period ( p < 0.05), with S2\nexhibiting lower EC than S1 and S3 (p < 0.05, Figure 5).",
+          "table_figure": "Figure 5",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 563,
+      "doi": "10.3390/agriculture16161786",
+      "field": "author_conclusions",
+      "value": "Authors recommend straw incorporation plus 1:1 basal urea/PCU as optimal, interpreting benefits through salinity reduction and improved nutrient acquisition. Claims of reduced leaching, synchronized release and economic/environmental benefits are interpretations rather than directly quantified outcomes.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 16,
+          "paragraph_id": "page16-p1",
+          "quote": "the integrated practice of straw incorporation coupled with\na 1:1 mixture of urea and PCU serves as the optimal management practice for brackish\nwater-irrigated rice cultivation.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 564,
+      "doi": "10.3390/agriculture16161786",
+      "field": "internal_conflicts",
+      "value": "Baseline salinity differs between abstract and Table 1; duration differs from dated experiment. Panicle response narrative conflicts with table means. Discussion reports 78.8% N2 yield gain versus Results 22.1%. Root diameter discussion contradicts Results. Figure 3 caption panel assignments conflict with plotted axes, and five root parameters receive only four percentage values.",
+      "source_status": "reported",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "source_conflicts",
+      "reason": "保留原文冲突及比较范围不明，不转换为处理效应。",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "evidence": [
+        {
+          "page": 15,
+          "paragraph_id": "page15-p1",
+          "quote": "yet it achieved a 78.8%\nyield increment relative to conventional urea.",
+          "table_figure": "",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 901,
+      "doi": "10.3390/w16182598",
+      "field": "study_object",
+      "value": "地点、品种与条件，PDF 第2—3页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "pointer_only",
+      "destination": "source_locator",
+      "reason": "本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "study_object",
+          "value": "地点、品种与条件，PDF 第2—3页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      }
+    },
+    {
+      "line": 902,
+      "doi": "10.3390/w16182598",
+      "field": "design",
+      "value": "随机区组、四处理、小区面积，第3页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复的设计表提供随机区组及小区信息；来源仍是历史模型回复。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "design",
+          "value": "随机区组、四处理、小区面积，第3页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 903,
+      "doi": "10.3390/w16182598",
+      "field": "treatments",
+      "value": "T1/T2/T3 及1:1，第3页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复的处理表提供水源代码与定义；混合比例和交替周期仍需核原文。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "treatments",
+          "value": "T1/T2/T3 及1:1，第3页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 904,
+      "doi": "10.3390/w16182598",
+      "field": "control",
+      "value": "CK 黄河水，第3页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复处理表和结果表将CK指定为黄河水对照。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "control",
+          "value": "CK 黄河水，第3页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 905,
+      "doi": "10.3390/w16182598",
+      "field": "replicates",
+      "value": "每处理5次，第3页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复含每处理5次的英文引句；程序记录为田间小区候选。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "replicates",
+          "value": "每处理5次，第3页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 906,
+      "doi": "10.3390/w16182598",
+      "field": "sampling_replicates",
+      "value": "triplicate，第4页；层级不明",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复记录triplicate但其空间或分析层级不明确，不计作独立重复。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "sampling_replicates",
+          "value": "triplicate，第4页；层级不明",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 907,
+      "doi": "10.3390/w16182598",
+      "field": "measures",
+      "value": "包含电导率及其他已审核指标，第4页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "pointer_only",
+      "destination": "source_locator",
+      "reason": "本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "measures",
+          "value": "包含电导率及其他已审核指标，第4页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      }
+    },
+    {
+      "line": 908,
+      "doi": "10.3390/w16182598",
+      "field": "yield_results",
+      "value": "处理组相对CK下降及显著性，第7页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复提供结果表的各处理值和字母；讨论比较基准仍有歧义。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "yield_results",
+          "value": "处理组相对CK下降及显著性，第7页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 909,
+      "doi": "10.3390/w16182598",
+      "field": "yield_table",
+      "value": "四个产量和字母，第8页表3",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复中可按处理标签解析均值、误差和字母；误差类型未报告。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "yield_table",
+          "value": "四个产量和字母，第8页表3",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 910,
+      "doi": "10.3390/w16182598",
+      "field": "significance",
+      "value": "Cr、As等作者说法及产量，第7—8页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "recovered_from_historic_response",
+      "destination": "source_locator",
+      "reason": "原回复结果表提供字母；与讨论文字可能涉及不同比较基准，不能消解冲突。 哈希与既有记录一致，仍须原文核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "significance",
+          "value": "Cr、As等作者说法及产量，第7—8页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      },
+      "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d"
+    },
+    {
+      "line": 911,
+      "doi": "10.3390/w16182598",
+      "field": "contradiction_yield",
+      "value": "T1不减产与结果/表3矛盾，第7—8页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "pointer_only",
+      "destination": "source_locator",
+      "reason": "本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "contradiction_yield",
+          "value": "T1不减产与结果/表3矛盾，第7—8页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      }
+    },
+    {
+      "line": 912,
+      "doi": "10.3390/w16182598",
+      "field": "contradiction_as",
+      "value": "正文As不显著与表3字母不一致，第7—8页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "pointer_only",
+      "destination": "source_locator",
+      "reason": "本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "contradiction_as",
+          "value": "正文As不显著与表3字母不一致，第7—8页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      }
+    },
+    {
+      "line": 913,
+      "doi": "10.3390/w16182598",
+      "field": "author_conclusion",
+      "value": "来源结论与作者推测分别记录，第8—9页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "pointer_only",
+      "destination": "source_locator",
+      "reason": "本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "author_conclusion",
+          "value": "来源结论与作者推测分别记录，第8—9页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      }
+    },
+    {
+      "line": 914,
+      "doi": "10.3390/w16182598",
+      "field": "conflict_total_nitrogen",
+      "value": "正文2.5与表1 1.8 mg/L，第4—5页",
+      "source_status": "已覆盖",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "pointer_only",
+      "destination": "source_locator",
+      "reason": "本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。",
+      "source_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/review.json",
+        "record_metadata": {
+          "field": "conflict_total_nitrogen",
+          "value": "正文2.5与表1 1.8 mg/L，第4—5页",
+          "review_status": "已覆盖",
+          "source": "prior_review"
+        }
+      }
+    },
+    {
+      "line": 960,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "study_object",
+      "value": "埃及法尤姆农场，2017及2018年两个生长季。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 3,
+          "section_id": "page-3",
+          "paragraph_id": "page3-p2",
+          "char_start": 42,
+          "char_end": 85,
+          "quote": "Our study was conducted in the private farm",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 961,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "design",
+      "value": "随机完全区组裂区：灌溉为主区，菌剂为副区。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 3,
+          "section_id": "page-3",
+          "paragraph_id": "page3-p2",
+          "char_start": 1218,
+          "char_end": 1264,
+          "quote": "randomized \ncomplete block design (Split Plot)",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 962,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "treatments",
+      "value": "100%和80% ETc各配接种/未接种PGPR，共4处理。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 3,
+          "section_id": "page-3",
+          "paragraph_id": "page3-p2",
+          "char_start": 1266,
+          "char_end": 1303,
+          "quote": "2 irrigation treatments \nwere applied",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 963,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "control",
+      "value": "分别对照同灌溉水平下未接种处理，并保留水分水平。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 3,
+          "section_id": "page-3",
+          "paragraph_id": "page3-p2",
+          "char_start": 1359,
+          "char_end": 1403,
+          "quote": "two PGPR treatments (treated and non-treated",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 964,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "replicates",
+      "value": "作者报告4处理各3次重复，共12地块；区组/主区需分层分析。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 3,
+          "section_id": "page-3",
+          "paragraph_id": "page3-p2",
+          "char_start": 1435,
+          "char_end": 1481,
+          "quote": "The 4 treatments were repli-\ncated three times",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 965,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "sampling_replicates",
+      "value": "每地块取5株测生长，另5株测化学指标；植株采样不是独立地块重复。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 4,
+          "section_id": "page-4",
+          "paragraph_id": "page4-p1",
+          "char_start": 1123,
+          "char_end": 1165,
+          "quote": "5 indi-\nvidual plants were randomly chosen",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 966,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "methods",
+      "value": "测生长、叶绿素荧光、气孔导度、水分状态与抗氧化等；具体测量方法见第4页。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 4,
+          "section_id": "page-4",
+          "paragraph_id": "page4-p1",
+          "char_start": 1743,
+          "char_end": 1763,
+          "quote": "portable fluorometer",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 967,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "results",
+      "value": "摘要报告充分灌溉加菌剂双年平均籽粒3.35和秸秆6.7 t/ha；需与原结果表核对。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "摘要只提供一个处理的数值，缺少对应对照；且已有摘要与表格冲突，不能生成组间比较。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 1,
+          "section_id": "page-1",
+          "paragraph_id": "page1-p1",
+          "char_start": 1509,
+          "char_end": 1521,
+          "quote": "3.35 and 6.7",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 968,
+      "doi": "10.1186/s12284-022-00564-6",
+      "field": "author_conclusion",
+      "value": "作者认为80% ETc加菌剂可节约20%灌溉水并获得近似产量；近似不等于正式等效性检验。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "77472d7e425e8594eb888a474b3a3b04006bee3b564f98708a92241e3934fa26",
+      "evidence": [
+        {
+          "page": 1,
+          "section_id": "page-1",
+          "paragraph_id": "page1-p1",
+          "char_start": 1774,
+          "char_end": 1814,
+          "quote": "save 20% of the applied irrigation water",
+          "validation": "exact_replay_in_technically_admitted_parse"
+        }
+      ]
+    },
+    {
+      "line": 1031,
+      "doi": "10.3390/agronomy14071441",
+      "field": "研究对象",
+      "value": "沿海盐渍土，水稻品种金源89；2021年9月至2022年10月。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 3,
+        "matched_fragment": "The field experiment commenced in September 2021",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1032,
+      "doi": "10.3390/agronomy14071441",
+      "field": "设计处理",
+      "value": "CK旱地不施生物有机肥；W水田；BW水田配生物有机肥，施用量6000 kg/ha。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 3,
+        "matched_fragment": "a control treatment (CK) with a dry field",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1033,
+      "doi": "10.3390/agronomy14071441",
+      "field": "对照",
+      "value": "CK为旱地无生物有机肥，W可作为水田条件下对比BW的参照；具体其他投入需同表核实。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "dry field (control, CK), paddy field (W)",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1034,
+      "doi": "10.3390/agronomy14071441",
+      "field": "试验重复",
+      "value": "作者报告每处理3块小区，共9块，各1320 m²。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 3,
+        "matched_fragment": "Each treatment consisted of three replicates",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1035,
+      "doi": "10.3390/agronomy14071441",
+      "field": "采样重复",
+      "value": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 3,
+        "matched_fragment": "Five random points were selected within each plot",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1036,
+      "doi": "10.3390/agronomy14071441",
+      "field": "测量方法",
+      "value": "土壤pH、EC、养分和酶活，DNA高通量测序及真菌群落分析。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "Soil DNA was extracted and sequenced",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1037,
+      "doi": "10.3390/agronomy14071441",
+      "field": "主要数值",
+      "value": "摘要称BW的ACE指数增加36%、Shannon增加24%、Simpson降低59%；具体参考组须核对应图表。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "只报告百分比且候选未明确具体参考组，不能反推组均值或对照。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "36% rise in the ACE index",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1038,
+      "doi": "10.3390/agronomy14071441",
+      "field": "显著性",
+      "value": "摘要称W和BW处理下EC和pH显著降低；比较对象、图表误差及统计条件需核验。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "significant reductions in soil electrical conductivity",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1039,
+      "doi": "10.3390/agronomy14071441",
+      "field": "作者结论",
+      "value": "作者认为水分管理结合生物有机肥在短期内改善盐土性质并改变真菌群落。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 9,
+        "matched_fragment": "Short-term application of bio-organic fertilizer",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "parsed_sha256": "b262be1052dd653bccd6a0dcaca10d21a8833a04c27c738d0850c48b9e2566a5",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1040,
+      "doi": "10.3390/agronomy14071441",
+      "field": "新核查 · 土壤 EC 与 pH 显著性",
+      "value": "EC：W 352.66±15.79 ab、BW 393±103.49 ab、CK 417±20.11 a；pH：W 8.40±0.06 a、BW 8.17±0.02 b、CK 8.51±0.06 a。表中字母提示 W 与 CK 的 EC、pH，以及 BW 与 CK 的 EC 均未显示显著差异；BW 与 CK 的 pH 字母不同。均值±SD，n=3。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "partial_numeric",
+      "destination": "labelled_measurements",
+      "reason": "包含标签、均值、误差、字母及来源位置；只转换可识别指标。EC单位在该候选文本中缺失。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "physical_page": 5,
+        "location": "Table 1 EC and pH columns, W/BW/CK rows, letter footnote",
+        "table_or_section": "Table 1"
+      }
+    },
+    {
+      "line": 1041,
+      "doi": "10.3390/agronomy14071441",
+      "field": "新核查 · 摘要和表格的显著性差异",
+      "value": "摘要笼统报告 W 和 BW 对 EC、pH 有显著降低；按表1字母及 CK 为比较组，W 的 EC 和 pH、BW 的 EC 均不支持逐项显著降低。摘要所用比较基准及检验细节未说明，保留原文与表格双方，不推断作者原因。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "source_conflicts",
+      "reason": "保留原文冲突及比较范围不明，不转换为处理效应。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "physical_page": 1,
+        "location": "PDF p.1 Abstract; p.5 Table 1 W/BW/CK EC and pH",
+        "table_or_section": "Abstract / Table 1"
+      }
+    },
+    {
+      "line": 1042,
+      "doi": "10.3390/agronomy14071441",
+      "field": "新核查 · 真菌多样性",
+      "value": "ACE：W 415.15±26.57 a、BW 318.26±58.53 ab、CK 237.46±54.52 b；BW 与 CK 共享 b，不能按该表判为显著不同。Shannon：W 4.27±0.23 a、BW 3.89±0.17 a、CK 3.12±0.25 b。均值±SD，n=3。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "partial_numeric",
+      "destination": "labelled_measurements",
+      "reason": "包含标签、均值、误差和字母；阈值依表注核对，数值仍为候选。",
+      "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+      "evidence": {
+        "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "physical_page": 5,
+        "location": "Table 2 ACE and Shannon columns, W/BW/CK, footnote",
+        "table_or_section": "Table 2"
+      }
+    },
+    {
+      "line": 1043,
+      "doi": "10.3390/plants12132446",
+      "field": "研究对象与设计",
+      "value": "复垦盐土水稻土柱试验，研究氮投入、产量及氨/氧化亚氮排放。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "soil column experiment",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1044,
+      "doi": "10.3390/plants12132446",
+      "field": "处理与对照",
+      "value": "0、160、200、240 kg N/ha，0氮为对照。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 11,
+        "matched_fragment": "four treatments were set up according to different N application rates",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1045,
+      "doi": "10.3390/plants12132446",
+      "field": "试验重复",
+      "value": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 11,
+        "matched_fragment": "each treatment was replicated three times",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1046,
+      "doi": "10.3390/plants12132446",
+      "field": "采样重复",
+      "value": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "ammonia (NH3) and nitrous oxide (N2O) losses",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1047,
+      "doi": "10.3390/plants12132446",
+      "field": "测量方法",
+      "value": "测产量、吸氮、NH3挥发、N2O排放和硝化/反硝化基因；不同单位及测量时点应分开记录。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "rice yield, N uptake",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1048,
+      "doi": "10.3390/plants12132446",
+      "field": "主要结果",
+      "value": "作者报告N200与N160、N240相比，N2O排放低34.7%和78.9%；具体数值及测量误差须查表。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "partial_numeric",
+      "destination": "candidate_measurement_and_uncertainty",
+      "reason": "有分组均值、误差和字母；与数值候选匹配后可补充误差，不重复计为独立结果。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "34.7% and 78.9% lower N2O emissions",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1049,
+      "doi": "10.3390/plants12132446",
+      "field": "显著性",
+      "value": "作者称N200与N240产量未显著不同；未显著不是等效，仍需核图表和检验。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "between N200 and N240",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1050,
+      "doi": "10.3390/plants12132446",
+      "field": "作者结论",
+      "value": "作者推荐在该试验条件下200 kg N/ha以兼顾产量和氮损失。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source": "main_pdf_parsed_text",
+        "pdf_page": 1,
+        "matched_fragment": "we recommend applying 200 kg/ha",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+        "method": "whitespace_normalized_text_match",
+        "scientific_interpretation": "partially_checked"
+      }
+    },
+    {
+      "line": 1051,
+      "doi": "10.3390/plants12132446",
+      "field": "新核查 · 稻谷产量和显著性",
+      "value": "籽粒产量（g/盆）：对照 40.1±1.5 c、N160 76.7±4.1 b、N200 123.7±1.8 a、N240 127.8±13.5 a；均值±SD，n=3，Duncan 检验 p<0.05。N200 与 N240 同字母，表格未显示显著差异。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source_path": "data/fulltext/raw/7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f.pdf",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "physical_page": 3,
+        "location": "Table 1 grain yield column, CK/N160/N200/N240 rows and footnote",
+        "table_or_section": "Table 1"
+      }
+    },
+    {
+      "line": 1052,
+      "doi": "10.3390/plants12132446",
+      "field": "新核查 · 施氮比较复算",
+      "value": "依据表中展示均值，N200 比 N160 高 (123.7-76.7)/76.7=61.28%，与正文报告约 61.3% 一致；基于显示值且保留比较对象。",
+      "source_status": "historic_candidate",
+      "record_class": "historic_record_as_previously_labeled",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原字段文本；无法仅凭字段名形成带处理和对照的数值比较。",
+      "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+      "evidence": {
+        "source_path": "data/fulltext/raw/7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f.pdf",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "physical_page": 3,
+        "location": "Table 1 grain yield, N200 and N160; PDF p.3 results",
+        "table_or_section": "Table 1 / Results"
+      }
+    },
+    {
+      "line": 1103,
+      "doi": "10.3390/su18052185",
+      "field": "研究对象及条件",
+      "value": "模拟养殖废水灌溉盐碱稻田土壤的水稻盆栽",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 1104,
+      "doi": "10.3390/su18052185",
+      "field": "试验设计",
+      "value": "两因素随机完全区组盆栽试验；灌溉方式×是否添加小球藻。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 1105,
+      "doi": "10.3390/su18052185",
+      "field": "处理",
+      "value": "ISCN、ISCW、IFCN、IFCW；IS为浅湿灌、IF为淹灌，CN无藻、CW加藻。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 1106,
+      "doi": "10.3390/su18052185",
+      "field": "对照及比较基准",
+      "value": "同一灌溉方式下CN为不加藻比较；同一藻水平下比较灌溉方式。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 1107,
+      "doi": "10.3390/su18052185",
+      "field": "独立试验重复",
+      "value": "作者报告每处理3个独立盆；非3个独立田块。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 1108,
+      "doi": "10.3390/su18052185",
+      "field": "采样或技术重复",
+      "value": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+      "source_status": "uncertain",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 5,
+          "anchor": "Surface water samples were collected",
+          "text": "termine the initial concentra￾tions of TN, ammonium nitrogen (NH4 +–N), nitrate nitrogen (NO3 −–N), and TP, as well as pH and EC. Surface water samples were collected from the center of each pot at 12, 36, and 60 h using a syringe. The samples were immediately filtered through a 0.45 µm membrane, stored in a refrigerator at 4 ◦C, and analyzed as soon as possible. All spectropho"
+        }
+      ]
+    },
+    {
+      "line": 1109,
+      "doi": "10.3390/su18052185",
+      "field": "测量指标及方法",
+      "value": "测地表水TN、NH4-N、NO3-N、TP、pH、EC、ORP、土壤养分和水稻产量；TOPSIS综合评价",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 5,
+          "anchor": "Surface water samples were collected",
+          "text": "termine the initial concentra￾tions of TN, ammonium nitrogen (NH4 +–N), nitrate nitrogen (NO3 −–N), and TP, as well as pH and EC. Surface water samples were collected from the center of each pot at 12, 36, and 60 h using a syringe. The samples were immediately filtered through a 0.45 µm membrane, stored in a refrigerator at 4 ◦C, and analyzed as soon as possible. All spectropho"
+        }
+      ]
+    },
+    {
+      "line": 1110,
+      "doi": "10.3390/su18052185",
+      "field": "主要结果",
+      "value": "ISCW 7.18 ± 1.73 c，对 IFCW 18.27 ± 1.59 a，单位 g/穴；均值±SD，n=3，表注不同字母p<0.05。；作者摘要称 ISCW 相对 IFCW 籽粒产量降低60.7%；表格展示均值复算约60.70%，与报告一致。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "partial_numeric",
+      "destination": "candidate_measurement_and_uncertainty",
+      "reason": "有分组均值、误差和字母；与数值候选匹配后可补充误差，不重复计为独立结果。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 1111,
+      "doi": "10.3390/su18052185",
+      "field": "结果数值及单位",
+      "value": "ISCW 7.18 ± 1.73 c，对 IFCW 18.27 ± 1.59 a，单位 g/穴；均值±SD，n=3，表注不同字母p<0.05。；作者摘要称 ISCW 相对 IFCW 籽粒产量降低60.7%；表格展示均值复算约60.70%，与报告一致。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "partial_numeric",
+      "destination": "candidate_measurement_and_uncertainty",
+      "reason": "有分组均值、误差和字母；与数值候选匹配后可补充误差，不重复计为独立结果。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 1112,
+      "doi": "10.3390/su18052185",
+      "field": "结果比较对象",
+      "value": "ISCW对IFCW；IFCW对IFCN及ISCN",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 1113,
+      "doi": "10.3390/su18052185",
+      "field": "显著性",
+      "value": "Table 3不同字母表示p<0.05，ISCW c与IFCW a不同",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 1114,
+      "doi": "10.3390/su18052185",
+      "field": "作者结论",
+      "value": "ISCW地表水净化较好但产量低，IFCW产量较高；权衡仅适用于该盆栽条件",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "These findings",
+          "text": "￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utilization in saline–alkali regi"
+        }
+      ]
+    }
+  ],
+  "response_sources": {
+    "10.3390/w16182598": {
+      "sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d",
+      "comparisons": 3,
+      "integrity": "prior_hash_matched"
+    },
+    "10.1186/s12284-022-00564-6": {
+      "sha256": "22aee6a38522e0bd2339a5da4b103d343a6a374ac6b722b3f1eb355f56effaba",
+      "comparisons": 0,
+      "integrity": "current_hash_only_not_independently_verified"
+    },
+    "10.3390/agronomy14071441": {
+      "sha256": "721cfde2c7d22e529123c8f2773b3d9e22cf447cba5e9bbe57727c667c6dd70a",
+      "comparisons": 0,
+      "integrity": "current_hash_only_not_independently_verified"
+    },
+    "10.3390/plants12132446": {
+      "sha256": "721cfde2c7d22e529123c8f2773b3d9e22cf447cba5e9bbe57727c667c6dd70a",
+      "comparisons": 0,
+      "integrity": "current_hash_only_not_independently_verified"
+    }
+  },
+  "response_failures": [
+    {
+      "doi": "10.1186/s12284-022-00564-6",
+      "reasons": [
+        "已记录现有历史回复哈希；未发现可核验的原始回复哈希及受支持的表格格式，保留字段候选"
+      ]
+    },
+    {
+      "doi": "10.3390/agronomy14071441",
+      "reasons": [
+        "已记录现有历史回复哈希；未发现可核验的原始回复哈希及受支持的表格格式，保留字段候选"
+      ]
+    },
+    {
+      "doi": "10.3390/plants12132446",
+      "reasons": [
+        "已记录现有历史回复哈希；未发现可核验的原始回复哈希及受支持的表格格式，保留字段候选"
+      ]
+    }
+  ],
+  "numeric_audit": [
+    {
+      "line": 307,
+      "doi": "10.3390/agriculture16161786",
+      "index": 0,
+      "indicator": "Plant height",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/agriculture16161786#result0:0"
+      ],
+      "reason": [
+        "组均值未提供；不得把差值当组均值",
+        "单因素主效应的另一因素汇总范围需核对"
+      ],
+      "original_value": "+2.46",
+      "original_treatment": "S2",
+      "original_comparator": "S1",
+      "source_file": "results.jsonl",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "record_class": "candidate_pending_review",
+      "evidence": [
+        {
+          "page": 6,
+          "paragraph_id": "page6-p1",
+          "quote": "S2\nexhibited a 2.46 cm increase in plant height compared with S1 (p < 0.05)",
+          "table_figure": "Figure 2a",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 308,
+      "doi": "10.3390/agriculture16161786",
+      "index": 1,
+      "indicator": "SPAD",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/agriculture16161786#result1:0"
+      ],
+      "reason": [
+        "组均值未提供；不得把差值当组均值",
+        "单因素主效应的另一因素汇总范围需核对"
+      ],
+      "original_value": "+19.10",
+      "original_treatment": "S2",
+      "original_comparator": "S1",
+      "source_file": "results.jsonl",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "record_class": "candidate_pending_review",
+      "evidence": [
+        {
+          "page": 7,
+          "paragraph_id": "page7-p1",
+          "quote": "At the maturity\nstage, S2 maintained a 19.10% increase over S1 (p < 0.001, Figure 2c).",
+          "table_figure": "Figure 2c",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 309,
+      "doi": "10.3390/agriculture16161786",
+      "index": 2,
+      "indicator": "Root dry weight",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/agriculture16161786#result2:0",
+        "10.3390/agriculture16161786#result2:1"
+      ],
+      "reason": [
+        "百分比为作者报告的效应，组均值未知",
+        "主效应跨另一因素的汇总范围需核对"
+      ],
+      "original_value": "+28.37%; +41.15%, respectively",
+      "original_treatment": "S2",
+      "original_comparator": "S1; S3",
+      "source_file": "results.jsonl",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "record_class": "candidate_pending_review",
+      "evidence": [
+        {
+          "page": 7,
+          "paragraph_id": "page7-p1",
+          "quote": "S2 increased the root dry\nweight by 28.37% and 41.15% relative to S1 and S3, respectively (p < 0.05, Figure 3).",
+          "table_figure": "Figure 3",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 310,
+      "doi": "10.3390/agriculture16161786",
+      "index": 3,
+      "indicator": "Total N uptake",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/agriculture16161786#result3:0",
+        "10.3390/agriculture16161786#result3:1"
+      ],
+      "reason": [
+        "百分比为作者报告的效应，组均值未知",
+        "主效应跨另一因素的汇总范围需核对"
+      ],
+      "original_value": "+18.0%; +12.2%, respectively",
+      "original_treatment": "N3",
+      "original_comparator": "N1; N2",
+      "source_file": "results.jsonl",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "record_class": "candidate_pending_review",
+      "evidence": [
+        {
+          "page": 9,
+          "paragraph_id": "page9-p1",
+          "quote": "the total N uptake under N3 was signifi-\ncantly higher than that under N1 and N2, with increases of 18.0% and 12.2%, respectively\n(p < 0.01)",
+          "table_figure": "Figure 4a",
+          "row": "",
+          "column": "",
+          "footnote": ""
+        }
+      ]
+    },
+    {
+      "line": 311,
+      "doi": "10.3390/agriculture16161786",
+      "index": 4,
+      "indicator": "Aboveground NUE",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/agriculture16161786#result4:0"
+      ],
+      "reason": [
+        "对照组绝对值未报告；不得反推为原文报告值"
+      ],
+      "original_value": "36.93%; author-reported relative increase 33.24%",
+      "original_treatment": "S2N3",
+      "original_comparator": "S1N1",
+      "source_file": "results.jsonl",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "record_class": "candidate_pending_review",
+      "evidence": [
+        {
+          "page": 9,
+          "paragraph_id": "page9-p2",
+          "quote": "S2N3 achieved the highest NUE (36.93%), which was 33.24% greater than that of S1N1\n(p < 0.05, Figure 4b).",
+          "table_figure": "Figure 4b",
+          "row": "S2N3 versus S1N1",
+          "column": "NUE",
+          "footnote": "Lowercase letters indicate differences at p < 0.05."
+        }
+      ]
+    },
+    {
+      "line": 312,
+      "doi": "10.3390/agriculture16161786",
+      "index": 5,
+      "indicator": "Yield per hill",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/agriculture16161786#result5:0",
+        "10.3390/agriculture16161786#result5:1"
+      ],
+      "reason": [
+        "多个因素同时变化，不可归因于单一因素",
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF"
+      ],
+      "original_value": "18.6 ± 4.8; 20.5 ± 2.1 versus 10.4 ± 0.3",
+      "original_treatment": "S2N2; S2N3",
+      "original_comparator": "S1N1",
+      "source_file": "results.jsonl",
+      "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+      "record_class": "candidate_pending_review",
+      "evidence": [
+        {
+          "page": 7,
+          "paragraph_id": "page7-p1",
+          "quote": "S2N2 13.0 ± 1.5 b 72.3 ± 2.5 a 25.2 ± 4.2 ab 18.6 ± 4.8 a",
+          "table_figure": "Table 2",
+          "row": "S2N2; S2N3; S1N1",
+          "column": "Yield (g hill−1)",
+          "footnote": "The results are the mean values (n = 3) with standard error. Lowercase letters indicate significant differences among different treatments at p < 0.05."
+        }
+      ]
+    },
+    {
+      "line": 492,
+      "doi": "10.3390/su18052185",
+      "index": 0,
+      "indicator": "grain_yield",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.3390/su18052185#result0:0"
+      ],
+      "reason": [
+        "候选表注对比较范围措辞需核对"
+      ],
+      "original_value": {
+        "ISCW": 7.18,
+        "IFCW": 18.27
+      },
+      "original_treatment": "see comparison",
+      "original_comparator": "ISCW vs IFCW",
+      "source_file": "results.jsonl",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "record_class": "candidate_pending_review",
+      "evidence": {
+        "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+        "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+        "physical_page": 14,
+        "anchor": "18.27 ± 1.59",
+        "excerpt": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+      }
+    },
+    {
+      "line": 493,
+      "doi": "10.3390/su18052185",
+      "index": 1,
+      "indicator": "grain_yield_relative_difference",
+      "conversion": "partial",
+      "produced_ids": [
+        "10.3390/su18052185#result1:0"
+      ],
+      "reason": [
+        "该相对效应与同论文组均值可能为同一结果，不可当成独立研究"
+      ],
+      "original_value": {
+        "ISCW_vs_IFCW": -60.7
+      },
+      "original_treatment": "see comparison",
+      "original_comparator": "ISCW vs IFCW",
+      "source_file": "results.jsonl",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "record_class": "candidate_pending_review",
+      "evidence": {
+        "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+        "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+        "physical_page": 1,
+        "anchor": "60.7%",
+        "excerpt": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison_id": "10.3390/agriculture16161786#result0:0",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Plant height",
+      "treatment": {
+        "label": "S2",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "S1",
+        "levels": [
+          {
+            "code": "S1",
+            "description": "straw removal"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_difference",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.05",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 0,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 6,
+            "paragraph_id": "page6-p1",
+            "quote": "S2\nexhibited a 2.46 cm increase in plant height compared with S1 (p < 0.05)",
+            "table_figure": "Figure 2a",
+            "row": "",
+            "column": "",
+            "footnote": ""
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "Main effect across N levels."
+      },
+      "warnings": [
+        "组均值未提供；不得把差值当组均值",
+        "单因素主效应的另一因素汇总范围需核对"
+      ],
+      "reported_effect": {
+        "value": 2.46,
+        "unit": "cm"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result1:0",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "SPAD",
+      "treatment": {
+        "label": "S2",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "S1",
+        "levels": [
+          {
+            "code": "S1",
+            "description": "straw removal"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.001",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 1,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 7,
+            "paragraph_id": "page7-p1",
+            "quote": "At the maturity\nstage, S2 maintained a 19.10% increase over S1 (p < 0.001, Figure 2c).",
+            "table_figure": "Figure 2c",
+            "row": "",
+            "column": "",
+            "footnote": ""
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "Relative change, not SPAD units."
+      },
+      "warnings": [
+        "组均值未提供；不得把差值当组均值",
+        "单因素主效应的另一因素汇总范围需核对"
+      ],
+      "reported_effect": {
+        "value": 19.1,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result2:0",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Root dry weight",
+      "treatment": {
+        "label": "S2",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "S1",
+        "levels": [
+          {
+            "code": "S1",
+            "description": "straw removal"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.05",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 2,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 7,
+            "paragraph_id": "page7-p1",
+            "quote": "S2 increased the root dry\nweight by 28.37% and 41.15% relative to S1 and S3, respectively (p < 0.05, Figure 3).",
+            "table_figure": "Figure 3",
+            "row": "",
+            "column": "",
+            "footnote": ""
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "Figure 3 caption panel assignments conflict with axes; no graph values inferred."
+      },
+      "warnings": [
+        "百分比为作者报告的效应，组均值未知",
+        "主效应跨另一因素的汇总范围需核对"
+      ],
+      "reported_effect": {
+        "value": 28.37,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result2:1",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Root dry weight",
+      "treatment": {
+        "label": "S2",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "S3",
+        "levels": [
+          {
+            "code": "S3",
+            "description": "burial at 20 cm"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.05",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 2,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 7,
+            "paragraph_id": "page7-p1",
+            "quote": "S2 increased the root dry\nweight by 28.37% and 41.15% relative to S1 and S3, respectively (p < 0.05, Figure 3).",
+            "table_figure": "Figure 3",
+            "row": "",
+            "column": "",
+            "footnote": ""
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "Figure 3 caption panel assignments conflict with axes; no graph values inferred."
+      },
+      "warnings": [
+        "百分比为作者报告的效应，组均值未知",
+        "主效应跨另一因素的汇总范围需核对"
+      ],
+      "reported_effect": {
+        "value": 41.15,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result3:0",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Total N uptake",
+      "treatment": {
+        "label": "N3",
+        "levels": [
+          {
+            "code": "N3",
+            "description": "basal PCU"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "N1",
+        "levels": [
+          {
+            "code": "N1",
+            "description": "basal conventional urea"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.01",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 3,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 9,
+            "paragraph_id": "page9-p1",
+            "quote": "the total N uptake under N3 was signifi-\ncantly higher than that under N1 and N2, with increases of 18.0% and 12.2%, respectively\n(p < 0.01)",
+            "table_figure": "Figure 4a",
+            "row": "",
+            "column": "",
+            "footnote": ""
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "Main effect across straw levels."
+      },
+      "warnings": [
+        "百分比为作者报告的效应，组均值未知",
+        "主效应跨另一因素的汇总范围需核对"
+      ],
+      "reported_effect": {
+        "value": 18.0,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result3:1",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Total N uptake",
+      "treatment": {
+        "label": "N3",
+        "levels": [
+          {
+            "code": "N3",
+            "description": "basal PCU"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "N2",
+        "levels": [
+          {
+            "code": "N2",
+            "description": "basal 1:1 urea:PCU"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.01",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 3,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 9,
+            "paragraph_id": "page9-p1",
+            "quote": "the total N uptake under N3 was signifi-\ncantly higher than that under N1 and N2, with increases of 18.0% and 12.2%, respectively\n(p < 0.01)",
+            "table_figure": "Figure 4a",
+            "row": "",
+            "column": "",
+            "footnote": ""
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "Main effect across straw levels."
+      },
+      "warnings": [
+        "百分比为作者报告的效应，组均值未知",
+        "主效应跨另一因素的汇总范围需核对"
+      ],
+      "reported_effect": {
+        "value": 12.2,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result4:0",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Aboveground NUE",
+      "treatment": {
+        "label": "S2N3",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          },
+          {
+            "code": "N3",
+            "description": "basal PCU"
+          }
+        ],
+        "value": 36.93,
+        "unit": "%"
+      },
+      "comparator": {
+        "label": "S1N1",
+        "levels": [
+          {
+            "code": "S1",
+            "description": "straw removal"
+          },
+          {
+            "code": "N1",
+            "description": "basal conventional urea"
+          }
+        ],
+        "value": null,
+        "unit": "%"
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "2025 maturity",
+      "significance_reported": "p < 0.05",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 4,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 9,
+            "paragraph_id": "page9-p2",
+            "quote": "S2N3 achieved the highest NUE (36.93%), which was 33.24% greater than that of S1N1\n(p < 0.05, Figure 4b).",
+            "table_figure": "Figure 4b",
+            "row": "S2N3 versus S1N1",
+            "column": "NUE",
+            "footnote": "Lowercase letters indicate differences at p < 0.05."
+          }
+        ],
+        "observation_time": "2025 maturity",
+        "reporting_origin": "Author-reported Results text",
+        "candidate_limitations": "NUE uses uptake/applied N without control subtraction; comparator absolute value not extracted from bars."
+      },
+      "warnings": [
+        "对照组绝对值未报告；不得反推为原文报告值"
+      ],
+      "reported_effect": {
+        "value": 33.24,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result5:0",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Yield per hill",
+      "treatment": {
+        "label": "S2N2",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          },
+          {
+            "code": "N2",
+            "description": "basal 1:1 urea:PCU"
+          }
+        ],
+        "value": 18.6,
+        "unit": "g hill−1",
+        "error": 4.8,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "S1N1",
+        "levels": [
+          {
+            "code": "S1",
+            "description": "straw removal"
+          },
+          {
+            "code": "N1",
+            "description": "basal conventional urea"
+          }
+        ],
+        "value": 10.4,
+        "unit": "g hill−1",
+        "error": 0.3,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2025 harvest",
+      "significance_reported": "Both differ from S1N1 at p < 0.05; S2N2 and S2N3 share a letter.",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 5,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 7,
+            "paragraph_id": "page7-p1",
+            "quote": "S2N2 13.0 ± 1.5 b 72.3 ± 2.5 a 25.2 ± 4.2 ab 18.6 ± 4.8 a",
+            "table_figure": "Table 2",
+            "row": "S2N2; S2N3; S1N1",
+            "column": "Yield (g hill−1)",
+            "footnote": "The results are the mean values (n = 3) with standard error. Lowercase letters indicate significant differences among different treatments at p < 0.05."
+          }
+        ],
+        "observation_time": "2025 harvest",
+        "reporting_origin": "Table 2, visually checked",
+        "candidate_limitations": "Mean ± SE, n=3; multiple-comparison procedure unspecified."
+      },
+      "warnings": [
+        "多个因素同时变化，不可归因于单一因素",
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agriculture16161786#result5:1",
+      "doi": "10.3390/agriculture16161786",
+      "experiment_id": null,
+      "outcome": "Yield per hill",
+      "treatment": {
+        "label": "S2N3",
+        "levels": [
+          {
+            "code": "S2",
+            "description": "incorporation in 0–20 cm"
+          },
+          {
+            "code": "N3",
+            "description": "basal PCU"
+          }
+        ],
+        "value": 20.5,
+        "unit": "g hill−1",
+        "error": 2.1,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "S1N1",
+        "levels": [
+          {
+            "code": "S1",
+            "description": "straw removal"
+          },
+          {
+            "code": "N1",
+            "description": "basal conventional urea"
+          }
+        ],
+        "value": 10.4,
+        "unit": "g hill−1",
+        "error": 0.3,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2025 harvest",
+      "significance_reported": "Both differ from S1N1 at p < 0.05; S2N2 and S2N3 share a letter.",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three biological soil columns per factorial combination, nine combinations, 27 columns total; one season. Baseline soil n=5 is separate from treatment replication.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Three hills per column; three SPAD readings per plant are measurement repeats. Height/SPAD repeated across four stages; leaf area across three stages. Baseline soil chemistry n=5, sampling independence unspecified. Number of plants actually measured per column and analytical repeats not reported.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 5,
+        "source_sha256": "7d0bac729d15f34df832e2728c546058c95bb9697793ff5fc9f16258bd065d31",
+        "anchor": [
+          {
+            "page": 7,
+            "paragraph_id": "page7-p1",
+            "quote": "S2N2 13.0 ± 1.5 b 72.3 ± 2.5 a 25.2 ± 4.2 ab 18.6 ± 4.8 a",
+            "table_figure": "Table 2",
+            "row": "S2N2; S2N3; S1N1",
+            "column": "Yield (g hill−1)",
+            "footnote": "The results are the mean values (n = 3) with standard error. Lowercase letters indicate significant differences among different treatments at p < 0.05."
+          }
+        ],
+        "observation_time": "2025 harvest",
+        "reporting_origin": "Table 2, visually checked",
+        "candidate_limitations": "Mean ± SE, n=3; multiple-comparison procedure unspecified."
+      },
+      "warnings": [
+        "多个因素同时变化，不可归因于单一因素",
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/su18052185#result0:0",
+      "doi": "10.3390/su18052185",
+      "experiment_id": null,
+      "outcome": "grain_yield",
+      "treatment": {
+        "label": "ISCW",
+        "levels": [
+          {
+            "code": "IS",
+            "description": "浅湿灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 7.18,
+        "unit": "g/hill",
+        "error": 1.73,
+        "error_type": "SD",
+        "significance_letters": "c"
+      },
+      "comparator": {
+        "label": "IFCW",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "淹灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 18.27,
+        "unit": "g/hill",
+        "error": 1.59,
+        "error_type": "SD",
+        "significance_letters": "a"
+      },
+      "metric_type": "group_values",
+      "observation_time": "see evidence",
+      "significance_reported": "Table 3: c vs a, p<0.05",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "独立试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 0,
+        "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+        "anchor": {
+          "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "physical_page": 14,
+          "anchor": "18.27 ± 1.59",
+          "excerpt": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        "observation_time": "see evidence",
+        "reporting_origin": "table_reported",
+        "candidate_limitations": "not exhaustive; individual figure/table verification pending unless stated"
+      },
+      "warnings": [
+        "候选表注对比较范围措辞需核对"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/su18052185#result1:0",
+      "doi": "10.3390/su18052185",
+      "experiment_id": null,
+      "outcome": "grain_yield_relative_difference",
+      "treatment": {
+        "label": "ISCW",
+        "levels": [
+          {
+            "code": "IS",
+            "description": "浅湿灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "IFCW",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "淹灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": "see evidence",
+      "significance_reported": "Table 3 supports difference; abstract 60.7%",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "独立试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 1,
+        "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+        "anchor": {
+          "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "physical_page": 1,
+          "anchor": "60.7%",
+          "excerpt": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        },
+        "observation_time": "see evidence",
+        "reporting_origin": "author_reported",
+        "candidate_limitations": "not exhaustive; individual figure/table verification pending unless stated"
+      },
+      "warnings": [
+        "该相对效应与同论文组均值可能为同一结果，不可当成独立研究"
+      ],
+      "reported_effect": {
+        "value": -60.7,
+        "unit": "%"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 土壤 EC 与 pH 显著性:pH:W-CK",
+      "doi": "10.3390/agronomy14071441",
+      "experiment_id": null,
+      "outcome": "soil_ph",
+      "treatment": {
+        "label": "W",
+        "levels": [
+          {
+            "code": "W",
+            "description": "水田"
+          }
+        ],
+        "value": 8.4,
+        "error": 0.06,
+        "error_type": "SD",
+        "unit": "pH",
+        "significance_letters": "a"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "旱地不施生物有机肥"
+          }
+        ],
+        "value": 8.51,
+        "error": 0.06,
+        "error_type": "SD",
+        "unit": "pH",
+        "significance_letters": "a"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_overlap_no_significant_difference_reported",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 土壤 EC 与 pH 显著性",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "anchor": {
+          "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+          "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "physical_page": 5,
+          "location": "Table 1 EC and pH columns, W/BW/CK rows, letter footnote",
+          "table_or_section": "Table 1"
+        }
+      },
+      "warnings": [
+        "水田、旱地及肥料可能同时变化，不能单因子归因",
+        "作者摘要与逐项字母比较范围存在歧义"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 土壤 EC 与 pH 显著性:pH:BW-CK",
+      "doi": "10.3390/agronomy14071441",
+      "experiment_id": null,
+      "outcome": "soil_ph",
+      "treatment": {
+        "label": "BW",
+        "levels": [
+          {
+            "code": "BW",
+            "description": "水田配生物有机肥，施用量6000 kg/ha"
+          }
+        ],
+        "value": 8.17,
+        "error": 0.02,
+        "error_type": "SD",
+        "unit": "pH",
+        "significance_letters": "b"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "旱地不施生物有机肥"
+          }
+        ],
+        "value": 8.51,
+        "error": 0.06,
+        "error_type": "SD",
+        "unit": "pH",
+        "significance_letters": "a"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 土壤 EC 与 pH 显著性",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "anchor": {
+          "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+          "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "physical_page": 5,
+          "location": "Table 1 EC and pH columns, W/BW/CK rows, letter footnote",
+          "table_or_section": "Table 1"
+        }
+      },
+      "warnings": [
+        "水田、旱地及肥料可能同时变化，不能单因子归因",
+        "作者摘要与逐项字母比较范围存在歧义"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 真菌多样性:ACE:W-CK",
+      "doi": "10.3390/agronomy14071441",
+      "experiment_id": null,
+      "outcome": "fungal_ace",
+      "treatment": {
+        "label": "W",
+        "levels": [
+          {
+            "code": "W",
+            "description": "水田"
+          }
+        ],
+        "value": 415.15,
+        "error": 26.57,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "a"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "旱地不施生物有机肥"
+          }
+        ],
+        "value": 237.46,
+        "error": 54.52,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "b"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 真菌多样性",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "anchor": {
+          "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+          "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "physical_page": 5,
+          "location": "Table 2 ACE and Shannon columns, W/BW/CK, footnote",
+          "table_or_section": "Table 2"
+        }
+      },
+      "warnings": [
+        "水田、旱地及肥料可能同时变化，不能单因子归因",
+        "作者摘要与逐项字母比较范围存在歧义"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 真菌多样性:ACE:BW-CK",
+      "doi": "10.3390/agronomy14071441",
+      "experiment_id": null,
+      "outcome": "fungal_ace",
+      "treatment": {
+        "label": "BW",
+        "levels": [
+          {
+            "code": "BW",
+            "description": "水田配生物有机肥，施用量6000 kg/ha"
+          }
+        ],
+        "value": 318.26,
+        "error": 58.53,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "ab"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "旱地不施生物有机肥"
+          }
+        ],
+        "value": 237.46,
+        "error": 54.52,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "b"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_overlap_no_significant_difference_reported",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 真菌多样性",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "anchor": {
+          "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+          "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "physical_page": 5,
+          "location": "Table 2 ACE and Shannon columns, W/BW/CK, footnote",
+          "table_or_section": "Table 2"
+        }
+      },
+      "warnings": [
+        "水田、旱地及肥料可能同时变化，不能单因子归因",
+        "作者摘要与逐项字母比较范围存在歧义"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 真菌多样性:Shannon:W-CK",
+      "doi": "10.3390/agronomy14071441",
+      "experiment_id": null,
+      "outcome": "fungal_shannon",
+      "treatment": {
+        "label": "W",
+        "levels": [
+          {
+            "code": "W",
+            "description": "水田"
+          }
+        ],
+        "value": 4.27,
+        "error": 0.23,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "a"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "旱地不施生物有机肥"
+          }
+        ],
+        "value": 3.12,
+        "error": 0.25,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "b"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 真菌多样性",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "anchor": {
+          "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+          "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "physical_page": 5,
+          "location": "Table 2 ACE and Shannon columns, W/BW/CK, footnote",
+          "table_or_section": "Table 2"
+        }
+      },
+      "warnings": [
+        "水田、旱地及肥料可能同时变化，不能单因子归因",
+        "作者摘要与逐项字母比较范围存在歧义"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/agronomy14071441#field:新核查 · 真菌多样性:Shannon:BW-CK",
+      "doi": "10.3390/agronomy14071441",
+      "experiment_id": null,
+      "outcome": "fungal_shannon",
+      "treatment": {
+        "label": "BW",
+        "levels": [
+          {
+            "code": "BW",
+            "description": "水田配生物有机肥，施用量6000 kg/ha"
+          }
+        ],
+        "value": 3.89,
+        "error": 0.17,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "a"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "旱地不施生物有机肥"
+          }
+        ],
+        "value": 3.12,
+        "error": 0.25,
+        "error_type": "SD",
+        "unit": "index",
+        "significance_letters": "b"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3块小区，共9块，各1320 m²。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "每小区随机取0–20 cm土壤5点混合；不是5个独立田间重复。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 真菌多样性",
+        "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+        "anchor": {
+          "source_path": "data/fulltext/raw/1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2.pdf",
+          "source_sha256": "1be7cede3ca329bd8cc0a81e509b2cac7c93766668f5e711b248626e0b09b1b2",
+          "physical_page": 5,
+          "location": "Table 2 ACE and Shannon columns, W/BW/CK, footnote",
+          "table_or_section": "Table 2"
+        }
+      },
+      "warnings": [
+        "水田、旱地及肥料可能同时变化，不能单因子归因",
+        "作者摘要与逐项字母比较范围存在歧义"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/plants12132446#field:主要结果:N200-N160",
+      "doi": "10.3390/plants12132446",
+      "experiment_id": null,
+      "outcome": "n2o_unspecified_period",
+      "treatment": {
+        "label": "N200",
+        "levels": [
+          {
+            "code": "N200",
+            "description": "200 kg N/ha"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "N160",
+        "levels": [
+          {
+            "code": "N160",
+            "description": "160 kg N/ha"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": null,
+      "significance_reported": "unknown",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "主要结果",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "anchor": {
+          "source": "main_pdf_parsed_text",
+          "pdf_page": 1,
+          "matched_fragment": "34.7% and 78.9% lower N2O emissions",
+          "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+          "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+          "method": "whitespace_normalized_text_match",
+          "scientific_interpretation": "partially_checked"
+        },
+        "location_status": {
+          "model_reported": true,
+          "program_parsed": true,
+          "pdf_verified": false
+        }
+      },
+      "warnings": [
+        "作者报告相对差异，组均值和误差未提供",
+        "氮处理比较，不是水分制度比较",
+        "同一试验或数据集是否独立尚待核实"
+      ],
+      "reported_effect": {
+        "value": -34.7,
+        "unit": "%",
+        "interpretation": "reported_lower"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/plants12132446#field:主要结果:N200-N240",
+      "doi": "10.3390/plants12132446",
+      "experiment_id": null,
+      "outcome": "n2o_unspecified_period",
+      "treatment": {
+        "label": "N200",
+        "levels": [
+          {
+            "code": "N200",
+            "description": "200 kg N/ha"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator": {
+        "label": "N240",
+        "levels": [
+          {
+            "code": "N240",
+            "description": "240 kg N/ha"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "metric_type": "reported_relative_effect",
+      "observation_time": null,
+      "significance_reported": "unknown",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "主要结果",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "anchor": {
+          "source": "main_pdf_parsed_text",
+          "pdf_page": 1,
+          "matched_fragment": "34.7% and 78.9% lower N2O emissions",
+          "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+          "parsed_sha256": "2424150a3bc140d0ddb18acaad70a6fad3b9862af5d4e1170061afbe9b149837",
+          "method": "whitespace_normalized_text_match",
+          "scientific_interpretation": "partially_checked"
+        },
+        "location_status": {
+          "model_reported": true,
+          "program_parsed": true,
+          "pdf_verified": false
+        }
+      },
+      "warnings": [
+        "作者报告相对差异，组均值和误差未提供",
+        "氮处理比较，不是水分制度比较",
+        "同一试验或数据集是否独立尚待核实"
+      ],
+      "reported_effect": {
+        "value": -78.9,
+        "unit": "%",
+        "interpretation": "reported_lower"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N160-对照",
+      "doi": "10.3390/plants12132446",
+      "experiment_id": null,
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "N160",
+        "levels": [
+          {
+            "code": "N160",
+            "description": "160 kg N/ha"
+          }
+        ],
+        "value": 76.7,
+        "error": 4.1,
+        "error_type": "SD",
+        "unit": "g/盆",
+        "significance_letters": "b"
+      },
+      "comparator": {
+        "label": "对照",
+        "levels": [
+          {
+            "code": "对照",
+            "description": "0 kg N/ha"
+          }
+        ],
+        "value": 40.1,
+        "error": 1.5,
+        "error_type": "SD",
+        "unit": "g/盆",
+        "significance_letters": "c"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 稻谷产量和显著性",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "anchor": {
+          "source_path": "data/fulltext/raw/7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f.pdf",
+          "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+          "physical_page": 3,
+          "location": "Table 1 grain yield column, CK/N160/N200/N240 rows and footnote",
+          "table_or_section": "Table 1"
+        },
+        "location_status": {
+          "model_reported": true,
+          "program_parsed": true,
+          "pdf_verified": false
+        }
+      },
+      "warnings": [
+        "氮水平比较，不是水分制度比较",
+        "共同对照不得计为独立实验",
+        "来源位置尚待核查"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N200-对照",
+      "doi": "10.3390/plants12132446",
+      "experiment_id": null,
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "N200",
+        "levels": [
+          {
+            "code": "N200",
+            "description": "200 kg N/ha"
+          }
+        ],
+        "value": 123.7,
+        "error": 1.8,
+        "error_type": "SD",
+        "unit": "g/盆",
+        "significance_letters": "a"
+      },
+      "comparator": {
+        "label": "对照",
+        "levels": [
+          {
+            "code": "对照",
+            "description": "0 kg N/ha"
+          }
+        ],
+        "value": 40.1,
+        "error": 1.5,
+        "error_type": "SD",
+        "unit": "g/盆",
+        "significance_letters": "c"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 稻谷产量和显著性",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "anchor": {
+          "source_path": "data/fulltext/raw/7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f.pdf",
+          "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+          "physical_page": 3,
+          "location": "Table 1 grain yield column, CK/N160/N200/N240 rows and footnote",
+          "table_or_section": "Table 1"
+        },
+        "location_status": {
+          "model_reported": true,
+          "program_parsed": true,
+          "pdf_verified": false
+        }
+      },
+      "warnings": [
+        "氮水平比较，不是水分制度比较",
+        "共同对照不得计为独立实验",
+        "来源位置尚待核查"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/plants12132446#field:新核查 · 稻谷产量和显著性:N240-对照",
+      "doi": "10.3390/plants12132446",
+      "experiment_id": null,
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "N240",
+        "levels": [
+          {
+            "code": "N240",
+            "description": "240 kg N/ha"
+          }
+        ],
+        "value": 127.8,
+        "error": 13.5,
+        "error_type": "SD",
+        "unit": "g/盆",
+        "significance_letters": "a"
+      },
+      "comparator": {
+        "label": "对照",
+        "levels": [
+          {
+            "code": "对照",
+            "description": "0 kg N/ha"
+          }
+        ],
+        "value": 40.1,
+        "error": 1.5,
+        "error_type": "SD",
+        "unit": "g/盆",
+        "significance_letters": "c"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint_reported_different",
+      "experimental_unit": {
+        "value": "soil_column",
+        "source_field": "试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个重复；土柱为处理单位，不能直接外推为3个独立田间地块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "气体、土壤和植株在不同时点测定；具体每个时间点的技术重复未在此处确认。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "fields.jsonl",
+        "field": "新核查 · 稻谷产量和显著性",
+        "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+        "anchor": {
+          "source_path": "data/fulltext/raw/7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f.pdf",
+          "source_sha256": "7c6793c6c610d0dd3180522f43ee43557188f22395ed35c1247f812dfe98120f",
+          "physical_page": 3,
+          "location": "Table 1 grain yield column, CK/N160/N200/N240 rows and footnote",
+          "table_or_section": "Table 1"
+        },
+        "location_status": {
+          "model_reported": true,
+          "program_parsed": true,
+          "pdf_verified": false
+        }
+      },
+      "warnings": [
+        "氮水平比较，不是水分制度比较",
+        "共同对照不得计为独立实验",
+        "来源位置尚待核查"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/w16182598#historic_response:yield:T1-CK",
+      "doi": "10.3390/w16182598",
+      "experiment_id": null,
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "T1",
+        "levels": [
+          {
+            "code": "T1",
+            "description": "Direct ditch water irrigation / 全部使用排水沟水"
+          }
+        ],
+        "value": 8318.4,
+        "error": 134.7,
+        "error_type": "unknown",
+        "unit": "kg/hm²",
+        "significance_letters": "c"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "Irrigation solely with Yellow River water / 全部使用黄河水，作为对照"
+          }
+        ],
+        "value": 10437.5,
+        "error": 187.5,
+        "error_type": "unknown",
+        "unit": "kg/hm²",
+        "significance_letters": "a"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "historic_response/design",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 5,
+        "original": "Each treatment was repeated five times.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Samples were collected in triplicate; 具体层级不明",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/user_pasted_web_response.txt",
+        "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d",
+        "pdf_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+        "location": {
+          "model_reported": "第8页，Table 3",
+          "program_parsed": {
+            "physical_page": 8,
+            "table": "Table 3"
+          },
+          "pdf_verified": null
+        },
+        "column": "Yield",
+        "row_texts": [
+          "| T1 | 8,318.4 ± 134.7  | c     | 20.3%      |",
+          "| CK | 10,437.5 ± 187.5 | a     | 对照         |"
+        ],
+        "source_state": "user_pasted_model_response_not_gold"
+      },
+      "warnings": [
+        "误差类型在表注中未明确",
+        "水源组合处理不是干湿交替",
+        "讨论中未显著影响产量的比较基准不清，表格字母与文字的适用范围待核"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/w16182598#historic_response:yield:T2-CK",
+      "doi": "10.3390/w16182598",
+      "experiment_id": null,
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "T2",
+        "levels": [
+          {
+            "code": "T2",
+            "description": "Mixed ditch water and Yellow River water irrigation / 沟渠水与黄河水按1:1混合灌溉"
+          }
+        ],
+        "value": 9182.1,
+        "error": 128.9,
+        "error_type": "unknown",
+        "unit": "kg/hm²",
+        "significance_letters": "b"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "Irrigation solely with Yellow River water / 全部使用黄河水，作为对照"
+          }
+        ],
+        "value": 10437.5,
+        "error": 187.5,
+        "error_type": "unknown",
+        "unit": "kg/hm²",
+        "significance_letters": "a"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "historic_response/design",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 5,
+        "original": "Each treatment was repeated five times.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Samples were collected in triplicate; 具体层级不明",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/user_pasted_web_response.txt",
+        "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d",
+        "pdf_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+        "location": {
+          "model_reported": "第8页，Table 3",
+          "program_parsed": {
+            "physical_page": 8,
+            "table": "Table 3"
+          },
+          "pdf_verified": null
+        },
+        "column": "Yield",
+        "row_texts": [
+          "| T2 | 9,182.1 ± 128.9  | b     | 12.1%      |",
+          "| CK | 10,437.5 ± 187.5 | a     | 对照         |"
+        ],
+        "source_state": "user_pasted_model_response_not_gold"
+      },
+      "warnings": [
+        "误差类型在表注中未明确",
+        "水源组合处理不是干湿交替",
+        "讨论中未显著影响产量的比较基准不清，表格字母与文字的适用范围待核"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    },
+    {
+      "comparison_id": "10.3390/w16182598#historic_response:yield:T3-CK",
+      "doi": "10.3390/w16182598",
+      "experiment_id": null,
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "T3",
+        "levels": [
+          {
+            "code": "T3",
+            "description": "Alternate ditch water and Yellow River water irrigation / 沟渠水与黄河水交替灌溉"
+          }
+        ],
+        "value": 9016.2,
+        "error": 157.3,
+        "error_type": "unknown",
+        "unit": "kg/hm²",
+        "significance_letters": "b"
+      },
+      "comparator": {
+        "label": "CK",
+        "levels": [
+          {
+            "code": "CK",
+            "description": "Irrigation solely with Yellow River water / 全部使用黄河水，作为对照"
+          }
+        ],
+        "value": 10437.5,
+        "error": 187.5,
+        "error_type": "unknown",
+        "unit": "kg/hm²",
+        "significance_letters": "a"
+      },
+      "metric_type": "group_values",
+      "observation_time": null,
+      "significance_reported": "letters_disjoint",
+      "experimental_unit": {
+        "value": "field_plot",
+        "source_field": "historic_response/design",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "independent_replicates": {
+        "value": 5,
+        "original": "Each treatment was repeated five times.",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "Samples were collected in triplicate; 具体层级不明",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "data/pilot/v08_web_first_20261029_v1/user_pasted_web_response.txt",
+        "response_sha256": "fc2c537cadc72f803a54a53ce7d285a125c0d162d36d4f3a0b82cf9585b8422d",
+        "pdf_sha256": "da4b840de18c6966df14b7fc301203cc7e471eff93ee7c8e86677f4f4f917470",
+        "location": {
+          "model_reported": "第8页，Table 3",
+          "program_parsed": {
+            "physical_page": 8,
+            "table": "Table 3"
+          },
+          "pdf_verified": null
+        },
+        "column": "Yield",
+        "row_texts": [
+          "| T3 | 9,016.2 ± 157.3  | b     | 13.6%      |",
+          "| CK | 10,437.5 ± 187.5 | a     | 对照         |"
+        ],
+        "source_state": "user_pasted_model_response_not_gold"
+      },
+      "warnings": [
+        "误差类型在表注中未明确",
+        "水源组合处理不是干湿交替",
+        "讨论中未显著影响产量的比较基准不清，表格字母与文字的适用范围待核"
+      ],
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved"
+    }
+  ],
+  "pairwise_levels": [],
+  "summary": {
+    "papers": 7,
+    "fields": 79,
+    "numeric_candidates": 8,
+    "field_conversion_counts": {
+      "metadata_candidate": 46,
+      "qualitative_only": 14,
+      "pointer_only": 6,
+      "recovered_from_historic_response": 8,
+      "partial_numeric": 5
+    },
+    "comparisons": 31,
+    "gold_upgrades": 0
+  },
+  "selection": {
+    "source": "research_projects/saline_paddy_irrigation/v09_direct_synthesis_20261031/selection_predeclared.json",
+    "requested_dois": [
+      "10.1002/ldr.4815",
+      "10.1186/s12284-022-00564-6",
+      "10.3390/agriculture16161786",
+      "10.3390/agronomy14071441",
+      "10.3390/plants12132446",
+      "10.3390/su18052185",
+      "10.3390/w16182598"
+    ],
+    "missing_dois": []
+  },
+  "public_snapshot_note": "受历史语料 not_push_github 标记约束，以下快照省略相关论文的逐篇内容及比较；完整结果保留在本机 outputs。",
+  "withheld_study_dois": [
+    "10.1002/ldr.4815"
+  ]
+}

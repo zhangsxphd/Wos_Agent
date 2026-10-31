@@ -108,7 +108,7 @@ def prepare(reference, history_dir):
             'study_type': study_type(fields), 'evidence_role': study.get('evidence_role', 'unknown'),
             'source_access': study.get('source_access'), 'source_location': study.get('location'),
             'pdf_sha256': raw_sha, 'experiment_metadata': study.get('experiment_metadata', {}), 'source_state': 'source_checked_by_prior_assistant_not_human_gold',
-            'experiments': [{'experiment_id': sid + ':E1', 'status': 'partially_structured',
+            'experiments': [{'experiment_id': None, 'status': 'identity_unresolved',
                 'object': fields.get('研究对象'), 'conditions': fields.get('环境及盐度'),
                 'question_and_hypothesis': fields.get('研究问题'), 'design': fields.get('试验设计'),
                 'experimental_unit_and_independent_replicates': fields.get('独立重复'),
@@ -142,7 +142,7 @@ def prepare(reference, history_dir):
         outcome = c.get('outcome')
         comp = {
             'comparison_id': c['comparison_id'], 'study_id': c['study_id'],
-            'experiment_id': c['study_id'] + ':E1', 'outcome': outcome,
+            'experiment_id': None, 'outcome': outcome,
             'intervention': c.get('intervention', ''), 'comparator': c.get('comparator', ''),
             'factor': factor(c.get('intervention', ''), c.get('comparator', ''), p['evidence_role']),
             'contrast': water_contrast(c.get('intervention', ''), c.get('comparator', '')),
@@ -269,42 +269,8 @@ def synthesize(normalized):
     cs = normalized['comparisons']
     assessments = [assess_pair(a, b, ps) for a, b in itertools.combinations(cs, 2)
                    if a['study_id'] != b['study_id'] and a['outcome'] == b['outcome']]
-    groups = defaultdict(list)
-    for c in cs:
-        if c['factor'] == 'water_regime' and c['contrast'] != 'unknown' and not c['conflicts'] and not c.get('summary_only') and c['direction_records']:
-            dirs = {r['direction'] for r in c['direction_records']}
-            if len(dirs) == 1:
-                groups[(c['outcome'], next(iter(dirs)))].append(c)
+    # Direction alone is not a shared scientific finding.
     findings = []
-    for (outcome, direction), members in sorted(groups.items()):
-        # DOI duplicates cannot inflate the number of supporting papers.
-        deduplicated = {}
-        for c in members:
-            key = doi(ps[c['study_id']].get('doi')) or c['study_id']
-            deduplicated.setdefault(key, c)
-        members = list(deduplicated.values())
-        if len(members) < 2: continue
-        # Broad screening group only, not a claim of comparable treatment effects.
-        others = [x for x in cs if x['outcome'] == outcome and x['factor'] == 'water_regime'
-                  and x not in members]
-        findings.append({'kind': 'qualitative_same_direction', 'outcome': outcome, 'direction': direction,
-            'supports': [c['comparison_id'] for c in members],
-            'sources': [ps[c['study_id']]['source_url'] for c in members],
-            'counterevidence_or_unresolved': [{'comparison_id': c['comparison_id'],
-                'significance': c['significance_original'], 'conflicts': c['conflicts'],
-                'limitations': c['limitations'], 'source': ps[c['study_id']]['source_url']} for c in others],
-            'within_study_other_conditions': [{'comparison_id': c['comparison_id'],
-                'text': '；'.join((c.get('significance_original') or '').split('；')[1:])}
-                for c in members if '；' in (c.get('significance_original') or '')],
-            'conditions': [{'comparison_id': c['comparison_id'], 'contrast': c['contrast'],
-                'study_type': ps[c['study_id']]['study_type'],
-                'significance': c['significance_original'],
-                'error_information': {k: v for k, v in c['numeric_values'].items() if 'error' in k},
-                'statistical_power': 'not_established',
-                'environment': ps[c['study_id']]['experiments'][0]['conditions'],
-                'independent_units': ps[c['study_id']]['experiments'][0]['experimental_unit_and_independent_replicates']} for c in members],
-            'uncertainty': '仅各论文内部观测方向相同；处理、条件、单位与独立性可能不同，不能合并效应或推断因果交互；未完成反例检索，统计功效未知。',
-            'numeric_pooling': 'refused'})
     gaps = []
     outcomes = {c['outcome'] for c in cs}
     for outcome in sorted(outcomes):
@@ -332,7 +298,8 @@ def synthesize(normalized):
     for pair in assessments:
         if pair['numeric_comparison'] != 'allowed_within_study_effects_only': continue
         a, b = (by_id[x] for x in pair['comparison_ids'])
-        if (a['significance'] == b['significance'] == 'significant_reported'
+        if (a.get('independence_status') == b.get('independence_status') == 'independent_confirmed'
+            and a['significance'] == b['significance'] == 'significant_reported'
             and {a['direction_records'][0]['direction'], b['direction_records'][0]['direction']} == {'higher', 'lower'}):
             contradictions.append({'comparison_ids': pair['comparison_ids'],
                 'kind': 'possible_opposite_results_requires_independent_review',
@@ -348,28 +315,236 @@ def synthesize(normalized):
             'novelty': 'unknown_not_assessed'}
 
 
+def _source_provenance(evidence):
+    """Preserve model-reported locations separately from parsed/verified ones."""
+    loc=evidence.get('location') if isinstance(evidence,dict) else None
+    if isinstance(loc,dict):
+        return {'model_reported':loc.get('model_reported'), 'program_parsed':loc.get('program_parsed'),
+                'pdf_verified':loc.get('pdf_verified'), 'original':evidence}
+    anchor=evidence.get('anchor') if isinstance(evidence,dict) else None
+    return {'model_reported':anchor, 'program_parsed':None, 'pdf_verified':None, 'original':evidence}
+
+
+def _converted_factor(c):
+    if c.get('contrast_role'):
+        return 'salinity_reclamation' if any(x in c['contrast_role'] for x in ('salinity','reclamation','soil_origin')) else 'unknown'
+    a,b=c.get('treatment',{}),c.get('comparator',{})
+    ta,co=str(a.get('label','')),str(b.get('label',''))
+    if re.fullmatch(r'N\d+',ta,re.I) and (re.fullmatch(r'N\d+',co,re.I) or co=='对照'):
+        return 'nitrogen_input'
+    if re.fullmatch(r'S\d+N\d+',ta,re.I) or re.fullmatch(r'S\d+N\d+',co,re.I):
+        return 'straw_and_nitrogen'
+    texts=' '.join(str(x.get('description') or '') for x in a.get('levels',[])+b.get('levels',[])).lower()
+    if any(x in texts for x in ('ditch water','river water','沟水','河水')): return 'water_source'
+    if ta in ('W','BW') and co=='CK':return 'water_land_use_confounded'
+    if ('浅湿' in texts and '淹灌' in texts) or ('flooded' in texts and 'intermittent' in texts):
+        return 'water_regime'
+    return 'unknown'
+
+
+def _outcome_family(outcome):
+    x=str(outcome or '').lower().replace('₂','2').replace('₄','4')
+    if 'n2o' in x:return 'n2o'
+    if any(k in x for k in ('carbon_mineralization','carbon mineralization','碳矿化','碳转化速率')):return 'carbon_process'
+    if any(k in x for k in ('nitrification','denitrification','nitrogen_mineralization','硝化速率','反硝化速率','氮矿化')):return 'nitrogen_process'
+    if 'ch4' in x:return 'ch4'
+    if 'co2' in x:return 'co2'
+    if 'grain_yield' in x or 'yield per hill' in x:return 'rice_yield'
+    if x=='soil_ph':return 'soil_ph'
+    if 'organic_carbon' in x:return 'soil_carbon_pool'
+    return 'other'
+
+
+def adapt_converted(converted, topic_profile):
+    """Minimal v1 schema adapter; no checked reference, inferred Gold, or DOE ID."""
+    if not topic_profile.get('primary_question') or not topic_profile.get('primary_eligibility'):
+        raise ValueError('需要预先给定研究问题及纳入标准')
+    papers=[]; by={}
+    for p in converted.get('papers',[]):
+        e=p.get('experiment',{}); sid=doi(p.get('doi'))
+        if not sid or sid in by:raise ValueError('缺少或重复的论文标识，不能安全合并')
+        text=' '.join(str(x or '') for x in (p.get('title'),e.get('research_object_candidate'),e.get('design_candidate')))
+        design=str(e.get('design_candidate') or '')
+        if re.search(r'\breview\b|meta.analysis|综述|系统评价',text,re.I):study_kind='review_or_meta'
+        elif re.search(r'观察性|observational',design,re.I):study_kind='observational'
+        elif re.search(r'盆栽|土柱|容器|mesocosm|soil.column|pot experiment',design,re.I):study_kind='pot_experiment'
+        elif re.search(r'田间|田块|小区|field experiment',design,re.I):study_kind='field_experiment'
+        else:study_kind='unknown'
+        row={'study_id':sid,'doi':p.get('doi'),'title':p.get('title'),'study_type':study_kind,
+             'source_url':p.get('source_url'),'pdf_sha256':p.get('pdf_sha256'),
+             'source_state':'historical_candidate_not_human_gold',
+             'experiments':[{'experiment_id':e.get('experiment_id'),
+                 'status':'identity_unresolved' if not e.get('experiment_id') else 'candidate_identity',
+                 'treatments':[], 'design_candidate':e.get('design_candidate'),
+                 'conditions_candidate':e.get('conditions_candidate'),
+                 'research_object_candidate':e.get('research_object_candidate'),
+                 'experimental_unit':e.get('experimental_unit'),
+                 'independent_replicates':e.get('independent_replicates'),
+                 'sampling_replicates':e.get('sampling_replicates')}],
+             'independence_status':'unknown', 'historical_context':text}
+        papers.append(row);by[sid]=row
+    comparisons=[]
+    source_issues=defaultdict(list)
+    for f in converted.get('field_audit',[]):
+        name=str(f.get('field') or '').lower(); status=str(f.get('source_status') or '')
+        if (any(w in name for w in ('internal_conflict','contradiction','冲突','显著性差异','误差形式','数值差异'))
+            or status in ('原文表述不同','原文两处不同','原文表述冲突','图文疑点','量纲疑点')):
+            source_issues[doi(f.get('doi'))].append({'field':f.get('field'),'value':f.get('value'),
+                'status':f.get('source_status'),'evidence':f.get('evidence')})
+    for c in converted.get('comparisons',[]):
+        sid=doi(c.get('doi')); p=by.get(sid)
+        if not p:raise ValueError('比较缺少所属论文: '+str(c.get('comparison_id')))
+        exp_id=c.get('experiment_id')
+        if exp_id and not any(x.get('experiment_id')==exp_id for x in p['experiments']):
+            p['experiments'].append({'experiment_id':exp_id,'status':'comparison_declared_context_unverified','treatments':[]})
+        a,b=c.get('treatment',{}),c.get('comparator',{})
+        factor=_converted_factor(c);family=_outcome_family(c.get('outcome'))
+        context=p['historical_context'].lower()
+        rice=bool(re.search(r'rice|paddy|稻',context));saline=bool(re.search(r'salin|sodi|盐碱|盐土|盐渍',context))
+        if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and rice and saline and p['study_type'] in ('pot_experiment','field_experiment'):
+            eligibility='primary_candidate_requires_source_review'
+        elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and saline and p['study_type'] in ('pot_experiment','field_experiment'):
+            eligibility='indirect_context'
+        elif family=='rice_yield' and rice and saline:
+            eligibility='regression_context_outside_primary_outcome'
+        else:eligibility='outside_topic_or_unresolved'
+        values={'intervention':a.get('value'),'comparator':b.get('value'),
+                'unit':a.get('unit'),'comparator_unit':b.get('unit'),
+                'intervention_error':a.get('error'),'intervention_error_type':a.get('error_type'),
+                'comparator_error':b.get('error'),'comparator_error_type':b.get('error_type'),
+                'reported_effect':c.get('reported_effect')}
+        av,bv=a.get('value'),b.get('value'); direction=[]
+        if isinstance(av,(int,float)) and isinstance(bv,(int,float)) and a.get('unit') and a.get('unit')==b.get('unit'):
+            direction=[{'direction':'higher' if av>bv else 'lower' if av<bv else 'equal',
+                        'interpretation':'within_record_arithmetic_only'}]
+        raw=c.get('evidence') or {}
+        comparisons.append({'comparison_id':c.get('comparison_id'),'study_id':sid,
+            'experiment_id':c.get('experiment_id'),'dataset_identity':'unknown' if not c.get('experiment_id') else 'candidate',
+            'outcome':c.get('outcome'),'outcome_family':family,'factor':factor,
+            'intervention':str(a.get('label') or ''),'comparator':str(b.get('label') or ''),
+            'treatment_details':a,'comparator_details':b,'comparator_role':c.get('comparator_role','reported_comparator_role_unconfirmed'),
+            'numeric_values':values,'significance':str(c.get('significance_reported') or 'unknown'),
+            'independent_replicates':c.get('independent_replicates'), 'experimental_unit':c.get('experimental_unit'),
+            'sampling_replicates':c.get('sampling_replicates'), 'context_attribution':c.get('context_attribution','unknown'), 'observation_time':c.get('observation_time'),
+            'raw_evidence':[_source_provenance(raw)],'record_state':'candidate_not_human_gold',
+            'direction_records':direction,'conflicts':list(c.get('warnings') or []),
+            'comparison_context':c.get('comparison_context') or {},'metric_type':c.get('metric_type'),
+            'eligibility':eligibility,'source_url':p.get('source_url'), 'source_issues':source_issues.get(sid,[])})
+    ids=[c['comparison_id'] for c in comparisons]
+    if None in ids or len(ids)!=len(set(ids)):raise ValueError('比较ID缺失或重复')
+    return {'version':'1.0','input_files':converted.get('input_sources',{}),'papers':papers,'comparisons':comparisons,
+            'topic_profile':topic_profile,'selection':converted.get('selection'),
+            'adapter':'converted_historical_candidates_v1','unmatched_fields':converted.get('field_audit',[])}
+
+
+def apply_source_checks(normalized, checks):
+    """Attach a separate human-assisted PDF-review ledger without upgrading data."""
+    papers={p['study_id']:p for p in normalized['papers']}
+    seen=set()
+    for item in checks.get('checks',[]):
+        sid=doi(item.get('doi')); paper=papers.get(sid)
+        if not paper or not item.get('pdf_sha256') or item['pdf_sha256']!=paper.get('pdf_sha256'):
+            raise ValueError('PDF核查记录的DOI或哈希与候选论文不一致')
+        for outcome in item.get('outcomes',[]):
+            key=(sid,outcome)
+            if key in seen:raise ValueError('重复的PDF核查范围')
+            seen.add(key)
+            for comp in normalized['comparisons']:
+                if comp['study_id']==sid and comp['outcome']==outcome:
+                    for ev in comp['raw_evidence']:
+                        ev['pdf_verified']={'status':item['status'],'pages':item.get('pages'),
+                                            'scope':item.get('scope'),'pdf_sha256':item['pdf_sha256']}
+    return normalized
+
+
+def synthesize_converted(normalized):
+    """Topic-gated descriptive comparison; never infer common findings from signs."""
+    comparisons=normalized['comparisons']; groups=defaultdict(list)
+    for c in comparisons:
+        if c['eligibility'] in ('primary_candidate_requires_source_review','indirect_context','regression_context_outside_primary_outcome'):
+            groups[(c['study_id'],c.get('experiment_id') or '',c['outcome_family'])].append(c)
+    result_pairs=[]
+    for (sid_a,exp_a,fam_a),(sid_b,exp_b,fam_b) in itertools.combinations(sorted(groups),2):
+        if fam_a!=fam_b:continue
+        if sid_a==sid_b and (not exp_a or not exp_b or exp_a==exp_b):continue
+        aa,bb=groups[(sid_a,exp_a,fam_a)],groups[(sid_b,exp_b,fam_b)]
+        # Single DOI groups may conceal multiple experiments; list records but do
+        # not call them one experiment or count them as independent replications.
+        factors_a=sorted({c['factor'] for c in aa});factors_b=sorted({c['factor'] for c in bb})
+        reasons=[]
+        if factors_a!=factors_b:reasons.append('处理因素或比较基准不同')
+        if any(c['comparator_role']=='descriptive_reference_not_author_control' for c in aa+bb):
+            reasons.append('至少一个比较基准是观察性来源组，不是作者指定对照')
+        units={str(c['numeric_values'].get('unit') or 'unknown') for c in aa+bb}
+        if len(units)>1:reasons.append('结果数值或报告效应的单位和口径不同或未知')
+        reasons.append('测量时间窗口、指标定义和共同效应量未充分确认')
+        reasons.append('不同论文是否共享原始实验或数据集未知，不能计为独立重复')
+        contexts=[c['comparison_context'] for c in aa+bb]
+        keys=('estimand','outcome_definition','treatment_definition','comparator_definition','time_basis','unit')
+        same=all(ctx and ctx.get('source_status')=='source_checked' and all(ctx.get(k) for k in keys) for ctx in contexts) and all(
+            all(ctx[k]==contexts[0][k] for k in keys) for ctx in contexts[1:])
+        metric_complete=all(c['metric_type']=='group_values' and c['numeric_values'].get('intervention') is not None
+                            and c['numeric_values'].get('comparator') is not None for c in aa+bb)
+        # Whether quantitative comparison is feasible is separate from whether
+        # the studies can be pooled or treated as independent.
+        conditional='possible_pending_source_and_independence_review' if same and metric_complete and factors_a==factors_b and factors_a!=['unknown'] and not any(c['source_issues'] for c in aa+bb) else 'not_established'
+        result_pairs.append({'study_ids':[sid_a,sid_b],'outcome_family':fam_a,
+             'comparison_ids':[[c['comparison_id'] for c in aa],[c['comparison_id'] for c in bb]],
+             'experiment_ids':[exp_a or None,exp_b or None],
+             'A_descriptive':'permitted_with_conditions_and_source_status',
+             'B_conditional_quantitative':conditional,'C_meta_analysis':'not_implemented',
+             'factor_classes':[factors_a,factors_b],'independence':'unknown',
+             'potential_effect_modifiers':['土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同'],
+             'reasons':reasons,'source_conflicts':list(dict.fromkeys(w for c in aa+bb for w in c['conflicts'])),
+             'recorded_source_issues':[issue for c in (aa[0],bb[0]) for issue in c['source_issues']],
+             'sources':[aa[0]['source_url'],bb[0]['source_url']]})
+    shared=defaultdict(set)
+    for c in comparisons:
+        for label in (c['intervention'],c['comparator']):
+            if label:shared[(c['study_id'],c['outcome_family'],label)].add(c['comparison_id'])
+    dependencies=[{'study_id':k[0],'outcome':k[1],'group_label':k[2], 'comparison_ids':sorted(v),
+                   'status':'possible_shared_group_or_repeated_representation_do_not_count_as_independent'}
+                  for k,v in shared.items() if len(v)>1]
+    direct=[c['comparison_id'] for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review']
+    return {'topic':normalized['topic_profile']['topic'], 'primary_question':normalized['topic_profile']['primary_question'],
+            'primary_evidence_ids':direct, 'primary_conclusion':'insufficient_evidence_no_common_finding' if not direct else 'source_review_required_no_automatic_common_finding',
+            'indirect_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='indirect_context'],
+            'pairwise_comparability':result_pairs, 'dependent_comparisons':dependencies,
+            'findings':[], 'independent_experiment_count':'unknown', 'meta_analysis':'not_implemented',
+            'limitations':['不同DOI不证明实验独立；同一DOI也可包含多个实验。','来源状态为候选；模型定位和PDF实际核验分开。',
+                           '不因同向、显著或不显著生成共同结论或真正矛盾。']}
+
+
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--checked', type=Path, required=True)
-    ap.add_argument('--history-dir', type=Path, required=True)
-    ap.add_argument('--output-dir', type=Path, required=True)
-    ap.add_argument('--candidate-values-only', action='store_true',
-                    help='Use only numeric comparisons linked to historical candidate values')
-    args = ap.parse_args()
-    reference = json.loads(args.checked.read_text(encoding='utf-8'))
-    # Deliberately discard the benchmark before creating the algorithm's input.
-    reference.pop('cross_study_comparisons', None)
-    normalized = prepare(reference, args.history_dir)
-    if args.candidate_values_only:
-        normalized['comparisons'] = [c for c in normalized['comparisons']
-                                     if c['value_origin'] == 'historic_numeric_candidate']
-    result = synthesize(normalized)
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    for name, obj in [('normalized_evidence.json', normalized), ('synthesis.json', result)]:
-        (args.output_dir / name).write_text(json.dumps(obj, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({'papers': len(normalized['papers']), 'comparisons': len(normalized['comparisons']),
-                      'findings': len(result['findings']), 'pairwise': len(result['pairwise_comparability']),
-                      'historic_counts': dict(Counter(k for p in normalized['papers'] for k, v in p['historic_records'].items() for _ in v))}, ensure_ascii=False))
+    ap=argparse.ArgumentParser()
+    source=ap.add_mutually_exclusive_group(required=True)
+    source.add_argument('--converted',type=Path,help='Formal: output of historical candidate converter')
+    source.add_argument('--checked',type=Path,help='Legacy compatibility input, not a formal synthesis')
+    ap.add_argument('--selection',type=Path,help='Predeclared topic and inclusion criteria')
+    ap.add_argument('--source-audit',type=Path,help='Optional scoped, hash-matched assistant PDF review ledger')
+    ap.add_argument('--history-dir',type=Path,help='Required only for legacy compatibility')
+    ap.add_argument('--output-dir',type=Path,required=True)
+    ap.add_argument('--candidate-values-only',action='store_true',help='Legacy compatibility')
+    args=ap.parse_args()
+    if args.converted:
+        if not args.selection:ap.error('--converted requires --selection')
+        payload=json.loads(args.converted.read_text(encoding='utf8'))
+        profile=json.loads(args.selection.read_text(encoding='utf8'))
+        normalized=adapt_converted(payload,profile)
+        if args.source_audit:apply_source_checks(normalized,json.loads(args.source_audit.read_text(encoding='utf8')))
+        result=synthesize_converted(normalized)
+        result['input_conversion_sha256']=digest(args.converted)
+        result['source_audit_sha256']=digest(args.source_audit) if args.source_audit else None
+    else:
+        if not args.history_dir:ap.error('--checked requires --history-dir')
+        reference=json.loads(args.checked.read_text(encoding='utf8'));reference.pop('cross_study_comparisons',None)
+        normalized=prepare(reference,args.history_dir)
+        if args.candidate_values_only:normalized['comparisons']=[c for c in normalized['comparisons'] if c['value_origin']=='historic_numeric_candidate']
+        result=synthesize(normalized);result['legacy_only_not_formal']='legacy reference input'
+    args.output_dir.mkdir(parents=True,exist_ok=True)
+    for name,obj in [('normalized_evidence.json',normalized),('synthesis.json',result)]:
+        (args.output_dir/name).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    print(json.dumps({'papers':len(normalized['papers']),'comparisons':len(normalized['comparisons']),
+                      'findings':len(result['findings']),'pairwise':len(result['pairwise_comparability'])},ensure_ascii=False))
 
-
-if __name__ == '__main__': main()
+if __name__=='__main__':main()

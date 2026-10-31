@@ -1,0 +1,14 @@
+{
+  "selection_stage": "locked_before_reading_selected_per_paper_candidates_or_results",
+  "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响",
+  "primary_question": "在盐碱稻田或其土壤上，不同灌溉水分制度相对于明确对照，如何影响定义一致的CH4、N2O或土壤碳氮过程？",
+  "primary_eligibility": ["原始实验研究，研究对象为盐碱稻田或其土壤及水稻", "有明确水分制度处理及对照", "报告CH4、N2O或土壤碳氮过程中的至少一个结局和可追溯出处"],
+  "context_eligibility": ["盐碱稻田原始研究，涉及CH4、N2O或碳氮过程但干预并非水分制度，归为间接机制背景", "其他结局、水源、肥料和作物产量只用于背景，不混入主要问题效应"],
+  "no_meta_analysis": true,
+  "previous_regression_dois": ["10.3390/w16182598", "10.1186/s12284-022-00564-6", "10.3390/agronomy14071441", "10.3390/su18052185", "10.3390/agriculture16161786"],
+  "new_title_selected": [
+    {"doi":"10.1002/ldr.4815", "title":"Reclaimed saline-alkali paddy field may be a hotspot of methane and ammonia emissions", "reason":"题名涉及盐碱稻田及甲烷/氮过程；水分对照及原始研究类型待核查，可能仅为背景。"},
+    {"doi":"10.3390/plants12132446", "title":"Responses of Rice Yield, N Uptake, NH3 and N2O Losses from Reclaimed Saline Soils to Varied N Inputs", "reason":"题名涉及盐碱稻土、N2O和氮输入；非灌溉干预，预定为间接背景，原始研究类型待核查。"}
+  ],
+  "selection_rule":"仅依已有论文题名、主题和是否属于此前五篇选定，不读取结果方向、数值或显著性；不按是否容易转换选择。"
+}

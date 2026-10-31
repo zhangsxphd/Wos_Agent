@@ -12,9 +12,6 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-SELECTED = {'10.3390/w16182598', '10.1186/s12284-022-00564-6',
-            '10.3390/agronomy14071441', '10.3390/su18052185',
-            '10.3390/agriculture16161786'}
 NUM = r'[-+]?\d+(?:\.\d+)?'
 
 
@@ -25,12 +22,12 @@ def sha(path):
     return h.hexdigest()
 
 
-def read_selected(path):
+def read_selected(path, selected_dois=None):
     output = []
     with Path(path).open(encoding='utf8') as f:
         for line, text in enumerate(f, 1):
             r = json.loads(text)
-            if str(r.get('doi', '')).lower() in SELECTED:
+            if selected_dois is None or str(r.get('doi', '')).lower() in selected_dois:
                 output.append((line, r))
     return output
 
@@ -45,7 +42,7 @@ def evidence_loc(r):
 def field_audit(line, r):
     field, value = r.get('field', ''), str(r.get('value', ''))
     ev = r.get('evidence')
-    pointer = isinstance(ev, dict) and 'record_metadata' in ev and 'review_status' in ev['record_metadata']
+    pointer = isinstance(ev, dict) and 'record_metadata' in ev and ev['record_metadata'].get('review_status') == '已覆盖'
     if pointer:
         state, target, why = 'pointer_only', 'source_locator', '本导出行仅为覆盖清单和位置提示；现有解析未从历史回复恢复该字段的完整事实，需人工核查。'
     elif field in ('新核查 · 土壤 EC 与 pH 显著性', '新核查 · 真菌多样性'):
@@ -85,7 +82,11 @@ def field_audit(line, r):
 
 
 def fields_by_name(records):
-    return {r['field']: r for _, r in records}
+    grouped=defaultdict(list)
+    for _, r in records: grouped[r['field']].append(r)
+    # Conflicting same-name fields can belong to different experiments. Retain
+    # them in field_audit, but do not arbitrarily assign one to a comparison.
+    return {k:v[0] for k,v in grouped.items() if len(v)==1}
 
 
 def add_comparison(out, paper, result_id, outcome, treatment, comparator, group_a, group_b,
@@ -104,7 +105,7 @@ def add_comparison(out, paper, result_id, outcome, treatment, comparator, group_
 
 def group_levels(paper, label):
     levels = paper['experiment']['factor_levels']
-    tokens = [label] if label in levels else (re.findall(r'[SN]\d', label) if re.fullmatch(r'(?:[SN]\d)+', label) else [])
+    tokens = [label] if label in levels else (re.findall(r'[SN]\d+', label) if re.fullmatch(r'(?:[SN]\d+)+', label) else [])
     if not tokens and len(label) == 4 and label[:2] in levels and label[2:] in levels:
         tokens = [label[:2], label[2:]]
     return [{'code': t, 'description': levels.get(t)} for t in tokens]
@@ -115,12 +116,12 @@ def experiment(doi, fs):
         for name in names:
             if name not in fs: continue
             record=fs[name]; ev=record.get('evidence')
-            if isinstance(ev,dict) and isinstance(ev.get('record_metadata'),dict) and 'review_status' in ev['record_metadata']:
+            if isinstance(ev,dict) and isinstance(ev.get('record_metadata'),dict) and ev['record_metadata'].get('review_status') == '已覆盖':
                 continue  # A coverage pointer is not the study fact it points to.
             return record.get('value')
         return None
-    design = value('study_design', '试验设计', 'design', '设计处理')
-    treatment = value('treatments_levels', '处理', 'treatments', '设计处理') or ''
+    design = value('study_design', '试验设计', 'design', '设计处理', '研究对象与设计', '主要设计')
+    treatment = value('treatments_levels', '处理', 'treatments', '设计处理', '处理与对照') or ''
     rep_names = ('independent_replicates', '独立试验重复', 'replicates', '试验重复')
     rep = value(*rep_names)
     rep_field = next((name for name in rep_names if name in fs), None)
@@ -129,6 +130,7 @@ def experiment(doi, fs):
     if rep and re.search(r'three biological soil columns per factorial', str(rep), re.I): unit,n = 'soil_column',3
     elif rep and re.search(r'每处理\s*3\s*个独立盆', str(rep)): unit,n = 'pot',3
     elif rep and re.search(r'每处理\s*3\s*块小区', str(rep)): unit,n = 'field_plot',3
+    elif rep and re.search(r'每处理\s*3\s*个重复.*土柱为处理单位', str(rep)): unit,n = 'soil_column',3
     # Do not treat the coverage-only wording "每处理5次" as an identified unit.
     elif rep and re.search(r'区组/主区需分层', str(rep)): unit,n = 'main_plot_for_irrigation; subplot_for_inoculation',3
     levels = {}
@@ -139,8 +141,15 @@ def experiment(doi, fs):
         for m in pattern.finditer(treatment): levels[m.group(1)] = m.group(2).strip()
     elif 'CK旱地' in treatment:
         for label, desc in re.findall(r'(CK|BW|W)([^；。]+)', treatment): levels[label] = desc
-    return {'experiment_id': doi + ':E1', 'design_candidate': design,
-        'research_object_candidate': value('research_object','研究对象及条件','研究对象','study_object'),
+    elif re.search(r'kg\s*N/ha',treatment,re.I):
+        dose=re.search(r'([0-9、，,\s]+)\s*kg\s*N/ha',treatment,re.I)
+        if dose:
+            for amount in re.findall(r'\d+',dose.group(1)):
+                levels['N'+amount]=amount+' kg N/ha'
+        control=re.search(r'(\d+)氮为对照',treatment)
+        if control:levels['对照']=control.group(1)+' kg N/ha'
+    return {'experiment_id': None, 'experiment_identity': 'unresolved_not_assumed_one_per_paper', 'design_candidate': design,
+        'research_object_candidate': value('research_object','研究对象及条件','研究对象','study_object','研究对象与设计'),
         'conditions_candidate': value('location_conditions'),
         'treatments_candidate': treatment or None, 'factor_levels': levels,
         'control_candidate': value('controls','对照及比较基准','control','对照'),
@@ -264,6 +273,94 @@ def parse_field_pairs(paper, field):
     return output
 
 
+def parse_nitrogen_fields(paper, field):
+    """Handle explicitly named N levels in the historical Chinese candidate format.
+
+    This is a format adapter, not a claim that all N-level papers share one design.
+    """
+    text=str(field.get('value') or ''); name=field.get('field',''); out=[]
+    source={'source_file':'fields.jsonl','field':name,'source_sha256':field.get('source_sha256'),
+            'anchor':evidence_loc(field), 'location_status':{'model_reported':True,'program_parsed':True,'pdf_verified':False}}
+    if '籽粒产量' in text and '±' in text and '对照' in text:
+        unit_match=re.search(r'籽粒产量[（(]([^）)]+)[）)]',text)
+        unit=unit_match.group(1) if unit_match else None
+        groups={}
+        for m in re.finditer(r'(对照|N\d+)\s*('+NUM+r')\s*±\s*('+NUM+r')\s*([a-z]+)',text,re.I):
+            groups[m.group(1)]={'value':float(m.group(2)),'error':float(m.group(3)),
+                'error_type':'SD' if '±SD' in text else 'unknown','unit':unit,'significance_letters':m.group(4).lower()}
+        if '对照' in groups:
+            for label in groups:
+                if label=='对照':continue
+                sig='letters_overlap_no_significant_difference_reported' if set(groups[label]['significance_letters']) & set(groups['对照']['significance_letters']) else 'letters_disjoint_reported_different'
+                add_comparison(out,paper,f"{paper['doi']}#field:{name}:{label}-对照",'rice_grain_yield',
+                    label,'对照',groups[label],groups['对照'],'group_values',source,sig,
+                    ['氮水平比较，不是水分制度比较','共同对照不得计为独立实验','来源位置尚待核查'])
+    m=re.search(r'(N\d+)与(N\d+)、(N\d+)相比，N2O排放低('+NUM+r')%和('+NUM+r')%',text,re.I)
+    if m:
+        treatment,c1,c2,v1,v2=m.groups()
+        for control,v in ((c1,v1),(c2,v2)):
+            add_comparison(out,paper,f"{paper['doi']}#field:{name}:{treatment}-{control}",'n2o_unspecified_period',
+                treatment,control,{'value':None,'unit':None},{'value':None,'unit':None},
+                'reported_relative_effect',source,'unknown',
+                ['作者报告相对差异，组均值和误差未提供','氮处理比较，不是水分制度比较','同一试验或数据集是否独立尚待核实'])
+            out[-1]['reported_effect']={'value':-float(v),'unit':'%','interpretation':'reported_lower'}
+    return out
+
+
+def parse_salinity_response(paper, response, response_rel, response_hash, review):
+    """Legacy user-response greenhouse table; L is a reference, not a control."""
+    section=re.search(r'###\s*6\.1\s*温室气体累积排放量(.*?)(?=\n###\s|\n##\s|\Z)',response,re.S)
+    if not section: return [], ['历史回复未找到受支持的温室气体比较表'], response_hash
+    block=section.group(1)
+    if not re.search(r'多项结果以L处理为比较对象',response):
+        return [], ['未发现明确的相对比较基准；不把L自动当作对照'],response_hash
+    locations=re.search(r'来源：([^\n]+)',block)
+    location=locations.group(1).strip() if locations else None
+    levels={}
+    for line in response.splitlines():
+        m=re.match(r'^\|\s*([LMH])\s*\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|\s*([^|]+)\|',line)
+        if m:levels[m.group(1)]='; '.join(x.strip() for x in m.groups()[1:])
+    if not all(x in levels for x in ('L','M','H')):
+        return [], ['缺少可对齐的三组环境条件'],response_hash
+    ex=paper['experiment'];ex['factor_levels']=levels
+    reps=re.search(r'\|\s*试验容器重复\s*\|\s*(\d+)个/处理',response)
+    ex['experimental_unit']={'value':'mesocosm' if reps else None,'source_field':'historic_response','status':'candidate' if reps else 'unknown'}
+    ex['independent_replicates']={'value':int(reps.group(1)) if reps else None,
+                                  'original':reps.group(0) if reps else None,'status':'candidate' if reps else 'unknown'}
+    ex['treatments_candidate']='盐度与垦殖历史并存的土壤组；非水分制度干预'
+    ex['control_candidate']=None
+    outcome_names={'CH₄':'cumulative_ch4','CO₂':'cumulative_co2','N₂O':'cumulative_n2o'}
+    sup=str.maketrans({'ᵃ':'a','ᵇ':'b','ᶜ':'c'})
+    out=[]
+    for line in block.splitlines():
+        cells=[x.strip() for x in line.strip().strip('|').split('|')]
+        if len(cells)!=4 or '累积' not in cells[0]:continue
+        gas=next((k for k in outcome_names if k in cells[0]),None)
+        um=re.search(r'[（(]([^）)]+)[）)]',cells[0])
+        if not gas or not um:continue
+        vals=[]
+        for cell in cells[1:]:
+            m=re.fullmatch(r'('+NUM+r')([ᵃᵇᶜ]+)',cell)
+            if not m: break
+            vals.append({'value':float(m.group(1)),'unit':um.group(1),'error':None,
+                         'error_type':'unknown','significance_letters':m.group(2).translate(sup)})
+        if len(vals)!=3:continue
+        for idx,label in ((1,'M'),(2,'H')):
+            src={'source_file':response_rel,'response_sha256':response_hash,'pdf_sha256':paper.get('pdf_sha256'),
+                 'location':{'model_reported':location,'program_parsed':None,'pdf_verified':None},
+                 'source_state':'user_pasted_model_response_not_gold',
+                 'sharing_restriction':'not_push_github' if review.get('not_push_github') else 'unknown',
+                 'row_text':line}
+            sig='letters_overlap' if set(vals[idx]['significance_letters']) & set(vals[0]['significance_letters']) else 'letters_disjoint'
+            add_comparison(out,paper,f"{paper['doi']}#response:{outcome_names[gas]}:{label}-L",outcome_names[gas],
+                label,'L',vals[idx],vals[0],'group_values',src,sig,
+                ['L是描述性比较基准，作者未明确设为对照','盐度、pH与垦殖年限共同变化，不能归因单一因素',
+                 '土壤来自混合田块，容器重复不等于独立田块','模型转述数据未由本次程序核对原PDF'])
+            out[-1]['comparator_role']='descriptive_reference_not_author_control'
+            out[-1]['contrast_role']='soil_origin_and_reclamation_groups_not_water_regime'
+    return out,([] if out else ['历史回复中没有可解析且带组标签的数值表']),response_hash
+
+
 def parse_historic_response(paper, original_paper, corpus_root):
     """Read and hash-check the existing user-pasted response, not the benchmark."""
     response_rel = original_paper.get('historic_response_file')
@@ -283,6 +380,11 @@ def parse_historic_response(paper, original_paper, corpus_root):
         review = json.loads(review_path.read_text(encoding='utf8'))
     except (ValueError, UnicodeError):
         return [], ['已记录现有历史回复哈希；未发现可核验的原始回复哈希及受支持的表格格式，保留字段候选'], response_hash
+    if isinstance(review.get('papers'),list):
+        entries=[item for item in review['papers'] if str(item.get('doi','')).lower()==paper['doi'].lower()]
+        if len(entries)==1 and entries[0].get('response_sha256')==response_hash:
+            return parse_salinity_response(paper,response_path.read_text(encoding='utf8'),response_rel,response_hash,review)
+        return [], ['历史响应的DOI或哈希不能匹配元数据'], None
     if not review.get('user_pasted_response_sha256'):
         return [], ['已记录现有历史回复哈希；未发现可核验的原始回复哈希及受支持的表格格式，保留字段候选'], response_hash
     if response_hash != review['user_pasted_response_sha256']:
@@ -296,11 +398,16 @@ def parse_historic_response(paper, original_paper, corpus_root):
     section = re.search(r'###\s*6\.5\s*水稻产量(.*?)(?=\n###\s|\n##\s|\Z)',response,re.S)
     if not section: return [], ['历史回复缺少可识别的产量章节'], response_hash
     block=section.group(1); rows={}
+    loc = re.search(r'第\s*(\d+)\s*页[^\n]*?Table\s*(\d+)', block, re.I)
+    model_reported_location = loc.group(0) if loc else None
+    parsed_location = {'physical_page':int(loc.group(1)), 'table':'Table '+loc.group(2)} if loc else None
+    unit_match = re.search(r'(?:Yield|产量)\s*[（(]([^）)]+)[）)]', block, re.I)
+    reported_unit = unit_match.group(1).strip() if unit_match else None
     for line in block.splitlines():
         m = re.match(r'^\|\s*(T\d+|CK)\s*\|\s*([\d,]+(?:\.\d+)?)\s*±\s*([\d,]+(?:\.\d+)?)\s*\|\s*([a-z]+)\s*\|\s*([^|]*)\|',line,re.I)
         if m:
             rows[m.group(1)]={'value':float(m.group(2).replace(',','')),'error':float(m.group(3).replace(',','')),
-                'error_type':'unknown','unit':'kg/hm²','significance_letters':m.group(4).lower(),
+                'error_type':'unknown','unit':reported_unit,'significance_letters':m.group(4).lower(),
                 'row_text':line}
     controls = re.findall(r'^\|\s*(T\d+|CK)\s*\|[^\n]*\|\s*对照\s*\|',block,re.M)
     if len(controls)!=1 or controls[0] not in rows:
@@ -322,7 +429,8 @@ def parse_historic_response(paper, original_paper, corpus_root):
         if label==control: continue
         a,b=dict(data),dict(rows[control]); a.pop('row_text');b.pop('row_text')
         source={'source_file':response_rel,'response_sha256':response_hash,'pdf_sha256':paper['pdf_sha256'],
-            'physical_page':8,'table':'Table 3','column':'Yield (kg/hm²)',
+            'location': {'model_reported':model_reported_location,'program_parsed':parsed_location,'pdf_verified':None},
+            'column': 'Yield',
             'row_texts':[rows[label]['row_text'],rows[control]['row_text']],
             'source_state':'user_pasted_model_response_not_gold'}
         sig='letters_overlap' if set(a['significance_letters']) & set(b['significance_letters']) else 'letters_disjoint'
@@ -348,12 +456,12 @@ def comparability(a,b):
         'reasons':reasons}
 
 
-def run(history_dir, corpus_root=None):
+def run(history_dir, corpus_root=None, selected_dois=None):
     root=Path(history_dir)
     names=('papers','fields','results','issues','historic_claims','supplement_files')
     if not all((root/(name+'.jsonl')).is_file() for name in names):
         raise FileNotFoundError('历史导出缺少必要 JSONL，拒绝输出伪装成完整审计的结果')
-    data={name:read_selected(root/(name+'.jsonl')) for name in names}
+    data={name:read_selected(root/(name+'.jsonl'), selected_dois) for name in names}
     papers=[]
     for line,r in data['papers']:
         doi=r['doi']; fs=[x for x in data['fields'] if x[1].get('doi')==doi]
@@ -382,6 +490,7 @@ def run(history_dir, corpus_root=None):
     for line,r in data['fields']:
         if r['field'] in ('新核查 · 土壤 EC 与 pH 显著性','新核查 · 真菌多样性'):
             comparisons.extend(parse_field_pairs(by[r['doi']],r))
+        comparisons.extend(parse_nitrogen_fields(by[r['doi']],r))
     # Keep the field audit separate; do not serialize all raw history twice.
     response_failures=[]; response_sources={}; recovered_dois=set()
     for _, original in data['papers']:
@@ -396,8 +505,11 @@ def run(history_dir, corpus_root=None):
     # resolved its own experimental unit after earlier candidate parsing.
     for c in comparisons:
         ex=by[c['doi']]['experiment']
-        c['experimental_unit']=ex['experimental_unit']; c['independent_replicates']=ex['independent_replicates']
-        c['sampling_replicates']=ex['sampling_replicates']
+        c['experimental_unit']=dict(ex['experimental_unit']); c['independent_replicates']=dict(ex['independent_replicates'])
+        c['sampling_replicates']=dict(ex['sampling_replicates'])
+        c['context_attribution']='explicit_experiment' if c.get('experiment_id') else 'paper_level_candidate_experiment_scope_unresolved'
+        for key in ('experimental_unit','independent_replicates','sampling_replicates'):
+            c[key]['association_status']=c['context_attribution']
     for p in papers: p.pop('raw_fields')
     audit=[field_audit(line,r) for line,r in data['fields']]
     recovered_reasons={
@@ -431,7 +543,18 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--history-dir',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--corpus-root',type=Path,help='Root containing referenced historic response files')
-    a=p.parse_args();d=run(a.history_dir,a.corpus_root);a.output.parent.mkdir(parents=True,exist_ok=True)
+    selection=p.add_mutually_exclusive_group(required=True)
+    selection.add_argument('--selection',type=Path,help='JSON containing previous_regression_dois and new_title_selected')
+    selection.add_argument('--doi',action='append',help='Select DOI; repeat for multiple papers')
+    a=p.parse_args()
+    if a.selection:
+        config=json.loads(a.selection.read_text(encoding='utf8'))
+        selected=set(x.lower() for x in config.get('previous_regression_dois',[])) | set(x['doi'].lower() for x in config.get('new_title_selected',[])) | set(x.lower() for x in config.get('dois',[]))
+    else: selected=set(x.lower() for x in a.doi)
+    if not selected: p.error('At least one externally specified DOI is required')
+    d=run(a.history_dir,a.corpus_root,selected);
+    d['selection']={'source':str(a.selection) if a.selection else 'command_line', 'requested_dois':sorted(selected),
+                    'missing_dois':sorted(selected-{x['doi'].lower() for x in d['papers']})};a.output.parent.mkdir(parents=True,exist_ok=True)
     a.output.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf8');print(json.dumps(d['summary'],ensure_ascii=False))
 
 if __name__=='__main__':main()

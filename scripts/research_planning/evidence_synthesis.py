@@ -506,6 +506,24 @@ def synthesize_converted(normalized):
              'reasons':reasons,'source_conflicts':list(dict.fromkeys(w for c in aa+bb for w in c['conflicts'])),
              'recorded_source_issues':[issue for c in (aa[0],bb[0]) for issue in c['source_issues']],
              'sources':[aa[0]['source_url'],bb[0]['source_url']]})
+    findings=[]
+    for pair in result_pairs:
+        if pair['B_conditional_quantitative']!='possible_pending_source_and_independence_review': continue
+        ids=pair['comparison_ids']
+        if any(len(group)!=1 for group in ids): continue
+        records=[next(c for c in comparisons if c['comparison_id']==group[0]) for group in ids]
+        relevant=[c for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review' and c['outcome_family']==pair['outcome_family']]
+        if len(relevant)!=2: continue  # no unexamined counterexample or shared control
+        if any(c['eligibility']!='primary_candidate_requires_source_review' or c['conflicts'] or c['source_issues'] for c in records): continue
+        if not all(c.get('experiment_id') and c['comparison_context'].get('independence_evidence') and
+                   any(e.get('pdf_verified') for e in c['raw_evidence']) for c in records): continue
+        if records[0]['comparison_context']['independence_evidence'] != records[1]['comparison_context']['independence_evidence']: continue
+        directions=[c['direction_records'][0]['direction'] if c['direction_records'] else None for c in records]
+        if directions[0] not in ('lower','higher') or directions[0]!=directions[1]: continue
+        findings.append({'kind':'conditional_descriptive_common_observation', 'direction':directions[0],
+                         'comparison_ids':[c['comparison_id'] for c in records],
+                         'sources':[c['source_url'] for c in records], 'conditions':records[0]['comparison_context'],
+                         'uncertainty':'仅为指定条件下两项比较的描述；不代表显著性、因果效应或普遍规律。'})
     shared=defaultdict(set)
     for c in comparisons:
         for label in (c['intervention'],c['comparator']):
@@ -542,7 +560,7 @@ def synthesize_converted(normalized):
             'indirect_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='indirect_context'],
             'water_pool_context_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='water_pool_context_not_transformation_rate'],
             'pairwise_comparability':result_pairs, 'dependent_comparisons':dependencies,
-            'findings':[], 'independent_experiment_count':'unknown', 'meta_analysis':'not_implemented',
+            'findings':findings, 'independent_experiment_count':'unknown', 'meta_analysis':'not_implemented',
             'limitations':['不同DOI不证明实验独立；同一DOI也可包含多个实验。','来源状态为候选；模型定位和PDF实际核验分开。',
                            '不因同向、显著或不显著生成共同结论或真正矛盾。']}
 

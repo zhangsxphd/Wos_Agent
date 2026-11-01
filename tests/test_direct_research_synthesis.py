@@ -30,6 +30,26 @@ def example(doi, tx, ctrl, factor='nitrogen', outcome='n2o', exp=None):
 
 
 class DirectSynthesisTests(unittest.TestCase):
+    def test_common_observation_requires_matching_context_and_scoped_sources(self):
+        p,a=example('10.1/a',7,10,'water',exp='a'); q,b=example('10.1/b',6,9,'water',exp='b')
+        ctx={k:'matched' for k in ('estimand','outcome_definition','treatment_definition','comparator_definition','time_basis','unit')}
+        ctx.update(source_status='source_checked',independence_evidence='separate sites and years verified')
+        for c in (a,b):
+            c['comparison_context']=copy.deepcopy(ctx)
+            c['evidence']['location']['pdf_verified']={'page':7}
+        n=m.adapt_converted({'papers':[p,q],'comparisons':[a,b]},PROFILE)
+        self.assertEqual(len(m.synthesize_converted(n)['findings']),1)
+        n['comparisons'][1]['conflicts']=['unit conflict']
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
+        n['comparisons'][1]['conflicts']=[]
+        n['comparisons'][1]['raw_evidence'][0]['pdf_verified']=None
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
+        n['comparisons'][1]['raw_evidence'][0]['pdf_verified']={'page':7}
+        n['comparisons'][1]['direction_records'][0]['direction']='higher'
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
+        n['comparisons'][1]['comparison_context']['time_basis']='different'
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
+
     def test_real_interface_has_no_reference_and_preserves_raw_fields(self):
         p,c=example('10.1/a',7,10);result=m.adapt_converted({'papers':[p],'comparisons':[c]},PROFILE)
         got=result['comparisons'][0]

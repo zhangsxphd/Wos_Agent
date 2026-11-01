@@ -1,0 +1,35 @@
+[
+  {
+    "file": "WOS_000745804400002__91944fa2e73f.pdf",
+    "sha256": "91944fa2e73f5cb068c2d9d12fe4c83ffc18cc6200d390196a538ce09acea3c1",
+    "doi": "10.1007/s42729-021-00736-1",
+    "doi_candidates": [
+      "10.1007/s42729-021-00736-1"
+    ],
+    "status": "body_parsed_doi_self_reported",
+    "pages": 11,
+    "reason": "PDF 内 DOI 自洽，未与外部题录独立比对"
+  },
+  {
+    "file": "WOS_000761870600002__eb3c80b68f80.pdf",
+    "sha256": "eb3c80b68f8039653199f1ba99d19948d7a390693b876eaa847101285584d281",
+    "doi": "10.1007/s00267-022-01612-z",
+    "doi_candidates": [
+      "10.1007/s00267-022-01612-z"
+    ],
+    "status": "body_parsed_doi_self_reported",
+    "pages": 15,
+    "reason": "PDF 内 DOI 自洽，未与外部题录独立比对"
+  },
+  {
+    "file": "WOS_000763124200001__6387a65e6b68.pdf",
+    "sha256": "6387a65e6b6864b034f890e74925ac2cc679851d135376b7352db1d50914b79a",
+    "doi": "10.3390/agronomy12020409",
+    "doi_candidates": [
+      "10.3390/agronomy12020409"
+    ],
+    "status": "body_parsed_doi_self_reported",
+    "pages": 12,
+    "reason": "PDF 内 DOI 自洽，未与外部题录独立比对"
+  }
+]

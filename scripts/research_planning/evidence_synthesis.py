@@ -485,7 +485,42 @@ def apply_source_checks(normalized, checks):
         seen.add(cid)
         for ev in comp['raw_evidence']:
             ev['pdf_verified']={'status':item['status'],'pages':item['pages'],
-                'scope':item['scope'],'pdf_sha256':item['pdf_sha256'],'comparison_id':cid}
+                'scope':item['scope'],'pdf_sha256':item['pdf_sha256'],'comparison_id':cid,
+                'reviewer':item.get('reviewer'),'reviewer_type':item.get('reviewer_type','unknown')}
+    return normalized
+
+
+def apply_comparison_reviews(normalized, audit):
+    """Attach explicit, scoped reviewer assertions without promoting Candidate to Gold."""
+    comparisons={c['comparison_id']:c for c in normalized['comparisons']}
+    papers={p['study_id']:p for p in normalized['papers']}
+    for review in audit.get('comparison_contexts',[]):
+        comp=comparisons.get(review.get('comparison_id'))
+        if not comp or doi(review.get('doi'))!=comp['study_id']:
+            raise ValueError('核查上下文必须匹配具体比较及 DOI')
+        if review.get('pdf_sha256')!=papers[comp['study_id']].get('pdf_sha256'):
+            raise ValueError('核查上下文 PDF 哈希不匹配')
+        if not review.get('reviewer') or not review.get('locations') or not isinstance(review.get('context'),dict):
+            raise ValueError('核查上下文需要审阅者、具体来源位置和上下文')
+        context=dict(review['context'])
+        # Reviewer assertion is not an independently authenticated identity or Gold.
+        context['source_status']='source_checked' if review.get('reviewer_type')=='human' and review.get('status')=='confirmed' else 'candidate_unverified'
+        context['review_provenance']={'reviewer':review['reviewer'],'reviewer_type':review.get('reviewer_type','unknown'),
+                                      'locations':review['locations'],'identity':'self_declared_not_independently_authenticated'}
+        comp['comparison_context']=context
+    reviews=[]
+    for review in audit.get('independence_reviews',[]):
+        datasets=review.get('datasets') or []
+        known={(c['study_id'],c.get('experiment_id')) for c in normalized['comparisons'] if c.get('experiment_id')}
+        selected={(doi(x.get('study_id')),x.get('experiment_id')) for x in datasets}
+        if len(selected)!=2 or not selected.issubset(known) or not review.get('evidence') or not review.get('reviewer'):
+            raise ValueError('实验独立性核查需匹配两个实际实验及来源和审阅者')
+        item=dict(review);item['datasets']=[{'study_id':sid,'experiment_id':eid} for sid,eid in sorted(selected)]
+        if review.get('reviewer_type')!='human' or review.get('status')!='source_checked_independent':
+            item['status']='independence_unconfirmed'
+        item['reviewer_identity']='self_declared_not_independently_authenticated'
+        reviews.append(item)
+    normalized['independence_reviews']=reviews
     return normalized
 
 
@@ -516,23 +551,32 @@ def synthesize_converted(normalized):
             reasons.append('至少一项研究报告伪重复，处理层独立重复不足或未知')
         value_kinds=sorted({c.get('evidence_value_kind','unknown') for c in aa+bb})
         if len(value_kinds)>1: reasons.append('直接报告、换算或人工读图的来源与精度等级不同，不自动视为同等可靠')
-        reasons.append('测量时间窗口、指标定义和共同效应量未充分确认')
-        reasons.append('不同论文是否共享原始实验或数据集未知，不能计为独立重复')
         contexts=[c['comparison_context'] for c in aa+bb]
         keys=('estimand','outcome_definition','treatment_definition','comparator_definition','time_basis','unit')
         same=all(ctx and ctx.get('source_status')=='source_checked' and all(ctx.get(k) for k in keys) for ctx in contexts) and all(
             all(ctx[k]==contexts[0][k] for k in keys) for ctx in contexts[1:])
+        if not same: reasons.append('测量时间窗口、指标定义和共同效应量不同或未充分确认')
+        datasets={(sid_a,exp_a),(sid_b,exp_b)}
+        independent=bool(exp_a and exp_b and any(r.get('status')=='source_checked_independent' and r.get('evidence') and
+            {(x.get('study_id'),x.get('experiment_id')) for x in r.get('datasets',[])}==datasets for r in normalized.get('independence_reviews',[])))
+        if not independent: reasons.append('不同论文是否共享原始实验或数据集未知，不能计为独立重复')
         metric_complete=all(c['metric_type']=='group_values' and c['numeric_values'].get('intervention') is not None
                             and c['numeric_values'].get('comparator') is not None for c in aa+bb)
         # Whether quantitative comparison is feasible is separate from whether
         # the studies can be pooled or treated as independent.
-        conditional='possible_pending_source_and_independence_review' if same and metric_complete and factors_a==factors_b and factors_a!=['unknown'] and not any(c['source_issues'] for c in aa+bb) else 'not_established'
+        conditional='possible_pending_source_and_independence_review' if same and metric_complete and factors_a==factors_b and factors_a!=['unknown'] and not any(c['source_issues'] or c['conflicts'] for c in aa+bb) else 'not_established'
+        conflict_present=any(c['conflicts'] or c['source_issues'] for c in aa+bb)
+        context_known=all(ctx.get('source_status')=='source_checked' and all(ctx.get(k) for k in keys) for ctx in contexts)
+        pair_status=('source_issue_or_conflict_recorded' if conflict_present else
+                     'insufficient_review_information' if not context_known else
+                     'conditions_differ' if not same else 'conditional_comparison_candidate')
         result_pairs.append({'study_ids':[sid_a,sid_b],'outcome_family':fam_a,
              'comparison_ids':[[c['comparison_id'] for c in aa],[c['comparison_id'] for c in bb]],
              'experiment_ids':[exp_a or None,exp_b or None],
              'A_descriptive':'permitted_with_conditions_and_source_status',
              'B_conditional_quantitative':conditional,'C_meta_analysis':'not_implemented',
-             'factor_classes':[factors_a,factors_b],'independence':'unknown',
+             'assessment_status':pair_status,
+             'factor_classes':[factors_a,factors_b],'independence':'reviewer_asserted_independent' if independent else 'unknown',
              'evidence_value_kinds':value_kinds,
              'potential_effect_modifiers':['土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同'],
              'reasons':reasons,'source_conflicts':list(dict.fromkeys(w for c in aa+bb for w in c['conflicts'])),
@@ -546,7 +590,10 @@ def synthesize_converted(normalized):
         if a.get('comparison_family',a['outcome_family'])!=b.get('comparison_family',b['outcome_family']) or a['factor']!=b['factor'] or a['factor']=='unknown': continue
         if not all(c.get('source_status')=='source_checked' and all(c.get(k) for k in keys) for c in (ca,cb)): continue
         if any(ca[k]!=cb[k] for k in keys): continue
-        if any(c['metric_type']!='group_values' or c['conflicts'] or c['source_issues'] or not c.get('experiment_id') or not any(e.get('pdf_verified') for e in c['raw_evidence']) for c in (a,b)): continue
+        if any(c['metric_type']!='group_values' or c['conflicts'] or c['source_issues'] or not c.get('experiment_id') or not any(
+            (e.get('pdf_verified') or {}).get('status')=='human_source_checked' and
+            (e.get('pdf_verified') or {}).get('reviewer_type')=='human' and
+            (e.get('pdf_verified') or {}).get('reviewer') for e in c['raw_evidence']) for c in (a,b)): continue
         datasets={(c['study_id'],c['experiment_id']) for c in (a,b)}
         if len(datasets)!=2: continue
         reviews=normalized.get('independence_reviews',[])

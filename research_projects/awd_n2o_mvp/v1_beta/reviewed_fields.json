@@ -1,0 +1,81 @@
+[
+  {
+    "pdf_sha256": "91944fa2e73f5cb068c2d9d12fe4c83ffc18cc6200d390196a538ce09acea3c1",
+    "reviewer": "assistant_direct_pdf_reading_not_human_gold",
+    "page": 3,
+    "quote": "15 soil pots (5 biochar rates × 3 repli-\ncates) were randomly arranged in a greenhouse to establish \nthe pot experiment, which was set up as a completely rand-\nomized design with 3 replicates.",
+    "field": "replicates",
+    "value": "5 个生物炭水平 × 每水平 3 个盆；完全随机",
+    "doi": "10.1007/s42729-021-00736-1",
+    "status": "reviewer_assertion_quote_located_not_gold",
+    "identity": "reviewer_self_declared",
+    "evidence_type": "author_reported_candidate"
+  },
+  {
+    "pdf_sha256": "91944fa2e73f5cb068c2d9d12fe4c83ffc18cc6200d390196a538ce09acea3c1",
+    "reviewer": "assistant_direct_pdf_reading_not_human_gold",
+    "page": 4,
+    "quote": "Biochar addition significantly increased the EC value of \nthe examined soil from 1.4 (no-biochar treatment, T1) to \n3.9 (dS  m−1) (20% biochar treatment, T5) after 5 days and \nfrom 4.4 (T1) to 7.3 (dS  m−1, T5) after 100 days (Fig.  1a).",
+    "field": "EC",
+    "value": "T1 0% 对 T5 20%；第5天 1.4 对 3.9；第100天 4.4 对 7.3",
+    "unit": "dS m−1",
+    "error": "未在正文给出",
+    "significance": "作者报告显著增加；该句未单独提供每一对比的P值",
+    "doi": "10.1007/s42729-021-00736-1",
+    "status": "reviewer_assertion_quote_located_not_gold",
+    "identity": "reviewer_self_declared",
+    "evidence_type": "author_reported_candidate"
+  },
+  {
+    "pdf_sha256": "91944fa2e73f5cb068c2d9d12fe4c83ffc18cc6200d390196a538ce09acea3c1",
+    "reviewer": "assistant_direct_pdf_reading_not_human_gold",
+    "page": 4,
+    "quote": "The pH of the examined soil was increased significantly \nfrom 5.1 to 6.2 in the first measurement and from 4.5 to \n5.5 in the last measurement from T1 to T5, respectively \n(Fig. 2a). Over the five measures, the pH of the five treat -\nments was slightly decreased from 5.1 to 4.5 for T1 and \nfrom 6.6 to 5.0 for T5 in the first and the last measurements, \nrespectively.",
+    "field": "source_conflict",
+    "value": "同段 T5 首末次 pH 同时报告为 6.2→5.5 与 6.6→5.0，保留冲突，不裁定",
+    "unit": "pH",
+    "error": "未知",
+    "significance": "作者称显著；具体比较待核",
+    "doi": "10.1007/s42729-021-00736-1",
+    "status": "reviewer_assertion_quote_located_not_gold",
+    "identity": "reviewer_self_declared",
+    "evidence_type": "author_reported_candidate"
+  },
+  {
+    "pdf_sha256": "eb3c80b68f8039653199f1ba99d19948d7a390693b876eaa847101285584d281",
+    "reviewer": "assistant_direct_pdf_reading_not_human_gold",
+    "page": 3,
+    "quote": "The study was conducted under naturalﬁeld conditions, in and\naround Varanasi (approximately (60 × 20) km), situated in the\nIGP region of Uttar Pradesh, I ndia from June 2018-April\n2019. The study sites were selected based on a survey",
+    "field": "design",
+    "value": "自然田间多地点调查；地点及管理可能混杂，未确认随机分配",
+    "evidence_type": "system_inference_not_validated",
+    "doi": "10.1007/s00267-022-01612-z",
+    "status": "reviewer_assertion_quote_located_not_gold",
+    "identity": "reviewer_self_declared"
+  },
+  {
+    "pdf_sha256": "6387a65e6b6864b034f890e74925ac2cc679851d135376b7352db1d50914b79a",
+    "reviewer": "assistant_direct_pdf_reading_not_human_gold",
+    "page": 2,
+    "quote": "treatments were as follows: CK (organic substitution), B (organic\nsubstitution + biochar), S (CK + NaCl), and BS (B + NaCl). There were three replicates\nper treatment.",
+    "field": "treatments",
+    "value": "CK、有机替代；B、有机替代加生物炭；S、CK加NaCl；BS、B加NaCl；每处理3次重复，独立实验单位待核",
+    "doi": "10.3390/agronomy12020409",
+    "status": "reviewer_assertion_quote_located_not_gold",
+    "identity": "reviewer_self_declared",
+    "evidence_type": "author_reported_candidate"
+  },
+  {
+    "pdf_sha256": "6387a65e6b6864b034f890e74925ac2cc679851d135376b7352db1d50914b79a",
+    "reviewer": "assistant_direct_pdf_reading_not_human_gold",
+    "page": 2,
+    "quote": "The cultivation experiment used the above two types of soil with and without 3 g NaCl\nper kg soil.",
+    "field": "population",
+    "value": "盆栽前土壤来自三年有机替代田间试验；加盐 3 g NaCl/kg 土",
+    "unit": "g/kg",
+    "doi": "10.3390/agronomy12020409",
+    "status": "reviewer_assertion_quote_located_not_gold",
+    "identity": "reviewer_self_declared",
+    "evidence_type": "author_reported_candidate"
+  }
+]

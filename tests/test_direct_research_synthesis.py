@@ -59,7 +59,7 @@ class DirectSynthesisTests(unittest.TestCase):
         ctx.update(source_status='source_checked',independence_evidence='separate sites and years verified')
         for c in (a,b):
             c['comparison_context']=copy.deepcopy(ctx)
-            c['evidence']['location']['pdf_verified']={'page':7}
+            c['evidence']['location']['pdf_verified']={'page':7,'status':'human_source_checked','reviewer_type':'human','reviewer':'test fixture'}
         review={'status':'source_checked_independent','evidence':['source methods for separate trials'],
                 'datasets':[{'study_id':'10.1/a','experiment_id':'a'},{'study_id':'10.1/b','experiment_id':'b'}]}
         n=m.adapt_converted({'papers':[p,q],'comparisons':[a,b],'independence_reviews':[review]},PROFILE)
@@ -78,7 +78,7 @@ class DirectSynthesisTests(unittest.TestCase):
         n['comparisons'][1]['conflicts']=[]
         n['comparisons'][1]['raw_evidence'][0]['pdf_verified']=None
         self.assertEqual(m.synthesize_converted(n)['findings'],[])
-        n['comparisons'][1]['raw_evidence'][0]['pdf_verified']={'page':7}
+        n['comparisons'][1]['raw_evidence'][0]['pdf_verified']={'page':7,'status':'human_source_checked','reviewer_type':'human','reviewer':'test fixture'}
         n['comparisons'][1]['direction_records'][0]['direction']='higher'
         self.assertEqual(m.synthesize_converted(n)['findings'],[])
         n['comparisons'][1]['comparison_context']['time_basis']='different'
@@ -144,6 +144,26 @@ class DirectSynthesisTests(unittest.TestCase):
         self.assertEqual(n['comparisons'][0]['record_state'],'candidate_not_human_gold')
         checks['checks'][0]['pdf_sha256']='different'
         with self.assertRaises(ValueError):m.apply_source_checks(n,checks)
+
+    def test_scoped_external_review_context_and_independence_are_connected(self):
+        p,a=example('10.1/a',7,10,'water',exp='a');q,b=example('10.1/b',6,9,'water',exp='b')
+        p['pdf_sha256']='hash-a';q['pdf_sha256']='hash-b'
+        n=m.adapt_converted({'papers':[p,q],'comparisons':[a,b]},PROFILE)
+        keys=('estimand','outcome_definition','treatment_definition','comparator_definition','time_basis','unit')
+        context={k:'matched' for k in keys}
+        audit={'checks':[], 'comparison_contexts':[], 'independence_reviews':[]}
+        for paper,comp in ((p,a),(q,b)):
+            base={'doi':paper['doi'],'comparison_id':comp['comparison_id'],'pdf_sha256':paper['pdf_sha256']}
+            audit['checks'].append({**base,'status':'human_source_checked','reviewer_type':'human','reviewer':'fixture', 'pages':[7],'scope':'specific comparison'})
+            audit['comparison_contexts'].append({**base,'status':'confirmed','reviewer_type':'human','reviewer':'fixture','locations':['p7'],'context':context})
+        audit['independence_reviews']=[{'status':'source_checked_independent','reviewer_type':'human','reviewer':'fixture',
+            'evidence':['independent study descriptions'],'datasets':[{'study_id':'10.1/a','experiment_id':'a'},{'study_id':'10.1/b','experiment_id':'b'}]}]
+        m.apply_source_checks(n,audit);m.apply_comparison_reviews(n,audit)
+        self.assertEqual(len(m.synthesize_converted(n)['findings']),1)
+        self.assertEqual(n['comparisons'][0]['record_state'],'candidate_not_human_gold')
+        audit['comparison_contexts'][0]['reviewer_type']='assistant'
+        m.apply_comparison_reviews(n,audit)
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
 
     def test_pdf_review_applies_only_to_exact_comparison(self):
         p,a=example('10.1/a',7,10);_,b=example('10.1/a',6,10)

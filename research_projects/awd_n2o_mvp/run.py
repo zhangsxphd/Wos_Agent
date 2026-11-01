@@ -6,6 +6,7 @@ from xml.etree import ElementTree as ET
 from urllib.request import urlopen, Request
 
 ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
 sys.path.insert(0,str(ROOT/'scripts/research_planning'))
 import convert_historical_candidates as convert
 import evidence_synthesis as synth
@@ -137,9 +138,9 @@ def standardize(c):
             'relative_change_origin':'program_calculated_not_significance'}
 
 def report(normalized,summary,log,excluded):
-    reviewed=sum(1 for c in normalized['comparisons'] if c['assessment']['source_verification']=='assistant_checked_candidate_not_human_gold')
+    reviewed=sum(1 for c in normalized['comparisons'] if c['assessment']['source_verification']=='human_source_review_self_declared_not_gold')
     lines=['# 研究证据分析', '', '研究问题：'+normalized['topic_profile']['primary_question'], '',
-           '工程运行：'+('部分记录失败' if any(x['status']=='failed_not_confirmed' for x in log) else '已完成')+f'；来源核查：{reviewed}/{len(normalized["comparisons"])} 条接入独立核查记录；配置或人工阅读本身不自动升级状态，均为 Candidate，未升级人工 Gold。','']
+           '工程运行：'+('部分记录失败' if any(x['status']=='failed_not_confirmed' for x in log) else '已完成')+f'；人工来源核查声明：{reviewed}/{len(normalized["comparisons"])}，审阅者身份未独立认证；均为 Candidate，未升级人工 Gold。','']
     papers={p['study_id']:p for p in normalized['papers']}
     for c in normalized['comparisons']:
         p=papers[c['study_id']]; e=p['experiments'][0];v=c['numeric_values'];n=c['standardized_n2o'];loc=c['raw_evidence'][0]
@@ -183,7 +184,11 @@ def report(normalized,summary,log,excluded):
     return '\n'.join(lines)+'\n'
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--manifest',type=Path);ap.add_argument('--confirmation',type=Path);ap.add_argument('--sources',type=Path);ap.add_argument('--corrections',type=Path);ap.add_argument('--discover',type=Path,nargs='+');ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--manifest',type=Path);ap.add_argument('--confirmation',type=Path);ap.add_argument('--sources',type=Path);ap.add_argument('--corrections',type=Path);ap.add_argument('--source-audit',type=Path);ap.add_argument('--discover',type=Path,nargs='+');ap.add_argument('--folder',type=Path);ap.add_argument('--topic');ap.add_argument('--folder-review',type=Path);ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
+    if a.folder:
+        if not a.topic: ap.error('--folder 需要 --topic')
+        from folder_intake import run_folder
+        print(json.dumps(run_folder(a.folder,a.topic,a.out,discover,a.folder_review),ensure_ascii=False));return
     if a.discover: discover(a.discover,a.out);return
     if bool(a.manifest)==bool(a.confirmation) or not a.sources: ap.error('综合需要 --manifest 或 --confirmation 二选一及 --sources；候选提取使用 --discover')
     import pdfplumber
@@ -203,7 +208,7 @@ def main():
             config['papers'].append(paper)
         if not config['papers']:raise ValueError('未确认任何论文；请将待分析条目的 include 设置为 true')
     else:config=json.loads(a.manifest.read_text())
-    out=a.out;rows={k:[] for k in ('papers','fields','results','issues','historic_claims','supplement_files')};checks=[];log=[];gwp_info={};reported_percent={};author_ranges={}
+    out=a.out;rows={k:[] for k in ('papers','fields','results','issues','historic_claims','supplement_files')};log=[];gwp_info={};reported_percent={};author_ranges={}
     if a.corrections:
         for edit in json.loads(a.corrections.read_text()):
             matched=[p for p in config['papers'] if p['doi'].lower()==edit['doi'].lower()]
@@ -288,7 +293,11 @@ def main():
             log.append({'doi':p.get('doi'),'status':'failed_not_confirmed','reason':str(exc)})
     d=out/'candidates';d.mkdir(parents=True,exist_ok=True)
     for name,data in rows.items():(d/(name+'.jsonl')).write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in data))
-    converted=convert.run(d,None,{p['doi'].lower() for p in config['papers']}); normalized=synth.adapt_converted(converted,config['topic']);synth.apply_source_checks(normalized,{'checks':checks})
+    converted=convert.run(d,None,{p['doi'].lower() for p in config['papers']}); normalized=synth.adapt_converted(converted,config['topic'])
+    if a.source_audit:
+        audit=json.loads(a.source_audit.read_text())
+        synth.apply_source_checks(normalized,audit)
+        synth.apply_comparison_reviews(normalized,audit)
     for c in normalized['comparisons']:
         if c['study_id'] in gwp_info:c['gwp_conversion']=gwp_info[c['study_id']]
         if c['study_id'] in author_ranges:c['author_reported_range']=author_ranges[c['study_id']]
@@ -308,10 +317,13 @@ def main():
                 c['conflicts'].append('作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。')
         rep=c.get('independent_replicates') or {}
         manual=(c['raw_evidence'][0].get('manual_reported') is not None)
+        reviews=[e.get('pdf_verified') or {} for e in c['raw_evidence']]
+        human_review=any(r.get('status')=='human_source_checked' and r.get('reviewer_type')=='human' and r.get('reviewer') for r in reviews)
+        assistant_review=any(str(r.get('status','')).startswith('assistant_') for r in reviews)
         c['assessment']={'topic_eligibility':c['eligibility'],
                          'program_parse':'manual_figure_estimate' if manual else 'success', 'source_location':'manual_figure_location_not_independently_confirmed' if manual else 'program_reported_not_independently_confirmed',
-                         'manual_check':'assistant_visual_estimate_not_independent' if manual else 'not_recorded_in_pipeline', 'gold':'not_gold',
-                         'source_verification':'assistant_checked_candidate_not_human_gold' if any(e.get('pdf_verified') for e in c['raw_evidence']) else 'not_checked',
+                         'manual_check':'human_review_self_declared' if human_review else 'assistant_visual_estimate_not_independent' if manual else 'not_recorded_in_pipeline', 'gold':'not_gold',
+                         'source_verification':'human_source_review_self_declared_not_gold' if human_review else 'assistant_checked_candidate_not_human_gold' if assistant_review else 'not_checked',
                          'design_validity':'insufficient_replicated_treatment' if re.search(r'pseudo.replicat|伪重复',str(rep.get('original') or ''),re.I) or rep.get('value')==1 else 'replication_reported_requires_review' if (rep.get('value') or 0)>1 else 'unknown'}
     summary=synth.synthesize_converted(normalized)
     by_id={c['comparison_id']:c for c in normalized['comparisons']}
@@ -326,7 +338,8 @@ def main():
         'cross_study_comparability':'see_pairwise_comparability',
         'scientific_conclusion':summary['primary_conclusion'],
         'new_paper':'not_included_full_text_unavailable' if config.get('selection_attempts') else 'not_assessed'}
-    for name,data in [('conversion',converted),('normalized_evidence',normalized),('synthesis',summary),('run_log',{'source_runs':log,'selection_attempts':config.get('selection_attempts',[]),'manual_corrections':changes})]:
+    audit_log={'file':str(a.source_audit),'sha256':sha(a.source_audit),'identity':'reviewer_self_declared_not_gold'} if a.source_audit else None
+    for name,data in [('conversion',converted),('normalized_evidence',normalized),('synthesis',summary),('run_log',{'source_runs':log,'selection_attempts':config.get('selection_attempts',[]),'manual_corrections':changes,'source_audit':audit_log})]:
         (out/(name+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     (out/'analysis.md').write_text(report(normalized,summary,log,config.get('selection_attempts',[])),encoding='utf8')
     print(json.dumps({'papers':len(normalized['papers']),'comparisons':len(normalized['comparisons']),'findings':len(summary['findings']),'pairs':len(summary['pairwise_comparability'])}))

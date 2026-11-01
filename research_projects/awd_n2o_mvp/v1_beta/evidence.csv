@@ -1,0 +1,25 @@
+doi,field,value,unit,error,significance,page,quote,reviewer,status,evidence_type
+10.1007/s42729-021-00736-1,replicates,5 个生物炭水平 × 每水平 3 个盆；完全随机,,,,3,"15 soil pots (5 biochar rates × 3 repli-
+cates) were randomly arranged in a greenhouse to establish 
+the pot experiment, which was set up as a completely rand-
+omized design with 3 replicates.",assistant_direct_pdf_reading_not_human_gold,reviewer_assertion_quote_located_not_gold,author_reported_candidate
+10.1007/s42729-021-00736-1,EC,T1 0% 对 T5 20%；第5天 1.4 对 3.9；第100天 4.4 对 7.3,dS m−1,未在正文给出,作者报告显著增加；该句未单独提供每一对比的P值,4,"Biochar addition significantly increased the EC value of 
+the examined soil from 1.4 (no-biochar treatment, T1) to 
+3.9 (dS  m−1) (20% biochar treatment, T5) after 5 days and 
+from 4.4 (T1) to 7.3 (dS  m−1, T5) after 100 days (Fig.  1a).",assistant_direct_pdf_reading_not_human_gold,reviewer_assertion_quote_located_not_gold,author_reported_candidate
+10.1007/s42729-021-00736-1,source_conflict,同段 T5 首末次 pH 同时报告为 6.2→5.5 与 6.6→5.0，保留冲突，不裁定,pH,未知,作者称显著；具体比较待核,4,"The pH of the examined soil was increased significantly 
+from 5.1 to 6.2 in the first measurement and from 4.5 to 
+5.5 in the last measurement from T1 to T5, respectively 
+(Fig. 2a). Over the five measures, the pH of the five treat -
+ments was slightly decreased from 5.1 to 4.5 for T1 and 
+from 6.6 to 5.0 for T5 in the first and the last measurements, 
+respectively.",assistant_direct_pdf_reading_not_human_gold,reviewer_assertion_quote_located_not_gold,author_reported_candidate
+10.1007/s00267-022-01612-z,design,自然田间多地点调查；地点及管理可能混杂，未确认随机分配,,,,3,"The study was conducted under naturalﬁeld conditions, in and
+around Varanasi (approximately (60 × 20) km), situated in the
+IGP region of Uttar Pradesh, I ndia from June 2018-April
+2019. The study sites were selected based on a survey",assistant_direct_pdf_reading_not_human_gold,reviewer_assertion_quote_located_not_gold,system_inference_not_validated
+10.3390/agronomy12020409,treatments,CK、有机替代；B、有机替代加生物炭；S、CK加NaCl；BS、B加NaCl；每处理3次重复，独立实验单位待核,,,,2,"treatments were as follows: CK (organic substitution), B (organic
+substitution + biochar), S (CK + NaCl), and BS (B + NaCl). There were three replicates
+per treatment.",assistant_direct_pdf_reading_not_human_gold,reviewer_assertion_quote_located_not_gold,author_reported_candidate
+10.3390/agronomy12020409,population,盆栽前土壤来自三年有机替代田间试验；加盐 3 g NaCl/kg 土,g/kg,,,2,"The cultivation experiment used the above two types of soil with and without 3 g NaCl
+per kg soil.",assistant_direct_pdf_reading_not_human_gold,reviewer_assertion_quote_located_not_gold,author_reported_candidate

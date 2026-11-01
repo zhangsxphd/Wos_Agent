@@ -1,0 +1,1360 @@
+{
+  "version": "1.0",
+  "input_files": {
+    "papers": {
+      "sha256": "e0abeb220f19bd12321a1a7d9a7727d949bee2d4b9cff786bb41e54ccc8fa4ed"
+    },
+    "fields": {
+      "sha256": "b1ed160081d5927a8dff1a43553270359c0ef1e5e685ebcc0ff7d2bd02694819"
+    },
+    "results": {
+      "sha256": "949c0e0c4da3982d4727472d8867861c0859529714b7c8827fa15627046d289f"
+    },
+    "issues": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "historic_claims": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "supplement_files": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "papers": [
+    {
+      "study_id": "10.5194/soil-8-645-2022",
+      "doi": "10.5194/soil-8-645-2022",
+      "title": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation",
+      "study_type": "pot_experiment",
+      "source_url": "https://doi.org/10.5194/soil-8-645-2022",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "randomized block rice pot experiment, 2020",
+          "conditions_candidate": null,
+          "research_object_candidate": "rice paddy Alfisol; salinity not specified",
+          "experimental_unit": {
+            "value": "pot",
+            "source_field": "independent_replicates",
+            "status": "candidate"
+          },
+          "independent_replicates": {
+            "value": 3,
+            "original": "每处理3个独立盆",
+            "status": "candidate"
+          },
+          "sampling_replicates": {
+            "original": null,
+            "status": "unknown"
+          }
+        },
+        {
+          "experiment_id": "2020_30_pot_experiment",
+          "status": "comparison_declared_context_unverified",
+          "treatments": []
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation rice paddy Alfisol; salinity not specified randomized block rice pot experiment, 2020"
+    },
+    {
+      "study_id": "10.1016/s1002-0160(15)60063-7",
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "title": "Alternate Wetting and Drying of Rice Reduced CH4 Emissions but Triggered N2O Peaks in a Clayey Soil of Central Italy",
+      "study_type": "field_experiment",
+      "source_url": "https://doi.org/10.1016/S1002-0160(15)60063-7",
+      "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "2012 and 2013 field experiment, one field per water regime",
+          "conditions_candidate": null,
+          "research_object_candidate": "rice paddy clay soil in central Italy",
+          "experimental_unit": {
+            "value": "field",
+            "source_field": "independent_replicates",
+            "status": "candidate"
+          },
+          "independent_replicates": {
+            "value": 1,
+            "original": "One field per water regime; 3 chambers in 2012 and 4 in 2013 are pseudo-replicates; independent water-treatment replication not established",
+            "status": "candidate"
+          },
+          "sampling_replicates": {
+            "original": null,
+            "status": "unknown"
+          }
+        },
+        {
+          "experiment_id": "italy_2012_2013_same_fields",
+          "status": "comparison_declared_context_unverified",
+          "treatments": []
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Alternate Wetting and Drying of Rice Reduced CH4 Emissions but Triggered N2O Peaks in a Clayey Soil of Central Italy rice paddy clay soil in central Italy 2012 and 2013 field experiment, one field per water regime"
+    },
+    {
+      "study_id": "10.3390/agronomy14020248",
+      "doi": "10.3390/agronomy14020248",
+      "title": "Effect of Alternate Wetting and Drying on the Emission of Greenhouse Gases from Rice Fields on the Northern Coast of Peru",
+      "study_type": "observational",
+      "source_url": "https://doi.org/10.3390/agronomy14020248",
+      "pdf_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "field experiment, one plot for each water regime and three subplots; observational repeated measures",
+          "conditions_candidate": null,
+          "research_object_candidate": "rice paddy field in coastal Peru",
+          "experimental_unit": {
+            "value": "field",
+            "source_field": "independent_replicates",
+            "status": "candidate"
+          },
+          "independent_replicates": {
+            "value": 1,
+            "original": "One field per water regime; subplots are not independent irrigated plots",
+            "status": "candidate"
+          },
+          "sampling_replicates": {
+            "original": null,
+            "status": "unknown"
+          }
+        },
+        {
+          "experiment_id": "peru_2023_four_plots",
+          "status": "comparison_declared_context_unverified",
+          "treatments": []
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Effect of Alternate Wetting and Drying on the Emission of Greenhouse Gases from Rice Fields on the Northern Coast of Peru rice paddy field in coastal Peru field experiment, one plot for each water regime and three subplots; observational repeated measures"
+    },
+    {
+      "study_id": "10.3390/agriculture10080350",
+      "doi": "10.3390/agriculture10080350",
+      "title": "Potential of Alternate Wetting and Drying Irrigation Practices for the Mitigation of GHG Emissions from Rice Fields: Two Cases in Central Luzon",
+      "study_type": "field_experiment",
+      "source_url": "https://doi.org/10.3390/agriculture10080350",
+      "pdf_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "field experiment on farmer fields, nonrandom toposequence",
+          "conditions_candidate": null,
+          "research_object_candidate": "rice paddy fields Victoria, Philippines",
+          "experimental_unit": {
+            "value": "field",
+            "source_field": "independent_replicates",
+            "status": "candidate"
+          },
+          "independent_replicates": {
+            "value": 3,
+            "original": "Three fields per regime; AWD on high toposequence, CF on low toposequence; independence and confounding require review",
+            "status": "candidate"
+          },
+          "sampling_replicates": {
+            "original": null,
+            "status": "unknown"
+          }
+        },
+        {
+          "experiment_id": "victoria_2012_2013_farm_fields",
+          "status": "comparison_declared_context_unverified",
+          "treatments": []
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Potential of Alternate Wetting and Drying Irrigation Practices for the Mitigation of GHG Emissions from Rice Fields: Two Cases in Central Luzon rice paddy fields Victoria, Philippines field experiment on farmer fields, nonrandom toposequence"
+    },
+    {
+      "study_id": "10.3389/fpls.2026.1756990",
+      "doi": "10.3389/fpls.2026.1756990",
+      "title": "Hotspots of N2O accumulation in the soil profile of alternate wetting and drying paddy fields",
+      "study_type": "pot_experiment",
+      "source_url": "https://doi.org/10.3389/fpls.2026.1756990",
+      "pdf_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "randomized block field lysimeter experiment in 2019 and 2020, same six lysimeters",
+          "conditions_candidate": null,
+          "research_object_candidate": "rice paddy clay loam in Liaoning, China",
+          "experimental_unit": {
+            "value": "lysimeter",
+            "source_field": "independent_replicates",
+            "status": "candidate"
+          },
+          "independent_replicates": {
+            "value": 3,
+            "original": "three independent lysimeters per irrigation regime; same lysimeters followed in 2019 and 2020",
+            "status": "candidate"
+          },
+          "sampling_replicates": {
+            "original": null,
+            "status": "unknown"
+          }
+        },
+        {
+          "experiment_id": "liaoning_long_term_lysimeters",
+          "status": "comparison_declared_context_unverified",
+          "treatments": []
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Hotspots of N2O accumulation in the soil profile of alternate wetting and drying paddy fields rice paddy clay loam in Liaoning, China randomized block field lysimeter experiment in 2019 and 2020, same six lysimeters"
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result1:0",
+      "study_id": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o_mass",
+      "outcome_family": "n2o_mass",
+      "factor": "water_regime",
+      "intervention": "AWD 15U",
+      "comparator": "CF 15U",
+      "treatment_details": {
+        "label": "AWD 15U",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa; 225 kg N/ha; no straw; 15N-labelled urea"
+          }
+        ],
+        "value": 4.48,
+        "unit": "kg N2O/ha",
+        "error": 0.12,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF 15U",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm; 225 kg N/ha; no straw; 15N-labelled urea"
+          }
+        ],
+        "value": 4.02,
+        "unit": "kg N2O/ha",
+        "error": 0.3,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 4.48,
+        "comparator": 4.02,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": 0.12,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.3,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 1 letters b vs c; Duncan p<0.05, original table",
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": null,
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2020 growing season",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 7,
+              "table_figure": "Table 1",
+              "cells": [
+                "C11",
+                "C6"
+              ],
+              "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+              "footnote": "standard error"
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+            "anchor": [
+              {
+                "page": 7,
+                "table_figure": "Table 1",
+                "cells": [
+                  "C11",
+                  "C6"
+                ],
+                "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+                "footnote": "standard error"
+              }
+            ],
+            "observation_time": "2020 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.5194/soil-8-645-2022",
+      "source_issues": [],
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 4.48,
+          "comparator": 4.02,
+          "unit": "kg N2O/ha",
+          "comparator_unit": "kg N2O/ha",
+          "intervention_error": 0.12,
+          "intervention_error_type": "SE",
+          "comparator_error": 0.3,
+          "comparator_error_type": "SE",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 4.48,
+        "comparator": 4.02,
+        "intervention_error": 0.12,
+        "comparator_error": 0.3,
+        "basis": "original already N2O mass",
+        "conversion_source": null,
+        "derived_status": "standardized_not_gold",
+        "factor": 1.0,
+        "relative_change_percent": 11.442786069651767,
+        "relative_change_origin": "program_calculated_not_significance"
+      },
+      "comparison_family": "n2o_mass",
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "program_parse": "success",
+        "source_location": "program_reported_not_independently_confirmed",
+        "manual_check": "not_recorded_in_pipeline",
+        "gold": "not_gold",
+        "source_verification": "not_checked",
+        "design_validity": "replication_reported_requires_review"
+      }
+    },
+    {
+      "comparison_id": "10.1016/S1002-0160(15)60063-7#result1:0",
+      "study_id": "10.1016/s1002-0160(15)60063-7",
+      "experiment_id": "italy_2012_2013_same_fields",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o_n_mass",
+      "outcome_family": "n2o_n_mass",
+      "factor": "water_regime",
+      "intervention": "AWD",
+      "comparator": "PF",
+      "treatment_details": {
+        "label": "AWD",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent drying to -15 cm; Entec 46 with nitrification inhibitor, 120 kg N/ha; one field"
+          }
+        ],
+        "value": 4.91,
+        "unit": "kg N-N2O/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_details": {
+        "label": "PF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "permanent flooding; Entec 46 with nitrification inhibitor, 120 kg N/ha; one field"
+          }
+        ],
+        "value": 0.8,
+        "unit": "kg N-N2O/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 4.91,
+        "comparator": 0.8,
+        "unit": "kg N-N2O/ha",
+        "comparator_unit": "kg N-N2O/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance": "unknown: separate cumulative comparison significance not present in selected passage",
+      "independent_replicates": {
+        "value": 1,
+        "original": "One field per water regime; 3 chambers in 2012 and 4 in 2013 are pseudo-replicates; independent water-treatment replication not established",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": "field",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": null,
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 growing season",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 8,
+              "section": "N2O emissions",
+              "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+              "context_assertions": {
+                "year": "2012",
+                "outcome": "N2O",
+                "treatment_order": [
+                  "AWD",
+                  "PF"
+                ],
+                "unit": "kg N-N2O/ha"
+              },
+              "note": "Group errors not extracted; significance only when table markers captured."
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+            "anchor": [
+              {
+                "page": 8,
+                "section": "N2O emissions",
+                "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+                "context_assertions": {
+                  "year": "2012",
+                  "outcome": "N2O",
+                  "treatment_order": [
+                    "AWD",
+                    "PF"
+                  ],
+                  "unit": "kg N-N2O/ha"
+                },
+                "note": "Group errors not extracted; significance only when table markers captured."
+              }
+            ],
+            "observation_time": "2012 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.1016/S1002-0160(15)60063-7",
+      "source_issues": [],
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 4.91,
+          "comparator": 0.8,
+          "unit": "kg N-N2O/ha",
+          "comparator_unit": "kg N-N2O/ha",
+          "intervention_error": null,
+          "intervention_error_type": "unknown",
+          "comparator_error": null,
+          "comparator_error_type": "unknown",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 7.715714285714286,
+        "comparator": 1.2571428571428571,
+        "intervention_error": null,
+        "comparator_error": null,
+        "basis": "N2O-N to N2O: molecular mass ratio 44/28",
+        "conversion_source": null,
+        "derived_status": "standardized_not_gold",
+        "factor": 1.5714285714285714,
+        "relative_change_percent": 513.75,
+        "relative_change_origin": "program_calculated_not_significance"
+      },
+      "comparison_family": "n2o_mass",
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "program_parse": "success",
+        "source_location": "program_reported_not_independently_confirmed",
+        "manual_check": "not_recorded_in_pipeline",
+        "gold": "not_gold",
+        "source_verification": "not_checked",
+        "design_validity": "insufficient_replicated_treatment"
+      }
+    },
+    {
+      "comparison_id": "10.3390/agronomy14020248#result1:0",
+      "study_id": "10.3390/agronomy14020248",
+      "experiment_id": "peru_2023_four_plots",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o_mass",
+      "outcome_family": "n2o_mass",
+      "factor": "water_regime",
+      "intervention": "AWD10",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "AWD10",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation (AWD) water level -10 cm; 250 kg N/ha"
+          }
+        ],
+        "value": 2.36,
+        "unit": "kg N2O/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 5 cm; 250 kg N/ha"
+          }
+        ],
+        "value": 0.63,
+        "unit": "kg N2O/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 2.36,
+        "comparator": 0.63,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance": "原表标记：处理 b；对照 a；含义须按表注核查",
+      "independent_replicates": {
+        "value": 1,
+        "original": "One field per water regime; subplots are not independent irrigated plots",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": "field",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": null,
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2023 growing season",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 11,
+              "section": "Table 3",
+              "quote": "(kg m−3) CH4    N2O   CH4   N2O                      \n          CF        14.01 a   0.70   108.55 a 0.63 a 0.92 a 0.01 a 3211.54 a 0.23 a\n         AWD5       11.85 b   0.83   17.72 a 1.05 a 0.15 a 0.01 a 78",
+              "context_assertions": {
+                "year": "2023",
+                "outcome": "N2O",
+                "unit": "kg N2O/ha",
+                "treatment_order": [
+                  "CF",
+                  "AWD10"
+                ]
+              },
+              "note": "Group errors not extracted; significance only when table markers captured."
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+            "anchor": [
+              {
+                "page": 11,
+                "section": "Table 3",
+                "quote": "(kg m−3) CH4    N2O   CH4   N2O                      \n          CF        14.01 a   0.70   108.55 a 0.63 a 0.92 a 0.01 a 3211.54 a 0.23 a\n         AWD5       11.85 b   0.83   17.72 a 1.05 a 0.15 a 0.01 a 78",
+                "context_assertions": {
+                  "year": "2023",
+                  "outcome": "N2O",
+                  "unit": "kg N2O/ha",
+                  "treatment_order": [
+                    "CF",
+                    "AWD10"
+                  ]
+                },
+                "note": "Group errors not extracted; significance only when table markers captured."
+              }
+            ],
+            "observation_time": "2023 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3390/agronomy14020248",
+      "source_issues": [],
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 2.36,
+          "comparator": 0.63,
+          "unit": "kg N2O/ha",
+          "comparator_unit": "kg N2O/ha",
+          "intervention_error": null,
+          "intervention_error_type": "unknown",
+          "comparator_error": null,
+          "comparator_error_type": "unknown",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 2.36,
+        "comparator": 0.63,
+        "intervention_error": null,
+        "comparator_error": null,
+        "basis": "original already N2O mass",
+        "conversion_source": null,
+        "derived_status": "standardized_not_gold",
+        "factor": 1.0,
+        "relative_change_percent": 274.6031746031746,
+        "relative_change_origin": "program_calculated_not_significance"
+      },
+      "comparison_family": "n2o_mass",
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "program_parse": "success",
+        "source_location": "program_reported_not_independently_confirmed",
+        "manual_check": "not_recorded_in_pipeline",
+        "gold": "not_gold",
+        "source_verification": "not_checked",
+        "design_validity": "insufficient_replicated_treatment"
+      }
+    },
+    {
+      "comparison_id": "10.3390/agriculture10080350#result1:0",
+      "study_id": "10.3390/agriculture10080350",
+      "experiment_id": "victoria_2012_2013_farm_fields",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o_gwp",
+      "outcome_family": "n2o_gwp",
+      "factor": "water_regime",
+      "intervention": "AWD",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "AWD",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "farmer-managed intermittent irrigation (AWD), high toposequence, 104 kg N/ha"
+          }
+        ],
+        "value": 252.0,
+        "unit": "kg CO2eq/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "farmer-managed continuous flooding, low toposequence, 104 kg N/ha"
+          }
+        ],
+        "value": 120.0,
+        "unit": "kg CO2eq/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 252.0,
+        "comparator": 120.0,
+        "unit": "kg CO2eq/ha",
+        "comparator_unit": "kg CO2eq/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance": "原表标记：处理 ns；对照 未标；含义须按表注核查",
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three fields per regime; AWD on high toposequence, CF on low toposequence; independence and confounding require review",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": "field",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": null,
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2013DS growing season",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 12,
+              "section": "Table 3",
+              "quote": "   -    -                    \n             2013DS    Victoria 3603 1666ns 53.76   -      -          120  252ns 52.38    -    -                    \n             2013WS    Victoria 3834 2282ns 40.47   -      - ",
+              "context_assertions": {
+                "year": "2013",
+                "outcome": "N2O",
+                "unit": "kg CO2eq/ha",
+                "treatment_order": [
+                  "CF",
+                  "AWD"
+                ]
+              },
+              "note": "Group errors not extracted; significance only when table markers captured."
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+            "anchor": [
+              {
+                "page": 12,
+                "section": "Table 3",
+                "quote": "   -    -                    \n             2013DS    Victoria 3603 1666ns 53.76   -      -          120  252ns 52.38    -    -                    \n             2013WS    Victoria 3834 2282ns 40.47   -      - ",
+                "context_assertions": {
+                  "year": "2013",
+                  "outcome": "N2O",
+                  "unit": "kg CO2eq/ha",
+                  "treatment_order": [
+                    "CF",
+                    "AWD"
+                  ]
+                },
+                "note": "Group errors not extracted; significance only when table markers captured."
+              }
+            ],
+            "observation_time": "2013DS growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。",
+        "作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。"
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3390/agriculture10080350",
+      "source_issues": [],
+      "gwp_conversion": {
+        "factor": 265.0,
+        "source_page": 8,
+        "pdf_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+        "source_quote": "GWP (N2O) = 265",
+        "source_verified_by_program": true,
+        "review_status": "program_parsed_not_gold"
+      },
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 252.0,
+          "comparator": 120.0,
+          "unit": "kg CO2eq/ha",
+          "comparator_unit": "kg CO2eq/ha",
+          "intervention_error": null,
+          "intervention_error_type": "unknown",
+          "comparator_error": null,
+          "comparator_error_type": "unknown",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 0.9509433962264151,
+        "comparator": 0.4528301886792453,
+        "intervention_error": null,
+        "comparator_error": null,
+        "basis": "N2O-specific GWP divided by the paper factor; estimate",
+        "conversion_source": {
+          "factor": 265.0,
+          "source_page": 8,
+          "pdf_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+          "source_quote": "GWP (N2O) = 265",
+          "source_verified_by_program": true,
+          "review_status": "program_parsed_not_gold"
+        },
+        "derived_status": "program_estimate_not_directly_reported_mass",
+        "factor": 0.0037735849056603774,
+        "relative_change_percent": 110.00000000000001,
+        "relative_change_origin": "program_calculated_not_significance"
+      },
+      "comparison_family": "n2o_mass",
+      "reported_percent": {
+        "value": 52.38,
+        "unit": "%",
+        "source_page": 12,
+        "description": "作者表格所列百分比，分母未由程序确定"
+      },
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "program_parse": "success",
+        "source_location": "program_reported_not_independently_confirmed",
+        "manual_check": "not_recorded_in_pipeline",
+        "gold": "not_gold",
+        "source_verification": "not_checked",
+        "design_validity": "replication_reported_requires_review"
+      }
+    },
+    {
+      "comparison_id": "10.3389/fpls.2026.1756990#result1:0",
+      "study_id": "10.3389/fpls.2026.1756990",
+      "experiment_id": "liaoning_long_term_lysimeters",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o_mass",
+      "outcome_family": "n2o_mass",
+      "factor": "water_regime",
+      "intervention": "IAWD",
+      "comparator": "ICF",
+      "treatment_details": {
+        "label": "IAWD",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent AWD, soil water potential -15 kPa"
+          }
+        ],
+        "value": 2.3,
+        "unit": "kg N2O/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_details": {
+        "label": "ICF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 1–5 cm"
+          }
+        ],
+        "value": 1.9,
+        "unit": "kg N2O/ha",
+        "error": null,
+        "error_type": "unknown"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 2.3,
+        "comparator": 1.9,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance": "Figure 5 **; caption reports P<0.01; method and scope require independent review",
+      "independent_replicates": {
+        "value": 3,
+        "original": "three independent lysimeters per irrigation regime; same lysimeters followed in 2019 and 2020",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": "lysimeter",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": null,
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2019 growing season",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": null,
+          "manual_reported": [
+            {
+              "page": 6,
+              "section": "FIGURE\\s*5",
+              "manual_figure_estimate": {
+                "a": 2.3,
+                "b": 1.9,
+                "uncertainty": "约 ±0.1 kg N2O/ha 为读图分辨率，不是 SD 或 SE；数值按0.1取整",
+                "actor": "assistant_visual_estimate_not_gold",
+                "method": "在图5 2019 Total 柱上按0、1、2、3刻度目视估计，不提取误差线",
+                "figure_locator": "FIGURE\\s*5",
+                "reported_significance": "Figure 5 **; caption reports P<0.01; method and scope require independent review"
+              },
+              "note": "人工视觉近似，非原文数字；误差条未读出，非 Gold"
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+            "anchor": [
+              {
+                "page": 6,
+                "section": "FIGURE\\s*5",
+                "manual_figure_estimate": {
+                  "a": 2.3,
+                  "b": 1.9,
+                  "uncertainty": "约 ±0.1 kg N2O/ha 为读图分辨率，不是 SD 或 SE；数值按0.1取整",
+                  "actor": "assistant_visual_estimate_not_gold",
+                  "method": "在图5 2019 Total 柱上按0、1、2、3刻度目视估计，不提取误差线",
+                  "figure_locator": "FIGURE\\s*5",
+                  "reported_significance": "Figure 5 **; caption reports P<0.01; method and scope require independent review"
+                },
+                "note": "人工视觉近似，非原文数字；误差条未读出，非 Gold"
+              }
+            ],
+            "observation_time": "2019 growing season",
+            "reporting_origin": "manual_figure_estimate",
+            "candidate_limitations": "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。"
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3389/fpls.2026.1756990",
+      "source_issues": [],
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 2.3,
+          "comparator": 1.9,
+          "unit": "kg N2O/ha",
+          "comparator_unit": "kg N2O/ha",
+          "intervention_error": null,
+          "intervention_error_type": "unknown",
+          "comparator_error": null,
+          "comparator_error_type": "unknown",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 2.3,
+        "comparator": 1.9,
+        "intervention_error": null,
+        "comparator_error": null,
+        "basis": "original already N2O mass",
+        "conversion_source": null,
+        "derived_status": "manual_graph_approximation_not_reported_numeric_value",
+        "factor": 1.0,
+        "relative_change_percent": null,
+        "relative_change_origin": "not_calculated_due_to_graph_reading_uncertainty"
+      },
+      "comparison_family": "n2o_mass",
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "program_parse": "manual_figure_estimate",
+        "source_location": "manual_figure_location_not_independently_confirmed",
+        "manual_check": "assistant_visual_estimate_not_independent",
+        "gold": "not_gold",
+        "source_verification": "not_checked",
+        "design_validity": "replication_reported_requires_review"
+      }
+    }
+  ],
+  "independence_reviews": [],
+  "topic_profile": {
+    "topic": "普通稻田 AWD 相对持续淹水对生育季累计 N2O 的影响",
+    "population_requirement": "rice",
+    "primary_question": "AWD 相对持续淹水如何影响生育季累计 N2O 排放？",
+    "primary_eligibility": [
+      "稻田原始实验；有 AWD 与淹水对照和生育季累计 N2O"
+    ]
+  },
+  "selection": null,
+  "adapter": "converted_historical_candidates_v1",
+  "unmatched_fields": [
+    {
+      "line": 1,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "study_design",
+      "value": "randomized block rice pot experiment, 2020",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 2,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "research_object",
+      "value": "rice paddy Alfisol; salinity not specified",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 3,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "independent_replicates",
+      "value": "每处理3个独立盆",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 4,
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "field": "study_design",
+      "value": "2012 and 2013 field experiment, one field per water regime",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 5,
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "field": "research_object",
+      "value": "rice paddy clay soil in central Italy",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 6,
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "field": "independent_replicates",
+      "value": "One field per water regime; 3 chambers in 2012 and 4 in 2013 are pseudo-replicates; independent water-treatment replication not established",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 7,
+      "doi": "10.3390/agronomy14020248",
+      "field": "study_design",
+      "value": "field experiment, one plot for each water regime and three subplots; observational repeated measures",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 8,
+      "doi": "10.3390/agronomy14020248",
+      "field": "research_object",
+      "value": "rice paddy field in coastal Peru",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 9,
+      "doi": "10.3390/agronomy14020248",
+      "field": "independent_replicates",
+      "value": "One field per water regime; subplots are not independent irrigated plots",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 10,
+      "doi": "10.3390/agriculture10080350",
+      "field": "study_design",
+      "value": "field experiment on farmer fields, nonrandom toposequence",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 11,
+      "doi": "10.3390/agriculture10080350",
+      "field": "research_object",
+      "value": "rice paddy fields Victoria, Philippines",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 12,
+      "doi": "10.3390/agriculture10080350",
+      "field": "independent_replicates",
+      "value": "Three fields per regime; AWD on high toposequence, CF on low toposequence; independence and confounding require review",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 13,
+      "doi": "10.3389/fpls.2026.1756990",
+      "field": "study_design",
+      "value": "randomized block field lysimeter experiment in 2019 and 2020, same six lysimeters",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 14,
+      "doi": "10.3389/fpls.2026.1756990",
+      "field": "research_object",
+      "value": "rice paddy clay loam in Liaoning, China",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    },
+    {
+      "line": 15,
+      "doi": "10.3389/fpls.2026.1756990",
+      "field": "independent_replicates",
+      "value": "three independent lysimeters per irrigation regime; same lysimeters followed in 2019 and 2020",
+      "source_status": "candidate_manual_source_review",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "methods"
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ PROFILE={'topic':'盐碱稻田灌溉和温室气体','primary_question':'灌溉�
          'primary_eligibility':['原始盐碱稻田水分对照，CH4或N2O']}
 
 
-def example(doi, tx, ctrl, factor='nitrogen', outcome='n2o', exp=None):
+def example(doi, tx, ctrl, factor='nitrogen', outcome='seasonal_n2o_mass', exp=None):
     experiment={'experiment_id':exp,'design_candidate':'盐碱稻田土柱试验','research_object_candidate':'盐土水稻',
                 'experimental_unit':{'value':'soil_column','status':'candidate'},
                 'independent_replicates':{'value':3,'status':'candidate'},'sampling_replicates':{'value':None}}
@@ -30,6 +30,20 @@ def example(doi, tx, ctrl, factor='nitrogen', outcome='n2o', exp=None):
 
 
 class DirectSynthesisTests(unittest.TestCase):
+    def test_scientific_indicator_families_do_not_confuse_gases(self):
+        self.assertEqual(m._outcome_family('seasonal_n2o','kg N2O/ha'),'n2o_mass')
+        self.assertEqual(m._outcome_family('seasonal_n2o','kg N-N2O/ha'),'n2o_n_mass')
+        self.assertEqual(m._outcome_family('seasonal_n2o_gwp','kg CO2eq/ha'),'n2o_gwp')
+        self.assertEqual(m._outcome_family('seasonal_ch4_gwp','kg CO2eq/ha'),'ch4_gwp')
+        self.assertEqual(m._outcome_family('total_gwp_n2o_ch4','kg CO2eq/ha'),'multi_gas_gwp')
+        self.assertEqual(m._outcome_family('seasonal_n2o','kg CO2eq/ha'),'unknown_indicator')
+        spec2=importlib.util.spec_from_file_location('awd_mvp',ROOT/'research_projects/awd_n2o_mvp/run.py')
+        runner=importlib.util.module_from_spec(spec2);spec2.loader.exec_module(runner)
+        c={'outcome_family':'multi_gas_gwp','numeric_values':{'unit':'kg CO2eq/ha','comparator_unit':'kg CO2eq/ha','intervention':252,'comparator':120},
+           'gwp_conversion':{'factor':265,'source_verified_by_program':True}}
+        self.assertNotEqual(runner.standardize(c)['status'],'standardized')
+        c['outcome_family']='n2o_gwp';self.assertAlmostEqual(runner.standardize(c)['intervention'],252/265)
+
     def test_common_observation_requires_matching_context_and_scoped_sources(self):
         p,a=example('10.1/a',7,10,'water',exp='a'); q,b=example('10.1/b',6,9,'water',exp='b')
         ctx={k:'matched' for k in ('estimand','outcome_definition','treatment_definition','comparator_definition','time_basis','unit')}

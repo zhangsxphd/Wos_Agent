@@ -1,0 +1,9 @@
+[
+  {
+    "doi": "10.3390/agronomy14020248",
+    "field": "font_filter",
+    "value": "PalatinoLinotype",
+    "reason": "原PDF两层文字重叠导致重复字符；视觉核对第11页后选择与表3可读层一致的字体，数值仍由程序读取。",
+    "actor": "assistant_source_review_not_independent_gold"
+  }
+]

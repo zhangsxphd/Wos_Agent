@@ -1,0 +1,999 @@
+{
+  "topic": "普通稻田 AWD 相对持续淹水对生育季累计 N2O 的影响",
+  "primary_question": "AWD 相对持续淹水如何影响生育季累计 N2O 排放？",
+  "primary_evidence_ids": [
+    "10.5194/soil-8-645-2022#result1:0",
+    "10.1016/S1002-0160(15)60063-7#result1:0",
+    "10.3390/agronomy14020248#result1:0",
+    "10.3390/agriculture10080350#result1:0",
+    "10.3389/fpls.2026.1756990#result1:0"
+  ],
+  "direct_observations": [
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result1:0",
+      "study_id": "10.5194/soil-8-645-2022",
+      "outcome": "seasonal_n2o_mass",
+      "treatment": "AWD 15U",
+      "comparator": "CF 15U",
+      "values": {
+        "intervention": 4.48,
+        "comparator": 4.02,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": 0.12,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.3,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 1 letters b vs c; Duncan p<0.05, original table",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 7,
+              "table_figure": "Table 1",
+              "cells": [
+                "C11",
+                "C6"
+              ],
+              "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+              "footnote": "standard error"
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+            "anchor": [
+              {
+                "page": 7,
+                "table_figure": "Table 1",
+                "cells": [
+                  "C11",
+                  "C6"
+                ],
+                "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+                "footnote": "standard error"
+              }
+            ],
+            "observation_time": "2020 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "higher",
+      "within_comparison_change_percent": 11.44
+    },
+    {
+      "comparison_id": "10.1016/S1002-0160(15)60063-7#result1:0",
+      "study_id": "10.1016/s1002-0160(15)60063-7",
+      "outcome": "seasonal_n2o_n_mass",
+      "treatment": "AWD",
+      "comparator": "PF",
+      "values": {
+        "intervention": 4.91,
+        "comparator": 0.8,
+        "unit": "kg N-N2O/ha",
+        "comparator_unit": "kg N-N2O/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance_reported": "unknown: separate cumulative comparison significance not present in selected passage",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 8,
+              "section": "N2O emissions",
+              "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+              "context_assertions": {
+                "year": "2012",
+                "outcome": "N2O",
+                "treatment_order": [
+                  "AWD",
+                  "PF"
+                ],
+                "unit": "kg N-N2O/ha"
+              },
+              "note": "Group errors not extracted; significance only when table markers captured."
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+            "anchor": [
+              {
+                "page": 8,
+                "section": "N2O emissions",
+                "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+                "context_assertions": {
+                  "year": "2012",
+                  "outcome": "N2O",
+                  "treatment_order": [
+                    "AWD",
+                    "PF"
+                  ],
+                  "unit": "kg N-N2O/ha"
+                },
+                "note": "Group errors not extracted; significance only when table markers captured."
+              }
+            ],
+            "observation_time": "2012 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 1,
+        "original": "One field per water regime; 3 chambers in 2012 and 4 in 2013 are pseudo-replicates; independent water-treatment replication not established",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "higher",
+      "within_comparison_change_percent": 513.75
+    },
+    {
+      "comparison_id": "10.3390/agronomy14020248#result1:0",
+      "study_id": "10.3390/agronomy14020248",
+      "outcome": "seasonal_n2o_mass",
+      "treatment": "AWD10",
+      "comparator": "CF",
+      "values": {
+        "intervention": 2.36,
+        "comparator": 0.63,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance_reported": "原表标记：处理 b；对照 a；含义须按表注核查",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 11,
+              "section": "Table 3",
+              "quote": "(kg m−3) CH4    N2O   CH4   N2O                      \n          CF        14.01 a   0.70   108.55 a 0.63 a 0.92 a 0.01 a 3211.54 a 0.23 a\n         AWD5       11.85 b   0.83   17.72 a 1.05 a 0.15 a 0.01 a 78",
+              "context_assertions": {
+                "year": "2023",
+                "outcome": "N2O",
+                "unit": "kg N2O/ha",
+                "treatment_order": [
+                  "CF",
+                  "AWD10"
+                ]
+              },
+              "note": "Group errors not extracted; significance only when table markers captured."
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+            "anchor": [
+              {
+                "page": 11,
+                "section": "Table 3",
+                "quote": "(kg m−3) CH4    N2O   CH4   N2O                      \n          CF        14.01 a   0.70   108.55 a 0.63 a 0.92 a 0.01 a 3211.54 a 0.23 a\n         AWD5       11.85 b   0.83   17.72 a 1.05 a 0.15 a 0.01 a 78",
+                "context_assertions": {
+                  "year": "2023",
+                  "outcome": "N2O",
+                  "unit": "kg N2O/ha",
+                  "treatment_order": [
+                    "CF",
+                    "AWD10"
+                  ]
+                },
+                "note": "Group errors not extracted; significance only when table markers captured."
+              }
+            ],
+            "observation_time": "2023 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 1,
+        "original": "One field per water regime; subplots are not independent irrigated plots",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "候选表注对比较范围措辞需核对",
+        "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "higher",
+      "within_comparison_change_percent": 274.6
+    },
+    {
+      "comparison_id": "10.3390/agriculture10080350#result1:0",
+      "study_id": "10.3390/agriculture10080350",
+      "outcome": "seasonal_n2o_gwp",
+      "treatment": "AWD",
+      "comparator": "CF",
+      "values": {
+        "intervention": 252.0,
+        "comparator": 120.0,
+        "unit": "kg CO2eq/ha",
+        "comparator_unit": "kg CO2eq/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance_reported": "原表标记：处理 ns；对照 未标；含义须按表注核查",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 12,
+              "section": "Table 3",
+              "quote": "   -    -                    \n             2013DS    Victoria 3603 1666ns 53.76   -      -          120  252ns 52.38    -    -                    \n             2013WS    Victoria 3834 2282ns 40.47   -      - ",
+              "context_assertions": {
+                "year": "2013",
+                "outcome": "N2O",
+                "unit": "kg CO2eq/ha",
+                "treatment_order": [
+                  "CF",
+                  "AWD"
+                ]
+              },
+              "note": "Group errors not extracted; significance only when table markers captured."
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+            "anchor": [
+              {
+                "page": 12,
+                "section": "Table 3",
+                "quote": "   -    -                    \n             2013DS    Victoria 3603 1666ns 53.76   -      -          120  252ns 52.38    -    -                    \n             2013WS    Victoria 3834 2282ns 40.47   -      - ",
+                "context_assertions": {
+                  "year": "2013",
+                  "outcome": "N2O",
+                  "unit": "kg CO2eq/ha",
+                  "treatment_order": [
+                    "CF",
+                    "AWD"
+                  ]
+                },
+                "note": "Group errors not extracted; significance only when table markers captured."
+              }
+            ],
+            "observation_time": "2013DS growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 3,
+        "original": "Three fields per regime; AWD on high toposequence, CF on low toposequence; independence and confounding require review",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "候选表注对比较范围措辞需核对",
+        "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。",
+        "作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。"
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "higher",
+      "within_comparison_change_percent": 110.0
+    },
+    {
+      "comparison_id": "10.3389/fpls.2026.1756990#result1:0",
+      "study_id": "10.3389/fpls.2026.1756990",
+      "outcome": "seasonal_n2o_mass",
+      "treatment": "IAWD",
+      "comparator": "ICF",
+      "values": {
+        "intervention": 2.3,
+        "comparator": 1.9,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": null,
+        "intervention_error_type": "unknown",
+        "comparator_error": null,
+        "comparator_error_type": "unknown",
+        "reported_effect": null
+      },
+      "significance_reported": "Figure 5 **; caption reports P<0.01; method and scope require independent review",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": null,
+          "manual_reported": [
+            {
+              "page": 6,
+              "section": "FIGURE\\s*5",
+              "manual_figure_estimate": {
+                "a": 2.3,
+                "b": 1.9,
+                "uncertainty": "约 ±0.1 kg N2O/ha 为读图分辨率，不是 SD 或 SE；数值按0.1取整",
+                "actor": "assistant_visual_estimate_not_gold",
+                "method": "在图5 2019 Total 柱上按0、1、2、3刻度目视估计，不提取误差线",
+                "figure_locator": "FIGURE\\s*5",
+                "reported_significance": "Figure 5 **; caption reports P<0.01; method and scope require independent review"
+              },
+              "note": "人工视觉近似，非原文数字；误差条未读出，非 Gold"
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+            "anchor": [
+              {
+                "page": 6,
+                "section": "FIGURE\\s*5",
+                "manual_figure_estimate": {
+                  "a": 2.3,
+                  "b": 1.9,
+                  "uncertainty": "约 ±0.1 kg N2O/ha 为读图分辨率，不是 SD 或 SE；数值按0.1取整",
+                  "actor": "assistant_visual_estimate_not_gold",
+                  "method": "在图5 2019 Total 柱上按0、1、2、3刻度目视估计，不提取误差线",
+                  "figure_locator": "FIGURE\\s*5",
+                  "reported_significance": "Figure 5 **; caption reports P<0.01; method and scope require independent review"
+                },
+                "note": "人工视觉近似，非原文数字；误差条未读出，非 Gold"
+              }
+            ],
+            "observation_time": "2019 growing season",
+            "reporting_origin": "manual_figure_estimate",
+            "candidate_limitations": "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 3,
+        "original": "three independent lysimeters per irrigation regime; same lysimeters followed in 2019 and 2020",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "候选表注对比较范围措辞需核对",
+        "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。"
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "higher"
+    }
+  ],
+  "pool_observations": [],
+  "mechanism_assessment": {
+    "status": "not_established_by_supplied_direct_evidence",
+    "source_comparison_ids": [
+      "10.5194/soil-8-645-2022#result1:0",
+      "10.1016/S1002-0160(15)60063-7#result1:0",
+      "10.3390/agronomy14020248#result1:0",
+      "10.3390/agriculture10080350#result1:0",
+      "10.3389/fpls.2026.1756990#result1:0"
+    ],
+    "uncertainty": "本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。"
+  },
+  "primary_conclusion": "insufficient_evidence_no_common_finding",
+  "indirect_evidence_ids": [],
+  "external_evidence_ids": [],
+  "water_pool_context_ids": [],
+  "pairwise_comparability": [
+    {
+      "study_ids": [
+        "10.1016/s1002-0160(15)60063-7",
+        "10.3389/fpls.2026.1756990"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.1016/S1002-0160(15)60063-7#result1:0"
+        ],
+        [
+          "10.3389/fpls.2026.1756990#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "italy_2012_2013_same_fields",
+        "liaoning_long_term_lysimeters"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "试验尺度或类型不同：field_experiment, pot_experiment",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
+        "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.1016/S1002-0160(15)60063-7",
+        "https://doi.org/10.3389/fpls.2026.1756990"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.1016/s1002-0160(15)60063-7",
+        "10.3390/agriculture10080350"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.1016/S1002-0160(15)60063-7#result1:0"
+        ],
+        [
+          "10.3390/agriculture10080350#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "italy_2012_2013_same_fields",
+        "victoria_2012_2013_farm_fields"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
+        "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。",
+        "作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.1016/S1002-0160(15)60063-7",
+        "https://doi.org/10.3390/agriculture10080350"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.1016/s1002-0160(15)60063-7",
+        "10.3390/agronomy14020248"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.1016/S1002-0160(15)60063-7#result1:0"
+        ],
+        [
+          "10.3390/agronomy14020248#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "italy_2012_2013_same_fields",
+        "peru_2023_four_plots"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "试验尺度或类型不同：field_experiment, observational",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
+        "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.1016/S1002-0160(15)60063-7",
+        "https://doi.org/10.3390/agronomy14020248"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.1016/s1002-0160(15)60063-7",
+        "10.5194/soil-8-645-2022"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.1016/S1002-0160(15)60063-7#result1:0"
+        ],
+        [
+          "10.5194/soil-8-645-2022#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "italy_2012_2013_same_fields",
+        "2020_30_pot_experiment"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "试验尺度或类型不同：field_experiment, pot_experiment",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.1016/S1002-0160(15)60063-7",
+        "https://doi.org/10.5194/soil-8-645-2022"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.3389/fpls.2026.1756990",
+        "10.3390/agriculture10080350"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.3389/fpls.2026.1756990#result1:0"
+        ],
+        [
+          "10.3390/agriculture10080350#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "liaoning_long_term_lysimeters",
+        "victoria_2012_2013_farm_fields"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "试验尺度或类型不同：field_experiment, pot_experiment",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。",
+        "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。",
+        "作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3389/fpls.2026.1756990",
+        "https://doi.org/10.3390/agriculture10080350"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.3389/fpls.2026.1756990",
+        "10.3390/agronomy14020248"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.3389/fpls.2026.1756990#result1:0"
+        ],
+        [
+          "10.3390/agronomy14020248#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "liaoning_long_term_lysimeters",
+        "peru_2023_four_plots"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "试验尺度或类型不同：observational, pot_experiment",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。",
+        "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3389/fpls.2026.1756990",
+        "https://doi.org/10.3390/agronomy14020248"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.3389/fpls.2026.1756990",
+        "10.5194/soil-8-645-2022"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.3389/fpls.2026.1756990#result1:0"
+        ],
+        [
+          "10.5194/soil-8-645-2022#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "liaoning_long_term_lysimeters",
+        "2020_30_pot_experiment"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。",
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3389/fpls.2026.1756990",
+        "https://doi.org/10.5194/soil-8-645-2022"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.3390/agriculture10080350",
+        "10.3390/agronomy14020248"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.3390/agriculture10080350#result1:0"
+        ],
+        [
+          "10.3390/agronomy14020248#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "victoria_2012_2013_farm_fields",
+        "peru_2023_four_plots"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "试验尺度或类型不同：field_experiment, observational",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。",
+        "作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。",
+        "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。"
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3390/agriculture10080350",
+        "https://doi.org/10.3390/agronomy14020248"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.3390/agriculture10080350",
+        "10.5194/soil-8-645-2022"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.3390/agriculture10080350#result1:0"
+        ],
+        [
+          "10.5194/soil-8-645-2022#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "victoria_2012_2013_farm_fields",
+        "2020_30_pot_experiment"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查",
+        "试验尺度或类型不同：field_experiment, pot_experiment",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "水制度与高低地形位置共同变化；CO2当量不是 N2O 质量，未知换算条件时不换算。",
+        "作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。",
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3390/agriculture10080350",
+        "https://doi.org/10.5194/soil-8-645-2022"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    },
+    {
+      "study_ids": [
+        "10.3390/agronomy14020248",
+        "10.5194/soil-8-645-2022"
+      ],
+      "outcome_family": "n2o_mass",
+      "comparison_ids": [
+        [
+          "10.3390/agronomy14020248#result1:0"
+        ],
+        [
+          "10.5194/soil-8-645-2022#result1:0"
+        ]
+      ],
+      "experiment_ids": [
+        "peru_2023_four_plots",
+        "2020_30_pot_experiment"
+      ],
+      "A_descriptive": "permitted_with_conditions_and_source_status",
+      "B_conditional_quantitative": "not_established",
+      "C_meta_analysis": "not_implemented",
+      "factor_classes": [
+        [
+          "water_regime"
+        ],
+        [
+          "water_regime"
+        ]
+      ],
+      "independence": "unknown",
+      "potential_effect_modifiers": [
+        "土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同"
+      ],
+      "reasons": [
+        "试验尺度或类型不同：observational, pot_experiment",
+        "至少一项研究报告伪重复，处理层独立重复不足或未知",
+        "测量时间窗口、指标定义和共同效应量未充分确认",
+        "不同论文是否共享原始实验或数据集未知，不能计为独立重复"
+      ],
+      "source_conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。",
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "recorded_source_issues": [],
+      "sources": [
+        "https://doi.org/10.3390/agronomy14020248",
+        "https://doi.org/10.5194/soil-8-645-2022"
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
+    }
+  ],
+  "dependent_comparisons": [],
+  "experiment_comparisons": [
+    {
+      "study_id": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "comparison_ids": [
+        "10.5194/soil-8-645-2022#result1:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    },
+    {
+      "study_id": "10.1016/s1002-0160(15)60063-7",
+      "experiment_id": "italy_2012_2013_same_fields",
+      "comparison_ids": [
+        "10.1016/S1002-0160(15)60063-7#result1:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    },
+    {
+      "study_id": "10.3390/agronomy14020248",
+      "experiment_id": "peru_2023_four_plots",
+      "comparison_ids": [
+        "10.3390/agronomy14020248#result1:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    },
+    {
+      "study_id": "10.3390/agriculture10080350",
+      "experiment_id": "victoria_2012_2013_farm_fields",
+      "comparison_ids": [
+        "10.3390/agriculture10080350#result1:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    },
+    {
+      "study_id": "10.3389/fpls.2026.1756990",
+      "experiment_id": "liaoning_long_term_lysimeters",
+      "comparison_ids": [
+        "10.3389/fpls.2026.1756990#result1:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    }
+  ],
+  "findings": [],
+  "independent_experiment_count": "unknown",
+  "meta_analysis": "not_implemented",
+  "limitations": [
+    "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
+    "来源状态为候选；模型定位和PDF实际核验分开。",
+    "不因同向、显著或不显著生成共同结论或真正矛盾。"
+  ],
+  "acceptance": {
+    "engineering": "completed",
+    "data_review": "see_per_comparison_source_verification",
+    "design_validity": "assessed_per_comparison_not_automatically_causal",
+    "cross_study_comparability": "see_pairwise_comparability",
+    "scientific_conclusion": "insufficient_evidence_no_common_finding",
+    "new_paper": "not_included_full_text_unavailable"
+  }
+}

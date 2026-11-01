@@ -322,6 +322,8 @@ def _source_provenance(evidence):
         return {'model_reported':loc.get('model_reported'), 'program_parsed':loc.get('program_parsed'),
                 'pdf_verified':loc.get('pdf_verified'), 'original':evidence}
     anchor=evidence.get('anchor') if isinstance(evidence,dict) else None
+    if isinstance(evidence,dict) and evidence.get('reporting_origin')=='manual_figure_estimate':
+        return {'model_reported':None,'program_parsed':None,'manual_reported':anchor,'pdf_verified':None,'original':evidence}
     if isinstance(evidence,dict) and evidence.get('reporting_origin') in ('program_pdf_table_extraction','program_source_table_extraction'):
         return {'model_reported':None, 'program_parsed':anchor, 'pdf_verified':None, 'original':evidence}
     return {'model_reported':anchor, 'program_parsed':None, 'pdf_verified':None, 'original':evidence}
@@ -344,9 +346,18 @@ def _converted_factor(c):
     return 'unknown'
 
 
-def _outcome_family(outcome):
+def _outcome_family(outcome, unit=None):
     x=str(outcome or '').lower().replace('₂','2').replace('₄','4')
-    if 'n2o' in x:return 'n2o'
+    u=str(unit or '').lower()
+    if 'gwp' in x or 'co2eq' in u:
+        if ('n2o' in x and 'ch4' in x) or any(k in x for k in ('multi_gas','total_gwp','combined_gwp')):return 'multi_gas_gwp'
+        if 'n2o' in x and ('n2o_gwp' in x or 'gwp_n2o' in x):return 'n2o_gwp'
+        if 'ch4' in x and ('ch4_gwp' in x or 'gwp_ch4' in x):return 'ch4_gwp'
+        return 'unknown_indicator'
+    if 'n2o' in x:
+        if 'n-n2o' in u or 'n2o-n' in u or 'n2o_n_mass' in x:return 'n2o_n_mass'
+        if ('n2o' in u or 'n2o_mass' in x) and ('season' in x or 'cumulative' in x):return 'n2o_mass'
+        return 'unknown_indicator'
     if any(k in x for k in ('carbon_mineralization','carbon mineralization','碳矿化','碳转化速率')):return 'carbon_process'
     if any(k in x for k in ('nitrification','denitrification','nitrogen_mineralization','硝化速率','反硝化速率','氮矿化')):return 'nitrogen_process'
     if 'ch4' in x:return 'ch4'
@@ -372,7 +383,7 @@ def adapt_converted(converted, topic_profile):
         design=str(e.get('design_candidate') or '')
         if re.search(r'\breview\b|meta.analysis|综述|系统评价',text,re.I):study_kind='review_or_meta'
         elif re.search(r'观察性|observational',design,re.I):study_kind='observational'
-        elif re.search(r'盆栽|土柱|容器|mesocosm|soil.column|pot experiment',design,re.I):study_kind='pot_experiment'
+        elif re.search(r'盆栽|土柱|容器|mesocosm|soil.column|pot experiment|lysimeter',design,re.I):study_kind='pot_experiment'
         elif re.search(r'田间|田块|小区|field experiment',design,re.I):study_kind='field_experiment'
         else:study_kind='unknown'
         row={'study_id':sid,'doi':p.get('doi'),'title':p.get('title'),'study_type':study_kind,
@@ -403,16 +414,16 @@ def adapt_converted(converted, topic_profile):
         if exp_id and not any(x.get('experiment_id')==exp_id for x in p['experiments']):
             p['experiments'].append({'experiment_id':exp_id,'status':'comparison_declared_context_unverified','treatments':[]})
         a,b=c.get('treatment',{}),c.get('comparator',{})
-        factor=_converted_factor(c);family=_outcome_family(c.get('outcome'))
+        factor=_converted_factor(c);family=_outcome_family(c.get('outcome'),a.get('unit'))
         context=p['historical_context'].lower()
         rice=bool(re.search(r'rice|paddy|稻',context))
         positive_context=re.sub(r'(?:salinity|saline|sodicity|sodic)\s+(?:not\s+(?:specified|reported|confirmed|known)|unknown)|盐碱(?:条件)?(?:未报告|未确认|未知)', '', context)
         saline=bool(re.search(r'salin|sodi|盐碱|盐土|盐渍',positive_context))
         population=topic_profile.get('population_requirement','saline_rice')
         eligible_population=rice and (saline or population=='rice')
-        if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and eligible_population and p['study_type'] in ('pot_experiment','field_experiment','observational'):
+        if family in ('n2o_mass','n2o_n_mass','n2o_gwp','ch4_gwp','multi_gas_gwp','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and eligible_population and p['study_type'] in ('pot_experiment','field_experiment','observational'):
             eligibility='primary_candidate_requires_source_review'
-        elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and p['study_type'] in ('pot_experiment','field_experiment'):
+        elif family in ('n2o_mass','n2o_n_mass','n2o_gwp','ch4_gwp','multi_gas_gwp','ch4','co2','carbon_process','nitrogen_process') and rice and p['study_type'] in ('pot_experiment','field_experiment'):
             eligibility='indirect_context' if saline else 'external_context_salinity_unconfirmed'
         elif family in ('soil_carbon_pool','soil_nitrogen_pool') and factor=='water_regime' and rice and saline:
             eligibility='water_pool_context_not_transformation_rate'
@@ -479,7 +490,7 @@ def synthesize_converted(normalized):
     comparisons=normalized['comparisons']; groups=defaultdict(list)
     for c in comparisons:
         if c['eligibility'] in ('primary_candidate_requires_source_review','indirect_context','external_context_salinity_unconfirmed','regression_context_outside_primary_outcome'):
-            groups[(c['study_id'],c.get('experiment_id') or '',c['outcome_family'])].append(c)
+            groups[(c['study_id'],c.get('experiment_id') or '',c.get('comparison_family',c['outcome_family']))].append(c)
     result_pairs=[]
     for (sid_a,exp_a,fam_a),(sid_b,exp_b,fam_b) in itertools.combinations(sorted(groups),2):
         if fam_a!=fam_b:continue
@@ -525,7 +536,7 @@ def synthesize_converted(normalized):
     eligible=[c for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review']
     for a,b in itertools.combinations(eligible,2):
         ca,cb=a['comparison_context'],b['comparison_context']
-        if a['outcome_family']!=b['outcome_family'] or a['factor']!=b['factor'] or a['factor']=='unknown': continue
+        if a.get('comparison_family',a['outcome_family'])!=b.get('comparison_family',b['outcome_family']) or a['factor']!=b['factor'] or a['factor']=='unknown': continue
         if not all(c.get('source_status')=='source_checked' and all(c.get(k) for k in keys) for c in (ca,cb)): continue
         if any(ca[k]!=cb[k] for k in keys): continue
         if any(c['metric_type']!='group_values' or c['conflicts'] or c['source_issues'] or not c.get('experiment_id') or not any(e.get('pdf_verified') for e in c['raw_evidence']) for c in (a,b)): continue
@@ -537,7 +548,7 @@ def synthesize_converted(normalized):
         da=a['direction_records'][0]['direction'] if a['direction_records'] else None
         db=b['direction_records'][0]['direction'] if b['direction_records'] else None
         if da not in ('lower','higher') or da!=db: continue
-        matching=[c for c in eligible if c['outcome_family']==a['outcome_family'] and c['comparison_context'].get('source_status')=='source_checked' and all(c['comparison_context'].get(k)==ca[k] for k in keys)]
+        matching=[c for c in eligible if c.get('comparison_family',c['outcome_family'])==a.get('comparison_family',a['outcome_family']) and c['comparison_context'].get('source_status')=='source_checked' and all(c['comparison_context'].get(k)==ca[k] for k in keys)]
         if any(not c['direction_records'] or c['direction_records'][0]['direction']!=da or c['conflicts'] or c['source_issues'] for c in matching): continue
         findings.append({'kind':'conditional_descriptive_common_observation', 'direction':da,
                          'comparison_ids':[a['comparison_id'],b['comparison_id']],
@@ -577,7 +588,8 @@ def synthesize_converted(normalized):
         if c['direction_records']:
             item['observed_direction']=c['direction_records'][0]['direction']
             a,b=c['numeric_values']['intervention'],c['numeric_values']['comparator']
-            if b: item['within_comparison_change_percent']=round(100*(a/b-1),2)
+            if b and not any(e.get('manual_reported') for e in c['raw_evidence']):
+                item['within_comparison_change_percent']=round(100*(a/b-1),2)
         else:item['observed_direction']='not_calculated_due_to_missing_or_unresolved_units'
         observations.append(item)
     pools=[{'comparison_id':c['comparison_id'],'study_id':c['study_id'],'outcome':c['outcome'],

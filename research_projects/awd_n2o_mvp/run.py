@@ -51,11 +51,33 @@ def discover(paths,out):
                       'comparator':r'\bCF\b|continuous|flood',
                       'outcome':r'N\s*2?\s*O|nitrous|cumulative|seasonal',
                       'unit':r'kg|ha−|ha-|mg|μg|µg'}
+            patterns['other_factors']=r'fertili[sz]er|nitrogen|straw|urea'
             item['candidate_fields']={name:[hit for hit in item['hits'] if re.search(pattern,hit['text'],re.I)][:12] for name,pattern in patterns.items()}
+            item['numeric_candidates']=[]
+            for hit in item['hits']:
+                units=re.findall(r'(?:kg|mg|μg|µg|g)\s*(?:N2O(?:-N)?|N-N2O|CO2eq)?\s*(?:/\s*ha|ha\s*[−-]?1|m\s*[−-]?2)',hit['text'],re.I)
+                unit_candidate=units[0] if len(set(units))==1 else None
+                for match in re.finditer(r'(?<![\w.])(-?\d+(?:\.\d+)?)\s*(?:±\s*(\d+(?:\.\d+)?))?',hit['text']):
+                    item['numeric_candidates'].append({'value_candidate':float(match[1]),'error_candidate':float(match[2]) if match[2] else None,
+                        'unit_candidate':unit_candidate,'outcome_candidate':None,'source':hit,'status':'unlinked_candidate_do_not_assume_result'})
+                    if len(item['numeric_candidates'])>=50:break
+                if len(item['numeric_candidates'])>=50:break
             item['reason']='需从以上片段确认实验、组别、指标、单位及原文位置；不得自动当作核查事实。'
             suggestions.append(item)
         except (OSError,ValueError,KeyError) as e:suggestions.append({'file':str(p),'status':'failed','reason':str(e)})
     out.mkdir(parents=True,exist_ok=True);(out/'intake_candidates.json').write_text(json.dumps(suggestions,ensure_ascii=False,indent=2)+'\n')
+    draft={'topic':{'topic':None,'population_requirement':'rice','primary_question':None,'primary_eligibility':[]},'papers':[]}
+    for item in suggestions:
+        if not item['status'].startswith('candidate'): continue
+        p=Path(item['file']);ids=item.get('doi_candidates',[])
+        draft['papers'].append({'doi':ids[0] if len(ids)==1 else None,'doi_candidates':ids,'source':str(p),'source_sha256':item['sha256'],
+            'source_type':'xlsx' if p.suffix.lower()=='.xlsx' else 'pdf_regex','pdf':str(p) if p.suffix.lower()=='.pdf' else None,
+            'pdf_sha256':item['sha256'] if p.suffix.lower()=='.pdf' else None,'pdf_page':None,'indicator':None,'unit':None,
+            'a_label':None,'b_label':None,'experiment_id':None,'design':None,'object':None,'replicates':None,'period':None,
+            'treatment_description':None,'control_description':None,'scope':None,'pattern':None,'context_assertions':None,'context_patterns':None,
+            'suggestions':item['candidate_fields'],'numeric_candidates':item['numeric_candidates'],
+            'draft_status':'requires_human_confirmation_not_runnable'})
+    (out/'manifest_draft.json').write_text(json.dumps(draft,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'files':len(suggestions),'successful':sum(x['status'].startswith('candidate') for x in suggestions)}))
 def cells(path,sheet):
     ns={'x':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
@@ -70,7 +92,11 @@ def cells(path,sheet):
 def standardize(c):
     v=c['numeric_values'];unit=v.get('unit'); factors={'kg N2O/ha':1.0,'kg N-N2O/ha':44.0/28.0}
     factor=factors.get(unit)
-    if c['outcome_family']!='n2o' or factor is None or v.get('comparator_unit')!=unit:
+    conversion=c.get('gwp_conversion')
+    if c['outcome_family']=='n2o_gwp' and unit=='kg CO2eq/ha' and conversion and conversion.get('source_verified_by_program') and conversion.get('factor',0)>0:
+        factor=1.0/conversion['factor']
+    elif c['outcome_family'] not in ('n2o_mass','n2o_n_mass'): factor=None
+    if factor is None or v.get('comparator_unit')!=unit:
         a,b=v.get('intervention'),v.get('comparator')
         return {'status':'not_standardized_unit_or_indicator_unresolved','original':v,
                 'relative_change_percent':(a/b-1)*100 if unit and unit==v.get('comparator_unit') and isinstance(a,(int,float)) and isinstance(b,(int,float)) and b!=0 else None,
@@ -80,43 +106,53 @@ def standardize(c):
     return {'status':'standardized','original':v,'unit':'kg N2O/ha',
             'intervention':scaled(a),'comparator':scaled(b),
             'intervention_error':scaled(v.get('intervention_error')),'comparator_error':scaled(v.get('comparator_error')),
-            'basis':'N2O-N to N2O: molecular mass ratio 44/28' if factor!=1 else 'original already N2O mass',
+            'basis':('N2O-specific GWP divided by the paper factor; estimate' if c['outcome_family']=='n2o_gwp' else 'N2O-N to N2O: molecular mass ratio 44/28' if factor!=1 else 'original already N2O mass'),
+            'conversion_source':conversion if c['outcome_family']=='n2o_gwp' else None,
+            'derived_status':'program_estimate_not_directly_reported_mass' if c['outcome_family']=='n2o_gwp' else 'standardized_not_gold',
             'factor':factor,'relative_change_percent':None if a is None or b in (None,0) else (a/b-1)*100,
             'relative_change_origin':'program_calculated_not_significance'}
 
 def report(normalized,summary,log,excluded):
     reviewed=sum(1 for c in normalized['comparisons'] if c['assessment']['source_verification']=='assistant_checked_candidate_not_human_gold')
     lines=['# 研究证据分析', '', '研究问题：'+normalized['topic_profile']['primary_question'], '',
-           '工程运行：'+('部分记录失败' if any(x['status']!='parsed' for x in log) else '已完成')+f'；来源核查：{reviewed}/{len(normalized["comparisons"])} 条接入独立核查记录；配置或人工阅读本身不自动升级状态，均为 Candidate，未升级人工 Gold。','']
+           '工程运行：'+('部分记录失败' if any(x['status']=='failed_not_confirmed' for x in log) else '已完成')+f'；来源核查：{reviewed}/{len(normalized["comparisons"])} 条接入独立核查记录；配置或人工阅读本身不自动升级状态，均为 Candidate，未升级人工 Gold。','']
     papers={p['study_id']:p for p in normalized['papers']}
     for c in normalized['comparisons']:
         p=papers[c['study_id']]; e=p['experiments'][0];v=c['numeric_values'];n=c['standardized_n2o'];loc=c['raw_evidence'][0]
         checked=loc.get('pdf_verified') or {};anchor=(loc.get('original') or {}).get('anchor') or []
         hint=anchor[0] if anchor and isinstance(anchor[0],dict) else {}
-        source=(checked.get('scope') or ('程序定位：'+str(hint.get('table_figure') or hint.get('section') or '未标章节')+' '+str(hint.get('cells') or '') if hint else '原文位置未核'))+'；PDF 物理页 '+str(checked.get('pages') or [x.get('page') for x in anchor if isinstance(x,dict)] or '未知')
+        location_origin='人工读图定位：' if loc.get('manual_reported') is not None else '程序定位：'
+        source=(checked.get('scope') or (location_origin+str(hint.get('table_figure') or hint.get('section') or '未标章节')+' '+str(hint.get('cells') or '') if hint else '原文位置未核'))+'；PDF 物理页 '+str(checked.get('pages') or [x.get('page') for x in anchor if isinstance(x,dict)] or '未知')
         def show(x): return '未报告' if x is None else f'{x:.3f}'.rstrip('0').rstrip('.') if isinstance(x,(int,float)) else str(x)
         def group(x): return '；'.join(str(item.get('description') or item.get('code')) for item in x.get('levels',[])) or '未确认'
         rep=c['independent_replicates'] or {}; unit=(c['experimental_unit'] or {}).get('value') or '未知'
         design_status='处理层重复不足或未知（伪重复）' if re.search(r'pseudo.replicat|伪重复',str(rep.get('original') or ''),re.I) else '记录了独立重复，仍需核查随机化和实施细节' if (rep.get('value') or 0)>1 else '独立处理重复不足或未知'
         change=show(n.get('relative_change_percent'))
-        standard=f"{show(n.get('intervention'))} ± {show(n.get('intervention_error'))} vs {show(n.get('comparator'))} ± {show(n.get('comparator_error'))} {n.get('unit','未知')}；处理相对对照变化 {change}%（程序计算）" if n['status']=='standardized' else '无法标准化：单位或指标未明确'
+        change_text=f'{change}%（程序计算）' if n.get('relative_change_percent') is not None else '未计算'
+        standard=f"{show(n.get('intervention'))} ± {show(n.get('intervention_error'))} vs {show(n.get('comparator'))} ± {show(n.get('comparator_error'))} {n.get('unit','未知')}；处理相对对照变化 {change_text}" if n['status']=='standardized' else '无法标准化：单位或指标未明确'
         if n['status']!='standardized' and n.get('relative_change_percent') is not None: standard+=f"；原口径相对变化 {change}%（程序计算）"
         lines += [f"## {p['title']}",f"[{p['doi']}]({p['source_url']})；比较 `{c['comparison_id']}`；{source}。",
                   f"研究对象与设计：{e.get('research_object_candidate')}；{e.get('design_candidate')}；观察时间：{c.get('observation_time') or '未知'}。",
                   f"处理：{c['intervention']}（{group(c['treatment_details'])}）；对照：{c['comparator']}（{group(c['comparator_details'])}）。",
-                  f"原始值：{show(v['intervention'])} ± {show(v['intervention_error'])} vs {show(v['comparator'])} ± {show(v['comparator_error'])} {v['unit']}；误差类型 {v['intervention_error_type']}/{v['comparator_error_type']}；显著性：{c['significance']}。",
+                  f"原始指标：{c['outcome_family']}（{c['outcome']}）；{'人工读图候选值' if c['assessment']['program_parse']=='manual_figure_estimate' else '原始报告值'}：{show(v['intervention'])} ± {show(v['intervention_error'])} vs {show(v['comparator'])} ± {show(v['comparator_error'])} {v['unit']}；误差类型 {v['intervention_error_type']}/{v['comparator_error_type']}；显著性：{c['significance']}。",
                   f"主题纳入：{'符合主题的候选，待来源核查' if c['eligibility']=='primary_candidate_requires_source_review' else c['eligibility']}；实验单位：{unit}，每处理 {show(rep.get('value'))}；设计有效性：{design_status}。{rep.get('original') or ''}",
                   f"标准化值：{standard}。换算依据：{n.get('basis','未知')}；研究内变化不代表统计显著性或因果效应。",
                   f"未解决事项：{'；'.join(c['conflicts']) if c['conflicts'] else '无已记录事项'}。",'']
+        if c.get('gwp_conversion'):
+            lines.append(f"GWP 换算系数来源：PDF 第 {c['gwp_conversion']['source_page']} 页，{c['gwp_conversion']['source_quote']}；质量排放为程序推算，非原表直接报告。")
+        if c.get('reported_percent'):
+            lines.append(f"作者表格报告百分比 {c['reported_percent']['value']}%；程序以对照为分母计算 {change}%，两者口径待核。")
+        if c['assessment']['program_parse']=='manual_figure_estimate':
+            fig=(hint.get('manual_figure_estimate') or {});lines.append(f"数值来源为人工目视读图，非原文精确数值；估计精度：{fig.get('uncertainty','未知')}；{fig.get('method','')}。")
     status='证据不足，不能形成跨研究共同结论' if not summary['findings'] else '存在有限条件下的候选共同观察，仍需人工核查'
     lines+=['## 跨研究判断',f"科研结论：{status}；共同观察数：{len(summary['findings'])}（状态 `{summary['primary_conclusion']}`）。"]
     for p in summary['pairwise_comparability']:
         quantitative='可考虑，仍待来源和独立性核查' if p['B_conditional_quantitative']=='possible_pending_source_and_independence_review' else '尚不能建立'
         lines.append(f"- {p['study_ids']}，比较 {p['comparison_ids']}：可附条件描述性并列；条件性定量比较{quantitative}；统计推断条件未建立，未实现统计合并。原因：{'；'.join(p['reasons'])}。")
-        if p.get('unit_normalization')=='same_n2o_mass_basis': lines.append('  已统一为 N₂O 质量口径：仅 N₂O-N 记录使用 44/28，原为 N₂O 的记录保持不变；这不解决处理、设计或统计可比性。')
+        if p.get('unit_normalization')=='same_n2o_mass_basis': lines.append('  已按各研究列明的依据换到 N₂O 质量口径；推算值与直接报告值仍须区分。量纲统一不解决处理、设计或统计可比性。')
     lines += ['','设计有效性、来源完整性和主题相关性分别判断；伪重复或重复未知不推断有效因果效应。未报告误差不推断显著性，不进行 Meta 分析。']
     for x in log:
-        if x['status']!='parsed': lines.append(f"- 解析失败 {x['doi']}：{x['reason']}。")
+        if x['status']=='failed_not_confirmed': lines.append(f"- 解析失败 {x['doi']}：{x['reason']}。")
     for x in excluded: lines.append(f"- 新研究未纳入 [{x['doi']}](https://doi.org/{x['doi']})：{x['reason']}。")
     return '\n'.join(lines)+'\n'
 
@@ -124,7 +160,7 @@ def main():
     ap=argparse.ArgumentParser();ap.add_argument('--manifest',type=Path);ap.add_argument('--sources',type=Path);ap.add_argument('--corrections',type=Path);ap.add_argument('--discover',type=Path,nargs='+');ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
     if a.discover: discover(a.discover,a.out);return
     if not a.manifest or not a.sources: ap.error('综合需要 --manifest 和 --sources；候选提取使用 --discover')
-    config=json.loads(a.manifest.read_text());out=a.out;rows={k:[] for k in ('papers','fields','results','issues','historic_claims','supplement_files')};checks=[];log=[]
+    config=json.loads(a.manifest.read_text());out=a.out;rows={k:[] for k in ('papers','fields','results','issues','historic_claims','supplement_files')};checks=[];log=[];gwp_info={};reported_percent={}
     changes=[]
     if a.corrections:
         for edit in json.loads(a.corrections.read_text()):
@@ -171,27 +207,58 @@ def main():
                 va=m.group('a') if 'a' in m.groupdict() else m[1];vb=m.group('b') if 'b' in m.groupdict() else m[2]
                 treatment=p['a_label'];comparator=p['a_label']+' vs '+p['b_label'];value={p['a_label']:float(va),p['b_label']:float(vb)}
                 sig_a=m.groupdict().get('a_sig');sig_b=m.groupdict().get('b_sig')
+                if m.groupdict().get('reported_percent'): reported_percent[doi.lower()]={'value':float(m.group('reported_percent')),'unit':'%', 'source_page':p['pdf_page'],'description':'作者表格所列百分比，分母未由程序确定'}
                 significance=(f'原表标记：处理 {sig_a or "未标"}；对照 {sig_b or "未标"}；含义须按表注核查' if sig_a or sig_b else 'unknown: separate cumulative comparison significance not present in selected passage')
                 ev={'page':p['pdf_page'],'section':p.get('table_label','N2O emissions'),'quote':page[max(m.start(),m.start(1)-100):min(len(page),m.end(2)+100)],'context_assertions':assertions,'note':'Group errors not extracted; significance only when table markers captured.'}
+            elif p['source_type']=='manual_figure':
+                fig=p['figure_estimate']
+                if not fig.get('method') or not fig.get('uncertainty') or not fig.get('actor') or not re.search(fig['figure_locator'],page,re.I):
+                    raise ValueError('人工图值缺少图位置、估计方法、精度或操作者')
+                treatment=p['a_label'];comparator=p['a_label']+' vs '+p['b_label']
+                value={p['a_label']:float(fig['a']),p['b_label']:float(fig['b'])}
+                significance=fig.get('reported_significance','unknown')
+                ev={'page':p['pdf_page'],'section':fig['figure_locator'],'manual_figure_estimate':fig,
+                    'note':'人工视觉近似，非原文数字；误差条未读出，非 Gold'}
+                changes.append({'doi':doi,'field':'figure_estimate','before':None,'after':fig,
+                                'reason':'原文图像未提供表格数值，人工近似读图','actor':fig['actor'],'status':'manual_estimate_not_gold'})
             else:raise ValueError('未知来源格式')
             rows['papers'].append({'doi':doi,'title':p['title'],'raw_sha256':ph,'raw_file':str(pdf)})
             for field,val in [('study_design',p['design']),('research_object',p['object']),('independent_replicates',p['replicates'])]:
                 rows['fields'].append({'doi':doi,'field':field,'value':val,'status':'candidate_manual_source_review','source_sha256':ph,'evidence':[{'page':2,'section':'methods'}]})
-            rows['results'].append({'doi':doi,'index':1,'indicator':'seasonal_n2o','treatment':treatment,'comparator':comparator,'time':p['period'],'value':value,'unit':p['unit'],'significance':significance,'experiment_id':eid,'source_sha256':sh,'reporting_origin':'program_source_table_extraction','record_class':'candidate_not_human_gold','evidence':[ev],
+            indicator=p.get('indicator') or ({'kg N2O/ha':'seasonal_n2o_mass','kg N-N2O/ha':'seasonal_n2o_n_mass'}.get(p['unit'],'unknown_indicator') if re.search(r'season|growing|生育季',p.get('period',''),re.I) else 'unknown_indicator')
+            if indicator=='seasonal_n2o_gwp' and p.get('gwp_factor_source'):
+                spec=p['gwp_factor_source']
+                with pdfplumber.open(pdf) as doc: factor_text=doc.pages[spec['page']-1].extract_text() or ''
+                found=list(re.finditer(spec['pattern'],factor_text,re.I))
+                if len(found)==1 and float(found[0][1])>0:
+                    gwp_info[doi.lower()]={'factor':float(found[0][1]),'source_page':spec['page'],'pdf_sha256':ph,'source_quote':found[0][0],'source_verified_by_program':True,'review_status':'program_parsed_not_gold'}
+            rows['results'].append({'doi':doi,'index':1,'indicator':indicator,'treatment':treatment,'comparator':comparator,'time':p['period'],'value':value,'unit':p['unit'],'significance':significance,'experiment_id':eid,'source_sha256':sh,'reporting_origin':'manual_figure_estimate' if p['source_type']=='manual_figure' else 'program_source_table_extraction','record_class':'candidate_not_human_gold','evidence':[ev],
               'treatment_levels':[{'code':'AWD','description':p['treatment_description']}], 'comparator_levels':[{'code':'CF','description':p['control_description']}],
               'limitations':p.get('source_conflict') or 'Source selection and design manually checked; independent treatment replication and cross-study context must be verified.'})
-            log.append({'doi':doi,'source_sha256':sh,'pdf_sha256':ph,'source_type':p['source_type'],'selection':p['scope'],'status':'parsed'})
+            log.append({'doi':doi,'source_sha256':sh,'pdf_sha256':ph,'source_type':p['source_type'],'selection':p['scope'],'status':'manual_estimate' if p['source_type']=='manual_figure' else 'parsed'})
         except (ValueError,KeyError,IndexError,OSError) as exc:
             log.append({'doi':p.get('doi'),'status':'failed_not_confirmed','reason':str(exc)})
     d=out/'candidates';d.mkdir(parents=True,exist_ok=True)
     for name,data in rows.items():(d/(name+'.jsonl')).write_text(''.join(json.dumps(x,ensure_ascii=False)+'\n' for x in data))
     converted=convert.run(d,None,{p['doi'].lower() for p in config['papers']}); normalized=synth.adapt_converted(converted,config['topic']);synth.apply_source_checks(normalized,{'checks':checks})
     for c in normalized['comparisons']:
+        if c['study_id'] in gwp_info:c['gwp_conversion']=gwp_info[c['study_id']]
         c['standardized_n2o']=standardize(c)
+        if c['raw_evidence'][0].get('manual_reported') is not None:
+            c['standardized_n2o']['derived_status']='manual_graph_approximation_not_reported_numeric_value'
+            c['standardized_n2o']['relative_change_percent']=None
+            c['standardized_n2o']['relative_change_origin']='not_calculated_due_to_graph_reading_uncertainty'
+        c['comparison_family']='n2o_mass' if c['standardized_n2o']['status']=='standardized' else c['outcome_family']
+        if c['study_id'] in reported_percent:
+            c['reported_percent']=reported_percent[c['study_id']]
+            calculated=c['standardized_n2o'].get('relative_change_percent')
+            if calculated is not None and abs(calculated-c['reported_percent']['value'])>0.5:
+                c['conflicts'].append('作者表格百分比与程序按对照为分母计算值不同；可能比较口径不同，未裁定。')
         rep=c.get('independent_replicates') or {}
+        manual=(c['raw_evidence'][0].get('manual_reported') is not None)
         c['assessment']={'topic_eligibility':c['eligibility'],
-                         'program_parse':'success', 'source_location':'program_reported_not_independently_confirmed',
-                         'manual_check':'not_recorded_in_pipeline', 'gold':'not_gold',
+                         'program_parse':'manual_figure_estimate' if manual else 'success', 'source_location':'manual_figure_location_not_independently_confirmed' if manual else 'program_reported_not_independently_confirmed',
+                         'manual_check':'assistant_visual_estimate_not_independent' if manual else 'not_recorded_in_pipeline', 'gold':'not_gold',
                          'source_verification':'assistant_checked_candidate_not_human_gold' if any(e.get('pdf_verified') for e in c['raw_evidence']) else 'not_checked',
                          'design_validity':'insufficient_replicated_treatment' if re.search(r'pseudo.replicat|伪重复',str(rep.get('original') or ''),re.I) or rep.get('value')==1 else 'replication_reported_requires_review' if (rep.get('value') or 0)>1 else 'unknown'}
     summary=synth.synthesize_converted(normalized)
@@ -201,7 +268,7 @@ def main():
         if members and all(x['standardized_n2o'].get('status')=='standardized' and x['standardized_n2o'].get('unit')=='kg N2O/ha' for x in members):
             pair['unit_normalization']='same_n2o_mass_basis'
             pair['reasons']=[('原始单位不同，已统一为 N₂O 质量；其他可比性条件仍需核查' if x=='结果数值或报告效应的单位和口径不同或未知' else x) for x in pair['reasons']]
-    summary['acceptance']={'engineering':'partial' if any(x['status']!='parsed' for x in log) else 'completed',
+    summary['acceptance']={'engineering':'partial' if any(x['status']=='failed_not_confirmed' for x in log) else 'completed',
         'data_review':'see_per_comparison_source_verification',
         'design_validity':'assessed_per_comparison_not_automatically_causal',
         'cross_study_comparability':'see_pairwise_comparability',

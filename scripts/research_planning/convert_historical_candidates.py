@@ -131,6 +131,7 @@ def experiment(doi, fs):
     elif rep and re.search(r'每处理\s*3\s*个独立盆', str(rep)): unit,n = 'pot',3
     elif rep and re.search(r'one field per water regime', str(rep), re.I): unit,n = 'field',1
     elif rep and re.search(r'three fields per regime', str(rep), re.I): unit,n = 'field',3
+    elif rep and re.search(r'three independent lysimeters', str(rep), re.I): unit,n = 'lysimeter',3
     elif rep and re.search(r'每处理\s*3\s*块小区', str(rep)): unit,n = 'field_plot',3
     elif rep and re.search(r'每处理\s*3\s*个重复.*土柱为处理单位', str(rep)): unit,n = 'soil_column',3
     # Do not treat the coverage-only wording "每处理5次" as an identified unit.

@@ -1,0 +1,31 @@
+{
+  "records": "research_projects/awd_n2o_mvp/v095/bibliography.jsonl",
+  "terms": [
+    "rice",
+    "paddy",
+    "wetting",
+    "n2o",
+    "nitrous"
+  ],
+  "fulltexts": [
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "file": "outputs/v092/fresh/wu.pdf",
+      "source_url": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022.pdf",
+      "auxiliary": [
+        "outputs/v092/fresh/wu_table1.xlsx"
+      ]
+    },
+    {
+      "doi": "10.1038/s41598-018-35939-7",
+      "file": "outputs/v092/sources/nature2018.pdf",
+      "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+      "auxiliary": []
+    }
+  ],
+  "limitations": [
+    "仅复用两条已保存题录，不代表完整检索",
+    "不自动执行付费 WoS",
+    "候选与人类来源核查不等于独立 Gold"
+  ]
+}

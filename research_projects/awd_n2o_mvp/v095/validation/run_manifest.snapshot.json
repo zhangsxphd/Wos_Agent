@@ -1,0 +1,238 @@
+{
+  "topic": "普通稻田 AWD 相对持续淹水如何影响生育季累计 N₂O 排放？",
+  "created_at": "2026-11-01T06:53:04.354873+00:00",
+  "configuration_sha256": "120c5ea1ead0805254bc29c1016d799dee648e802221e83e4b1db8f2da8e5f42",
+  "papers": {
+    "10.5194/soil-8-645-2022": {
+      "doi": "10.5194/soil-8-645-2022",
+      "record_id": "doi:10.5194/soil-8-645-2022",
+      "history": [],
+      "title": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation",
+      "bibliography_source": {
+        "provider": "previous_project_bibliography",
+        "query": "AWD rice N2O",
+        "retrieved_at": "2026-11-01",
+        "batch": "v094_existing"
+      },
+      "retrieval_batch": "v094_existing",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "user_confirmed_comparison_not_gold",
+        "review_file": "<REPO_ROOT>/outputs/v095_real/user_review.json",
+        "review_sha256": "f04cd2d5d2259791ff870d03045151e2d1950dd1a717968e0bed767a2290f305",
+        "comparison_id": "10.5194/soil-8-645-2022#result1:0"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "available",
+        "sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+        "admission": {
+          "admission": "technical_pass",
+          "identity": {
+            "status": "doi_match",
+            "method": "doi_on_first_page"
+          },
+          "raw_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+          "parsed_sha256": "38d5efd849bed72e9769989a7c85ebcf4c060cf79df72f9b4198ae94274149f7",
+          "parser": "pypdf-page-v1",
+          "human_review_status": "not_assessed"
+        },
+        "local_input": "outputs/v092/fresh/wu.pdf",
+        "source_url": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022.pdf",
+        "manifest": "admission/e8c777a62322de46240535302df83f9a620d45c46fb25705241c1233213878d4.json"
+      },
+      "candidate_extraction": {
+        "status": "program_excerpts_candidate_not_gold",
+        "intake": "intake/manifest_draft.json"
+      },
+      "synthesis_eligibility": {
+        "status": "candidate_allowed_not_gold",
+        "reason": "技术准入和用户确认配对；科学解释与独立实验有效性仍需核查"
+      },
+      "comparison": {
+        "id": "10.5194/soil-8-645-2022#result1:0",
+        "indicator": "seasonal_n2o_mass",
+        "experimental_unit": {
+          "value": "pot",
+          "source_field": "independent_replicates",
+          "status": "candidate",
+          "association_status": "explicit_experiment"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "每处理3个独立盆",
+          "status": "candidate",
+          "association_status": "explicit_experiment"
+        }
+      }
+    },
+    "10.1038/s41598-018-35939-7": {
+      "doi": "10.1038/s41598-018-35939-7",
+      "record_id": "doi:10.1038/s41598-018-35939-7",
+      "history": [],
+      "title": "Nitrous oxide and nitric oxide emissions from lowland rice cultivation with urea deep placement and alternate wetting and drying irrigation",
+      "bibliography_source": {
+        "provider": "previously_obtained_open_publisher_fulltext",
+        "query": "AWD rice N2O",
+        "retrieved_at": "2026-11-01",
+        "batch": "v092_public"
+      },
+      "retrieval_batch": "v092_public",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "available",
+        "sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+        "admission": {
+          "admission": "technical_pass",
+          "identity": {
+            "status": "doi_match",
+            "method": "doi_on_first_page"
+          },
+          "raw_sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+          "parsed_sha256": "c64966510d025e2edbd8de8267fa434f57e1fa81e87bd34de599584fad88aa0a",
+          "parser": "pypdf-page-v1",
+          "human_review_status": "not_assessed"
+        },
+        "local_input": "outputs/v092/sources/nature2018.pdf",
+        "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+        "manifest": "admission/4abde539a542ba560326482789da4bca2fc9a965bf8d70132b8a2b6ac942dbed.json"
+      },
+      "candidate_extraction": {
+        "status": "program_excerpts_candidate_not_gold",
+        "intake": "intake/manifest_draft.json"
+      },
+      "synthesis_eligibility": {
+        "status": "not_eligible_pending_review",
+        "reason": "2015 CSW 对照未重复且未报告相应值；2016 改为 AWD。尚无可用的同实验独立重复 CF 对照，保留待核。"
+      },
+      "scientific_assessment": {
+        "status": "assistant_candidate_not_independent",
+        "reason": "2015 CSW 对照未重复且未报告相应值；2016 改为 AWD。尚无可用的同实验独立重复 CF 对照，保留待核。",
+        "location": "PDF p. 8, Methods",
+        "review_file": "<REPO_ROOT>/outputs/v095_real/user_review.json",
+        "review_sha256": "f04cd2d5d2259791ff870d03045151e2d1950dd1a717968e0bed767a2290f305"
+      }
+    }
+  },
+  "events": [
+    {
+      "at": "2026-11-01T06:53:07.994721+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.5194/soil-8-645-2022",
+        "10.1038/s41598-018-35939-7"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:54:33.884917+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.5194/soil-8-645-2022",
+        "10.1038/s41598-018-35939-7"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:54:34.071651+00:00",
+      "stage": "analysis",
+      "status": "completed",
+      "selected_dois": [
+        "10.5194/soil-8-645-2022"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:54:54.612437+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.5194/soil-8-645-2022",
+        "10.1038/s41598-018-35939-7"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:54:54.795717+00:00",
+      "stage": "analysis",
+      "status": "completed",
+      "selected_dois": [
+        "10.5194/soil-8-645-2022"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:55:36.295529+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.5194/soil-8-645-2022",
+        "10.1038/s41598-018-35939-7"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:55:36.483278+00:00",
+      "stage": "analysis",
+      "status": "completed",
+      "selected_dois": [
+        "10.5194/soil-8-645-2022"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:55:37.299771+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.5194/soil-8-645-2022",
+        "10.1038/s41598-018-35939-7"
+      ]
+    },
+    {
+      "at": "2026-11-01T06:55:37.301508+00:00",
+      "stage": "analysis",
+      "status": "cache_reused",
+      "selected_dois": [
+        "10.5194/soil-8-645-2022"
+      ]
+    }
+  ],
+  "updated_at": "2026-11-01T06:55:36.610010+00:00",
+  "wos": {
+    "status": "authorization_unavailable",
+    "reason": "未明确授权和配置 WoS；未调用付费接口"
+  },
+  "search": {
+    "source": "<REPO_ROOT>/research_projects/awd_n2o_mvp/v095/bibliography.jsonl",
+    "source_sha256": "42f0668b2b657c2021a029da7c712bd1cb150dc1a6b6ab6653ca1c6c333c098f",
+    "input_records": 2,
+    "deduplicated_records": 2,
+    "local_search": "local_search.json",
+    "coverage": "controlled_local_subset_not_complete",
+    "duplicate_records_removed": 0
+  },
+  "status": "completed_with_pending",
+  "stage": "finished",
+  "confirmation": {
+    "file": "<REPO_ROOT>/outputs/v095_real/user_confirmation.json",
+    "sha256": "4578f10263cc82a9685452adf2b3d3f6c5f365484f2667b08b0b523a44dbcaeb",
+    "human_review_file": "<REPO_ROOT>/outputs/v095_real/user_review.json",
+    "review_sha256": "f04cd2d5d2259791ff870d03045151e2d1950dd1a717968e0bed767a2290f305"
+  },
+  "analysis": {
+    "normalized_evidence": "analysis/normalized_evidence.json",
+    "synthesis": "analysis/synthesis.json",
+    "report": "analysis/analysis.md",
+    "resume_cache": "本地检索、全文及候选按哈希复用"
+  }
+}

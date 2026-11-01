@@ -1,0 +1,119 @@
+{
+  "topic": "普通稻田 AWD 相对持续淹水对生育季累计 N2O 的影响",
+  "primary_question": "AWD 相对持续淹水如何影响生育季累计 N2O 排放？",
+  "primary_evidence_ids": [
+    "10.5194/soil-8-645-2022#result1:0"
+  ],
+  "direct_observations": [
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result1:0",
+      "study_id": "10.5194/soil-8-645-2022",
+      "outcome": "seasonal_n2o_mass",
+      "treatment": "AWD 15U",
+      "comparator": "CF 15U",
+      "values": {
+        "intervention": 4.48,
+        "comparator": 4.02,
+        "unit": "kg N2O/ha",
+        "comparator_unit": "kg N2O/ha",
+        "intervention_error": 0.12,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.3,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 1 letters b vs c; Duncan p<0.05, original table",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 7,
+              "table_figure": "Table 1",
+              "cells": [
+                "C11",
+                "C6"
+              ],
+              "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+              "footnote": "standard error"
+            }
+          ],
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+            "anchor": [
+              {
+                "page": 7,
+                "table_figure": "Table 1",
+                "cells": [
+                  "C11",
+                  "C6"
+                ],
+                "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+                "footnote": "standard error"
+              }
+            ],
+            "observation_time": "2020 growing season",
+            "reporting_origin": "program_source_table_extraction",
+            "candidate_limitations": "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "higher",
+      "within_comparison_change_percent": 11.44
+    }
+  ],
+  "pool_observations": [],
+  "mechanism_assessment": {
+    "status": "not_established_by_supplied_direct_evidence",
+    "source_comparison_ids": [
+      "10.5194/soil-8-645-2022#result1:0"
+    ],
+    "uncertainty": "本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。"
+  },
+  "primary_conclusion": "insufficient_evidence_no_common_finding",
+  "indirect_evidence_ids": [],
+  "external_evidence_ids": [],
+  "water_pool_context_ids": [],
+  "pairwise_comparability": [],
+  "dependent_comparisons": [],
+  "experiment_comparisons": [
+    {
+      "study_id": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "comparison_ids": [
+        "10.5194/soil-8-645-2022#result1:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    }
+  ],
+  "findings": [],
+  "independent_experiment_count": "unknown",
+  "meta_analysis": "not_implemented",
+  "limitations": [
+    "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
+    "来源状态为候选；模型定位和PDF实际核验分开。",
+    "不因同向、显著或不显著生成共同结论或真正矛盾。"
+  ],
+  "acceptance": {
+    "engineering": "completed",
+    "data_review": "see_per_comparison_source_verification",
+    "design_validity": "assessed_per_comparison_not_automatically_causal",
+    "cross_study_comparability": "see_pairwise_comparability",
+    "scientific_conclusion": "insufficient_evidence_no_common_finding",
+    "new_paper": "not_assessed"
+  }
+}

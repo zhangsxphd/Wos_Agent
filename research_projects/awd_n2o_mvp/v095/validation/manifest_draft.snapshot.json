@@ -1,0 +1,894 @@
+{
+  "topic": {
+    "topic": null,
+    "population_requirement": "rice",
+    "primary_question": null,
+    "primary_eligibility": []
+  },
+  "papers": [
+    {
+      "include": false,
+      "candidate": {
+        "doi": "10.5194/soil-8-645-2022",
+        "source": "<REPO_ROOT>/outputs/v092/fresh/wu.pdf",
+        "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+        "source_type": "pdf_regex",
+        "pdf": "<REPO_ROOT>/outputs/v092/fresh/wu.pdf",
+        "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f"
+      },
+      "doi_candidates": [
+        "10.5194/soil-8-645-2022"
+      ],
+      "treatment_name_candidates": [
+        {
+          "name": "AWD",
+          "source": {
+            "page": 1
+          }
+        },
+        {
+          "name": "CF",
+          "source": {
+            "page": 1
+          }
+        }
+      ],
+      "field_suggestions": {
+        "experiment": [
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "irrigation(soilwaterpotential≥−30±5kPa)andmildAWD Thepotexperimentusedarandomblockdesign,including"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "22.6% due to water stress, but under mild AWD irrigation, andtworicestrawreturnlevels,withthreereplicatesofeach"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "emissionsandriceyieldthroughricepotexperiments.Thisexperimentincluded2irrigationmethods(continuous"
+          }
+        ],
+        "treatment": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "flooding(CF)irrigationandmildAWDirrigation),2nitrogen(N)applicationlevels(0and225kgNha−1)and"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Effects of mild alternate wetting and"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "drying irrigation and rice straw application"
+          }
+        ],
+        "comparator": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "flooding(CF)irrigationandmildAWDirrigation),2nitrogen(N)applicationlevels(0and225kgNha−1)and"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "mayofferamorepromisingpaddyfieldmanagementmodel. were continuousflooding (CF) irrigation and mildAWD ir-"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "Previous studies have shown that AWD irrigation can sig- rigation. The CF irrigation maintained a water level depth"
+          }
+        ],
+        "outcome": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "measuresonriceyieldandgreenhousegas(GHG)emissions,especiallynitrousoxide(N O)emissions,needs"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Therefore,weexploredtheeffectsofmildAWDirrigationcombinedwithon-sitericestrawrecyclingonN O"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "irrigation, mild AWD irrigation increased cumulative N O emissions, with an average increase of 28.8%. In"
+          }
+        ],
+        "unit": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "flooding(CF)irrigationandmildAWDirrigation),2nitrogen(N)applicationlevels(0and225kgNha−1)and"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "2ricestrawreturnlevels(0and9000kgha−1),foratotalof10treatments,andeachtreatmenthad3replicates."
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "areusuallytwoapproachestoAWDirrigation:severeAWD totalNcontentof1.36gkg−1."
+          }
+        ],
+        "other_factors": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "flooding(CF)irrigationandmildAWDirrigation),2nitrogen(N)applicationlevels(0and225kgNha−1)and"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "drying irrigation and rice straw application"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Therefore,weexploredtheeffectsofmildAWDirrigationcombinedwithon-sitericestrawrecyclingonN O"
+          }
+        ]
+      },
+      "table_rows": [],
+      "numeric_candidates": [
+        {
+          "value_candidate": 30.0,
+          "error_candidate": 5.0,
+          "unit_candidate": null,
+          "source": {
+            "page": 2
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 15.0,
+          "error_candidate": 5.0,
+          "unit_candidate": null,
+          "source": {
+            "page": 2
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 2.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        }
+      ],
+      "required_fields": [
+        "title",
+        "pdf",
+        "pdf_page",
+        "indicator",
+        "unit",
+        "a_label",
+        "b_label",
+        "experiment_id",
+        "design",
+        "object",
+        "replicates",
+        "period",
+        "treatment_description",
+        "control_description",
+        "scope",
+        "source-specific locator"
+      ],
+      "edits": [],
+      "draft_status": "requires_human_confirmation_not_runnable",
+      "candidate_digest": "1fcf98c311dd7e0869115f78bf4668b5d38c63cf4dd74a673a8e77b7eed83379"
+    },
+    {
+      "include": false,
+      "candidate": {
+        "doi": null,
+        "source": "<REPO_ROOT>/outputs/v092/fresh/wu_table1.xlsx",
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "source_type": "xlsx",
+        "pdf": null,
+        "pdf_sha256": null
+      },
+      "doi_candidates": [],
+      "treatment_name_candidates": [
+        {
+          "name": "CF",
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "A4"
+          }
+        },
+        {
+          "name": "AWD",
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "A9"
+          }
+        }
+      ],
+      "field_suggestions": {
+        "experiment": [],
+        "treatment": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "A9"
+            },
+            "text": "AWD"
+          }
+        ],
+        "comparator": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "A4"
+            },
+            "text": "CF"
+          }
+        ],
+        "outcome": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "C1"
+            },
+            "text": "Cumulative N2O"
+          },
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "F1"
+            },
+            "text": "Yield-scaled N2O"
+          }
+        ],
+        "unit": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "C3"
+            },
+            "text": "kg ha−1"
+          }
+        ],
+        "other_factors": []
+      },
+      "table_rows": [
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 4,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B4",
+            "value": "CK"
+          },
+          "cells": [
+            {
+              "cell": "A4",
+              "value": "CF"
+            },
+            {
+              "cell": "B4",
+              "value": "CK"
+            },
+            {
+              "cell": "C4",
+              "value": "1.48 ± 0.06 ef"
+            },
+            {
+              "cell": "D4",
+              "value": "37.11 ± 2.53 f"
+            },
+            {
+              "cell": "E4",
+              "value": "21.63 ± 1.81 b"
+            },
+            {
+              "cell": "F4",
+              "value": "0.24 ± 0.01 d"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 5,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B5",
+            "value": "15S"
+          },
+          "cells": [
+            {
+              "cell": "B5",
+              "value": "15S"
+            },
+            {
+              "cell": "C5",
+              "value": "1.24 ± 0.05 f"
+            },
+            {
+              "cell": "D5",
+              "value": "37.99 ± 2.69 f"
+            },
+            {
+              "cell": "E5",
+              "value": "20.91 ± 1.63 b"
+            },
+            {
+              "cell": "F5",
+              "value": "0.21 ± 0.03 d"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 6,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B6",
+            "value": "15U"
+          },
+          "cells": [
+            {
+              "cell": "B6",
+              "value": "15U"
+            },
+            {
+              "cell": "C6",
+              "value": "4.02 ± 0.30 c"
+            },
+            {
+              "cell": "D6",
+              "value": "82.54 ± 10.39 ab"
+            },
+            {
+              "cell": "E6",
+              "value": "36.56 ± 2.75 a"
+            },
+            {
+              "cell": "F6",
+              "value": "0.39 ± 0.04 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 7,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B7",
+            "value": "U+15S"
+          },
+          "cells": [
+            {
+              "cell": "B7",
+              "value": "U+15S"
+            },
+            {
+              "cell": "C7",
+              "value": "3.89 ± 0.09 c"
+            },
+            {
+              "cell": "D7",
+              "value": "87.58 ± 7.70 a"
+            },
+            {
+              "cell": "E7",
+              "value": "35.98 ± 1.72 a"
+            },
+            {
+              "cell": "F7",
+              "value": "0.38 ± 0.02 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 8,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B8",
+            "value": "15U+S"
+          },
+          "cells": [
+            {
+              "cell": "B8",
+              "value": "15U+S"
+            },
+            {
+              "cell": "C8",
+              "value": "3.76 ± 0.02 c"
+            },
+            {
+              "cell": "D8",
+              "value": "80.99 ± 19.54 abc"
+            },
+            {
+              "cell": "E8",
+              "value": "35.85 ± 2.50 a"
+            },
+            {
+              "cell": "F8",
+              "value": "0.37 ± 0.03 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 9,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B9",
+            "value": "CK"
+          },
+          "cells": [
+            {
+              "cell": "A9",
+              "value": "AWD"
+            },
+            {
+              "cell": "B9",
+              "value": "CK"
+            },
+            {
+              "cell": "C9",
+              "value": "1.64 ± 0.15 e"
+            },
+            {
+              "cell": "D9",
+              "value": "45.31 ± 3.07 ef"
+            },
+            {
+              "cell": "E9",
+              "value": "22.92 ± 1.07 b"
+            },
+            {
+              "cell": "F9",
+              "value": "0.25 ± 0.02 d"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 10,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B10",
+            "value": "15S"
+          },
+          "cells": [
+            {
+              "cell": "B10",
+              "value": "15S"
+            },
+            {
+              "cell": "C10",
+              "value": "2.07 ± 0.17 d"
+            },
+            {
+              "cell": "D10",
+              "value": "34.78 ± 4.86 f"
+            },
+            {
+              "cell": "E10",
+              "value": "20.42 ± 0.46 b"
+            },
+            {
+              "cell": "F10",
+              "value": "0.36 ± 0.02 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 11,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B11",
+            "value": "15U"
+          },
+          "cells": [
+            {
+              "cell": "B11",
+              "value": "15U"
+            },
+            {
+              "cell": "C11",
+              "value": "4.48 ± 0.12 b"
+            },
+            {
+              "cell": "D11",
+              "value": "64.44 ± 7.33 bcd"
+            },
+            {
+              "cell": "E11",
+              "value": "34.81 ± 1.64 a"
+            },
+            {
+              "cell": "F11",
+              "value": "0.46 ± 0.03 b"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 12,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B12",
+            "value": "U+15S"
+          },
+          "cells": [
+            {
+              "cell": "B12",
+              "value": "U+15S"
+            },
+            {
+              "cell": "C12",
+              "value": "5.05 ± 0.28 a"
+            },
+            {
+              "cell": "D12",
+              "value": "62.92 ± 2.49 cde"
+            },
+            {
+              "cell": "E12",
+              "value": "34.50 ± 1.76 a"
+            },
+            {
+              "cell": "F12",
+              "value": "0.53 ± 0.01 a"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 13,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B13",
+            "value": "15U+S"
+          },
+          "cells": [
+            {
+              "cell": "B13",
+              "value": "15U+S"
+            },
+            {
+              "cell": "C13",
+              "value": "5.29 ± 0.25 a"
+            },
+            {
+              "cell": "D13",
+              "value": "60.44 ± 6.74 de"
+            },
+            {
+              "cell": "E13",
+              "value": "34.85 ± 1.18 a"
+            },
+            {
+              "cell": "F13",
+              "value": "0.54 ± 0.03 a"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        }
+      ],
+      "numeric_candidates": [
+        {
+          "value_candidate": 1.48,
+          "error_candidate": 0.06,
+          "unit_candidate": null,
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "C4"
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 37.11,
+          "error_candidate": 2.53,
+          "unit_candidate": null,
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "D4"
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 21.63,
+          "error_candidate": 1.81,
+          "unit_candidate": null,
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "E4"
+          },
+          "status": "unlinked_not_confirmed"
+        }
+      ],
+      "required_fields": [
+        "title",
+        "pdf",
+        "pdf_page",
+        "indicator",
+        "unit",
+        "a_label",
+        "b_label",
+        "experiment_id",
+        "design",
+        "object",
+        "replicates",
+        "period",
+        "treatment_description",
+        "control_description",
+        "scope",
+        "source-specific locator"
+      ],
+      "edits": [],
+      "draft_status": "requires_human_confirmation_not_runnable",
+      "candidate_digest": "114d4a81e547fdacaaa875bde57b3166b409372854e6ccdd005daa71b5ceb61e"
+    },
+    {
+      "include": false,
+      "candidate": {
+        "doi": "10.1038/s41598-018-35939-7",
+        "source": "<REPO_ROOT>/outputs/v092/sources/nature2018.pdf",
+        "source_sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+        "source_type": "pdf_regex",
+        "pdf": "<REPO_ROOT>/outputs/v092/sources/nature2018.pdf",
+        "pdf_sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5"
+      },
+      "doi_candidates": [
+        "10.1038/s41598-018-35939-7"
+      ],
+      "treatment_name_candidates": [
+        {
+          "name": "AWD",
+          "source": {
+            "page": 1
+          }
+        }
+      ],
+      "field_suggestions": {
+        "experiment": [
+          {
+            "source": {
+              "page": 8
+            },
+            "text": "chambers were installed under AWD and three under CSW (non-replicated, not reported herein). In 2016, the"
+          },
+          {
+            "source": {
+              "page": 7
+            },
+            "text": "mended dose)17–20,59. Treatments were arranged in a randomized complete block design, with three replications."
+          },
+          {
+            "source": {
+              "page": 7
+            },
+            "text": "For irrigation, perforated PVC pipe was inserted (15 cm depth) in each plot at 10 DAT. Floodwater depth"
+          }
+        ],
+        "treatment": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Received: 14 December 2017 placement and alternate wetting"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Published: xx xx xxxx and drying irrigation"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Urea deep placement (UDP) and the alternate wetting and drying (AWD) irrigation method are two"
+          }
+        ],
+        "comparator": [
+          {
+            "source": {
+              "page": 4
+            },
+            "text": "Figure 2. Nitrous and nitric oxides emission rates, floodwater depth, air temperature, and rainfall under AWD"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "during the drying period, or after re-flooding of dry soil. Except during the peak emission events, NO emissions"
+          },
+          {
+            "source": {
+              "page": 3
+            },
+            "text": "Figure 1. Dynamics of floodwater NH+-N in control, urea briquette, and PU treatments under alternate"
+          }
+        ],
+        "outcome": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "OPEN Nitrous oxide and nitric oxide"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "promising rice production technologies. However, studies on the impact of UDP under AWD irrigation"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "on nitrous oxide (N O) and nitric oxide (NO) emissions are limited. In this study, the effects of UDP with"
+          }
+        ],
+        "unit": [
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "were within a range of ±30 µg N m−2 h−1, irrespective of treatment and season."
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "both treatments, the magnitudes of the emission were more prominent (466 µg N m−2 h−1) and appeared for a"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "longer time in the UDP treatment, compared to broadcast PU (324 µg N m−2 h−1). In Boro 2016, N"
+          }
+        ],
+        "other_factors": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Urea deep placement (UDP) and the alternate wetting and drying (AWD) irrigation method are two"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "AWD irrigation on these emissions, nitrogen use efficiency (NUE), and rice yields are investigated,"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "compared to broadcast urea. This study demonstrates that UDP with AWD irrigation can increase yields"
+          }
+        ]
+      },
+      "table_rows": [],
+      "numeric_candidates": [
+        {
+          "value_candidate": 14.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 2017.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 60.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        }
+      ],
+      "required_fields": [
+        "title",
+        "pdf",
+        "pdf_page",
+        "indicator",
+        "unit",
+        "a_label",
+        "b_label",
+        "experiment_id",
+        "design",
+        "object",
+        "replicates",
+        "period",
+        "treatment_description",
+        "control_description",
+        "scope",
+        "source-specific locator"
+      ],
+      "edits": [],
+      "draft_status": "requires_human_confirmation_not_runnable",
+      "candidate_digest": "9e063e9c3a6b6c379fd0a1eb889027c8e8fe0e5ee4f5ac801a09e38937cbaa9b"
+    }
+  ]
+}

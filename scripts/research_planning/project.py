@@ -110,6 +110,8 @@ def main():
     p = sub.add_parser('local'); p.add_argument('project'); p.add_argument('--input', required=True); p.add_argument('--terms', nargs='+', required=True)
     p = sub.add_parser('search'); p.add_argument('project'); p.add_argument('--plan', required=True); p.add_argument('--max-records', type=int); p.add_argument('--max-pages', type=int)
     p = sub.add_parser('import-evidence'); p.add_argument('project'); p.add_argument('payload')
+    p = sub.add_parser('run'); p.add_argument('project'); p.add_argument('--topic', required=True); p.add_argument('--config', required=True)
+    p.add_argument('--confirmation'); p.add_argument('--review'); p.add_argument('--authorize-wos', action='store_true'); p.add_argument('--wos-plan')
     args = parser.parse_args()
     try:
         if args.action == 'init': print(initialize(args.project, args.topic))
@@ -117,7 +119,11 @@ def main():
         elif args.action == 'search':
             result = search(args.project, args.plan, args.max_records, args.max_pages)
             return 0 if result['status'] == 'completed' else 1
-        else: print('sources, observations:', import_evidence(args.project, args.payload))
+        elif args.action == 'import-evidence': print('sources, observations:', import_evidence(args.project, args.payload))
+        else:
+            from scripts.research_planning.connected import run
+            state=run(args.project,args.topic,args.config,args.confirmation,args.review,args.wos_plan,args.authorize_wos)
+            print(json.dumps({'status':state['status'],'stage':state['stage'],'papers':len(state['papers'])},ensure_ascii=False))
         return 0
     except (OSError, ValueError, KeyError, sqlite3.Error) as exc:
         parser.exit(1, f'Error: {exc}\n')

@@ -1,0 +1,124 @@
+{
+  "checks": [
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result1:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['C9', 'C4']；核对AWD CK 对 CF CK 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result2:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['E9', 'E4']；核对AWD CK 对 CF CK 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result3:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['C10', 'C5']；核对AWD 15S 对 CF 15S 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result4:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['E10', 'E5']；核对AWD 15S 对 CF 15S 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result5:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['C11', 'C6']；核对AWD 15U 对 CF 15U 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result6:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['E11', 'E6']；核对AWD 15U 对 CF 15U 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result7:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['C12', 'C7']；核对AWD U+15S 对 CF U+15S 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result8:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['E12', 'E7']；核对AWD U+15S 对 CF U+15S 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result9:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['C13', 'C8']；核对AWD 15U+S 对 CF 15U+S 的数值、单位及字母；页2–3核对处理和重复。"
+    },
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "comparison_id": "10.5194/soil-8-645-2022#result10:0",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "status": "assistant_pdf_visual_review_not_human_gold",
+      "pages": [
+        2,
+        3,
+        7
+      ],
+      "scope": "物理页7 Table 1 ['E13', 'E8']；核对AWD 15U+S 对 CF 15U+S 的数值、单位及字母；页2–3核对处理和重复。"
+    }
+  ]
+}

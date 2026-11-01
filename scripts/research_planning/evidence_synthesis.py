@@ -322,7 +322,7 @@ def _source_provenance(evidence):
         return {'model_reported':loc.get('model_reported'), 'program_parsed':loc.get('program_parsed'),
                 'pdf_verified':loc.get('pdf_verified'), 'original':evidence}
     anchor=evidence.get('anchor') if isinstance(evidence,dict) else None
-    if evidence.get('reporting_origin') == 'program_pdf_table_extraction':
+    if isinstance(evidence,dict) and evidence.get('reporting_origin') in ('program_pdf_table_extraction','program_source_table_extraction'):
         return {'model_reported':None, 'program_parsed':anchor, 'pdf_verified':None, 'original':evidence}
     return {'model_reported':anchor, 'program_parsed':None, 'pdf_verified':None, 'original':evidence}
 
@@ -403,15 +403,19 @@ def adapt_converted(converted, topic_profile):
         a,b=c.get('treatment',{}),c.get('comparator',{})
         factor=_converted_factor(c);family=_outcome_family(c.get('outcome'))
         context=p['historical_context'].lower()
-        rice=bool(re.search(r'rice|paddy|稻',context));saline=bool(re.search(r'salin|sodi|盐碱|盐土|盐渍',context))
+        rice=bool(re.search(r'rice|paddy|稻',context))
+        positive_context=re.sub(r'(?:salinity|saline|sodicity|sodic)\s+(?:not\s+(?:specified|reported|confirmed|known)|unknown)|盐碱(?:条件)?(?:未报告|未确认|未知)', '', context)
+        saline=bool(re.search(r'salin|sodi|盐碱|盐土|盐渍',positive_context))
         if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and rice and saline and p['study_type'] in ('pot_experiment','field_experiment'):
             eligibility='primary_candidate_requires_source_review'
-        elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and saline and p['study_type'] in ('pot_experiment','field_experiment'):
-            eligibility='indirect_context'
+        elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and p['study_type'] in ('pot_experiment','field_experiment'):
+            eligibility='indirect_context' if saline else 'external_context_salinity_unconfirmed'
         elif family in ('soil_carbon_pool','soil_nitrogen_pool') and factor=='water_regime' and rice and saline:
             eligibility='water_pool_context_not_transformation_rate'
         elif family=='rice_yield' and rice and saline:
             eligibility='regression_context_outside_primary_outcome'
+        elif family=='rice_yield' and rice:
+            eligibility='external_context_salinity_unconfirmed'
         else:eligibility='outside_topic_or_unresolved'
         values={'intervention':a.get('value'),'comparator':b.get('value'),
                 'unit':a.get('unit'),'comparator_unit':b.get('unit'),
@@ -439,6 +443,7 @@ def adapt_converted(converted, topic_profile):
     ids=[c['comparison_id'] for c in comparisons]
     if None in ids or len(ids)!=len(set(ids)):raise ValueError('比较ID缺失或重复')
     return {'version':'1.0','input_files':converted.get('input_sources',{}),'papers':papers,'comparisons':comparisons,
+            'independence_reviews':converted.get('independence_reviews',[]),
             'topic_profile':topic_profile,'selection':converted.get('selection'),
             'adapter':'converted_historical_candidates_v1','unmatched_fields':converted.get('field_audit',[])}
 
@@ -469,7 +474,7 @@ def synthesize_converted(normalized):
     """Topic-gated descriptive comparison; never infer common findings from signs."""
     comparisons=normalized['comparisons']; groups=defaultdict(list)
     for c in comparisons:
-        if c['eligibility'] in ('primary_candidate_requires_source_review','indirect_context','regression_context_outside_primary_outcome'):
+        if c['eligibility'] in ('primary_candidate_requires_source_review','indirect_context','external_context_salinity_unconfirmed','regression_context_outside_primary_outcome'):
             groups[(c['study_id'],c.get('experiment_id') or '',c['outcome_family'])].append(c)
     result_pairs=[]
     for (sid_a,exp_a,fam_a),(sid_b,exp_b,fam_b) in itertools.combinations(sorted(groups),2):
@@ -507,22 +512,27 @@ def synthesize_converted(normalized):
              'recorded_source_issues':[issue for c in (aa[0],bb[0]) for issue in c['source_issues']],
              'sources':[aa[0]['source_url'],bb[0]['source_url']]})
     findings=[]
-    for pair in result_pairs:
-        if pair['B_conditional_quantitative']!='possible_pending_source_and_independence_review': continue
-        ids=pair['comparison_ids']
-        if any(len(group)!=1 for group in ids): continue
-        records=[next(c for c in comparisons if c['comparison_id']==group[0]) for group in ids]
-        relevant=[c for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review' and c['outcome_family']==pair['outcome_family']]
-        if len(relevant)!=2: continue  # no unexamined counterexample or shared control
-        if any(c['eligibility']!='primary_candidate_requires_source_review' or c['conflicts'] or c['source_issues'] for c in records): continue
-        if not all(c.get('experiment_id') and c['comparison_context'].get('independence_evidence') and
-                   any(e.get('pdf_verified') for e in c['raw_evidence']) for c in records): continue
-        if records[0]['comparison_context']['independence_evidence'] != records[1]['comparison_context']['independence_evidence']: continue
-        directions=[c['direction_records'][0]['direction'] if c['direction_records'] else None for c in records]
-        if directions[0] not in ('lower','higher') or directions[0]!=directions[1]: continue
-        findings.append({'kind':'conditional_descriptive_common_observation', 'direction':directions[0],
-                         'comparison_ids':[c['comparison_id'] for c in records],
-                         'sources':[c['source_url'] for c in records], 'conditions':records[0]['comparison_context'],
+    keys=('estimand','outcome_definition','treatment_definition','comparator_definition','time_basis','unit')
+    eligible=[c for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review']
+    for a,b in itertools.combinations(eligible,2):
+        ca,cb=a['comparison_context'],b['comparison_context']
+        if a['outcome_family']!=b['outcome_family'] or a['factor']!=b['factor'] or a['factor']=='unknown': continue
+        if not all(c.get('source_status')=='source_checked' and all(c.get(k) for k in keys) for c in (ca,cb)): continue
+        if any(ca[k]!=cb[k] for k in keys): continue
+        if any(c['metric_type']!='group_values' or c['conflicts'] or c['source_issues'] or not c.get('experiment_id') or not any(e.get('pdf_verified') for e in c['raw_evidence']) for c in (a,b)): continue
+        datasets={(c['study_id'],c['experiment_id']) for c in (a,b)}
+        if len(datasets)!=2: continue
+        reviews=normalized.get('independence_reviews',[])
+        if not any(r.get('status')=='source_checked_independent' and r.get('evidence') and
+                   {(x.get('study_id'),x.get('experiment_id')) for x in r.get('datasets',[])}==datasets for r in reviews): continue
+        da=a['direction_records'][0]['direction'] if a['direction_records'] else None
+        db=b['direction_records'][0]['direction'] if b['direction_records'] else None
+        if da not in ('lower','higher') or da!=db: continue
+        matching=[c for c in eligible if c['outcome_family']==a['outcome_family'] and c['comparison_context'].get('source_status')=='source_checked' and all(c['comparison_context'].get(k)==ca[k] for k in keys)]
+        if any(not c['direction_records'] or c['direction_records'][0]['direction']!=da or c['conflicts'] or c['source_issues'] for c in matching): continue
+        findings.append({'kind':'conditional_descriptive_common_observation', 'direction':da,
+                         'comparison_ids':[a['comparison_id'],b['comparison_id']],
+                         'sources':[a['source_url'],b['source_url']], 'conditions':ca,
                          'uncertainty':'仅为指定条件下两项比较的描述；不代表显著性、因果效应或普遍规律。'})
     shared=defaultdict(set)
     for c in comparisons:
@@ -531,6 +541,12 @@ def synthesize_converted(normalized):
     dependencies=[{'study_id':k[0],'outcome':k[1],'group_label':k[2], 'comparison_ids':sorted(v),
                    'status':'possible_shared_group_or_repeated_representation_do_not_count_as_independent'}
                   for k,v in shared.items() if len(v)>1]
+    experiments=defaultdict(list)
+    for c in comparisons:
+        if c.get('experiment_id'): experiments[(c['study_id'],c['experiment_id'])].append(c['comparison_id'])
+    experiment_comparisons=[{'study_id':sid,'experiment_id':eid,'comparison_ids':ids,
+                             'status':'comparisons_from_one_declared_experiment_not_independent_studies'}
+                            for (sid,eid),ids in experiments.items()]
     direct_records=[c for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review']
     direct=[c['comparison_id'] for c in direct_records]
     observations=[]
@@ -558,8 +574,9 @@ def synthesize_converted(normalized):
     return {'topic':normalized['topic_profile']['topic'], 'primary_question':normalized['topic_profile']['primary_question'],
             'primary_evidence_ids':direct, 'direct_observations':observations, 'pool_observations':pools, 'mechanism_assessment':mechanism, 'primary_conclusion':'insufficient_evidence_no_common_finding' if not direct else 'source_review_required_no_automatic_common_finding',
             'indirect_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='indirect_context'],
+            'external_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='external_context_salinity_unconfirmed'],
             'water_pool_context_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='water_pool_context_not_transformation_rate'],
-            'pairwise_comparability':result_pairs, 'dependent_comparisons':dependencies,
+            'pairwise_comparability':result_pairs, 'dependent_comparisons':dependencies, 'experiment_comparisons':experiment_comparisons,
             'findings':findings, 'independent_experiment_count':'unknown', 'meta_analysis':'not_implemented',
             'limitations':['不同DOI不证明实验独立；同一DOI也可包含多个实验。','来源状态为候选；模型定位和PDF实际核验分开。',
                            '不因同向、显著或不显著生成共同结论或真正矛盾。']}

@@ -209,7 +209,8 @@ def parse_numeric_result(r, paper):
             for k,(label,(mean,error)) in enumerate(zip(labels,avals)):
                 a={'value':float(mean),'unit':unit,'error':float(error),'error_type':error_type}
                 b={'value':float(bvals[0][0]),'unit':unit,'error':float(bvals[0][1]),'error_type':error_type}
-                left_levels,right_levels=group_levels(paper,label),group_levels(paper,comps[0])
+                left_levels=r.get('treatment_levels') or group_levels(paper,label)
+                right_levels=r.get('comparator_levels') or group_levels(paper,comps[0])
                 warnings=[]
                 if left_levels and right_levels and len(left_levels)==len(right_levels):
                     if sum(x['code']!=y['code'] for x,y in zip(left_levels,right_levels))>1:
@@ -253,6 +254,8 @@ def parse_numeric_result(r, paper):
         else: failure.append('无法解析作者报告效应或其处理标签')
     else: failure.append('缺少可识别的处理标签、成对数值或支持的数值格式')
     for row in records:
+        for side in ('treatment','comparator'):
+            if isinstance(r.get(side+'_levels'),list): row[side]['levels']=r[side+'_levels']
         if r.get('experiment_id'):
             row['experiment_id']=r['experiment_id']
         if r.get('limitations'):

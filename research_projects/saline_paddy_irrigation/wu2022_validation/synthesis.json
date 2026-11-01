@@ -1,0 +1,58 @@
+{
+  "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响",
+  "primary_question": "盐碱稻田明确水分制度处理相对对照如何影响CH4、N2O或土壤碳氮转化？",
+  "primary_evidence_ids": [],
+  "direct_observations": [],
+  "pool_observations": [],
+  "mechanism_assessment": {
+    "status": "not_established_by_supplied_direct_evidence",
+    "source_comparison_ids": [],
+    "uncertainty": "本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。"
+  },
+  "primary_conclusion": "insufficient_evidence_no_common_finding",
+  "indirect_evidence_ids": [],
+  "external_evidence_ids": [
+    "10.5194/soil-8-645-2022#result1:0",
+    "10.5194/soil-8-645-2022#result2:0",
+    "10.5194/soil-8-645-2022#result3:0",
+    "10.5194/soil-8-645-2022#result4:0",
+    "10.5194/soil-8-645-2022#result5:0",
+    "10.5194/soil-8-645-2022#result6:0",
+    "10.5194/soil-8-645-2022#result7:0",
+    "10.5194/soil-8-645-2022#result8:0",
+    "10.5194/soil-8-645-2022#result9:0",
+    "10.5194/soil-8-645-2022#result10:0"
+  ],
+  "water_pool_context_ids": [],
+  "pairwise_comparability": [],
+  "dependent_comparisons": [],
+  "experiment_comparisons": [
+    {
+      "study_id": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "comparison_ids": [
+        "10.5194/soil-8-645-2022#result1:0",
+        "10.5194/soil-8-645-2022#result2:0",
+        "10.5194/soil-8-645-2022#result3:0",
+        "10.5194/soil-8-645-2022#result4:0",
+        "10.5194/soil-8-645-2022#result5:0",
+        "10.5194/soil-8-645-2022#result6:0",
+        "10.5194/soil-8-645-2022#result7:0",
+        "10.5194/soil-8-645-2022#result8:0",
+        "10.5194/soil-8-645-2022#result9:0",
+        "10.5194/soil-8-645-2022#result10:0"
+      ],
+      "status": "comparisons_from_one_declared_experiment_not_independent_studies"
+    }
+  ],
+  "findings": [],
+  "independent_experiment_count": "unknown",
+  "meta_analysis": "not_implemented",
+  "limitations": [
+    "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
+    "来源状态为候选；模型定位和PDF实际核验分开。",
+    "不因同向、显著或不显著生成共同结论或真正矛盾。"
+  ],
+  "input_conversion_sha256": "2447bad3fe4f7682cc73b968f712fc43f9a658b55ab62fa3a0ae60662e190feb",
+  "source_audit_sha256": "e2e1f034aff6b46a0951e8dfce68c30f20cc9d9606feb276c514e32fd935716b"
+}

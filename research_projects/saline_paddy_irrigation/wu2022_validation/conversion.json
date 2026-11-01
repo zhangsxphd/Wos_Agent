@@ -1,0 +1,1378 @@
+{
+  "version": "1.0",
+  "input_sources": {
+    "papers": {
+      "sha256": "3d5376d458d4e93ebf31aab389014db57b1c6d95e61b390b972cfec64fb7a858"
+    },
+    "fields": {
+      "sha256": "72a10752f43b4f8f3f04fde44ff718a2f4a11ec389f6480fe984ec3fc1e14a67"
+    },
+    "results": {
+      "sha256": "3088948d7225d7bda530e3575b79cd4ffb98f9cc8762f1e4ea8523de6d7ba796"
+    },
+    "issues": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "historic_claims": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "supplement_files": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "papers": [
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "title": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation",
+      "source_url": "https://doi.org/10.5194/soil-8-645-2022",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "pdf_path": "outputs/wu_2022/sources/article.pdf",
+      "experiment": {
+        "experiment_id": null,
+        "experiment_identity": "unresolved_not_assumed_one_per_paper",
+        "design_candidate": "Randomized block rice pot experiment, open greenhouse, 2020, 30 pots; 2 water regimes and 5 fertilizer/isotope combinations",
+        "research_object_candidate": "Alfisol paddy soil in Liaoning; salinity not specified",
+        "conditions_candidate": null,
+        "treatments_candidate": "CF continuous flooding 3–5 cm; AWD intermittent irrigation at -15 kPa; CK, 15S, 15U, U+15S, 15U+S",
+        "factor_levels": {},
+        "control_candidate": null,
+        "experimental_unit": {
+          "value": "pot",
+          "source_field": "independent_replicates",
+          "status": "candidate"
+        },
+        "independent_replicates": {
+          "value": 3,
+          "original": "每处理3个独立盆",
+          "status": "candidate"
+        },
+        "sampling_replicates": {
+          "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+          "status": "candidate"
+        },
+        "measurement_indicators_candidate": null,
+        "measurement_methods_candidate": "Static chamber and gas chromatography Agilent 7890B; cumulative interpolation; one-way ANOVA Duncan and univariate ANOVA",
+        "record_state": "candidate_not_human_gold"
+      },
+      "source_paper_line": 1,
+      "pdf_integrity": {
+        "status": "sha_matches",
+        "actual_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f"
+      }
+    }
+  ],
+  "field_audit": [
+    {
+      "line": 1,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "study_design",
+      "value": "Randomized block rice pot experiment, open greenhouse, 2020, 30 pots; 2 water regimes and 5 fertilizer/isotope combinations",
+      "source_status": "candidate_source_read_not_gold",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "2.1 experimental setup"
+        }
+      ]
+    },
+    {
+      "line": 2,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "research_object",
+      "value": "Alfisol paddy soil in Liaoning; salinity not specified",
+      "source_status": "candidate_source_read_not_gold",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "2.1 experimental setup"
+        }
+      ]
+    },
+    {
+      "line": 3,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "treatments_levels",
+      "value": "CF continuous flooding 3–5 cm; AWD intermittent irrigation at -15 kPa; CK, 15S, 15U, U+15S, 15U+S",
+      "source_status": "candidate_source_read_not_gold",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "2.1 experimental setup"
+        }
+      ]
+    },
+    {
+      "line": 4,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "independent_replicates",
+      "value": "每处理3个独立盆",
+      "source_status": "candidate_source_read_not_gold",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 2,
+          "section": "2.1 experimental setup"
+        }
+      ]
+    },
+    {
+      "line": 5,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "sampling_replicates",
+      "value": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+      "source_status": "candidate_source_read_not_gold",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 3,
+          "section": "2.1 experimental setup"
+        }
+      ]
+    },
+    {
+      "line": 6,
+      "doi": "10.5194/soil-8-645-2022",
+      "field": "measurement_methods",
+      "value": "Static chamber and gas chromatography Agilent 7890B; cumulative interpolation; one-way ANOVA Duncan and univariate ANOVA",
+      "source_status": "candidate_source_read_not_gold",
+      "record_class": null,
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "evidence": [
+        {
+          "page": 3,
+          "section": "2.1 experimental setup"
+        }
+      ]
+    }
+  ],
+  "response_sources": {},
+  "response_failures": [],
+  "numeric_audit": [
+    {
+      "line": 1,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 1,
+      "indicator": "seasonal_n2o",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result1:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "1.64 ± 0.15 versus 1.48 ± 0.06",
+      "original_treatment": "AWD CK",
+      "original_comparator": "CF CK",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "9 and 4",
+          "column": "C",
+          "xlsx_cells": [
+            "C9",
+            "C4"
+          ],
+          "quote": "AWD CK 1.64 ± 0.15 e; CF CK 1.48 ± 0.06 ef",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 2,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 2,
+      "indicator": "rice_grain_yield",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result2:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "22.92 ± 1.07 versus 21.63 ± 1.81",
+      "original_treatment": "AWD CK",
+      "original_comparator": "CF CK",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "9 and 4",
+          "column": "E",
+          "xlsx_cells": [
+            "E9",
+            "E4"
+          ],
+          "quote": "AWD CK 22.92 ± 1.07 b; CF CK 21.63 ± 1.81 b",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 3,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 3,
+      "indicator": "seasonal_n2o",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result3:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "2.07 ± 0.17 versus 1.24 ± 0.05",
+      "original_treatment": "AWD 15S",
+      "original_comparator": "CF 15S",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "10 and 5",
+          "column": "C",
+          "xlsx_cells": [
+            "C10",
+            "C5"
+          ],
+          "quote": "AWD 15S 2.07 ± 0.17 d; CF 15S 1.24 ± 0.05 f",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 4,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 4,
+      "indicator": "rice_grain_yield",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result4:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "20.42 ± 0.46 versus 20.91 ± 1.63",
+      "original_treatment": "AWD 15S",
+      "original_comparator": "CF 15S",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "10 and 5",
+          "column": "E",
+          "xlsx_cells": [
+            "E10",
+            "E5"
+          ],
+          "quote": "AWD 15S 20.42 ± 0.46 b; CF 15S 20.91 ± 1.63 b",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 5,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 5,
+      "indicator": "seasonal_n2o",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result5:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "4.48 ± 0.12 versus 4.02 ± 0.30",
+      "original_treatment": "AWD 15U",
+      "original_comparator": "CF 15U",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "11 and 6",
+          "column": "C",
+          "xlsx_cells": [
+            "C11",
+            "C6"
+          ],
+          "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 6,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 6,
+      "indicator": "rice_grain_yield",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result6:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "34.81 ± 1.64 versus 36.56 ± 2.75",
+      "original_treatment": "AWD 15U",
+      "original_comparator": "CF 15U",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "11 and 6",
+          "column": "E",
+          "xlsx_cells": [
+            "E11",
+            "E6"
+          ],
+          "quote": "AWD 15U 34.81 ± 1.64 a; CF 15U 36.56 ± 2.75 a",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 7,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 7,
+      "indicator": "seasonal_n2o",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result7:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "5.05 ± 0.28 versus 3.89 ± 0.09",
+      "original_treatment": "AWD U+15S",
+      "original_comparator": "CF U+15S",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "12 and 7",
+          "column": "C",
+          "xlsx_cells": [
+            "C12",
+            "C7"
+          ],
+          "quote": "AWD U+15S 5.05 ± 0.28 a; CF U+15S 3.89 ± 0.09 c",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 8,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 8,
+      "indicator": "rice_grain_yield",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result8:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "34.50 ± 1.76 versus 35.98 ± 1.72",
+      "original_treatment": "AWD U+15S",
+      "original_comparator": "CF U+15S",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "12 and 7",
+          "column": "E",
+          "xlsx_cells": [
+            "E12",
+            "E7"
+          ],
+          "quote": "AWD U+15S 34.50 ± 1.76 a; CF U+15S 35.98 ± 1.72 a",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 9,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 9,
+      "indicator": "seasonal_n2o",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result9:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "5.29 ± 0.25 versus 3.76 ± 0.02",
+      "original_treatment": "AWD 15U+S",
+      "original_comparator": "CF 15U+S",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "13 and 8",
+          "column": "C",
+          "xlsx_cells": [
+            "C13",
+            "C8"
+          ],
+          "quote": "AWD 15U+S 5.29 ± 0.25 a; CF 15U+S 3.76 ± 0.02 c",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    },
+    {
+      "line": 10,
+      "doi": "10.5194/soil-8-645-2022",
+      "index": 10,
+      "indicator": "rice_grain_yield",
+      "conversion": "group_values_candidate",
+      "produced_ids": [
+        "10.5194/soil-8-645-2022#result10:0"
+      ],
+      "reason": [
+        "处理、对照及均值来自原候选；不自动升级来源状态。"
+      ],
+      "original_value": "34.85 ± 1.18 versus 35.85 ± 2.50",
+      "original_treatment": "AWD 15U+S",
+      "original_comparator": "CF 15U+S",
+      "source_file": "results.jsonl",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "record_class": "candidate_not_human_gold",
+      "evidence": [
+        {
+          "page": 7,
+          "table_figure": "Table 1",
+          "row": "13 and 8",
+          "column": "E",
+          "xlsx_cells": [
+            "E13",
+            "E8"
+          ],
+          "quote": "AWD 15U+S 34.85 ± 1.18 a; CF 15U+S 35.85 ± 2.50 a",
+          "footnote": "mean ± standard error, n=3"
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result1:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "seasonal_n2o",
+      "treatment": {
+        "label": "AWD CK",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "CK",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 1.64,
+        "unit": "kg N2O/ha",
+        "error": 0.15,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF CK",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "CK",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 1.48,
+        "unit": "kg N2O/ha",
+        "error": 0.06,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters e vs ef; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 1,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "9 and 4",
+            "column": "C",
+            "xlsx_cells": [
+              "C9",
+              "C4"
+            ],
+            "quote": "AWD CK 1.64 ± 0.15 e; CF CK 1.48 ± 0.06 ef",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result2:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "AWD CK",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "CK",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 22.92,
+        "unit": "g/pot",
+        "error": 1.07,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF CK",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "CK",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 21.63,
+        "unit": "g/pot",
+        "error": 1.81,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters b vs b; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 2,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "9 and 4",
+            "column": "E",
+            "xlsx_cells": [
+              "E9",
+              "E4"
+            ],
+            "quote": "AWD CK 22.92 ± 1.07 b; CF CK 21.63 ± 1.81 b",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result3:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "seasonal_n2o",
+      "treatment": {
+        "label": "AWD 15S",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 2.07,
+        "unit": "kg N2O/ha",
+        "error": 0.17,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF 15S",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 1.24,
+        "unit": "kg N2O/ha",
+        "error": 0.05,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters d vs f; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 3,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "10 and 5",
+            "column": "C",
+            "xlsx_cells": [
+              "C10",
+              "C5"
+            ],
+            "quote": "AWD 15S 2.07 ± 0.17 d; CF 15S 1.24 ± 0.05 f",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result4:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "AWD 15S",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 20.42,
+        "unit": "g/pot",
+        "error": 0.46,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF 15S",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 20.91,
+        "unit": "g/pot",
+        "error": 1.63,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters b vs b; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 4,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "10 and 5",
+            "column": "E",
+            "xlsx_cells": [
+              "E10",
+              "E5"
+            ],
+            "quote": "AWD 15S 20.42 ± 0.46 b; CF 15S 20.91 ± 1.63 b",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result5:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "seasonal_n2o",
+      "treatment": {
+        "label": "AWD 15U",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "15U",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 4.48,
+        "unit": "kg N2O/ha",
+        "error": 0.12,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF 15U",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "15U",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 4.02,
+        "unit": "kg N2O/ha",
+        "error": 0.3,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters b vs c; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 5,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "11 and 6",
+            "column": "C",
+            "xlsx_cells": [
+              "C11",
+              "C6"
+            ],
+            "quote": "AWD 15U 4.48 ± 0.12 b; CF 15U 4.02 ± 0.30 c",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result6:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "AWD 15U",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "15U",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 34.81,
+        "unit": "g/pot",
+        "error": 1.64,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF 15U",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "15U",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 36.56,
+        "unit": "g/pot",
+        "error": 2.75,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters a vs a; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 6,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "11 and 6",
+            "column": "E",
+            "xlsx_cells": [
+              "E11",
+              "E6"
+            ],
+            "quote": "AWD 15U 34.81 ± 1.64 a; CF 15U 36.56 ± 2.75 a",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result7:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "seasonal_n2o",
+      "treatment": {
+        "label": "AWD U+15S",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "U+15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 5.05,
+        "unit": "kg N2O/ha",
+        "error": 0.28,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF U+15S",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "U+15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 3.89,
+        "unit": "kg N2O/ha",
+        "error": 0.09,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters a vs c; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 7,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "12 and 7",
+            "column": "C",
+            "xlsx_cells": [
+              "C12",
+              "C7"
+            ],
+            "quote": "AWD U+15S 5.05 ± 0.28 a; CF U+15S 3.89 ± 0.09 c",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result8:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "AWD U+15S",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "U+15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 34.5,
+        "unit": "g/pot",
+        "error": 1.76,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF U+15S",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "U+15S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 35.98,
+        "unit": "g/pot",
+        "error": 1.72,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters a vs a; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 8,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "12 and 7",
+            "column": "E",
+            "xlsx_cells": [
+              "E12",
+              "E7"
+            ],
+            "quote": "AWD U+15S 34.50 ± 1.76 a; CF U+15S 35.98 ± 1.72 a",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result9:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "seasonal_n2o",
+      "treatment": {
+        "label": "AWD 15U+S",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "15U+S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 5.29,
+        "unit": "kg N2O/ha",
+        "error": 0.25,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF 15U+S",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "15U+S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 3.76,
+        "unit": "kg N2O/ha",
+        "error": 0.02,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters a vs c; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 9,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "13 and 8",
+            "column": "C",
+            "xlsx_cells": [
+              "C13",
+              "C8"
+            ],
+            "quote": "AWD 15U+S 5.29 ± 0.25 a; CF 15U+S 3.76 ± 0.02 c",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    },
+    {
+      "comparison_id": "10.5194/soil-8-645-2022#result10:0",
+      "doi": "10.5194/soil-8-645-2022",
+      "experiment_id": "2020_30_pot_experiment",
+      "outcome": "rice_grain_yield",
+      "treatment": {
+        "label": "AWD 15U+S",
+        "levels": [
+          {
+            "code": "AWD",
+            "description": "intermittent irrigation at -15 kPa"
+          },
+          {
+            "code": "15U+S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 34.85,
+        "unit": "g/pot",
+        "error": 1.18,
+        "error_type": "SE"
+      },
+      "comparator": {
+        "label": "CF 15U+S",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding 3–5 cm"
+          },
+          {
+            "code": "15U+S",
+            "description": "same fertilizer and isotope label"
+          }
+        ],
+        "value": 35.85,
+        "unit": "g/pot",
+        "error": 2.5,
+        "error_type": "SE"
+      },
+      "metric_type": "group_values",
+      "observation_time": "2020 growing season",
+      "significance_reported": "Table 1 Duncan letters a vs a; overlapping letters do not demonstrate equivalence",
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "independent_replicates",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "independent_replicates": {
+        "value": 3,
+        "original": "每处理3个独立盆",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Five soil subsamples pooled per pot; three gas draws at 0, 30, 60 minutes",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "record_state": "candidate_not_human_gold",
+      "evidence": {
+        "source_file": "results.jsonl",
+        "record_index": 10,
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "anchor": [
+          {
+            "page": 7,
+            "table_figure": "Table 1",
+            "row": "13 and 8",
+            "column": "E",
+            "xlsx_cells": [
+              "E13",
+              "E8"
+            ],
+            "quote": "AWD 15U+S 34.85 ± 1.18 a; CF 15U+S 35.85 ± 2.50 a",
+            "footnote": "mean ± standard error, n=3"
+          }
+        ],
+        "observation_time": "2020 growing season",
+        "reporting_origin": "program_source_table_extraction",
+        "candidate_limitations": null
+      },
+      "warnings": [],
+      "context_attribution": "explicit_experiment"
+    }
+  ],
+  "pairwise_levels": [],
+  "summary": {
+    "papers": 1,
+    "fields": 6,
+    "numeric_candidates": 10,
+    "field_conversion_counts": {
+      "metadata_candidate": 6
+    },
+    "comparisons": 10,
+    "gold_upgrades": 0
+  },
+  "selection": {
+    "source": "command_line",
+    "requested_dois": [
+      "10.5194/soil-8-645-2022"
+    ],
+    "missing_dois": []
+  }
+}

@@ -37,8 +37,19 @@ class DirectSynthesisTests(unittest.TestCase):
         for c in (a,b):
             c['comparison_context']=copy.deepcopy(ctx)
             c['evidence']['location']['pdf_verified']={'page':7}
-        n=m.adapt_converted({'papers':[p,q],'comparisons':[a,b]},PROFILE)
+        review={'status':'source_checked_independent','evidence':['source methods for separate trials'],
+                'datasets':[{'study_id':'10.1/a','experiment_id':'a'},{'study_id':'10.1/b','experiment_id':'b'}]}
+        n=m.adapt_converted({'papers':[p,q],'comparisons':[a,b],'independence_reviews':[review]},PROFILE)
         self.assertEqual(len(m.synthesize_converted(n)['findings']),1)
+        extra=copy.deepcopy(n['comparisons'][1]);extra['comparison_id']='third';extra['experiment_id']='c';extra['study_id']='10.1/c'
+        n['comparisons'].append(extra)
+        self.assertEqual(len(m.synthesize_converted(n)['findings']),1)
+        extra['direction_records'][0]['direction']='higher'
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
+        n['comparisons'].pop()
+        n['independence_reviews']=[]
+        self.assertEqual(m.synthesize_converted(n)['findings'],[])
+        n['independence_reviews']=[review]
         n['comparisons'][1]['conflicts']=['unit conflict']
         self.assertEqual(m.synthesize_converted(n)['findings'],[])
         n['comparisons'][1]['conflicts']=[]
@@ -140,5 +151,17 @@ class DirectSynthesisTests(unittest.TestCase):
         self.assertEqual(obs['observed_direction'],'not_calculated_due_to_missing_or_unresolved_units')
         self.assertNotIn('within_comparison_change_percent',obs)
         self.assertEqual(obs['record_state'],'candidate_not_human_gold')
+
+    def test_unreported_salinity_is_external_not_core(self):
+        p,c=example('10.1/a',7,10,'water',exp='trial')
+        p['title']='rice pot experiment'
+        p['experiment']['design_candidate']='rice pot experiment'
+        p['experiment']['research_object_candidate']='Alfisol paddy soil; salinity not specified'
+        n=m.adapt_converted({'papers':[p],'comparisons':[c]},PROFILE)
+        self.assertEqual(n['comparisons'][0]['eligibility'],'external_context_salinity_unconfirmed')
+        s=m.synthesize_converted(n)
+        self.assertEqual(s['primary_evidence_ids'],[])
+        self.assertEqual(s['external_evidence_ids'],[c['comparison_id']])
+        self.assertEqual(s['experiment_comparisons'][0]['comparison_ids'],[c['comparison_id']])
 
 if __name__=='__main__':unittest.main()

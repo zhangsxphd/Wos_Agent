@@ -1,0 +1,239 @@
+{
+  "topic": {
+    "topic": "普通稻田 AWD 相对持续淹水对生育季累计 N2O 的影响",
+    "population_requirement": "rice",
+    "primary_question": "AWD 相对持续淹水如何影响生育季累计 N2O 排放？",
+    "primary_eligibility": [
+      "稻田原始实验；有 AWD 与淹水对照和生育季累计 N2O"
+    ]
+  },
+  "papers": [
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "title": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation",
+      "design": "randomized block rice pot experiment, 2020",
+      "object": "rice paddy Alfisol; salinity not specified",
+      "replicates": "每处理3个独立盆",
+      "experiment_id": "2020_30_pot_experiment",
+      "pdf": "wu.pdf",
+      "source": "wu_table1.xlsx",
+      "source_type": "xlsx",
+      "pdf_page": 7,
+      "sheet": "xl/worksheets/sheet1.xml",
+      "a_cell": "C11",
+      "b_cell": "C6",
+      "a_label": "AWD 15U",
+      "b_label": "CF 15U",
+      "unit": "kg N2O/ha",
+      "period": "2020 growing season",
+      "treatment_description": "intermittent irrigation at -15 kPa; 225 kg N/ha; no straw; 15N-labelled urea",
+      "control_description": "continuous flooding 3–5 cm; 225 kg N/ha; no straw; 15N-labelled urea",
+      "scope": "Table 1 C11 versus C6; identical fertilizer and isotope treatment; n=3 pots",
+      "source_url": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022-t01.xlsx",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "pdf_url": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022.pdf",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "cell_checks": {
+        "A4": "CF",
+        "A9": "AWD",
+        "B6": "15U",
+        "B11": "15U",
+        "C1": "Cumulative N2O",
+        "C3": "kg ha−1"
+      },
+      "error_type": "standard error",
+      "significance_method": "Duncan p<0.05, original table",
+      "table_label": "Table 1",
+      "source_review_status": "assistant_source_checked_not_human_gold",
+      "indicator": "seasonal_n2o_mass"
+    },
+    {
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "title": "Alternate Wetting and Drying of Rice Reduced CH4 Emissions but Triggered N2O Peaks in a Clayey Soil of Central Italy",
+      "design": "2012 and 2013 field experiment, one field per water regime",
+      "object": "rice paddy clay soil in central Italy",
+      "replicates": "One field per water regime; 3 chambers in 2012 and 4 in 2013 are pseudo-replicates; independent water-treatment replication not established",
+      "experiment_id": "italy_2012_2013_same_fields",
+      "pdf": "lagomarsino.pdf",
+      "source": "lagomarsino.pdf",
+      "source_type": "pdf_regex",
+      "pdf_page": 8,
+      "pattern": "N\\s*O\\s*emissions\\s*2.*?in\\s*2012.*?AWD\\s*accounted.*?AWD\\s*relative\\s*to\\s*PF\\s*field\\s*\\(\\s*(\\d+\\.\\d+)\\s*vs\\.\\s*(\\d+\\.\\d+)\\s*kg\\s*N-N\\s*O\\s*ha[^)]*season",
+      "a_label": "AWD",
+      "b_label": "PF",
+      "unit": "kg N-N2O/ha",
+      "period": "2012 growing season",
+      "treatment_description": "intermittent drying to -15 cm; Entec 46 with nitrification inhibitor, 120 kg N/ha; one field",
+      "control_description": "permanent flooding; Entec 46 with nitrification inhibitor, 120 kg N/ha; one field",
+      "scope": "PDF page 8 results text, 2012 AWD vs PF; paper pages 2–3 describe fields and pseudo-replicates",
+      "source_url": "https://linquist.ucdavis.edu/sites/g/files/dgvnsk6581/files/inline-files/Lagomarsino%20et%20al%202016.pdf",
+      "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "pdf_url": "https://linquist.ucdavis.edu/sites/g/files/dgvnsk6581/files/inline-files/Lagomarsino%20et%20al%202016.pdf",
+      "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "columns": "two_columns_left_then_right",
+      "context_assertions": {
+        "year": "2012",
+        "outcome": "N2O",
+        "treatment_order": [
+          "AWD",
+          "PF"
+        ],
+        "unit": "kg N-N2O/ha"
+      },
+      "context_patterns": {
+        "outcome": "N\\s*O\\s*emissions",
+        "year": "2012",
+        "unit": "kg\\s*N-N\\s*O\\s*ha[^)]*season",
+        "order": "AWD\\s*relative\\s*to\\s*PF\\s*field"
+      },
+      "source_conflict": "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
+      "source_review_status": "assistant_source_checked_not_human_gold",
+      "indicator": "seasonal_n2o_n_mass"
+    },
+    {
+      "source_type": "pdf_regex",
+      "indicator": "seasonal_n2o_mass",
+      "source_order": [
+        "CF",
+        "AWD10"
+      ],
+      "a_label": "AWD10",
+      "b_label": "CF",
+      "pdf_page": 11,
+      "additional_context_page": 2,
+      "period": "2023 growing season",
+      "unit": "kg N2O/ha",
+      "pdf": "peru2024.pdf",
+      "source": "peru2024.pdf",
+      "doi": "10.3390/agronomy14020248",
+      "title": "Effect of Alternate Wetting and Drying on the Emission of Greenhouse Gases from Rice Fields on the Northern Coast of Peru",
+      "design": "field experiment, one plot for each water regime and three subplots; observational repeated measures",
+      "object": "rice paddy field in coastal Peru",
+      "replicates": "One field per water regime; subplots are not independent irrigated plots",
+      "experiment_id": "peru_2023_four_plots",
+      "treatment_description": "intermittent irrigation (AWD) water level -10 cm; 250 kg N/ha",
+      "control_description": "continuous flooding 5 cm; 250 kg N/ha",
+      "scope": "PDF page 11 Table 3 N2O column, AWD10 and CF; page 2 field allocation",
+      "pattern": "Table\\s*3\\..*?N2O.*?Water\\s*Regimens.*?CF\\s+\\d+\\.\\d+\\s*[a-z]\\s+\\d+\\.\\d+\\s+\\d+\\.\\d+\\s*[a-z]\\s+(?P<b>\\d+\\.\\d+)\\s*(?P<b_sig>[a-z]).*?AWD10\\s+\\d+\\.\\d+\\s*[a-z]\\s+\\d+\\.\\d+\\s+\\d+\\.\\d+\\s*[a-z]\\s+(?P<a>\\d+\\.\\d+)\\s*(?P<a_sig>[a-z])",
+      "context_assertions": {
+        "year": "2023",
+        "outcome": "N2O",
+        "unit": "kg N2O/ha",
+        "treatment_order": [
+          "CF",
+          "AWD10"
+        ]
+      },
+      "context_patterns": {
+        "outcome": "N2O",
+        "year": "2023",
+        "unit": "Emission\\s*\\(kg\\s*ha",
+        "order": "CF\\s+\\d.*?AWD10"
+      },
+      "source_conflict": "一个灌溉制度对应一个主田块，子样不能作为独立灌溉重复；PDF 叠加两层文本，已在清单中人工指定字体层。",
+      "source_url": "https://mdpi-res.com/d_attachment/agronomy/agronomy-14-00248/article_deploy/agronomy-14-00248.pdf",
+      "pdf_url": "https://mdpi-res.com/d_attachment/agronomy/agronomy-14-00248/article_deploy/agronomy-14-00248.pdf",
+      "source_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+      "pdf_sha256": "dd63b03f5eafb29627948a4efcd6e7d266d5682a20529cb9542606262d476191",
+      "table_label": "Table 3"
+    },
+    {
+      "source_type": "pdf_regex",
+      "source_order": [
+        "CF",
+        "AWD"
+      ],
+      "a_label": "AWD",
+      "b_label": "CF",
+      "pdf_page": 12,
+      "period": "2013DS growing season",
+      "unit": "kg CO2eq/ha",
+      "pdf": "agriculture2020.pdf",
+      "source": "agriculture2020.pdf",
+      "doi": "10.3390/agriculture10080350",
+      "title": "Potential of Alternate Wetting and Drying Irrigation Practices for the Mitigation of GHG Emissions from Rice Fields: Two Cases in Central Luzon",
+      "design": "field experiment on farmer fields, nonrandom toposequence",
+      "object": "rice paddy fields Victoria, Philippines",
+      "replicates": "Three fields per regime; AWD on high toposequence, CF on low toposequence; independence and confounding require review",
+      "experiment_id": "victoria_2012_2013_farm_fields",
+      "treatment_description": "farmer-managed intermittent irrigation (AWD), high toposequence, 104 kg N/ha",
+      "control_description": "farmer-managed continuous flooding, low toposequence, 104 kg N/ha",
+      "scope": "PDF page 12 Table 3, Victoria 2013DS N2O columns; methods pages 3–5",
+      "pattern": "Table\\s*3\\..*?N2O\\s*\\(kgCO2eqha−1\\).*?2013DS\\s+Victoria\\s+\\d+\\s+\\d+ns\\s+[\\d.]+\\s+-\\s+-\\s+(?P<b>\\d+)\\s+(?P<a>\\d+)(?P<a_sig>ns)\\s+(?P<reported_percent>\\d+\\.\\d+)",
+      "context_assertions": {
+        "year": "2013",
+        "outcome": "N2O",
+        "unit": "kg CO2eq/ha",
+        "treatment_order": [
+          "CF",
+          "AWD"
+        ]
+      },
+      "context_patterns": {
+        "outcome": "N2O",
+        "year": "2013DS",
+        "unit": "N2O\\s*\\(kgCO2eqha−1\\)",
+        "order": "N2O.*?CF\\s+AWD"
+      },
+      "source_conflict": "水制度与地形位置共同变化；此前未确认 GWP 系数，现由原文 PDF 第8页确认 N₂O 专属系数265，可推算质量；原表百分比与以 CF 为分母计算值冲突，仍待核。",
+      "source_url": "https://mdpi-res.com/d_attachment/agriculture/agriculture-10-00350/article_deploy/agriculture-10-00350-v2.pdf",
+      "pdf_url": "https://mdpi-res.com/d_attachment/agriculture/agriculture-10-00350/article_deploy/agriculture-10-00350-v2.pdf",
+      "source_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+      "pdf_sha256": "9c3e582e2adabac48ff616bacf77a93449f01e90b1257a49a2c6e311ab674123",
+      "table_label": "Table 3",
+      "indicator": "seasonal_n2o_gwp",
+      "gwp_factor_source": {
+        "page": 8,
+        "pattern": "GWP\\s*\\(N2O\\)\\s*=\\s*(\\d+)"
+      }
+    },
+    {
+      "doi": "10.3389/fpls.2026.1756990",
+      "title": "Hotspots of N2O accumulation in the soil profile of alternate wetting and drying paddy fields",
+      "design": "randomized block field experiment with concrete lysimeters in 2019 and 2020, same six lysimeters",
+      "object": "rice paddy clay loam in Liaoning, China",
+      "replicates": "three independent lysimeters per irrigation regime; same lysimeters followed in 2019 and 2020",
+      "experiment_id": "liaoning_long_term_lysimeters",
+      "pdf": "hotspots2026.pdf",
+      "source": "hotspots2026.pdf",
+      "source_type": "manual_figure",
+      "pdf_page": 6,
+      "a_label": "IAWD",
+      "b_label": "ICF",
+      "unit": "kg N2O/ha",
+      "indicator": "seasonal_n2o_mass",
+      "period": "2019 growing season",
+      "treatment_description": "intermittent AWD, soil water potential -15 kPa",
+      "control_description": "continuous flooding 1–5 cm",
+      "scope": "PDF page 6 Figure 5; 2019 total bars; methods on page 2",
+      "figure_estimate": {
+        "a": 2.3,
+        "b": 1.9,
+        "uncertainty": "约 ±0.1 kg N2O/ha 为读图分辨率，不是 SD 或 SE；数值按0.1取整",
+        "actor": "assistant_visual_estimate_not_gold",
+        "method": "在图5 2019 Total 柱上按0、1、2、3刻度目视估计，不提取误差线",
+        "figure_locator": "FIGURE\\s*5",
+        "reported_significance": "Figure 5 **; caption reports P<0.01; method and scope require independent review"
+      },
+      "source_conflict": "2019 与 2020 为同一六个渗漏计重复测量，不是两项独立实验；目视读图值非精确数值，不读取误差线。",
+      "source_url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2026.1756990/pdf",
+      "pdf_url": "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2026.1756990/pdf",
+      "source_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+      "pdf_sha256": "c6a00f0d52a152777287267cb8071184aee0c3c3020396b233101cf237c27032",
+      "reported_range_source": {
+        "page": 6,
+        "pattern": "elevated\\s*by\\s*(\\d+\\.\\d+)\\s*%\\s*to\\s*(\\d+\\.\\d+)\\s*%"
+      }
+    }
+  ],
+  "selection_attempts": [
+    {
+      "doi": "10.1080/00380768.2017.1401906",
+      "reason": "出版商全文 HTTP 403，有限合法开放来源与本地目录仍未取得，待补。与 Sander 研究有共同作者但地点与时期描述不同；是否共享数据未知，需原文逐项核对。"
+    },
+    {
+      "doi": "10.1038/s41598-018-35939-7",
+      "reason": "PDF 第8页：2015 年持续淹水箱位未重复且未在本文报告；2016 年箱位转入 AWD，故无可用的同实验独立持续淹水配对。"
+    }
+  ]
+}

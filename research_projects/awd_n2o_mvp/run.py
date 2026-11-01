@@ -4,7 +4,6 @@ from pathlib import Path
 from zipfile import ZipFile
 from xml.etree import ElementTree as ET
 from urllib.request import urlopen, Request
-import pdfplumber
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'scripts/research_planning'))
@@ -23,6 +22,7 @@ def obtain(path,url,expected):
 
 def discover(paths,out):
     """Read local files into source-located suggestions, never confirmed evidence."""
+    import pdfplumber
     suggestions=[]
     for path in paths:
         p=Path(path)
@@ -41,10 +41,24 @@ def discover(paths,out):
                 item['doi_candidates']=list(dict.fromkeys(x.rstrip('.,;') for x in ids))[:8]
             elif p.suffix.lower()=='.xlsx':
                 with ZipFile(p) as z: sheets=[x for x in z.namelist() if re.fullmatch(r'xl/worksheets/sheet\d+\.xml',x)]
+                item['table_rows']=[]
                 for sheet in sheets:
-                    for cell,value in cells(p,sheet).items():
-                        if re.search(r'N\s*2?\s*O|nitrous|AWD|flood|treatment|replica|kg.*ha|±',str(value),re.I):
+                    table=cells(p,sheet)
+                    for cell,value in table.items():
+                        if re.search(r'N\s*2?\s*O|nitrous|AWD|\bCF\b|\bPF\b|flood|treatment|replica|kg.*ha|±',str(value),re.I):
                             item['hits'].append({'sheet':sheet,'cell':cell,'text':str(value)[:350],'status':'unverified_program_excerpt'})
+                    grouped={}
+                    for cell,value in table.items():
+                        m=re.fullmatch(r'([A-Z]+)(\d+)',cell)
+                        if m:grouped.setdefault(m[2],[]).append({'cell':cell,'value':value})
+                    group_hint=None
+                    for row,entries in sorted(grouped.items(),key=lambda x:int(x[0])):
+                        for entry in entries:
+                            if re.fullmatch(r'A\d+',entry['cell']) and re.fullmatch(r'(CF|PF|AWD\d*)',str(entry['value']).strip(),re.I):
+                                group_hint={'label':str(entry['value']),'source_cell':entry['cell']}
+                        if any('±' in str(e['value']) for e in entries):
+                            label=next((e for e in entries if re.fullmatch(r'B\d+',e['cell'])),None)
+                            item['table_rows'].append({'sheet':sheet,'row':int(row),'group_candidate':group_hint,'row_label_candidate':label,'cells':entries,'status':'same_row_candidate_not_control_pair'})
             else: raise ValueError('仅支持 PDF 和 XLSX')
             patterns={'experiment':r'experiment|replica|random|plot|lysimeter',
                       'treatment':r'AWD|wetting|drying|intermittent',
@@ -70,13 +84,23 @@ def discover(paths,out):
     for item in suggestions:
         if not item['status'].startswith('candidate'): continue
         p=Path(item['file']);ids=item.get('doi_candidates',[])
-        draft['papers'].append({'doi':ids[0] if len(ids)==1 else None,'doi_candidates':ids,'source':str(p),'source_sha256':item['sha256'],
+        def rank(hit):
+            t=hit['text'];return sum(bool(re.search(p,t,re.I)) for p in (r'N\s*2\s*O|nitrous',r'AWD|wetting|drying',r'\bCF\b|continuous|flood',r'table|figure|±',r'replica|random'))
+        compact={k:[{'source':{a:h[a] for a in ('page','sheet','cell') if a in h},'text':h['text'][:180]} for h in sorted(v,key=rank,reverse=True)[:3]] for k,v in item['candidate_fields'].items()}
+        names=[]
+        for h in item['hits']:
+            for name in re.findall(r'\b(?:AWD\d*|CF|PF)\b',h['text'],re.I):
+                if name.upper() not in [x['name'] for x in names]:names.append({'name':name.upper(),'source':{a:h[a] for a in ('page','sheet','cell') if a in h}})
+        draft['papers'].append({'include':False,'candidate':{'doi':ids[0] if len(ids)==1 else None,'source':str(p),'source_sha256':item['sha256'],
             'source_type':'xlsx' if p.suffix.lower()=='.xlsx' else 'pdf_regex','pdf':str(p) if p.suffix.lower()=='.pdf' else None,
-            'pdf_sha256':item['sha256'] if p.suffix.lower()=='.pdf' else None,'pdf_page':None,'indicator':None,'unit':None,
-            'a_label':None,'b_label':None,'experiment_id':None,'design':None,'object':None,'replicates':None,'period':None,
-            'treatment_description':None,'control_description':None,'scope':None,'pattern':None,'context_assertions':None,'context_patterns':None,
-            'suggestions':item['candidate_fields'],'numeric_candidates':item['numeric_candidates'],
-            'draft_status':'requires_human_confirmation_not_runnable'})
+            'pdf_sha256':item['sha256'] if p.suffix.lower()=='.pdf' else None},'doi_candidates':ids,
+            'treatment_name_candidates':names[:8], 'field_suggestions':compact,'table_rows':item.get('table_rows',[])[:12],
+            'numeric_candidates':[{'value_candidate':v['value_candidate'],'error_candidate':v['error_candidate'],'unit_candidate':v['unit_candidate'],
+                'source':{a:v['source'][a] for a in ('page','sheet','cell') if a in v['source']},'status':'unlinked_not_confirmed'} for v in sorted(item['numeric_candidates'],key=lambda z:z['error_candidate'] is not None,reverse=True)[:3]],
+            'required_fields':['title','pdf','pdf_page','indicator','unit','a_label','b_label','experiment_id','design','object','replicates','period','treatment_description','control_description','scope','source-specific locator'],
+            'edits':[],'draft_status':'requires_human_confirmation_not_runnable'})
+    for entry in draft['papers']:
+        entry['candidate_digest']=hashlib.sha256(json.dumps(entry['candidate'],sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
     (out/'manifest_draft.json').write_text(json.dumps(draft,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'files':len(suggestions),'successful':sum(x['status'].startswith('candidate') for x in suggestions)}))
 def cells(path,sheet):
@@ -132,9 +156,9 @@ def report(normalized,summary,log,excluded):
         standard=f"{show(n.get('intervention'))} ± {show(n.get('intervention_error'))} vs {show(n.get('comparator'))} ± {show(n.get('comparator_error'))} {n.get('unit','未知')}；处理相对对照变化 {change_text}" if n['status']=='standardized' else '无法标准化：单位或指标未明确'
         if n['status']!='standardized' and n.get('relative_change_percent') is not None: standard+=f"；原口径相对变化 {change}%（程序计算）"
         lines += [f"## {p['title']}",f"[{p['doi']}]({p['source_url']})；比较 `{c['comparison_id']}`；{source}。",
-                  f"研究对象与设计：{e.get('research_object_candidate')}；{e.get('design_candidate')}；观察时间：{c.get('observation_time') or '未知'}。",
+                  f"研究对象与设计：{e.get('research_object_candidate')}；{e.get('design_candidate')}；场景 {p.get('research_scene','unknown')}、设施 {p.get('experimental_facility','unknown')}；观察时间：{c.get('observation_time') or '未知'}。",
                   f"处理：{c['intervention']}（{group(c['treatment_details'])}）；对照：{c['comparator']}（{group(c['comparator_details'])}）。",
-                  f"原始指标：{c['outcome_family']}（{c['outcome']}）；{'人工读图候选值' if c['assessment']['program_parse']=='manual_figure_estimate' else '原始报告值'}：{show(v['intervention'])} ± {show(v['intervention_error'])} vs {show(v['comparator'])} ± {show(v['comparator_error'])} {v['unit']}；误差类型 {v['intervention_error_type']}/{v['comparator_error_type']}；显著性：{c['significance']}。",
+                  f"原始指标：{c['outcome_family']}（{c['outcome']}），证据值类型 {c.get('evidence_value_kind','unknown')}；{'人工读图候选值' if c['assessment']['program_parse']=='manual_figure_estimate' else '原始报告值'}：{show(v['intervention'])} ± {show(v['intervention_error'])} vs {show(v['comparator'])} ± {show(v['comparator_error'])} {v['unit']}；误差类型 {v['intervention_error_type']}/{v['comparator_error_type']}；显著性：{c['significance']}。",
                   f"主题纳入：{'符合主题的候选，待来源核查' if c['eligibility']=='primary_candidate_requires_source_review' else c['eligibility']}；实验单位：{unit}，每处理 {show(rep.get('value'))}；设计有效性：{design_status}。{rep.get('original') or ''}",
                   f"标准化值：{standard}。换算依据：{n.get('basis','未知')}；研究内变化不代表统计显著性或因果效应。",
                   f"未解决事项：{'；'.join(c['conflicts']) if c['conflicts'] else '无已记录事项'}。",'']
@@ -142,6 +166,8 @@ def report(normalized,summary,log,excluded):
             lines.append(f"GWP 换算系数来源：PDF 第 {c['gwp_conversion']['source_page']} 页，{c['gwp_conversion']['source_quote']}；质量排放为程序推算，非原表直接报告。")
         if c.get('reported_percent'):
             lines.append(f"作者表格报告百分比 {c['reported_percent']['value']}%；程序以对照为分母计算 {change}%，两者口径待核。")
+        if c.get('author_reported_range'):
+            v_range=c['author_reported_range'];lines.append(f"作者正文报告的两季相对变化范围：{v_range['low']}%–{v_range['high']}%（PDF 第 {v_range['page']} 页）；这是作者报告范围，不反推精确组均值。")
         if c['assessment']['program_parse']=='manual_figure_estimate':
             fig=(hint.get('manual_figure_estimate') or {});lines.append(f"数值来源为人工目视读图，非原文精确数值；估计精度：{fig.get('uncertainty','未知')}；{fig.get('method','')}。")
     status='证据不足，不能形成跨研究共同结论' if not summary['findings'] else '存在有限条件下的候选共同观察，仍需人工核查'
@@ -157,11 +183,27 @@ def report(normalized,summary,log,excluded):
     return '\n'.join(lines)+'\n'
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--manifest',type=Path);ap.add_argument('--sources',type=Path);ap.add_argument('--corrections',type=Path);ap.add_argument('--discover',type=Path,nargs='+');ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--manifest',type=Path);ap.add_argument('--confirmation',type=Path);ap.add_argument('--sources',type=Path);ap.add_argument('--corrections',type=Path);ap.add_argument('--discover',type=Path,nargs='+');ap.add_argument('--out',type=Path,required=True);a=ap.parse_args()
     if a.discover: discover(a.discover,a.out);return
-    if not a.manifest or not a.sources: ap.error('综合需要 --manifest 和 --sources；候选提取使用 --discover')
-    config=json.loads(a.manifest.read_text());out=a.out;rows={k:[] for k in ('papers','fields','results','issues','historic_claims','supplement_files')};checks=[];log=[];gwp_info={};reported_percent={}
+    if bool(a.manifest)==bool(a.confirmation) or not a.sources: ap.error('综合需要 --manifest 或 --confirmation 二选一及 --sources；候选提取使用 --discover')
+    import pdfplumber
     changes=[]
+    if a.confirmation:
+        answer=json.loads(a.confirmation.read_text());config={'topic':answer['topic'],'papers':[]}
+        for entry in answer['papers']:
+            if not entry.get('include'):continue
+            paper=dict(entry['candidate'])
+            expected=entry.get('candidate_digest')
+            actual=hashlib.sha256(json.dumps(paper,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+            if not expected or expected!=actual:raise ValueError('候选基础数据被直接修改；请在 edits 中记录修改及原因')
+            for edit in entry.get('edits',[]):
+                if not edit.get('reason') or not edit.get('actor') or 'field' not in edit:raise ValueError('人工确认必须包含字段、值、原因与操作者')
+                key=edit['field'];changes.append({'doi':paper.get('doi'),'field':key,'before':paper.get(key),'after':edit.get('value'),'reason':edit['reason'],'actor':edit['actor'],'status':'manual_edit_not_gold'});paper[key]=edit.get('value')
+            if not paper.get('doi'):raise ValueError('纳入论文必须确认 DOI')
+            config['papers'].append(paper)
+        if not config['papers']:raise ValueError('未确认任何论文；请将待分析条目的 include 设置为 true')
+    else:config=json.loads(a.manifest.read_text())
+    out=a.out;rows={k:[] for k in ('papers','fields','results','issues','historic_claims','supplement_files')};checks=[];log=[];gwp_info={};reported_percent={};author_ranges={}
     if a.corrections:
         for edit in json.loads(a.corrections.read_text()):
             matched=[p for p in config['papers'] if p['doi'].lower()==edit['doi'].lower()]
@@ -226,6 +268,12 @@ def main():
             for field,val in [('study_design',p['design']),('research_object',p['object']),('independent_replicates',p['replicates'])]:
                 rows['fields'].append({'doi':doi,'field':field,'value':val,'status':'candidate_manual_source_review','source_sha256':ph,'evidence':[{'page':2,'section':'methods'}]})
             indicator=p.get('indicator') or ({'kg N2O/ha':'seasonal_n2o_mass','kg N-N2O/ha':'seasonal_n2o_n_mass'}.get(p['unit'],'unknown_indicator') if re.search(r'season|growing|生育季',p.get('period',''),re.I) else 'unknown_indicator')
+            if p.get('reported_range_source'):
+                spec=p['reported_range_source']
+                with pdfplumber.open(pdf) as doc: range_text=doc.pages[spec['page']-1].extract_text() or ''
+                found=list(re.finditer(spec['pattern'],range_text,re.I|re.S))
+                if len(found)==1:
+                    author_ranges[doi.lower()]={'low':float(found[0][1]),'high':float(found[0][2]),'page':spec['page'],'pdf_sha256':ph,'quote':found[0][0], 'status':'author_reported_program_located_not_gold'}
             if indicator=='seasonal_n2o_gwp' and p.get('gwp_factor_source'):
                 spec=p['gwp_factor_source']
                 with pdfplumber.open(pdf) as doc: factor_text=doc.pages[spec['page']-1].extract_text() or ''
@@ -243,11 +291,15 @@ def main():
     converted=convert.run(d,None,{p['doi'].lower() for p in config['papers']}); normalized=synth.adapt_converted(converted,config['topic']);synth.apply_source_checks(normalized,{'checks':checks})
     for c in normalized['comparisons']:
         if c['study_id'] in gwp_info:c['gwp_conversion']=gwp_info[c['study_id']]
+        if c['study_id'] in author_ranges:c['author_reported_range']=author_ranges[c['study_id']]
         c['standardized_n2o']=standardize(c)
         if c['raw_evidence'][0].get('manual_reported') is not None:
             c['standardized_n2o']['derived_status']='manual_graph_approximation_not_reported_numeric_value'
             c['standardized_n2o']['relative_change_percent']=None
             c['standardized_n2o']['relative_change_origin']='not_calculated_due_to_graph_reading_uncertainty'
+        c['evidence_value_kind']=('manual_figure_approximation' if c['raw_evidence'][0].get('manual_reported') is not None else
+                                   'inferred_from_n2o_specific_gwp' if c['outcome_family']=='n2o_gwp' and c['standardized_n2o']['status']=='standardized' else
+                                   'reported_n2o_mass' if c['outcome_family'] in ('n2o_mass','n2o_n_mass') else 'other_or_unknown')
         c['comparison_family']='n2o_mass' if c['standardized_n2o']['status']=='standardized' else c['outcome_family']
         if c['study_id'] in reported_percent:
             c['reported_percent']=reported_percent[c['study_id']]

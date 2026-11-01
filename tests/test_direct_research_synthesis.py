@@ -30,6 +30,15 @@ def example(doi, tx, ctrl, factor='nitrogen', outcome='seasonal_n2o_mass', exp=N
 
 
 class DirectSynthesisTests(unittest.TestCase):
+    def test_field_lysimeter_and_observational_scene_are_distinct(self):
+        p,c=example('10.1/a',7,10,'water',exp='a')
+        p['experiment']['design_candidate']='randomized block field experiment with concrete lysimeters'
+        n=m.adapt_converted({'papers':[p],'comparisons':[c]},PROFILE)
+        self.assertEqual((n['papers'][0]['study_type'],n['papers'][0]['research_scene'],n['papers'][0]['experimental_facility']),('field_experiment','field','concrete_lysimeter'))
+        p['experiment']['design_candidate']='field experiment; observational repeated measures'
+        n=m.adapt_converted({'papers':[p],'comparisons':[c]},PROFILE)
+        self.assertEqual((n['papers'][0]['study_type'],n['papers'][0]['research_scene']),('observational','field'))
+
     def test_scientific_indicator_families_do_not_confuse_gases(self):
         self.assertEqual(m._outcome_family('seasonal_n2o','kg N2O/ha'),'n2o_mass')
         self.assertEqual(m._outcome_family('seasonal_n2o','kg N-N2O/ha'),'n2o_n_mass')

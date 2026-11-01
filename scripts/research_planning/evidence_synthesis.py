@@ -383,10 +383,14 @@ def adapt_converted(converted, topic_profile):
         design=str(e.get('design_candidate') or '')
         if re.search(r'\breview\b|meta.analysis|综述|系统评价',text,re.I):study_kind='review_or_meta'
         elif re.search(r'观察性|observational',design,re.I):study_kind='observational'
-        elif re.search(r'盆栽|土柱|容器|mesocosm|soil.column|pot experiment|lysimeter',design,re.I):study_kind='pot_experiment'
-        elif re.search(r'田间|田块|小区|field experiment',design,re.I):study_kind='field_experiment'
+        elif re.search(r'田间|田块|小区|field\s+(?:lysimeter\s+)?experiment',design,re.I):study_kind='field_experiment'
+        elif re.search(r'盆栽|土柱|容器|mesocosm|soil.column|pot experiment',design,re.I):study_kind='pot_experiment'
         else:study_kind='unknown'
+        scene='field' if re.search(r'田间|田块|小区|\bfield\b',design,re.I) else 'pot' if re.search(r'pot experiment|盆栽',design,re.I) else 'unknown'
+        facility=('concrete_lysimeter' if re.search(r'concrete|混凝土',design,re.I) else 'lysimeter') if re.search(r'lysimeter|渗漏计',design,re.I) else 'pot' if re.search(r'pot experiment|盆栽',design,re.I) else 'field_plot' if scene=='field' else 'unknown'
         row={'study_id':sid,'doi':p.get('doi'),'title':p.get('title'),'study_type':study_kind,
+             'research_scene':scene,
+             'experimental_facility':facility,
              'source_url':p.get('source_url'),'pdf_sha256':p.get('pdf_sha256'),
              'source_state':'historical_candidate_not_human_gold',
              'experiments':[{'experiment_id':e.get('experiment_id'),
@@ -510,6 +514,8 @@ def synthesize_converted(normalized):
         if len(kinds)>1: reasons.append('试验尺度或类型不同：'+', '.join(sorted(kinds)))
         if any((c.get('independent_replicates') or {}).get('value')==1 or re.search(r'pseudo.replicat|伪重复',str((c.get('independent_replicates') or {}).get('original') or ''),re.I) for c in aa+bb):
             reasons.append('至少一项研究报告伪重复，处理层独立重复不足或未知')
+        value_kinds=sorted({c.get('evidence_value_kind','unknown') for c in aa+bb})
+        if len(value_kinds)>1: reasons.append('直接报告、换算或人工读图的来源与精度等级不同，不自动视为同等可靠')
         reasons.append('测量时间窗口、指标定义和共同效应量未充分确认')
         reasons.append('不同论文是否共享原始实验或数据集未知，不能计为独立重复')
         contexts=[c['comparison_context'] for c in aa+bb]
@@ -527,6 +533,7 @@ def synthesize_converted(normalized):
              'A_descriptive':'permitted_with_conditions_and_source_status',
              'B_conditional_quantitative':conditional,'C_meta_analysis':'not_implemented',
              'factor_classes':[factors_a,factors_b],'independence':'unknown',
+             'evidence_value_kinds':value_kinds,
              'potential_effect_modifiers':['土壤、盐度、灌溉、施氮、时间、试验尺度、采样及统计方法可能不同'],
              'reasons':reasons,'source_conflicts':list(dict.fromkeys(w for c in aa+bb for w in c['conflicts'])),
              'recorded_source_issues':[issue for c in (aa[0],bb[0]) for issue in c['source_issues']],

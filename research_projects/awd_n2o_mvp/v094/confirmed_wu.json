@@ -1,0 +1,670 @@
+{
+  "topic": {
+    "topic": "普通稻田 AWD 相对持续淹水对生育季累计 N2O 的影响",
+    "population_requirement": "rice",
+    "primary_question": "AWD 相对持续淹水如何影响生育季累计 N2O 排放？",
+    "primary_eligibility": [
+      "稻田原始实验；有 AWD 与淹水对照和生育季累计 N2O"
+    ]
+  },
+  "papers": [
+    {
+      "include": true,
+      "candidate": {
+        "doi": null,
+        "source": "outputs/v092/fresh/wu_table1.xlsx",
+        "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+        "source_type": "xlsx",
+        "pdf": null,
+        "pdf_sha256": null
+      },
+      "doi_candidates": [],
+      "treatment_name_candidates": [
+        {
+          "name": "CF",
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "A4"
+          }
+        },
+        {
+          "name": "AWD",
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "A9"
+          }
+        }
+      ],
+      "field_suggestions": {
+        "experiment": [],
+        "treatment": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "A9"
+            },
+            "text": "AWD"
+          }
+        ],
+        "comparator": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "A4"
+            },
+            "text": "CF"
+          }
+        ],
+        "outcome": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "C1"
+            },
+            "text": "Cumulative N2O"
+          },
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "F1"
+            },
+            "text": "Yield-scaled N2O"
+          }
+        ],
+        "unit": [
+          {
+            "source": {
+              "sheet": "xl/worksheets/sheet1.xml",
+              "cell": "C3"
+            },
+            "text": "kg ha−1"
+          }
+        ],
+        "other_factors": []
+      },
+      "table_rows": [
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 4,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B4",
+            "value": "CK"
+          },
+          "cells": [
+            {
+              "cell": "A4",
+              "value": "CF"
+            },
+            {
+              "cell": "B4",
+              "value": "CK"
+            },
+            {
+              "cell": "C4",
+              "value": "1.48 ± 0.06 ef"
+            },
+            {
+              "cell": "D4",
+              "value": "37.11 ± 2.53 f"
+            },
+            {
+              "cell": "E4",
+              "value": "21.63 ± 1.81 b"
+            },
+            {
+              "cell": "F4",
+              "value": "0.24 ± 0.01 d"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 5,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B5",
+            "value": "15S"
+          },
+          "cells": [
+            {
+              "cell": "B5",
+              "value": "15S"
+            },
+            {
+              "cell": "C5",
+              "value": "1.24 ± 0.05 f"
+            },
+            {
+              "cell": "D5",
+              "value": "37.99 ± 2.69 f"
+            },
+            {
+              "cell": "E5",
+              "value": "20.91 ± 1.63 b"
+            },
+            {
+              "cell": "F5",
+              "value": "0.21 ± 0.03 d"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 6,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B6",
+            "value": "15U"
+          },
+          "cells": [
+            {
+              "cell": "B6",
+              "value": "15U"
+            },
+            {
+              "cell": "C6",
+              "value": "4.02 ± 0.30 c"
+            },
+            {
+              "cell": "D6",
+              "value": "82.54 ± 10.39 ab"
+            },
+            {
+              "cell": "E6",
+              "value": "36.56 ± 2.75 a"
+            },
+            {
+              "cell": "F6",
+              "value": "0.39 ± 0.04 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 7,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B7",
+            "value": "U+15S"
+          },
+          "cells": [
+            {
+              "cell": "B7",
+              "value": "U+15S"
+            },
+            {
+              "cell": "C7",
+              "value": "3.89 ± 0.09 c"
+            },
+            {
+              "cell": "D7",
+              "value": "87.58 ± 7.70 a"
+            },
+            {
+              "cell": "E7",
+              "value": "35.98 ± 1.72 a"
+            },
+            {
+              "cell": "F7",
+              "value": "0.38 ± 0.02 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 8,
+          "group_candidate": {
+            "label": "CF",
+            "source_cell": "A4"
+          },
+          "row_label_candidate": {
+            "cell": "B8",
+            "value": "15U+S"
+          },
+          "cells": [
+            {
+              "cell": "B8",
+              "value": "15U+S"
+            },
+            {
+              "cell": "C8",
+              "value": "3.76 ± 0.02 c"
+            },
+            {
+              "cell": "D8",
+              "value": "80.99 ± 19.54 abc"
+            },
+            {
+              "cell": "E8",
+              "value": "35.85 ± 2.50 a"
+            },
+            {
+              "cell": "F8",
+              "value": "0.37 ± 0.03 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 9,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B9",
+            "value": "CK"
+          },
+          "cells": [
+            {
+              "cell": "A9",
+              "value": "AWD"
+            },
+            {
+              "cell": "B9",
+              "value": "CK"
+            },
+            {
+              "cell": "C9",
+              "value": "1.64 ± 0.15 e"
+            },
+            {
+              "cell": "D9",
+              "value": "45.31 ± 3.07 ef"
+            },
+            {
+              "cell": "E9",
+              "value": "22.92 ± 1.07 b"
+            },
+            {
+              "cell": "F9",
+              "value": "0.25 ± 0.02 d"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 10,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B10",
+            "value": "15S"
+          },
+          "cells": [
+            {
+              "cell": "B10",
+              "value": "15S"
+            },
+            {
+              "cell": "C10",
+              "value": "2.07 ± 0.17 d"
+            },
+            {
+              "cell": "D10",
+              "value": "34.78 ± 4.86 f"
+            },
+            {
+              "cell": "E10",
+              "value": "20.42 ± 0.46 b"
+            },
+            {
+              "cell": "F10",
+              "value": "0.36 ± 0.02 c"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 11,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B11",
+            "value": "15U"
+          },
+          "cells": [
+            {
+              "cell": "B11",
+              "value": "15U"
+            },
+            {
+              "cell": "C11",
+              "value": "4.48 ± 0.12 b"
+            },
+            {
+              "cell": "D11",
+              "value": "64.44 ± 7.33 bcd"
+            },
+            {
+              "cell": "E11",
+              "value": "34.81 ± 1.64 a"
+            },
+            {
+              "cell": "F11",
+              "value": "0.46 ± 0.03 b"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 12,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B12",
+            "value": "U+15S"
+          },
+          "cells": [
+            {
+              "cell": "B12",
+              "value": "U+15S"
+            },
+            {
+              "cell": "C12",
+              "value": "5.05 ± 0.28 a"
+            },
+            {
+              "cell": "D12",
+              "value": "62.92 ± 2.49 cde"
+            },
+            {
+              "cell": "E12",
+              "value": "34.50 ± 1.76 a"
+            },
+            {
+              "cell": "F12",
+              "value": "0.53 ± 0.01 a"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        },
+        {
+          "sheet": "xl/worksheets/sheet1.xml",
+          "row": 13,
+          "group_candidate": {
+            "label": "AWD",
+            "source_cell": "A9"
+          },
+          "row_label_candidate": {
+            "cell": "B13",
+            "value": "15U+S"
+          },
+          "cells": [
+            {
+              "cell": "B13",
+              "value": "15U+S"
+            },
+            {
+              "cell": "C13",
+              "value": "5.29 ± 0.25 a"
+            },
+            {
+              "cell": "D13",
+              "value": "60.44 ± 6.74 de"
+            },
+            {
+              "cell": "E13",
+              "value": "34.85 ± 1.18 a"
+            },
+            {
+              "cell": "F13",
+              "value": "0.54 ± 0.03 a"
+            }
+          ],
+          "status": "same_row_candidate_not_control_pair"
+        }
+      ],
+      "numeric_candidates": [
+        {
+          "value_candidate": 1.48,
+          "error_candidate": 0.06,
+          "unit_candidate": null,
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "C4"
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 37.11,
+          "error_candidate": 2.53,
+          "unit_candidate": null,
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "D4"
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 21.63,
+          "error_candidate": 1.81,
+          "unit_candidate": null,
+          "source": {
+            "sheet": "xl/worksheets/sheet1.xml",
+            "cell": "E4"
+          },
+          "status": "unlinked_not_confirmed"
+        }
+      ],
+      "required_fields": [
+        "title",
+        "pdf",
+        "pdf_page",
+        "indicator",
+        "unit",
+        "a_label",
+        "b_label",
+        "experiment_id",
+        "design",
+        "object",
+        "replicates",
+        "period",
+        "treatment_description",
+        "control_description",
+        "scope",
+        "source-specific locator"
+      ],
+      "edits": [
+        {
+          "field": "doi",
+          "value": "10.5194/soil-8-645-2022",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "title",
+          "value": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "design",
+          "value": "randomized block rice pot experiment, 2020",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "object",
+          "value": "rice paddy Alfisol; salinity not specified",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "replicates",
+          "value": "每处理3个独立盆",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "experiment_id",
+          "value": "2020_30_pot_experiment",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "pdf",
+          "value": "outputs/v092/fresh/wu.pdf",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "pdf_page",
+          "value": 7,
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "sheet",
+          "value": "xl/worksheets/sheet1.xml",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "a_cell",
+          "value": "C11",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "b_cell",
+          "value": "C6",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "a_label",
+          "value": "AWD 15U",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "b_label",
+          "value": "CF 15U",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "unit",
+          "value": "kg N2O/ha",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "period",
+          "value": "2020 growing season",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "treatment_description",
+          "value": "intermittent irrigation at -15 kPa; 225 kg N/ha; no straw; 15N-labelled urea",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "control_description",
+          "value": "continuous flooding 3–5 cm; 225 kg N/ha; no straw; 15N-labelled urea",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "scope",
+          "value": "Table 1 C11 versus C6; identical fertilizer and isotope treatment; n=3 pots",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "source_url",
+          "value": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022-t01.xlsx",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "pdf_url",
+          "value": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022.pdf",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "pdf_sha256",
+          "value": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "cell_checks",
+          "value": {
+            "A4": "CF",
+            "A9": "AWD",
+            "B6": "15U",
+            "B11": "15U",
+            "C1": "Cumulative N2O",
+            "C3": "kg ha−1"
+          },
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "error_type",
+          "value": "standard error",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "significance_method",
+          "value": "Duncan p<0.05, original table",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "table_label",
+          "value": "Table 1",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "source_review_status",
+          "value": "assistant_source_checked_not_human_gold",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        },
+        {
+          "field": "indicator",
+          "value": "seasonal_n2o_mass",
+          "reason": "依据既有原文核查与 Table 1 处理行确认；保留 Candidate",
+          "actor": "assistant_not_independent_gold"
+        }
+      ],
+      "draft_status": "requires_human_confirmation_not_runnable",
+      "candidate_digest": "95c8513635d3d26eee1057e0e498ab9f62ee027168aceb1e2d51303e9218ab57"
+    }
+  ]
+}

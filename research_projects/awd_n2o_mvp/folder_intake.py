@@ -8,7 +8,6 @@ from pathlib import Path
 from scripts.fulltext.pdf_metadata import parse_pdf
 from scripts.fulltext.resolver import verify_pdf_identity
 from scripts.fulltext.provenance import FulltextError
-from scripts.research_planning.evidence_synthesis import synthesize_converted
 
 
 def run_folder(folder, topic, out, discover, review_path=None):
@@ -62,7 +61,10 @@ def run_folder(folder, topic, out, discover, review_path=None):
     # Only the established converter may create quantitative comparisons.
     normalized={'topic_profile':{'topic':topic,'primary_question':topic},'papers':[],
                 'comparisons':[],'source_observations':accepted}
-    summary=synthesize_converted(normalized)
+    # Folder mode records source observations only. Without confirmed structured
+    # comparisons, synthesis has not run and cannot assess the evidence base.
+    summary={'status':'not_executed','reason':'no_confirmed_structured_comparisons',
+             'primary_conclusion':None,'findings':[],'pairwise_comparability':[]}
     (out/'normalized_evidence.json').write_text(json.dumps(normalized,ensure_ascii=False,indent=2)+'\n')
     (out/'synthesis.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n')
     with (out/'evidence.csv').open('w',newline='',encoding='utf-8') as f:
@@ -76,8 +78,9 @@ def run_folder(folder, topic, out, discover, review_path=None):
           '','## 结果及统计信息','', '| DOI | 指标 | 值和单位 | 误差/显著性 | 原文页 | 类型 |','|---|---|---|---|---|---|',
           rows([(x['doi'],x['field'],str(x.get('value','未知'))+' '+str(x.get('unit','')),str(x.get('error','未知'))+' / '+str(x.get('significance','未知')),x['page'],x['evidence_type']) for x in accepted if x['field'] not in ('design','treatments','control','replicates','population')]) or '| 未核查 | 未知 | 未知 | 未知 | 未知 | 未知 |',
           '','## 来源、可比性与待核','', '原文定位及逐条引句见 evidence.csv；人工输入的审阅者身份未独立认证，均未升级 Gold。',
-          '目前未建立可靠的跨论文同一处理与结局比较；综合状态：'+summary['primary_conclusion']+'；证据不足，不推断共同发现。',
+          '跨论文综合未执行：缺少已确认的结构化比较。尚未对科研证据是否充分作出判断。',
           '候选与附件关联须核查；缺少明确处理、独立重复、数值、单位和统计比较的记录不能作定量结论。',
           '作者解释和系统推断不能替代实验事实；本报告不将未验证机制列为事实。']
     (out/'analysis.md').write_text('\n'.join(text)+'\n',encoding='utf8')
-    return {'files':len(files),'pdf_parsed':len(pdfs),'quote_located':len(accepted),'status':'candidate_review_required'}
+    return {'files':len(files),'pdf_parsed':len(pdfs),'quote_located':len(accepted),'status':'candidate_review_required',
+            'synthesis_status':'not_executed','synthesis_reason':'no_confirmed_structured_comparisons'}

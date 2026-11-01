@@ -322,6 +322,8 @@ def _source_provenance(evidence):
         return {'model_reported':loc.get('model_reported'), 'program_parsed':loc.get('program_parsed'),
                 'pdf_verified':loc.get('pdf_verified'), 'original':evidence}
     anchor=evidence.get('anchor') if isinstance(evidence,dict) else None
+    if evidence.get('reporting_origin') == 'program_pdf_table_extraction':
+        return {'model_reported':None, 'program_parsed':anchor, 'pdf_verified':None, 'original':evidence}
     return {'model_reported':anchor, 'program_parsed':None, 'pdf_verified':None, 'original':evidence}
 
 
@@ -337,7 +339,7 @@ def _converted_factor(c):
     texts=' '.join(str(x.get('description') or '') for x in a.get('levels',[])+b.get('levels',[])).lower()
     if any(x in texts for x in ('ditch water','river water','沟水','河水')): return 'water_source'
     if ta in ('W','BW') and co=='CK':return 'water_land_use_confounded'
-    if ('浅湿' in texts and '淹灌' in texts) or ('flooded' in texts and 'intermittent' in texts):
+    if ('浅湿' in texts and '淹灌' in texts) or (('flooded' in texts or 'flooding' in texts) and 'intermittent' in texts):
         return 'water_regime'
     return 'unknown'
 
@@ -352,6 +354,7 @@ def _outcome_family(outcome):
     if 'grain_yield' in x or 'yield per hill' in x:return 'rice_yield'
     if x=='soil_ph':return 'soil_ph'
     if 'organic_carbon' in x:return 'soil_carbon_pool'
+    if x in ('soil_total_nitrogen','soil_total_n'):return 'soil_nitrogen_pool'
     return 'other'
 
 
@@ -405,6 +408,8 @@ def adapt_converted(converted, topic_profile):
             eligibility='primary_candidate_requires_source_review'
         elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and saline and p['study_type'] in ('pot_experiment','field_experiment'):
             eligibility='indirect_context'
+        elif family in ('soil_carbon_pool','soil_nitrogen_pool') and factor=='water_regime' and rice and saline:
+            eligibility='water_pool_context_not_transformation_rate'
         elif family=='rice_yield' and rice and saline:
             eligibility='regression_context_outside_primary_outcome'
         else:eligibility='outside_topic_or_unresolved'
@@ -414,7 +419,8 @@ def adapt_converted(converted, topic_profile):
                 'comparator_error':b.get('error'),'comparator_error_type':b.get('error_type'),
                 'reported_effect':c.get('reported_effect')}
         av,bv=a.get('value'),b.get('value'); direction=[]
-        if isinstance(av,(int,float)) and isinstance(bv,(int,float)) and a.get('unit') and a.get('unit')==b.get('unit'):
+        if (isinstance(av,(int,float)) and isinstance(bv,(int,float)) and a.get('unit') and a.get('unit')==b.get('unit')
+            and not re.search(r'unresolved|conflict|冲突|未知',str(a.get('unit')),re.I)):
             direction=[{'direction':'higher' if av>bv else 'lower' if av<bv else 'equal',
                         'interpretation':'within_record_arithmetic_only'}]
         raw=c.get('evidence') or {}
@@ -438,22 +444,24 @@ def adapt_converted(converted, topic_profile):
 
 
 def apply_source_checks(normalized, checks):
-    """Attach a separate human-assisted PDF-review ledger without upgrading data."""
+    """Attach scoped PDF reviews to exact comparisons; never upgrade Candidate."""
     papers={p['study_id']:p for p in normalized['papers']}
+    comparisons={c['comparison_id']:c for c in normalized['comparisons']}
     seen=set()
     for item in checks.get('checks',[]):
-        sid=doi(item.get('doi')); paper=papers.get(sid)
-        if not paper or not item.get('pdf_sha256') or item['pdf_sha256']!=paper.get('pdf_sha256'):
-            raise ValueError('PDF核查记录的DOI或哈希与候选论文不一致')
-        for outcome in item.get('outcomes',[]):
-            key=(sid,outcome)
-            if key in seen:raise ValueError('重复的PDF核查范围')
-            seen.add(key)
-            for comp in normalized['comparisons']:
-                if comp['study_id']==sid and comp['outcome']==outcome:
-                    for ev in comp['raw_evidence']:
-                        ev['pdf_verified']={'status':item['status'],'pages':item.get('pages'),
-                                            'scope':item.get('scope'),'pdf_sha256':item['pdf_sha256']}
+        sid=doi(item.get('doi')); paper=papers.get(sid); cid=item.get('comparison_id')
+        if not cid or item.get('outcomes'):
+            raise ValueError('PDF核查必须指定单条comparison_id；不得按论文和结局批量附加')
+        comp=comparisons.get(cid)
+        if not paper or not comp or comp['study_id']!=sid or not item.get('pdf_sha256') or item['pdf_sha256']!=paper.get('pdf_sha256'):
+            raise ValueError('PDF核查记录的比较、DOI或哈希不匹配')
+        if cid in seen: raise ValueError('同一比较的PDF核查重复')
+        if not item.get('pages') or not item.get('scope') or not item.get('status'):
+            raise ValueError('PDF核查必须指明实际页码、具体范围和核查状态')
+        seen.add(cid)
+        for ev in comp['raw_evidence']:
+            ev['pdf_verified']={'status':item['status'],'pages':item['pages'],
+                'scope':item['scope'],'pdf_sha256':item['pdf_sha256'],'comparison_id':cid}
     return normalized
 
 
@@ -505,10 +513,34 @@ def synthesize_converted(normalized):
     dependencies=[{'study_id':k[0],'outcome':k[1],'group_label':k[2], 'comparison_ids':sorted(v),
                    'status':'possible_shared_group_or_repeated_representation_do_not_count_as_independent'}
                   for k,v in shared.items() if len(v)>1]
-    direct=[c['comparison_id'] for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review']
+    direct_records=[c for c in comparisons if c['eligibility']=='primary_candidate_requires_source_review']
+    direct=[c['comparison_id'] for c in direct_records]
+    observations=[]
+    for c in direct_records:
+        item={'comparison_id':c['comparison_id'],'study_id':c['study_id'],'outcome':c['outcome'],
+              'treatment':c['intervention'],'comparator':c['comparator'], 'values':c['numeric_values'],
+              'significance_reported':c['significance'],'source':c['raw_evidence'],
+              'record_state':c['record_state'],'independent_replicates':c['independent_replicates'],
+              'uncertainties':c['conflicts'], 'interpretation':'single_comparison_observation_not_a_causal_or_common_finding'}
+        if c['direction_records']:
+            item['observed_direction']=c['direction_records'][0]['direction']
+            a,b=c['numeric_values']['intervention'],c['numeric_values']['comparator']
+            if b: item['within_comparison_change_percent']=round(100*(a/b-1),2)
+        else:item['observed_direction']='not_calculated_due_to_missing_or_unresolved_units'
+        observations.append(item)
+    pools=[{'comparison_id':c['comparison_id'],'study_id':c['study_id'],'outcome':c['outcome'],
+            'treatment':c['intervention'],'comparator':c['comparator'],'values':c['numeric_values'],
+            'significance_reported':c['significance'],'source':c['raw_evidence'],'uncertainties':c['conflicts'],
+            'record_state':c['record_state'],'independent_replicates':c['independent_replicates'],
+            'interpretation':'measured_pool_concentration_not_transformation_rate'}
+           for c in comparisons if c['eligibility']=='water_pool_context_not_transformation_rate']
+    mechanism={'status':'not_established_by_supplied_direct_evidence',
+        'source_comparison_ids':direct,
+        'uncertainty':'本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。'}
     return {'topic':normalized['topic_profile']['topic'], 'primary_question':normalized['topic_profile']['primary_question'],
-            'primary_evidence_ids':direct, 'primary_conclusion':'insufficient_evidence_no_common_finding' if not direct else 'source_review_required_no_automatic_common_finding',
+            'primary_evidence_ids':direct, 'direct_observations':observations, 'pool_observations':pools, 'mechanism_assessment':mechanism, 'primary_conclusion':'insufficient_evidence_no_common_finding' if not direct else 'source_review_required_no_automatic_common_finding',
             'indirect_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='indirect_context'],
+            'water_pool_context_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='water_pool_context_not_transformation_rate'],
             'pairwise_comparability':result_pairs, 'dependent_comparisons':dependencies,
             'findings':[], 'independent_experiment_count':'unknown', 'meta_analysis':'not_implemented',
             'limitations':['不同DOI不证明实验独立；同一DOI也可包含多个实验。','来源状态为候选；模型定位和PDF实际核验分开。',

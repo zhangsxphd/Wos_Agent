@@ -1,0 +1,1773 @@
+{
+  "version": "1.0",
+  "input_files": {
+    "papers": {
+      "sha256": "b76ef3e3a1d06f8c8eefe27e147e8da849da5ce1dfdc9ca0ac3943e35c3fe05c"
+    },
+    "fields": {
+      "sha256": "08922acba5817f64e86ce417fb3d482e60909caaa15429ead20c88a4d759f4ce"
+    },
+    "results": {
+      "sha256": "bab0510b95a4cc51f2ec61d6d056b827b0cef38f90080eee0b9b9fe131251479"
+    },
+    "issues": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "historic_claims": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "supplement_files": {
+      "sha256": "3dfacd58acc0584766e4fac7fd92168592c08e5d618b9f71dde120ebc5ae820b"
+    }
+  },
+  "papers": [
+    {
+      "study_id": "10.3390/su18052185",
+      "doi": "10.3390/su18052185",
+      "title": "Sustainable Reuse of Aquaculture Wastewater in Saline-Alkali Paddy Fields: Interactive Effects of Irrigation and Microalgae on Water Nutrient Removal and Rice Yield",
+      "study_type": "pot_experiment",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "两因素随机完全区组盆栽试验；灌溉方式×是否添加小球藻。",
+          "conditions_candidate": null,
+          "research_object_candidate": "模拟养殖废水灌溉盐碱稻田土壤的水稻盆栽",
+          "experimental_unit": {
+            "value": "pot",
+            "source_field": "独立试验重复",
+            "status": "candidate"
+          },
+          "independent_replicates": {
+            "value": 3,
+            "original": "作者报告每处理3个独立盆；非3个独立田块。",
+            "status": "candidate"
+          },
+          "sampling_replicates": {
+            "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+            "status": "candidate"
+          }
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Sustainable Reuse of Aquaculture Wastewater in Saline-Alkali Paddy Fields: Interactive Effects of Irrigation and Microalgae on Water Nutrient Removal and Rice Yield 模拟养殖废水灌溉盐碱稻田土壤的水稻盆栽 两因素随机完全区组盆栽试验；灌溉方式×是否添加小球藻。"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "doi": "10.3390/su10020475",
+      "title": "Effects of Irrigation Regime and Nitrogen Fertilizer Management on CH4, N2O and CO2 Emissions from Saline–Alkaline Paddy Fields in Northeast China",
+      "study_type": "field_experiment",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "source_state": "historical_candidate_not_human_gold",
+      "experiments": [
+        {
+          "experiment_id": null,
+          "status": "identity_unresolved",
+          "treatments": [],
+          "design_candidate": "2012 field experiment in saline-alkaline rice paddies; 1-year and 57-year reclamation; two irrigation treatments per field.",
+          "conditions_candidate": null,
+          "research_object_candidate": "Saline-alkaline paddy fields in northeastern China.",
+          "experimental_unit": {
+            "value": null,
+            "source_field": "independent_replicates",
+            "status": "unknown"
+          },
+          "independent_replicates": {
+            "value": null,
+            "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+            "status": "unknown"
+          },
+          "sampling_replicates": {
+            "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+            "status": "candidate"
+          }
+        },
+        {
+          "experiment_id": "2012_experiment_I",
+          "status": "comparison_declared_context_unverified",
+          "treatments": []
+        }
+      ],
+      "independence_status": "unknown",
+      "historical_context": "Effects of Irrigation Regime and Nitrogen Fertilizer Management on CH4, N2O and CO2 Emissions from Saline–Alkaline Paddy Fields in Northeast China Saline-alkaline paddy fields in northeastern China. 2012 field experiment in saline-alkaline rice paddies; 1-year and 57-year reclamation; two irrigation treatments per field."
+    }
+  ],
+  "comparisons": [
+    {
+      "comparison_id": "10.3390/su18052185#result0:0",
+      "study_id": "10.3390/su18052185",
+      "experiment_id": null,
+      "dataset_identity": "unknown",
+      "outcome": "grain_yield",
+      "outcome_family": "rice_yield",
+      "factor": "water_regime",
+      "intervention": "ISCW",
+      "comparator": "IFCW",
+      "treatment_details": {
+        "label": "ISCW",
+        "levels": [
+          {
+            "code": "IS",
+            "description": "浅湿灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 7.18,
+        "unit": "g/hill",
+        "error": 1.73,
+        "error_type": "SD",
+        "significance_letters": "c"
+      },
+      "comparator_details": {
+        "label": "IFCW",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "淹灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 18.27,
+        "unit": "g/hill",
+        "error": 1.59,
+        "error_type": "SD",
+        "significance_letters": "a"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 7.18,
+        "comparator": 18.27,
+        "unit": "g/hill",
+        "comparator_unit": "g/hill",
+        "intervention_error": 1.73,
+        "intervention_error_type": "SD",
+        "comparator_error": 1.59,
+        "comparator_error_type": "SD",
+        "reported_effect": null
+      },
+      "significance": "Table 3: c vs a, p<0.05",
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "独立试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved",
+      "observation_time": "see evidence",
+      "raw_evidence": [
+        {
+          "model_reported": {
+            "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+            "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "physical_page": 14,
+            "anchor": "18.27 ± 1.59",
+            "excerpt": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+          },
+          "program_parsed": null,
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 0,
+            "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "anchor": {
+              "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+              "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+              "physical_page": 14,
+              "anchor": "18.27 ± 1.59",
+              "excerpt": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+            },
+            "observation_time": "see evidence",
+            "reporting_origin": "table_reported",
+            "candidate_limitations": "not exhaustive; individual figure/table verification pending unless stated"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "lower",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "候选表注对比较范围措辞需核对",
+        "not exhaustive; individual figure/table verification pending unless stated"
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "regression_context_outside_primary_outcome",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su18052185#result1:0",
+      "study_id": "10.3390/su18052185",
+      "experiment_id": null,
+      "dataset_identity": "unknown",
+      "outcome": "grain_yield_relative_difference",
+      "outcome_family": "rice_yield",
+      "factor": "water_regime",
+      "intervention": "ISCW",
+      "comparator": "IFCW",
+      "treatment_details": {
+        "label": "ISCW",
+        "levels": [
+          {
+            "code": "IS",
+            "description": "浅湿灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator_details": {
+        "label": "IFCW",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "淹灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": null,
+        "unit": null
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": null,
+        "comparator": null,
+        "unit": null,
+        "comparator_unit": null,
+        "intervention_error": null,
+        "intervention_error_type": null,
+        "comparator_error": null,
+        "comparator_error_type": null,
+        "reported_effect": {
+          "value": -60.7,
+          "unit": "%"
+        }
+      },
+      "significance": "Table 3 supports difference; abstract 60.7%",
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "独立试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved",
+      "observation_time": "see evidence",
+      "raw_evidence": [
+        {
+          "model_reported": {
+            "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+            "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "physical_page": 1,
+            "anchor": "60.7%",
+            "excerpt": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+          },
+          "program_parsed": null,
+          "pdf_verified": null,
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1,
+            "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "anchor": {
+              "raw_file": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+              "raw_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+              "physical_page": 1,
+              "anchor": "60.7%",
+              "excerpt": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+            },
+            "observation_time": "see evidence",
+            "reporting_origin": "author_reported",
+            "candidate_limitations": "not exhaustive; individual figure/table verification pending unless stated"
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [],
+      "conflicts": [
+        "该相对效应与同论文组均值可能为同一结果，不可当成独立研究",
+        "not exhaustive; individual figure/table verification pending unless stated"
+      ],
+      "comparison_context": {},
+      "metric_type": "reported_relative_effect",
+      "eligibility": "regression_context_outside_primary_outcome",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result102:0",
+      "study_id": "10.3390/su10020475",
+      "experiment_id": "2012_experiment_I",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_ch4",
+      "outcome_family": "ch4",
+      "factor": "water_regime",
+      "intervention": "IF",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "IF",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "intermittent irrigation, drainage and rewetting"
+          }
+        ],
+        "value": 3.01,
+        "unit": "g/m²",
+        "error": 0.11,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding irrigation"
+          }
+        ],
+        "value": 3.51,
+        "unit": "g/m²",
+        "error": 0.05,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 3.01,
+        "comparator": 3.51,
+        "unit": "g/m²",
+        "comparator_unit": "g/m²",
+        "intervention_error": 0.11,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.05,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 2 ANOVA irrigation main effect **; interaction **; not a separate within-field pairwise test",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": null,
+        "source_field": "independent_replicates",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "CH4 Total",
+              "column": "1-year CF/IF",
+              "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_ch4 Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result102:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 102,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "CH4 Total",
+                "column": "1-year CF/IF",
+                "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "lower",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result103:0",
+      "study_id": "10.3390/su10020475",
+      "experiment_id": "2012_experiment_I",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_ch4",
+      "outcome_family": "ch4",
+      "factor": "water_regime",
+      "intervention": "IF",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "IF",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "intermittent irrigation, drainage and rewetting"
+          }
+        ],
+        "value": 25.18,
+        "unit": "g/m²",
+        "error": 2.46,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding irrigation"
+          }
+        ],
+        "value": 32.34,
+        "unit": "g/m²",
+        "error": 0.59,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 25.18,
+        "comparator": 32.34,
+        "unit": "g/m²",
+        "comparator_unit": "g/m²",
+        "intervention_error": 2.46,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.59,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 2 ANOVA irrigation main effect **; interaction **; not a separate within-field pairwise test",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": null,
+        "source_field": "independent_replicates",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "CH4 Total",
+              "column": "57-year CF/IF",
+              "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_ch4 Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result103:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 103,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "CH4 Total",
+                "column": "57-year CF/IF",
+                "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "lower",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result104:0",
+      "study_id": "10.3390/su10020475",
+      "experiment_id": "2012_experiment_I",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o",
+      "outcome_family": "n2o",
+      "factor": "water_regime",
+      "intervention": "IF",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "IF",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "intermittent irrigation, drainage and rewetting"
+          }
+        ],
+        "value": 0.29,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "error": 0.06,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding irrigation"
+          }
+        ],
+        "value": 0.23,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "error": 0.02,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 0.29,
+        "comparator": 0.23,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "comparator_unit": "unresolved: table g/m²; results text mg/m²",
+        "intervention_error": 0.06,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.02,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 2 ANOVA irrigation main effect NS; interaction NS; not a separate within-field pairwise test",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": null,
+        "source_field": "independent_replicates",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "N2O Total",
+              "column": "1-year CF/IF",
+              "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_n2o Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result104:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 104,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "N2O Total",
+                "column": "1-year CF/IF",
+                "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result105:0",
+      "study_id": "10.3390/su10020475",
+      "experiment_id": "2012_experiment_I",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_n2o",
+      "outcome_family": "n2o",
+      "factor": "water_regime",
+      "intervention": "IF",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "IF",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "intermittent irrigation, drainage and rewetting"
+          }
+        ],
+        "value": 0.24,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "error": 0.01,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding irrigation"
+          }
+        ],
+        "value": 0.2,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "error": 0.01,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 0.24,
+        "comparator": 0.2,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "comparator_unit": "unresolved: table g/m²; results text mg/m²",
+        "intervention_error": 0.01,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.01,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 2 ANOVA irrigation main effect NS; interaction NS; not a separate within-field pairwise test",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": null,
+        "source_field": "independent_replicates",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "N2O Total",
+              "column": "57-year CF/IF",
+              "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_n2o Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result105:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 105,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "N2O Total",
+                "column": "57-year CF/IF",
+                "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "primary_candidate_requires_source_review",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result106:0",
+      "study_id": "10.3390/su10020475",
+      "experiment_id": "2012_experiment_I",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_co2",
+      "outcome_family": "co2",
+      "factor": "water_regime",
+      "intervention": "IF",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "IF",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "intermittent irrigation, drainage and rewetting"
+          }
+        ],
+        "value": 2224.09,
+        "unit": "g/m²",
+        "error": 215.9,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding irrigation"
+          }
+        ],
+        "value": 1746.77,
+        "unit": "g/m²",
+        "error": 111.23,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 2224.09,
+        "comparator": 1746.77,
+        "unit": "g/m²",
+        "comparator_unit": "g/m²",
+        "intervention_error": 215.9,
+        "intervention_error_type": "SE",
+        "comparator_error": 111.23,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 2 ANOVA irrigation main effect **; interaction NS; not a separate within-field pairwise test",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": null,
+        "source_field": "independent_replicates",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "CO2 Total",
+              "column": "1-year CF/IF",
+              "quote": "Total 1746.77±111.23 2224.09±215.90 2120.15±285.09 2649.55±112.36 ** ** NS",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_co2 Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result106:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 106,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "CO2 Total",
+                "column": "1-year CF/IF",
+                "quote": "Total 1746.77±111.23 2224.09±215.90 2120.15±285.09 2649.55±112.36 ** ** NS",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "indirect_context",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result107:0",
+      "study_id": "10.3390/su10020475",
+      "experiment_id": "2012_experiment_I",
+      "dataset_identity": "candidate",
+      "outcome": "seasonal_co2",
+      "outcome_family": "co2",
+      "factor": "water_regime",
+      "intervention": "IF",
+      "comparator": "CF",
+      "treatment_details": {
+        "label": "IF",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "intermittent irrigation, drainage and rewetting"
+          }
+        ],
+        "value": 2649.55,
+        "unit": "g/m²",
+        "error": 112.36,
+        "error_type": "SE"
+      },
+      "comparator_details": {
+        "label": "CF",
+        "levels": [
+          {
+            "code": "CF",
+            "description": "continuous flooding irrigation"
+          }
+        ],
+        "value": 2120.15,
+        "unit": "g/m²",
+        "error": 285.09,
+        "error_type": "SE"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 2649.55,
+        "comparator": 2120.15,
+        "unit": "g/m²",
+        "comparator_unit": "g/m²",
+        "intervention_error": 112.36,
+        "intervention_error_type": "SE",
+        "comparator_error": 285.09,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance": "Table 2 ANOVA irrigation main effect **; interaction NS; not a separate within-field pairwise test",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "experimental_unit": {
+        "value": null,
+        "source_field": "independent_replicates",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "sampling_replicates": {
+        "original": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+        "status": "candidate",
+        "association_status": "explicit_experiment"
+      },
+      "context_attribution": "explicit_experiment",
+      "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "CO2 Total",
+              "column": "57-year CF/IF",
+              "quote": "Total 1746.77±111.23 2224.09±215.90 2120.15±285.09 2649.55±112.36 ** ** NS",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_co2 Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result107:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 107,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "CO2 Total",
+                "column": "57-year CF/IF",
+                "quote": "Total 1746.77±111.23 2224.09±215.90 2120.15±285.09 2649.55±112.36 ** ** NS",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "higher",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "indirect_context",
+      "source_url": "https://doi.org/10.3390/su10020475",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su18052185#result1002:0",
+      "study_id": "10.3390/su18052185",
+      "experiment_id": null,
+      "dataset_identity": "unknown",
+      "outcome": "soil_total_nitrogen",
+      "outcome_family": "soil_nitrogen_pool",
+      "factor": "water_regime",
+      "intervention": "ISCW",
+      "comparator": "IFCW",
+      "treatment_details": {
+        "label": "ISCW",
+        "levels": [
+          {
+            "code": "IS",
+            "description": "浅湿灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 129.2,
+        "unit": "mg/kg",
+        "error": 8.01,
+        "error_type": "SD"
+      },
+      "comparator_details": {
+        "label": "IFCW",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "淹灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 139.07,
+        "unit": "mg/kg",
+        "error": 4.41,
+        "error_type": "SD"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 129.2,
+        "comparator": 139.07,
+        "unit": "mg/kg",
+        "comparator_unit": "mg/kg",
+        "intervention_error": 8.01,
+        "intervention_error_type": "SD",
+        "comparator_error": 4.41,
+        "comparator_error_type": "SD",
+        "reported_effect": null
+      },
+      "significance": "Table 2 letters a vs a; interpretation pending independent review",
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "独立试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved",
+      "observation_time": "10 cm layer, end of experiment",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 14,
+              "table_figure": "Table 2",
+              "row": "ISCW and IFCW, 10 cm",
+              "column": "soil_total_nitrogen",
+              "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+              "footnote": "standard deviation"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              14
+            ],
+            "scope": "核对同加藻条件ISCW与IFCW、10 cm soil_total_nitrogen表格两行、单位、误差及字母；浓度不等于转化速率。",
+            "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "comparison_id": "10.3390/su18052185#result1002:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1002,
+            "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "anchor": [
+              {
+                "page": 14,
+                "table_figure": "Table 2",
+                "row": "ISCW and IFCW, 10 cm",
+                "column": "soil_total_nitrogen",
+                "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+                "footnote": "standard deviation"
+              }
+            ],
+            "observation_time": "10 cm layer, end of experiment",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Concentration at one depth, not a carbon or nitrogen transformation rate."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "lower",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Concentration at one depth, not a carbon or nitrogen transformation rate."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "water_pool_context_not_transformation_rate",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "source_issues": []
+    },
+    {
+      "comparison_id": "10.3390/su18052185#result1004:0",
+      "study_id": "10.3390/su18052185",
+      "experiment_id": null,
+      "dataset_identity": "unknown",
+      "outcome": "soil_organic_carbon",
+      "outcome_family": "soil_carbon_pool",
+      "factor": "water_regime",
+      "intervention": "ISCW",
+      "comparator": "IFCW",
+      "treatment_details": {
+        "label": "ISCW",
+        "levels": [
+          {
+            "code": "IS",
+            "description": "浅湿灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 6.33,
+        "unit": "g/kg",
+        "error": 0.37,
+        "error_type": "SD"
+      },
+      "comparator_details": {
+        "label": "IFCW",
+        "levels": [
+          {
+            "code": "IF",
+            "description": "淹灌"
+          },
+          {
+            "code": "CW",
+            "description": "加藻"
+          }
+        ],
+        "value": 7.59,
+        "unit": "g/kg",
+        "error": 0.3,
+        "error_type": "SD"
+      },
+      "comparator_role": "reported_comparator_role_unconfirmed",
+      "numeric_values": {
+        "intervention": 6.33,
+        "comparator": 7.59,
+        "unit": "g/kg",
+        "comparator_unit": "g/kg",
+        "intervention_error": 0.37,
+        "intervention_error_type": "SD",
+        "comparator_error": 0.3,
+        "comparator_error_type": "SD",
+        "reported_effect": null
+      },
+      "significance": "Table 2 letters b vs a; interpretation pending independent review",
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "experimental_unit": {
+        "value": "pot",
+        "source_field": "独立试验重复",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "sampling_replicates": {
+        "original": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "context_attribution": "paper_level_candidate_experiment_scope_unresolved",
+      "observation_time": "10 cm layer, end of experiment",
+      "raw_evidence": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 14,
+              "table_figure": "Table 2",
+              "row": "ISCW and IFCW, 10 cm",
+              "column": "soil_organic_carbon",
+              "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+              "footnote": "standard deviation"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              14
+            ],
+            "scope": "核对同加藻条件ISCW与IFCW、10 cm soil_organic_carbon表格两行、单位、误差及字母；浓度不等于转化速率。",
+            "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "comparison_id": "10.3390/su18052185#result1004:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1004,
+            "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "anchor": [
+              {
+                "page": 14,
+                "table_figure": "Table 2",
+                "row": "ISCW and IFCW, 10 cm",
+                "column": "soil_organic_carbon",
+                "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+                "footnote": "standard deviation"
+              }
+            ],
+            "observation_time": "10 cm layer, end of experiment",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Concentration at one depth, not a carbon or nitrogen transformation rate."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "direction_records": [
+        {
+          "direction": "lower",
+          "interpretation": "within_record_arithmetic_only"
+        }
+      ],
+      "conflicts": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Concentration at one depth, not a carbon or nitrogen transformation rate."
+      ],
+      "comparison_context": {},
+      "metric_type": "group_values",
+      "eligibility": "water_pool_context_not_transformation_rate",
+      "source_url": "https://doi.org/10.3390/su18052185",
+      "source_issues": []
+    }
+  ],
+  "topic_profile": {
+    "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响",
+    "primary_question": "盐碱稻田明确水分制度处理相对对照如何影响CH4、N2O或土壤碳氮转化？",
+    "primary_eligibility": [
+      "原始田间或盆栽实验，土壤确认为盐碱稻田或其土壤",
+      "明确水分制度处理和对照",
+      "有可定位的CH4、N2O或碳氮转化结果"
+    ],
+    "secondary_eligibility": [
+      "水分制度对盐碱土SOC或TN浓度的测量仅为状态指标，不是转化速率",
+      "盐度条件未确认的灌溉机制研究仅为外部背景"
+    ],
+    "dois": [
+      "10.3390/su10020475",
+      "10.3390/su18052185"
+    ]
+  },
+  "selection": {
+    "source": "research_projects/saline_paddy_irrigation/v09_topic_synthesis_20261101/topic_scope.json",
+    "requested_dois": [
+      "10.3390/su10020475",
+      "10.3390/su18052185"
+    ],
+    "missing_dois": []
+  },
+  "adapter": "converted_historical_candidates_v1",
+  "unmatched_fields": [
+    {
+      "line": 1,
+      "doi": "10.3390/su18052185",
+      "field": "研究对象及条件",
+      "value": "模拟养殖废水灌溉盐碱稻田土壤的水稻盆栽",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 2,
+      "doi": "10.3390/su18052185",
+      "field": "试验设计",
+      "value": "两因素随机完全区组盆栽试验；灌溉方式×是否添加小球藻。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 3,
+      "doi": "10.3390/su18052185",
+      "field": "处理",
+      "value": "ISCN、ISCW、IFCN、IFCW；IS为浅湿灌、IF为淹灌，CN无藻、CW加藻。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 4,
+      "doi": "10.3390/su18052185",
+      "field": "对照及比较基准",
+      "value": "同一灌溉方式下CN为不加藻比较；同一藻水平下比较灌溉方式。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 5,
+      "doi": "10.3390/su18052185",
+      "field": "独立试验重复",
+      "value": "作者报告每处理3个独立盆；非3个独立田块。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 4,
+          "anchor": "four treatments",
+          "text": "ion (IS) and flooded irrigation (IF). Chlorella application in￾cluded no Chlorella (CN) and with Chlorella (CW). This resulted in four treatments (ISCN, ISCW, IFCN, and IFCW). Each treatment was replicated in three independent pots to ensure biological replication. The full rice calendar is provided in Supplementary Table S1. For irrigation manage￾ment and subsequent analyses, "
+        }
+      ]
+    },
+    {
+      "line": 6,
+      "doi": "10.3390/su18052185",
+      "field": "采样或技术重复",
+      "value": "水样按时间及土层采集；各次时间点不是独立盆，具体技术重复未明确",
+      "source_status": "uncertain",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 5,
+          "anchor": "Surface water samples were collected",
+          "text": "termine the initial concentra￾tions of TN, ammonium nitrogen (NH4 +–N), nitrate nitrogen (NO3 −–N), and TP, as well as pH and EC. Surface water samples were collected from the center of each pot at 12, 36, and 60 h using a syringe. The samples were immediately filtered through a 0.45 µm membrane, stored in a refrigerator at 4 ◦C, and analyzed as soon as possible. All spectropho"
+        }
+      ]
+    },
+    {
+      "line": 7,
+      "doi": "10.3390/su18052185",
+      "field": "测量指标及方法",
+      "value": "测地表水TN、NH4-N、NO3-N、TP、pH、EC、ORP、土壤养分和水稻产量；TOPSIS综合评价",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留测量指标或方法原文；不是带处理与对照的数值比较。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 5,
+          "anchor": "Surface water samples were collected",
+          "text": "termine the initial concentra￾tions of TN, ammonium nitrogen (NH4 +–N), nitrate nitrogen (NO3 −–N), and TP, as well as pH and EC. Surface water samples were collected from the center of each pot at 12, 36, and 60 h using a syringe. The samples were immediately filtered through a 0.45 µm membrane, stored in a refrigerator at 4 ◦C, and analyzed as soon as possible. All spectropho"
+        }
+      ]
+    },
+    {
+      "line": 8,
+      "doi": "10.3390/su18052185",
+      "field": "主要结果",
+      "value": "ISCW 7.18 ± 1.73 c，对 IFCW 18.27 ± 1.59 a，单位 g/穴；均值±SD，n=3，表注不同字母p<0.05。；作者摘要称 ISCW 相对 IFCW 籽粒产量降低60.7%；表格展示均值复算约60.70%，与报告一致。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "partial_numeric",
+      "destination": "candidate_measurement_and_uncertainty",
+      "reason": "有分组均值、误差和字母；与数值候选匹配后可补充误差，不重复计为独立结果。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 9,
+      "doi": "10.3390/su18052185",
+      "field": "结果数值及单位",
+      "value": "ISCW 7.18 ± 1.73 c，对 IFCW 18.27 ± 1.59 a，单位 g/穴；均值±SD，n=3，表注不同字母p<0.05。；作者摘要称 ISCW 相对 IFCW 籽粒产量降低60.7%；表格展示均值复算约60.70%，与报告一致。",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "partial_numeric",
+      "destination": "candidate_measurement_and_uncertainty",
+      "reason": "有分组均值、误差和字母；与数值候选匹配后可补充误差，不重复计为独立结果。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 10,
+      "doi": "10.3390/su18052185",
+      "field": "结果比较对象",
+      "value": "ISCW对IFCW；IFCW对IFCN及ISCN",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 11,
+      "doi": "10.3390/su18052185",
+      "field": "显著性",
+      "value": "Table 3不同字母表示p<0.05，ISCW c与IFCW a不同",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 14,
+          "anchor": "18.27 ± 1.59",
+          "text": "Hill−1 ) Panicle Length (cm) Seed-Setting Rate (%) Total Grain Dry Weight (g hill−1 ) IFCN 7.33 ± 0.58 ab 20.82 ± 2.9 a 55.71 ± 12.06 a 13.09 ± 2.27 b IFCW 9.00 ± 1.00 a 22.89 ± 0.79 a 62.60 ± 2.96 a 18.27 ± 1.59 a ISCN 7.00 ± 1.00 ab 21.61 ± 2.33 a 51.10 ± 9.92 a 9.74 ± 1.87 b ISCW 6.00 ± 2.65 b 22.55 ± 2.14 a 66.67 ± 5.95 a 7.18 ± 1.73 c Note: Values are means ± standard deviation (n = 3). Different lowercase letters within the same depth indic"
+        },
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "60.7%",
+          "text": " its water purification effect was moderate. The entropy-weighted TOPSIS evaluation further indi￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utiliza"
+        }
+      ]
+    },
+    {
+      "line": 12,
+      "doi": "10.3390/su18052185",
+      "field": "作者结论",
+      "value": "ISCW地表水净化较好但产量低，IFCW产量较高；权衡仅适用于该盆栽条件",
+      "source_status": "candidate_pending_review",
+      "record_class": "candidate_pending_review",
+      "conversion": "qualitative_only",
+      "destination": "reported_claim_or_significance",
+      "reason": "保留作者或模型陈述；缺少完整配对数值、独立比较范围或不能自动当作作者事实。",
+      "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "evidence": [
+        {
+          "path": "data/fulltext/raw/c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b.pdf",
+          "sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+          "page": 1,
+          "anchor": "These findings",
+          "text": "￾cated a clear trade-off. ISCW improved phosphorus removal in surface water, but reduced grain yield by 60.7% compared with IFCW. These findings demonstrate that irrigation mode is a key factor in regulating the purification effect of Chlorella and its trade-off with rice yield. These findings provide theoretical support for wastewater resource utilization in saline–alkali regi"
+        }
+      ]
+    },
+    {
+      "line": 13,
+      "doi": "10.3390/su10020475",
+      "field": "study_design",
+      "value": "2012 field experiment in saline-alkaline rice paddies; 1-year and 57-year reclamation; two irrigation treatments per field.",
+      "source_status": "candidate_targeted_pdf_not_gold",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留实验设计候选；随机化、区组和因素层次需要结合原始方法核查。",
+      "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "evidence": [
+        {
+          "page": 4,
+          "source": "targeted_pdf_visual_and_text",
+          "scientific_adjudication": "pending"
+        }
+      ]
+    },
+    {
+      "line": 14,
+      "doi": "10.3390/su10020475",
+      "field": "research_object",
+      "value": "Saline-alkaline paddy fields in northeastern China.",
+      "source_status": "candidate_targeted_pdf_not_gold",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留研究对象或环境条件候选；缺少的盐度、时间或具体条件不推断。",
+      "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "evidence": [
+        {
+          "page": 3,
+          "source": "targeted_pdf_visual_and_text",
+          "scientific_adjudication": "pending"
+        }
+      ]
+    },
+    {
+      "line": 15,
+      "doi": "10.3390/su10020475",
+      "field": "treatments_levels",
+      "value": "IF=intermittent irrigation, drainage and rewetting; CF=continuous flooding irrigation",
+      "source_status": "candidate_targeted_pdf_not_gold",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留处理或对照原文；可明确解析的代码和水平进入实验记录，其余自由文本待核。",
+      "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "evidence": [
+        {
+          "page": 4,
+          "source": "targeted_pdf_visual_and_text",
+          "scientific_adjudication": "pending"
+        }
+      ]
+    },
+    {
+      "line": 16,
+      "doi": "10.3390/su10020475",
+      "field": "independent_replicates",
+      "value": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+      "source_status": "candidate_targeted_pdf_not_gold",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "evidence": [
+        {
+          "page": 4,
+          "source": "targeted_pdf_visual_and_text",
+          "scientific_adjudication": "pending"
+        }
+      ]
+    },
+    {
+      "line": 17,
+      "doi": "10.3390/su10020475",
+      "field": "sampling_replicates",
+      "value": "Chamber measurements; treatment allocation and chamber replication hierarchy unresolved.",
+      "source_status": "candidate_targeted_pdf_not_gold",
+      "record_class": "candidate_pending_review",
+      "conversion": "metadata_candidate",
+      "destination": "study_or_design_metadata",
+      "reason": "保留原始重复层次；仅单位及数量同时明确时程序提取，取样或技术重复不充当独立实验单位。",
+      "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "evidence": [
+        {
+          "page": 4,
+          "source": "targeted_pdf_visual_and_text",
+          "scientific_adjudication": "pending"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,576 @@
+{
+  "topic": "盐碱稻田不同灌溉制度对土壤碳氮转化和温室气体排放的影响",
+  "primary_question": "盐碱稻田明确水分制度处理相对对照如何影响CH4、N2O或土壤碳氮转化？",
+  "primary_evidence_ids": [
+    "10.3390/su10020475#result102:0",
+    "10.3390/su10020475#result103:0",
+    "10.3390/su10020475#result104:0",
+    "10.3390/su10020475#result105:0"
+  ],
+  "direct_observations": [
+    {
+      "comparison_id": "10.3390/su10020475#result102:0",
+      "study_id": "10.3390/su10020475",
+      "outcome": "seasonal_ch4",
+      "treatment": "IF",
+      "comparator": "CF",
+      "values": {
+        "intervention": 3.01,
+        "comparator": 3.51,
+        "unit": "g/m²",
+        "comparator_unit": "g/m²",
+        "intervention_error": 0.11,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.05,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 2 ANOVA irrigation main effect **; interaction **; not a separate within-field pairwise test",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "CH4 Total",
+              "column": "1-year CF/IF",
+              "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_ch4 Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result102:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 102,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "CH4 Total",
+                "column": "1-year CF/IF",
+                "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "lower",
+      "within_comparison_change_percent": -14.25
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result103:0",
+      "study_id": "10.3390/su10020475",
+      "outcome": "seasonal_ch4",
+      "treatment": "IF",
+      "comparator": "CF",
+      "values": {
+        "intervention": 25.18,
+        "comparator": 32.34,
+        "unit": "g/m²",
+        "comparator_unit": "g/m²",
+        "intervention_error": 2.46,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.59,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 2 ANOVA irrigation main effect **; interaction **; not a separate within-field pairwise test",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "CH4 Total",
+              "column": "57-year CF/IF",
+              "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_ch4 Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result103:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 103,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "CH4 Total",
+                "column": "57-year CF/IF",
+                "quote": "Total 3.51±0.05 3.01±0.11 32.34±0.59 25.18±2.46 ** ** **",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. Mean flux is distinct from seasonal cumulative emission."
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "lower",
+      "within_comparison_change_percent": -22.14
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result104:0",
+      "study_id": "10.3390/su10020475",
+      "outcome": "seasonal_n2o",
+      "treatment": "IF",
+      "comparator": "CF",
+      "values": {
+        "intervention": 0.29,
+        "comparator": 0.23,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "comparator_unit": "unresolved: table g/m²; results text mg/m²",
+        "intervention_error": 0.06,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.02,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 2 ANOVA irrigation main effect NS; interaction NS; not a separate within-field pairwise test",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "N2O Total",
+              "column": "1-year CF/IF",
+              "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_n2o Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result104:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 104,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "N2O Total",
+                "column": "1-year CF/IF",
+                "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 1-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "not_calculated_due_to_missing_or_unresolved_units"
+    },
+    {
+      "comparison_id": "10.3390/su10020475#result105:0",
+      "study_id": "10.3390/su10020475",
+      "outcome": "seasonal_n2o",
+      "treatment": "IF",
+      "comparator": "CF",
+      "values": {
+        "intervention": 0.24,
+        "comparator": 0.2,
+        "unit": "unresolved: table g/m²; results text mg/m²",
+        "comparator_unit": "unresolved: table g/m²; results text mg/m²",
+        "intervention_error": 0.01,
+        "intervention_error_type": "SE",
+        "comparator_error": 0.01,
+        "comparator_error_type": "SE",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 2 ANOVA irrigation main effect NS; interaction NS; not a separate within-field pairwise test",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 6,
+              "table_figure": "Table 2",
+              "row": "N2O Total",
+              "column": "57-year CF/IF",
+              "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+              "footnote": "Mean Value ± Standard Error"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              6
+            ],
+            "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_n2o Total列和表注；n=3不等于已证实独立灌溉重复。",
+            "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "comparison_id": "10.3390/su10020475#result105:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 105,
+            "source_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+            "anchor": [
+              {
+                "page": 6,
+                "table_figure": "Table 2",
+                "row": "N2O Total",
+                "column": "57-year CF/IF",
+                "quote": "Total 0.23±0.02 0.29±0.06 0.20±0.01 0.24±0.01 NS NS NS",
+                "footnote": "Mean Value ± Standard Error"
+              }
+            ],
+            "observation_time": "2012 rice-growing season; 57-year reclaimed field",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+          }
+        }
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": null,
+        "original": "Each paddy divided into two 20 m × 20 m irrigation areas. Table reports n=3; independent irrigation plot replication not established.",
+        "status": "unknown",
+        "association_status": "explicit_experiment"
+      },
+      "uncertainties": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Irrigation applied to two areas per field; independent water-management replication unknown. N2O text mg/m² versus Table 2 g/m² remains unresolved."
+      ],
+      "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
+      "observed_direction": "not_calculated_due_to_missing_or_unresolved_units"
+    }
+  ],
+  "pool_observations": [
+    {
+      "comparison_id": "10.3390/su18052185#result1002:0",
+      "study_id": "10.3390/su18052185",
+      "outcome": "soil_total_nitrogen",
+      "treatment": "ISCW",
+      "comparator": "IFCW",
+      "values": {
+        "intervention": 129.2,
+        "comparator": 139.07,
+        "unit": "mg/kg",
+        "comparator_unit": "mg/kg",
+        "intervention_error": 8.01,
+        "intervention_error_type": "SD",
+        "comparator_error": 4.41,
+        "comparator_error_type": "SD",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 2 letters a vs a; interpretation pending independent review",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 14,
+              "table_figure": "Table 2",
+              "row": "ISCW and IFCW, 10 cm",
+              "column": "soil_total_nitrogen",
+              "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+              "footnote": "standard deviation"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              14
+            ],
+            "scope": "核对同加藻条件ISCW与IFCW、10 cm soil_total_nitrogen表格两行、单位、误差及字母；浓度不等于转化速率。",
+            "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "comparison_id": "10.3390/su18052185#result1002:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1002,
+            "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "anchor": [
+              {
+                "page": 14,
+                "table_figure": "Table 2",
+                "row": "ISCW and IFCW, 10 cm",
+                "column": "soil_total_nitrogen",
+                "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+                "footnote": "standard deviation"
+              }
+            ],
+            "observation_time": "10 cm layer, end of experiment",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Concentration at one depth, not a carbon or nitrogen transformation rate."
+          }
+        }
+      ],
+      "uncertainties": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Concentration at one depth, not a carbon or nitrogen transformation rate."
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "interpretation": "measured_pool_concentration_not_transformation_rate"
+    },
+    {
+      "comparison_id": "10.3390/su18052185#result1004:0",
+      "study_id": "10.3390/su18052185",
+      "outcome": "soil_organic_carbon",
+      "treatment": "ISCW",
+      "comparator": "IFCW",
+      "values": {
+        "intervention": 6.33,
+        "comparator": 7.59,
+        "unit": "g/kg",
+        "comparator_unit": "g/kg",
+        "intervention_error": 0.37,
+        "intervention_error_type": "SD",
+        "comparator_error": 0.3,
+        "comparator_error_type": "SD",
+        "reported_effect": null
+      },
+      "significance_reported": "Table 2 letters b vs a; interpretation pending independent review",
+      "source": [
+        {
+          "model_reported": null,
+          "program_parsed": [
+            {
+              "page": 14,
+              "table_figure": "Table 2",
+              "row": "ISCW and IFCW, 10 cm",
+              "column": "soil_organic_carbon",
+              "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+              "footnote": "standard deviation"
+            }
+          ],
+          "pdf_verified": {
+            "status": "assistant_pdf_visual_review_not_human_gold",
+            "pages": [
+              4,
+              14
+            ],
+            "scope": "核对同加藻条件ISCW与IFCW、10 cm soil_organic_carbon表格两行、单位、误差及字母；浓度不等于转化速率。",
+            "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "comparison_id": "10.3390/su18052185#result1004:0"
+          },
+          "original": {
+            "source_file": "results.jsonl",
+            "record_index": 1004,
+            "source_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+            "anchor": [
+              {
+                "page": 14,
+                "table_figure": "Table 2",
+                "row": "ISCW and IFCW, 10 cm",
+                "column": "soil_organic_carbon",
+                "quote": "              I C    9.58±0.03ab 119.78±2.02a 129.20±8.01a 2.30±0.15ab 6.33±0.37b                 S W                                                                 /               I C    9.68±0.03a 123.77±6.81a 139.07±4.41a 2.50±0.13a 7.59±0.30a                   F W                                                                ",
+                "footnote": "standard deviation"
+              }
+            ],
+            "observation_time": "10 cm layer, end of experiment",
+            "reporting_origin": "program_pdf_table_extraction",
+            "candidate_limitations": "Concentration at one depth, not a carbon or nitrogen transformation rate."
+          }
+        }
+      ],
+      "uncertainties": [
+        "原候选引句未完整覆盖两个表格行，需定向核原PDF",
+        "Concentration at one depth, not a carbon or nitrogen transformation rate."
+      ],
+      "record_state": "candidate_not_human_gold",
+      "independent_replicates": {
+        "value": 3,
+        "original": "作者报告每处理3个独立盆；非3个独立田块。",
+        "status": "candidate",
+        "association_status": "paper_level_candidate_experiment_scope_unresolved"
+      },
+      "interpretation": "measured_pool_concentration_not_transformation_rate"
+    }
+  ],
+  "mechanism_assessment": {
+    "status": "not_established_by_supplied_direct_evidence",
+    "source_comparison_ids": [
+      "10.3390/su10020475#result102:0",
+      "10.3390/su10020475#result103:0",
+      "10.3390/su10020475#result104:0",
+      "10.3390/su10020475#result105:0"
+    ],
+    "uncertainty": "本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。"
+  },
+  "primary_conclusion": "source_review_required_no_automatic_common_finding",
+  "indirect_evidence_ids": [
+    "10.3390/su10020475#result106:0",
+    "10.3390/su10020475#result107:0"
+  ],
+  "water_pool_context_ids": [
+    "10.3390/su18052185#result1002:0",
+    "10.3390/su18052185#result1004:0"
+  ],
+  "pairwise_comparability": [],
+  "dependent_comparisons": [
+    {
+      "study_id": "10.3390/su18052185",
+      "outcome": "rice_yield",
+      "group_label": "ISCW",
+      "comparison_ids": [
+        "10.3390/su18052185#result0:0",
+        "10.3390/su18052185#result1:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su18052185",
+      "outcome": "rice_yield",
+      "group_label": "IFCW",
+      "comparison_ids": [
+        "10.3390/su18052185#result0:0",
+        "10.3390/su18052185#result1:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "outcome": "ch4",
+      "group_label": "IF",
+      "comparison_ids": [
+        "10.3390/su10020475#result102:0",
+        "10.3390/su10020475#result103:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "outcome": "ch4",
+      "group_label": "CF",
+      "comparison_ids": [
+        "10.3390/su10020475#result102:0",
+        "10.3390/su10020475#result103:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "outcome": "n2o",
+      "group_label": "IF",
+      "comparison_ids": [
+        "10.3390/su10020475#result104:0",
+        "10.3390/su10020475#result105:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "outcome": "n2o",
+      "group_label": "CF",
+      "comparison_ids": [
+        "10.3390/su10020475#result104:0",
+        "10.3390/su10020475#result105:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "outcome": "co2",
+      "group_label": "IF",
+      "comparison_ids": [
+        "10.3390/su10020475#result106:0",
+        "10.3390/su10020475#result107:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    },
+    {
+      "study_id": "10.3390/su10020475",
+      "outcome": "co2",
+      "group_label": "CF",
+      "comparison_ids": [
+        "10.3390/su10020475#result106:0",
+        "10.3390/su10020475#result107:0"
+      ],
+      "status": "possible_shared_group_or_repeated_representation_do_not_count_as_independent"
+    }
+  ],
+  "findings": [],
+  "independent_experiment_count": "unknown",
+  "meta_analysis": "not_implemented",
+  "limitations": [
+    "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
+    "来源状态为候选；模型定位和PDF实际核验分开。",
+    "不因同向、显著或不显著生成共同结论或真正矛盾。"
+  ],
+  "input_conversion_sha256": "2419b74c194957618ee6c52520eb25c2055089cebe85c66d27ec592c07cf5a9d",
+  "source_audit_sha256": "48bda625493c25432d61c6699bc7690a52b17d33d03e4b9b5e9610de0ab51f1a"
+}

@@ -136,6 +136,8 @@ def experiment(doi, fs):
     levels = {}
     if 'IS为' in treatment:
         for code, desc in re.findall(r'(IS|IF|CN|CW)(?:为)?([^，。；、]+)', treatment): levels[code] = desc
+    elif re.search(r'\bIF\s*=',treatment) and re.search(r'\bCF\s*=',treatment):
+        for code,desc in re.findall(r'\b(IF|CF)\s*=\s*([^;；]+)',treatment):levels[code]=desc.strip()
     elif re.search(r'\bS1\b', treatment):
         pattern = re.compile(r'\b(S[123]|N[123])\s+(.+?)(?=;\s*(?:S[123]|N[123])\b|\.\s*(?:Straw|Total N)|$)')
         for m in pattern.finditer(treatment): levels[m.group(1)] = m.group(2).strip()
@@ -207,7 +209,13 @@ def parse_numeric_result(r, paper):
             for k,(label,(mean,error)) in enumerate(zip(labels,avals)):
                 a={'value':float(mean),'unit':unit,'error':float(error),'error_type':error_type}
                 b={'value':float(bvals[0][0]),'unit':unit,'error':float(bvals[0][1]),'error_type':error_type}
-                warnings=['多个因素同时变化，不可归因于单一因素']
+                left_levels,right_levels=group_levels(paper,label),group_levels(paper,comps[0])
+                warnings=[]
+                if left_levels and right_levels and len(left_levels)==len(right_levels):
+                    if sum(x['code']!=y['code'] for x,y in zip(left_levels,right_levels))>1:
+                        warnings.append('多个因素同时变化，不可归因于单一因素')
+                else:
+                    warnings.append('处理因素对应关系未完全结构化，需核原文')
                 if not pair_coverage(ev,[label,comps[0]]): warnings.append('原候选引句未完整覆盖两个表格行，需定向核原PDF')
                 add_comparison(records,paper,f'{doi}#result{idx}:{k}',outcome,label,comps[0],a,b,'group_values',source,r.get('significance'),warnings)
         else: failure.append('处理标签与均值数量无法一一对应')
@@ -245,6 +253,10 @@ def parse_numeric_result(r, paper):
         else: failure.append('无法解析作者报告效应或其处理标签')
     else: failure.append('缺少可识别的处理标签、成对数值或支持的数值格式')
     for row in records:
+        if r.get('experiment_id'):
+            row['experiment_id']=r['experiment_id']
+        if r.get('limitations'):
+            row['warnings'].append(str(r['limitations']))
         if not unit: row['warnings'].append('单位未报告')
         if not ev: row['warnings'].append('原文位置缺失')
     return records, failure

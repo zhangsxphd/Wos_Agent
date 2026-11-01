@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "doi": "10.3390/su10020475",
+      "comparison_id": "10.3390/su10020475#result102:0",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "pages": [
+        4,
+        6
+      ],
+      "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_ch4 Total列和表注；n=3不等于已证实独立灌溉重复。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su10020475",
+      "comparison_id": "10.3390/su10020475#result103:0",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "pages": [
+        4,
+        6
+      ],
+      "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_ch4 Total列和表注；n=3不等于已证实独立灌溉重复。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su10020475",
+      "comparison_id": "10.3390/su10020475#result104:0",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "pages": [
+        4,
+        6
+      ],
+      "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_n2o Total列和表注；n=3不等于已证实独立灌溉重复。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su10020475",
+      "comparison_id": "10.3390/su10020475#result105:0",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "pages": [
+        4,
+        6
+      ],
+      "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_n2o Total列和表注；n=3不等于已证实独立灌溉重复。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su10020475",
+      "comparison_id": "10.3390/su10020475#result106:0",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "pages": [
+        4,
+        6
+      ],
+      "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 1-year reclaimed field的seasonal_co2 Total列和表注；n=3不等于已证实独立灌溉重复。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su10020475",
+      "comparison_id": "10.3390/su10020475#result107:0",
+      "pdf_sha256": "530b3c95318071f1d59564aa397e29008d255fc441a23f5eef2a5a979728dfc1",
+      "pages": [
+        4,
+        6
+      ],
+      "scope": "核对2012年IF与CF分配及该2012 rice-growing season; 57-year reclaimed field的seasonal_co2 Total列和表注；n=3不等于已证实独立灌溉重复。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su18052185",
+      "comparison_id": "10.3390/su18052185#result1002:0",
+      "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "pages": [
+        4,
+        14
+      ],
+      "scope": "核对同加藻条件ISCW与IFCW、10 cm soil_total_nitrogen表格两行、单位、误差及字母；浓度不等于转化速率。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    },
+    {
+      "doi": "10.3390/su18052185",
+      "comparison_id": "10.3390/su18052185#result1004:0",
+      "pdf_sha256": "c2b4e4332fe2be6b2b54797761c90c27ff6ed428eecaf334e802c7bdb40bf04b",
+      "pages": [
+        4,
+        14
+      ],
+      "scope": "核对同加藻条件ISCW与IFCW、10 cm soil_organic_carbon表格两行、单位、误差及字母；浓度不等于转化速率。",
+      "status": "assistant_pdf_visual_review_not_human_gold"
+    }
+  ]
+}

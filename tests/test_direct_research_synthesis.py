@@ -80,13 +80,25 @@ class DirectSynthesisTests(unittest.TestCase):
     def test_pdf_check_requires_matching_hash_and_never_upgrades_candidate(self):
         p,c=example('10.1/a',7,10);p['pdf_sha256']='known'
         n=m.adapt_converted({'papers':[p],'comparisons':[c]},PROFILE)
-        checks={'checks':[{'doi':p['doi'],'pdf_sha256':'known','outcomes':['n2o'],
+        checks={'checks':[{'doi':p['doi'],'pdf_sha256':'known','comparison_id':c['comparison_id'],
                            'status':'assistant_pdf_visual_review_not_human_gold','pages':[3],'scope':'table only'}]}
         m.apply_source_checks(n,checks)
         self.assertEqual(n['comparisons'][0]['raw_evidence'][0]['pdf_verified']['pages'],[3])
         self.assertEqual(n['comparisons'][0]['record_state'],'candidate_not_human_gold')
         checks['checks'][0]['pdf_sha256']='different'
         with self.assertRaises(ValueError):m.apply_source_checks(n,checks)
+
+    def test_pdf_review_applies_only_to_exact_comparison(self):
+        p,a=example('10.1/a',7,10);_,b=example('10.1/a',6,10)
+        p['pdf_sha256']='known'
+        n=m.adapt_converted({'papers':[p],'comparisons':[a,b]},PROFILE)
+        audit={'checks':[{'doi':p['doi'],'pdf_sha256':'known','comparison_id':a['comparison_id'],
+                          'status':'assistant_pdf_visual_review_not_human_gold','pages':[3],'scope':'only this comparison'}]}
+        m.apply_source_checks(n,audit)
+        self.assertIsNotNone(n['comparisons'][0]['raw_evidence'][0]['pdf_verified'])
+        self.assertIsNone(n['comparisons'][1]['raw_evidence'][0]['pdf_verified'])
+        audit['checks'][0].pop('comparison_id');audit['checks'][0]['outcomes']=['n2o']
+        with self.assertRaises(ValueError): m.apply_source_checks(n,audit)
 
     def test_nitrogen_and_water_are_separate_scopes(self):
         p1,c1=example('10.1/a',7,10,'nitrogen');p2,c2=example('10.1/b',6,9,'water')
@@ -95,5 +107,18 @@ class DirectSynthesisTests(unittest.TestCase):
         self.assertEqual([c['eligibility'] for c in n['comparisons']],['indirect_context','primary_candidate_requires_source_review'])
         pair=m.synthesize_converted(n)['pairwise_comparability'][0]
         self.assertEqual(pair['B_conditional_quantitative'],'not_established')
+
+    def test_program_location_and_unresolved_units_are_not_promoted(self):
+        p,c=example('10.1/a',7,10,'water')
+        c['evidence']={'anchor':[{'page':6,'row':'Total'}], 'reporting_origin':'program_pdf_table_extraction'}
+        c['treatment']['unit']=c['comparator']['unit']='unresolved: table g/m²; text mg/m²'
+        n=m.adapt_converted({'papers':[p],'comparisons':[c]},PROFILE)
+        loc=n['comparisons'][0]['raw_evidence'][0]
+        self.assertIsNone(loc['model_reported'])
+        self.assertEqual(loc['program_parsed'][0]['page'],6)
+        obs=m.synthesize_converted(n)['direct_observations'][0]
+        self.assertEqual(obs['observed_direction'],'not_calculated_due_to_missing_or_unresolved_units')
+        self.assertNotIn('within_comparison_change_percent',obs)
+        self.assertEqual(obs['record_state'],'candidate_not_human_gold')
 
 if __name__=='__main__':unittest.main()

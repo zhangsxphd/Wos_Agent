@@ -37,8 +37,14 @@
         "A4": "CF",
         "A9": "AWD",
         "B6": "15U",
-        "B11": "15U"
-      }
+        "B11": "15U",
+        "C1": "Cumulative N2O",
+        "C3": "kg ha−1"
+      },
+      "error_type": "standard error",
+      "significance_method": "Duncan p<0.05, original table",
+      "table_label": "Table 1",
+      "source_review_status": "assistant_source_checked_not_human_gold"
     },
     {
       "doi": "10.1016/S1002-0160(15)60063-7",
@@ -51,8 +57,7 @@
       "source": "lagomarsino.pdf",
       "source_type": "pdf_regex",
       "pdf_page": 8,
-      "pattern": "\\(\\s*(\\d+\\.\\d+)\\s*vs\\.\\s*(\\d+\\.\\d+)",
-      "match_index": 0,
+      "pattern": "N\\s*O\\s*emissions\\s*2.*?in\\s*2012.*?AWD\\s*accounted.*?AWD\\s*relative\\s*to\\s*PF\\s*field\\s*\\(\\s*(\\d+\\.\\d+)\\s*vs\\.\\s*(\\d+\\.\\d+)\\s*kg\\s*N-N\\s*O\\s*ha[^)]*season",
       "a_label": "AWD",
       "b_label": "PF",
       "unit": "kg N-N2O/ha",
@@ -63,7 +68,31 @@
       "source_url": "https://linquist.ucdavis.edu/sites/g/files/dgvnsk6581/files/inline-files/Lagomarsino%20et%20al%202016.pdf",
       "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
       "pdf_url": "https://linquist.ucdavis.edu/sites/g/files/dgvnsk6581/files/inline-files/Lagomarsino%20et%20al%202016.pdf",
-      "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2"
+      "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "columns": "two_columns_left_then_right",
+      "context_assertions": {
+        "year": "2012",
+        "outcome": "N2O",
+        "treatment_order": [
+          "AWD",
+          "PF"
+        ],
+        "unit": "kg N-N2O/ha"
+      },
+      "context_patterns": {
+        "outcome": "N\\s*O\\s*emissions",
+        "year": "2012",
+        "unit": "kg\\s*N-N\\s*O\\s*ha[^)]*season",
+        "order": "AWD\\s*relative\\s*to\\s*PF\\s*field"
+      },
+      "source_conflict": "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
+      "source_review_status": "assistant_source_checked_not_human_gold"
+    }
+  ],
+  "selection_attempts": [
+    {
+      "doi": "10.1080/00380768.2017.1401906",
+      "reason": "按公开原始实验、四个随机区组重复和 AWD 对 CF 的条件选择；2026-11-01 出版商全文 PDF 请求返回 HTTP 403，未取得可核查文件、未解析，不纳入。"
     }
   ]
 }

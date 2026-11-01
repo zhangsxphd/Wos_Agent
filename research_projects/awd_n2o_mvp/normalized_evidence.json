@@ -8,7 +8,7 @@
       "sha256": "9fbc753ae208814c563bdb49a04a724a91476cc6a4694e2baf85eb3a3638bb20"
     },
     "results": {
-      "sha256": "36c1df78403390a9d8dbc90a23a30aec5a9a4e407fa5e4f832a4323fa2246290"
+      "sha256": "8dbec1e224184b072f4749dd43725b5ca41fb9f3e25ef7d7b70a769e55611e08"
     },
     "issues": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -233,7 +233,35 @@
       "metric_type": "group_values",
       "eligibility": "primary_candidate_requires_source_review",
       "source_url": "https://doi.org/10.5194/soil-8-645-2022",
-      "source_issues": []
+      "source_issues": [],
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 4.48,
+          "comparator": 4.02,
+          "unit": "kg N2O/ha",
+          "comparator_unit": "kg N2O/ha",
+          "intervention_error": 0.12,
+          "intervention_error_type": "SE",
+          "comparator_error": 0.3,
+          "comparator_error_type": "SE",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 4.48,
+        "comparator": 4.02,
+        "intervention_error": 0.12,
+        "comparator_error": 0.3,
+        "basis": "original already N2O mass",
+        "factor": 1.0,
+        "relative_change_percent": 11.442786069651767,
+        "relative_change_origin": "program_calculated_not_significance"
+      },
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "source_verification": "assistant_checked_candidate_not_human_gold",
+        "design_validity": "replication_reported_requires_review"
+      }
     },
     {
       "comparison_id": "10.1016/S1002-0160(15)60063-7#result1:0",
@@ -310,7 +338,16 @@
             {
               "page": 8,
               "section": "N2O emissions",
-              "quote": "(4.91vs. 0.80",
+              "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+              "context_assertions": {
+                "year": "2012",
+                "outcome": "N2O",
+                "treatment_order": [
+                  "AWD",
+                  "PF"
+                ],
+                "unit": "kg N-N2O/ha"
+              },
               "note": "error and within-season significance not reported in selected passage"
             }
           ],
@@ -333,13 +370,22 @@
               {
                 "page": 8,
                 "section": "N2O emissions",
-                "quote": "(4.91vs. 0.80",
+                "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+                "context_assertions": {
+                  "year": "2012",
+                  "outcome": "N2O",
+                  "treatment_order": [
+                    "AWD",
+                    "PF"
+                  ],
+                  "unit": "kg N-N2O/ha"
+                },
                 "note": "error and within-season significance not reported in selected passage"
               }
             ],
             "observation_time": "2012 growing season",
             "reporting_origin": "program_source_table_extraction",
-            "candidate_limitations": "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+            "candidate_limitations": "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
           }
         }
       ],
@@ -352,13 +398,41 @@
       ],
       "conflicts": [
         "候选表注对比较范围措辞需核对",
-        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
       ],
       "comparison_context": {},
       "metric_type": "group_values",
       "eligibility": "primary_candidate_requires_source_review",
       "source_url": "https://doi.org/10.1016/S1002-0160(15)60063-7",
-      "source_issues": []
+      "source_issues": [],
+      "standardized_n2o": {
+        "status": "standardized",
+        "original": {
+          "intervention": 4.91,
+          "comparator": 0.8,
+          "unit": "kg N-N2O/ha",
+          "comparator_unit": "kg N-N2O/ha",
+          "intervention_error": null,
+          "intervention_error_type": "unknown",
+          "comparator_error": null,
+          "comparator_error_type": "unknown",
+          "reported_effect": null
+        },
+        "unit": "kg N2O/ha",
+        "intervention": 7.715714285714286,
+        "comparator": 1.2571428571428571,
+        "intervention_error": null,
+        "comparator_error": null,
+        "basis": "N2O-N to N2O: molecular mass ratio 44/28",
+        "factor": 1.5714285714285714,
+        "relative_change_percent": 513.75,
+        "relative_change_origin": "program_calculated_not_significance"
+      },
+      "assessment": {
+        "topic_eligibility": "primary_candidate_requires_source_review",
+        "source_verification": "assistant_checked_candidate_not_human_gold",
+        "design_validity": "insufficient_replicated_treatment"
+      }
     }
   ],
   "independence_reviews": [],

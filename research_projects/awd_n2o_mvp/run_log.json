@@ -1,18 +1,26 @@
-[
-  {
-    "doi": "10.5194/soil-8-645-2022",
-    "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
-    "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
-    "source_type": "xlsx",
-    "selection": "Table 1 C11 versus C6; identical fertilizer and isotope treatment; n=3 pots",
-    "status": "parsed"
-  },
-  {
-    "doi": "10.1016/S1002-0160(15)60063-7",
-    "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
-    "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
-    "source_type": "pdf_regex",
-    "selection": "PDF page 8 results text, 2012 AWD vs PF; paper pages 2–3 describe fields and pseudo-replicates",
-    "status": "parsed"
-  }
-]
+{
+  "source_runs": [
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "source_type": "xlsx",
+      "selection": "Table 1 C11 versus C6; identical fertilizer and isotope treatment; n=3 pots",
+      "status": "parsed"
+    },
+    {
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "source_type": "pdf_regex",
+      "selection": "PDF page 8 results text, 2012 AWD vs PF; paper pages 2–3 describe fields and pseudo-replicates",
+      "status": "parsed"
+    }
+  ],
+  "selection_attempts": [
+    {
+      "doi": "10.1080/00380768.2017.1401906",
+      "reason": "按公开原始实验、四个随机区组重复和 AWD 对 CF 的条件选择；2026-11-01 出版商全文 PDF 请求返回 HTTP 403，未取得可核查文件、未解析，不纳入。"
+    }
+  ]
+}

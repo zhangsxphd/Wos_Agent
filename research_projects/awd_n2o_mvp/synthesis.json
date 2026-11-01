@@ -111,7 +111,16 @@
             {
               "page": 8,
               "section": "N2O emissions",
-              "quote": "(4.91vs. 0.80",
+              "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+              "context_assertions": {
+                "year": "2012",
+                "outcome": "N2O",
+                "treatment_order": [
+                  "AWD",
+                  "PF"
+                ],
+                "unit": "kg N-N2O/ha"
+              },
               "note": "error and within-season significance not reported in selected passage"
             }
           ],
@@ -134,13 +143,22 @@
               {
                 "page": 8,
                 "section": "N2O emissions",
-                "quote": "(4.91vs. 0.80",
+                "quote": "easonal N O emissions,\n2\nleading to cumulative 5-fold greater emissions in the\nAWDrelativetoPFfield(4.91vs. 0.80kgN-N Oha−1\n2\nseason−1). The highest peak occurred 14 d after N\nfertilization after the AWD field wa",
+                "context_assertions": {
+                  "year": "2012",
+                  "outcome": "N2O",
+                  "treatment_order": [
+                    "AWD",
+                    "PF"
+                  ],
+                  "unit": "kg N-N2O/ha"
+                },
                 "note": "error and within-season significance not reported in selected passage"
               }
             ],
             "observation_time": "2012 growing season",
             "reporting_origin": "program_source_table_extraction",
-            "candidate_limitations": "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+            "candidate_limitations": "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
           }
         }
       ],
@@ -153,7 +171,7 @@
       },
       "uncertainties": [
         "候选表注对比较范围措辞需核对",
-        "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。"
       ],
       "interpretation": "single_comparison_observation_not_a_causal_or_common_finding",
       "observed_direction": "higher",
@@ -216,13 +234,15 @@
       ],
       "source_conflicts": [
         "候选表注对比较范围措辞需核对",
+        "原文讨论另报2012增加307%；由正文4.91与0.80计算为513.75%，两处不一致，未解决。",
         "Source selection and design manually checked; independent treatment replication and cross-study context must be verified."
       ],
       "recorded_source_issues": [],
       "sources": [
         "https://doi.org/10.1016/S1002-0160(15)60063-7",
         "https://doi.org/10.5194/soil-8-645-2022"
-      ]
+      ],
+      "unit_normalization": "same_n2o_mass_basis"
     }
   ],
   "dependent_comparisons": [],
@@ -251,5 +271,13 @@
     "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
     "来源状态为候选；模型定位和PDF实际核验分开。",
     "不因同向、显著或不显著生成共同结论或真正矛盾。"
-  ]
+  ],
+  "acceptance": {
+    "engineering": "completed",
+    "data_review": "see_per_comparison_source_verification",
+    "design_validity": "assessed_per_comparison_not_automatically_causal",
+    "cross_study_comparability": "see_pairwise_comparability",
+    "scientific_conclusion": "insufficient_evidence_no_common_finding",
+    "new_paper": "not_included_full_text_unavailable"
+  }
 }

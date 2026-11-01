@@ -410,7 +410,7 @@ def adapt_converted(converted, topic_profile):
         saline=bool(re.search(r'salin|sodi|盐碱|盐土|盐渍',positive_context))
         population=topic_profile.get('population_requirement','saline_rice')
         eligible_population=rice and (saline or population=='rice')
-        if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and eligible_population and p['study_type'] in ('pot_experiment','field_experiment'):
+        if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and eligible_population and p['study_type'] in ('pot_experiment','field_experiment','observational'):
             eligibility='primary_candidate_requires_source_review'
         elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and p['study_type'] in ('pot_experiment','field_experiment'):
             eligibility='indirect_context' if saline else 'external_context_salinity_unconfirmed'
@@ -497,7 +497,7 @@ def synthesize_converted(normalized):
         paper_by_id={p['study_id']:p for p in normalized['papers']}
         kinds={paper_by_id.get(sid,{}).get('study_type','unknown') for sid in (sid_a,sid_b)}
         if len(kinds)>1: reasons.append('试验尺度或类型不同：'+', '.join(sorted(kinds)))
-        if any(re.search(r'pseudo.replicat|伪重复',str((c.get('independent_replicates') or {}).get('original') or ''),re.I) for c in aa+bb):
+        if any((c.get('independent_replicates') or {}).get('value')==1 or re.search(r'pseudo.replicat|伪重复',str((c.get('independent_replicates') or {}).get('original') or ''),re.I) for c in aa+bb):
             reasons.append('至少一项研究报告伪重复，处理层独立重复不足或未知')
         reasons.append('测量时间窗口、指标定义和共同效应量未充分确认')
         reasons.append('不同论文是否共享原始实验或数据集未知，不能计为独立重复')

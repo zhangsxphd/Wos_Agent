@@ -50,7 +50,11 @@ def run(project,topic,config_path,confirmation=None,review=None,wos_plan=None,au
     original=read_jsonl(records_path)
     if (project/'wos_records.jsonl').exists():
         original += read_jsonl(project/'wos_records.jsonl')
-        state['wos']={'status':'existing_search_manifest','file':'wos_search_manifest.json'}
+    if (project/'wos_search_manifest.json').exists():
+        wos=json.loads((project/'wos_search_manifest.json').read_text())
+        state['wos']={'status':wos.get('status'),'truncated':wos.get('truncated'),
+                      'queries':[{k:q.get(k) for k in ('query_id','total_hits','collected','pages_fetched','truncated','status')} for q in wos.get('queries',[])],
+                      'file':'wos_search_manifest.json','authorization':'explicit_run_authorization'}
     records=deduplicate_records(original)
     clean=project/'bibliography.jsonl'
     if not clean.exists(): clean.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in records),encoding='utf8')
@@ -81,7 +85,10 @@ def run(project,topic,config_path,confirmation=None,review=None,wos_plan=None,au
         try:
             if cache.exists(): full=json.loads(cache.read_text())
             else:
-                full=import_browser_pdf(record,{'file':str(local.relative_to(project)),'source_url':info['source_url'],'access_basis':'public_publisher_download'},root=project)
+                from_resolver=str(info['file']).startswith('data/fulltext/raw/')
+                full=import_browser_pdf(record,{'file':str(local.relative_to(project)),'source_url':info['source_url'],
+                    'access_basis':'open_access_resolver' if from_resolver else 'public_publisher_download',
+                    'acquisition_method':'content_addressed_local_import' if from_resolver else 'local_file_import'},root=project)
                 dump(cache,full)
             _,admission=inspect_fulltext(record,full,project)
             if admission.get('raw_sha256')!=sh or admission.get('admission')!='technical_pass':
@@ -110,6 +117,13 @@ def run(project,topic,config_path,confirmation=None,review=None,wos_plan=None,au
     confirm=Path(confirmation).resolve();reviewfile=Path(review).resolve();att=json.loads(reviewfile.read_text());data=json.loads(confirm.read_text())
     accepted={normalize_doi(x['doi']):x for x in att.get('decisions',[]) if x.get('decision')=='confirm' and x.get('actor')=='user'}
     if not accepted:raise ValueError('没有带用户确认的配对；不会将助手自审标作人工确认')
+    # A JSON actor field is an assertion, not evidence of a human action.
+    # Require a fresh interactive acknowledgement before accepting a comparison.
+    if not sys.stdin.isatty():
+        raise ValueError('JSON 中的 actor 不能证明人工确认；请在交互式终端审核并确认')
+    print('请逐项核查以下配对及原文来源：', json.dumps(list(accepted.values()),ensure_ascii=False))
+    if input('确认本人已核查以上内容请输入 CONFIRM：').strip() != 'CONFIRM':
+        raise ValueError('未完成交互式人工确认')
     for decision in att.get('decisions',[]):
         doi=normalize_doi(decision.get('doi'));item=state['papers'].get(doi)
         if item and decision.get('decision')=='insufficient_comparison' and decision.get('pdf_sha256')==item['fulltext'].get('sha256'):
@@ -155,7 +169,7 @@ def run(project,topic,config_path,confirmation=None,review=None,wos_plan=None,au
             if v.get(field)!=dec.get(key):raise ValueError('用户确认值与实际转换结果不一致: '+field)
         if c['independent_replicates'].get('value')!=dec.get('replicates') or c['experimental_unit'].get('value')!=dec.get('experimental_unit'):
             raise ValueError('用户确认的实验单位或独立重复与转换结果不一致')
-        item=state['papers'][c['study_id']];item['human_source_review']={'status':'user_confirmed_comparison_not_gold','review_file':str(reviewfile),'review_sha256':digest(reviewfile),'comparison_id':c['comparison_id']}
+        item=state['papers'][c['study_id']];item['human_source_review']={'status':'interactive_attestation_identity_unverified_not_gold','review_file':str(reviewfile),'review_sha256':digest(reviewfile),'comparison_id':c['comparison_id'],'acknowledged_at':utc_now()}
         item['synthesis_eligibility']={'status':'candidate_allowed_not_gold','reason':'技术准入和用户确认配对；科学解释与独立实验有效性仍需核查'}
         item['comparison']={'id':c['comparison_id'],'indicator':c['outcome'],'experimental_unit':c['experimental_unit'],'independent_replicates':c['independent_replicates']}
     pending=[p for p in pending if p['doi'] not in selected]

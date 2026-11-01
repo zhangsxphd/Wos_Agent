@@ -1,0 +1,400 @@
+{
+  "topic": {
+    "topic": null,
+    "population_requirement": "rice",
+    "primary_question": null,
+    "primary_eligibility": []
+  },
+  "papers": [
+    {
+      "include": false,
+      "candidate": {
+        "doi": "10.1038/s41598-018-35939-7",
+        "source": "<REPO_ROOT>/data/fulltext/raw/132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5.pdf",
+        "source_sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+        "source_type": "pdf_regex",
+        "pdf": "<REPO_ROOT>/data/fulltext/raw/132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5.pdf",
+        "pdf_sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5"
+      },
+      "doi_candidates": [
+        "10.1038/s41598-018-35939-7"
+      ],
+      "treatment_name_candidates": [
+        {
+          "name": "AWD",
+          "source": {
+            "page": 1
+          }
+        }
+      ],
+      "field_suggestions": {
+        "experiment": [
+          {
+            "source": {
+              "page": 8
+            },
+            "text": "chambers were installed under AWD and three under CSW (non-replicated, not reported herein). In 2016, the"
+          },
+          {
+            "source": {
+              "page": 7
+            },
+            "text": "mended dose)17–20,59. Treatments were arranged in a randomized complete block design, with three replications."
+          },
+          {
+            "source": {
+              "page": 7
+            },
+            "text": "For irrigation, perforated PVC pipe was inserted (15 cm depth) in each plot at 10 DAT. Floodwater depth"
+          }
+        ],
+        "treatment": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Received: 14 December 2017 placement and alternate wetting"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Published: xx xx xxxx and drying irrigation"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Urea deep placement (UDP) and the alternate wetting and drying (AWD) irrigation method are two"
+          }
+        ],
+        "comparator": [
+          {
+            "source": {
+              "page": 4
+            },
+            "text": "Figure 2. Nitrous and nitric oxides emission rates, floodwater depth, air temperature, and rainfall under AWD"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "during the drying period, or after re-flooding of dry soil. Except during the peak emission events, NO emissions"
+          },
+          {
+            "source": {
+              "page": 3
+            },
+            "text": "Figure 1. Dynamics of floodwater NH+-N in control, urea briquette, and PU treatments under alternate"
+          }
+        ],
+        "outcome": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "OPEN Nitrous oxide and nitric oxide"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "promising rice production technologies. However, studies on the impact of UDP under AWD irrigation"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "on nitrous oxide (N O) and nitric oxide (NO) emissions are limited. In this study, the effects of UDP with"
+          }
+        ],
+        "unit": [
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "were within a range of ±30 µg N m−2 h−1, irrespective of treatment and season."
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "both treatments, the magnitudes of the emission were more prominent (466 µg N m−2 h−1) and appeared for a"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "longer time in the UDP treatment, compared to broadcast PU (324 µg N m−2 h−1). In Boro 2016, N"
+          }
+        ],
+        "other_factors": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Urea deep placement (UDP) and the alternate wetting and drying (AWD) irrigation method are two"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "AWD irrigation on these emissions, nitrogen use efficiency (NUE), and rice yields are investigated,"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "compared to broadcast urea. This study demonstrates that UDP with AWD irrigation can increase yields"
+          }
+        ]
+      },
+      "table_rows": [],
+      "numeric_candidates": [
+        {
+          "value_candidate": 14.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 2017.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 60.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        }
+      ],
+      "required_fields": [
+        "title",
+        "pdf",
+        "pdf_page",
+        "indicator",
+        "unit",
+        "a_label",
+        "b_label",
+        "experiment_id",
+        "design",
+        "object",
+        "replicates",
+        "period",
+        "treatment_description",
+        "control_description",
+        "scope",
+        "source-specific locator"
+      ],
+      "edits": [],
+      "draft_status": "requires_human_confirmation_not_runnable",
+      "candidate_digest": "a14b96c98b8cf5320773b28521746d2266e83c74219218ed6b135e91c18d8d55"
+    },
+    {
+      "include": false,
+      "candidate": {
+        "doi": "10.22144/ctu.jen.2017.025",
+        "source": "<REPO_ROOT>/data/fulltext/raw/46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447.pdf",
+        "source_sha256": "46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447",
+        "source_type": "pdf_regex",
+        "pdf": "<REPO_ROOT>/data/fulltext/raw/46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447.pdf",
+        "pdf_sha256": "46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447"
+      },
+      "doi_candidates": [
+        "10.22144/ctu.jen.2017.025"
+      ],
+      "treatment_name_candidates": [
+        {
+          "name": "AWD",
+          "source": {
+            "page": 1
+          }
+        }
+      ],
+      "field_suggestions": {
+        "experiment": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Alternate wetting and drying four N fertilizer types in sub-plots as (1) urea, (2) N-(n-butyl) thiophos-"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "plots experimental design, with four replications."
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "vation in the Mekong Delta of Vietnam. The design of experiment was"
+          }
+        ],
+        "treatment": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "wetting and drying irrigation on rice yield and nitrous oxide emission in rice cultivation. Can Tho"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Effects of nitrogen fertilizer types and alternate wetting and drying irrigation on rice"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "wetting and drying irrigation on rice yield and N O emission in rice culti-"
+          }
+        ],
+        "comparator": [
+          {
+            "source": {
+              "page": 5
+            },
+            "text": "different at P < 0.05 level by Tukey’s test. immediately following reflooding. Eh in AWD"
+          },
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "cation was 1/5 higher than that of flooded field. 46A+ (46 %N with 0,2 % agrotain coated), NPK"
+          },
+          {
+            "source": {
+              "page": 3
+            },
+            "text": "had to be applied to re-flood the field to 5 cm water"
+          }
+        ],
+        "outcome": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Effects of nitrogen fertilizer types and alternate wetting and drying irrigation on rice"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "yield and nitrous oxide emission in rice cultivation"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "wetting and drying irrigation on rice yield and N O emission in rice culti-"
+          }
+        ],
+        "unit": [
+          {
+            "source": {
+              "page": 2
+            },
+            "text": "effect. It is reported that the use of AWD technique seeding with 120 kg.ha-1 was practiced at 20 cm in"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "urease inhibitor t.ha-1) than FP treatment (4.68 t.ha-1), but rice yields of the new fertilizer"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "(1.67, 1.47 and 1.29 kgN O.ha-1, respectively) were significantly lower"
+          }
+        ],
+        "other_factors": [
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Effects of nitrogen fertilizer types and alternate wetting and drying irrigation on rice"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "Alternate wetting and drying four N fertilizer types in sub-plots as (1) urea, (2) N-(n-butyl) thiophos-"
+          },
+          {
+            "source": {
+              "page": 1
+            },
+            "text": "irrigation, fertilizer deep phoric triamide (nBTPT) urease inhibitor, (3) NPK briquette deep place-"
+          }
+        ]
+      },
+      "table_rows": [],
+      "numeric_candidates": [
+        {
+          "value_candidate": 2.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 1.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        },
+        {
+          "value_candidate": 2.0,
+          "error_candidate": null,
+          "unit_candidate": null,
+          "source": {
+            "page": 1
+          },
+          "status": "unlinked_not_confirmed"
+        }
+      ],
+      "required_fields": [
+        "title",
+        "pdf",
+        "pdf_page",
+        "indicator",
+        "unit",
+        "a_label",
+        "b_label",
+        "experiment_id",
+        "design",
+        "object",
+        "replicates",
+        "period",
+        "treatment_description",
+        "control_description",
+        "scope",
+        "source-specific locator"
+      ],
+      "edits": [],
+      "draft_status": "requires_human_confirmation_not_runnable",
+      "candidate_digest": "a57b6a009f9ecc16dd9e492e4ef1bc991e507b8cb31c098f162ec64e6883192f"
+    }
+  ]
+}

@@ -112,6 +112,8 @@ def main():
     p = sub.add_parser('import-evidence'); p.add_argument('project'); p.add_argument('payload')
     p = sub.add_parser('run'); p.add_argument('project'); p.add_argument('--topic', required=True); p.add_argument('--config', required=True)
     p.add_argument('--confirmation'); p.add_argument('--review'); p.add_argument('--authorize-wos', action='store_true'); p.add_argument('--wos-plan')
+    p = sub.add_parser('public-run'); p.add_argument('project'); p.add_argument('--topic', required=True); p.add_argument('--settings', required=True)
+    p.add_argument('--confirmation'); p.add_argument('--review')
     args = parser.parse_args()
     try:
         if args.action == 'init': print(initialize(args.project, args.topic))
@@ -120,6 +122,10 @@ def main():
             result = search(args.project, args.plan, args.max_records, args.max_pages)
             return 0 if result['status'] == 'completed' else 1
         elif args.action == 'import-evidence': print('sources, observations:', import_evidence(args.project, args.payload))
+        elif args.action == 'public-run':
+            from scripts.research_planning.public_intake import public_run
+            state=public_run(args.project,args.topic,args.settings,args.confirmation,args.review)
+            print(json.dumps({'status':state['status'],'stage':state['stage'],'papers':len(state['papers'])},ensure_ascii=False))
         else:
             from scripts.research_planning.connected import run
             state=run(args.project,args.topic,args.config,args.confirmation,args.review,args.wos_plan,args.authorize_wos)

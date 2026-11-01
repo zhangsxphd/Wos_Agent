@@ -1,0 +1,168 @@
+[
+  {
+    "doi": "10.22144/ctu.jen.2017.025",
+    "status": "available",
+    "reason": null,
+    "format": "pdf",
+    "source_url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/download/162/162",
+    "final_url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/download/162/162",
+    "sha256": "46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447",
+    "identity_status": "doi_match",
+    "license": "cc-by-nc",
+    "version": "publishedVersion",
+    "attempts": [
+      {
+        "source": "oa_location",
+        "format": "pdf",
+        "source_url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/download/162/162",
+        "status": "available",
+        "identity_status": "doi_match"
+      }
+    ],
+    "cache_hit": false,
+    "attempted_at": "2026-11-01T07:07:02.026138+00:00"
+  },
+  {
+    "doi": "10.1016/j.agwat.2026.110788",
+    "status": "error",
+    "reason": "all_candidates_failed",
+    "format": null,
+    "source_url": null,
+    "final_url": null,
+    "sha256": null,
+    "identity_status": null,
+    "license": null,
+    "version": null,
+    "attempts": [
+      {
+        "source": "oa_location",
+        "format": "pdf",
+        "source_url": "https://www.sciencedirect.com/science/article/pii/S0378377426006700/pdf",
+        "status": "error",
+        "error_code": "access_denied",
+        "http_status": 403
+      },
+      {
+        "source": "oa_landing",
+        "format": "oa_landing",
+        "source_url": "https://doi.org/10.1016/j.agwat.2026.110788",
+        "status": "error",
+        "error_code": "no_advertised_pdf_link",
+        "http_status": null
+      }
+    ],
+    "cache_hit": false,
+    "attempted_at": "2026-11-01T07:07:16.493187+00:00"
+  },
+  {
+    "doi": "10.1038/s41598-018-35939-7",
+    "status": "available",
+    "reason": null,
+    "format": "pdf",
+    "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+    "final_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+    "sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+    "identity_status": "doi_match",
+    "license": "cc-by",
+    "version": "publishedVersion",
+    "attempts": [
+      {
+        "source": "oa_location",
+        "format": "pdf",
+        "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+        "status": "available",
+        "identity_status": "doi_match"
+      }
+    ],
+    "cache_hit": false,
+    "attempted_at": "2026-11-01T07:05:04.357340+00:00"
+  },
+  {
+    "doi": "10.1080/00380768.2017.1399044",
+    "status": "error",
+    "reason": "all_candidates_failed",
+    "format": null,
+    "source_url": null,
+    "final_url": null,
+    "sha256": null,
+    "identity_status": null,
+    "license": null,
+    "version": null,
+    "attempts": [
+      {
+        "source": "oa_location",
+        "format": "pdf",
+        "source_url": "https://www.tandfonline.com/doi/pdf/10.1080/00380768.2017.1399044?needAccess=true",
+        "status": "error",
+        "error_code": "access_denied",
+        "http_status": 403
+      },
+      {
+        "source": "oa_landing",
+        "format": "oa_landing",
+        "source_url": "https://doi.org/10.1080/00380768.2017.1399044",
+        "status": "error",
+        "error_code": "access_denied",
+        "http_status": 403
+      }
+    ],
+    "cache_hit": false,
+    "attempted_at": "2026-11-01T07:07:08.796985+00:00"
+  },
+  {
+    "doi": "10.15666/aeer/1706_1377713792",
+    "status": "error",
+    "reason": "all_candidates_failed",
+    "format": null,
+    "source_url": null,
+    "final_url": null,
+    "sha256": null,
+    "identity_status": null,
+    "license": null,
+    "version": null,
+    "attempts": [
+      {
+        "source": "oa_location",
+        "format": "pdf",
+        "source_url": "https://doi.org/10.15666/aeer/1706_1377713792",
+        "status": "error",
+        "error_code": "non_public_url",
+        "http_status": null
+      }
+    ],
+    "cache_hit": false,
+    "attempted_at": "2026-11-01T07:05:04.683451+00:00"
+  },
+  {
+    "doi": "10.1111/gcb.17581",
+    "status": "error",
+    "reason": "all_candidates_failed",
+    "format": null,
+    "source_url": null,
+    "final_url": null,
+    "sha256": null,
+    "identity_status": null,
+    "license": null,
+    "version": null,
+    "attempts": [
+      {
+        "source": "oa_location",
+        "format": "pdf",
+        "source_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gcb.17581",
+        "status": "error",
+        "error_code": "access_denied",
+        "http_status": 403
+      },
+      {
+        "source": "oa_landing",
+        "format": "oa_landing",
+        "source_url": "https://doi.org/10.1111/gcb.17581",
+        "status": "error",
+        "error_code": "access_denied",
+        "http_status": 403
+      }
+    ],
+    "cache_hit": false,
+    "attempted_at": "2026-11-01T07:04:54.354903+00:00"
+  }
+]

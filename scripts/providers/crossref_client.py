@@ -44,6 +44,16 @@ def clean_markup(value):
 class CrossrefClient(BaseClient):
     provider = "crossref"
 
+    def search_works(self, query, rows=20):
+        """Bounded public Crossref search; preserve the raw response at the caller."""
+        if not query or not 1 <= rows <= 20:
+            raise ValueError('query and 1–20 rows required')
+        response = self.session.get('https://api.crossref.org/works',
+            params={'query.bibliographic': query, 'rows': rows, 'filter': 'type:journal-article'},
+            timeout=self.timeout, allow_redirects=False)
+        response.raise_for_status()
+        return response.json()
+
     def request_spec(self, doi):
         return "https://api.crossref.org/works/" + quote(doi, safe=""), {}
 

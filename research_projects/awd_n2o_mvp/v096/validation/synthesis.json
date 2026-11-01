@@ -1,0 +1,27 @@
+{
+  "topic": "普通稻田中 AWD 相对于持续淹水如何影响生育季累计 N₂O 排放？",
+  "primary_question": "普通稻田中 AWD 相对于持续淹水如何影响生育季累计 N₂O 排放？",
+  "primary_evidence_ids": [],
+  "direct_observations": [],
+  "pool_observations": [],
+  "mechanism_assessment": {
+    "status": "not_established_by_supplied_direct_evidence",
+    "source_comparison_ids": [],
+    "uncertainty": "本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。"
+  },
+  "primary_conclusion": "insufficient_evidence_no_common_finding",
+  "indirect_evidence_ids": [],
+  "external_evidence_ids": [],
+  "water_pool_context_ids": [],
+  "pairwise_comparability": [],
+  "dependent_comparisons": [],
+  "experiment_comparisons": [],
+  "findings": [],
+  "independent_experiment_count": "unknown",
+  "meta_analysis": "not_implemented",
+  "limitations": [
+    "不同DOI不证明实验独立；同一DOI也可包含多个实验。",
+    "来源状态为候选；模型定位和PDF实际核验分开。",
+    "不因同向、显著或不显著生成共同结论或真正矛盾。"
+  ]
+}

@@ -40,11 +40,12 @@ def import_browser_pdf(record, item, root=ROOT):
     source_url=safe_url(item['source_url'],secrets)
     raw_file,digest=save_raw(raw,root/'data/fulltext/raw','pdf',secrets)
     parsed_file,parsed_sha=save_parsed(parsed,root/'data/fulltext/parsed',digest,secrets)
-    public=item.get('access_basis')=='public_publisher_download'
-    result=manifest(record,'available',source='publisher_browser' if public else 'campus_browser',format='pdf',license=None,version=None,
+    public=item.get('access_basis') in {'public_publisher_download','open_access_resolver'}
+    source_name='oa_resolver_local_import' if item.get('access_basis')=='open_access_resolver' else 'publisher_browser' if public else 'campus_browser'
+    result=manifest(record,'available',source=source_name,format='pdf',license=item.get('license'),version=item.get('version'),
                     source_url=source_url,sha256=digest,raw_file=str(raw_file.relative_to(root)),
                     parsed_file=str(parsed_file.relative_to(root)),parsed_sha256=parsed_sha,parser=parsed['parser'],parse_status='parsed',pages=parsed['pages'],
-                    access_basis='public_publisher_download' if public else 'user_authorized_institutional_session',identity_check='doi_on_first_page',
+                    access_basis=item.get('access_basis') if public else 'user_authorized_institutional_session',identity_check='doi_on_first_page',
                     acquisition_method=item.get('acquisition_method','browser_download'),
                     browser_saved_at=item.get('retrieved_at'),local_original=str(source.relative_to(root)))
     key=hashlib.sha256(str(record['doi']).lower().encode()).hexdigest()

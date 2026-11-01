@@ -1,0 +1,7 @@
+{
+  "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+  "rows": 20,
+  "terms": ["rice", "paddy", "wetting", "nitrous", "n2o"],
+  "max_fulltext_attempts": 6,
+  "inclusion_criteria": ["稻田原始实验", "AWD与持续淹水对照", "生育季累计N2O", "优先有独立处理重复和合法全文", "题名筛选只用于排序，缺信息保留待核", "不依据结果方向选择"]
+}

@@ -1,0 +1,974 @@
+{
+  "topic": "普通稻田中 AWD 相对于持续淹水如何影响生育季累计 N₂O 排放？",
+  "created_at": "2026-11-01T07:07:16.499301+00:00",
+  "configuration_sha256": "759f823769db82adb25841090388ad5150390646bd7a70bdb23fe51ad612cae3",
+  "papers": {
+    "10.1111/gcb.17581": {
+      "doi": "10.1111/gcb.17581",
+      "record_id": "doi:10.1111/gcb.17581",
+      "history": [],
+      "title": "Effects of Alternate Wetting and Drying Irrigation on Methane and Nitrous Oxide Emissions From Rice Fields: A Meta‐Analysis",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "open_access_attempt": {
+        "status": "error",
+        "reason": "all_candidates_failed",
+        "attempts": [
+          {
+            "source": "oa_location",
+            "format": "pdf",
+            "source_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gcb.17581",
+            "status": "error",
+            "error_code": "access_denied",
+            "http_status": 403
+          },
+          {
+            "source": "oa_landing",
+            "format": "oa_landing",
+            "source_url": "https://doi.org/10.1111/gcb.17581",
+            "status": "error",
+            "error_code": "access_denied",
+            "http_status": 403
+          }
+        ],
+        "version": null,
+        "license": null,
+        "source_url": null,
+        "cache_hit": false
+      },
+      "public_title_triage": {
+        "status": "review_or_meta_candidate",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1038/s41598-018-35939-7": {
+      "doi": "10.1038/s41598-018-35939-7",
+      "record_id": "doi:10.1038/s41598-018-35939-7",
+      "history": [],
+      "title": "Nitrous oxide and nitric oxide emissions from lowland rice cultivation with urea deep placement and alternate wetting and drying irrigation",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "available",
+        "sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+        "admission": {
+          "admission": "technical_pass",
+          "identity": {
+            "status": "doi_match",
+            "method": "doi_on_first_page"
+          },
+          "raw_sha256": "132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5",
+          "parsed_sha256": "c64966510d025e2edbd8de8267fa434f57e1fa81e87bd34de599584fad88aa0a",
+          "parser": "pypdf-page-v1",
+          "human_review_status": "not_assessed"
+        },
+        "local_input": "data/fulltext/raw/132acf8a1ac92f2008bea0c9ddba6a18fb4cfaa97033f64bc585e076f8f2fef5.pdf",
+        "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+        "manifest": "admission/4abde539a542ba560326482789da4bca2fc9a965bf8d70132b8a2b6ac942dbed.json"
+      },
+      "candidate_extraction": {
+        "status": "program_excerpts_candidate_not_gold",
+        "intake": "intake/manifest_draft.json"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "open_access_attempt": {
+        "status": "available",
+        "reason": null,
+        "attempts": [
+          {
+            "source": "oa_location",
+            "format": "pdf",
+            "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+            "status": "available",
+            "identity_status": "doi_match"
+          }
+        ],
+        "version": "publishedVersion",
+        "license": "cc-by",
+        "source_url": "https://www.nature.com/articles/s41598-018-35939-7.pdf",
+        "cache_hit": false
+      },
+      "public_title_triage": {
+        "status": "potential_original_experiment",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.15666/aeer/1706_1377713792": {
+      "doi": "10.15666/aeer/1706_1377713792",
+      "record_id": "doi:10.15666/aeer/1706_1377713792",
+      "history": [],
+      "title": "NITROUS OXIDE EMISSION AND PRODUCTION PATHWAYS UNDER ALTERNATE WETTING-DRYING CONDITIONS IN RICE PADDY SOILS",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "open_access_attempt": {
+        "status": "error",
+        "reason": "all_candidates_failed",
+        "attempts": [
+          {
+            "source": "oa_location",
+            "format": "pdf",
+            "source_url": "https://doi.org/10.15666/aeer/1706_1377713792",
+            "status": "error",
+            "error_code": "non_public_url",
+            "http_status": null
+          }
+        ],
+        "version": null,
+        "license": null,
+        "source_url": null,
+        "cache_hit": false
+      },
+      "public_title_triage": {
+        "status": "potential_original_experiment",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.22144/ctu.jen.2017.025": {
+      "doi": "10.22144/ctu.jen.2017.025",
+      "record_id": "doi:10.22144/ctu.jen.2017.025",
+      "history": [],
+      "title": "Effects of nitrogen fertilizer types and alternate wetting and drying irrigation on rice yield and nitrous oxide emission in rice cultivation",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "available",
+        "sha256": "46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447",
+        "admission": {
+          "admission": "technical_pass",
+          "identity": {
+            "status": "doi_match",
+            "method": "doi_on_first_page"
+          },
+          "raw_sha256": "46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447",
+          "parsed_sha256": "9ac41521a457bccaa3505dd3cfdf563f298ab7c49c4b13b95024156b4c1e86ff",
+          "parser": "pypdf-page-v1",
+          "human_review_status": "not_assessed"
+        },
+        "local_input": "data/fulltext/raw/46603aebac3aa4ad98c1a492875f30daeb76d1e349305f8699f40380a140d447.pdf",
+        "source_url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/download/162/162",
+        "manifest": "admission/2dfe2957aeb77ae62741558698e47ae46cbffc5328b344662e6b6217cac9ced0.json"
+      },
+      "candidate_extraction": {
+        "status": "program_excerpts_candidate_not_gold",
+        "intake": "intake/manifest_draft.json"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "open_access_attempt": {
+        "status": "available",
+        "reason": null,
+        "attempts": [
+          {
+            "source": "oa_location",
+            "format": "pdf",
+            "source_url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/download/162/162",
+            "status": "available",
+            "identity_status": "doi_match"
+          }
+        ],
+        "version": "publishedVersion",
+        "license": "cc-by-nc",
+        "source_url": "https://ctujs.ctu.edu.vn/index.php/ctujs/article/download/162/162",
+        "cache_hit": false
+      },
+      "public_title_triage": {
+        "status": "potential_original_experiment",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.scitotenv.2022.156958": {
+      "doi": "10.1016/j.scitotenv.2022.156958",
+      "record_id": "doi:10.1016/j.scitotenv.2022.156958",
+      "history": [],
+      "title": "Increased rice yield and reduced greenhouse gas emissions through alternate wetting and drying in a triple-cropped rice field in the Mekong Delta",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.59324/ejeba.2025.2(5).13": {
+      "doi": "10.59324/ejeba.2025.2(5).13",
+      "record_id": "doi:10.59324/ejeba.2025.2(5).13",
+      "history": [],
+      "title": "Meta-Analysis of Alternate Wetting and Drying (AWD)  Irrigation Effects on Methane and Nitrous Oxide Emissions  Across Different Climates and Soil Types",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "review_or_meta_candidate",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.3390/agronomy14020378": {
+      "doi": "10.3390/agronomy14020378",
+      "record_id": "doi:10.3390/agronomy14020378",
+      "history": [],
+      "title": "Exploring the Impact of Alternate Wetting and Drying and the System of Rice Intensification on Greenhouse Gas Emissions: A Review of Rice Cultivation Practices",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "review_or_meta_candidate",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1080/00380768.2017.1399044": {
+      "doi": "10.1080/00380768.2017.1399044",
+      "record_id": "doi:10.1080/00380768.2017.1399044",
+      "history": [],
+      "title": "Evaluating the effects of alternate wetting and drying (AWD) on methane and nitrous oxide emissions from a paddy field in Thailand",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "open_access_attempt": {
+        "status": "error",
+        "reason": "all_candidates_failed",
+        "attempts": [
+          {
+            "source": "oa_location",
+            "format": "pdf",
+            "source_url": "https://www.tandfonline.com/doi/pdf/10.1080/00380768.2017.1399044?needAccess=true",
+            "status": "error",
+            "error_code": "access_denied",
+            "http_status": 403
+          },
+          {
+            "source": "oa_landing",
+            "format": "oa_landing",
+            "source_url": "https://doi.org/10.1080/00380768.2017.1399044",
+            "status": "error",
+            "error_code": "access_denied",
+            "http_status": 403
+          }
+        ],
+        "version": null,
+        "license": null,
+        "source_url": null,
+        "cache_hit": false
+      },
+      "public_title_triage": {
+        "status": "potential_original_experiment",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.fcr.2010.12.002": {
+      "doi": "10.1016/j.fcr.2010.12.002",
+      "record_id": "doi:10.1016/j.fcr.2010.12.002",
+      "history": [],
+      "title": "Chlorophyll meter-based nitrogen management of rice grown under alternate wetting and drying irrigation",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.2139/ssrn.4296380": {
+      "doi": "10.2139/ssrn.4296380",
+      "record_id": "doi:10.2139/ssrn.4296380",
+      "history": [],
+      "title": "Eddy Covariance Assessment of Alternate Wetting and Drying Floodwater Management on Rice Methane Emissions",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.fcr.2016.12.002": {
+      "doi": "10.1016/j.fcr.2016.12.002",
+      "record_id": "doi:10.1016/j.fcr.2016.12.002",
+      "history": [],
+      "title": "Rice yields and water use under alternate wetting and drying irrigation: A meta-analysis",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "review_or_meta_candidate",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.heliyon.2023.e14696": {
+      "doi": "10.1016/j.heliyon.2023.e14696",
+      "record_id": "doi:10.1016/j.heliyon.2023.e14696",
+      "history": [],
+      "title": "Eddy covariance assessment of alternate wetting and drying floodwater management on rice methane emissions",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.5194/soil-8-645-2022": {
+      "doi": "10.5194/soil-8-645-2022",
+      "record_id": "doi:10.5194/soil-8-645-2022",
+      "history": [],
+      "title": "Effects of mild alternate wetting and  drying irrigation  and rice straw application  on N\n                    <sub>2</sub>\n                    O emissions in rice cultivation",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.agwat.2026.110788": {
+      "doi": "10.1016/j.agwat.2026.110788",
+      "record_id": "doi:10.1016/j.agwat.2026.110788",
+      "history": [],
+      "title": "Nitrous oxide emission dynamics and greenhouse gas intensity under mild alternate wetting and drying with nitrogen management in single-rice paddies",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "open_access_attempt": {
+        "status": "error",
+        "reason": "all_candidates_failed",
+        "attempts": [
+          {
+            "source": "oa_location",
+            "format": "pdf",
+            "source_url": "https://www.sciencedirect.com/science/article/pii/S0378377426006700/pdf",
+            "status": "error",
+            "error_code": "access_denied",
+            "http_status": 403
+          },
+          {
+            "source": "oa_landing",
+            "format": "oa_landing",
+            "source_url": "https://doi.org/10.1016/j.agwat.2026.110788",
+            "status": "error",
+            "error_code": "no_advertised_pdf_link",
+            "http_status": null
+          }
+        ],
+        "version": null,
+        "license": null,
+        "source_url": null,
+        "cache_hit": false
+      },
+      "public_title_triage": {
+        "status": "potential_original_experiment",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.fcr.2014.10.013": {
+      "doi": "10.1016/j.fcr.2014.10.013",
+      "record_id": "doi:10.1016/j.fcr.2014.10.013",
+      "history": [],
+      "title": "Adoption and economics of alternate wetting and drying water management for irrigated lowland rice",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.soilbio.2017.10.040": {
+      "doi": "10.1016/j.soilbio.2017.10.040",
+      "record_id": "doi:10.1016/j.soilbio.2017.10.040",
+      "history": [],
+      "title": "Nitrous oxide emissions and biogeochemical responses to soil freezing-thawing and drying-wetting",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.18805/ag.r-2043": {
+      "doi": "10.18805/ag.r-2043",
+      "record_id": "doi:10.18805/ag.r-2043",
+      "history": [],
+      "title": "Alternate Wetting and Drying Irrigation in Direct Seeded Rice: A Review",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "review_or_meta_candidate",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.14738/aivp.1401.19791": {
+      "doi": "10.14738/aivp.1401.19791",
+      "record_id": "doi:10.14738/aivp.1401.19791",
+      "history": [],
+      "title": "Alternate Wetting and Drying (AWD) Increase Rice Yield, and Water-Use Efficiency while Mitigating Methane Emissions from Synchronized Rice Systems",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.1016/j.jclepro.2022.131621": {
+      "doi": "10.1016/j.jclepro.2022.131621",
+      "record_id": "doi:10.1016/j.jclepro.2022.131621",
+      "history": [],
+      "title": "Impacts of alternate wetting and drying on rice farmers’ profits and life cycle greenhouse gas emissions in An Giang Province in Vietnam",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    },
+    "10.3390/rs18081183": {
+      "doi": "10.3390/rs18081183",
+      "record_id": "doi:10.3390/rs18081183",
+      "history": [],
+      "title": "Alternate Wetting and Drying Irrigated Rice Paddy Field Water Status Monitoring with ALOS-2 Three Components and IoT Sensors",
+      "bibliography_source": {
+        "provider": "Crossref",
+        "query": "rice alternate wetting drying nitrous oxide cumulative emissions field",
+        "batch": "public_search"
+      },
+      "retrieval_batch": "public_search",
+      "screening": {
+        "status": "title_candidate_pending_review",
+        "reason": "本地关键词召回；非全文纳排结论"
+      },
+      "human_source_review": {
+        "status": "not_assessed"
+      },
+      "independent_gold": {
+        "status": "not_assessed"
+      },
+      "fulltext": {
+        "status": "not_available",
+        "admission": "not_assessed"
+      },
+      "candidate_extraction": {
+        "status": "not_started"
+      },
+      "synthesis_eligibility": {
+        "status": "pending_human_confirmation",
+        "reason": "来源核查和可比处理尚未完整确认"
+      },
+      "public_title_triage": {
+        "status": "uncertain_not_excluded",
+        "reason": "题名规则仅排序，不确认研究设计或排除缺信息题录"
+      }
+    }
+  },
+  "events": [
+    {
+      "at": "2026-11-01T07:07:20.423988+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.1038/s41598-018-35939-7",
+        "10.22144/ctu.jen.2017.025"
+      ]
+    },
+    {
+      "at": "2026-11-01T07:07:47.951308+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.1038/s41598-018-35939-7",
+        "10.22144/ctu.jen.2017.025"
+      ]
+    },
+    {
+      "at": "2026-11-01T07:08:05.949467+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.1038/s41598-018-35939-7",
+        "10.22144/ctu.jen.2017.025"
+      ]
+    },
+    {
+      "at": "2026-11-01T07:09:14.513280+00:00",
+      "stage": "local_search_admission_and_intake",
+      "status": "completed",
+      "admitted_dois": [
+        "10.1038/s41598-018-35939-7",
+        "10.22144/ctu.jen.2017.025"
+      ]
+    }
+  ],
+  "updated_at": "2026-11-01T07:09:13.036818+00:00",
+  "wos": {
+    "status": "authorization_unavailable",
+    "reason": "未明确授权和配置 WoS；未调用付费接口"
+  },
+  "search": {
+    "source": "<REPO_ROOT>/outputs/v096_real/public_search/records.jsonl",
+    "source_sha256": "47bea2d0d928f3beeacc57bde279886c062079007d4b0923283b20f92c9853da",
+    "input_records": 20,
+    "deduplicated_records": 20,
+    "local_search": "local_search.json",
+    "coverage": "controlled_local_subset_not_complete",
+    "duplicate_records_removed": 0
+  },
+  "status": "awaiting_confirmation",
+  "stage": "human_review",
+  "public_search": {
+    "manifest": "public_search/search_manifest.json",
+    "raw": "public_search/crossref_response.json",
+    "attempted": 6,
+    "oa_attempts": "public_search/oa_attempts",
+    "authorization": "public_unauthenticated_no_paid_key"
+  },
+  "analysis": {
+    "status": "interim_no_confirmed_comparisons",
+    "normalized_evidence": "analysis/normalized_evidence.json",
+    "synthesis": "analysis/synthesis.json",
+    "report": "analysis/analysis.md"
+  }
+}

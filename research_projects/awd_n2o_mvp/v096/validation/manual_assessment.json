@@ -1,0 +1,11 @@
+{
+  "doi": "10.22144/ctu.jen.2017.025",
+  "actor": "assistant_not_independent_gold",
+  "status": "candidate_pending_human_review",
+  "observations": [
+    {"location": "PDF page 2, section 2.1", "text": "The field trial was laid out in two-factors, split-plots experimental design, with four replications.", "interpretation": "设计候选：水分主区、施氮子区；独立重复细节仍待核"},
+    {"location": "PDF page 7, Table 3", "text": "The cumulative N2O emissions were calculated in 50 days from 10 to 60 DAS", "interpretation": "并非明确的整个生育季累计值"},
+    {"location": "PDF page 8, section 3.2.4", "text": "during FP irrigation, rice field was not always flooded, but it was dried out to saturated condition before the next irrigation", "interpretation": "农民灌溉处理不是持续淹水对照"}
+  ],
+  "eligibility": "not_core_candidate_for_continuous_flooding_and_full_season_question_pending_human_review"
+}

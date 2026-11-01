@@ -129,6 +129,7 @@ def experiment(doi, fs):
     unit, n = None, None
     if rep and re.search(r'three biological soil columns per factorial', str(rep), re.I): unit,n = 'soil_column',3
     elif rep and re.search(r'每处理\s*3\s*个独立盆', str(rep)): unit,n = 'pot',3
+    elif rep and re.search(r'one field per water regime', str(rep), re.I): unit,n = 'field',1
     elif rep and re.search(r'每处理\s*3\s*块小区', str(rep)): unit,n = 'field_plot',3
     elif rep and re.search(r'每处理\s*3\s*个重复.*土柱为处理单位', str(rep)): unit,n = 'soil_column',3
     # Do not treat the coverage-only wording "每处理5次" as an identified unit.
@@ -256,6 +257,7 @@ def parse_numeric_result(r, paper):
     for row in records:
         for side in ('treatment','comparator'):
             if isinstance(r.get(side+'_levels'),list): row[side]['levels']=r[side+'_levels']
+            if r.get(side+'_group_id'): row[side]['experimental_group_id']=r[side+'_group_id']
         if r.get('experiment_id'):
             row['experiment_id']=r['experiment_id']
         if r.get('limitations'):

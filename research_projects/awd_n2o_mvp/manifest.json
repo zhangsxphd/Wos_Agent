@@ -1,0 +1,69 @@
+{
+  "topic": {
+    "topic": "普通稻田 AWD 相对持续淹水对生育季累计 N2O 的影响",
+    "population_requirement": "rice",
+    "primary_question": "AWD 相对持续淹水如何影响生育季累计 N2O 排放？",
+    "primary_eligibility": [
+      "稻田原始实验；有 AWD 与淹水对照和生育季累计 N2O"
+    ]
+  },
+  "papers": [
+    {
+      "doi": "10.5194/soil-8-645-2022",
+      "title": "Effects of mild alternate wetting and drying irrigation and rice straw application on N2O emissions in rice cultivation",
+      "design": "randomized block rice pot experiment, 2020",
+      "object": "rice paddy Alfisol; salinity not specified",
+      "replicates": "每处理3个独立盆",
+      "experiment_id": "2020_30_pot_experiment",
+      "pdf": "wu.pdf",
+      "source": "wu_table1.xlsx",
+      "source_type": "xlsx",
+      "pdf_page": 7,
+      "sheet": "xl/worksheets/sheet1.xml",
+      "a_cell": "C11",
+      "b_cell": "C6",
+      "a_label": "AWD 15U",
+      "b_label": "CF 15U",
+      "unit": "kg N2O/ha",
+      "period": "2020 growing season",
+      "treatment_description": "intermittent irrigation at -15 kPa; 225 kg N/ha; no straw; 15N-labelled urea",
+      "control_description": "continuous flooding 3–5 cm; 225 kg N/ha; no straw; 15N-labelled urea",
+      "scope": "Table 1 C11 versus C6; identical fertilizer and isotope treatment; n=3 pots",
+      "source_url": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022-t01.xlsx",
+      "source_sha256": "507c36fcb3d49806c96702d85e0339f917d14ca7b9f49b5112d9b5a34e222e5b",
+      "pdf_url": "https://soil.copernicus.org/articles/8/645/2022/soil-8-645-2022.pdf",
+      "pdf_sha256": "757dfe0baa4f8fdc040cc5b47ba47e6237c1afbed4456c55576aa2ed245dbc0f",
+      "cell_checks": {
+        "A4": "CF",
+        "A9": "AWD",
+        "B6": "15U",
+        "B11": "15U"
+      }
+    },
+    {
+      "doi": "10.1016/S1002-0160(15)60063-7",
+      "title": "Alternate Wetting and Drying of Rice Reduced CH4 Emissions but Triggered N2O Peaks in a Clayey Soil of Central Italy",
+      "design": "2012 and 2013 field experiment, one field per water regime",
+      "object": "rice paddy clay soil in central Italy",
+      "replicates": "One field per water regime; 3 chambers in 2012 and 4 in 2013 are pseudo-replicates; independent water-treatment replication not established",
+      "experiment_id": "italy_2012_2013_same_fields",
+      "pdf": "lagomarsino.pdf",
+      "source": "lagomarsino.pdf",
+      "source_type": "pdf_regex",
+      "pdf_page": 8,
+      "pattern": "\\(\\s*(\\d+\\.\\d+)\\s*vs\\.\\s*(\\d+\\.\\d+)",
+      "match_index": 0,
+      "a_label": "AWD",
+      "b_label": "PF",
+      "unit": "kg N-N2O/ha",
+      "period": "2012 growing season",
+      "treatment_description": "intermittent drying to -15 cm; Entec 46 with nitrification inhibitor, 120 kg N/ha; one field",
+      "control_description": "permanent flooding; Entec 46 with nitrification inhibitor, 120 kg N/ha; one field",
+      "scope": "PDF page 8 results text, 2012 AWD vs PF; paper pages 2–3 describe fields and pseudo-replicates",
+      "source_url": "https://linquist.ucdavis.edu/sites/g/files/dgvnsk6581/files/inline-files/Lagomarsino%20et%20al%202016.pdf",
+      "source_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2",
+      "pdf_url": "https://linquist.ucdavis.edu/sites/g/files/dgvnsk6581/files/inline-files/Lagomarsino%20et%20al%202016.pdf",
+      "pdf_sha256": "e5fef1453ec75d75bf5cade01286e598aaf30e5486b8a1535df60b39424515f2"
+    }
+  ]
+}

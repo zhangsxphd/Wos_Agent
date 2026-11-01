@@ -362,6 +362,8 @@ def adapt_converted(converted, topic_profile):
     """Minimal v1 schema adapter; no checked reference, inferred Gold, or DOE ID."""
     if not topic_profile.get('primary_question') or not topic_profile.get('primary_eligibility'):
         raise ValueError('需要预先给定研究问题及纳入标准')
+    if topic_profile.get('population_requirement','saline_rice') not in ('rice','saline_rice'):
+        raise ValueError('尚不支持该主题对象的自动纳入；请明确选择 rice 或 saline_rice')
     papers=[]; by={}
     for p in converted.get('papers',[]):
         e=p.get('experiment',{}); sid=doi(p.get('doi'))
@@ -406,7 +408,9 @@ def adapt_converted(converted, topic_profile):
         rice=bool(re.search(r'rice|paddy|稻',context))
         positive_context=re.sub(r'(?:salinity|saline|sodicity|sodic)\s+(?:not\s+(?:specified|reported|confirmed|known)|unknown)|盐碱(?:条件)?(?:未报告|未确认|未知)', '', context)
         saline=bool(re.search(r'salin|sodi|盐碱|盐土|盐渍',positive_context))
-        if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and rice and saline and p['study_type'] in ('pot_experiment','field_experiment'):
+        population=topic_profile.get('population_requirement','saline_rice')
+        eligible_population=rice and (saline or population=='rice')
+        if family in ('n2o','ch4','carbon_process','nitrogen_process') and factor=='water_regime' and eligible_population and p['study_type'] in ('pot_experiment','field_experiment'):
             eligibility='primary_candidate_requires_source_review'
         elif family in ('n2o','ch4','co2','carbon_process','nitrogen_process') and rice and p['study_type'] in ('pot_experiment','field_experiment'):
             eligibility='indirect_context' if saline else 'external_context_salinity_unconfirmed'
@@ -490,6 +494,11 @@ def synthesize_converted(normalized):
             reasons.append('至少一个比较基准是观察性来源组，不是作者指定对照')
         units={str(c['numeric_values'].get('unit') or 'unknown') for c in aa+bb}
         if len(units)>1:reasons.append('结果数值或报告效应的单位和口径不同或未知')
+        paper_by_id={p['study_id']:p for p in normalized['papers']}
+        kinds={paper_by_id.get(sid,{}).get('study_type','unknown') for sid in (sid_a,sid_b)}
+        if len(kinds)>1: reasons.append('试验尺度或类型不同：'+', '.join(sorted(kinds)))
+        if any(re.search(r'pseudo.replicat|伪重复',str((c.get('independent_replicates') or {}).get('original') or ''),re.I) for c in aa+bb):
+            reasons.append('至少一项研究报告伪重复，处理层独立重复不足或未知')
         reasons.append('测量时间窗口、指标定义和共同效应量未充分确认')
         reasons.append('不同论文是否共享原始实验或数据集未知，不能计为独立重复')
         contexts=[c['comparison_context'] for c in aa+bb]
@@ -534,11 +543,20 @@ def synthesize_converted(normalized):
                          'comparison_ids':[a['comparison_id'],b['comparison_id']],
                          'sources':[a['source_url'],b['source_url']], 'conditions':ca,
                          'uncertainty':'仅为指定条件下两项比较的描述；不代表显著性、因果效应或普遍规律。'})
+    grouped={}
+    for finding in findings:
+        key=(finding['direction'],json.dumps({k:finding['conditions'].get(k) for k in keys},sort_keys=True,ensure_ascii=False))
+        if key not in grouped: grouped[key]=finding
+        else:
+            for attr in ('comparison_ids','sources'):
+                grouped[key][attr]=list(dict.fromkeys(grouped[key][attr]+finding[attr]))
+    findings=list(grouped.values())
     shared=defaultdict(set)
     for c in comparisons:
-        for label in (c['intervention'],c['comparator']):
-            if label:shared[(c['study_id'],c['outcome_family'],label)].add(c['comparison_id'])
-    dependencies=[{'study_id':k[0],'outcome':k[1],'group_label':k[2], 'comparison_ids':sorted(v),
+        for side in ('treatment_details','comparator_details'):
+            group=c[side].get('experimental_group_id')
+            if group and c.get('experiment_id'): shared[(c['study_id'],c['experiment_id'],group)].add(c['comparison_id'])
+    dependencies=[{'study_id':k[0],'experiment_id':k[1],'group_id':k[2], 'comparison_ids':sorted(v),
                    'status':'possible_shared_group_or_repeated_representation_do_not_count_as_independent'}
                   for k,v in shared.items() if len(v)>1]
     experiments=defaultdict(list)
@@ -572,7 +590,7 @@ def synthesize_converted(normalized):
         'source_comparison_ids':direct,
         'uncertainty':'本次结构化直接证据未包含经核实的产甲烷/氧化、硝化/反硝化速率或同位素路径证据；不能据此断定其他文献不存在；作者解释不能自动当作实测机制。'}
     return {'topic':normalized['topic_profile']['topic'], 'primary_question':normalized['topic_profile']['primary_question'],
-            'primary_evidence_ids':direct, 'direct_observations':observations, 'pool_observations':pools, 'mechanism_assessment':mechanism, 'primary_conclusion':'insufficient_evidence_no_common_finding' if not direct else 'source_review_required_no_automatic_common_finding',
+            'primary_evidence_ids':direct, 'direct_observations':observations, 'pool_observations':pools, 'mechanism_assessment':mechanism, 'primary_conclusion':'conditional_observation_requires_review' if findings else 'insufficient_evidence_no_common_finding',
             'indirect_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='indirect_context'],
             'external_evidence_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='external_context_salinity_unconfirmed'],
             'water_pool_context_ids':[c['comparison_id'] for c in comparisons if c['eligibility']=='water_pool_context_not_transformation_rate'],

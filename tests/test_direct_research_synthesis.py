@@ -103,6 +103,9 @@ class DirectSynthesisTests(unittest.TestCase):
 
     def test_shared_controls_and_reported_effect_are_not_independent(self):
         p,c1=example('10.1/a',7,10);_,c2=example('10.1/a',6,10)
+        c1['experiment_id']=c2['experiment_id']='trial'
+        for c in (c1,c2):
+            c['treatment']['experimental_group_id']='treated';c['comparator']['experimental_group_id']='control'
         c2['metric_type']='reported_relative_effect'
         result=m.synthesize_converted(m.adapt_converted({'papers':[p],'comparisons':[c1,c2]},PROFILE))
         self.assertEqual(len(result['dependent_comparisons']),2)
@@ -163,5 +166,7 @@ class DirectSynthesisTests(unittest.TestCase):
         self.assertEqual(s['primary_evidence_ids'],[])
         self.assertEqual(s['external_evidence_ids'],[c['comparison_id']])
         self.assertEqual(s['experiment_comparisons'][0]['comparison_ids'],[c['comparison_id']])
+        rice_profile={**PROFILE,'population_requirement':'rice'}
+        self.assertEqual(m.adapt_converted({'papers':[p],'comparisons':[c]},rice_profile)['comparisons'][0]['eligibility'],'primary_candidate_requires_source_review')
 
 if __name__=='__main__':unittest.main()
